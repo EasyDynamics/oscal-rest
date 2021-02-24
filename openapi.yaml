@@ -2,7 +2,6 @@ openapi: 3.0.1
 info:
   title: OSCAL REST
   description: REST API specification for interacting with OSCAL models.
-  termsOfService: http://swagger.io/terms/
   contact:
     email: rgauss@easydynamics.com
   version: 1.0.0
@@ -491,11 +490,11 @@ paths:
 components:
   schemas:
     OSCALCatalog:
-      type: object
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_catalog_schema.json'
     OSCALComponent:
-      type: object
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_component_schema.json'
     OSCALSsp:
-      type: object
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_ssp_schema.json'
   securitySchemes:
     oscal_auth:
       type: oauth2

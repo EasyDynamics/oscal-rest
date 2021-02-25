@@ -184,7 +184,7 @@ paths:
     get:
       tags:
       - OSCAL Component
-      summary: Retruns all OSCAL components
+      summary: Returns all OSCAL components
       operationId: getComponents
       responses:
         200:
@@ -199,7 +199,7 @@ paths:
       - oscal_auth:
         - write:components
         - read:components
-    put:
+    patch:
       tags:
       - OSCAL Component
       summary: Update an existing OSCAL component
@@ -305,14 +305,14 @@ paths:
       - oscal_auth:
         - write:components
         - read:components
-  /components/findByName:
+  /components/search:
     get:
       tags:
       - OSCAL Component
-      summary: Finds OSCAL components by name
+      summary: Search for OSCAL components by name
       operationId: findComponentsByName
       parameters:
-      - name: search-string
+      - name: query
         in: query
         description: Terms to search for in component names
         required: true

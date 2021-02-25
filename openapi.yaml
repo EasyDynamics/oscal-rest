@@ -338,7 +338,7 @@ paths:
     get:
       tags:
       - OSCAL System Security Plan
-      summary: Retruns all OSCAL system security plans
+      summary: Returns all OSCAL system security plans
       operationId: getSsps
       responses:
         200:
@@ -353,7 +353,7 @@ paths:
       - oscal_auth:
         - write:ssps
         - read:ssps
-    put:
+    patch:
       tags:
       - OSCAL System Security Plan
       summary: Update an existing OSCAL system security plan
@@ -459,14 +459,14 @@ paths:
       - oscal_auth:
         - write:ssps
         - read:ssps
-  /ssps/findByName:
+  /ssps/search:
     get:
       tags:
       - OSCAL System Security Plan
-      summary: Finds OSCAL system security plans by name
+      summary: Search for OSCAL system security plans by name
       operationId: findSspsByName
       parameters:
-      - name: search-string
+      - name: query
         in: query
         description: Terms to search for in system security plan names
         required: true

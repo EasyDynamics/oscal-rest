@@ -29,7 +29,7 @@ paths:
     get:
       tags:
       - OSCAL Catalog
-      summary: Retruns all OSCAL control catalogs
+      summary: Returns all OSCAL control catalogs
       operationId: getCatalogs
       responses:
         200:
@@ -44,7 +44,7 @@ paths:
       - oscal_auth:
         - write:catalogs
         - read:catalogs
-    put:
+    patch:
       tags:
       - OSCAL Catalog
       summary: Update an existing OSCAL control catalog
@@ -82,6 +82,16 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/OSCALCatalog'
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: binary
+                fileName:
+                  type: string
+                  format: binary
         required: true
       responses:
         405:
@@ -150,14 +160,14 @@ paths:
       - oscal_auth:
         - write:catalogs
         - read:catalogs
-  /catalogs/findByName:
+  /catalogs/search:
     get:
       tags:
       - OSCAL Catalog
-      summary: Finds OSCAL control catalogs by name
+      summary: Search for OSCAL control catalogs by name
       operationId: findCatalogsByName
       parameters:
-      - name: search-string
+      - name: query
         in: query
         description: Terms to search for in catalog names
         required: true

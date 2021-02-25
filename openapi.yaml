@@ -17,6 +17,10 @@ tags:
   externalDocs:
     description: Find out more
     url: https://pages.nist.gov/OSCAL
+- name: OSCAL Profile
+  externalDocs:
+    description: Find out more
+    url: https://pages.nist.gov/OSCAL
 - name: OSCAL Component
   externalDocs:
     description: Find out more
@@ -180,6 +184,158 @@ paths:
       - oscal_auth:
         - write:catalogs
         - read:catalogs
+  /profiles:
+    get:
+      tags:
+      - OSCAL Profile
+      summary: Returns all OSCAL profiles
+      operationId: getProfiles
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OSCALProfile'
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    patch:
+      tags:
+      - OSCAL Profile
+      summary: Update an existing OSCAL profile
+      operationId: updateProfile
+      requestBody:
+        description: Catalog object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALProfile'
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+      x-codegen-request-body-name: body
+    post:
+      tags:
+      - OSCAL Profile
+      summary: Add a new OSCAL profile
+      operationId: addProfile
+      requestBody:
+        description: OSCAL profile to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALProfile'
+        required: true
+      responses:
+        405:
+          description: Invalid input
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+      x-codegen-request-body-name: body
+  /profiles/{profileId}:
+    get:
+      tags:
+      - OSCAL Profile
+      summary: Find an OSCAL profile by ID
+      description: Returns a single OSCAL profile
+      operationId: getProfileById
+      parameters:
+      - name: profileId
+        in: path
+        description: ID of profile to return
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OSCALProfile'
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+      - api_key: []
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Deletes an OSCAL profile
+      operationId: deleteProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile id to delete
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/search:
+    get:
+      tags:
+      - OSCAL Profile
+      summary: Search for OSCAL profiles by name
+      operationId: findProfilesByName
+      parameters:
+      - name: query
+        in: query
+        description: Terms to search for in profile names
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OSCALProfile'
+        400:
+          description: Invalid status value
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
   /components:
     get:
       tags:
@@ -492,6 +648,8 @@ components:
   schemas:
     OSCALCatalog:
       type: object
+    OSCALProfile:
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_profile_schema.json'
     OSCALComponent:
       type: object
     OSCALSsp:
@@ -505,6 +663,8 @@ components:
           scopes:
             write:catalogs: modify catalogs in your account
             read:catalogs: read your catalogs
+            write:profiles: modify profiles in your account
+            read:profiles: read your profiles
             write:components: modify components in your account
             read:components: read your components
             write:ssps: modify ssps in your account

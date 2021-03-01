@@ -340,7 +340,7 @@ paths:
     get:
       tags:
       - OSCAL Component
-      summary: Retruns all OSCAL components
+      summary: Returns all OSCAL components
       operationId: getComponents
       responses:
         200:
@@ -355,33 +355,6 @@ paths:
       - oscal_auth:
         - write:components
         - read:components
-    put:
-      tags:
-      - OSCAL Component
-      summary: Update an existing OSCAL component
-      operationId: updateComponent
-      requestBody:
-        description: Component object to be updated
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OSCALComponent'
-        required: true
-      responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
-        404:
-          description: Component not found
-          content: {}
-        405:
-          description: Validation exception
-          content: {}
-      security:
-      - oscal_auth:
-        - write:components
-        - read:components
-      x-codegen-request-body-name: body
     post:
       tags:
       - OSCAL Component
@@ -416,8 +389,7 @@ paths:
         description: ID of component to return
         required: true
         schema:
-          type: integer
-          format: int64
+          type: string
       responses:
         200:
           description: successful operation
@@ -433,6 +405,40 @@ paths:
           content: {}
       security:
       - api_key: []
+    patch:
+      tags:
+      - OSCAL Component
+      summary: Update an existing OSCAL component
+      operationId: updateComponent
+      parameters:
+      - name: componentId
+        in: path
+        description: ID of component to return
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Component object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALComponent'
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+      security:
+      - oscal_auth:
+        - write:components
+        - read:components
+      x-codegen-request-body-name: body
     delete:
       tags:
       - OSCAL Component
@@ -445,11 +451,10 @@ paths:
           type: string
       - name: componentId
         in: path
-        description: Component id to delete
+        description: Component ID to delete
         required: true
         schema:
-          type: integer
-          format: int64
+          type: string
       responses:
         400:
           description: Invalid ID supplied
@@ -461,14 +466,14 @@ paths:
       - oscal_auth:
         - write:components
         - read:components
-  /components/findByName:
+  /components/search:
     get:
       tags:
       - OSCAL Component
-      summary: Finds OSCAL components by name
+      summary: Search for OSCAL components by name
       operationId: findComponentsByName
       parameters:
-      - name: search-string
+      - name: query
         in: query
         description: Terms to search for in component names
         required: true

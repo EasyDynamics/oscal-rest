@@ -295,7 +295,7 @@ paths:
           type: string
       - name: componentId
         in: path
-        description: Component id to delete
+        description: Component ID to delete
         required: true
         schema:
           type: string

@@ -2,7 +2,6 @@ openapi: 3.0.1
 info:
   title: OSCAL REST
   description: REST API specification for interacting with OSCAL models.
-  termsOfService: http://swagger.io/terms/
   contact:
     email: rgauss@easydynamics.com
   version: 1.0.0
@@ -34,7 +33,7 @@ paths:
     get:
       tags:
       - OSCAL Catalog
-      summary: Retruns all OSCAL control catalogs
+      summary: Returns all OSCAL control catalogs
       operationId: getCatalogs
       responses:
         200:
@@ -49,33 +48,6 @@ paths:
       - oscal_auth:
         - write:catalogs
         - read:catalogs
-    put:
-      tags:
-      - OSCAL Catalog
-      summary: Update an existing OSCAL control catalog
-      operationId: updateCatalog
-      requestBody:
-        description: Catalog object to be updated
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OSCALCatalog'
-        required: true
-      responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
-        404:
-          description: Catalog not found
-          content: {}
-        405:
-          description: Validation exception
-          content: {}
-      security:
-      - oscal_auth:
-        - write:catalogs
-        - read:catalogs
-      x-codegen-request-body-name: body
     post:
       tags:
       - OSCAL Catalog
@@ -87,6 +59,16 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/OSCALCatalog'
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: binary
+                fileName:
+                  type: string
+                  format: binary
         required: true
       responses:
         405:
@@ -110,8 +92,7 @@ paths:
         description: ID of catalog to return
         required: true
         schema:
-          type: integer
-          format: int64
+          type: string
       responses:
         200:
           description: successful operation
@@ -127,6 +108,40 @@ paths:
           content: {}
       security:
       - api_key: []
+    patch:
+      tags:
+      - OSCAL Catalog
+      summary: Update an existing OSCAL control catalog
+      operationId: updateCatalog
+      parameters:
+      - name: catalogId
+        in: path
+        description: ID of catalog to return
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Catalog object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALCatalog'
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+      security:
+      - oscal_auth:
+        - write:catalogs
+        - read:catalogs
+      x-codegen-request-body-name: body
     delete:
       tags:
       - OSCAL Catalog
@@ -142,8 +157,7 @@ paths:
         description: Catalog id to delete
         required: true
         schema:
-          type: integer
-          format: int64
+          type: string
       responses:
         400:
           description: Invalid ID supplied
@@ -155,14 +169,14 @@ paths:
       - oscal_auth:
         - write:catalogs
         - read:catalogs
-  /catalogs/findByName:
+  /catalogs/search:
     get:
       tags:
       - OSCAL Catalog
-      summary: Finds OSCAL control catalogs by name
+      summary: Search for OSCAL control catalogs by name
       operationId: findCatalogsByName
       parameters:
-      - name: search-string
+      - name: query
         in: query
         description: Terms to search for in catalog names
         required: true
@@ -657,13 +671,13 @@ paths:
 components:
   schemas:
     OSCALCatalog:
-      type: object
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_catalog_schema.json'
     OSCALProfile:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_profile_schema.json'
     OSCALComponent:
-      type: object
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_component_schema.json'
     OSCALSsp:
-      type: object
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_ssp_schema.json'
   securitySchemes:
     oscal_auth:
       type: oauth2

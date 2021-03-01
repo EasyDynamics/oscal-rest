@@ -16,6 +16,10 @@ tags:
   externalDocs:
     description: Find out more
     url: https://pages.nist.gov/OSCAL
+- name: OSCAL Profile
+  externalDocs:
+    description: Find out more
+    url: https://pages.nist.gov/OSCAL
 - name: OSCAL Component
   externalDocs:
     description: Find out more
@@ -194,11 +198,163 @@ paths:
       - oscal_auth:
         - write:catalogs
         - read:catalogs
+  /profiles:
+    get:
+      tags:
+      - OSCAL Profile
+      summary: Returns all OSCAL profiles
+      operationId: getProfiles
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OSCALProfile'
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    patch:
+      tags:
+      - OSCAL Profile
+      summary: Update an existing OSCAL profile
+      operationId: updateProfile
+      requestBody:
+        description: Catalog object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALProfile'
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+      x-codegen-request-body-name: body
+    post:
+      tags:
+      - OSCAL Profile
+      summary: Add a new OSCAL profile
+      operationId: addProfile
+      requestBody:
+        description: OSCAL profile to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALProfile'
+        required: true
+      responses:
+        405:
+          description: Invalid input
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+      x-codegen-request-body-name: body
+  /profiles/{profileId}:
+    get:
+      tags:
+      - OSCAL Profile
+      summary: Find an OSCAL profile by ID
+      description: Returns a single OSCAL profile
+      operationId: getProfileById
+      parameters:
+      - name: profileId
+        in: path
+        description: ID of profile to return
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OSCALProfile'
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+      - api_key: []
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Deletes an OSCAL profile
+      operationId: deleteProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID to delete
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/search:
+    get:
+      tags:
+      - OSCAL Profile
+      summary: Search for OSCAL profiles by name
+      operationId: findProfilesByName
+      parameters:
+      - name: query
+        in: query
+        description: Terms to search for in profile names
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OSCALProfile'
+        400:
+          description: Invalid status value
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
   /components:
     get:
       tags:
       - OSCAL Component
-      summary: Retruns all OSCAL components
+      summary: Returns all OSCAL components
       operationId: getComponents
       responses:
         200:
@@ -213,33 +369,6 @@ paths:
       - oscal_auth:
         - write:components
         - read:components
-    put:
-      tags:
-      - OSCAL Component
-      summary: Update an existing OSCAL component
-      operationId: updateComponent
-      requestBody:
-        description: Component object to be updated
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OSCALComponent'
-        required: true
-      responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
-        404:
-          description: Component not found
-          content: {}
-        405:
-          description: Validation exception
-          content: {}
-      security:
-      - oscal_auth:
-        - write:components
-        - read:components
-      x-codegen-request-body-name: body
     post:
       tags:
       - OSCAL Component
@@ -274,8 +403,7 @@ paths:
         description: ID of component to return
         required: true
         schema:
-          type: integer
-          format: int64
+          type: string
       responses:
         200:
           description: successful operation
@@ -291,6 +419,40 @@ paths:
           content: {}
       security:
       - api_key: []
+    patch:
+      tags:
+      - OSCAL Component
+      summary: Update an existing OSCAL component
+      operationId: updateComponent
+      parameters:
+      - name: componentId
+        in: path
+        description: ID of component to return
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Component object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALComponent'
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+      security:
+      - oscal_auth:
+        - write:components
+        - read:components
+      x-codegen-request-body-name: body
     delete:
       tags:
       - OSCAL Component
@@ -303,11 +465,10 @@ paths:
           type: string
       - name: componentId
         in: path
-        description: Component id to delete
+        description: Component ID to delete
         required: true
         schema:
-          type: integer
-          format: int64
+          type: string
       responses:
         400:
           description: Invalid ID supplied
@@ -319,14 +480,14 @@ paths:
       - oscal_auth:
         - write:components
         - read:components
-  /components/findByName:
+  /components/search:
     get:
       tags:
       - OSCAL Component
-      summary: Finds OSCAL components by name
+      summary: Search for OSCAL components by name
       operationId: findComponentsByName
       parameters:
-      - name: search-string
+      - name: query
         in: query
         description: Terms to search for in component names
         required: true
@@ -352,7 +513,7 @@ paths:
     get:
       tags:
       - OSCAL System Security Plan
-      summary: Retruns all OSCAL system security plans
+      summary: Returns all OSCAL system security plans
       operationId: getSsps
       responses:
         200:
@@ -367,33 +528,6 @@ paths:
       - oscal_auth:
         - write:ssps
         - read:ssps
-    put:
-      tags:
-      - OSCAL System Security Plan
-      summary: Update an existing OSCAL system security plan
-      operationId: updateSsp
-      requestBody:
-        description: System security plan object to be updated
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OSCALSsp'
-        required: true
-      responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
-        404:
-          description: System security plan not found
-          content: {}
-        405:
-          description: Validation exception
-          content: {}
-      security:
-      - oscal_auth:
-        - write:ssps
-        - read:ssps
-      x-codegen-request-body-name: body
     post:
       tags:
       - OSCAL System Security Plan
@@ -428,8 +562,7 @@ paths:
         description: ID of system security plan to return
         required: true
         schema:
-          type: integer
-          format: int64
+          type: string
       responses:
         200:
           description: successful operation
@@ -445,6 +578,40 @@ paths:
           content: {}
       security:
       - api_key: []
+    patch:
+      tags:
+      - OSCAL System Security Plan
+      summary: Update an existing OSCAL system security plan
+      operationId: updateSsp
+      parameters:
+      - name: sspId
+        in: path
+        description: ID of system security plan to return
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: System security plan object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALSsp'
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+      security:
+      - oscal_auth:
+        - write:ssps
+        - read:ssps
+      x-codegen-request-body-name: body
     delete:
       tags:
       - OSCAL System Security Plan
@@ -460,8 +627,7 @@ paths:
         description: System security plan id to delete
         required: true
         schema:
-          type: integer
-          format: int64
+          type: string
       responses:
         400:
           description: Invalid ID supplied
@@ -473,14 +639,14 @@ paths:
       - oscal_auth:
         - write:ssps
         - read:ssps
-  /ssps/findByName:
+  /ssps/search:
     get:
       tags:
       - OSCAL System Security Plan
-      summary: Finds OSCAL system security plans by name
+      summary: Search for OSCAL system security plans by name
       operationId: findSspsByName
       parameters:
-      - name: search-string
+      - name: query
         in: query
         description: Terms to search for in system security plan names
         required: true
@@ -506,6 +672,8 @@ components:
   schemas:
     OSCALCatalog:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_catalog_schema.json'
+    OSCALProfile:
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_profile_schema.json'
     OSCALComponent:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_component_schema.json'
     OSCALSsp:
@@ -519,6 +687,8 @@ components:
           scopes:
             write:catalogs: modify catalogs in your account
             read:catalogs: read your catalogs
+            write:profiles: modify profiles in your account
+            read:profiles: read your profiles
             write:components: modify components in your account
             read:components: read your components
             write:ssps: modify ssps in your account

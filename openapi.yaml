@@ -499,7 +499,7 @@ paths:
     get:
       tags:
       - OSCAL System Security Plan
-      summary: Retruns all OSCAL system security plans
+      summary: Returns all OSCAL system security plans
       operationId: getSsps
       responses:
         200:
@@ -514,33 +514,6 @@ paths:
       - oscal_auth:
         - write:ssps
         - read:ssps
-    put:
-      tags:
-      - OSCAL System Security Plan
-      summary: Update an existing OSCAL system security plan
-      operationId: updateSsp
-      requestBody:
-        description: System security plan object to be updated
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OSCALSsp'
-        required: true
-      responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
-        404:
-          description: System security plan not found
-          content: {}
-        405:
-          description: Validation exception
-          content: {}
-      security:
-      - oscal_auth:
-        - write:ssps
-        - read:ssps
-      x-codegen-request-body-name: body
     post:
       tags:
       - OSCAL System Security Plan
@@ -575,8 +548,7 @@ paths:
         description: ID of system security plan to return
         required: true
         schema:
-          type: integer
-          format: int64
+          type: string
       responses:
         200:
           description: successful operation
@@ -592,6 +564,40 @@ paths:
           content: {}
       security:
       - api_key: []
+    patch:
+      tags:
+      - OSCAL System Security Plan
+      summary: Update an existing OSCAL system security plan
+      operationId: updateSsp
+      parameters:
+      - name: sspId
+        in: path
+        description: ID of system security plan to return
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: System security plan object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALSsp'
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+      security:
+      - oscal_auth:
+        - write:ssps
+        - read:ssps
+      x-codegen-request-body-name: body
     delete:
       tags:
       - OSCAL System Security Plan
@@ -607,8 +613,7 @@ paths:
         description: System security plan id to delete
         required: true
         schema:
-          type: integer
-          format: int64
+          type: string
       responses:
         400:
           description: Invalid ID supplied
@@ -620,14 +625,14 @@ paths:
       - oscal_auth:
         - write:ssps
         - read:ssps
-  /ssps/findByName:
+  /ssps/search:
     get:
       tags:
       - OSCAL System Security Plan
-      summary: Finds OSCAL system security plans by name
+      summary: Search for OSCAL system security plans by name
       operationId: findSspsByName
       parameters:
-      - name: search-string
+      - name: query
         in: query
         description: Terms to search for in system security plan names
         required: true

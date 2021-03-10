@@ -28,6 +28,10 @@ tags:
   externalDocs:
     description: Find out more
     url: https://pages.nist.gov/OSCAL
+- name: OSCAL Party
+  externalDocs:
+    description: Find out more
+    url: 'https://pages.nist.gov/OSCAL'
 paths:
   /catalogs:
     get:
@@ -668,6 +672,175 @@ paths:
       - oscal_auth:
         - write:ssps
         - read:ssps
+  /parties:
+    get:
+      tags:
+      - OSCAL Party
+      summary: Return all OSCAL parties
+      operationId: getParties
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OSCALParty'
+      security:
+      - oscal_auth:
+        - write:parties
+        - read:parties
+    post:
+      tags:
+      - OSCAL Party
+      summary: Add a new OSCAL party
+      operationId: addParty
+      requestBody:
+        description: OSCAL party to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALParty'
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: binary
+                fileName:
+                  type: string
+                  format: binary
+        required: true
+      responses:
+        405:
+          description: Invalid input
+          content: {}
+      security:
+      - oscal_auth:
+        - write:parties
+        - read:parties
+      x-codegen-request-body-name: body
+  '/parties/{partyId}':
+    get:
+      tags:
+      - OSCAL Party
+      summary: Find an OSCAL party by ID
+      description: Returns a single OSCAL party
+      operationId: getPartyById
+      parameters:
+      - name: partyId
+        in: path
+        description: ID of party to return
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OSCALParty'
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Party not found
+          content: {}
+      security:
+      - api_key: []
+    patch:
+      tags:
+      - OSCAL Party
+      summary: Update an existing OSCAL party
+      operationId: updateParty
+      parameters:
+      - name: partyId
+        in: path
+        description: ID of party to return
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Party object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALParty'
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Party not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+      security:
+      - oscal_auth:
+        - write:parties
+        - read:parties
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+      - OSCAL Party
+      summary: Deletes an existing OSCAL party
+      operationId: deleteParty
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to delete
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:parties
+        - read:parties
+  /parties/search:
+    get:
+      tags:
+      - OSCAL Party
+      summary: Search for OSCAL party by name
+      operationId: findPartiesByName
+      parameters:
+      - name: query
+        in: query
+        description: Terms to search for in party names
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OSCALParty'
+        400:
+          description: Invalid status value
+          content: {}
+      security:
+      - oscal_auth:
+        - write:parties
+        - read:parties
 components:
   schemas:
     OSCALCatalog:
@@ -678,6 +851,15 @@ components:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_component_schema.json'
     OSCALSsp:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_ssp_schema.json'
+    OSCALParty:
+      type: object
+      properties:
+        uuid:
+          description: A globally unique identifier for this catalog instance. This UUID should be changed when this document is revised.
+          type: string
+          title: 'System Security Plan Universally Unique Identifier pattern: ^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$'
+        metadata: 
+          description: A collection of parties representing people, teams, and organizations.
   securitySchemes:
     oscal_auth:
       type: oauth2
@@ -693,6 +875,8 @@ components:
             read:components: read your components
             write:ssps: modify ssps in your account
             read:ssps: read your ssps
+            write:parties: modify parties in your account
+            read:parties: read your parties
     api_key:
       type: apiKey
       name: api_key

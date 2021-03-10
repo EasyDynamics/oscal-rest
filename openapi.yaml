@@ -788,7 +788,7 @@ paths:
     delete:
       tags:
       - OSCAL Party
-      summary: Deletes an existing OSCAL party
+      summary: Delete an existing OSCAL party
       operationId: deleteParty
       parameters:
       - name: api_key

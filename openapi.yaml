@@ -33,7 +33,7 @@ paths:
     get:
       tags:
       - OSCAL Catalog
-      summary: Returns all OSCAL control catalogs
+      summary: Return all OSCAL control catalogs
       operationId: getCatalogs
       responses:
         200:
@@ -145,7 +145,7 @@ paths:
     delete:
       tags:
       - OSCAL Catalog
-      summary: Deletes an OSCAL control catalog
+      summary: Delete an OSCAL control catalog
       operationId: deleteCatalog
       parameters:
       - name: api_key
@@ -154,7 +154,7 @@ paths:
           type: string
       - name: catalogId
         in: path
-        description: Catalog id to delete
+        description: Catalog ID to delete
         required: true
         schema:
           type: string
@@ -184,7 +184,7 @@ paths:
           type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -202,11 +202,11 @@ paths:
     get:
       tags:
       - OSCAL Profile
-      summary: Returns all OSCAL profiles
+      summary: Return all OSCAL profiles
       operationId: getProfiles
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -281,7 +281,7 @@ paths:
           type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -297,7 +297,7 @@ paths:
     delete:
       tags:
       - OSCAL Profile
-      summary: Deletes an OSCAL profile
+      summary: Delete an OSCAL profile
       operationId: deleteProfile
       parameters:
       - name: api_key
@@ -354,11 +354,11 @@ paths:
     get:
       tags:
       - OSCAL Component
-      summary: Returns all OSCAL components
+      summary: Return all OSCAL components
       operationId: getComponents
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -406,7 +406,7 @@ paths:
           type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -415,7 +415,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: cCmponent not found
+          description: Component not found
           content: {}
       security:
       - api_key: []
@@ -456,7 +456,7 @@ paths:
     delete:
       tags:
       - OSCAL Component
-      summary: Deletes an OSCAL component
+      summary: Delete an OSCAL component
       operationId: deleteComponent
       parameters:
       - name: api_key
@@ -495,7 +495,7 @@ paths:
           type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -513,11 +513,11 @@ paths:
     get:
       tags:
       - OSCAL System Security Plan
-      summary: Returns all OSCAL system security plans
+      summary: Return all OSCAL system security plans
       operationId: getSsps
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -531,7 +531,7 @@ paths:
     post:
       tags:
       - OSCAL System Security Plan
-      summary: Add a new OSCAL system security slan
+      summary: Add a new OSCAL system security plan
       operationId: addSsp
       requestBody:
         description: OSCAL system security plan object to be added
@@ -565,7 +565,7 @@ paths:
           type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -615,7 +615,7 @@ paths:
     delete:
       tags:
       - OSCAL System Security Plan
-      summary: Deletes an OSCAL system security plan
+      summary: Delete an OSCAL system security plan
       operationId: deleteSsp
       parameters:
       - name: api_key
@@ -654,7 +654,7 @@ paths:
           type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:

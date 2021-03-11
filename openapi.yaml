@@ -31,7 +31,7 @@ tags:
 - name: OSCAL Party
   externalDocs:
     description: Find out more
-    url: 'https://pages.nist.gov/OSCAL'
+    url: https://pages.nist.gov/OSCAL
 paths:
   /catalogs:
     get:
@@ -702,16 +702,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/OSCALParty'
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                url:
-                  type: string
-                  format: binary
-                fileName:
-                  type: string
-                  format: binary
         required: true
       responses:
         405:
@@ -722,7 +712,7 @@ paths:
         - write:parties
         - read:parties
       x-codegen-request-body-name: body
-  '/parties/{partyId}':
+  /parties/{partyId}:
     get:
       tags:
       - OSCAL Party
@@ -855,11 +845,19 @@ components:
       type: object
       properties:
         uuid:
-          description: A globally unique identifier for this catalog instance. This UUID should be changed when this document is revised.
+          title: Party Universally Unique Identifier
+          description: A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given party across revisions of the document.
           type: string
-          title: 'System Security Plan Universally Unique Identifier pattern: ^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$'
-        metadata: 
+          pattern: ^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$
+        type:
+          title: Party Type 
           description: A collection of parties representing people, teams, and organizations.
+          type: string
+          enum: [person, organization]
+        name:
+          title: Party Name
+          description: The full name of the party. This is typically the legal name associated with the party.
+          type: string
   securitySchemes:
     oscal_auth:
       type: oauth2

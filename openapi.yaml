@@ -55,7 +55,7 @@ paths:
     post:
       tags:
       - OSCAL Catalog
-      summary: Add a new OSCAL control catalog
+      summary: Adds a new OSCAL control catalog
       operationId: addCatalog
       requestBody:
         description: OSCAL catalog object to be added
@@ -87,7 +87,7 @@ paths:
     get:
       tags:
       - OSCAL Catalog
-      summary: Find an OSCAL control catalog by ID
+      summary: Finds an OSCAL control catalog by ID
       description: Returns a single OSCAL control catalog
       operationId: getCatalogById
       parameters:
@@ -115,7 +115,7 @@ paths:
     patch:
       tags:
       - OSCAL Catalog
-      summary: Update an existing OSCAL control catalog
+      summary: Updates an existing OSCAL control catalog
       operationId: updateCatalog
       parameters:
       - name: catalogId
@@ -158,7 +158,7 @@ paths:
           type: string
       - name: catalogId
         in: path
-        description: Catalog id to delete
+        description: Catalog ID to delete
         required: true
         schema:
           type: string
@@ -177,7 +177,7 @@ paths:
     get:
       tags:
       - OSCAL Catalog
-      summary: Search for OSCAL control catalogs by name
+      summary: Searches for OSCAL control catalogs by name
       operationId: findCatalogsByName
       parameters:
       - name: query
@@ -188,7 +188,7 @@ paths:
           type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -210,7 +210,7 @@ paths:
       operationId: getProfiles
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -224,7 +224,7 @@ paths:
     patch:
       tags:
       - OSCAL Profile
-      summary: Update an existing OSCAL profile
+      summary: Updates an existing OSCAL profile
       operationId: updateProfile
       requestBody:
         description: Catalog object to be updated
@@ -251,7 +251,7 @@ paths:
     post:
       tags:
       - OSCAL Profile
-      summary: Add a new OSCAL profile
+      summary: Adds a new OSCAL profile
       operationId: addProfile
       requestBody:
         description: OSCAL profile to be added
@@ -273,7 +273,7 @@ paths:
     get:
       tags:
       - OSCAL Profile
-      summary: Find an OSCAL profile by ID
+      summary: Finds an OSCAL profile by ID
       description: Returns a single OSCAL profile
       operationId: getProfileById
       parameters:
@@ -285,7 +285,7 @@ paths:
           type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -329,7 +329,7 @@ paths:
     get:
       tags:
       - OSCAL Profile
-      summary: Search for OSCAL profiles by name
+      summary: Searches for OSCAL profiles by name
       operationId: findProfilesByName
       parameters:
       - name: query
@@ -362,7 +362,7 @@ paths:
       operationId: getComponents
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -376,7 +376,7 @@ paths:
     post:
       tags:
       - OSCAL Component
-      summary: Add a new OSCAL component
+      summary: Adds a new OSCAL component
       operationId: addComponent
       requestBody:
         description: OSCAL components to be added
@@ -398,7 +398,7 @@ paths:
     get:
       tags:
       - OSCAL Component
-      summary: Find an OSCAL component by ID
+      summary: Finds an OSCAL component by ID
       description: Returns a single OSCAL component
       operationId: getComponentById
       parameters:
@@ -410,7 +410,7 @@ paths:
           type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -419,14 +419,14 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: cCmponent not found
+          description: Component not found
           content: {}
       security:
       - api_key: []
     patch:
       tags:
       - OSCAL Component
-      summary: Update an existing OSCAL component
+      summary: Updates an existing OSCAL component
       operationId: updateComponent
       parameters:
       - name: componentId
@@ -488,7 +488,7 @@ paths:
     get:
       tags:
       - OSCAL Component
-      summary: Search for OSCAL components by name
+      summary: Searches for OSCAL components by name
       operationId: findComponentsByName
       parameters:
       - name: query
@@ -499,7 +499,7 @@ paths:
           type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -521,7 +521,7 @@ paths:
       operationId: getSsps
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -535,7 +535,7 @@ paths:
     post:
       tags:
       - OSCAL System Security Plan
-      summary: Add a new OSCAL system security slan
+      summary: Adds a new OSCAL system security plan
       operationId: addSsp
       requestBody:
         description: OSCAL system security plan object to be added
@@ -557,7 +557,7 @@ paths:
     get:
       tags:
       - OSCAL System Security Plan
-      summary: Find an OSCAL system security plan by ID
+      summary: Finds an OSCAL system security plan by ID
       description: Returns a single OSCAL system security plan
       operationId: getSspById
       parameters:
@@ -569,7 +569,7 @@ paths:
           type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -585,7 +585,7 @@ paths:
     patch:
       tags:
       - OSCAL System Security Plan
-      summary: Update an existing OSCAL system security plan
+      summary: Updates an existing OSCAL system security plan
       operationId: updateSsp
       parameters:
       - name: sspId
@@ -628,7 +628,7 @@ paths:
           type: string
       - name: sspId
         in: path
-        description: System security plan id to delete
+        description: System security plan ID to delete
         required: true
         schema:
           type: string
@@ -647,7 +647,7 @@ paths:
     get:
       tags:
       - OSCAL System Security Plan
-      summary: Search for OSCAL system security plans by name
+      summary: Searches for OSCAL system security plans by name
       operationId: findSspsByName
       parameters:
       - name: query
@@ -658,7 +658,7 @@ paths:
           type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -676,7 +676,7 @@ paths:
     get:
       tags:
       - OSCAL Party
-      summary: Return all OSCAL parties
+      summary: Returns all OSCAL parties
       operationId: getParties
       responses:
         200:
@@ -694,7 +694,7 @@ paths:
     post:
       tags:
       - OSCAL Party
-      summary: Add a new OSCAL party
+      summary: Adds a new OSCAL party
       operationId: addParty
       requestBody:
         description: OSCAL party to be added
@@ -716,7 +716,7 @@ paths:
     get:
       tags:
       - OSCAL Party
-      summary: Find an OSCAL party by ID
+      summary: Finds an OSCAL party by ID
       description: Returns a single OSCAL party
       operationId: getPartyById
       parameters:
@@ -744,7 +744,7 @@ paths:
     patch:
       tags:
       - OSCAL Party
-      summary: Update an existing OSCAL party
+      summary: Updates an existing OSCAL party
       operationId: updateParty
       parameters:
       - name: partyId
@@ -778,7 +778,7 @@ paths:
     delete:
       tags:
       - OSCAL Party
-      summary: Delete an existing OSCAL party
+      summary: Deletes an existing OSCAL party
       operationId: deleteParty
       parameters:
       - name: api_key
@@ -806,7 +806,7 @@ paths:
     get:
       tags:
       - OSCAL Party
-      summary: Search for OSCAL party by name
+      summary: Searches for OSCAL party by name
       operationId: findPartiesByName
       parameters:
       - name: query

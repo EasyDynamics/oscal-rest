@@ -349,7 +349,7 @@ paths:
         schema:
           type: string
       requestBody:
-        description: OSCAL catalog controls to be included
+        description: Further description of the controls imported
         content:
           application/json:
             schema:
@@ -408,6 +408,94 @@ paths:
           content: {}
         404:
           description: Profile or catalog not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/imported-profiles/{importProfileId}:
+    put:
+      tags:
+      - OSCAL Profile
+      summary: Imports another profile into an OSCAL profile
+      operationId: addProfileToProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: importProfileId
+        in: path
+        description: Other profile ID to be imported into the profile
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Further description of the controls imported
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                include-controls:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      with-ids:
+                        type: array
+                        items:
+                          type: string
+        required: false
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or import profile not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a another profile from an OSCAL profile imports
+      description: |
+        Removes the given other profile from the given profile.
+        
+        This should also result in references under other parts of the schema being removed.
+      operationId: removeProfilefromProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: importProfileId
+        in: path
+        description: Other profile ID to be removed from the profile imports
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or import profile not found
           content: {}
       security:
       - oscal_auth:

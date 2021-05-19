@@ -332,11 +332,11 @@ paths:
       summary: Adds a new role to an OSCAL profile
       operationId: addRoleToProfile
       requestBody:
-        description: OSCAL profile to be added
+        description: OSCAL role to be added
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OSCALParty'
+              $ref: '#/components/schemas/OSCALRole'
         required: true
       parameters:
       - name: api_key
@@ -421,6 +421,7 @@ paths:
         required: true
         schema:
           type: string
+        required: true
       responses:
         400:
           description: Invalid ID supplied
@@ -1064,6 +1065,18 @@ components:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_component_schema.json'
     OSCALSsp:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_ssp_schema.json'
+    OSCALRole:
+      type: object
+      properties:
+        id:
+          title: Role Identifier
+          type: string
+        title:
+          title: Title
+          type: string
+        short-name:
+          title: Role Short Name
+          type: string
     OSCALParty:
       type: object
       properties:

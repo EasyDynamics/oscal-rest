@@ -348,6 +348,23 @@ paths:
         required: true
         schema:
           type: string
+      requestBody:
+        description: OSCAL catalog controls to be included
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                include-controls:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      with-ids:
+                        type: array
+                        items:
+                          type: string
+        required: false
       responses:
         400:
           description: Invalid ID supplied

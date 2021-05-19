@@ -325,6 +325,79 @@ paths:
       - oscal_auth:
         - write:profiles
         - read:profiles
+  /profiles/{profileId}/roles:
+    post:
+      tags:
+      - OSCAL Profile
+      summary: Adds a new role to an OSCAL profile
+      operationId: addRoleToProfile
+      requestBody:
+        description: OSCAL profile to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALParty'
+        required: true
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/roles/{roleId}:
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a role from an OSCAL profile
+      description: |
+        Removes the given role from the given profile.
+        
+        This should also result in references under other parts of the schema such as responsible parties being removed.
+      operationId: removeRolefromProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID to be associated with the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or role not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
   /profiles/{profileId}/parties/{partyId}:
     put:
       tags:
@@ -381,7 +454,7 @@ paths:
           type: string
       - name: partyId
         in: path
-        description: Party ID to be associated with the profile
+        description: Party ID to be removed with the profile
         required: true
         schema:
           type: string
@@ -391,6 +464,85 @@ paths:
           content: {}
         404:
           description: Profile or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/responisble-parties/{roleId}/parties/{partyId}:
+    post:
+      tags:
+      - OSCAL Profile
+      summary: Associates a party with role within an OSCAL profile
+      operationId: addPartyToProfileRole
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID for the party to be associated with within the profile
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be added to the role within the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile, role, or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a party from a role within an OSCAL profile
+      operationId: removePartyfromProfileRole
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID within the profile the party should be removed from
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be removed from the role within the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile, role, or party not found
           content: {}
       security:
       - oscal_auth:

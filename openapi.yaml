@@ -325,6 +325,77 @@ paths:
       - oscal_auth:
         - write:profiles
         - read:profiles
+  /profiles/{profileId}/parties/{partyId}:
+    put:
+      tags:
+      - OSCAL Profile
+      summary: Associates a party with an OSCAL profile
+      operationId: addPartyToProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a party from an OSCAL profile
+      description: |
+        Removes the given party from the given profile.
+        
+        This should also result in references under other parts of the schema such as responsible roles being removed.
+      operationId: removePartyfromProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
   /profiles/search:
     get:
       tags:

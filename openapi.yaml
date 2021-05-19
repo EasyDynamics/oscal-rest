@@ -484,6 +484,79 @@ paths:
       - oscal_auth:
         - write:components
         - read:components
+    /component-definitions/{componentDefinitionId}/roles:
+    post:
+      tags:
+      - OSCAL Component Definition
+      summary: Adds a new role to an OSCAL component definition
+      operationId: addRoleToComponentDefinition
+      requestBody:
+        description: OSCAL role to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALRole'
+        required: true
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component definition ID
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+  /component-definitions/{componentDefinitionId}/roles/{roleId}:
+    delete:
+      tags:
+      - OSCAL Component Definition
+      summary: Removes a role from an OSCAL component definition
+      description: |
+        Removes the given role from the given component definition.
+        
+        This should also result in references under other parts of the schema such as responsible parties being removed.
+      operationId: removeRolefromComponentDefinition
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component Definition ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID to be removed from the component definition
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition or role not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
   /component-definitions/{componentDefinitionId}/parties/{partyId}:
     put:
       tags:
@@ -550,6 +623,85 @@ paths:
           content: {}
         404:
           description: Component definition or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+  /component-definitions/{componentDefinitionId}/responisble-parties/{roleId}/parties/{partyId}:
+    post:
+      tags:
+      - OSCAL Component Definition
+      summary: Associates a party with role within an OSCAL component definition
+      operationId: addPartyToComponentDefinitionRole
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component Definition ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID for the party to be associated with within the component definition
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be added to the role within the component definition
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition, role, or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+    delete:
+      tags:
+      - OSCAL Component Definition
+      summary: Removes a party from a role within an OSCAL component definition
+      operationId: removePartyfromComponentDefinitionRole
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component definition ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID within the component definition the party should be removed from
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be removed from the role within the component definition
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition, role, or party not found
           content: {}
       security:
       - oscal_auth:

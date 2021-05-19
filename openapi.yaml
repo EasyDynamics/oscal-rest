@@ -484,26 +484,26 @@ paths:
       - oscal_auth:
         - write:components
         - read:components
-  /components/{componentId}/parties/{partyId}:
+  /component-definitions/{componentDefinitionId}/parties/{partyId}:
     put:
       tags:
-      - OSCAL Component
-      summary: Associates a party with an OSCAL component
-      operationId: addPartyToComponent
+      - OSCAL Component Definition
+      summary: Associates a party with an OSCAL component definition
+      operationId: addPartyToComponentDefinition
       parameters:
       - name: api_key
         in: header
         schema:
           type: string
-      - name: componentId
+      - name: componentDefinitionId
         in: path
-        description: Component ID
+        description: Component Definition ID
         required: true
         schema:
           type: string
       - name: partyId
         in: path
-        description: Party ID to be associated with the component
+        description: Party ID to be associated with the component definition
         required: true
         schema:
           type: string
@@ -512,35 +512,35 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Component or party not found
+          description: Component definition or party not found
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - write:componentDefinitions
+        - read:componentDefinitions
     delete:
       tags:
-      - OSCAL Component
-      summary: Removes a party from an OSCAL component
+      - OSCAL Component Definition
+      summary: Removes a party from an OSCAL component definition
       description: |
         Removes the given party from the given component definition.
         
         This should also result in references under other parts of the schema such as component responsible roles being removed.
-      operationId: removePartyfromComponent
+      operationId: removePartyfromComponentDefinition
       parameters:
       - name: api_key
         in: header
         schema:
           type: string
-      - name: componentId
+      - name: componentDefinitionId
         in: path
-        description: Component ID
+        description: Component Definition ID
         required: true
         schema:
           type: string
       - name: partyId
         in: path
-        description: Party ID to be associated with the component
+        description: Party ID to be associated with the component definition
         required: true
         schema:
           type: string
@@ -549,12 +549,12 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Component or party not found
+          description: Component definition or party not found
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - write:componentDefinitions
+        - read:componentDefinitions
   /components/search:
     get:
       tags:

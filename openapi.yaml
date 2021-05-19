@@ -325,6 +325,77 @@ paths:
       - oscal_auth:
         - write:profiles
         - read:profiles
+  /profiles/{profileId}/imported-catalogs/{catalogId}:
+    put:
+      tags:
+      - OSCAL Profile
+      summary: Imports a catalog into an OSCAL profile
+      operationId: addCatalogToProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: catalogId
+        in: path
+        description: Catalog ID to be imported into the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or catalog not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a catalog from an OSCAL profile imports
+      description: |
+        Removes the given catalog from the given profile.
+        
+        This should also result in references under other parts of the schema being removed.
+      operationId: removeCatalogfromProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: catalogId
+        in: path
+        description: Catalog ID to be removed from the profile imports
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or catalog not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
   /profiles/{profileId}/roles:
     post:
       tags:
@@ -383,7 +454,7 @@ paths:
           type: string
       - name: roleId
         in: path
-        description: Role ID to be associated with the profile
+        description: Role ID to be removed from the profile
         required: true
         schema:
           type: string

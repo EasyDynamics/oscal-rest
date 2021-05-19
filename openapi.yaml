@@ -325,6 +325,405 @@ paths:
       - oscal_auth:
         - write:profiles
         - read:profiles
+  /profiles/{profileId}/imported-catalogs/{catalogId}:
+    put:
+      tags:
+      - OSCAL Profile
+      summary: Imports a catalog into an OSCAL profile
+      operationId: addCatalogToProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: catalogId
+        in: path
+        description: Catalog ID to be imported into the profile
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Further description of the controls imported
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                include-controls:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      with-ids:
+                        type: array
+                        items:
+                          type: string
+        required: false
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or catalog not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a catalog from an OSCAL profile imports
+      description: |
+        Removes the given catalog from the given profile.
+        
+        This should also result in references under other parts of the schema being removed.
+      operationId: removeCatalogfromProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: catalogId
+        in: path
+        description: Catalog ID to be removed from the profile imports
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or catalog not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/imported-profiles/{importProfileId}:
+    put:
+      tags:
+      - OSCAL Profile
+      summary: Imports another profile into an OSCAL profile
+      operationId: addProfileToProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: importProfileId
+        in: path
+        description: Other profile ID to be imported into the profile
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Further description of the controls imported
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                include-controls:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      with-ids:
+                        type: array
+                        items:
+                          type: string
+        required: false
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or import profile not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a another profile from an OSCAL profile imports
+      description: |
+        Removes the given other profile from the given profile.
+        
+        This should also result in references under other parts of the schema being removed.
+      operationId: removeProfilefromProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: importProfileId
+        in: path
+        description: Other profile ID to be removed from the profile imports
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or import profile not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/roles:
+    post:
+      tags:
+      - OSCAL Profile
+      summary: Adds a new role to an OSCAL profile
+      operationId: addRoleToProfile
+      requestBody:
+        description: OSCAL role to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALRole'
+        required: true
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/roles/{roleId}:
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a role from an OSCAL profile
+      description: |
+        Removes the given role from the given profile.
+        
+        This should also result in references under other parts of the schema such as responsible parties being removed.
+      operationId: removeRolefromProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID to be removed from the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or role not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/parties/{partyId}:
+    put:
+      tags:
+      - OSCAL Profile
+      summary: Associates a party with an OSCAL profile
+      operationId: addPartyToProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a party from an OSCAL profile
+      description: |
+        Removes the given party from the given profile.
+        
+        This should also result in references under other parts of the schema such as responsible roles being removed.
+      operationId: removePartyfromProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be removed with the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/responisble-parties/{roleId}/parties/{partyId}:
+    post:
+      tags:
+      - OSCAL Profile
+      summary: Associates a party with role within an OSCAL profile
+      operationId: addPartyToProfileRole
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID for the party to be associated with within the profile
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be added to the role within the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile, role, or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a party from a role within an OSCAL profile
+      operationId: removePartyfromProfileRole
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID within the profile that the party should be removed from
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be removed from the role within the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile, role, or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
   /profiles/search:
     get:
       tags:
@@ -1203,6 +1602,18 @@ components:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_component_schema.json'
     OSCALSsp:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_ssp_schema.json'
+    OSCALRole:
+      type: object
+      properties:
+        id:
+          title: Role Identifier
+          type: string
+        title:
+          title: Title
+          type: string
+        short-name:
+          title: Role Short Name
+          type: string
     OSCALParty:
       type: object
       properties:

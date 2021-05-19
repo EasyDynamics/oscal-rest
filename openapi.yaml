@@ -421,7 +421,6 @@ paths:
         required: true
         schema:
           type: string
-        required: true
       responses:
         400:
           description: Invalid ID supplied

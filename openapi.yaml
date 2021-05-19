@@ -703,7 +703,7 @@ paths:
           type: string
       - name: roleId
         in: path
-        description: Role ID within the profile the party should be removed from
+        description: Role ID within the profile that the party should be removed from
         required: true
         schema:
           type: string

@@ -20,7 +20,7 @@ tags:
   externalDocs:
     description: Find out more
     url: https://pages.nist.gov/OSCAL
-- name: OSCAL Component
+- name: OSCAL Component Definition
   externalDocs:
     description: Find out more
     url: https://pages.nist.gov/OSCAL
@@ -354,12 +354,12 @@ paths:
       - oscal_auth:
         - write:profiles
         - read:profiles
-  /components:
+  /component-definitions:
     get:
       tags:
-      - OSCAL Component
-      summary: Returns all OSCAL components
-      operationId: getComponents
+      - OSCAL Component Definition
+      summary: Returns all OSCAL component definitions
+      operationId: getComponentDefinitions
       responses:
         200:
           description: Successful operation
@@ -368,22 +368,22 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OSCALComponent'
+                  $ref: '#/components/schemas/OSCALComponentDefinition'
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - write:componentDefinitions
+        - read:componentDefinitions
     post:
       tags:
-      - OSCAL Component
-      summary: Adds a new OSCAL component
-      operationId: addComponent
+      - OSCAL Component Definition
+      summary: Adds a new OSCAL component definition
+      operationId: addComponentDefinition
       requestBody:
-        description: OSCAL components to be added
+        description: OSCAL component definition to be added
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OSCALComponent'
+              $ref: '#/components/schemas/OSCALComponentDefinition'
         required: true
       responses:
         405:
@@ -391,20 +391,20 @@ paths:
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - write:componentDefinitions
+        - read:componentDefinitions
       x-codegen-request-body-name: body
-  /components/{componentId}:
+  /component-definitions/{componentDefinitionId}:
     get:
       tags:
-      - OSCAL Component
-      summary: Finds an OSCAL component by ID
-      description: Returns a single OSCAL component
-      operationId: getComponentById
+      - OSCAL Component Definition
+      summary: Finds an OSCAL component definition by ID
+      description: Returns a single OSCAL component definition
+      operationId: getComponentDefinitionById
       parameters:
-      - name: componentId
+      - name: componentDefinitionId
         in: path
-        description: ID of component to return
+        description: ID of component definition to return
         required: true
         schema:
           type: string
@@ -414,62 +414,62 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OSCALComponent'
+                $ref: '#/components/schemas/OSCALComponentDefinition'
         400:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Component not found
+          description: Component definition not found
           content: {}
       security:
       - api_key: []
     patch:
       tags:
-      - OSCAL Component
-      summary: Updates an existing OSCAL component
-      operationId: updateComponent
+      - OSCAL Component Definition
+      summary: Updates an existing OSCAL component definition
+      operationId: updateComponentDefinition
       parameters:
-      - name: componentId
+      - name: componentDefinitionId
         in: path
-        description: ID of component to return
+        description: ID of component definition to return
         required: true
         schema:
           type: string
       requestBody:
-        description: Component object to be updated
+        description: Component definition to be updated
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OSCALComponent'
+              $ref: '#/components/schemas/OSCALComponentDefinition'
         required: true
       responses:
         400:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Component not found
+          description: Component definition not found
           content: {}
         405:
           description: Validation exception
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - write:componentDefinitions
+        - read:componentDefinitions
       x-codegen-request-body-name: body
     delete:
       tags:
-      - OSCAL Component
-      summary: Deletes an OSCAL component
-      operationId: deleteComponent
+      - OSCAL Component Definition
+      summary: Deletes an OSCAL component definition
+      operationId: deleteComponentDefinition
       parameters:
       - name: api_key
         in: header
         schema:
           type: string
-      - name: componentId
+      - name: componentDefinitionId
         in: path
-        description: Component ID to delete
+        description: Component definition ID to delete
         required: true
         schema:
           type: string
@@ -478,7 +478,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Component not found
+          description: Component definition not found
           content: {}
       security:
       - oscal_auth:
@@ -555,16 +555,16 @@ paths:
       - oscal_auth:
         - write:componentDefinitions
         - read:componentDefinitions
-  /components/search:
+  /component-definitions/search:
     get:
       tags:
-      - OSCAL Component
-      summary: Searches for OSCAL components by name
-      operationId: findComponentsByName
+      - OSCAL Component Definition
+      summary: Searches for OSCAL component definitions by name
+      operationId: findComponentDefinitionsByName
       parameters:
       - name: query
         in: query
-        description: Terms to search for in component names
+        description: Terms to search for in component definition names
         required: true
         schema:
           type: string
@@ -576,14 +576,14 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OSCALComponent'
+                  $ref: '#/components/schemas/OSCALComponentDefinition'
         400:
           description: Invalid status value
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - write:componentDefinitions
+        - read:componentDefinitions
   /ssps:
     get:
       tags:
@@ -709,6 +709,145 @@ paths:
           content: {}
         404:
           description: System security plan not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:ssps
+        - read:ssps
+  /ssps/{sspId}/components/{componentId}:
+    put:
+      tags:
+      - OSCAL System Security Plan
+      summary: Associates a component with an OSCAL system security plan
+      description: Adds the given component to the components within the given system security plan's system-implementation.
+      operationId: addComponentToSsp
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: sspId
+        in: path
+        description: System security plan ID
+        required: true
+        schema:
+          type: string
+      - name: componentId
+        in: path
+        description: Component ID to be associated with SSP
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or component not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:ssps
+        - read:ssps
+    delete:
+      tags:
+      - OSCAL System Security Plan
+      summary: Removes a component from an OSCAL system security plan
+      description: |
+        Removes the given component from the components within the given system security plan's system-implementation.
+        
+        This should also result in references under other parts of the schema such as inventory-items being removed.
+      operationId: removeComponentfromSsp
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: sspId
+        in: path
+        description: System security plan ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Component ID to be associated with SSP
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or component not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:ssps
+        - read:ssps
+  /ssps/{sspId}/parties/{partyId}:
+    put:
+      tags:
+      - OSCAL System Security Plan
+      summary: Associates a party with an OSCAL system security plan
+      operationId: addPartyToSsp
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: sspId
+        in: path
+        description: System security plan ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with SSP
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:ssps
+        - read:ssps
+    delete:
+      tags:
+      - OSCAL System Security Plan
+      summary: Removes a party from an OSCAL system security plan
+      operationId: removePartyfromSsp
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: sspId
+        in: path
+        description: System security plan ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with SSP
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or party not found
           content: {}
       security:
       - oscal_auth:
@@ -908,7 +1047,7 @@ components:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_catalog_schema.json'
     OSCALProfile:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_profile_schema.json'
-    OSCALComponent:
+    OSCALComponentDefinition:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_component_schema.json'
     OSCALSsp:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_ssp_schema.json'

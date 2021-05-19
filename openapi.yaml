@@ -20,7 +20,7 @@ tags:
   externalDocs:
     description: Find out more
     url: https://pages.nist.gov/OSCAL
-- name: OSCAL Component
+- name: OSCAL Component Definition
   externalDocs:
     description: Find out more
     url: https://pages.nist.gov/OSCAL
@@ -354,12 +354,12 @@ paths:
       - oscal_auth:
         - write:profiles
         - read:profiles
-  /components:
+  /component-definitions:
     get:
       tags:
-      - OSCAL Component
-      summary: Returns all OSCAL components
-      operationId: getComponents
+      - OSCAL Component Definition
+      summary: Returns all OSCAL component definitions
+      operationId: getComponentdefinitions
       responses:
         200:
           description: Successful operation
@@ -368,22 +368,22 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OSCALComponent'
+                  $ref: '#/components/schemas/OSCALComponentDefinition'
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - write:componentDefinitions
+        - read:componentDefinitions
     post:
       tags:
-      - OSCAL Component
-      summary: Adds a new OSCAL component
-      operationId: addComponent
+      - OSCAL Component Definition
+      summary: Adds a new OSCAL component definition
+      operationId: addComponentDefinition
       requestBody:
-        description: OSCAL components to be added
+        description: OSCAL component definition to be added
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OSCALComponent'
+              $ref: '#/components/schemas/OSCALComponentDefinition'
         required: true
       responses:
         405:
@@ -391,20 +391,20 @@ paths:
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - write:componentDefinitions
+        - read:componentDefinitions
       x-codegen-request-body-name: body
-  /components/{componentId}:
+  /component-definitions/{componentDefinitionId}:
     get:
       tags:
-      - OSCAL Component
-      summary: Finds an OSCAL component by ID
-      description: Returns a single OSCAL component
-      operationId: getComponentById
+      - OSCAL Component Definition
+      summary: Finds an OSCAL component definition by ID
+      description: Returns a single OSCAL component definition
+      operationId: getComponentDefinitionById
       parameters:
-      - name: componentId
+      - name: componentDefinitionId
         in: path
-        description: ID of component to return
+        description: ID of component definition to return
         required: true
         schema:
           type: string
@@ -414,62 +414,62 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OSCALComponent'
+                $ref: '#/components/schemas/OSCALComponentDefinition'
         400:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Component not found
+          description: Component definition not found
           content: {}
       security:
       - api_key: []
     patch:
       tags:
-      - OSCAL Component
-      summary: Updates an existing OSCAL component
-      operationId: updateComponent
+      - OSCAL Component Definition
+      summary: Updates an existing OSCAL component definition
+      operationId: updateComponentDefinition
       parameters:
-      - name: componentId
+      - name: componentDefinitionId
         in: path
-        description: ID of component to return
+        description: ID of component definition to return
         required: true
         schema:
           type: string
       requestBody:
-        description: Component object to be updated
+        description: Component definition to be updated
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OSCALComponent'
+              $ref: '#/components/schemas/OSCALComponentDefinition'
         required: true
       responses:
         400:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Component not found
+          description: Component definition not found
           content: {}
         405:
           description: Validation exception
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - write:componentDefinitions
+        - read:componentDefinitions
       x-codegen-request-body-name: body
     delete:
       tags:
-      - OSCAL Component
-      summary: Deletes an OSCAL component
-      operationId: deleteComponent
+      - OSCAL Component Definition
+      summary: Deletes an OSCAL component definition
+      operationId: deleteComponentDefinition
       parameters:
       - name: api_key
         in: header
         schema:
           type: string
-      - name: componentId
+      - name: componentDefinitionId
         in: path
-        description: Component ID to delete
+        description: Component definition ID to delete
         required: true
         schema:
           type: string
@@ -478,22 +478,22 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Component not found
+          description: Component definition not found
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
-  /components/search:
+        - write:componentDefinitions
+        - read:componentDefinitions
+  /component-definitions/search:
     get:
       tags:
-      - OSCAL Component
-      summary: Searches for OSCAL components by name
-      operationId: findComponentsByName
+      - OSCAL Component Definition
+      summary: Searches for OSCAL component definitions by name
+      operationId: findComponentDefinitionsByName
       parameters:
       - name: query
         in: query
-        description: Terms to search for in component names
+        description: Terms to search for in component definition names
         required: true
         schema:
           type: string
@@ -505,14 +505,14 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OSCALComponent'
+                  $ref: '#/components/schemas/OSCALComponentDefinition'
         400:
           description: Invalid status value
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - write:componentDefinitions
+        - read:componentDefinitions
   /ssps:
     get:
       tags:
@@ -837,7 +837,7 @@ components:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_catalog_schema.json'
     OSCALProfile:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_profile_schema.json'
-    OSCALComponent:
+    OSCALComponentDefinition:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_component_schema.json'
     OSCALSsp:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_ssp_schema.json'

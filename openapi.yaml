@@ -359,7 +359,7 @@ paths:
       tags:
       - OSCAL Component Definition
       summary: Returns all OSCAL component definitions
-      operationId: getComponentdefinitions
+      operationId: getComponentDefinitions
       responses:
         200:
           description: Successful operation

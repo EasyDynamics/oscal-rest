@@ -484,6 +484,77 @@ paths:
       - oscal_auth:
         - write:components
         - read:components
+  /components/{componentId}/parties/{partyId}:
+    put:
+      tags:
+      - OSCAL Component
+      summary: Associates a party with an OSCAL component
+      operationId: addPartyToComponent
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentId
+        in: path
+        description: Component ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with the component
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:components
+        - read:components
+    delete:
+      tags:
+      - OSCAL Component
+      summary: Removes a party from an OSCAL component
+      description: |
+        Removes the given party from the given component definition.
+        
+        This should also result in references under other parts of the schema such as component responsible roles being removed.
+      operationId: removePartyfromComponent
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentId
+        in: path
+        description: Component ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with the component
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:components
+        - read:components
   /components/search:
     get:
       tags:

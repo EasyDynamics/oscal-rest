@@ -643,6 +643,73 @@ paths:
       - oscal_auth:
         - write:ssps
         - read:ssps
+  /ssps/{sspId}/parties/{partyId}:
+    put:
+      tags:
+      - OSCAL System Security Plan
+      summary: Associates a party with an OSCAL system security plan
+      operationId: addPartyToSsp
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: sspId
+        in: path
+        description: System security plan ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with SSP
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:ssps
+        - read:ssps
+    delete:
+      tags:
+      - OSCAL System Security Plan
+      summary: Removes a party from an OSCAL system security plan
+      operationId: removePartyfromSsp
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: sspId
+        in: path
+        description: System security plan ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with SSP
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:ssps
+        - read:ssps
   /ssps/search:
     get:
       tags:

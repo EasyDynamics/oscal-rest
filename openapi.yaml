@@ -1,33 +1,32 @@
 openapi: 3.0.1
 info:
   title: OSCAL REST
-  description: REST API specification for interacting with OSCAL models.
+  description: An early draft proposal from Easy Dynamics for a REST API specification for interacting with OSCAL models.
   contact:
     email: rgauss@easydynamics.com
   version: 1.0.0
 externalDocs:
-  description: Find out more about Swagger
-  url: http://swagger.io
+  description: Find out more about OSCAL
+  url: https://pages.nist.gov/OSCAL
 servers:
-- url: https://localhost:8080/oscal/v1
 - url: http://localhost:8080/oscal/v1
 tags:
-- name: OSCAL Catalog
-  externalDocs:
-    description: Find out more
-    url: https://pages.nist.gov/OSCAL
-- name: OSCAL Profile
-  externalDocs:
-    description: Find out more
-    url: https://pages.nist.gov/OSCAL
 - name: OSCAL Component Definition
   externalDocs:
     description: Find out more
-    url: https://pages.nist.gov/OSCAL
+    url: https://pages.nist.gov/OSCAL/documentation/schema/implementation-layer/component/
+- name: OSCAL Profile
+  externalDocs:
+    description: Find out more
+    url: https://pages.nist.gov/OSCAL/documentation/schema/profile-layer/profile/
 - name: OSCAL System Security Plan
   externalDocs:
     description: Find out more
-    url: https://pages.nist.gov/OSCAL
+    url: https://pages.nist.gov/OSCAL/documentation/schema/implementation-layer/ssp/
+- name: OSCAL Catalog
+  externalDocs:
+    description: Find out more
+    url: https://pages.nist.gov/OSCAL/documentation/schema/catalog-layer/catalog/
 - name: OSCAL Party
   externalDocs:
     description: Find out more

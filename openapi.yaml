@@ -883,7 +883,7 @@ paths:
       - oscal_auth:
         - write:components
         - read:components
-    /component-definitions/{componentDefinitionId}/roles:
+  /component-definitions/{componentDefinitionId}/roles:
     post:
       tags:
       - OSCAL Component Definition
@@ -1320,7 +1320,7 @@ paths:
         required: true
         schema:
           type: string
-      - name: partyId
+      - name: componentId
         in: path
         description: Component ID to be associated with SSP
         required: true

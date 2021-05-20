@@ -49,7 +49,6 @@ paths:
                   $ref: '#/components/schemas/OSCALCatalog'
       security:
       - oscal_auth:
-        - write:catalogs
         - read:catalogs
     post:
       tags:
@@ -110,7 +109,8 @@ paths:
           description: Catalog not found
           content: {}
       security:
-      - api_key: []
+      - oscal_auth:
+        - read:catalogs
     patch:
       tags:
       - OSCAL Catalog
@@ -199,7 +199,6 @@ paths:
           content: {}
       security:
       - oscal_auth:
-        - write:catalogs
         - read:catalogs
   /profiles:
     get:
@@ -218,7 +217,6 @@ paths:
                   $ref: '#/components/schemas/OSCALProfile'
       security:
       - oscal_auth:
-        - write:profiles
         - read:profiles
     patch:
       tags:
@@ -296,7 +294,8 @@ paths:
           description: Profile not found
           content: {}
       security:
-      - api_key: []
+      - oscal_auth:
+        - read:profiles
     delete:
       tags:
       - OSCAL Profile
@@ -750,7 +749,6 @@ paths:
           content: {}
       security:
       - oscal_auth:
-        - write:profiles
         - read:profiles
   /component-definitions:
     get:
@@ -769,7 +767,6 @@ paths:
                   $ref: '#/components/schemas/OSCALComponentDefinition'
       security:
       - oscal_auth:
-        - write:componentDefinitions
         - read:componentDefinitions
     post:
       tags:
@@ -820,7 +817,8 @@ paths:
           description: Component definition not found
           content: {}
       security:
-      - api_key: []
+      - oscal_auth:
+        - read:componentDefinitions
     patch:
       tags:
       - OSCAL Component Definition
@@ -880,8 +878,8 @@ paths:
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - write:componentDefinitions
+        - read:componentDefinitions
   /component-definitions/{componentDefinitionId}/roles:
     post:
       tags:
@@ -1368,7 +1366,6 @@ paths:
           content: {}
       security:
       - oscal_auth:
-        - write:componentDefinitions
         - read:componentDefinitions
   /ssps:
     get:
@@ -1387,7 +1384,6 @@ paths:
                   $ref: '#/components/schemas/OSCALSsp'
       security:
       - oscal_auth:
-        - write:ssps
         - read:ssps
     post:
       tags:
@@ -1438,7 +1434,8 @@ paths:
           description: System security plan not found
           content: {}
       security:
-      - api_key: []
+      - oscal_auth:
+        - read:ssps
     patch:
       tags:
       - OSCAL System Security Plan
@@ -1666,7 +1663,6 @@ paths:
           content: {}
       security:
       - oscal_auth:
-        - write:ssps
         - read:ssps
   /parties:
     get:
@@ -1685,7 +1681,6 @@ paths:
                   $ref: '#/components/schemas/OSCALParty'
       security:
       - oscal_auth:
-        - write:parties
         - read:parties
     post:
       tags:
@@ -1736,7 +1731,8 @@ paths:
           description: Party not found
           content: {}
       security:
-      - api_key: []
+      - oscal_auth:
+        - read:parties
     patch:
       tags:
       - OSCAL Party
@@ -1825,7 +1821,6 @@ paths:
           content: {}
       security:
       - oscal_auth:
-        - write:parties
         - read:parties
 components:
   schemas:
@@ -1881,13 +1876,10 @@ components:
             read:catalogs: read your catalogs
             write:profiles: modify profiles in your account
             read:profiles: read your profiles
-            write:components: modify components in your account
-            read:components: read your components
+            write:componentDefinitions: modify component definitions in your account
+            read:componentDefinitions: read your component definitions
             write:ssps: modify ssps in your account
             read:ssps: read your ssps
             write:parties: modify parties in your account
             read:parties: read your parties
-    api_key:
-      type: apiKey
-      name: api_key
-      in: header
+

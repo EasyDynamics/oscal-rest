@@ -1825,17 +1825,17 @@ paths:
 components:
   schemas:
     OSCALCatalog:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_catalog_schema.json'
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_catalog_schema.json'
     OSCALProfile:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_profile_schema.json'
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_profile_schema.json'
     OSCALComponentDefinition:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_component_schema.json'
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_component_schema.json'
     OSCALComponentDefinitionComponent:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_component_schema.json#/definitions/component'
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_component_schema.json#/definitions/component'
     OSCALComponentDefinitionComponentControlImplementation:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_component_schema.json#/definitions/component/control-implementation'
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_component_schema.json#/definitions/component/control-implementation'
     OSCALSsp:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_ssp_schema.json'
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_ssp_schema.json
     OSCALRole:
       type: object
       properties:

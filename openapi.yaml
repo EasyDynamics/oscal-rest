@@ -1835,7 +1835,7 @@ components:
     OSCALComponentDefinitionComponentControlImplementation:
       $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_component_schema.json#/definitions/component/control-implementation'
     OSCALSsp:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_ssp_schema.json
+      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_ssp_schema.json'
     OSCALRole:
       type: object
       properties:

@@ -12,7 +12,7 @@ npm install
 
 The syntax of the command is:
 ```
-node app.js <Ooscal-json-schema-url> <output-file>
+node app.js <oscal-json-schema-url> <output-file>
 ```
 
 For example:

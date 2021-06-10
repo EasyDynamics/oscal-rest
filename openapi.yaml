@@ -4,7 +4,7 @@ info:
   description: An early draft proposal from Easy Dynamics for a REST API specification for interacting with OSCAL models.
   contact:
     email: rgauss@easydynamics.com
-  version: 1.0.0
+  version: 0.1.0
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -1825,46 +1825,21 @@ paths:
 components:
   schemas:
     OSCALCatalog:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_catalog_schema.json'
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog_catalog'
     OSCALProfile:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_profile_schema.json'
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_profile'
     OSCALComponentDefinition:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_component_schema.json'
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_component-definition'
     OSCALComponentDefinitionComponent:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_component_schema.json#/definitions/component'
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_defined-component'
     OSCALComponentDefinitionComponentControlImplementation:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_component_schema.json#/definitions/component/control-implementation'
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_control-implementation'
     OSCALSsp:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/v1.0.0/json/schema/oscal_ssp_schema.json'
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_system-security-plan'
     OSCALRole:
-      type: object
-      properties:
-        id:
-          title: Role Identifier
-          type: string
-        title:
-          title: Title
-          type: string
-        short-name:
-          title: Role Short Name
-          type: string
+       $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_party'
     OSCALParty:
-      type: object
-      properties:
-        uuid:
-          title: Party Universally Unique Identifier
-          description: A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given party across revisions of the document.
-          type: string
-          pattern: ^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$
-        type:
-          title: Party Type 
-          description: A collection of parties representing people, teams, and organizations.
-          type: string
-          enum: [person, organization]
-        name:
-          title: Party Name
-          description: The full name of the party. This is typically the legal name associated with the party.
-          type: string
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_role'
   securitySchemes:
     oscal_auth:
       type: oauth2

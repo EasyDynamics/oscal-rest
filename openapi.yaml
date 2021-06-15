@@ -1,33 +1,32 @@
 openapi: 3.0.1
 info:
   title: OSCAL REST
-  description: REST API specification for interacting with OSCAL models.
+  description: An early draft proposal from Easy Dynamics for a REST API specification for interacting with OSCAL models.
   contact:
     email: rgauss@easydynamics.com
-  version: 1.0.0
+  version: 0.1.0
 externalDocs:
-  description: Find out more about Swagger
-  url: http://swagger.io
+  description: Find out more about OSCAL
+  url: https://pages.nist.gov/OSCAL
 servers:
-- url: https://localhost:8080/oscal/v1
 - url: http://localhost:8080/oscal/v1
 tags:
-- name: OSCAL Catalog
+- name: OSCAL Component Definition
   externalDocs:
     description: Find out more
-    url: https://pages.nist.gov/OSCAL
+    url: https://pages.nist.gov/OSCAL/documentation/schema/implementation-layer/component/
 - name: OSCAL Profile
   externalDocs:
     description: Find out more
-    url: https://pages.nist.gov/OSCAL
-- name: OSCAL Component
-  externalDocs:
-    description: Find out more
-    url: https://pages.nist.gov/OSCAL
+    url: https://pages.nist.gov/OSCAL/documentation/schema/profile-layer/profile/
 - name: OSCAL System Security Plan
   externalDocs:
     description: Find out more
-    url: https://pages.nist.gov/OSCAL
+    url: https://pages.nist.gov/OSCAL/documentation/schema/implementation-layer/ssp/
+- name: OSCAL Catalog
+  externalDocs:
+    description: Find out more
+    url: https://pages.nist.gov/OSCAL/documentation/schema/catalog-layer/catalog/
 - name: OSCAL Party
   externalDocs:
     description: Find out more
@@ -50,7 +49,6 @@ paths:
                   $ref: '#/components/schemas/OSCALCatalog'
       security:
       - oscal_auth:
-        - write:catalogs
         - read:catalogs
     post:
       tags:
@@ -111,7 +109,8 @@ paths:
           description: Catalog not found
           content: {}
       security:
-      - api_key: []
+      - oscal_auth:
+        - read:catalogs
     patch:
       tags:
       - OSCAL Catalog
@@ -200,7 +199,6 @@ paths:
           content: {}
       security:
       - oscal_auth:
-        - write:catalogs
         - read:catalogs
   /profiles:
     get:
@@ -219,7 +217,6 @@ paths:
                   $ref: '#/components/schemas/OSCALProfile'
       security:
       - oscal_auth:
-        - write:profiles
         - read:profiles
     patch:
       tags:
@@ -297,7 +294,8 @@ paths:
           description: Profile not found
           content: {}
       security:
-      - api_key: []
+      - oscal_auth:
+        - read:profiles
     delete:
       tags:
       - OSCAL Profile
@@ -320,6 +318,405 @@ paths:
           content: {}
         404:
           description: Profile not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/imported-catalogs/{catalogId}:
+    put:
+      tags:
+      - OSCAL Profile
+      summary: Imports a catalog into an OSCAL profile
+      operationId: addCatalogToProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: catalogId
+        in: path
+        description: Catalog ID to be imported into the profile
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Further description of the controls imported
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                include-controls:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      with-ids:
+                        type: array
+                        items:
+                          type: string
+        required: false
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or catalog not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a catalog from an OSCAL profile imports
+      description: |
+        Removes the given catalog from the given profile.
+        
+        This should also result in references under other parts of the schema being removed.
+      operationId: removeCatalogfromProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: catalogId
+        in: path
+        description: Catalog ID to be removed from the profile imports
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or catalog not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/imported-profiles/{importProfileId}:
+    put:
+      tags:
+      - OSCAL Profile
+      summary: Imports another profile into an OSCAL profile
+      operationId: addProfileToProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: importProfileId
+        in: path
+        description: Other profile ID to be imported into the profile
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Further description of the controls imported
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                include-controls:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      with-ids:
+                        type: array
+                        items:
+                          type: string
+        required: false
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or import profile not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a another profile from an OSCAL profile imports
+      description: |
+        Removes the given other profile from the given profile.
+        
+        This should also result in references under other parts of the schema being removed.
+      operationId: removeProfilefromProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: importProfileId
+        in: path
+        description: Other profile ID to be removed from the profile imports
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or import profile not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/roles:
+    post:
+      tags:
+      - OSCAL Profile
+      summary: Adds a new role to an OSCAL profile
+      operationId: addRoleToProfile
+      requestBody:
+        description: OSCAL role to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALRole'
+        required: true
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/roles/{roleId}:
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a role from an OSCAL profile
+      description: |
+        Removes the given role from the given profile.
+        
+        This should also result in references under other parts of the schema such as responsible parties being removed.
+      operationId: removeRolefromProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID to be removed from the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or role not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/parties/{partyId}:
+    put:
+      tags:
+      - OSCAL Profile
+      summary: Associates a party with an OSCAL profile
+      operationId: addPartyToProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a party from an OSCAL profile
+      description: |
+        Removes the given party from the given profile.
+        
+        This should also result in references under other parts of the schema such as responsible roles being removed.
+      operationId: removePartyfromProfile
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be removed with the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+  /profiles/{profileId}/responsisble-parties/{roleId}/parties/{partyId}:
+    post:
+      tags:
+      - OSCAL Profile
+      summary: Associates a party with role within an OSCAL profile
+      operationId: addPartyToProfileRole
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID for the party to be associated with within the profile
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be added to the role within the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile, role, or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:profiles
+        - read:profiles
+    delete:
+      tags:
+      - OSCAL Profile
+      summary: Removes a party from a role within an OSCAL profile
+      operationId: removePartyfromProfileRole
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: profileId
+        in: path
+        description: Profile ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID within the profile that the party should be removed from
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be removed from the role within the profile
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile, role, or party not found
           content: {}
       security:
       - oscal_auth:
@@ -352,14 +749,13 @@ paths:
           content: {}
       security:
       - oscal_auth:
-        - write:profiles
         - read:profiles
-  /components:
+  /component-definitions:
     get:
       tags:
-      - OSCAL Component
-      summary: Returns all OSCAL components
-      operationId: getComponents
+      - OSCAL Component Definition
+      summary: Returns all OSCAL component definitions
+      operationId: getComponentDefinitions
       responses:
         200:
           description: Successful operation
@@ -368,22 +764,21 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OSCALComponent'
+                  $ref: '#/components/schemas/OSCALComponentDefinition'
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - read:componentDefinitions
     post:
       tags:
-      - OSCAL Component
-      summary: Adds a new OSCAL component
-      operationId: addComponent
+      - OSCAL Component Definition
+      summary: Adds a new OSCAL component definition
+      operationId: addComponentDefinition
       requestBody:
-        description: OSCAL components to be added
+        description: OSCAL component definition to be added
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OSCALComponent'
+              $ref: '#/components/schemas/OSCALComponentDefinition'
         required: true
       responses:
         405:
@@ -391,20 +786,20 @@ paths:
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - write:componentDefinitions
+        - read:componentDefinitions
       x-codegen-request-body-name: body
-  /components/{componentId}:
+  /component-definitions/{componentDefinitionId}:
     get:
       tags:
-      - OSCAL Component
-      summary: Finds an OSCAL component by ID
-      description: Returns a single OSCAL component
-      operationId: getComponentById
+      - OSCAL Component Definition
+      summary: Finds an OSCAL component definition by ID
+      description: Returns a single OSCAL component definition
+      operationId: getComponentDefinitionById
       parameters:
-      - name: componentId
+      - name: componentDefinitionId
         in: path
-        description: ID of component to return
+        description: ID of component definition to return
         required: true
         schema:
           type: string
@@ -414,62 +809,63 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OSCALComponent'
+                $ref: '#/components/schemas/OSCALComponentDefinition'
         400:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Component not found
+          description: Component definition not found
           content: {}
       security:
-      - api_key: []
+      - oscal_auth:
+        - read:componentDefinitions
     patch:
       tags:
-      - OSCAL Component
-      summary: Updates an existing OSCAL component
-      operationId: updateComponent
+      - OSCAL Component Definition
+      summary: Updates an existing OSCAL component definition
+      operationId: updateComponentDefinition
       parameters:
-      - name: componentId
+      - name: componentDefinitionId
         in: path
-        description: ID of component to return
+        description: ID of component definition to return
         required: true
         schema:
           type: string
       requestBody:
-        description: Component object to be updated
+        description: Component definition to be updated
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OSCALComponent'
+              $ref: '#/components/schemas/OSCALComponentDefinition'
         required: true
       responses:
         400:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Component not found
+          description: Component definition not found
           content: {}
         405:
           description: Validation exception
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - write:componentDefinitions
+        - read:componentDefinitions
       x-codegen-request-body-name: body
     delete:
       tags:
-      - OSCAL Component
-      summary: Deletes an OSCAL component
-      operationId: deleteComponent
+      - OSCAL Component Definition
+      summary: Deletes an OSCAL component definition
+      operationId: deleteComponentDefinition
       parameters:
       - name: api_key
         in: header
         schema:
           type: string
-      - name: componentId
+      - name: componentDefinitionId
         in: path
-        description: Component ID to delete
+        description: Component definition ID to delete
         required: true
         schema:
           type: string
@@ -478,22 +874,481 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Component not found
+          description: Component definition not found
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
-  /components/search:
+        - write:componentDefinitions
+        - read:componentDefinitions
+  /component-definitions/{componentDefinitionId}/roles:
+    post:
+      tags:
+      - OSCAL Component Definition
+      summary: Adds a new role to an OSCAL component definition
+      operationId: addRoleToComponentDefinition
+      requestBody:
+        description: OSCAL role to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALRole'
+        required: true
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component definition ID
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+  /component-definitions/{componentDefinitionId}/roles/{roleId}:
+    delete:
+      tags:
+      - OSCAL Component Definition
+      summary: Removes a role from an OSCAL component definition
+      description: |
+        Removes the given role from the given component definition.
+        
+        This should also result in references under other parts of the schema such as responsible parties being removed.
+      operationId: removeRoleFromComponentDefinition
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component Definition ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID to be removed from the component definition
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition or role not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+  /component-definitions/{componentDefinitionId}/parties/{partyId}:
+    put:
+      tags:
+      - OSCAL Component Definition
+      summary: Associates a party with an OSCAL component definition
+      operationId: addPartyToComponentDefinition
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component Definition ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with the component definition
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+    delete:
+      tags:
+      - OSCAL Component Definition
+      summary: Removes a party from an OSCAL component definition
+      description: |
+        Removes the given party from the given component definition.
+        
+        This should also result in references under other parts of the schema such as component responsible roles being removed.
+      operationId: removePartyFromComponentDefinition
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component Definition ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with the component definition
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+  /component-definitions/{componentDefinitionId}/responsisble-parties/{roleId}/parties/{partyId}:
+    post:
+      tags:
+      - OSCAL Component Definition
+      summary: Associates a party with role within an OSCAL component definition
+      operationId: addPartyToComponentDefinitionRole
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component Definition ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID for the party to be associated with within the component definition
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be added to the role within the component definition
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition, role, or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+    delete:
+      tags:
+      - OSCAL Component Definition
+      summary: Removes a party from a role within an OSCAL component definition
+      operationId: removePartyFromComponentDefinitionRole
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component definition ID
+        required: true
+        schema:
+          type: string
+      - name: roleId
+        in: path
+        description: Role ID within the component definition the party should be removed from
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be removed from the role within the component definition
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition, role, or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+  /component-definitions/{componentDefinitionId}/components:
+    post:
+      tags:
+      - OSCAL Component Definition
+      summary: Adds a new component to an OSCAL component definition
+      operationId: addComponentToComponentDefinition
+      requestBody:
+        description: OSCAL component to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALComponentDefinitionComponent'
+        required: true
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component definition ID
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+  /component-definitions/{componentDefinitionId}/components/{componentId}:
+    patch:
+      tags:
+      - OSCAL Component Definition
+      summary: Updates an existing component in an OSCAL component definition
+      operationId: updateComponentInComponentDefinition
+      requestBody:
+        description: OSCAL component to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALComponentDefinitionComponent'
+        required: true
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component definition ID
+        required: true
+        schema:
+          type: string
+      - name: componentId
+        in: path
+        description: Component ID to be updated in the component definition
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+    delete:
+      tags:
+      - OSCAL Component Definition
+      summary: Removes a component from an OSCAL component definition
+      operationId: removeComponentFromComponentDefinition
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component Definition ID
+        required: true
+        schema:
+          type: string
+      - name: componentId
+        in: path
+        description: Component ID to be removed from the component definition
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition or component not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+  /component-definitions/{componentDefinitionId}/components/{componentId}/control-implementations:
+    post:
+      tags:
+      - OSCAL Component Definition
+      summary: Adds a new control implementation to a component in an OSCAL component definition
+      operationId: addComponentControlImplementationToComponentDefinition
+      requestBody:
+        description: OSCAL component control implementation to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALComponentDefinitionComponentControlImplementation'
+        required: true
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component definition ID
+        required: true
+        schema:
+          type: string
+      - name: componentId
+        in: path
+        description: Component ID to be updated in the component definition
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition or component not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+  /component-definitions/{componentDefinitionId}/components/{componentId}/control-implementations/{componentControlImplementationId}:
+    patch:
+      tags:
+      - OSCAL Component Definition
+      summary: Updates an existing control implementation in a component in an OSCAL component definition
+      operationId: updateComponentControlImplementationInComponentDefinition
+      requestBody:
+        description: OSCAL component control implementation to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OSCALComponentDefinitionComponentControlImplementation'
+        required: true
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component definition ID
+        required: true
+        schema:
+          type: string
+      - name: componentId
+        in: path
+        description: Component ID to be updated in the component definition
+        required: true
+        schema:
+          type: string
+      - name: componentControlImplementationId
+        in: path
+        description: Component control implementation ID to be updated in the component definition
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition, component, or control implementation not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+    delete:
+      tags:
+      - OSCAL Component Definition
+      summary: Removes a component control implementation from an OSCAL component definition
+      operationId: removeComponentControlImplementationFromComponentDefinition
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: componentDefinitionId
+        in: path
+        description: Component Definition ID
+        required: true
+        schema:
+          type: string
+      - name: componentId
+        in: path
+        description: Component ID to be removed from the component definition
+        required: true
+        schema:
+          type: string
+      - name: componentControlImplementationId
+        in: path
+        description: Component control implementation ID to be removed from the component definition
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Component definition, component, or control implementation not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:componentDefinitions
+        - read:componentDefinitions
+  /component-definitions/search:
     get:
       tags:
-      - OSCAL Component
-      summary: Searches for OSCAL components by name
-      operationId: findComponentsByName
+      - OSCAL Component Definition
+      summary: Searches for OSCAL component definitions by name
+      operationId: findComponentDefinitionsByName
       parameters:
       - name: query
         in: query
-        description: Terms to search for in component names
+        description: Terms to search for in component definition names
         required: true
         schema:
           type: string
@@ -505,14 +1360,13 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OSCALComponent'
+                  $ref: '#/components/schemas/OSCALComponentDefinition'
         400:
           description: Invalid status value
           content: {}
       security:
       - oscal_auth:
-        - write:components
-        - read:components
+        - read:componentDefinitions
   /ssps:
     get:
       tags:
@@ -530,7 +1384,6 @@ paths:
                   $ref: '#/components/schemas/OSCALSsp'
       security:
       - oscal_auth:
-        - write:ssps
         - read:ssps
     post:
       tags:
@@ -581,7 +1434,8 @@ paths:
           description: System security plan not found
           content: {}
       security:
-      - api_key: []
+      - oscal_auth:
+        - read:ssps
     patch:
       tags:
       - OSCAL System Security Plan
@@ -643,6 +1497,145 @@ paths:
       - oscal_auth:
         - write:ssps
         - read:ssps
+  /ssps/{sspId}/components/{componentId}:
+    put:
+      tags:
+      - OSCAL System Security Plan
+      summary: Associates a component with an OSCAL system security plan
+      description: Adds the given component to the components within the given system security plan's system-implementation.
+      operationId: addComponentToSsp
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: sspId
+        in: path
+        description: System security plan ID
+        required: true
+        schema:
+          type: string
+      - name: componentId
+        in: path
+        description: Component ID to be associated with SSP
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or component not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:ssps
+        - read:ssps
+    delete:
+      tags:
+      - OSCAL System Security Plan
+      summary: Removes a component from an OSCAL system security plan
+      description: |
+        Removes the given component from the components within the given system security plan's system-implementation.
+        
+        This should also result in references under other parts of the schema such as inventory-items being removed.
+      operationId: removeComponentfromSsp
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: sspId
+        in: path
+        description: System security plan ID
+        required: true
+        schema:
+          type: string
+      - name: componentId
+        in: path
+        description: Component ID to be associated with SSP
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or component not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:ssps
+        - read:ssps
+  /ssps/{sspId}/parties/{partyId}:
+    put:
+      tags:
+      - OSCAL System Security Plan
+      summary: Associates a party with an OSCAL system security plan
+      operationId: addPartyToSsp
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: sspId
+        in: path
+        description: System security plan ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with SSP
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:ssps
+        - read:ssps
+    delete:
+      tags:
+      - OSCAL System Security Plan
+      summary: Removes a party from an OSCAL system security plan
+      operationId: removePartyfromSsp
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: sspId
+        in: path
+        description: System security plan ID
+        required: true
+        schema:
+          type: string
+      - name: partyId
+        in: path
+        description: Party ID to be associated with SSP
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or party not found
+          content: {}
+      security:
+      - oscal_auth:
+        - write:ssps
+        - read:ssps
   /ssps/search:
     get:
       tags:
@@ -670,7 +1663,6 @@ paths:
           content: {}
       security:
       - oscal_auth:
-        - write:ssps
         - read:ssps
   /parties:
     get:
@@ -689,7 +1681,6 @@ paths:
                   $ref: '#/components/schemas/OSCALParty'
       security:
       - oscal_auth:
-        - write:parties
         - read:parties
     post:
       tags:
@@ -740,7 +1731,8 @@ paths:
           description: Party not found
           content: {}
       security:
-      - api_key: []
+      - oscal_auth:
+        - read:parties
     patch:
       tags:
       - OSCAL Party
@@ -829,35 +1821,25 @@ paths:
           content: {}
       security:
       - oscal_auth:
-        - write:parties
         - read:parties
 components:
   schemas:
     OSCALCatalog:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_catalog_schema.json'
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog_catalog'
     OSCALProfile:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_profile_schema.json'
-    OSCALComponent:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_component_schema.json'
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_profile'
+    OSCALComponentDefinition:
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_component-definition'
+    OSCALComponentDefinitionComponent:
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_defined-component'
+    OSCALComponentDefinitionComponentControlImplementation:
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_control-implementation'
     OSCALSsp:
-      $ref: 'https://raw.githubusercontent.com/usnistgov/OSCAL/master/json/schema/oscal_ssp_schema.json'
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_system-security-plan'
+    OSCALRole:
+       $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_party'
     OSCALParty:
-      type: object
-      properties:
-        uuid:
-          title: Party Universally Unique Identifier
-          description: A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given party across revisions of the document.
-          type: string
-          pattern: ^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$
-        type:
-          title: Party Type 
-          description: A collection of parties representing people, teams, and organizations.
-          type: string
-          enum: [person, organization]
-        name:
-          title: Party Name
-          description: The full name of the party. This is typically the legal name associated with the party.
-          type: string
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_role'
   securitySchemes:
     oscal_auth:
       type: oauth2
@@ -869,13 +1851,10 @@ components:
             read:catalogs: read your catalogs
             write:profiles: modify profiles in your account
             read:profiles: read your profiles
-            write:components: modify components in your account
-            read:components: read your components
+            write:componentDefinitions: modify component definitions in your account
+            read:componentDefinitions: read your component definitions
             write:ssps: modify ssps in your account
             read:ssps: read your ssps
             write:parties: modify parties in your account
             read:parties: read your parties
-    api_key:
-      type: apiKey
-      name: api_key
-      in: header
+

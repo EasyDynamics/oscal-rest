@@ -1,9 +1,35 @@
 openapi: 3.0.1
 info:
   title: OSCAL REST
-  description: An early draft proposal from Easy Dynamics for a REST API specification for interacting with OSCAL models.
+  description: |
+    An early, draft proposal from [Easy Dynamics](https://www.easydynamics.com) of a REST API specification for interacting with [OSCAL](https://pages.nist.gov/OSCAL/) models.
+    
+    ## Identifier Scope
+    Note that all object identifiers are **scoped to the system** implementing the REST API and are expected to be unique.
+    
+    <details>
+      <summary>Example</summary>
+      To associate a Party with a known Component Definition with a UUID you might:
+      1. Search for the Party:
+          ```
+          GET /parties/search?query=bob
+          ```
+          ```
+          [
+            {
+              "uuid": "d834ed5e-9652-4b78-87e7-a9f8686f4e60",
+              "type": "person",
+              "name": "Bob Johnson"
+            }
+          ]
+          ```
+      2. Use the found Party's ID to associate with the component definition:
+          ```
+          PUT /component-definitions/599b6fa5-3e18-4580-bd8f-8a181776c6e8/parties/d834ed5e-9652-4b78-87e7-a9f8686f4e60
+          ```
+    </details>
   contact:
-    email: rgauss@easydynamics.com
+    email: info@easydynamics.com
   version: 0.1.0
 externalDocs:
   description: Find out more about OSCAL
@@ -1837,9 +1863,9 @@ components:
     OSCALSsp:
       $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_system-security-plan'
     OSCALRole:
-       $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_party'
+       $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_role'
     OSCALParty:
-      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_role'
+      $ref: 'https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_party'
   securitySchemes:
     oscal_auth:
       type: oauth2
@@ -1857,4 +1883,3 @@ components:
             read:ssps: read your ssps
             write:parties: modify parties in your account
             read:parties: read your parties
-

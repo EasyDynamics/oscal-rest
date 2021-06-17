@@ -2,7 +2,7 @@ openapi: 3.0.1
 info:
   title: OSCAL REST
   description: |
-    An early, draft proposal from [Easy Dynamics](https://www.easydynamics.com) of a REST API specification for interacting with [OSCAL](https://pages.nist.gov/OSCAL/) models.
+    A draft proposal from [Easy Dynamics](https://www.easydynamics.com) of a REST API specification for interacting with [OSCAL](https://pages.nist.gov/OSCAL/) models.
     
     ## Identifier Scope
     Note that all object identifiers are **scoped to the system** implementing the REST API and are expected to be unique.

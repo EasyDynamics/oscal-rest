@@ -353,7 +353,7 @@ paths:
     put:
       tags:
       - OSCAL Profile
-      summary: Imports a catalog into an OSCAL profile
+      summary: Defines a catalog import in an OSCAL profile
       operationId: addCatalogToProfile
       parameters:
       - name: api_key
@@ -441,7 +441,7 @@ paths:
     put:
       tags:
       - OSCAL Profile
-      summary: Imports another profile into an OSCAL profile
+      summary: Defines the import of another profile in an OSCAL profile
       operationId: addProfileToProfile
       parameters:
       - name: api_key
@@ -456,7 +456,7 @@ paths:
           type: string
       - name: importProfileId
         in: path
-        description: Other profile ID to be imported into the profile
+        description: Other profile ID to be defined as an import in the profile
         required: true
         schema:
           type: string

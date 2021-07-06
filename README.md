@@ -7,6 +7,11 @@ You can use a Swagger Editor, [local](https://github.com/swagger-api/swagger-edi
 
 ![OSCSAL REST Swagger Screenshot](docs/resources/swagger-editor-oscal-screenshot.png)
 
+## Linting & Testing
+1. Install [`yamllint`](https://github.com/adrienverge/yamllint)
+2. Run `yamllint -c lint.yaml .`
+    - This will lint all `.yaml` files
+
 ## Contributing
 
 For the process of Contributing to the project, please review [CONTRIBUTING.md](/CONTRIBUTING.md)

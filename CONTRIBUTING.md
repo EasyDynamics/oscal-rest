@@ -54,4 +54,4 @@ collaborators, will be held to the expectations of the code.
 
 ## License
 
-Review the [LICENSE](/LICENSE.md) file for information on the project's licensing.
+Review the [LICENSE](/LICENSE) file for information on the project's licensing.

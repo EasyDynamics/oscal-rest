@@ -672,7 +672,7 @@ paths:
         - oscal_auth:
             - write:profiles
             - read:profiles
-  /profiles/{profileId}/responsisble-parties/{roleId}/parties/{partyId}:
+  /profiles/{profileId}/responsible-parties/{roleId}/parties/{partyId}:
     post:
       tags:
         - OSCAL Profile
@@ -1054,7 +1054,7 @@ paths:
         - oscal_auth:
             - write:componentDefinitions
             - read:componentDefinitions
-  /component-definitions/{componentDefinitionId}/responsisble-parties/{roleId}/parties/{partyId}:
+  /component-definitions/{componentDefinitionId}/responsible-parties/{roleId}/parties/{partyId}:
     post:
       tags:
         - OSCAL Component Definition

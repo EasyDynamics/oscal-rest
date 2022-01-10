@@ -17,9 +17,10 @@ ticket.
 ## Making Changes
 
 *Note*: It is necessary to sign a contributor license agreement, CLA, prior to contributing code
-to the repository; however, we have not completed the process of writing the CLA and therefore
-cannot merge pull requests at this time. Please still open an Issue to discuss suggested changes
-and we will identify a path forward.
+to the repository.  The easiest way to sign this agreement is via
+[cla-assistant](https://cla-assistant.io/) directly on your pull request.  If you can not use
+that method please indicate that in your issue and we'll coordinate signing the agreement
+through another process.
 
 When contributing a change to the code base, please first open a GitHub issue to discuss it prior
 to starting work; this will help ensure your contribution aligns with the goals of the project and

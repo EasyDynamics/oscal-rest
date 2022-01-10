@@ -17,8 +17,8 @@ ticket.
 ## Making Changes
 
 *Note*: It is necessary to sign a contributor license agreement, CLA, prior to contributing code
-to the repository.  The easiest way to sign this agreement is via
-[cla-assistant](https://cla-assistant.io/) directly on your pull request.  If you can not use
+to the repository. The easiest way to sign this agreement is via
+[cla-assistant](https://cla-assistant.io/) directly on your pull request. If you can not use
 that method please indicate that in your issue and we'll coordinate signing the agreement
 through another process.
 

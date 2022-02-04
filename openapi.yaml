@@ -1397,7 +1397,7 @@ paths:
       security:
         - oscal_auth:
             - read:componentDefinitions
-  /ssps:
+  /system-security-plans:
     get:
       tags:
         - OSCAL System Security Plan
@@ -1436,7 +1436,7 @@ paths:
             - write:ssps
             - read:ssps
       x-codegen-request-body-name: body
-  /ssps/{sspId}:
+  /system-security-plans/{sspId}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -1527,7 +1527,7 @@ paths:
         - oscal_auth:
             - write:ssps
             - read:ssps
-  /ssps/{sspId}/components/{componentId}:
+  /system-security-plans/{sspId}/components/{componentId}:
     put:
       tags:
         - OSCAL System Security Plan
@@ -1600,7 +1600,7 @@ paths:
         - oscal_auth:
             - write:ssps
             - read:ssps
-  /ssps/{sspId}/parties/{partyId}:
+  /system-security-plans/{sspId}/parties/{partyId}:
     put:
       tags:
         - OSCAL System Security Plan
@@ -1667,7 +1667,7 @@ paths:
         - oscal_auth:
             - write:ssps
             - read:ssps
-  /ssps/search:
+  /system-security-plans/search:
     get:
       tags:
         - OSCAL System Security Plan

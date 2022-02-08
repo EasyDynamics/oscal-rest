@@ -40,8 +40,8 @@ info:
     </details>
 
     ## Partial Payloads in PATCH Requests
-    All updates to objects via `PATCH` requests should accept a partial payload containing only the changed
-    data and the entire updated object should be returned.
+    All updates to 'root' OSCAL objects via `PATCH` requests should accept a partial payload containing
+    only the changed data and the entire updated object should be returned.
 
     The UUID of the root object must not change in the payload and implementations should throw an error
     if such a request is made.

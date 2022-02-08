@@ -7,7 +7,7 @@ Standardized data models like OSCAL lay the groundwork for interoperability of s
 meaningful integrations can be brought to life through a standardized REST API. That interface needs to define
 simple CRUD operations, but should also describe how to manipulate relationships and make partial changes.
 
-Such an API will likely see the most success across various vendors and projects when maintained by a 
+Such an API will likely see the most success across various vendors and projects when maintained by a
 standards body or community, and we're looking to get that conversation started with this effort.
 
 ## Viewing / Editing

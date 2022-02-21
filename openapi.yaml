@@ -1529,6 +1529,39 @@ paths:
             - write:ssps
             - read:ssps
       x-codegen-request-body-name: body
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Replaces an existing OSCAL system security plan
+      operationId: replaceSsp
+      parameters:
+        - name: sspId
+          in: path
+          description: ID of system security plan to replace.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: System security plan object to be replaced.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALSsp"
+        required: true
+      responses:
+        204:
+          description: Updated system security plan
+        404:
+          description: System security plan not found
+        400:
+          description: Bad Request
+        415:
+          description: Unsupported media type
+      security:
+        - oscal_auth:
+            - write:ssps
+            - read:ssps
+      x-codegen-request-body-name: body
     delete:
       tags:
         - OSCAL System Security Plan

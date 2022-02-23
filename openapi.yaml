@@ -387,6 +387,39 @@ paths:
       security:
         - oscal_auth:
             - read:profiles
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Replaces an existing OSCAL profile
+      operationId: replaceProfile
+      parameters:
+        - name: profileId
+          in: path
+          description: ID of profile to replace.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Profile object to be replaced.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALProfile"
+        required: true
+      responses:
+        204:
+          description: Updated profile
+        404:
+          description: Profile not found
+        400:
+          description: Bad Request
+        415:
+          description: Unsupported media type
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+      x-codegen-request-body-name: body
     delete:
       tags:
         - OSCAL Profile

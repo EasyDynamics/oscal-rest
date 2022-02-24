@@ -1844,6 +1844,34 @@ paths:
         - oscal_auth:
             - write:ssps
             - read:ssps
+  /system-security-plans/{sspId}/control-implementation/implemented-requirements:
+    post:
+      tags:
+        - OSCAL System Security Plan
+      summary: Add an implemented requirement to an OSCAL system security plan
+      operationId: addImplementedRequirementToSsp
+      parameters:
+        - name: api_key
+          in: header
+          schema:
+            type: string
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:ssps
+            - read:ssps
   /system-security-plans/{sspId}/control-implementation/implemented-requirements/{implementedRequirementID}:
     put:
       tags:

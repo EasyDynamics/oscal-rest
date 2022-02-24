@@ -223,8 +223,12 @@ paths:
               $ref: "#/components/schemas/OSCALCatalog"
         required: true
       responses:
-        204:
+        200:
           description: Updated catalog
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
         404:
           description: Catalog not found
         400:
@@ -407,8 +411,12 @@ paths:
               $ref: "#/components/schemas/OSCALProfile"
         required: true
       responses:
-        204:
+        200:
           description: Updated profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProfile"
         404:
           description: Profile not found
         400:
@@ -972,6 +980,43 @@ paths:
         405:
           description: Validation exception
           content: {}
+      security:
+        - oscal_auth:
+            - write:componentDefinitions
+            - read:componentDefinitions
+      x-codegen-request-body-name: body
+    put:
+      tags:
+        - OSCAL Component Definition
+      summary: Replaces an existing OSCAL component definition
+      operationId: replaceComponentDefinition
+      parameters:
+        - name: componentDefinitionId
+          in: path
+          description: ID of component definition to replace.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Component definition object to be replaced.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALComponentDefinition"
+        required: true
+      responses:
+        200:
+          description: Updated component definition
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALComponentDefinition"
+        404:
+          description: Component definition not found
+        400:
+          description: Bad Request
+        415:
+          description: Unsupported media type
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1615,8 +1660,12 @@ paths:
               $ref: "#/components/schemas/OSCALSsp"
         required: true
       responses:
-        204:
+        200:
           description: Updated system security plan
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALSsp"
         404:
           description: System security plan not found
         400:

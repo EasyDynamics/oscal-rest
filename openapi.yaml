@@ -1879,7 +1879,7 @@ paths:
         - oscal_auth:
             - write:ssps
             - read:ssps
-  /system-security-plans/{sspId}/control-implementation/implemented-requirements/{implementedRequirementID}:
+  /system-security-plans/{sspId}/control-implementation/implemented-requirements/{implementedRequirementId}:
     put:
       tags:
         - OSCAL System Security Plan
@@ -1903,7 +1903,7 @@ paths:
           required: true
           schema:
             type: string
-        - name: implementedRequirementID
+        - name: implementedRequirementId
           in: path
           description: ID of implemented requirement to be updated
           required: true

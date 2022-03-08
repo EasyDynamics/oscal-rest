@@ -1850,6 +1850,13 @@ paths:
         - OSCAL System Security Plan
       summary: Add an implemented requirement to an OSCAL system security plan
       operationId: addImplementedRequirementToSsp
+      requestBody:
+        description: Implemented requirement to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALImplementedRequirement"
+        required: true
       parameters:
         - name: api_key
           in: header
@@ -1878,6 +1885,13 @@ paths:
         - OSCAL System Security Plan
       summary: Updates the body of an implemented requirement in an OSCAL system security plan
       operationId: updateImplementedRequirementOfSsp
+      requestBody:
+        description: Implemented requirement to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALImplementedRequirement"
+        required: true
       parameters:
         - name: api_key
           in: header
@@ -2150,6 +2164,10 @@ components:
       properties:
         system-security-plan:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
+    OSCALImplementedRequirement:
+      type: object
+      $ref:
+        "https://raw.githubusercontent.com/usnistgov/OSCAL/main/json/schema/oscal_ssp_schema.json#assembly_oscal-ssp_implemented-requirement"
     OSCALRole:
       type: object
       properties:

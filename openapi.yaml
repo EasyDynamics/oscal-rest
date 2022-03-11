@@ -1858,10 +1858,6 @@ paths:
               $ref: "#/components/schemas/OSCALImplementedRequirement"
         required: true
       parameters:
-        - name: api_key
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: System security plan ID
@@ -1893,10 +1889,6 @@ paths:
               $ref: "#/components/schemas/OSCALImplementedRequirement"
         required: true
       parameters:
-        - name: api_key
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: System security plan ID

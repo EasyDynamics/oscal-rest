@@ -2173,7 +2173,7 @@ components:
     OSCALImplementedRequirement:
       type: object
       $ref:
-        "https://raw.githubusercontent.com/usnistgov/OSCAL/main/json/schema/oscal_ssp_schema.json#assembly_oscal-ssp_implemented-requirement"
+        "https://raw.githubusercontent.com/EasyDynamics/OSCAL/main/json/schema/oscal_ssp_schema.json#assembly_oscal-ssp_implemented-requirement"
     OSCALRole:
       type: object
       properties:

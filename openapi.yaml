@@ -1915,7 +1915,7 @@ paths:
           content:
             application/json:
               schema:
-                  $ref: "#/components/schemas/OSCALImplementedRequirement"
+                $ref: "#/components/schemas/OSCALImplementedRequirement"
         400:
           description: Invalid ID supplied
           content: {}

@@ -1887,7 +1887,7 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the body of an implemented requirement in an OSCAL system security plan
+      summary: Updates an implemented requirement in an OSCAL system security plan
       operationId: updateImplementedRequirementOfSsp
       requestBody:
         description: Implemented requirement to be updated

@@ -2037,7 +2037,7 @@ components:
       properties:
         catalog:
           $ref:
-            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog_catalog"
+            "https://gist.githubusercontent.com/david-waltermire-nist/77da4f8fb2e810f8ab38e1d522b70005/raw/4bd162bcfa0522a45a189823c7a65b0d653bf2ea/oscal_complete_schema.json#/definitions/OscalCatalogCatalogAssembly"
     OSCALCatalogUpdateExample:
       type: object
       properties:
@@ -2048,7 +2048,7 @@ components:
       properties:
         profile:
           $ref:
-            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_profile"
+            https://gist.githubusercontent.com/david-waltermire-nist/77da4f8fb2e810f8ab38e1d522b70005/raw/4bd162bcfa0522a45a189823c7a65b0d653bf2ea/oscal_complete_schema.json#/definitions/OscalProfileProfilegAssembly"
     OSCALProfileUpdateExample:
       type: object
       properties:
@@ -2059,7 +2059,7 @@ components:
       properties:
         component-definition:
           $ref:
-            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_component-definition"
+            "https://gist.githubusercontent.com/david-waltermire-nist/77da4f8fb2e810f8ab38e1d522b70005/raw/4bd162bcfa0522a45a189823c7a65b0d653bf2ea/oscal_complete_schema.json#/definitions/OscalComponentDefinitionComponentDefinitionAssembly"
     OSCALComponentDefinitionUpdateExample:
       type: object
       properties:
@@ -2070,19 +2070,19 @@ components:
       properties:
         component:
           $ref:
-            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_defined-component"
+            "https://gist.githubusercontent.com/david-waltermire-nist/77da4f8fb2e810f8ab38e1d522b70005/raw/4bd162bcfa0522a45a189823c7a65b0d653bf2ea/oscal_complete_schema.json#/definitions/OscalComponentDefinitionDefinedComponentAssembly"
     OSCALComponentDefinitionComponentControlImplementation:
       type: object
       properties:
         control-implementation:
           $ref:
-            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_control-implementation"
+            "https://gist.githubusercontent.com/david-waltermire-nist/77da4f8fb2e810f8ab38e1d522b70005/raw/4bd162bcfa0522a45a189823c7a65b0d653bf2ea/oscal_complete_schema.json#/definitions/OscalComponentDefinitionControlImplementationAssembly"
     OSCALSsp:
       type: object
       properties:
         system-security-plan:
           $ref:
-            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_system-security-plan"
+            "https://gist.githubusercontent.com/david-waltermire-nist/77da4f8fb2e810f8ab38e1d522b70005/raw/4bd162bcfa0522a45a189823c7a65b0d653bf2ea/oscal_complete_schema.json#/definitions/OscalSspSystemSecurityPlanAssembly"
     OSCALSspUpdateExample:
       type: object
       properties:
@@ -2093,13 +2093,13 @@ components:
       properties:
         role:
           $ref:
-            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_role"
+            "https://gist.githubusercontent.com/david-waltermire-nist/77da4f8fb2e810f8ab38e1d522b70005/raw/4bd162bcfa0522a45a189823c7a65b0d653bf2ea/oscal_complete_schema.json#/definitions/OscalMetadataRoleAssembly"
     OSCALParty:
       type: object
       properties:
         party:
           $ref:
-            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_party"
+            "https://gist.githubusercontent.com/david-waltermire-nist/77da4f8fb2e810f8ab38e1d522b70005/raw/4bd162bcfa0522a45a189823c7a65b0d653bf2ea/oscal_complete_schema.json#/definitions/OscalMetadataPartyAssembly"
     OSCALPartialUpdateExample:
       type: object
       properties:

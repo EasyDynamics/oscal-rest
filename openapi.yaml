@@ -2048,7 +2048,7 @@ components:
       properties:
         profile:
           $ref:
-            "https://gist.githubusercontent.com/david-waltermire-nist/77da4f8fb2e810f8ab38e1d522b70005/raw/4bd162bcfa0522a45a189823c7a65b0d653bf2ea/oscal_complete_schema.json#/definitions/OscalProfileProfilegAssembly"
+            "https://gist.githubusercontent.com/david-waltermire-nist/77da4f8fb2e810f8ab38e1d522b70005/raw/4bd162bcfa0522a45a189823c7a65b0d653bf2ea/oscal_complete_schema.json#/definitions/OscalProfileProfileAssembly"
     OSCALProfileUpdateExample:
       type: object
       properties:

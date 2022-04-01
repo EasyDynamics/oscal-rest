@@ -1844,6 +1844,88 @@ paths:
         - oscal_auth:
             - write:ssps
             - read:ssps
+  /system-security-plans/{sspId}/control-implementation/implemented-requirements:
+    post:
+      tags:
+        - OSCAL System Security Plan
+      summary: Add an implemented requirement to an OSCAL system security plan
+      operationId: addImplementedRequirementToSsp
+      requestBody:
+        description: Implemented requirement to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALImplementedRequirement"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            type: string
+      responses:
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALImplementedRequirement"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:ssps
+            - read:ssps
+  /system-security-plans/{sspId}/control-implementation/implemented-requirements/{implementedRequirementId}:
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates an implemented requirement in an OSCAL system security plan
+      operationId: updateImplementedRequirementOfSsp
+      requestBody:
+        description: Implemented requirement to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALImplementedRequirement"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            type: string
+        - name: implementedRequirementId
+          in: path
+          description: ID of implemented requirement to be updated
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALImplementedRequirement"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or implemented requirement not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:ssps
+            - read:ssps
   /system-security-plans/search:
     get:
       tags:
@@ -2088,6 +2170,12 @@ components:
       properties:
         system-security-plan:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
+    OSCALImplementedRequirement:
+      type: object
+      properties:
+        implemented-requirement:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_implemented-requirement"
     OSCALRole:
       type: object
       properties:

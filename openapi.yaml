@@ -68,7 +68,10 @@ info:
         }
       }
       ```
-      In this example, the title is being updated and the version is being added to the list of revisions.
+      In this example, the title is being updated and the version is being added to the list of
+      revisions. No other changes are being made to the original metadata object, so the rest of its
+      fields will remain the same. The list of revisions will still contain its previous items,
+      along with the new version item.
     </details>
   contact:
     email: info@easydynamics.com

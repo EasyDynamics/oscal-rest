@@ -40,6 +40,13 @@ info:
     </details>
 
     ## Partial Payloads in PATCH Requests
+
+    A `PATCH` should be used when an existing object needs a partial modification. It accepts a partial
+    payload with the updated fields and corresponding field names, then modifies the specified
+    fields accordingly. Additionally, it is solely additive when updating lists and will not replace
+    existing list items. In most cases, a `PATCH` is more convenient than a `PUT`, which only accepts
+    a full payload to completely replace the existing object with new updates.
+
     All updates to 'root' OSCAL objects via `PATCH` requests should accept a partial payload containing
     only the changed data and the entire updated object should be returned.
 
@@ -55,10 +62,17 @@ info:
           "uuid": "cff8385f-108e-40a5-8f7a-82f3dc0eaba8",
           "metadata": {
             "title": "Some New Title"
+            "revisions": [
+              { "version": "220220517" }
+            ]
           }
         }
       }
       ```
+      In this example, the title is being updated and the version is being added to the list of
+      revisions. No other changes are being made to the original metadata object, so the rest of its
+      fields will remain the same. The list of revisions will still contain its previous items,
+      along with the new version item.
     </details>
   contact:
     email: info@easydynamics.com

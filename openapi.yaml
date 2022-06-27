@@ -211,6 +211,9 @@ paths:
         405:
           description: Validation exception
           content: {}
+        409:
+          description: Conflict with current state
+          content: {}
       security:
         - oscal_auth:
             - write:catalogs
@@ -248,6 +251,8 @@ paths:
           description: Bad Request
         415:
           description: Unsupported media type
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:catalogs
@@ -348,6 +353,9 @@ paths:
         405:
           description: Validation exception
           content: {}
+        409:
+          description: Conflict with current state
+          content: {}
       security:
         - oscal_auth:
             - write:profiles
@@ -436,6 +444,8 @@ paths:
           description: Bad Request
         415:
           description: Unsupported media type
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:profiles
@@ -514,6 +524,9 @@ paths:
           content: {}
         404:
           description: Profile or catalog not found
+          content: {}
+        409:
+          description: Conflict with current state
           content: {}
       security:
         - oscal_auth:
@@ -602,6 +615,9 @@ paths:
           content: {}
         404:
           description: Profile or import profile not found
+          content: {}
+        409:
+          description: Conflict with current state
           content: {}
       security:
         - oscal_auth:
@@ -746,6 +762,9 @@ paths:
           content: {}
         404:
           description: Profile or party not found
+          content: {}
+        409:
+          description: Conflict with current state
           content: {}
       security:
         - oscal_auth:
@@ -993,6 +1012,9 @@ paths:
         405:
           description: Validation exception
           content: {}
+        409:
+          description: Conflict with current state
+          content: {}
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1030,6 +1052,8 @@ paths:
           description: Bad Request
         415:
           description: Unsupported media type
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1164,6 +1188,9 @@ paths:
           content: {}
         404:
           description: Component definition or party not found
+          content: {}
+        409:
+          description: Conflict with current state
           content: {}
       security:
         - oscal_auth:
@@ -1358,6 +1385,9 @@ paths:
         404:
           description: Component definition not found
           content: {}
+        409:
+          description: Conflict with current state
+          content: {}
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1479,6 +1509,9 @@ paths:
         404:
           description: Component definition, component, or control implementation not found
           content: {}
+        409:
+          description: Conflict with current state
+          conteont: {}
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1648,6 +1681,9 @@ paths:
         405:
           description: Validation exception
           content: {}
+        409:
+          description: Conflict with current state
+          content: {}
       security:
         - oscal_auth:
             - write:ssps
@@ -1685,6 +1721,8 @@ paths:
           description: Bad Request
         415:
           description: Unsupported media type
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:ssps
@@ -1748,6 +1786,9 @@ paths:
           content: {}
         404:
           description: System security plan or component not found
+          content: {}
+        409:
+          description: Conflict with current state
           content: {}
       security:
         - oscal_auth:
@@ -1819,6 +1860,9 @@ paths:
           content: {}
         404:
           description: System security plan or party not found
+          content: {}
+        409:
+          description: Conflict with current state
           content: {}
       security:
         - oscal_auth:
@@ -1934,6 +1978,9 @@ paths:
           content: {}
         404:
           description: System security plan or implemented requirement not found
+          content: {}
+        409:
+          description: Conflict with current state
           content: {}
       security:
         - oscal_auth:
@@ -2064,6 +2111,9 @@ paths:
           content: {}
         405:
           description: Validation exception
+          content: {}
+        409:
+          description: Conflict with current state
           content: {}
       security:
         - oscal_auth:

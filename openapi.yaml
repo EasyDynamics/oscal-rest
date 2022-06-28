@@ -213,7 +213,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          content: {}
       security:
         - oscal_auth:
             - write:catalogs
@@ -355,7 +354,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          content: {}
       security:
         - oscal_auth:
             - write:profiles
@@ -527,7 +525,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          content: {}
       security:
         - oscal_auth:
             - write:profiles
@@ -618,7 +615,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          content: {}
       security:
         - oscal_auth:
             - write:profiles
@@ -765,7 +761,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          content: {}
       security:
         - oscal_auth:
             - write:profiles
@@ -1014,7 +1009,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          content: {}
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1191,7 +1185,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          content: {}
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1387,7 +1380,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          content: {}
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1511,7 +1503,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          conteont: {}
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1683,7 +1674,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          content: {}
       security:
         - oscal_auth:
             - write:ssps
@@ -1789,7 +1779,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          content: {}
       security:
         - oscal_auth:
             - write:ssps
@@ -1863,7 +1852,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          content: {}
       security:
         - oscal_auth:
             - write:ssps
@@ -1981,7 +1969,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          content: {}
       security:
         - oscal_auth:
             - write:ssps
@@ -2114,7 +2101,6 @@ paths:
           content: {}
         409:
           description: Conflict with current state
-          content: {}
       security:
         - oscal_auth:
             - write:parties

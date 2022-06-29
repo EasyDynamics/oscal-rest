@@ -74,6 +74,9 @@ info:
       fields will remain the same. The list of revisions will still contain its previous items,
       along with the new version item.
     </details>
+
+    For guidance on handling UUIDs in `POST' and 'PUT' operations, please review [handling-uuids-on-post-put.md]
+    (https://github.com/EasyDynamics/oscal-rest/blob/feature/guidance-on-post-put/docs/handling-uuids-on-post-put.md).
   contact:
     email: info@easydynamics.com
   version: 0.1.0

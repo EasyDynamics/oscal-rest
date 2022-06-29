@@ -40,6 +40,7 @@ info:
     </details>
 
     ## Partial Payloads in PATCH Requests
+
     A `PATCH` should be used when an existing object needs a partial modification. It accepts a partial
     payload with the updated fields and corresponding field names, then modifies the specified
     fields accordingly. Additionally, it is solely additive when updating lists and will not replace

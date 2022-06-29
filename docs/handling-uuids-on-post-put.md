@@ -1,10 +1,28 @@
 # Handling UUIDs in `POST` and `PUT` operations
 
+##  `PUT` vs `POST`
+
+```mermaid
+graph LR
+  Init([Make a request]) --> Pref{Preference on UUID}
+  Pref -->|Yes| PUT
+  Pref -->|No| POST
+```
+
 ## `POST`
 
 When creating new objects, `POST` is the preferred option. The UUID of the new object
 does not need to be specified, so `POST` should be used when there is no UUID preference.
 If the UUID is specified in the body, an HTTP 4xx error will be returned.
+
+### Making a `POST` request
+
+```mermaid
+graph LR
+  POST([POST]) --> UUID{Is UUID specified in body}
+  UUID -->|Yes| Error([Error])
+  UUID -->|No| Z[Create new resource<br/>and generate UUID]
+```
 
 ## `PUT`
 
@@ -16,26 +34,6 @@ If provided, the UUID in the body must match the UUID in the path, or else an HT
 error will be returned. If an object with the specified UUID exists, the `PUT` request will
 update the existing object. If no objects with the specified UUID exist, a new object will
 be created with the provided UUID.
-
-## Diagrams
-
-### `PUT` vs `POST`
-
-```mermaid
-graph LR
-  Init([Make a request]) --> Pref{Preference on UUID}
-  Pref -->|Yes| PUT
-  Pref -->|No| POST
-```
-
-### Making a `POST` request
-
-```mermaid
-graph LR
-  POST([POST]) --> UUID{Is UUID specified in body}
-  UUID -->|Yes| Error([Error])
-  UUID -->|No| Z[Create new resource<br/>and generate UUID]
-```
 
 ### Making a `PUT` request
 

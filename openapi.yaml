@@ -40,6 +40,7 @@ info:
     </details>
 
     ## Partial Payloads in PATCH Requests
+
     A `PATCH` should be used when an existing object needs a partial modification. It accepts a partial
     payload with the updated fields and corresponding field names, then modifies the specified
     fields accordingly. Additionally, it is solely additive when updating lists and will not replace
@@ -211,6 +212,8 @@ paths:
         405:
           description: Validation exception
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:catalogs
@@ -242,10 +245,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALCatalog"
-        404:
-          description: Catalog not found
         400:
           description: Bad Request
+        404:
+          description: Catalog not found
+        409:
+          description: Conflict with current state
         415:
           description: Unsupported media type
       security:
@@ -348,6 +353,8 @@ paths:
         405:
           description: Validation exception
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:profiles
@@ -430,10 +437,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALProfile"
-        404:
-          description: Profile not found
         400:
           description: Bad Request
+        404:
+          description: Profile not found
+        409:
+          description: Conflict with current state
         415:
           description: Unsupported media type
       security:
@@ -515,6 +524,8 @@ paths:
         404:
           description: Profile or catalog not found
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:profiles
@@ -603,6 +614,8 @@ paths:
         404:
           description: Profile or import profile not found
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:profiles
@@ -747,6 +760,8 @@ paths:
         404:
           description: Profile or party not found
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:profiles
@@ -993,6 +1008,8 @@ paths:
         405:
           description: Validation exception
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1024,10 +1041,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALComponentDefinition"
-        404:
-          description: Component definition not found
         400:
           description: Bad Request
+        404:
+          description: Component definition not found
+        409:
+          description: Conflict with current state
         415:
           description: Unsupported media type
       security:
@@ -1165,6 +1184,8 @@ paths:
         404:
           description: Component definition or party not found
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1358,6 +1379,8 @@ paths:
         404:
           description: Component definition not found
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1479,6 +1502,8 @@ paths:
         404:
           description: Component definition, component, or control implementation not found
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1648,6 +1673,8 @@ paths:
         405:
           description: Validation exception
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:ssps
@@ -1679,10 +1706,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALSsp"
-        404:
-          description: System security plan not found
         400:
           description: Bad Request
+        404:
+          description: System security plan not found
+        409:
+          description: Conflict with current state
         415:
           description: Unsupported media type
       security:
@@ -1749,6 +1778,8 @@ paths:
         404:
           description: System security plan or component not found
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:ssps
@@ -1820,6 +1851,8 @@ paths:
         404:
           description: System security plan or party not found
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:ssps
@@ -1935,6 +1968,8 @@ paths:
         404:
           description: System security plan or implemented requirement not found
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:ssps
@@ -2065,6 +2100,8 @@ paths:
         405:
           description: Validation exception
           content: {}
+        409:
+          description: Conflict with current state
       security:
         - oscal_auth:
             - write:parties

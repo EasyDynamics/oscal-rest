@@ -1,6 +1,6 @@
 # Handling UUIDs in `POST` and `PUT` operations
 
-##  `PUT` vs `POST`
+## `PUT` vs `POST`
 
 ```mermaid
 graph LR

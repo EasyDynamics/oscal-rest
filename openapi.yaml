@@ -244,14 +244,14 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALCatalog"
-        404:
-          description: Catalog not found
         400:
           description: Bad Request
-        415:
-          description: Unsupported media type
+        404:
+          description: Catalog not found
         409:
           description: Conflict with current state
+        415:
+          description: Unsupported media type
       security:
         - oscal_auth:
             - write:catalogs
@@ -436,14 +436,14 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALProfile"
-        404:
-          description: Profile not found
         400:
           description: Bad Request
-        415:
-          description: Unsupported media type
+        404:
+          description: Profile not found
         409:
           description: Conflict with current state
+        415:
+          description: Unsupported media type
       security:
         - oscal_auth:
             - write:profiles
@@ -1040,14 +1040,14 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALComponentDefinition"
-        404:
-          description: Component definition not found
         400:
           description: Bad Request
-        415:
-          description: Unsupported media type
+        404:
+          description: Component definition not found
         409:
           description: Conflict with current state
+        415:
+          description: Unsupported media type
       security:
         - oscal_auth:
             - write:componentDefinitions
@@ -1705,14 +1705,14 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALSsp"
-        404:
-          description: System security plan not found
         400:
           description: Bad Request
-        415:
-          description: Unsupported media type
+        404:
+          description: System security plan not found
         409:
           description: Conflict with current state
+        415:
+          description: Unsupported media type
       security:
         - oscal_auth:
             - write:ssps

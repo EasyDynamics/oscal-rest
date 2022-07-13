@@ -75,8 +75,8 @@ info:
       along with the new version item.
     </details>
 
-    For guidance on handling UUIDs in `POST' and 'PUT' operations, please review [handling-uuids-on-post-put.md]
-    (https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).
+    For guidance on handling UUIDs in `POST` and `PUT` operations, please review
+    [handling-uuids-on-post-put.md](https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).
   contact:
     email: info@easydynamics.com
   version: 0.1.0

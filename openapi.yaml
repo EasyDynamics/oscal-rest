@@ -106,6 +106,18 @@ tags:
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL
+  - name: OSCAL Plan of Action and Milestones
+    externalDocs:
+      description: Find out more
+      url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/poam/
+  - name: OSCAL System Assessment Plan
+    externalDocs:
+      description: Find out more
+      url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-plan/
+  - name: OSCAL System Assessment Results
+    externalDocs:
+      description: Find out more
+      url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-results/
 paths:
   /catalogs:
     get:

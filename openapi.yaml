@@ -2436,164 +2436,164 @@ paths:
             - read:catalogs
       x-codegen-request-body-name: body
   /system-assesment-plans/{assessmentPlanId}:
-      get:
-        tags:
-        - OSCAL System Assessment Plans
-        summary: Finds an OSCAL System Assessment Plan catalog by ID
-        description: Returns a single OSCAL System Assessment Plan
-        operationId: getAssessmentPlanById
-        parameters:
-          - name: assessmentPlanId
-            in: path
-            description: ID of System Assessment Plans to return
-            required: true
-            schema:
-              type: string
-        responses:
-          200:
-            description: successful operation
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/OSCALCatalog"
-          400:
-            description: Invalid ID supplied
-            content: {}
-          404:
-            description: Catalog not found
-            content: {}
-        security:
-          - oscal_auth:
-              - read:catalogs
-      patch:
-        tags:
-          - OSCAL System Assessment Plans
-        summary: Updates an existing OSCAL System Assessment Plan
-        operationId: updateAssessmentPlan
-        parameters:
-          - name: assessmentPlanId
-            in: path
-            description: ID of catalog to return
-            required: true
-            schema:
-              type: string
-        requestBody:
-          description: Catalog object to be updated
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalogUpdateExample"
-          required: true
-        responses:
-          400:
-            description: Invalid ID supplied
-            content: {}
-          404:
-            description: Catalog not found
-            content: {}
-          405:
-            description: Validation exception
-            content: {}
-          409:
-            description: Conflict with current state
-        security:
-          - oscal_auth:
-              - write:catalogs
-              - read:catalogs
-        x-codegen-request-body-name: body
-      put:
-        tags:
-        - OSCAL System Assessment Plans
-        summary: Replaces an existing OSCAL System Assessment Plan
-        operationId: replaceAssessmentPlan
-        parameters:
-          - name: assessmentPlanId
-            in: path
-            description: ID of catalog to replace.
-            required: true
-            schema:
-              type: string
-        requestBody:
-          description: Catalog object to be replaced.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
-          required: true
-        responses:
-          200:
-            description: Updated catalog
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/OSCALCatalog"
-          400:
-            description: Bad Request
-          404:
-            description: Catalog not found
-          409:
-            description: Conflict with current state
-          415:
-            description: Unsupported media type
-        security:
-          - oscal_auth:
-              - write:catalogs
-              - read:catalogs
-        x-codegen-request-body-name: body
-      delete:
-        tags:
-          - OSCAL System Assessment Plans
-        summary: Deletes an OSCAL System Assessment Plan
-        operationId: deleteAssessmentPlan
-        parameters:
-          - name: api_key
-            in: header
-            schema:
-              type: string
-          - name: assessmentPlanId
-            in: path
-            description: Catalog ID to delete
-            required: true
-            schema:
-              type: string
-        responses:
-          400:
-            description: Invalid ID supplied
-            content: {}
-          404:
-            description: Catalog not found
-            content: {}
-        security:
-        - oscal_auth:
-            - write:catalogs
-            - read:catalogs
-  /system-assesment-plans/search:
-     get:
+    get:
       tags:
         - OSCAL System Assessment Plans
-      summary: Searches for OSCAL System Assessment Plans
-      operationId: findAssessmentPlanByName
+      summary: Finds an OSCAL System Assessment Plan catalog by ID
+      description: Returns a single OSCAL System Assessment Plan
+      operationId: getAssessmentPlanById
       parameters:
-        - name: query
-          in: query
-          description: Terms to search for in catalog names
+        - name: assessmentPlanId
+          in: path
+          description: ID of System Assessment Plans to return
           required: true
           schema:
             type: string
       responses:
         200:
-          description: Successful operation
+          description: successful operation
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/OSCALCatalog"
-        400:
-          description: Invalid status value
+                $ref: "#/components/schemas/OSCALCatalog"
+          400:
+            description: Invalid ID supplied
+            content: {}
+          404:
+            description: Catalog not found
+            content: {}
       security:
         - oscal_auth:
             - read:catalogs
+    patch:
+      tags:
+        - OSCAL System Assessment Plans
+      summary: Updates an existing OSCAL System Assessment Plan
+      operationId: updateAssessmentPlan
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description: ID of catalog to return
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Catalog object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALCatalogUpdateExample"
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+      x-codegen-request-body-name: body
+    put:
+      tags:
+        - OSCAL System Assessment Plans
+    summary: Replaces an existing OSCAL System Assessment Plan
+    operationId: replaceAssessmentPlan
+    parameters:
+      - name: assessmentPlanId
+        in: path
+        description: ID of catalog to replace.
+        required: true
+        schema:
+          type: string
+    requestBody:
+      description: Catalog object to be replaced.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/OSCALCatalog"
+      required: true
+    responses:
+      200:
+        description: Updated catalog
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALCatalog"
+      400:
+        description: Bad Request
+      404:
+        description: Catalog not found
+      409:
+        description: Conflict with current state
+      415:
+        description: Unsupported media type
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+      x-codegen-request-body-name: body
+  delete:
+    tags:
+      - OSCAL System Assessment Plans
+    summary: Deletes an OSCAL System Assessment Plan
+    operationId: deleteAssessmentPlan
+    parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: assessmentPlanId
+        in: path
+        description: Catalog ID to delete
+        required: true
+        schema:
+          type: string
+    responses:
+      400:
+        description: Invalid ID supplied
+        content: {}
+      404:
+        description: Catalog not found
+        content: {}
+    security:
+      - oscal_auth:
+          - write:catalogs
+          - read:catalogs
+/system-assesment-plans/search:
+  get:
+    tags:
+      - OSCAL System Assessment Plans
+  summary: Searches for OSCAL System Assessment Plans
+  operationId: findAssessmentPlanByName
+  parameters:
+    - name: query
+      in: query
+      description: Terms to search for in catalog names
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/OSCALCatalog"
+    400:
+      description: Invalid status value
+  security:
+    - oscal_auth:
+        - read:catalogs
   /system-assessment-results:
     get:
       tags:
@@ -2646,30 +2646,30 @@ paths:
   /system-assesment-results/{assessmentResultId}:
     get:
       tags:
-          - OSCAL System Assessment Results
+        - OSCAL System Assessment Results
       summary: Finds an OSCAL System Assessment Result catalog by ID
       description: Returns a single OSCAL System Assessment Result
       operationId: getAssessmentResultsById
       parameters:
-          - name: assessmentResultId
-            in: path
-            description: ID of System Assessment Results to return
-            required: true
+        - name: assessmentResultId
+          in: path
+          description: ID of System Assessment Results to return
+          required: true
+          schema:
+            type: string
+    responses:
+      200:
+        description: successful operation
+        content:
+          application/json:
             schema:
-              type: string
-      responses:
-          200:
-            description: successful operation
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/OSCALCatalog"
-          400:
-            description: Invalid ID supplied
-            content: {}
-          404:
-            description: Catalog not found
-            content: {}
+              $ref: "#/components/schemas/OSCALCatalog"
+      400:
+        description: Invalid ID supplied
+        content: {}
+      404:
+        description: Catalog not found
+        content: {}
       security:
         - oscal_auth:
             - read:catalogs
@@ -2776,32 +2776,32 @@ paths:
             - write:catalogs
             - read:catalogs
   /system-assesment-plan/search:
-     get:
+    get:
       tags:
         - OSCAL System Assessment Results
-      summary: Searches for OSCAL System Assessment Results
-      operationId: findAssessmentResultsByName
-      parameters:
-        - name: query
-          in: query
-          description: Terms to search for in catalog names
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/OSCALCatalog"
-        400:
-          description: Invalid status value
-      security:
-        - oscal_auth:
-            - read:catalogs
+    summary: Searches for OSCAL System Assessment Results
+    operationId: findAssessmentResultsByName
+    parameters:
+      - name: query
+        in: query
+        description: Terms to search for in catalog names
+        required: true
+        schema:
+          type: string
+    responses:
+      200:
+        description: Successful operation
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/OSCALCatalog"
+      400:
+        description: Invalid status value
+    security:
+      - oscal_auth:
+          - read:catalogs
 components:
   schemas:
     OSCALCatalog:
@@ -2879,16 +2879,16 @@ components:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_party"
     OSCALPartialUpdateExample:
+      type: object
+      properties:
+        uuid:
+          type: string
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        metadata:
           type: object
           properties:
-            uuid:
+            title:
               type: string
-              pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-            metadata:
-              type: object
-              properties:
-                title:
-                  type: string
   securitySchemes:
     oscal_auth:
       type: oauth2
@@ -2905,4 +2905,4 @@ components:
             write:ssps: modify ssps in your account
             read:ssps: read your ssps
             write:parties: modify parties in your account
-            read:parties: read your parties                  
+            read:parties: read your parties

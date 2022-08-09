@@ -2191,7 +2191,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/OSCALCatalog"
+                  $ref: "#/components/schemas/OSCALPoam"
       security:
         - oscal_auth:
             - read:catalogs
@@ -2205,7 +2205,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/OSCALCatalog"
+              $ref: "#/components/schemas/OSCALPoam"
           multipart/form-data:
             schema:
               type: object
@@ -2246,7 +2246,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalog"
+                $ref: "#/components/schemas/OSCALPoam"
         400:
           description: Invalid ID supplied
           content: {}
@@ -2273,7 +2273,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/OSCALCatalogUpdateExample"
+              $ref: "#/components/schemas/OSCALPoamUpdateExample"
         required: true
       responses:
         400:
@@ -2379,7 +2379,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/OSCALCatalog"
+                  $ref: "#/components/schemas/OSCALPoam"
         400:
           description: Invalid status value
           content: {}
@@ -2400,7 +2400,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/OSCALCatalog"
+                  $ref: "#/components/schemas/OSCALAssessmentPlan"
       security:
         - oscal_auth:
             - read:catalogs
@@ -2414,7 +2414,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/OSCALCatalog"
+              $ref: "#/components/schemas/OSCALAssessmentPlan"
           multipart/form-data:
             schema:
               type: object
@@ -2455,7 +2455,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalog"
+                $ref: "#/components/schemas/OSCALAssessmentPlan"
         400:
           description: Invalid ID supplied
           content: {}
@@ -2482,7 +2482,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/OSCALCatalogUpdateExample"
+              $ref: "#/components/schemas/OSCALAssessmentPlanUpdateExample"
         required: true
       responses:
         400:
@@ -2518,7 +2518,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/OSCALCatalog"
+              $ref: "#/components/schemas/OSCALAssessmentPlan"
         required: true
       responses:
         200:
@@ -2526,7 +2526,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalog"
+                $ref: "#/components/schemas/OSCALAssessmentPlan"
         400:
           description: Bad Request
         404:
@@ -2588,7 +2588,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/OSCALCatalog"
+                  $ref: "#/components/schemas/OSCALAssessmentPlan"
         400:
           description: Invalid status value
       security:
@@ -2608,7 +2608,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/OSCALCatalog"
+                  $ref: "#/components/schemas/OSCALAssessmentResults"
       security:
         - oscal_auth:
             - read:catalogs
@@ -2622,7 +2622,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/OSCALCatalog"
+              $ref: "#/components/schemas/OSCALAssessmentResults"
           multipart/form-data:
             schema:
               type: object
@@ -2663,7 +2663,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalog"
+                $ref: "#/components/schemas/OSCALAssessmentResults"
         400:
           description: Invalid ID supplied
           content: {}
@@ -2690,7 +2690,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/OSCALCatalogUpdateExample"
+              $ref: "#/components/schemas/OSCALAssessmentResultsUpdateExample"
         required: true
       responses:
         400:
@@ -2726,7 +2726,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/OSCALCatalog"
+              $ref: "#/components/schemas/OSCALAssessmentResults"
         required: true
       responses:
         200:
@@ -2734,7 +2734,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalog"
+                $ref: "#/components/schemas/OSCALAssessmentResults"
         400:
           description: Bad Request
         404:
@@ -2796,7 +2796,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/OSCALCatalog"
+                  $ref: "#/components/schemas/OSCALAssessmentResults"
         400:
           description: Invalid status value
       security:
@@ -2889,6 +2889,40 @@ components:
           properties:
             title:
               type: string
+    OSCALPoam:
+      type: object
+      properties:
+        plan-of-action-and-milestones:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_poam_schema.json#/definitions/assembly_oscal-poam_plan-of-action-and-milestones"
+    OSCALPoamUpdateExample:
+      type: object
+      properties:
+        catalog:
+          $ref: "#/components/schemas/OSCALPartialUpdateExample"
+    OSCALAssessmentPlan:
+      type: object
+      properties:
+        system-assessment-plans:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-ap_assessment-plan"
+    OSCALAssessmentPlanUpdateExample:
+      type: object
+      properties:
+        catalog:
+          $ref: "#/components/schemas/OSCALPartialUpdateExample"
+    OSCALAssessmentResults:
+      type: object
+      properties:
+        system-assessment-results:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-ar_assessment-results"
+    OSCALAssessmentResultsUpdateExample:
+      type: object
+      properties:
+        catalog:
+          $ref: "#/components/schemas/OSCALPartialUpdateExample"
+
   securitySchemes:
     oscal_auth:
       type: oauth2

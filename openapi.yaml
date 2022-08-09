@@ -89,19 +89,19 @@ tags:
   - name: OSCAL Component Definition
     externalDocs:
       description: Find out more
-      url: https://pages.nist.gov/OSCAL/documentation/schema/implementation-layer/component/
+      url: https://pages.nist.gov/OSCAL/concepts/layer/implementation/component-definition/
   - name: OSCAL Profile
     externalDocs:
       description: Find out more
-      url: https://pages.nist.gov/OSCAL/documentation/schema/profile-layer/profile/
+      url: https://pages.nist.gov/OSCAL/concepts/layer/control/profile/
   - name: OSCAL System Security Plan
     externalDocs:
       description: Find out more
-      url: https://pages.nist.gov/OSCAL/documentation/schema/implementation-layer/ssp/
+      url: https://pages.nist.gov/OSCAL/concepts/layer/implementation/ssp/
   - name: OSCAL Catalog
     externalDocs:
       description: Find out more
-      url: https://pages.nist.gov/OSCAL/documentation/schema/catalog-layer/catalog/
+      url: https://pages.nist.gov/OSCAL/concepts/layer/control/catalog/
   - name: OSCAL Party
     externalDocs:
       description: Find out more
@@ -1474,7 +1474,7 @@ paths:
         - oscal_auth:
             - write:componentDefinitions
             - read:componentDefinitions
-  /component-definitions/{componentDefinitionId}/components/{componentId}/control-implementation/{componentControlImplementationId}:
+  /component-definitions/{componentDefinitionId}/components/{componentId}/control-implementations/{componentControlImplementationId}:
     patch:
       tags:
         - OSCAL Component Definition
@@ -2181,7 +2181,7 @@ paths:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Returns all OSCAL Plan of Action and Milestones
+      summary: Returns all OSCAL plan of action and milestones
       operationId: getPoam
       responses:
         200:
@@ -2194,14 +2194,14 @@ paths:
                   $ref: "#/components/schemas/OSCALPoam"
       security:
         - oscal_auth:
-            - read:catalogs
+            - read:poams
     post:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Adds a new OSCAL Plan of Action and Milestone
+      summary: Adds a new OSCAL plan of action and milestone
       operationId: addPoam
       requestBody:
-        description: OSCAL Plans of Action and Milestones to be added
+        description: OSCAL plan of action and milestones to be added
         content:
           application/json:
             schema:
@@ -2223,15 +2223,15 @@ paths:
           content: {}
       security:
         - oscal_auth:
-            - write:catalogs
-            - read:catalogs
+            - write:poams
+            - read:poams
       x-codegen-request-body-name: body
   /plan-of-action-and-milestones/{poamId}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Finds an OSCAL Plan of Action and Milestones catalog by ID
-      description: Returns a single OSCAL control catalog
+      summary: Finds an OSCAL plan of action and milestone by ID
+      description: Returns a single OSCAL Plan of Action and Milestone
       operationId: getPoamById
       parameters:
         - name: poamId
@@ -2251,20 +2251,20 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Catalog not found
+          description: Plan of Action and Milestones not found
           content: {}
       security:
         - oscal_auth:
-            - read:catalogs
+            - read:poams
     patch:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Updates an existing OSCAL Plan of Action and Milestones
+      summary: Updates an existing OSCAL plan of action and milestone
       operationId: updatePoam
       parameters:
         - name: poamId
           in: path
-          description: ID of catalog to return
+          description: ID of plan of action and milestone to return
           required: true
           schema:
             type: string
@@ -2280,7 +2280,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Catalog not found
+          description: Plan of Action and Milestones not found
           content: {}
         405:
           description: Validation exception
@@ -2289,18 +2289,18 @@ paths:
           description: Conflict with current state
       security:
         - oscal_auth:
-            - write:catalogs
-            - read:catalogs
+            - write:poams
+            - read:poams
       x-codegen-request-body-name: body
     put:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Replaces an existing OSCAL Plan of Action and Milestones
+      summary: Replaces an existing OSCAL plan of action and milestone
       operationId: replacePoam
       parameters:
         - name: poamId
           in: path
-          description: ID of catalog to replace.
+          description: ID of plan of action and milestone to replace.
           required: true
           schema:
             type: string
@@ -2309,32 +2309,32 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/OSCALCatalog"
+              $ref: "#/components/schemas/OSCALPoam"
         required: true
       responses:
         200:
-          description: Updated catalog
+          description: Updated plan of action and milestone
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalog"
+                $ref: "#/components/schemas/OSCALPoam"
         400:
           description: Bad Request
         404:
-          description: Catalog not found
+          description: Plan of Action and Milestones not found
         409:
           description: Conflict with current state
         415:
           description: Unsupported media type
       security:
         - oscal_auth:
-            - write:catalogs
-            - read:catalogs
+            - write:poams
+            - read:poams
       x-codegen-request-body-name: body
     delete:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Deletes an OSCAL Plan of Action and Milestones
+      summary: Deletes an OSCAL plan of action and milestones
       operationId: deletePoam
       parameters:
         - name: api_key
@@ -2343,7 +2343,7 @@ paths:
             type: string
         - name: poamId
           in: path
-          description: Catalog ID to delete
+          description: Plan of action and milestone ID to delete
           required: true
           schema:
             type: string
@@ -2352,22 +2352,22 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Catalog not found
+          description: Plan of Action and Milestones not found
           content: {}
       security:
         - oscal_auth:
-            - write:catalogs
-            - read:catalogs
+            - write:poams
+            - read:poams
   /plan-of-action-and-milestones/search:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Searches for OSCAL Plan of Action and Milestones
+      summary: Searches for OSCAL plan of action and milestones
       operationId: findPoamsByName
       parameters:
         - name: query
           in: query
-          description: Terms to search for in catalog names
+          description: Terms to search for in plan of action and milestone names
           required: true
           schema:
             type: string
@@ -2385,12 +2385,12 @@ paths:
           content: {}
       security:
         - oscal_auth:
-            - read:catalogs
+            - read:poams
   /system-assessment-plans:
     get:
       tags:
         - OSCAL System Assessment Plans
-      summary: Returns all OSCAL System Assessment Plans
+      summary: Returns all OSCAL system assessment plans
       operationId: getAssessmentPlan
       responses:
         200:
@@ -2403,11 +2403,11 @@ paths:
                   $ref: "#/components/schemas/OSCALAssessmentPlan"
       security:
         - oscal_auth:
-            - read:catalogs
+            - read:saps
     post:
       tags:
         - OSCAL System Assessment Plans
-      summary: Adds a new OSCAL System Assessment Plan
+      summary: Adds a new OSCAL system assessment plan
       operationId: addAssessmentPlan
       requestBody:
         description: OSCAL System Assessment Plans to be added
@@ -2432,14 +2432,14 @@ paths:
           content: {}
       security:
         - oscal_auth:
-            - write:catalogs
-            - read:catalogs
+            - write:saps
+            - read:saps
       x-codegen-request-body-name: body
   /system-assesment-plans/{assessmentPlanId}:
     get:
       tags:
         - OSCAL System Assessment Plans
-      summary: Finds an OSCAL System Assessment Plan catalog by ID
+      summary: Finds an OSCAL system assessment plan by ID
       description: Returns a single OSCAL System Assessment Plan
       operationId: getAssessmentPlanById
       parameters:
@@ -2460,20 +2460,20 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Catalog not found
+          description: System Assessment Plan not found
           content: {}
       security:
         - oscal_auth:
-            - read:catalogs
+            - read:saps
     patch:
       tags:
         - OSCAL System Assessment Plans
-      summary: Updates an existing OSCAL System Assessment Plan
+      summary: Updates an existing OSCAL system assessment plan
       operationId: updateAssessmentPlan
       parameters:
         - name: assessmentPlanId
           in: path
-          description: ID of catalog to return
+          description: ID of system assessment plan to return
           required: true
           schema:
             type: string
@@ -2489,7 +2489,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Catalog not found
+          description: System Assessment Plan not found
           content: {}
         405:
           description: Validation exception
@@ -2498,18 +2498,18 @@ paths:
           description: Conflict with current state
       security:
         - oscal_auth:
-            - write:catalogs
-            - read:catalogs
+            - write:saps
+            - read:saps
       x-codegen-request-body-name: body
     put:
       tags:
         - OSCAL System Assessment Plans
-      summary: Replaces an existing OSCAL System Assessment Plan
+      summary: Replaces an existing OSCAL system assessment plan
       operationId: replaceAssessmentPlan
       parameters:
         - name: assessmentPlanId
           in: path
-          description: ID of catalog to replace.
+          description: ID of system assessment plan to replace.
           required: true
           schema:
             type: string
@@ -2522,7 +2522,7 @@ paths:
         required: true
       responses:
         200:
-          description: Updated catalog
+          description: Updated system assessment plan
           content:
             application/json:
               schema:
@@ -2530,20 +2530,20 @@ paths:
         400:
           description: Bad Request
         404:
-          description: Catalog not found
+          description: System Assessment Plan not found
         409:
           description: Conflict with current state
         415:
           description: Unsupported media type
       security:
         - oscal_auth:
-            - write:catalogs
-            - read:catalogs
+            - write:saps
+            - read:saps
       x-codegen-request-body-name: body
     delete:
       tags:
         - OSCAL System Assessment Plans
-      summary: Deletes an OSCAL System Assessment Plan
+      summary: Deletes an OSCAL system assessment plan
       operationId: deleteAssessmentPlan
       parameters:
         - name: api_key
@@ -2552,7 +2552,7 @@ paths:
             type: string
         - name: assessmentPlanId
           in: path
-          description: Catalog ID to delete
+          description: SAP to delete
           required: true
           schema:
             type: string
@@ -2561,22 +2561,22 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Catalog not found
+          description: System Assessment Plan not found
           content: {}
       security:
         - oscal_auth:
-            - write:catalogs
-            - read:catalogs
+            - write:saps
+            - read:saps
   /system-assesment-plans/search:
     get:
       tags:
         - OSCAL System Assessment Plans
-      summary: Searches for OSCAL System Assessment Plans
+      summary: Searches for OSCAL system assessment plans
       operationId: findAssessmentPlanByName
       parameters:
         - name: query
           in: query
-          description: Terms to search for in catalog names
+          description: Terms to search for in system assessment plan names
           required: true
           schema:
             type: string
@@ -2593,12 +2593,12 @@ paths:
           description: Invalid status value
       security:
         - oscal_auth:
-            - read:catalogs
+            - read:saps
   /system-assessment-results:
     get:
       tags:
         - OSCAL System Assessment Results
-      summary: Returns all OSCAL System Assessment Results
+      summary: Returns all OSCAL system assessment results
       operationId: getAssessmentResults
       responses:
         200:
@@ -2611,11 +2611,11 @@ paths:
                   $ref: "#/components/schemas/OSCALAssessmentResults"
       security:
         - oscal_auth:
-            - read:catalogs
+            - read:sars
     post:
       tags:
         - OSCAL System Assessment Results
-      summary: Adds a new OSCAL System Assessment Result
+      summary: Adds a new OSCAL system assessment result
       operationId: addAssessmentResults
       requestBody:
         description: OSCAL System Assessment Results to be added
@@ -2640,14 +2640,14 @@ paths:
           content: {}
       security:
         - oscal_auth:
-            - write:catalogs
-            - read:catalogs
+            - write:sars
+            - read:sars
       x-codegen-request-body-name: body
   /system-assesment-results/{assessmentResultId}:
     get:
       tags:
         - OSCAL System Assessment Results
-      summary: Finds an OSCAL System Assessment Result catalog by ID
+      summary: Finds an OSCAL system assessment result by ID
       description: Returns a single OSCAL System Assessment Result
       operationId: getAssessmentResultsById
       parameters:
@@ -2668,20 +2668,20 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Catalog not found
+          description: System Assessment Result not found
           content: {}
       security:
         - oscal_auth:
-            - read:catalogs
+            - read:sars
     patch:
       tags:
         - OSCAL System Assessment Results
-      summary: Updates an existing OSCAL System Assessment Result
+      summary: Updates an existing OSCAL system assessment result
       operationId: updateAssessmentResults
       parameters:
         - name: assessmentResultId
           in: path
-          description: ID of catalog to return
+          description: ID of system assessment result to return
           required: true
           schema:
             type: string
@@ -2697,7 +2697,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Catalog not found
+          description: System Assessment Result not found
           content: {}
         405:
           description: Validation exception
@@ -2706,18 +2706,18 @@ paths:
           description: Conflict with current state
       security:
         - oscal_auth:
-            - write:catalogs
-            - read:catalogs
+            - write:sars
+            - read:sars
       x-codegen-request-body-name: body
     put:
       tags:
         - OSCAL System Assessment Results
-      summary: Replaces an existing OSCAL System Assessment Result
+      summary: Replaces an existing OSCAL system assessment result
       operationId: replaceAssessmentResults
       parameters:
         - name: assessmentResultId
           in: path
-          description: ID of catalog to replace.
+          description: ID of system assessment result to replace.
           required: true
           schema:
             type: string
@@ -2730,7 +2730,7 @@ paths:
         required: true
       responses:
         200:
-          description: Updated catalog
+          description: Updated system assessment result
           content:
             application/json:
               schema:
@@ -2738,20 +2738,20 @@ paths:
         400:
           description: Bad Request
         404:
-          description: Catalog not found
+          description: System Assessment Result not found
         409:
           description: Conflict with current state
         415:
           description: Unsupported media type
       security:
         - oscal_auth:
-            - write:catalogs
-            - read:catalogs
+            - write:sars
+            - read:sars
       x-codegen-request-body-name: body
     delete:
       tags:
         - OSCAL System Assessment Results
-      summary: Deletes an OSCAL System Assessment Result
+      summary: Deletes an OSCAL system assessment result
       operationId: deleteAssessmentResults
       parameters:
         - name: api_key
@@ -2769,22 +2769,22 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Catalog not found
+          description: System Assessment Result not found
           content: {}
       security:
         - oscal_auth:
-            - write:catalogs
-            - read:catalogs
-  /system-assesment-plan/search:
+            - write:sars
+            - read:sars
+  /system-assesment-results/search:
     get:
       tags:
         - OSCAL System Assessment Results
-      summary: Searches for OSCAL System Assessment Results
+      summary: Searches for OSCAL system assessment results
       operationId: findAssessmentResultsByName
       parameters:
         - name: query
           in: query
-          description: Terms to search for in catalog names
+          description: Terms to search for in system assessment result names
           required: true
           schema:
             type: string
@@ -2801,7 +2801,7 @@ paths:
           description: Invalid status value
       security:
         - oscal_auth:
-            - read:catalogs
+            - read:sars
 components:
   schemas:
     OSCALCatalog:
@@ -2922,7 +2922,6 @@ components:
       properties:
         catalog:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
-
   securitySchemes:
     oscal_auth:
       type: oauth2
@@ -2940,3 +2939,9 @@ components:
             read:ssps: read your ssps
             write:parties: modify parties in your account
             read:parties: read your parties
+            write:poams: modify poams in your account
+            read:poams: read your poams
+            write:saps: modify assessment plans in your account
+            read:saps: read your assessment plans parties
+            write:sars: modify assessment results in your account
+            read:sars: read your assessment results in your account

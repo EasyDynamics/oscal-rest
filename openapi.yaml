@@ -110,11 +110,11 @@ tags:
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/poam/
-  - name: OSCAL System Assessment Plan
+  - name: OSCAL Assessment Plan
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-plan/
-  - name: OSCAL System Assessment Result
+  - name: OSCAL Assessment Result
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-results/
@@ -2386,11 +2386,11 @@ paths:
       security:
         - oscal_auth:
             - read:poams
-  /system-assessment-plans:
+  /assessment-plans:
     get:
       tags:
-        - OSCAL System Assessment Plan
-      summary: Returns all OSCAL system assessment plans
+        - OSCAL Assessment Plan
+      summary: Returns all OSCAL assessment plans
       operationId: getAssessmentPlan
       responses:
         200:
@@ -2403,14 +2403,14 @@ paths:
                   $ref: "#/components/schemas/OSCALAssessmentPlan"
       security:
         - oscal_auth:
-            - read:saps
+            - read:aps
     post:
       tags:
-        - OSCAL System Assessment Plan
-      summary: Adds a new OSCAL system assessment plan
+        - OSCAL Assessment Plan
+      summary: Adds a new OSCAL assessment plan
       operationId: addAssessmentPlan
       requestBody:
-        description: OSCAL System Assessment Plans to be added
+        description: OSCAL assessment plans to be added
         content:
           application/json:
             schema:
@@ -2432,20 +2432,20 @@ paths:
           content: {}
       security:
         - oscal_auth:
-            - write:saps
-            - read:saps
+            - write:aps
+            - read:aps
       x-codegen-request-body-name: body
-  /system-assesment-plans/{assessmentPlanId}:
+  /assessment-plans/{assessmentPlanId}:
     get:
       tags:
-        - OSCAL System Assessment Plan
-      summary: Finds an OSCAL system assessment plan by ID
-      description: Returns a single OSCAL system assessment plan
+        - OSCAL Assessment Plan
+      summary: Finds an OSCAL assessment plan by ID
+      description: Returns a single OSCAL assessment plan
       operationId: getAssessmentPlanById
       parameters:
         - name: assessmentPlanId
           in: path
-          description: ID of System Assessment Plans to return
+          description: ID of assessment plans to return
           required: true
           schema:
             type: string
@@ -2460,25 +2460,25 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System Assessment Plan not found
+          description: Assessment plan not found
           content: {}
       security:
         - oscal_auth:
-            - read:saps
+            - read:aps
     patch:
       tags:
-        - OSCAL System Assessment Plan
-      summary: Updates an existing OSCAL system assessment plan
+        - OSCAL Assessment Plan
+      summary: Updates an existing OSCAL assessment plan
       operationId: updateAssessmentPlan
       parameters:
         - name: assessmentPlanId
           in: path
-          description: ID of system assessment plan to return
+          description: ID of assessment plan to return
           required: true
           schema:
             type: string
       requestBody:
-        description: System assessment plan object to be updated
+        description: Assessment plan object to be updated
         content:
           application/json:
             schema:
@@ -2489,7 +2489,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System assessment plan not found
+          description: Assessment plan not found
           content: {}
         405:
           description: Validation exception
@@ -2498,23 +2498,23 @@ paths:
           description: Conflict with current state
       security:
         - oscal_auth:
-            - write:saps
-            - read:saps
+            - write:aps
+            - read:aps
       x-codegen-request-body-name: body
     put:
       tags:
-        - OSCAL System Assessment Plan
-      summary: Replaces an existing OSCAL system assessment plan
+        - OSCAL Assessment Plan
+      summary: Replaces an existing OSCAL assessment plan
       operationId: replaceAssessmentPlan
       parameters:
         - name: assessmentPlanId
           in: path
-          description: ID of system assessment plan to replace.
+          description: ID of assessment plan to replace.
           required: true
           schema:
             type: string
       requestBody:
-        description: System assessment plan object to be replaced.
+        description: Assessment plan object to be replaced.
         content:
           application/json:
             schema:
@@ -2522,7 +2522,7 @@ paths:
         required: true
       responses:
         200:
-          description: Updated system assessment plan
+          description: Updated assessment plan
           content:
             application/json:
               schema:
@@ -2530,20 +2530,20 @@ paths:
         400:
           description: Bad Request
         404:
-          description: System assessment plan not found
+          description: Assessment plan not found
         409:
           description: Conflict with current state
         415:
           description: Unsupported media type
       security:
         - oscal_auth:
-            - write:saps
-            - read:saps
+            - write:aps
+            - read:aps
       x-codegen-request-body-name: body
     delete:
       tags:
-        - OSCAL System Assessment Plan
-      summary: Deletes an OSCAL system assessment plan
+        - OSCAL Assessment Plan
+      summary: Deletes an OSCAL assessment plan
       operationId: deleteAssessmentPlan
       parameters:
         - name: api_key
@@ -2552,7 +2552,7 @@ paths:
             type: string
         - name: assessmentPlanId
           in: path
-          description: SAP to delete
+          description: Assessment plan to delete
           required: true
           schema:
             type: string
@@ -2561,22 +2561,22 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System assessment plan not found
+          description: Assessment plan not found
           content: {}
       security:
         - oscal_auth:
-            - write:saps
-            - read:saps
-  /system-assesment-plans/search:
+            - write:aps
+            - read:aps
+  /assessment-plans/search:
     get:
       tags:
-        - OSCAL System Assessment Plan
-      summary: Searches for OSCAL system assessment plans
+        - OSCAL Assessment Plan
+      summary: Searches for OSCAL assessment plans
       operationId: findAssessmentPlanByName
       parameters:
         - name: query
           in: query
-          description: Terms to search for in system assessment plan names
+          description: Terms to search for in assessment plan names
           required: true
           schema:
             type: string
@@ -2593,12 +2593,12 @@ paths:
           description: Invalid status value
       security:
         - oscal_auth:
-            - read:saps
-  /system-assessment-results:
+            - read:aps
+  /assessment-results:
     get:
       tags:
-        - OSCAL System Assessment Result
-      summary: Returns all OSCAL system assessment results
+        - OSCAL Assessment Result
+      summary: Returns all OSCAL assessment results
       operationId: getAssessmentResults
       responses:
         200:
@@ -2611,14 +2611,14 @@ paths:
                   $ref: "#/components/schemas/OSCALAssessmentResults"
       security:
         - oscal_auth:
-            - read:sars
+            - read:ars
     post:
       tags:
-        - OSCAL System Assessment Result
-      summary: Adds a new OSCAL system assessment result
+        - OSCAL Assessment Result
+      summary: Adds a new OSCAL assessment result
       operationId: addAssessmentResults
       requestBody:
-        description: OSCAL system assessment results to be added
+        description: OSCAL assessment results to be added
         content:
           application/json:
             schema:
@@ -2640,20 +2640,20 @@ paths:
           content: {}
       security:
         - oscal_auth:
-            - write:sars
-            - read:sars
+            - write:ars
+            - read:ars
       x-codegen-request-body-name: body
-  /system-assesment-results/{assessmentResultId}:
+  /assessment-results/{assessmentResultId}:
     get:
       tags:
-        - OSCAL System Assessment Result
-      summary: Finds an OSCAL system assessment result by ID
-      description: Returns a single OSCAL aystem assessment result
+        - OSCAL Assessment Result
+      summary: Finds an OSCAL assessment result by ID
+      description: Returns a single OSCAL assessment result
       operationId: getAssessmentResultsById
       parameters:
         - name: assessmentResultId
           in: path
-          description: ID of System assessment results to return
+          description: ID of assessment results to return
           required: true
           schema:
             type: string
@@ -2668,25 +2668,25 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System assessment result not found
+          description: Assessment result not found
           content: {}
       security:
         - oscal_auth:
-            - read:sars
+            - read:ars
     patch:
       tags:
-        - OSCAL System Assessment Result
-      summary: Updates an existing OSCAL system assessment result
+        - OSCAL Assessment Result
+      summary: Updates an existing OSCAL assessment result
       operationId: updateAssessmentResults
       parameters:
         - name: assessmentResultId
           in: path
-          description: ID of system assessment result to return
+          description: ID of assessment result to return
           required: true
           schema:
             type: string
       requestBody:
-        description: System assessment result object to be updated
+        description: Assessment result object to be updated
         content:
           application/json:
             schema:
@@ -2697,7 +2697,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System Assessment Result not found
+          description: Assessment result not found
           content: {}
         405:
           description: Validation exception
@@ -2706,23 +2706,23 @@ paths:
           description: Conflict with current state
       security:
         - oscal_auth:
-            - write:sars
-            - read:sars
+            - write:ars
+            - read:ars
       x-codegen-request-body-name: body
     put:
       tags:
-        - OSCAL System Assessment Result
-      summary: Replaces an existing OSCAL system assessment result
+        - OSCAL Assessment Result
+      summary: Replaces an existing OSCAL assessment result
       operationId: replaceAssessmentResults
       parameters:
         - name: assessmentResultId
           in: path
-          description: ID of system assessment result to replace.
+          description: ID of assessment result to replace.
           required: true
           schema:
             type: string
       requestBody:
-        description: System assessment result object to be replaced.
+        description: Assessment result object to be replaced.
         content:
           application/json:
             schema:
@@ -2730,7 +2730,7 @@ paths:
         required: true
       responses:
         200:
-          description: Updated system assessment result
+          description: Updated assessment result
           content:
             application/json:
               schema:
@@ -2738,20 +2738,20 @@ paths:
         400:
           description: Bad Request
         404:
-          description: System assessment result not found
+          description: Assessment result not found
         409:
           description: Conflict with current state
         415:
           description: Unsupported media type
       security:
         - oscal_auth:
-            - write:sars
-            - read:sars
+            - write:ars
+            - read:ars
       x-codegen-request-body-name: body
     delete:
       tags:
-        - OSCAL System Assessment Result
-      summary: Deletes an OSCAL system assessment result
+        - OSCAL Assessment Result
+      summary: Deletes an OSCAL assessment result
       operationId: deleteAssessmentResults
       parameters:
         - name: api_key
@@ -2760,7 +2760,7 @@ paths:
             type: string
         - name: assessmentResultId
           in: path
-          description: System assessment result ID to delete
+          description: Assessment result ID to delete
           required: true
           schema:
             type: string
@@ -2769,22 +2769,22 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System assessment result not found
+          description: Assessment result not found
           content: {}
       security:
         - oscal_auth:
-            - write:sars
-            - read:sars
-  /system-assesment-results/search:
+            - write:ars
+            - read:ars
+  /assessment-results/search:
     get:
       tags:
-        - OSCAL System Assessment Result
-      summary: Searches for OSCAL system assessment results
+        - OSCAL Assessment Result
+      summary: Searches for OSCAL assessment results
       operationId: findAssessmentResultsByName
       parameters:
         - name: query
           in: query
-          description: Terms to search for in system assessment result names
+          description: Terms to search for in assessment result names
           required: true
           schema:
             type: string
@@ -2801,7 +2801,7 @@ paths:
           description: Invalid status value
       security:
         - oscal_auth:
-            - read:sars
+            - read:ars
 components:
   schemas:
     OSCALCatalog:
@@ -2903,24 +2903,24 @@ components:
     OSCALAssessmentPlan:
       type: object
       properties:
-        system-assessment-plans:
+        assessment-plans:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-ap_assessment-plan"
     OSCALAssessmentPlanUpdateExample:
       type: object
       properties:
-        system-assessment-plans:
+        assessment-plans:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
     OSCALAssessmentResults:
       type: object
       properties:
-        system-assessment-results:
+        assessment-results:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-ar_assessment-results"
     OSCALAssessmentResultsUpdateExample:
       type: object
       properties:
-        system-assessment-results:
+        assessment-results:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
   securitySchemes:
     oscal_auth:
@@ -2941,7 +2941,7 @@ components:
             read:parties: read your parties
             write:poams: modify poams in your account
             read:poams: read your poams
-            write:saps: modify assessment plans in your account
-            read:saps: read your assessment plans parties
-            write:sars: modify assessment results in your account
-            read:sars: read your assessment results in your account
+            write:aps: modify assessment plans in your account
+            read:aps: read your assessment plans parties
+            write:ars: modify assessment results in your account
+            read:ars: read your assessment results in your account

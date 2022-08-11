@@ -2898,7 +2898,7 @@ components:
     OSCALPoamUpdateExample:
       type: object
       properties:
-        catalog:
+        plan-of-action-and-milestones:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
     OSCALAssessmentPlan:
       type: object
@@ -2909,7 +2909,7 @@ components:
     OSCALAssessmentPlanUpdateExample:
       type: object
       properties:
-        catalog:
+        system-assessment-plans:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
     OSCALAssessmentResults:
       type: object
@@ -2920,7 +2920,7 @@ components:
     OSCALAssessmentResultsUpdateExample:
       type: object
       properties:
-        catalog:
+        system-assessment-results:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
   securitySchemes:
     oscal_auth:

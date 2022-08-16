@@ -2300,12 +2300,12 @@ paths:
       parameters:
         - name: poamId
           in: path
-          description: ID of plan of action and milestone to replace.
+          description: ID of plan of action and milestone to replace
           required: true
           schema:
             type: string
       requestBody:
-        description: Plan of action and milestone object to be replaced.
+        description: Plan of action and milestone object to be replaced
         content:
           application/json:
             schema:
@@ -2403,7 +2403,7 @@ paths:
                   $ref: "#/components/schemas/OSCALAssessmentPlan"
       security:
         - oscal_auth:
-            - read:aps
+            - read:assessmentPlan
     post:
       tags:
         - OSCAL Assessment Plan
@@ -2432,8 +2432,8 @@ paths:
           content: {}
       security:
         - oscal_auth:
-            - write:aps
-            - read:aps
+            - write:assessmentPlan
+            - read:assessmentPlan
       x-codegen-request-body-name: body
   /assessment-plans/{assessmentPlanId}:
     get:
@@ -2464,7 +2464,7 @@ paths:
           content: {}
       security:
         - oscal_auth:
-            - read:aps
+            - read:assessmentPlan
     patch:
       tags:
         - OSCAL Assessment Plan
@@ -2498,8 +2498,8 @@ paths:
           description: Conflict with current state
       security:
         - oscal_auth:
-            - write:aps
-            - read:aps
+            - write:assessmentPlan
+            - read:assessmentPlan
       x-codegen-request-body-name: body
     put:
       tags:
@@ -2537,8 +2537,8 @@ paths:
           description: Unsupported media type
       security:
         - oscal_auth:
-            - write:aps
-            - read:aps
+            - write:assessmentPlan
+            - read:assessmentPlan
       x-codegen-request-body-name: body
     delete:
       tags:
@@ -2565,8 +2565,8 @@ paths:
           content: {}
       security:
         - oscal_auth:
-            - write:aps
-            - read:aps
+            - write:assessmentPlan
+            - read:assessmentPlan
   /assessment-plans/search:
     get:
       tags:
@@ -2593,7 +2593,7 @@ paths:
           description: Invalid status value
       security:
         - oscal_auth:
-            - read:aps
+            - read:assessmentPlan
   /assessment-results:
     get:
       tags:
@@ -2611,7 +2611,7 @@ paths:
                   $ref: "#/components/schemas/OSCALAssessmentResults"
       security:
         - oscal_auth:
-            - read:ars
+            - read:assessmentResults
     post:
       tags:
         - OSCAL Assessment Result
@@ -2640,8 +2640,8 @@ paths:
           content: {}
       security:
         - oscal_auth:
-            - write:ars
-            - read:ars
+            - write:assessmentResults
+            - read:assessmentResults
       x-codegen-request-body-name: body
   /assessment-results/{assessmentResultId}:
     get:
@@ -2672,7 +2672,7 @@ paths:
           content: {}
       security:
         - oscal_auth:
-            - read:ars
+            - read:assessmentResults
     patch:
       tags:
         - OSCAL Assessment Result
@@ -2706,8 +2706,8 @@ paths:
           description: Conflict with current state
       security:
         - oscal_auth:
-            - write:ars
-            - read:ars
+            - write:assessmentResults
+            - read:assessmentResults
       x-codegen-request-body-name: body
     put:
       tags:
@@ -2745,8 +2745,8 @@ paths:
           description: Unsupported media type
       security:
         - oscal_auth:
-            - write:ars
-            - read:ars
+            - write:assessmentResults
+            - read:assessmentResults
       x-codegen-request-body-name: body
     delete:
       tags:
@@ -2773,8 +2773,8 @@ paths:
           content: {}
       security:
         - oscal_auth:
-            - write:ars
-            - read:ars
+            - write:assessmentResults
+            - read:assessmentResults
   /assessment-results/search:
     get:
       tags:
@@ -2801,7 +2801,7 @@ paths:
           description: Invalid status value
       security:
         - oscal_auth:
-            - read:ars
+            - read:assessmentResults
 components:
   schemas:
     OSCALCatalog:
@@ -2941,7 +2941,7 @@ components:
             read:parties: read your parties
             write:poams: modify poams in your account
             read:poams: read your poams
-            write:aps: modify assessment plans in your account
-            read:aps: read your assessment plans parties
-            write:ars: modify assessment results in your account
-            read:ars: read your assessment results in your account
+            write:assessmentPlan: modify assessment plans in your account
+            read:assessmentPlan: read your assessment plans
+            write:assessmentResults: modify assessment results in your account
+            read:assessmentResults: read your assessment results

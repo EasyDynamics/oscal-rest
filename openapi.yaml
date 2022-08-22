@@ -106,7 +106,7 @@ tags:
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL
-  - name: OSCAL Plan of Action and Milestone
+  - name: OSCAL Plan of Action and Milestones
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/poam/
@@ -2179,8 +2179,8 @@ paths:
   /plan-of-action-and-milestones:
     get:
       tags:
-        - OSCAL Plan of Action and Milestone
-      summary: Returns all OSCAL plan of action and milestones
+        - OSCAL Plan of Action and Milestones
+      summary: Returns all OSCAL plans of action and milestones
       operationId: getPoam
       responses:
         200:
@@ -2196,8 +2196,8 @@ paths:
             - read:poams
     post:
       tags:
-        - OSCAL Plan of Action and Milestone
-      summary: Adds a new OSCAL plan of action and milestone
+        - OSCAL Plan of Action and Milestones
+      summary: Adds a new OSCAL plan of action and milestones
       operationId: addPoam
       requestBody:
         description: OSCAL plan of action and milestones to be added
@@ -2228,9 +2228,9 @@ paths:
   /plan-of-action-and-milestones/{poamId}:
     get:
       tags:
-        - OSCAL Plan of Action and Milestone
-      summary: Finds an OSCAL plan of action and milestone by ID
-      description: Returns a single OSCAL Plan of Action and Milestone
+        - OSCAL Plan of Action and Milestones
+      summary: Finds an OSCAL plan of action and milestones by ID
+      description: Returns a single OSCAL Plan of Action and Milestones
       operationId: getPoamById
       parameters:
         - name: poamId
@@ -2257,18 +2257,18 @@ paths:
             - read:poams
     patch:
       tags:
-        - OSCAL Plan of Action and Milestone
-      summary: Updates an existing OSCAL plan of action and milestone
+        - OSCAL Plan of Action and Milestones
+      summary: Updates an existing OSCAL plan of action and milestones
       operationId: updatePoam
       parameters:
         - name: poamId
           in: path
-          description: ID of plan of action and milestone to return
+          description: ID of plan of action and milestones to return
           required: true
           schema:
             type: string
       requestBody:
-        description: Plan of action and milestone object to be updated
+        description: Plan of action and milestones object to be updated
         content:
           application/json:
             schema:
@@ -2293,18 +2293,18 @@ paths:
       x-codegen-request-body-name: body
     put:
       tags:
-        - OSCAL Plan of Action and Milestone
-      summary: Replaces an existing OSCAL plan of action and milestone
+        - OSCAL Plan of Action and Milestones
+      summary: Replaces an existing OSCAL plan of action and milestones
       operationId: replacePoam
       parameters:
         - name: poamId
           in: path
-          description: ID of plan of action and milestone to replace
+          description: ID of plan of action and milestones to replace
           required: true
           schema:
             type: string
       requestBody:
-        description: Plan of action and milestone object to be replaced
+        description: Plan of action and milestones object to be replaced
         content:
           application/json:
             schema:
@@ -2312,7 +2312,7 @@ paths:
         required: true
       responses:
         200:
-          description: Updated plan of action and milestone
+          description: Updated plan of action and milestones
           content:
             application/json:
               schema:
@@ -2332,7 +2332,7 @@ paths:
       x-codegen-request-body-name: body
     delete:
       tags:
-        - OSCAL Plan of Action and Milestone
+        - OSCAL Plan of Action and Milestones
       summary: Deletes an OSCAL plan of action and milestones
       operationId: deletePoam
       parameters:
@@ -2342,7 +2342,7 @@ paths:
             type: string
         - name: poamId
           in: path
-          description: Plan of action and milestone ID to delete
+          description: Plan of action and milestones ID to delete
           required: true
           schema:
             type: string
@@ -2360,13 +2360,13 @@ paths:
   /plan-of-action-and-milestones/search:
     get:
       tags:
-        - OSCAL Plan of Action and Milestone
+        - OSCAL Plan of Action and Milestones
       summary: Searches for OSCAL plan of action and milestones
       operationId: findPoamsByName
       parameters:
         - name: query
           in: query
-          description: Terms to search for in plan of action and milestone names
+          description: Terms to search for in plan of action and milestones names
           required: true
           schema:
             type: string

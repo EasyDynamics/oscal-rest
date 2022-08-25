@@ -549,9 +549,9 @@ paths:
         - OSCAL Profile
       summary: Removes a catalog from an OSCAL profile imports
       description: |
-        Removes the given catalog from the given profile
+        Removes the given catalog from the given profile.
 
-        This should also result in references under other parts of the schema being removed
+        This should also result in references under other parts of the schema being removed.
       operationId: removeCatalogfromProfile
       parameters:
         - name: api_key
@@ -639,9 +639,9 @@ paths:
         - OSCAL Profile
       summary: Removes a another profile from an OSCAL profile imports
       description: |
-        Removes the given other profile from the given profile
+        Removes the given other profile from the given profile.
 
-        This should also result in references under other parts of the schema being removed
+        This should also result in references under other parts of the schema being removed.
       operationId: removeProfilefromProfile
       parameters:
         - name: api_key
@@ -712,9 +712,9 @@ paths:
         - OSCAL Profile
       summary: Removes a role from an OSCAL profile
       description: |
-        Removes the given role from the given profile
+        Removes the given role from the given profile.
 
-        This should also result in references under other parts of the schema such as responsible parties being removed
+        This should also result in references under other parts of the schema such as responsible parties being removed.
       operationId: removeRolefromProfile
       parameters:
         - name: api_key
@@ -785,9 +785,9 @@ paths:
         - OSCAL Profile
       summary: Removes a party from an OSCAL profile
       description: |
-        Removes the given party from the given profile
+        Removes the given party from the given profile.
 
-        This should also result in references under other parts of the schema such as responsible roles being removed
+        This should also result in references under other parts of the schema such as responsible roles being removed.
       operationId: removePartyfromProfile
       parameters:
         - name: api_key
@@ -1136,9 +1136,9 @@ paths:
         - OSCAL Component Definition
       summary: Removes a role from an OSCAL component definition
       description: |
-        Removes the given role from the given component definition
+        Removes the given role from the given component definition.
 
-        This should also result in references under other parts of the schema such as responsible parties being removed
+        This should also result in references under other parts of the schema such as responsible parties being removed.
       operationId: removeRoleFromComponentDefinition
       parameters:
         - name: api_key
@@ -1209,10 +1209,10 @@ paths:
         - OSCAL Component Definition
       summary: Removes a party from an OSCAL component definition
       description: |
-        Removes the given party from the given component definition
+        Removes the given party from the given component definition.
 
         This should also result in references under other parts of the schema such as
-          component responsible roles being removed
+          component responsible roles being removed.
       operationId: removePartyFromComponentDefinition
       parameters:
         - name: api_key
@@ -1766,7 +1766,7 @@ paths:
         - OSCAL System Security Plan
       summary: Associates a component with an OSCAL system security plan
       description: Adds the given component to the components within the given system
-       security plan's system-implementation
+       security plan's system-implementation.
       operationId: addComponentToSsp
       parameters:
         - name: api_key
@@ -1803,9 +1803,9 @@ paths:
         - OSCAL System Security Plan
       summary: Removes a component from an OSCAL system security plan
       description: |
-        Removes the given component from the components within the given system security plan's system-implementation
+        Removes the given component from the components within the given system security plan's system-implementation.
 
-        This should also result in references under other parts of the schema such as inventory-items being removed
+        This should also result in references under other parts of the schema such as inventory-items being removed.
       operationId: removeComponentfromSsp
       parameters:
         - name: api_key

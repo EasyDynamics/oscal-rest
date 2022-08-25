@@ -89,23 +89,35 @@ tags:
   - name: OSCAL Component Definition
     externalDocs:
       description: Find out more
-      url: https://pages.nist.gov/OSCAL/documentation/schema/implementation-layer/component/
+      url: https://pages.nist.gov/OSCAL/concepts/layer/implementation/component-definition/
   - name: OSCAL Profile
     externalDocs:
       description: Find out more
-      url: https://pages.nist.gov/OSCAL/documentation/schema/profile-layer/profile/
+      url: https://pages.nist.gov/OSCAL/concepts/layer/control/profile/
   - name: OSCAL System Security Plan
     externalDocs:
       description: Find out more
-      url: https://pages.nist.gov/OSCAL/documentation/schema/implementation-layer/ssp/
+      url: https://pages.nist.gov/OSCAL/concepts/layer/implementation/ssp/
   - name: OSCAL Catalog
     externalDocs:
       description: Find out more
-      url: https://pages.nist.gov/OSCAL/documentation/schema/catalog-layer/catalog/
+      url: https://pages.nist.gov/OSCAL/concepts/layer/control/catalog/
   - name: OSCAL Party
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL
+  - name: OSCAL Plan of Action and Milestones
+    externalDocs:
+      description: Find out more
+      url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/poam/
+  - name: OSCAL Assessment Plan
+    externalDocs:
+      description: Find out more
+      url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-plan/
+  - name: OSCAL Assessment Result
+    externalDocs:
+      description: Find out more
+      url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-results/
 paths:
   /catalogs:
     get:
@@ -230,12 +242,11 @@ paths:
       parameters:
         - name: catalogId
           in: path
-          description: ID of catalog to replace.
-          required: true
+          description: ID of catalog to replace
           schema:
             type: string
       requestBody:
-        description: Catalog object to be replaced.
+        description: Catalog object to be replaced
         content:
           application/json:
             schema:
@@ -422,12 +433,12 @@ paths:
       parameters:
         - name: profileId
           in: path
-          description: ID of profile to replace.
+          description: ID of profile to replace
           required: true
           schema:
             type: string
       requestBody:
-        description: Profile object to be replaced.
+        description: Profile object to be replaced
         content:
           application/json:
             schema:
@@ -1026,12 +1037,12 @@ paths:
       parameters:
         - name: componentDefinitionId
           in: path
-          description: ID of component definition to replace.
+          description: ID of component definition to replace
           required: true
           schema:
             type: string
       requestBody:
-        description: Component definition object to be replaced.
+        description: Component definition object to be replaced
         content:
           application/json:
             schema:
@@ -1691,12 +1702,12 @@ paths:
       parameters:
         - name: sspId
           in: path
-          description: ID of system security plan to replace.
+          description: ID of system security plan to replace
           required: true
           schema:
             type: string
       requestBody:
-        description: System security plan object to be replaced.
+        description: System security plan object to be replaced
         content:
           application/json:
             schema:
@@ -2165,6 +2176,631 @@ paths:
       security:
         - oscal_auth:
             - read:parties
+  /plan-of-action-and-milestones:
+    get:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Returns all OSCAL plans of action and milestones
+      operationId: getPoam
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALPoam"
+      security:
+        - oscal_auth:
+            - read:poams
+    post:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Adds a new OSCAL plan of action and milestones
+      operationId: addPoam
+      requestBody:
+        description: OSCAL plan of action and milestones to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALPoam"
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: binary
+                fileName:
+                  type: string
+                  format: binary
+        required: true
+      responses:
+        405:
+          description: Invalid input
+          content: {}
+      security:
+        - oscal_auth:
+            - write:poams
+            - read:poams
+      x-codegen-request-body-name: body
+  /plan-of-action-and-milestones/{poamId}:
+    get:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Finds an OSCAL plan of action and milestones by ID
+      description: Returns a single OSCAL Plan of Action and Milestones
+      operationId: getPoamById
+      parameters:
+        - name: poamId
+          in: path
+          description: ID of plan of action and milestones to return
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPoam"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Plan of Action and Milestones not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:poams
+    patch:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Updates an existing OSCAL plan of action and milestones
+      operationId: updatePoam
+      parameters:
+        - name: poamId
+          in: path
+          description: ID of plan of action and milestones to return
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Plan of action and milestones object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALPoamUpdateExample"
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Plan of action and milestones not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:poams
+            - read:poams
+      x-codegen-request-body-name: body
+    put:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Replaces an existing OSCAL plan of action and milestones
+      operationId: replacePoam
+      parameters:
+        - name: poamId
+          in: path
+          description: ID of plan of action and milestones to replace
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Plan of action and milestones object to be replaced
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALPoam"
+        required: true
+      responses:
+        200:
+          description: Updated plan of action and milestones
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPoam"
+        400:
+          description: Bad Request
+        404:
+          description: Plan of action and milestones not found
+        409:
+          description: Conflict with current state
+        415:
+          description: Unsupported media type
+      security:
+        - oscal_auth:
+            - write:poams
+            - read:poams
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Deletes an OSCAL plan of action and milestones
+      operationId: deletePoam
+      parameters:
+        - name: api_key
+          in: header
+          schema:
+            type: string
+        - name: poamId
+          in: path
+          description: Plan of action and milestones ID to delete
+          required: true
+          schema:
+            type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Plan of action and milestones not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:poams
+            - read:poams
+  /plan-of-action-and-milestones/search:
+    get:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Searches for OSCAL plan of action and milestones
+      operationId: findPoamsByName
+      parameters:
+        - name: query
+          in: query
+          description: Terms to search for in plan of action and milestones names
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALPoam"
+        400:
+          description: Invalid status value
+          content: {}
+      security:
+        - oscal_auth:
+            - read:poams
+  /assessment-plans:
+    get:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Returns all OSCAL assessment plans
+      operationId: getAssessmentPlan
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALAssessmentPlan"
+      security:
+        - oscal_auth:
+            - read:assessmentPlan
+    post:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Adds a new OSCAL assessment plan
+      operationId: addAssessmentPlan
+      requestBody:
+        description: OSCAL assessment plans to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALAssessmentPlan"
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: binary
+                fileName:
+                  type: string
+                  format: binary
+        required: true
+      responses:
+        405:
+          description: Invalid input
+          content: {}
+      security:
+        - oscal_auth:
+            - write:assessmentPlans
+            - read:assessmentPlans
+      x-codegen-request-body-name: body
+  /assessment-plans/{assessmentPlanId}:
+    get:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Finds an OSCAL assessment plan by ID
+      description: Returns a single OSCAL assessment plan
+      operationId: getAssessmentPlanById
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description: ID of assessment plans to return
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAssessmentPlan"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Assessment plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:assessmentPlans
+    patch:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Updates an existing OSCAL assessment plan
+      operationId: updateAssessmentPlan
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description: ID of assessment plan to return
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Assessment plan object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALAssessmentPlanUpdateExample"
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Assessment plan not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:assessmentPlans
+            - read:assessmentPlans
+      x-codegen-request-body-name: body
+    put:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Replaces an existing OSCAL assessment plan
+      operationId: replaceAssessmentPlan
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description: ID of assessment plan to replace
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Assessment plan object to be replaced
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALassessmentPlans"
+        required: true
+      responses:
+        200:
+          description: Updated assessment plan
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAssessmentPlan"
+        400:
+          description: Bad Request
+        404:
+          description: Assessment plan not found
+        409:
+          description: Conflict with current state
+        415:
+          description: Unsupported media type
+      security:
+        - oscal_auth:
+            - write:assessmentPlans
+            - read:assessmentPlans
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Deletes an OSCAL assessment plan
+      operationId: deleteAssessmentPlan
+      parameters:
+        - name: api_key
+          in: header
+          schema:
+            type: string
+        - name: assessmentPlanId
+          in: path
+          description: Assessment plan to delete
+          required: true
+          schema:
+            type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Assessment plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:assessmentPlans
+            - read:assessmentPlans
+  /assessment-plans/search:
+    get:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Searches for OSCAL assessment plans
+      operationId: findAssessmentPlanByName
+      parameters:
+        - name: query
+          in: query
+          description: Terms to search for in assessment plan names
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALAssessmentPlan"
+        400:
+          description: Invalid status value
+      security:
+        - oscal_auth:
+            - read:assessmentPlans
+  /assessment-results:
+    get:
+      tags:
+        - OSCAL Assessment Result
+      summary: Returns all OSCAL assessment results
+      operationId: getAssessmentResults
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALAssessmentResults"
+      security:
+        - oscal_auth:
+            - read:assessmentResults
+    post:
+      tags:
+        - OSCAL Assessment Result
+      summary: Adds a new OSCAL assessment result
+      operationId: addAssessmentResults
+      requestBody:
+        description: OSCAL assessment results to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALAssessmentResults"
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: binary
+                fileName:
+                  type: string
+                  format: binary
+        required: true
+      responses:
+        405:
+          description: Invalid input
+          content: {}
+      security:
+        - oscal_auth:
+            - write:assessmentResults
+            - read:assessmentResults
+      x-codegen-request-body-name: body
+  /assessment-results/{assessmentResultId}:
+    get:
+      tags:
+        - OSCAL Assessment Result
+      summary: Finds an OSCAL assessment result by ID
+      description: Returns a single OSCAL assessment result
+      operationId: getAssessmentResultsById
+      parameters:
+        - name: assessmentResultId
+          in: path
+          description: ID of assessment results to return
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAssessmentResults"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Assessment result not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:assessmentResults
+    patch:
+      tags:
+        - OSCAL Assessment Result
+      summary: Updates an existing OSCAL assessment result
+      operationId: updateAssessmentResults
+      parameters:
+        - name: assessmentResultId
+          in: path
+          description: ID of assessment result to return
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Assessment result object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALAssessmentResultsUpdateExample"
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Assessment result not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:assessmentResults
+            - read:assessmentResults
+      x-codegen-request-body-name: body
+    put:
+      tags:
+        - OSCAL Assessment Result
+      summary: Replaces an existing OSCAL assessment result
+      operationId: replaceAssessmentResults
+      parameters:
+        - name: assessmentResultId
+          in: path
+          description: ID of assessment result to replace
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Assessment result object to be replaced
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALAssessmentResults"
+        required: true
+      responses:
+        200:
+          description: Updated assessment result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAssessmentResults"
+        400:
+          description: Bad Request
+        404:
+          description: Assessment result not found
+        409:
+          description: Conflict with current state
+        415:
+          description: Unsupported media type
+      security:
+        - oscal_auth:
+            - write:assessmentResults
+            - read:assessmentResults
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+        - OSCAL Assessment Result
+      summary: Deletes an OSCAL assessment result
+      operationId: deleteAssessmentResults
+      parameters:
+        - name: api_key
+          in: header
+          schema:
+            type: string
+        - name: assessmentResultId
+          in: path
+          description: Assessment result ID to delete
+          required: true
+          schema:
+            type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Assessment result not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:assessmentResults
+            - read:assessmentResults
+  /assessment-results/search:
+    get:
+      tags:
+        - OSCAL Assessment Result
+      summary: Searches for OSCAL assessment results
+      operationId: findAssessmentResultsByName
+      parameters:
+        - name: query
+          in: query
+          description: Terms to search for in assessment result names
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALAssessmentResults"
+        400:
+          description: Invalid status value
+      security:
+        - oscal_auth:
+            - read:assessmentResults
 components:
   schemas:
     OSCALCatalog:
@@ -2252,6 +2888,39 @@ components:
           properties:
             title:
               type: string
+    OSCALPoam:
+      type: object
+      properties:
+        plan-of-action-and-milestones:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_poam_schema.json#/definitions/assembly_oscal-poam_plan-of-action-and-milestones"
+    OSCALPoamUpdateExample:
+      type: object
+      properties:
+        plan-of-action-and-milestones:
+          $ref: "#/components/schemas/OSCALPartialUpdateExample"
+    OSCALAssessmentPlan:
+      type: object
+      properties:
+        assessment-plans:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-ap_assessment-plan"
+    OSCALAssessmentPlanUpdateExample:
+      type: object
+      properties:
+        assessment-plans:
+          $ref: "#/components/schemas/OSCALPartialUpdateExample"
+    OSCALAssessmentResults:
+      type: object
+      properties:
+        assessment-results:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-ar_assessment-results"
+    OSCALAssessmentResultsUpdateExample:
+      type: object
+      properties:
+        assessment-results:
+          $ref: "#/components/schemas/OSCALPartialUpdateExample"
   securitySchemes:
     oscal_auth:
       type: oauth2
@@ -2269,3 +2938,9 @@ components:
             read:ssps: read your ssps
             write:parties: modify parties in your account
             read:parties: read your parties
+            write:poams: modify poams in your account
+            read:poams: read your poams
+            write:assessmentPlans: modify assessment plans in your account
+            read:assessmentPlans: read your assessment plans
+            write:assessmentResults: modify assessment results in your account
+            read:assessmentResults: read your assessment results

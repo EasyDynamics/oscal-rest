@@ -127,7 +127,7 @@ paths:
       operationId: getCatalogs
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -184,7 +184,7 @@ paths:
             type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -911,7 +911,7 @@ paths:
             type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2024,7 +2024,7 @@ paths:
       operationId: getParties
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2184,7 +2184,7 @@ paths:
       operationId: getPoam
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2241,7 +2241,7 @@ paths:
             type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2393,7 +2393,7 @@ paths:
       operationId: getAssessmentPlan
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2450,7 +2450,7 @@ paths:
             type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2601,7 +2601,7 @@ paths:
       operationId: getAssessmentResults
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
@@ -2658,7 +2658,7 @@ paths:
             type: string
       responses:
         200:
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:

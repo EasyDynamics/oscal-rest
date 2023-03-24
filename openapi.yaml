@@ -245,6 +245,7 @@ paths:
           description: ID of catalog to replace
           schema:
             type: string
+          required: true
       requestBody:
         description: Catalog object to be replaced
         content:
@@ -2517,7 +2518,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/OSCALassessmentPlans"
+              $ref: "#/components/schemas/OSCALAssessmentPlan"
         required: true
       responses:
         200:

@@ -2702,17 +2702,83 @@ paths:
         - oscal_auth:
             - write:ssps
             - read:ssps
-  /system-security-plans/{sspId}/metadata/parties/{partyId}:
-    put:
+  /system-security-plans/{sspId}/metadata/parties:
+    get:
       tags:
         - OSCAL System Security Plan
-      summary: Associates a party with an OSCAL system security plan
-      operationId: addPartyToSsp
+      summary: get all parties of an OSCAL system security plan
+      operationId: getSspParties
       parameters:
-        - name: api_key
-          in: header
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
           schema:
-            type: string
+            $ref: "#/components/schemas/DocumentId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:implementedRequirements
+    post:
+      tags:
+        - OSCAL System Security Plan
+      summary: Add a party to an OSCAL system security plan
+      operationId: addPartyToSsp
+      requestBody:
+        description: Party to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALParty"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALParty"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocumentId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:parties
+            - read:parties
+  /system-security-plans/{sspId}/metadata/parties/{partyId}:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns a party with an OSCAL system security plan
+      operationId: getPartyToSsfromId
+      parameters:
         - name: sspId
           in: path
           description: System security plan ID
@@ -2726,6 +2792,12 @@ paths:
           schema:
             type: string
       responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
         400:
           description: Invalid ID supplied
           content: {}
@@ -2736,18 +2808,60 @@ paths:
           description: Conflict with current state
       security:
         - oscal_auth:
-            - write:ssps
-            - read:ssps
+            - read:metadata
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates a party with an OSCAL system security plan
+      operationId: updatePartyToSsp
+      requestBody:
+        description: Party to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALParty"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALParty"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocumentId"
+        - name: partyId
+          in: path
+          description: Party ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or party not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
     delete:
       tags:
         - OSCAL System Security Plan
       summary: Removes a party from an OSCAL system security plan
       operationId: removePartyfromSsp
       parameters:
-        - name: api_key
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: System security plan ID
@@ -2769,24 +2883,197 @@ paths:
           content: {}
       security:
         - oscal_auth:
-            - write:ssps
-            - read:ssps
+            - write:metadata
+            - read:metadata
+  /system-security-plans/{sspId}/metadata/roles:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: get all roles of an OSCAL system security plan
+      operationId: getSspRoles
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocumentId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL System Security Plan
+      summary: Add a role to an OSCAL system security plan
+      operationId: addRoleToSsp
+      requestBody:
+        description: Role to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALRole"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALRole"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocumentId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /system-security-plans/{sspId}/metadata/roles/{roleId}:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns a role with an OSCAL system security plan
+      operationId: getRoleToSsfromId
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocumentId"
+        - name: partyId
+          in: path
+          description: Role ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates a role with an OSCAL system security plan
+      operationId: updateRoleToSsp
+      requestBody:
+        description: Role to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALRole"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALRole"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocumentId"
+        - name: partyId
+          in: path
+          description: Role ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL System Security Plan
+      summary: Removes a role from an OSCAL system security plan
+      operationId: removeRolefromSsp
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocumentId"
+        - name: partyId
+          in: path
+          description: Party ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or party not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
   /system-security-plans/{sspId}/control-implementation/implemented-requirements:
     get:
       tags:
         - OSCAL System Security Plan
       summary: get all implemented requirements of an OSCAL system security plan
       operationId: getImplementedRequirementSsp
-      requestBody:
-        description: Returns all Implemented requirements of an OSCAL system security plan
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/OSCALImplementedRequirement"
-          application/xml:
-            schema:
-              $ref: "#/components/schemas/OSCALImplementedRequirement"
-        required: true
       parameters:
         - name: sspId
           in: path
@@ -3988,11 +4275,13 @@ components:
             read:implementedRequirements: read your implemented requirements
             write:metadata: modify metadata in your account
             read:metadata: read your metadata
-            write:backmatters: modify back-matters in your account
-            read:backmatters: read your back-matters
+            write:backmatter: modify back-matter in your account
+            read:backmatter: read your back-matter
             write:systemCharacteristics: modify system characteristics in your account
             read:systemCharacteristics: read your system characteristics
             write:systemImplementation: modify system Implementation in your account
             read:systemImplementation: read your system Implementation
             write:controlImplementation: modify control Implementation in your account
             read:controlImplementation: read your control Implementation
+            write:importprofile: modify import-profiles in your account
+            read:importprofile: read your import-profiles

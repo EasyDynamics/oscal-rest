@@ -2779,6 +2779,11 @@ paths:
       summary: Returns a party with an OSCAL system security plan
       operationId: getPartyToSsfromId
       parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
         - name: sspId
           in: path
           description: System security plan ID
@@ -2796,6 +2801,9 @@ paths:
           description: Successful operation
           content:
             application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+            application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALParty"
         400:
@@ -2875,6 +2883,15 @@ paths:
           schema:
             type: string
       responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
         400:
           description: Invalid ID supplied
           content: {}
@@ -2962,13 +2979,18 @@ paths:
       summary: Returns a role with an OSCAL system security plan
       operationId: getRoleToSsfromId
       parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
         - name: sspId
           in: path
           description: System security plan ID
           required: true
           schema:
             $ref: "#/components/schemas/DocumentId"
-        - name: partyId
+        - name: roleId
           in: path
           description: Role ID to be associated with SSP
           required: true
@@ -2979,6 +3001,9 @@ paths:
           description: Successful operation
           content:
             application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+            application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALRole"
         400:
@@ -3014,7 +3039,7 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocumentId"
-        - name: partyId
+        - name: roleId
           in: path
           description: Role ID to be associated with SSP
           required: true
@@ -3051,13 +3076,225 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocumentId"
-        - name: partyId
+        - name: roleId
           in: path
-          description: Party ID to be associated with SSP
+          description: Role ID to be associated with SSP
           required: true
           schema:
             type: string
       responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or party not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /system-security-plans/{sspId}/metadata/revisions:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: get all revisions of an OSCAL system security plan
+      operationId: getSspRevision
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocumentId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL System Security Plan
+      summary: Add a revision to an OSCAL system security plan
+      operationId: addRevisionToSsp
+      requestBody:
+        description: Role to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALRevision"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALRevision"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocumentId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /system-security-plans/{sspId}/metadata/revisions/{revisionId}:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns a revison with an OSCAL system security plan
+      operationId: getRevisionToSsfromId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocumentId"
+        - name: revisonId
+          in: path
+          description: Revision ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates a revision with an OSCAL system security plan
+      operationId: updateSspRevision
+      requestBody:
+        description: Revision to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALRevision"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALRevision"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocumentId"
+        - name: revisionId
+          in: path
+          description: Revision ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL System Security Plan
+      summary: Removes a revision from an OSCAL system security plan
+      operationId: removeRevionfromSsp
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocumentId"
+        - name: revisionId
+          in: path
+          description: Revision ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
         400:
           description: Invalid ID supplied
           content: {}
@@ -4163,6 +4400,24 @@ components:
         party:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_party"
+    OSCALRevision:
+      type: object
+      properties:
+        revision:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_revision"
+    OSCALLocation:
+      type: object
+      properties:
+        location:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_location"
+    OSCALResponsibleParty:
+      type: object
+      properties:
+        responsible-party:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_responsible-party"
     OSCALMetadata:
       type: object
       properties:
@@ -4193,6 +4448,18 @@ components:
         control-implementation:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_control-implementation"
+    OSCALUser:
+      type: object
+      properties:
+        user:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-implementation-common_system-user"
+    OSCALInventoryItem:
+      type: object
+      properties:
+        user:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-implementation-common_inventory-item"
     OSCALBackMatter:
       type: object
       properties:

@@ -328,6 +328,1607 @@ paths:
       security:
         - oscal_auth:
             - read:catalogs
+  /catalogs/{catalogId}/metadata/links:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns all links of an OSCAL Catalog
+      operationId: getCataloglinks
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a LinkId to an OSCAL Catalog
+      operationId: addLinkToCatalogMetadata
+      requestBody:
+        description: Link to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALLink"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALLink"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /catalogs/{catalogId}/metadata/links/{href}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a Link with an OSCAL Catalog
+      operationId: getCatalogLinkbyId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: href
+          in: path
+          description: Link href
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or Link not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a LinkId with an OSCAL Catalog
+      operationId: updateCatalogMetadataLink
+      requestBody:
+        description: Link to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALLink"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALLink"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: href
+          in: path
+          description: Link href
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or Link not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a Link from an OSCAL Catalog
+      operationId: removeLinkfromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: href
+          in: path
+          description: Link href
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or Link  not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /catalogs/{catalogId}/metadata/props:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns all props of an OSCAL Catalog
+      operationId: getCatalogProps
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a prop to an OSCAL Catalog
+      operationId: addPropToCatalogMetadata
+      requestBody:
+        description: Prop to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALProp"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALProp"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /catalogs/{catalogId}/metadata/props/{propId}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a prop with an OSCAL Catalog
+      operationId: getCatalogPropbyId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: propId
+          in: path
+          description: Prop ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or prop not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a prop with an OSCAL Catalog
+      operationId: updateCatalogMetadataProp
+      requestBody:
+        description: prop to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALProp"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALProp"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: propId
+          in: path
+          description: Prop ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or prop not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a prop from an OSCAL Catalog
+      operationId: removePropfromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: propId
+          in: path
+          description: Prop ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or prop  not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /catalogs/{catalogId}/metadata/DocumentIds:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: get all DocumentIds of an OSCAL Catalog
+      operationId: getCatalogDocumentIds
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a DocumentId to an OSCAL Catalog
+      operationId: addDocumentIdToCatalog
+      requestBody:
+        description: DocumentId to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALDocumentId"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALDocumentId"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /catalogs/{catalogId}/metadata/DocumentIds/{DocumentId}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a DocumentId with an OSCAL Catalog
+      operationId: getDocumentIdToCatalogfromId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: DocumentIdId
+          in: path
+          description: DocumentId ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or DocumentId not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a DocumentId with an OSCAL Catalog
+      operationId: updateDocumentIdToCatalog
+      requestBody:
+        description: DocumentId to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALDocumentId"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALDocumentId"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: DocumentIdId
+          in: path
+          description: DocumentId ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or DocumentId not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a DocumentId from an OSCAL Catalog
+      operationId: removeDocumentIdfromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: DocumentIdId
+          in: path
+          description: DocumentId ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or document Id not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /Catalogs/{catalogId}/metadata/parties:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: get all parties of an Catalog
+      operationId: getCatalogParties
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a party to an Catalog
+      operationId: addPartyToCatalog
+      requestBody:
+        description: Party to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALParty"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALParty"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:parties
+            - read:parties
+  /catalogs/{catalogId}/metadata/parties/{partyId}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a party with an OSCAL Catalog
+      operationId: getPartyToCatalogfromId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: partyId
+          in: path
+          description: Party ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or party not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a party with an OSCAL Catalog
+      operationId: updatePartyToCatalog
+      requestBody:
+        description: Party to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALParty"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALParty"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: partyId
+          in: path
+          description: Party ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or party not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a party from an Catalog
+      operationId: removePartyfromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: partyId
+          in: path
+          description: Party ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or party not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /catalogs/{catalogId}/metadata/roles:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: get all roles of an OSCAL catalog
+      operationId: getCatalogRoles
+      parameters:
+        - name: sspId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a role to an OSCAL catalog
+      requestBody:
+        description: Role to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALRole"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALRole"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /catalogs/{catalogId}/metadata/roles/{roleId}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a role with an OSCAL Catalog
+      operationId: getRoleToCatalogfromId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: sspId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a role with an OSCAL Catalog
+      operationId: updateRoleToCatalog
+      requestBody:
+        description: Role to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALRole"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALRole"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a role from an OSCAL Catalog
+      operationId: removeRolefromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or party not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /catalogs/{catalogId}/metadata/ResponsibleParties:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: get all responsible parties of an OSCAL Catalog
+      operationId: getCatalogResponsibleParties
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a responsible party to an OSCAL catalog
+      operationId: addResponsiblePartyToCatalog
+      requestBody:
+        description: Responsible Party to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALResponsibleParty"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALResponsibleParty"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /catalogs/{catalogId}/metadata/ResponsibleParties/{roleId}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a role with an OSCAL Catalog
+      operationId: getResponsiblePartyToCatalogfromId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID of the Responsible Party
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a role with an OSCAL Catalog
+      operationId: updateResponsiblePartyToCatalog
+      requestBody:
+        description: Role to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALResponsibleParty"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALResponsibleParty"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a role from an OSCAL Catalog
+      operationId: removeResponsiblePartyfromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID of the Responsible Party
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or party not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /catalogs/{catalogId}/metadata/revisions:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: get all revisions of an OSCAL Catalog
+      operationId: getCatalogRevision
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a revision to an OSCAL Catalog
+      operationId: addRevisionToCatalog
+      requestBody:
+        description: Role to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALRevision"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALRevision"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /catalogs/{catalogId}/metadata/revisions/{revisionId}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a revison with an OSCAL Catalog
+      operationId: getRevisionToCatalogfromId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: sspId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: revisonId
+          in: path
+          description: Revision ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a revision with an OSCAL Catalog
+      operationId: updateCatalogRevision
+      requestBody:
+        description: Revision to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALRevision"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALRevision"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: revisionId
+          in: path
+          description: Revision ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a revision from an OSCAL Catalog
+      operationId: removeRevionfromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: revisionId
+          in: path
+          description: Revision ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or party not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /catalogs/{catalogId}/metadata/Locations:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: get all Locations of an OSCAL Catalog
+      operationId: getCatalogLocations
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a Location to an OSCAL Catalog
+      operationId: addLocationToCatalog
+      requestBody:
+        description: Location to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALLocation"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALLocation"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /catalogs/{catalogId}/metadata/Locations/{LocationId}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a Location with an OSCAL Catalog
+      operationId: getLocationToCatalogfromId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: LocationId
+          in: path
+          description: Location ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or Location not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a Location with an OSCAL Catalog
+      operationId: updateLocationToCatalog
+      requestBody:
+        description: Location to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALLocation"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALLocation"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: LocationId
+          in: path
+          description: Location ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or Location not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a Location from an OSCAL Catalog
+      operationId: removeLocationfromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: LocationId
+          in: path
+          description: Location ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog or party not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
   /profiles:
     get:
       tags:
@@ -1642,7 +3243,7 @@ paths:
           description: ID of system security plan to return
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -1779,7 +3380,7 @@ paths:
           description: ID of system security plan to return
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -1810,7 +3411,7 @@ paths:
           description: ID of system security plan whose metadata will be updated
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: System security plan object to be updated
         content:
@@ -1849,7 +3450,7 @@ paths:
           description: ID of system security plan to replace
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: System security plan object to be replaced
         content:
@@ -1894,7 +3495,7 @@ paths:
           description: System security plan ID to delete
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         400:
           description: Invalid ID supplied
@@ -1924,7 +3525,7 @@ paths:
           description: ID of system security plan to return
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -1955,7 +3556,7 @@ paths:
           description: ID of system security plan whose metadata will be updated
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: System security plan object to be updated
         content:
@@ -1994,7 +3595,7 @@ paths:
           description: ID of system security plan to replace
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: System security plan object to be replaced
         content:
@@ -2039,7 +3640,7 @@ paths:
           description: Parent System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         400:
           description: Invalid ID supplied
@@ -2069,7 +3670,7 @@ paths:
           description: ID of the parent system security plan
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -2100,7 +3701,7 @@ paths:
           description: ID of system security plan whose back-matter will be updated
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: Back-Matter object to be updated
         content:
@@ -2139,7 +3740,7 @@ paths:
           description: ID of the parent system security plan
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: Back-matter object to be replaced
         content:
@@ -2184,7 +3785,7 @@ paths:
           description: System security plan ID whose back matter will be deleted
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         400:
           description: Invalid ID supplied
@@ -2214,7 +3815,7 @@ paths:
           description: ID of the parent system security plan
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -2245,7 +3846,7 @@ paths:
           description: ID of system security plan whose back-matter will be updated
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: System Characteristics object to be updated
         content:
@@ -2284,7 +3885,7 @@ paths:
           description: ID of the parent system security plan
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: Back-matter object to be replaced
         content:
@@ -2329,7 +3930,7 @@ paths:
           description: System security plan ID whose system characteristics will be deleted
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         400:
           description: Invalid ID supplied
@@ -2359,7 +3960,7 @@ paths:
           description: ID of the parent system security plan
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -2390,7 +3991,7 @@ paths:
           description: ID of system security plan whose system implementation will be updated
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: System Implementation object to be updated
         content:
@@ -2429,7 +4030,7 @@ paths:
           description: ID of the parent system security plan
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: Back-matter object to be replaced
         content:
@@ -2474,7 +4075,7 @@ paths:
           description: System security plan ID whose system characteristics will be deleted
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         400:
           description: Invalid ID supplied
@@ -2504,7 +4105,7 @@ paths:
           description: ID of the parent system security plan
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -2535,7 +4136,7 @@ paths:
           description: ID of system security plan whose control implementation will be updated
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: System Implementation object to be updated
         content:
@@ -2574,7 +4175,7 @@ paths:
           description: ID of the parent system security plan
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: Back-matter object to be replaced
         content:
@@ -2619,7 +4220,7 @@ paths:
           description: System security plan ID whose control characteristics will be deleted
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         400:
           description: Invalid ID supplied
@@ -2645,7 +4246,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: componentId
           in: path
           description: Component ID to be associated with SSP
@@ -2684,7 +4285,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: componentId
           in: path
           description: Component ID to be associated with SSP
@@ -2702,6 +4303,606 @@ paths:
         - oscal_auth:
             - write:ssps
             - read:ssps
+  /system-security-plans/{sspId}/metadata/links:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns all links of an OSCAL System Security Plan
+      operationId: getSsplinks
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL System Security Plan
+      summary: Add a LinkId to an OSCAL System Security Plan
+      operationId: addLinkToSspMetadata
+      requestBody:
+        description: Link to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALLink"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALLink"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /system-security-plans/{sspId}/metadata/links/{href}:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns a Link with an OSCAL System Security Plan
+      operationId: getSspLinkbyId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: href
+          in: path
+          description: Link href
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan or Link not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates a LinkId with an OSCAL System Security Plan
+      operationId: updateSspMetadataLink
+      requestBody:
+        description: Link to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALLink"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALLink"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: href
+          in: path
+          description: Link href
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan or Link not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL System Security Plan
+      summary: Removes a Link from an OSCAL System Security Plan
+      operationId: removeLinkfromSsp
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: href
+          in: path
+          description: Link href
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan or Link  not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /system-security-plans/{sspId}/metadata/props:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns all props of an OSCAL System Security Plan
+      operationId: getSspProps
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL System Security Plan
+      summary: Add a prop to an OSCAL System Security Plan
+      operationId: addPropToSspMetadata
+      requestBody:
+        description: Prop to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALProp"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALProp"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /system-security-plans/{sspId}/metadata/props/{propId}:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns a prop with an OSCAL System Security Plan
+      operationId: getSspPropbyId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: propId
+          in: path
+          description: Prop ID to be associated with System Security Plan
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan or prop not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates a prop with an OSCAL System Security Plan
+      operationId: updateSspMetadataProp
+      requestBody:
+        description: prop to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALProp"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALProp"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: propId
+          in: path
+          description: Prop ID to be associated with System Security Plan
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan or prop not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL System Security Plan
+      summary: Removes a prop from an OSCAL System Security Plan
+      operationId: removePropfromSsp
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: propId
+          in: path
+          description: Prop ID to be associated with System Security Plan
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan or prop  not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /system-security-plans/{sspId}/metadata/DocumentIds:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: get all DocumentIds of an OSCAL System Security Plan
+      operationId: getSspDocumentIds
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL System Security Plan
+      summary: Add a DocumentId to an OSCAL System Security Plan
+      operationId: addDocumentIdToSsp
+      requestBody:
+        description: DocumentId to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALDocumentId"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALDocumentId"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /system-security-plans/{sspId}/metadata/DocumentIds/{DocumentId}:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns a DocumentId with an OSCAL System Security Plan
+      operationId: getDocumentIdToSspbyId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: DocumentIdId
+          in: path
+          description: DocumentId ID to be associated with System Security Plan
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan or DocumentId not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates a DocumentId with an OSCAL System Security Plan
+      operationId: updateDocumentIdToSsp
+      requestBody:
+        description: DocumentId to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALDocumentId"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALDocumentId"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: DocumentIdId
+          in: path
+          description: DocumentId ID to be associated with System Security Plan
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan or DocumentId not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL System Security Plan
+      summary: Removes a DocumentId from an OSCAL System Security Plan
+      operationId: removeDocumentIdfromSsp
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: DocumentIdId
+          in: path
+          description: DocumentId ID to be associated with System Security Plan
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System Security Plan or document Id not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
   /system-security-plans/{sspId}/metadata/parties:
     get:
       tags:
@@ -2714,7 +4915,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -2754,7 +4955,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -2789,7 +4990,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: partyId
           in: path
           description: Party ID to be associated with SSP
@@ -2838,7 +5039,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: partyId
           in: path
           description: Party ID to be associated with SSP
@@ -2875,7 +5076,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: partyId
           in: path
           description: Party ID to be associated with SSP
@@ -2914,7 +5115,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -2954,7 +5155,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -2989,7 +5190,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: roleId
           in: path
           description: Role ID to be associated with SSP
@@ -3038,7 +5239,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: roleId
           in: path
           description: Role ID to be associated with SSP
@@ -3075,7 +5276,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: roleId
           in: path
           description: Role ID to be associated with SSP
@@ -3102,6 +5303,406 @@ paths:
         - oscal_auth:
             - write:metadata
             - read:metadata
+  /system-security-plans/{sspId}/metadata/Locations:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: get all Locations of an OSCAL system security plan
+      operationId: getSspLocations
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL System Security Plan
+      summary: Add a Location to an OSCAL system security plan
+      operationId: addLocationToSsp
+      requestBody:
+        description: Location to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALLocation"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALLocation"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /system-security-plans/{sspId}/metadata/Locations/{LocationId}:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns a Location with an OSCAL system security plan
+      operationId: getLocationToSsfromId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: LocationId
+          in: path
+          description: Location ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or Location not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates a Location with an OSCAL system security plan
+      operationId: updateLocationToSsp
+      requestBody:
+        description: Location to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALLocation"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALLocation"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: LocationId
+          in: path
+          description: Location ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or Location not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL System Security Plan
+      summary: Removes a Location from an OSCAL system security plan
+      operationId: removeLocationfromSsp
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: LocationId
+          in: path
+          description: Location ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or party not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /system-security-plans/{sspId}/metadata/ResponsibleParties:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: get all responsible parties of an OSCAL system security plan
+      operationId: getSspResponsibleParties
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:metadata
+    post:
+      tags:
+        - OSCAL System Security Plan
+      summary: Add a responsible party to an OSCAL system security plan
+      operationId: addResponsiblePartyToSsp
+      requestBody:
+        description: Responsible Party to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALResponsibleParty"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALResponsibleParty"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+  /system-security-plans/{sspId}/metadata/ResponsibleParties/{roleId}:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns a role with an OSCAL system security plan
+      operationId: getResponsiblePartyToSsfromId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID of the Responsible Party
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:metadata
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates a role with an OSCAL system security plan
+      operationId: updateResponsiblePartyToSsp
+      requestBody:
+        description: Role to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALResponsibleParty"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALResponsibleParty"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID to be associated with SSP
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
+    delete:
+      tags:
+        - OSCAL System Security Plan
+      summary: Removes a Responsible Party from an OSCAL system security plan
+      operationId: removeResponsiblePartyfromSsp
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID of the Responsible Party
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: System security plan or party not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:metadata
+            - read:metadata
   /system-security-plans/{sspId}/metadata/revisions:
     get:
       tags:
@@ -3114,7 +5715,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -3154,7 +5755,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -3189,7 +5790,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: revisonId
           in: path
           description: Revision ID to be associated with SSP
@@ -3238,7 +5839,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: revisionId
           in: path
           description: Revision ID to be associated with SSP
@@ -3278,7 +5879,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: revisionId
           in: path
           description: Revision ID to be associated with SSP
@@ -3317,7 +5918,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -3357,7 +5958,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -3399,7 +6000,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: implementedRequirementId
           in: path
           description: ID of implemented requirement to be updated
@@ -3439,7 +6040,7 @@ paths:
           description: System security plan ID
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: implementedRequirementId
           in: path
           description: ID of implemented requirement to be removed
@@ -3485,7 +6086,7 @@ paths:
           description: ID of system security plan to return
           required: true
           schema:
-            $ref: "#/components/schemas/DocumentId"
+            $ref: "#/components/schemas/DocId"
         - name: implementedRequirementId
           in: path
           description: ID of the implemented requirement to be returned
@@ -4418,6 +7019,24 @@ components:
         responsible-party:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_responsible-party"
+    OSCALDocumentId:
+      type: object
+      properties:
+        document-id:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_document-id"
+    OSCALLink:
+      type: object
+      properties:
+        link:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_link"
+    OSCALProp:
+      type: object
+      properties:
+        prop:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_property"
     OSCALMetadata:
       type: object
       properties:
@@ -4510,7 +7129,7 @@ components:
       properties:
         assessment-results:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
-    DocumentId:
+    DocId:
       type: string
       minLength: 1
       maxLength: 72

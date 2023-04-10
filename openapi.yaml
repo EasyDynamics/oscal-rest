@@ -9370,6 +9370,19 @@ components:
       properties:
         assessment-plans:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
+    OSCALErrorMessage:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: string
+    ValidationError:
+      allOf:
+        - $ref: '#/components/schemas/OSCALErrorMessage'
+      properties:
+        detail:
+          type: object
     OSCALAssessmentResults:
       type: object
       properties:

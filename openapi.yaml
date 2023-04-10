@@ -11,7 +11,7 @@ info:
     simple CRUD operations, but should also describe how to manipulate relationships and make partial changes.
 
     Such an API will likely see the most success across various vendors and projects when maintained by a
-    standards body or community, and we're looking to get that conversation started with this effort.
+    standards body or community, and we're looking to Returnsthat conversation started with this effort.
 
     ## Identifier Scope
     Note that all object identifiers are **scoped to the system** implementing the REST API
@@ -22,7 +22,7 @@ info:
       To associate a Party with a known Component Definition with a UUID you might:
       1. Search for the Party:
           ```
-          GET /parties/search?query=bob
+          Returns/parties/search?query=bob
           ```
           ```
           [
@@ -328,6 +328,163 @@ paths:
       security:
         - oscal_auth:
             - read:catalogs
+  /catalogs/{catalogId}/metadata:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Finds the metadata of an OSCAL Catalog by ID
+      description: Returns the metadata of a single OSCAL Catalog
+      operationId: getCatalogMetadataById
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: catalogId
+          in: path
+          description: ID of Catalog to return
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:catalogs
+    patch:
+      tags:
+        - OSCAL Catalog
+      summary: Updates the metadata of an existing OSCAL Catalog
+      operationId: updateCatalogMetadata
+      parameters:
+        - name: catalogId
+          in: path
+          description: ID of Catalog whose metadata will be updated
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      requestBody:
+        description: Catalog object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+        required: true
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+      x-codegen-request-body-name: body
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Replace the metadata of an existing OSCAL Catalog
+      operationId: ReplaceMetadataCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: ID of Catalog to replace
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      requestBody:
+        description: Catalog object to be replaced
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+        required: true
+      responses:
+        200:
+          description: Updated the metadata Catalog
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Bad Request
+        404:
+          description: Catalog not found
+        409:
+          description: Conflict with current state
+        415:
+          description: Unsupported media type
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Deletes the metadata of an OSCAL Catalog
+      operationId: deleteCatalogMetadata
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID to delete
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content: {}
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Catalog not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
   /catalogs/{catalogId}/metadata/links:
     get:
       tags:
@@ -386,6 +543,9 @@ paths:
           description: Successful operation
           content:
             application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+            application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALLink"
         400:
@@ -588,6 +748,9 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALProp"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
         400:
           description: Invalid ID supplied
           content: {}
@@ -732,7 +895,7 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: get all DocumentIds of an OSCAL Catalog
+      summary: Returns all DocumentIds of an OSCAL Catalog
       operationId: getCatalogDocumentIds
       parameters:
         - name: catalogId
@@ -788,6 +951,9 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALDocumentId"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
         400:
           description: Invalid ID supplied
           content: {}
@@ -816,9 +982,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: DocumentIdId
+        - name: DocumentId
           in: path
-          description: DocumentId ID to be associated with Catalog
+          description: Document ID to be associated with Catalog
           required: true
           schema:
             type: string
@@ -865,9 +1031,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: DocumentIdId
+        - name: DocumentId
           in: path
-          description: DocumentId ID to be associated with Catalog
+          description: Document ID to be associated with Catalog
           required: true
           schema:
             type: string
@@ -876,6 +1042,9 @@ paths:
           description: Successful operation
           content:
             application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+            application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALDocumentId"
         400:
@@ -902,9 +1071,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: DocumentIdId
+        - name: DocumentId
           in: path
-          description: DocumentId ID to be associated with Catalog
+          description: Document ID to be associated with Catalog
           required: true
           schema:
             type: string
@@ -932,7 +1101,7 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: get all parties of an Catalog
+      summary: Returns all parties of an Catalog
       operationId: getCatalogParties
       parameters:
         - name: catalogId
@@ -975,7 +1144,7 @@ paths:
               $ref: "#/components/schemas/OSCALParty"
         required: true
       parameters:
-        - name: sspId
+        - name: catalogId
           in: path
           description: Catalog ID
           required: true
@@ -986,6 +1155,9 @@ paths:
           description: Successful operation
           content:
             application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+            application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALParty"
         400:
@@ -1078,6 +1250,9 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALParty"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
         400:
           description: Invalid ID supplied
           content: {}
@@ -1132,10 +1307,10 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: get all roles of an OSCAL catalog
+      summary: Returns all roles of an OSCAL catalog
       operationId: getCatalogRoles
       parameters:
-        - name: sspId
+        - name: catalogId
           in: path
           description: Catalog ID
           required: true
@@ -1209,7 +1384,7 @@ paths:
           in: header
           schema:
             type: string
-        - name: sspId
+        - name: catalogId
           in: path
           description: Catalog ID
           required: true
@@ -1331,7 +1506,7 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: get all responsible parties of an OSCAL Catalog
+      summary: Returns all responsible parties of an OSCAL Catalog
       operationId: getCatalogResponsibleParties
       parameters:
         - name: catalogId
@@ -1374,7 +1549,7 @@ paths:
               $ref: "#/components/schemas/OSCALResponsibleParty"
         required: true
       parameters:
-        - name: sspId
+        - name: catalogId
           in: path
           description: Catalog ID
           required: true
@@ -1385,6 +1560,9 @@ paths:
           description: Successful operation
           content:
             application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+            application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALResponsibleParty"
         400:
@@ -1531,7 +1709,7 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: get all revisions of an OSCAL Catalog
+      summary: Returns all revisions of an OSCAL Catalog
       operationId: getCatalogRevision
       parameters:
         - name: catalogId
@@ -1609,13 +1787,13 @@ paths:
           in: header
           schema:
             type: string
-        - name: sspId
+        - name: catalogId
           in: path
           description: Catalog ID
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: revisonId
+        - name: revisionId
           in: path
           description: Revision ID to be associated with SSP
           required: true
@@ -1684,7 +1862,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Catalog or role not found
+          description: Catalog or revision not found
           content: {}
         409:
           description: Conflict with current state
@@ -1724,7 +1902,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Catalog or party not found
+          description: Catalog or revision not found
           content: {}
       security:
         - oscal_auth:
@@ -1734,7 +1912,7 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: get all Locations of an OSCAL Catalog
+      summary: Returns all Locations of an OSCAL Catalog
       operationId: getCatalogLocations
       parameters:
         - name: catalogId
@@ -1924,7 +2102,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: Catalog or party not found
+          description: Catalog or Location not found
           content: {}
       security:
         - oscal_auth:
@@ -2273,231 +2451,6 @@ paths:
         - oscal_auth:
             - write:profiles
             - read:profiles
-  /profiles/{profileId}/roles:
-    post:
-      tags:
-        - OSCAL Profile
-      summary: Adds a new role to an OSCAL profile
-      operationId: addRoleToProfile
-      requestBody:
-        description: OSCAL role to be added
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/OSCALRole"
-        required: true
-      parameters:
-        - name: api_key
-          in: header
-          schema:
-            type: string
-        - name: profileId
-          in: path
-          description: Profile ID
-          required: true
-          schema:
-            type: string
-      responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
-        404:
-          description: Profile not found
-          content: {}
-      security:
-        - oscal_auth:
-            - write:profiles
-            - read:profiles
-  /profiles/{profileId}/roles/{roleId}:
-    delete:
-      tags:
-        - OSCAL Profile
-      summary: Removes a role from an OSCAL profile
-      description: |
-        Removes the given role from the given profile.
-
-        This should also result in references under other parts of the schema such as responsible parties being removed.
-      operationId: removeRolefromProfile
-      parameters:
-        - name: api_key
-          in: header
-          schema:
-            type: string
-        - name: profileId
-          in: path
-          description: Profile ID
-          required: true
-          schema:
-            type: string
-        - name: roleId
-          in: path
-          description: Role ID to be removed from the profile
-          required: true
-          schema:
-            type: string
-      responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
-        404:
-          description: Profile or role not found
-          content: {}
-      security:
-        - oscal_auth:
-            - write:profiles
-            - read:profiles
-  /profiles/{profileId}/parties/{partyId}:
-    put:
-      tags:
-        - OSCAL Profile
-      summary: Associates a party with an OSCAL profile
-      operationId: addPartyToProfile
-      parameters:
-        - name: api_key
-          in: header
-          schema:
-            type: string
-        - name: profileId
-          in: path
-          description: Profile ID
-          required: true
-          schema:
-            type: string
-        - name: partyId
-          in: path
-          description: Party ID to be associated with the profile
-          required: true
-          schema:
-            type: string
-      responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
-        404:
-          description: Profile or party not found
-          content: {}
-        409:
-          description: Conflict with current state
-      security:
-        - oscal_auth:
-            - write:profiles
-            - read:profiles
-    delete:
-      tags:
-        - OSCAL Profile
-      summary: Removes a party from an OSCAL profile
-      description: |
-        Removes the given party from the given profile.
-
-        This should also result in references under other parts of the schema such as responsible roles being removed.
-      operationId: removePartyfromProfile
-      parameters:
-        - name: api_key
-          in: header
-          schema:
-            type: string
-        - name: profileId
-          in: path
-          description: Profile ID
-          required: true
-          schema:
-            type: string
-        - name: partyId
-          in: path
-          description: Party ID to be removed with the profile
-          required: true
-          schema:
-            type: string
-      responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
-        404:
-          description: Profile or party not found
-          content: {}
-      security:
-        - oscal_auth:
-            - write:profiles
-            - read:profiles
-  /profiles/{profileId}/responsible-parties/{roleId}/parties/{partyId}:
-    post:
-      tags:
-        - OSCAL Profile
-      summary: Associates a party with role within an OSCAL profile
-      operationId: addPartyToProfileRole
-      parameters:
-        - name: api_key
-          in: header
-          schema:
-            type: string
-        - name: profileId
-          in: path
-          description: Profile ID
-          required: true
-          schema:
-            type: string
-        - name: roleId
-          in: path
-          description: Role ID for the party to be associated with within the profile
-          required: true
-          schema:
-            type: string
-        - name: partyId
-          in: path
-          description: Party ID to be added to the role within the profile
-          required: true
-          schema:
-            type: string
-      responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
-        404:
-          description: Profile, role, or party not found
-          content: {}
-      security:
-        - oscal_auth:
-            - write:profiles
-            - read:profiles
-    delete:
-      tags:
-        - OSCAL Profile
-      summary: Removes a party from a role within an OSCAL profile
-      operationId: removePartyfromProfileRole
-      parameters:
-        - name: api_key
-          in: header
-          schema:
-            type: string
-        - name: profileId
-          in: path
-          description: Profile ID
-          required: true
-          schema:
-            type: string
-        - name: roleId
-          in: path
-          description: Role ID within the profile that the party should be removed from
-          required: true
-          schema:
-            type: string
-        - name: partyId
-          in: path
-          description: Party ID to be removed from the role within the profile
-          required: true
-          schema:
-            type: string
-      responses:
-        400:
-          description: Invalid ID supplied
-          content: {}
-        404:
-          description: Profile, role, or party not found
-          content: {}
-      security:
-        - oscal_auth:
-            - write:profiles
-            - read:profiles
   /profiles/search:
     get:
       tags:
@@ -2525,6 +2478,1766 @@ paths:
           content: {}
       security:
         - oscal_auth:
+            - read:profiles
+  /profiles/{profileId}/metadata:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Finds the metadata of an OSCAL Profile by ID
+      description: Returns the metadata of a single OSCAL Profile
+      operationId: getProfileMetadataById
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: profileId
+          in: path
+          description: ID of Profile to return
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:profiles
+    patch:
+      tags:
+        - OSCAL Profile
+      summary: Updates the metadata of an existing OSCAL Profile
+      operationId: updateProfileMetadata
+      parameters:
+        - name: profileId
+          in: path
+          description: ID of Profile whose metadata will be updated
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      requestBody:
+        description: Profile object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+        required: true
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+      x-codegen-request-body-name: body
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Replace the metadata of an existing OSCAL Profile
+      operationId: ReplaceMetadataProfile
+      parameters:
+        - name: profileId
+          in: path
+          description: ID of Profile to replace
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      requestBody:
+        description: Profile object to be replaced
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+        required: true
+      responses:
+        200:
+          description: Updated the metadata Profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Bad Request
+        404:
+          description: Profile not found
+        409:
+          description: Conflict with current state
+        415:
+          description: Unsupported media type
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+        - OSCAL Profile
+      summary: Deletes the metadata of an OSCAL Profile
+      operationId: deleteProfileMetadata
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID to delete
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content: {}
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/links:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns all links of an OSCAL Profile
+      operationId: getProfilelinks
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:profiles
+    post:
+      tags:
+        - OSCAL Profile
+      summary: Add a LinkId to an OSCAL Profile
+      operationId: addLinkToProfileMetadata
+      requestBody:
+        description: Link to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALLink"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALLink"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/links/{href}:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns a Link with an OSCAL Profile
+      operationId: getProfileLinkbyId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: href
+          in: path
+          description: Link href
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or Link not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:profiles
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Updates a LinkId with an OSCAL Profile
+      operationId: updateProfileMetadataLink
+      requestBody:
+        description: Link to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALLink"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALLink"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: href
+          in: path
+          description: Link href
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or Link not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+    delete:
+      tags:
+        - OSCAL Profile
+      summary: Removes a Link from an OSCAL Profile
+      operationId: removeLinkfromProfile
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: href
+          in: path
+          description: Link href
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLink"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or Link  not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/props:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns all props of an OSCAL Profile
+      operationId: getProfileProps
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:profiles
+    post:
+      tags:
+        - OSCAL Profile
+      summary: Add a prop to an OSCAL Profile
+      operationId: addPropToProfileMetadata
+      requestBody:
+        description: Prop to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALProp"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALProp"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/props/{propId}:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns a prop with an OSCAL Profile
+      operationId: getProfilePropbyId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: propId
+          in: path
+          description: Prop ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or prop not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:profiles
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Updates a prop with an OSCAL Profile
+      operationId: updateProfileMetadataProp
+      requestBody:
+        description: prop to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALProp"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALProp"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: propId
+          in: path
+          description: Prop ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or prop not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+    delete:
+      tags:
+        - OSCAL Profile
+      summary: Removes a prop from an OSCAL Profile
+      operationId: removePropfromProfile
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: propId
+          in: path
+          description: Prop ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or prop  not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/DocumentIds:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns all DocumentIds of an OSCAL Profile
+      operationId: getProfileDocumentIds
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:profiles
+    post:
+      tags:
+        - OSCAL Profile
+      summary: Add a DocumentId to an OSCAL Profile
+      operationId: addDocumentIdToProfile
+      requestBody:
+        description: DocumentId to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALDocumentId"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALDocumentId"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/DocumentIds/{DocumentId}:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns a DocumentId with an OSCAL Profile
+      operationId: getDocumentIdToProfilebyId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: DocumentId
+          in: path
+          description: Document ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or DocumentId not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:profiles
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Updates a DocumentId with an OSCAL Profile
+      operationId: updateDocumentIdToProfile
+      requestBody:
+        description: DocumentId to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALDocumentId"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALDocumentId"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: DocumentId
+          in: path
+          description: Document ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or DocumentId not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+    delete:
+      tags:
+        - OSCAL Profile
+      summary: Removes a DocumentId from an OSCAL Profile
+      operationId: removeDocumentIdfromProfile
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: DocumentId
+          in: path
+          description: Document ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentId"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or document Id not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/parties:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns all parties of an OSCAL Profile
+      operationId: getProfileParties
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:implementedRequirements
+    post:
+      tags:
+        - OSCAL Profile
+      summary: Add a party to an OSCAL Profile
+      operationId: addPartyToProfile
+      requestBody:
+        description: Party to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALParty"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALParty"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:parties
+            - read:parties
+  /profiles/{profileId}/metadata/parties/{partyId}:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns a party with an OSCAL Profile
+      operationId: getPartyToProfileById
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: partyId
+          in: path
+          description: Party ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or party not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:profiles
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Updates a party with an OSCAL Profile
+      operationId: updatePartyToProfile
+      requestBody:
+        description: Party to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALParty"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALParty"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: partyId
+          in: path
+          description: Party ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or party not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+    delete:
+      tags:
+        - OSCAL Profile
+      summary: Removes a party from an OSCAL Profile
+      operationId: removePartyfromProfile
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: partyId
+          in: path
+          description: Party ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or party not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/roles:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns all roles of an OSCAL Profile
+      operationId: getProfileRoles
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:profiles
+    post:
+      tags:
+        - OSCAL Profile
+      summary: Add a role to an OSCAL Profile
+      operationId: addRoleToProfile
+      requestBody:
+        description: Role to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALRole"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALRole"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/roles/{roleId}:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns a role with an OSCAL Profile
+      operationId: getRoleToProfileById
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:profiles
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Updates a role with an OSCAL Profile
+      operationId: updateRoleToProfile
+      requestBody:
+        description: Role to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALRole"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALRole"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or role not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+    delete:
+      tags:
+        - OSCAL Profile
+      summary: Removes a role from an OSCAL Profile
+      operationId: removeRolefromProfile
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRole"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or role not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/Locations:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns all Locations of an OSCAL Profile
+      operationId: getProfileLocations
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:profiles
+    post:
+      tags:
+        - OSCAL Profile
+      summary: Add a Location to an OSCAL Profile
+      operationId: addLocationToProfile
+      requestBody:
+        description: Location to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALLocation"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALLocation"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/Locations/{LocationId}:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns a Location with an OSCAL Profile
+      operationId: getProfileLocationById
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: LocationId
+          in: path
+          description: Location ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or Location not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:profiles
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Updates a Location with an OSCAL Profile
+      operationId: updateLocationToProfile
+      requestBody:
+        description: Location to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALLocation"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALLocation"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: LocationId
+          in: path
+          description: Location ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or Location not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+    delete:
+      tags:
+        - OSCAL Profile
+      summary: Removes a Location from an OSCAL Profile
+      operationId: removeLocationfromProfile
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: LocationId
+          in: path
+          description: Location ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLocation"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or location not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/ResponsibleParties:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns all responsible parties of an OSCAL Profile
+      operationId: getProfileResponsibleParties
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:profiles
+    post:
+      tags:
+        - OSCAL Profile
+      summary: Add a responsible party to an OSCAL Profile
+      operationId: addResponsiblePartyToProfile
+      requestBody:
+        description: Responsible Party to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALResponsibleParty"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALResponsibleParty"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/ResponsibleParties/{roleId}:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns a role with an OSCAL Profile
+      operationId: getResponsiblePartyToProfilefromId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID of the Responsible Party
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or responsible party not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:profiles
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Updates a role with an OSCAL Profile
+      operationId: updateResponsiblePartyToProfile
+      requestBody:
+        description: Role to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALResponsibleParty"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALResponsibleParty"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or responsible party not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+    delete:
+      tags:
+        - OSCAL Profile
+      summary: Removes a Responsible Party from an OSCAL Profile
+      operationId: removeResponsiblePartyfromProfile
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: roleId
+          in: path
+          description: Role ID of the Responsible Party
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALResponsibleParty"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or responsible party not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/revisions:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns all revisions of an OSCAL Profile
+      operationId: getProfileRevision
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:profiles
+    post:
+      tags:
+        - OSCAL Profile
+      summary: Add a revision to an OSCAL Profile
+      operationId: addRevisionToProfile
+      requestBody:
+        description: Role to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALRevision"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALRevision"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+  /profiles/{profileId}/metadata/revisions/{revisionId}:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns a revison with an OSCAL Profile
+      operationId: getRevisionToProfilefromId
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: revisionId
+          in: path
+          description: Revision ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or revision not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - read:profiles
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Updates a revision with an OSCAL Profile
+      operationId: updateProfileRevision
+      requestBody:
+        description: Revision to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALRevision"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALRevision"
+        required: true
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: revisionId
+          in: path
+          description: Revision ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or revision not found
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+    delete:
+      tags:
+        - OSCAL Profile
+      summary: Removes a revision from an OSCAL Profile
+      operationId: removeRevionfromProfile
+      parameters:
+        - name: profileId
+          in: path
+          description: Profile ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: revisionId
+          in: path
+          description: Revision ID to be associated with Profile
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRevision"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Profile or revision not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:profiles
             - read:profiles
   /component-definitions:
     get:
@@ -3423,6 +5136,15 @@ paths:
               $ref: "#/components/schemas/OSCALMetadata"
         required: true
       responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
         400:
           description: Invalid ID supplied
           content: {}
@@ -3497,6 +5219,9 @@ paths:
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
+        200:
+          description: Successful operation
+          content: {}
         400:
           description: Invalid ID supplied
           content: {}
@@ -3568,6 +5293,15 @@ paths:
               $ref: "#/components/schemas/OSCALImportProfile"
         required: true
       responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALImportProfile"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALImportProfile"
         400:
           description: Invalid ID supplied
           content: {}
@@ -3642,6 +5376,9 @@ paths:
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
+        200:
+          description: Successful operation
+          content: {}
         400:
           description: Invalid ID supplied
           content: {}
@@ -3713,6 +5450,15 @@ paths:
               $ref: "#/components/schemas/OSCALBackMatter"
         required: true
       responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALBackMatter"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALBackMatter"
         400:
           description: Invalid ID supplied
           content: {}
@@ -3787,6 +5533,9 @@ paths:
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
+        200:
+          description: Successfull operation
+          content: {}
         400:
           description: Invalid ID supplied
           content: {}
@@ -3858,6 +5607,15 @@ paths:
               $ref: "#/components/schemas/OSCALSystemCharacteristics"
         required: true
       responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemCharacteristics"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemCharacteristics"
         400:
           description: Invalid ID supplied
           content: {}
@@ -3932,6 +5690,9 @@ paths:
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
+        200:
+          description: Successful operation
+          content: {}
         400:
           description: Invalid ID supplied
           content: {}
@@ -4003,6 +5764,15 @@ paths:
               $ref: "#/components/schemas/OSCALSystemImplementation"
         required: true
       responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemImplementation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemImplementation"
         400:
           description: Invalid ID supplied
           content: {}
@@ -4077,6 +5847,9 @@ paths:
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
+        200:
+          description: Successful operation
+          content: {}
         400:
           description: Invalid ID supplied
           content: {}
@@ -4148,6 +5921,15 @@ paths:
               $ref: "#/components/schemas/OSCALControlImplementation"
         required: true
       responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALControlImplementation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALControlImplementation"
         400:
           description: Invalid ID supplied
           content: {}
@@ -4222,6 +6004,9 @@ paths:
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
+        200:
+          description: Successful operation
+          content: {}
         400:
           description: Invalid ID supplied
           content: {}
@@ -4707,7 +6492,7 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: get all DocumentIds of an OSCAL System Security Plan
+      summary: Returns all DocumentIds of an OSCAL System Security Plan
       operationId: getSspDocumentIds
       parameters:
         - name: sspId
@@ -4791,9 +6576,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: DocumentIdId
+        - name: DocumentId
           in: path
-          description: DocumentId ID to be associated with System Security Plan
+          description: Document ID to be associated with System Security Plan
           required: true
           schema:
             type: string
@@ -4840,9 +6625,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: DocumentIdId
+        - name: DocumentId
           in: path
-          description: DocumentId ID to be associated with System Security Plan
+          description: Document ID to be associated with System Security Plan
           required: true
           schema:
             type: string
@@ -4877,9 +6662,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: DocumentIdId
+        - name: DocumentId
           in: path
-          description: DocumentId ID to be associated with System Security Plan
+          description: Document ID to be associated with System Security Plan
           required: true
           schema:
             type: string
@@ -4907,7 +6692,7 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: get all parties of an OSCAL system security plan
+      summary: Returns all parties of an OSCAL system security plan
       operationId: getSspParties
       parameters:
         - name: sspId
@@ -5107,7 +6892,7 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: get all roles of an OSCAL system security plan
+      summary: Returns all roles of an OSCAL system security plan
       operationId: getSspRoles
       parameters:
         - name: sspId
@@ -5178,7 +6963,7 @@ paths:
       tags:
         - OSCAL System Security Plan
       summary: Returns a role with an OSCAL system security plan
-      operationId: getRoleToSsfromId
+      operationId: getRoleToSspfromId
       parameters:
         - name: return_type
           description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
@@ -5297,7 +7082,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System security plan or party not found
+          description: System security plan or role not found
           content: {}
       security:
         - oscal_auth:
@@ -5307,7 +7092,7 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: get all Locations of an OSCAL system security plan
+      summary: Returns all Locations of an OSCAL system security plan
       operationId: getSspLocations
       parameters:
         - name: sspId
@@ -5378,7 +7163,7 @@ paths:
       tags:
         - OSCAL System Security Plan
       summary: Returns a Location with an OSCAL system security plan
-      operationId: getLocationToSsfromId
+      operationId: getLocationToSspfromId
       parameters:
         - name: return_type
           description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
@@ -5497,7 +7282,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System security plan or party not found
+          description: System security plan or location not found
           content: {}
       security:
         - oscal_auth:
@@ -5507,7 +7292,7 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: get all responsible parties of an OSCAL system security plan
+      summary: Returns all responsible parties of an OSCAL system security plan
       operationId: getSspResponsibleParties
       parameters:
         - name: sspId
@@ -5578,7 +7363,7 @@ paths:
       tags:
         - OSCAL System Security Plan
       summary: Returns a role with an OSCAL system security plan
-      operationId: getResponsiblePartyToSsfromId
+      operationId: getResponsiblePartyToSspfromId
       parameters:
         - name: return_type
           description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
@@ -5611,7 +7396,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System security plan or role not found
+          description: System security plan or responsible party not found
           content: {}
         409:
           description: Conflict with current state
@@ -5657,7 +7442,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System security plan or role not found
+          description: System security plan or responsible party not found
           content: {}
         409:
           description: Conflict with current state
@@ -5697,7 +7482,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System security plan or party not found
+          description: System security plan or responsible party not found
           content: {}
       security:
         - oscal_auth:
@@ -5707,7 +7492,7 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: get all revisions of an OSCAL system security plan
+      summary: Returns all revisions of an OSCAL system security plan
       operationId: getSspRevision
       parameters:
         - name: sspId
@@ -5778,7 +7563,7 @@ paths:
       tags:
         - OSCAL System Security Plan
       summary: Returns a revison with an OSCAL system security plan
-      operationId: getRevisionToSsfromId
+      operationId: getRevisionToSspfromId
       parameters:
         - name: return_type
           description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
@@ -5791,7 +7576,7 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: revisonId
+        - name: revisionId
           in: path
           description: Revision ID to be associated with SSP
           required: true
@@ -5811,7 +7596,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System security plan or role not found
+          description: System security plan or revision not found
           content: {}
         409:
           description: Conflict with current state
@@ -5860,7 +7645,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System security plan or role not found
+          description: System security plan or revision not found
           content: {}
         409:
           description: Conflict with current state
@@ -5900,7 +7685,7 @@ paths:
           description: Invalid ID supplied
           content: {}
         404:
-          description: System security plan or party not found
+          description: System security plan or revision not found
           content: {}
       security:
         - oscal_auth:
@@ -5910,7 +7695,7 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: get all implemented requirements of an OSCAL system security plan
+      summary: Returns all implemented requirements of an OSCAL system security plan
       operationId: getImplementedRequirementSsp
       parameters:
         - name: sspId
@@ -6460,10 +8245,6 @@ paths:
       summary: Deletes an OSCAL plan of action and milestones
       operationId: deletePoam
       parameters:
-        - name: api_key
-          in: header
-          schema:
-            type: string
         - name: poamId
           in: path
           description: Plan of action and milestones ID to delete
@@ -6471,6 +8252,163 @@ paths:
           schema:
             type: string
       responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Plan of action and milestones not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:poams
+            - read:poams
+  /plan-of-action-and-milestones/{poamId}/metadata:
+    get:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Finds the metadata of an OSCAL Plan of action and milestones by ID
+      description: Returns the metadata of a single OSCAL Plan of action and milestones
+      operationId: getPOAMMetadataById
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: poamId
+          in: path
+          description: ID of Plan of action and milestones to return
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Plan of action and milestones not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:poams
+    patch:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Updates the metadata of an existing OSCAL Plan of action and milestones
+      operationId: updatePOAMMetadata
+      parameters:
+        - name: poamId
+          in: path
+          description: ID of Plan of action and milestones whose metadata will be updated
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      requestBody:
+        description: Plan of action and milestones object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+        required: true
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Plan of action and milestones not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:poams
+            - read:poams
+      x-codegen-request-body-name: body
+    put:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Replace the metadata of an existing OSCAL Plan of action and milestones
+      operationId: ReplaceOAMMetadata
+      parameters:
+        - name: poamId
+          in: path
+          description: ID of Plan of action and milestones to replace
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      requestBody:
+        description: Plan of action and milestones object to be replaced
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+        required: true
+      responses:
+        200:
+          description: Updated the metadata Plan of action and milestones
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Bad Request
+        404:
+          description: Plan of action and milestones not found
+        409:
+          description: Conflict with current state
+        415:
+          description: Unsupported media type
+      security:
+        - oscal_auth:
+            - write:poams
+            - read:poams
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Deletes the metadata of an OSCAL Plan of action and milestones
+      operationId: deletePOAMMetadata
+      parameters:
+        - name: poamId
+          in: path
+          description: Plan of action and milestones ID to delete
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content: {}
         400:
           description: Invalid ID supplied
           content: {}
@@ -6690,6 +8628,163 @@ paths:
         - oscal_auth:
             - write:assessmentPlans
             - read:assessmentPlans
+  /assessment-plans/{assessmentPlanId}/metadata:
+    get:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Finds the metadata of an OSCAL Assessment Plan by ID
+      description: Returns the metadata of a single OSCAL Assessment Plan
+      operationId: getAPMetadataById
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: assessmentPlanId
+          in: path
+          description: ID of Assessment Plan to return
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Assessment Plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:assessmentPlans
+    patch:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Updates the metadata of an existing OSCAL Assessment Plan
+      operationId: updateAPMetadata
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description: ID of Assessment Plan whose metadata will be updated
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      requestBody:
+        description: Assessment Plan object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+        required: true
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Assessment Plan not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:assessmentPlans
+            - read:assessmentPlans
+      x-codegen-request-body-name: body
+    put:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Replace the metadata of an existing OSCAL Assessment Plan
+      operationId: ReplaceAPMetadata
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description: ID of Assessment Plan to replace
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      requestBody:
+        description: Assessment Plan object to be replaced
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+        required: true
+      responses:
+        200:
+          description: Updated the metadata Assessment Plan
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Bad Request
+        404:
+          description: Assessment Plan not found
+        409:
+          description: Conflict with current state
+        415:
+          description: Unsupported media type
+      security:
+        - oscal_auth:
+            - write:assessmentPlans
+            - read:assessmentPlans
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Deletes the metadata of an OSCAL Assessment Plan
+      operationId: deleteAPMetadata
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description: Assessment Plan ID to delete
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content: {}
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Assessment Plan not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:assessmentPlans
+            - read:assessmentPlans
   /assessment-plans/search:
     get:
       tags:
@@ -6893,6 +8988,163 @@ paths:
           content: {}
         404:
           description: Assessment result not found
+          content: {}
+      security:
+        - oscal_auth:
+            - write:assessmentResults
+            - read:assessmentResults
+  /assessment-results/{assessmentResultId}/metadata:
+    get:
+      tags:
+        - OSCAL Assessment Result
+      summary: Finds the metadata of an OSCAL Assessment Result by ID
+      description: Returns the metadata of a single OSCAL Assessment Result
+      operationId: getARMetadataById
+      parameters:
+        - name: return_type
+          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
+          in: header
+          schema:
+            type: string
+        - name: assessmentResultId
+          in: path
+          description: ID of Assessment Result to return
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Assessment Result not found
+          content: {}
+      security:
+        - oscal_auth:
+            - read:assessmentResults
+    patch:
+      tags:
+        - OSCAL Assessment Result
+      summary: Updates the metadata of an existing OSCAL Assessment Result
+      operationId: updateARMetadata
+      parameters:
+        - name: assessmentResultId
+          in: path
+          description: ID of Assessment Result whose metadata will be updated
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      requestBody:
+        description: Assessment Result object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+        required: true
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Assessment Result not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+        409:
+          description: Conflict with current state
+      security:
+        - oscal_auth:
+            - write:assessmentResults
+            - read:assessmentResults
+      x-codegen-request-body-name: body
+    put:
+      tags:
+        - OSCAL Assessment Result
+      summary: Replace the metadata of an existing OSCAL Assessment Result
+      operationId: ReplaceARMetadata
+      parameters:
+        - name: assessmentResultId
+          in: path
+          description: ID of Assessment Result to replace
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      requestBody:
+        description: Assessment Result object to be replaced
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALMetadata"
+        required: true
+      responses:
+        200:
+          description: Updated the metadata Assessment Result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Bad Request
+        404:
+          description: Assessment Result not found
+        409:
+          description: Conflict with current state
+        415:
+          description: Unsupported media type
+      security:
+        - oscal_auth:
+            - write:assessmentResults
+            - read:assessmentResults
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+        - OSCAL Assessment Result
+      summary: Deletes the metadata of an OSCAL Assessment Result
+      operationId: deleteARMetadata
+      parameters:
+        - name: assessmentResultId
+          in: path
+          description: Assessment Result ID to delete
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content: {}
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Assessment Result not found
           content: {}
       security:
         - oscal_auth:

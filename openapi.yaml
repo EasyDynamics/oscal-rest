@@ -9173,7 +9173,14 @@ paths:
                 items:
                   $ref: "#/components/schemas/OSCALAssessmentResults"
         400:
-          description: Invalid status value
+          description: Invalid ID Supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
             - read:assessmentResults

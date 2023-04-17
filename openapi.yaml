@@ -12958,9 +12958,12 @@ components:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_control-implementation"
     OSCALComponentDefinitionComponentControlImplementations:
-      type: array
-      items:
-        $ref: "#/components/schemas/OSCALComponentDefinitionComponentControlImplementation"
+      type: object
+      properties:
+        component-definition-control-implementations:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALComponentDefinitionComponentControlImplementation"
     OSCALSsp:
       type: object
       properties:
@@ -12968,9 +12971,12 @@ components:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_system-security-plan"
     OSCALSsps:
-      type: array
-      items:
-        $ref: "#/components/schemas/OSCALSsp"
+      type: object
+      properties:
+        system-security-plans:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALSsp"
     OSCALSspUpdateExample:
       type: object
       properties:
@@ -12983,9 +12989,12 @@ components:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_implemented-requirement"
     OSCALImplementedRequirements:
-      type: array
-      items:
-        $ref: "#/components/schemas/OSCALImplementedRequirement"
+      type: object
+      properties:
+        implemented-requirements:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALImplementedRequirement"
     OSCALRole:
       type: object
       properties:
@@ -12993,9 +13002,12 @@ components:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_role"
     OSCALRoles:
-      type: array
-      items:
-        $ref: "#/components/schemas/OSCALRole"
+      type: object
+      properties:
+        roles:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALRole"
     OSCALParty:
       type: object
       properties:
@@ -13016,9 +13028,12 @@ components:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_revision"
     OSCALRevisions:
-      type: array
-      items:
-        $ref: "#/components/schemas/OSCALRevision"
+      type: object
+      properties:
+        revisions:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALRevision"
     OSCALLocation:
       type: object
       properties:
@@ -13026,9 +13041,12 @@ components:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_location"
     OSCALLocations:
-      type: array
-      items:
-        $ref: "#/components/schemas/OSCALLocation"
+      type: object
+      properties:
+        locations:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALLocation"
     OSCALResponsibleParty:
       type: object
       properties:
@@ -13036,9 +13054,12 @@ components:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_responsible-party"
     OSCALResponsibleParties:
-      type: array
-      items:
-        $ref: "#/components/schemas/OSCALResponsibleParty"
+      type: object
+      properties:
+        responsible-parties:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALResponsibleParty"
     OSCALDocumentId:
       type: object
       properties:
@@ -13046,9 +13067,12 @@ components:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_document-id"
     OSCALDocumentIds:
-      type: array
-      items:
-        $ref: "#/components/schemas/OSCALDocumentId"
+      type: object
+      properties:
+        document-ids:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALDocumentId"
     OSCALLink:
       type: object
       properties:
@@ -13056,9 +13080,12 @@ components:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_link"
     OSCALLinks:
-      type: array
-      items:
-        $ref: "#/components/schemas/OSCALLink"
+      type: object
+      properties:
+        links:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALLink"
     OSCALProp:
       type: object
       properties:

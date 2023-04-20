@@ -102,10 +102,6 @@ tags:
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/control/catalog/
-  - name: OSCAL Party
-    externalDocs:
-      description: Find out more
-      url: https://pages.nist.gov/OSCAL
   - name: OSCAL Plan of Action and Milestones
     externalDocs:
       description: Find out more
@@ -425,11 +421,6 @@ paths:
       description: Returns the metadata of a single OSCAL Catalog
       operationId: getCatalogMetadataById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: catalogId
           in: path
           description: ID of Catalog to return
@@ -761,11 +752,6 @@ paths:
       summary: Returns a Link with an OSCAL Catalog
       operationId: getCatalogLinkbyId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: catalogId
           in: path
           description: Catalog ID
@@ -1038,11 +1024,6 @@ paths:
       summary: Returns a prop with an OSCAL Catalog
       operationId: getCatalogPropbyId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: catalogId
           in: path
           description: Catalog ID
@@ -1315,11 +1296,6 @@ paths:
       summary: Returns a DocumentId with an OSCAL Catalog
       operationId: getDocumentIdToCatalogfromId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: catalogId
           in: path
           description: Catalog ID
@@ -1595,11 +1571,6 @@ paths:
       summary: Returns a party with an OSCAL Catalog
       operationId: getPartyToCatalogfromId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: catalogId
           in: path
           description: Catalog ID
@@ -1871,11 +1842,6 @@ paths:
       summary: Returns a role with an OSCAL Catalog
       operationId: getRoleToCatalogfromId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: catalogId
           in: path
           description: Catalog ID
@@ -2148,11 +2114,6 @@ paths:
       summary: Returns a role with an OSCAL Catalog
       operationId: getResponsiblePartyToCatalogfromId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: catalogId
           in: path
           description: Catalog ID
@@ -2422,11 +2383,6 @@ paths:
       summary: Returns a revison with an OSCAL Catalog
       operationId: getRevisionToCatalogfromId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: catalogId
           in: path
           description: Catalog ID
@@ -2699,11 +2655,6 @@ paths:
       summary: Returns a Location with an OSCAL Catalog
       operationId: getLocationToCatalogfromId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: catalogId
           in: path
           description: Catalog ID
@@ -3402,11 +3353,6 @@ paths:
       description: Returns the metadata of a single OSCAL Profile
       operationId: getProfileMetadataById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: profileId
           in: path
           description: ID of Profile to return
@@ -3735,11 +3681,6 @@ paths:
       summary: Returns a Link with an OSCAL Profile
       operationId: getProfileLinkbyId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: profileId
           in: path
           description: Profile ID
@@ -4009,11 +3950,6 @@ paths:
       summary: Returns a prop with an OSCAL Profile
       operationId: getProfilePropbyId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: profileId
           in: path
           description: Profile ID
@@ -4283,11 +4219,6 @@ paths:
       summary: Returns a DocumentId with an OSCAL Profile
       operationId: getDocumentIdToProfilebyId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: profileId
           in: path
           description: Profile ID
@@ -4557,11 +4488,6 @@ paths:
       summary: Returns a party with an OSCAL Profile
       operationId: getPartyToProfileById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: profileId
           in: path
           description: Profile ID
@@ -4831,11 +4757,6 @@ paths:
       summary: Returns a role with an OSCAL Profile
       operationId: getRoleToProfileById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: profileId
           in: path
           description: Profile ID
@@ -5011,11 +4932,6 @@ paths:
       summary: Returns all Locations of an OSCAL Profile
       operationId: getProfileLocations
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: profileId
           in: path
           description: Profile ID
@@ -5111,11 +5027,6 @@ paths:
       summary: Returns a Location with an OSCAL Profile
       operationId: getProfileLocationById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: profileId
           in: path
           description: Profile ID
@@ -5385,11 +5296,6 @@ paths:
       summary: Returns a role with an OSCAL Profile
       operationId: getResponsiblePartyToProfilefromId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: profileId
           in: path
           description: Profile ID
@@ -5659,11 +5565,6 @@ paths:
       summary: Returns a revison with an OSCAL Profile
       operationId: getRevisionToProfilefromId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: profileId
           in: path
           description: Profile ID
@@ -6761,11 +6662,6 @@ paths:
       summary: Returns all OSCAL system security plans
       operationId: getSsps
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
       responses:
         200:
           description: Successful operation
@@ -7032,11 +6928,6 @@ paths:
       description: Returns the metadata of a single OSCAL system security plan
       operationId: getSspMetadataById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: ID of system security plan to return
@@ -7272,11 +7163,6 @@ paths:
       description: Returns the imported profile of a single OSCAL system security plan
       operationId: getSspImportProfileById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: ID of system security plan to return
@@ -7512,11 +7398,6 @@ paths:
       description: Returns the back-matter of a single OSCAL system security plan
       operationId: getSspBackMatterById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: ID of the parent system security plan
@@ -7752,11 +7633,6 @@ paths:
       description: Returns the back-matter of a single OSCAL system security plan
       operationId: getSspSystemCharacteristicsById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: ID of the parent system security plan
@@ -7992,11 +7868,6 @@ paths:
       description: Returns the system-implementation of a single OSCAL system security plan
       operationId: getSspSystemImplementationById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: ID of the parent system security plan
@@ -8232,11 +8103,6 @@ paths:
       description: Returns the control implementation of a single OSCAL system security plan
       operationId: getSspControlImplementationById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: ID of the parent system security plan
@@ -8667,11 +8533,6 @@ paths:
       summary: Returns a Link with an OSCAL System Security Plan
       operationId: getSspLinkbyId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: System Security Plan ID
@@ -8941,11 +8802,6 @@ paths:
       summary: Returns a prop with an OSCAL System Security Plan
       operationId: getSspPropbyId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: System Security Plan ID
@@ -9215,11 +9071,6 @@ paths:
       summary: Returns a DocumentId with an OSCAL System Security Plan
       operationId: getDocumentIdToSspbyId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: System Security Plan ID
@@ -9395,11 +9246,6 @@ paths:
       summary: Returns all parties of an OSCAL system security plan
       operationId: getSspParties
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: System security plan ID
@@ -9495,11 +9341,6 @@ paths:
       summary: Returns a party with an OSCAL system security plan
       operationId: getPartyToSsfromId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: System security plan ID
@@ -9769,11 +9610,6 @@ paths:
       summary: Returns a role with an OSCAL system security plan
       operationId: getRoleToSspfromId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: System security plan ID
@@ -10043,11 +9879,6 @@ paths:
       summary: Returns a Location with an OSCAL system security plan
       operationId: getLocationToSspfromId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: System security plan ID
@@ -10317,11 +10148,6 @@ paths:
       summary: Returns a role with an OSCAL system security plan
       operationId: getResponsiblePartyToSspfromId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: System security plan ID
@@ -10591,11 +10417,6 @@ paths:
       summary: Returns a revison with an OSCAL system security plan
       operationId: getRevisionToSspfromId
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: System security plan ID
@@ -10786,9 +10607,10 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/OSCALImplementedRequirement"
+                $ref: "#/components/schemas/OSCALImplementedRequirements"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALImplementedRequirements"
         400:
           description: Invalid ID supplied
           content:
@@ -10999,11 +10821,6 @@ paths:
       description: Returns a single an implemented requirement from an OSCAL system security plan
       operationId: getImplementedRequirementFromSspById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: sspId
           in: path
           description: ID of system security plan to return
@@ -11081,227 +10898,6 @@ paths:
       security:
         - oscal_auth:
             - read:ssps
-  /parties:
-    get:
-      tags:
-        - OSCAL Party
-      summary: Returns all OSCAL parties
-      operationId: getParties
-      responses:
-        200:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/OSCALParty"
-      security:
-        - oscal_auth:
-            - read:parties
-    post:
-      tags:
-        - OSCAL Party
-      summary: Adds a new OSCAL party
-      operationId: addParty
-      requestBody:
-        description: OSCAL party to be added
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/OSCALParty"
-        required: true
-      responses:
-        405:
-          description: Invalid input
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-      security:
-        - oscal_auth:
-            - write:parties
-            - read:parties
-      x-codegen-request-body-name: body
-  /parties/{partyId}:
-    get:
-      tags:
-        - OSCAL Party
-      summary: Finds an OSCAL party by ID
-      description: Returns a single OSCAL party
-      operationId: getPartyById
-      parameters:
-        - name: partyId
-          in: path
-          description: ID of party to return
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALParty"
-        400:
-          description: Invalid ID supplied
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        404:
-          description: Party not found
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-      security:
-        - oscal_auth:
-            - read:parties
-    patch:
-      tags:
-        - OSCAL Party
-      summary: Updates an existing OSCAL party
-      operationId: updateParty
-      parameters:
-        - name: partyId
-          in: path
-          description: ID of party to return
-          required: true
-          schema:
-            type: string
-      requestBody:
-        description: Party object to be updated
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/OSCALParty"
-        required: true
-      responses:
-        400:
-          description: Invalid ID supplied
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        404:
-          description: Party not found
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        405:
-          description: Validation exception
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        409:
-          description: Conflict with current state
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-      security:
-        - oscal_auth:
-            - write:parties
-            - read:parties
-      x-codegen-request-body-name: body
-    delete:
-      tags:
-        - OSCAL Party
-      summary: Deletes an existing OSCAL party
-      operationId: deleteParty
-      parameters:
-        - name: api_key
-          in: header
-          schema:
-            type: string
-        - name: partyId
-          in: path
-          description: Party ID to delete
-          required: true
-          schema:
-            type: string
-      responses:
-        400:
-          description: Invalid ID supplied
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        404:
-          description: Party not found
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-      security:
-        - oscal_auth:
-            - write:parties
-            - read:parties
-  /parties/search:
-    get:
-      tags:
-        - OSCAL Party
-      summary: Searches for OSCAL party by name
-      operationId: findPartiesByName
-      parameters:
-        - name: query
-          in: query
-          description: Terms to search for in party names
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/OSCALParty"
-        400:
-          description: Invalid status value
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-      security:
-        - oscal_auth:
-            - read:parties
   /plan-of-action-and-milestones:
     get:
       tags:
@@ -11570,11 +11166,6 @@ paths:
       description: Returns the metadata of a single OSCAL Plan of action and milestones
       operationId: getPOAMMetadataById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: poamId
           in: path
           description: ID of Plan of action and milestones to return
@@ -12109,11 +11700,6 @@ paths:
       description: Returns the metadata of a single OSCAL Assessment Plan
       operationId: getAPMetadataById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: assessmentPlanId
           in: path
           description: ID of Assessment Plan to return
@@ -12640,11 +12226,6 @@ paths:
       description: Returns the metadata of a single OSCAL Assessment Result
       operationId: getARMetadataById
       parameters:
-        - name: return_type
-          description: Type of assembly to be returned, it should be either be json or xml, default to json if missing.
-          in: header
-          schema:
-            type: string
         - name: assessmentResultId
           in: path
           description: ID of Assessment Result to return
@@ -12914,11 +12495,25 @@ components:
         catalog:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog_catalog"
+    OSCALCatalogs:
+      type: object
+      properties:
+        catalogs:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALCatalog"
     OSCALCatalogUpdateExample:
       type: object
       properties:
         catalog:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
+    OSCALProfiles:
+      type: object
+      properties:
+        profiles:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALProfile"
     OSCALProfile:
       type: object
       properties:
@@ -13093,19 +12688,18 @@ components:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_property"
     OSCALProps:
-      type: array
-      items:
-        $ref: "#/components/schemas/OSCALProp"
+      type: object
+      properties:
+        props:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALProp"
     OSCALMetadata:
       type: object
       properties:
         metadata:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_metadata"
-    OSCALMetadatas:
-      type: array
-      items:
-        $ref: "#/components/schemas/OSCALMetadata"
     OSCALImportProfile:
       type: object
       properties:
@@ -13137,9 +12731,12 @@ components:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-implementation-common_system-user"
     OSCALUsers:
-      type: array
-      items:
-        $ref: '#/components/schemas/OSCALUser'
+      type: object
+      properties:
+        user:
+          type: array
+          items:
+            $ref: '#/components/schemas/OSCALUser'
     OSCALInventoryItem:
       type: object
       properties:

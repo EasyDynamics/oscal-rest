@@ -9678,6 +9678,157 @@ paths:
         - oscal_auth:
             - write:systemCharacteristics
             - read:systemCharacteristics
+  /system-security-plans/{sspId}/system-characteristics/data-flow:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns the data flow of an OSCAL System Security Plan
+      operationId: getSspSystemCharacteristicsDataFlow
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDataFlow"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALDataFlow"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:systemCharacteristics
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates the data flow of an OSCAL System Security Plan
+      operationId: updateSspSystemCharacteristicsDataFlow
+      requestBody:
+        description: data flow to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALDataFlow"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALDataFlow"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDataFlow"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALDataFlow"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan or data flow not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
+    delete:
+      tags:
+        - OSCAL System Security Plan
+      summary: Removes  Data Flow from an OSCAL System Security Plan system-characteristics
+      operationId: removeDataFlowfromSspSystemCharacteristics
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALDataFlow"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALDataFlow"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan or Data Flow  not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
   /system-security-plans/{sspId}/system-implementation:
     get:
       tags:

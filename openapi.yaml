@@ -3558,9 +3558,10 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/OSCALDocumentId"
+                $ref: "#/components/schemas/OSCALDocumentIds"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALDocumentIds"
         400:
           description: Invalid ID supplied
           content:
@@ -8778,6 +8779,905 @@ paths:
             - write:systemCharacteristics
             - read:systemCharacteristics
       x-codegen-request-body-name: body
+  /system-security-plans/{sspId}/system-characteristics/system-ids:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns all system identifications of an OSCAL system security plan
+      operationId: getSystemIdssp
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemIds"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemIds"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System security plan not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:systemCharacteristics
+    post:
+      tags:
+        - OSCAL System Security Plan
+      summary: Add a system-id to an OSCAL system security plan
+      operationId: addSystemIdToSsp
+      requestBody:
+        description: System Identification to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALSystemId"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALSystemId"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemId"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemId"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System security plan not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
+  /system-security-plans/{sspId}/system-characteristics/system-ids/{systemId}:
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates a system-id in an OSCAL system security plan
+      operationId: updateSystemIdOfSsp
+      requestBody:
+        description: System Identification to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALSystemId"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALSystemId"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: SystemId
+          in: path
+          description: ID of the SystemId to be updated
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemId"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemId"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System security plan or System Identification not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
+    delete:
+      tags:
+        - OSCAL System Security Plan
+      summary: delete a system-id in an OSCAL system security plan
+      operationId: removeSystemIdFromSsp
+      parameters:
+        - name: sspId
+          in: path
+          description: System security plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: SystemId
+          in: path
+          description: ID of System to be removed
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemId"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemId"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System security plan or System Identification not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Find a system-id in an OSCAL system security plan by ID
+      description: Returns a single a system-id from an OSCAL system security plan
+      operationId: getSystemIdFromSspById
+      parameters:
+        - name: sspId
+          in: path
+          description: ID of system security plan to return
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: SystemId
+          in: path
+          description: ID of the System Identification to be returned
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemId"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemId"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System security plan not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:systemCharacteristics
+  /system-security-plans/{sspId}/system-characteristics/links:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns all links of an OSCAL System Security Plan
+      operationId: getSspSystemCharacteristicsLinks
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLinks"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLinks"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:systemCharacteristics
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates  Links with an OSCAL System Security Plan
+      operationId: updateSspSystemCharacteristicsLink
+      requestBody:
+        description: Link to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALLinks"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALLinks"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLinks"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLinks"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan or Link not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
+    delete:
+      tags:
+        - OSCAL System Security Plan
+      summary: Removes  Links from an OSCAL System Security Plan system-characteristics
+      operationId: removeLinkfromSspSystemCharacteristics
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALLinks"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALLinks"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan or Link  not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
+  /system-security-plans/{sspId}/system-characteristics/props:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns all props of an OSCAL System Security Plan
+      operationId: getSspSystemCharacteristicsProps
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OSCALProp"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:systemCharacteristics
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates props with an OSCAL System Security Plan
+      operationId: updateSspsystem-characteristicsProp
+      requestBody:
+        description: prop to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALProps"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALProps"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProps"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALProps"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan or prop not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
+    delete:
+      tags:
+        - OSCAL System Security Plan
+      summary: Removes props from an OSCAL System Security Plan system-characteristics
+      operationId: removePropfromSspSystemCharacteristics
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProps"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALProps"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan or prop  not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
+  /system-security-plans/{sspId}/system-characteristics/system-information:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns the system information of an OSCAL System Security Plan
+      operationId: getSspSystemCharacteristicsSystemInformation
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemInformation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemInformation"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:systemCharacteristics
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates  system-information of an OSCAL System Security Plan
+      operationId: updateSspSystemCharacteristicsSystemInformation
+      requestBody:
+        description: System Information to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALSystemInformation"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALSystemInformation"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemInformation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemInformation"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan or System Information not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
+  /system-security-plans/{sspId}/system-characteristics/security-impact-level:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns the security impact level of an OSCAL System Security Plan
+      operationId: getSspSystemCharacteristicsSecurityImpactLevel
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALSecurityImpactLevel"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALSecurityImpactLevel"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:systemCharacteristics
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates the security impact level of an OSCAL System Security Plan
+      operationId: updateSspSystemCharacteristicsSecurityImpactLevel
+      requestBody:
+        description: security impact level to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALSecurityImpactLevel"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALSecurityImpactLevel"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALSecurityImpactLevel"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALSecurityImpactLevel"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan or security impact level not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
+  /system-security-plans/{sspId}/system-characteristics/authorization-boundary:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns the authorization boundary of an OSCAL System Security Plan
+      operationId: getSspSystemCharacteristicsAuthorizationBoundary
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAuthorizationBoundary"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAuthorizationBoundary"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:systemCharacteristics
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates the authorization boundary of an OSCAL System Security Plan
+      operationId: updateSspSystemCharacteristicsAuthorizationBoundary
+      requestBody:
+        description: authorization boundary to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALAuthorizationBoundary"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALAuthorizationBoundary"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAuthorizationBoundary"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAuthorizationBoundary"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan or authorization boundary not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
   /system-security-plans/{sspId}/system-implementation:
     get:
       tags:
@@ -12221,6 +13121,19 @@ components:
         control-implementation:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_control-implementation"
+    OSCALComponent:
+      type: object
+      properties:
+        user:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-implementation-common_system-component"
+    OSCALComponents:
+      type: object
+      properties:
+        user:
+          type: array
+          items:
+            $ref: '#/components/schemas/OSCALComponent'
     OSCALUser:
       type: object
       properties:
@@ -12234,6 +13147,49 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OSCALUser'
+    OSCALSystemId:
+      type: object
+      properties:
+        system-id:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/field_oscal-implementation-common_system-id"
+    OSCALSystemIds:
+      type: object
+      properties:
+        system-ids:
+          type: array
+          items:
+            $ref: '#/components/schemas/OSCALSystemId'
+    OSCALSystemInformation:
+      type: object
+      properties:
+        system-information:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_system-information"
+    OSCALSecurityImpactLevel:
+      type: object
+      properties:
+        security-impact-level:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_security-impact-level"
+    OSCALAuthorizationBoundary:
+      type: object
+      properties:
+        authorization-boundary:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_authorization-boundary"
+    OSCALNetworkArchitecture:
+      type: object
+      properties:
+        network-architecture:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_network-architecture"
+    OSCALDataFlow:
+      type: object
+      properties:
+        data-flow:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_data-flow"
     OSCALInventoryItem:
       type: object
       properties:

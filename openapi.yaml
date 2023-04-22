@@ -6778,7 +6778,7 @@ paths:
         - oscal_auth:
             - write:metadata
             - read:metadata
-  /system-security-plans/{sspId}/metadata/DocumentIds:
+  /system-security-plans/{sspId}/metadata/document-ids:
     get:
       tags:
         - OSCAL System Security Plan
@@ -6872,11 +6872,11 @@ paths:
         - oscal_auth:
             - write:metadata
             - read:metadata
-  /system-security-plans/{sspId}/metadata/DocumentIds/{DocumentId}:
+  /system-security-plans/{sspId}/metadata/document-ids/{documentId}:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns a DocumentId with an OSCAL System Security Plan
+      summary: Returns a Document Id with an OSCAL System Security Plan
       operationId: getDocumentIdToSspbyId
       parameters:
         - name: sspId
@@ -6885,7 +6885,7 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: DocumentId
+        - name: documentId
           in: path
           description: Document ID to be associated with System Security Plan
           required: true
@@ -6953,7 +6953,7 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: DocumentId
+        - name: documentId
           in: path
           description: Document ID to be associated with System Security Plan
           required: true
@@ -7009,7 +7009,7 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: DocumentId
+        - name: documentId
           in: path
           description: Document ID to be associated with System Security Plan
           required: true
@@ -7147,7 +7147,7 @@ paths:
       tags:
         - OSCAL System Security Plan
       summary: Returns a party with an OSCAL system security plan
-      operationId: getPartyToSsfromId
+      operationId: getPartyToSspfromId
       parameters:
         - name: sspId
           in: path
@@ -7681,7 +7681,7 @@ paths:
         - oscal_auth:
             - write:metadata
             - read:metadata
-  /system-security-plans/{sspId}/metadata/Locations/{LocationId}:
+  /system-security-plans/{sspId}/metadata/locations/{LocationId}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -7694,7 +7694,7 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: LocationId
+        - name: locationId
           in: path
           description: Location ID to be associated with SSP
           required: true
@@ -7762,7 +7762,7 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: LocationId
+        - name: locationId
           in: path
           description: Location ID to be associated with SSP
           required: true
@@ -7818,7 +7818,7 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: LocationId
+        - name: locationId
           in: path
           description: Location ID to be associated with SSP
           required: true
@@ -7856,7 +7856,7 @@ paths:
         - oscal_auth:
             - write:metadata
             - read:metadata
-  /system-security-plans/{sspId}/metadata/ResponsibleParties:
+  /system-security-plans/{sspId}/metadata/responsible-parties:
     get:
       tags:
         - OSCAL System Security Plan
@@ -7950,7 +7950,7 @@ paths:
         - oscal_auth:
             - write:metadata
             - read:metadata
-  /system-security-plans/{sspId}/metadata/ResponsibleParties/{roleId}:
+  /system-security-plans/{sspId}/metadata/responsible-parties/{roleId}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -9667,6 +9667,157 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
         409:
           description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
+  /system-security-plans/{sspId}/system-characteristics/network-architecture:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns the network architecture of an OSCAL System Security Plan
+      operationId: getSspSystemCharacteristicsNetworkArchitecture
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALNetworkArchitecture"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALNetworkArchitecture"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:systemCharacteristics
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Updates the network architecture of an OSCAL System Security Plan
+      operationId: updateSspSystemCharacteristicsNetworkArchitecture
+      requestBody:
+        description: network architecture to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALNetworkArchitecture"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALNetworkArchitecture"
+        required: true
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALNetworkArchitecture"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALNetworkArchitecture"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan or network architecture not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:systemCharacteristics
+            - read:systemCharacteristics
+    delete:
+      tags:
+        - OSCAL System Security Plan
+      summary: Removes  network architecture from an OSCAL System Security Plan system-characteristics
+      operationId: removeNetworkArchitecturefromSspSystemCharacteristics
+      parameters:
+        - name: sspId
+          in: path
+          description: System Security Plan ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALNetworkArchitecture"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALNetworkArchitecture"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: System Security Plan or network architecture  not found
           content:
             application/json:
               schema:

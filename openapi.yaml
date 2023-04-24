@@ -3912,7 +3912,7 @@ paths:
       tags:
         - OSCAL Catalog
       summary: Returns all parts of an OSCAL Catalog
-      operationId: getCatalogparts
+      operationId: getCatalogControlParts
       parameters:
         - name: catalogId
           in: path
@@ -3961,7 +3961,7 @@ paths:
       tags:
         - OSCAL Catalog
       summary: Add a Part to an OSCAL Catalog
-      operationId: addPartToCatalog
+      operationId: addControlPartToCatalog
       requestBody:
         description: Part to be added
         content:
@@ -4022,7 +4022,7 @@ paths:
       tags:
         - OSCAL Catalog
       summary: Returns a Part with an OSCAL Catalog
-      operationId: getPartToCatalogfromId
+      operationId: getControlPartToCatalogfromId
       parameters:
         - name: catalogId
           in: path
@@ -4086,7 +4086,7 @@ paths:
       tags:
         - OSCAL Catalog
       summary: Updates a Part with an OSCAL Catalog
-      operationId: updatePartToCatalog
+      operationId: updateControlPartToCatalog
       requestBody:
         description: Part to be added
         content:
@@ -4161,7 +4161,7 @@ paths:
       tags:
         - OSCAL Catalog
       summary: Patches a Part with an OSCAL Catalog
-      operationId: patchPartToCatalog
+      operationId: patchControlPartToCatalog
       requestBody:
         description: Part to be added
         content:
@@ -4236,7 +4236,7 @@ paths:
       tags:
         - OSCAL Catalog
       summary: Removes a Part from an OSCAL Catalog
-      operationId: removePartfromCatalog
+      operationId: removeControlPartfromCatalog
       parameters:
         - name: catalogId
           in: path
@@ -4277,6 +4277,766 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
         404:
           description: Catalog or Part not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+  /catalogs/{catalogId}/controls/{controlId}/params:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns all params of an OSCAL Catalog
+      operationId: getCatalogControlParams
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParams"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParams"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalogs
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a Param to an OSCAL Catalog
+      operationId: addControlParamToCatalog
+      requestBody:
+        description: Param to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALParam"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALParam"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+  /catalogs/{catalogId}/controls/{controlId}/params/{paramId}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a Param with an OSCAL Catalog
+      operationId: getControlParamToCatalogfromId
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: paramId
+          in: path
+          description: Param ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Param not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalogs
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a Param with an OSCAL Catalog
+      operationId: updateControlParamToCatalog
+      requestBody:
+        description: Param to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALParam"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALParam"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: paramId
+          in: path
+          description: Param ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Param not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+    patch:
+      tags:
+        - OSCAL Catalog
+      summary: Patches a Param with an OSCAL Catalog
+      operationId: patchControlParamToCatalog
+      requestBody:
+        description: Param to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALParam"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALParam"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: paramId
+          in: path
+          description: Param ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Param not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a Param from an OSCAL Catalog
+      operationId: removeControlParamfromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: paramId
+          in: path
+          description: Param ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Param not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+  /catalogs/{catalogId}/controls/{controlId}/sub-controls:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns all sub-controls of an OSCAL Catalog
+      operationId: getCatalogControlSubControls
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALControls"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALControls"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalogs
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a Subcontrol to an OSCAL Catalog
+      operationId: addControlSubControlToCatalog
+      requestBody:
+        description: SubControl to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALControl"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALControl"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+  /catalogs/{catalogId}/controls/{controlId}/sub-controls/{subControlId}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a SubControl with an OSCAL Catalog
+      operationId: getControlSubControlToCatalogfromId
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: subControlId
+          in: path
+          description: SubControl ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or SubControl not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalogs
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a Sub Control with an OSCAL Catalog
+      operationId: updateControlSubControlToCatalog
+      requestBody:
+        description: Param to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALControl"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALControl"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: subControlId
+          in: path
+          description: SubControl ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or SubControl not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+    patch:
+      tags:
+        - OSCAL Catalog
+      summary: Patches a SubControl with an OSCAL Catalog
+      operationId: patchControlSubControlToCatalog
+      requestBody:
+        description: SubControl to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALControl"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALControl"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: subControlId
+          in: path
+          description: SubControl ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or SubControl not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a SubControl from an OSCAL Catalog
+      operationId: removeControlSubControlfromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: subControlId
+          in: path
+          description: SubControl ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or SubControl not found
           content:
             application/json:
               schema:

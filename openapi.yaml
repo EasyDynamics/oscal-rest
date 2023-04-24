@@ -5728,6 +5728,1526 @@ paths:
         - oscal_auth:
             - write:catalogs
             - write:catalogs
+  /catalogs/{catalogId}/groups/{groupId}/params:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns all params of an OSCAL Catalog
+      operationId: getCatalogGroupParams
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParams"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParams"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalogs
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a Param to an OSCAL Catalog
+      operationId: addGroupParamToCatalog
+      requestBody:
+        description: Param to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALParam"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALParam"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+  /catalogs/{catalogId}/groups/{groupId}/params/{paramId}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a Param with an OSCAL Catalog
+      operationId: getGroupParamToCatalogfromId
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: paramId
+          in: path
+          description: param ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Param not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalogs
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a Param with an OSCAL Catalog
+      operationId: updateGroupParamToCatalog
+      requestBody:
+        description: Param to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALParam"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALParam"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: paramId
+          in: path
+          description: param ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Param not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+    patch:
+      tags:
+        - OSCAL Catalog
+      summary: Patches a Param with an OSCAL Catalog
+      operationId: patchGroupParamToCatalog
+      requestBody:
+        description: Param to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALParam"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALParam"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: paramId
+          in: path
+          description: param ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Param not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a Param from an OSCAL Catalog
+      operationId: removeGroupParamfromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: paramId
+          in: path
+          description: param ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParam"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Param not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+  /catalogs/{catalogId}/groups/{groupId}/parts:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns all parts of an OSCAL Catalog
+      operationId: getCatalogGroupparts
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParts"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParts"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalogs
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a Part to an OSCAL Catalog
+      operationId: addGroupPartToCatalog
+      requestBody:
+        description: Part to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALPart"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALPart"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+  /catalogs/{catalogId}/groups/{groupId}/parts/{partId}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a Part with an OSCAL Catalog
+      operationId: getGroupPartToCatalogfromId
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: partId
+          in: path
+          description: Part ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Part not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalogs
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a Part with an OSCAL Catalog
+      operationId: updateGroupPartToCatalog
+      requestBody:
+        description: Part to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALPart"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALPart"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: partId
+          in: path
+          description: Part ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Part not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+    patch:
+      tags:
+        - OSCAL Catalog
+      summary: Patches a Part with an OSCAL Catalog
+      operationId: patchGroupPartToCatalog
+      requestBody:
+        description: Part to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALPart"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALPart"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: partId
+          in: path
+          description: Part ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Part not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a Part from an OSCAL Catalog
+      operationId: removeGroupPartfromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: partId
+          in: path
+          description: Part ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Part not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+  /catalogs/{catalogId}/groups/{groupId}/controls:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns all Controls of an OSCAL Catalog
+      operationId: getCatalogGroupControls
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALControls"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALControls"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalogs
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a Control to an OSCAL Catalog
+      operationId: addGroupControlToCatalog
+      requestBody:
+        description: Control to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALControl"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALControl"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+  /catalogs/{catalogId}/groups/{groupId}/controls/{controlId}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a Control with an OSCAL Catalog
+      operationId: getGroupControlToCatalogfromId
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Control not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalogs
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a Control with an OSCAL Catalog
+      operationId: updateGroupControlToCatalog
+      requestBody:
+        description: Control to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALControl"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALControl"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Control not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+    patch:
+      tags:
+        - OSCAL Catalog
+      summary: Patches a Control with an OSCAL Catalog
+      operationId: patchGroupControlToCatalog
+      requestBody:
+        description: Control to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALControl"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALControl"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Control not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a Control from an OSCAL Catalog
+      operationId: removeGroupControlfromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: controlId
+          in: path
+          description: Control ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALControl"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or Control not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+  /catalogs/{catalogId}/groups/{groupId}/sub-groups:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns all sub-groups of an OSCAL Catalog
+      operationId: getCatalogGroupsub-group
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALGroups"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALGroups"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalogs
+    post:
+      tags:
+        - OSCAL Catalog
+      summary: Add a sub Group to an OSCAL Catalog
+      operationId: addGroupsubGroupToCatalog
+      requestBody:
+        description: sub Group to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALGroup"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALGroup"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALGroup"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALGroup"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+  /catalogs/{catalogId}/groups/{groupId}/sub-group/{subGroupId}:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns a sub Group with an OSCAL Catalog
+      operationId: getGroupsubGroupToCatalogfromId
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: subGroupId
+          in: path
+          description: sub Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALGroup"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALGroup"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or sub Group not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalogs
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Updates a sub Group with an OSCAL Catalog
+      operationId: updateGroupsubGroupToCatalog
+      requestBody:
+        description: sub Group to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALGroup"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALGroup"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: subGroupId
+          in: path
+          description: sub Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALGroup"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALGroup"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or sub Group not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+    patch:
+      tags:
+        - OSCAL Catalog
+      summary: Patches a sub Group with an OSCAL Catalog
+      operationId: patchGroupsubGroupToCatalog
+      requestBody:
+        description: sub Group to be added
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALGroup"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALGroup"
+        required: true
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: subGroupId
+          in: path
+          description: sub Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALGroup"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALGroup"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or sub Group not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
+            - read:catalogs
+    delete:
+      tags:
+        - OSCAL Catalog
+      summary: Removes a sub Group from an OSCAL Catalog
+      operationId: removeGroupsubGroupfromCatalog
+      parameters:
+        - name: catalogId
+          in: path
+          description: Catalog ID
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: groupId
+          in: path
+          description: Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+        - name: subGroupId
+          in: path
+          description: sub Group ID to be associated with Catalog
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALGroup"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALGroup"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog or sub Group not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:catalogs
   /catalogs/{catalogId}/back-matter:
     get:
       tags:

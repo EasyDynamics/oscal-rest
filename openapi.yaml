@@ -177,7 +177,7 @@ paths:
           description: ID of catalog to return
           required: true
           schema:
-            type: string
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -220,7 +220,7 @@ paths:
           description: ID of catalog to return
           required: true
           schema:
-            type: string
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: Catalog object to be updated
         content:
@@ -283,7 +283,7 @@ paths:
           in: path
           description: ID of catalog to replace
           schema:
-            type: string
+            $ref: "#/components/schemas/DocId"
           required: true
       requestBody:
         description: Catalog object to be replaced
@@ -351,7 +351,7 @@ paths:
           description: Catalog ID to delete
           required: true
           schema:
-            type: string
+            $ref: "#/components/schemas/DocId"
       responses:
         400:
           description: Invalid ID supplied
@@ -7602,7 +7602,7 @@ paths:
           description: ID of profile to return
           required: true
           schema:
-            type: string
+            $ref: "#/components/schemas/DocId"
       responses:
         200:
           description: Successful operation
@@ -7645,11 +7645,14 @@ paths:
           description: ID of profile to replace
           required: true
           schema:
-            type: string
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: Profile object to be replaced
         content:
           application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALProfile"
+          application/xml:
             schema:
               $ref: "#/components/schemas/OSCALProfile"
         required: true
@@ -7658,6 +7661,9 @@ paths:
           description: Updated profile
           content:
             application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProfile"
+            application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALProfile"
         400:
@@ -7712,7 +7718,7 @@ paths:
           description: Profile ID to delete
           required: true
           schema:
-            type: string
+            $ref: "#/components/schemas/DocId"
       responses:
         400:
           description: Invalid ID supplied
@@ -7736,7 +7742,198 @@ paths:
         - oscal_auth:
             - write:profiles
             - read:profiles
-  /profiles/{profileId}/imported-catalogs/{catalogId}:
+  /profiles/{profilesId}/import:
+    get:
+      tags:
+        - OSCAL profile
+      summary: Finds the import of an OSCAL Profile by ID
+      description: Returns the import of a single OSCAL profile
+      operationId: getProfileImportById
+      parameters:
+        - name: profileId
+          in: path
+          description: ID of the parent profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALImport"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALImport"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: profile not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profiles
+    patch:
+      tags:
+        - OSCAL profile
+      summary: Updates the import of an existing OSCAL profile
+      operationId: updateProfileImport
+      parameters:
+        - name: profileId
+          in: path
+          description: ID of profile whose import will be updated
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      requestBody:
+        description: import object to be updated
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALImport"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALImport"
+        required: true
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALImport"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALImport"
+        400:
+          description: Invalid ID supplied
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: profile not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        405:
+          description: Validation exception
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALValidationError"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALValidationError"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+      x-codegen-request-body-name: body
+    put:
+      tags:
+        - OSCAL profile
+      summary: Replace the import of an existing OSCAL profile
+      operationId: ReplaceProfileImport
+      parameters:
+        - name: profileId
+          in: path
+          description: ID of the parent profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      requestBody:
+        description: import object to be replaced
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OSCALImport"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/OSCALImport"
+        required: true
+      responses:
+        200:
+          description: Updated the import of a profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALImport"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALImport"
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: profile not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflict with current state
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported media type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - write:profiles
+            - read:profiles
+      x-codegen-request-body-name: body
+  /profiles/{profileId}/import/{catalogId}:
     put:
       tags:
         - OSCAL Profile
@@ -7748,29 +7945,19 @@ paths:
           description: Profile ID
           required: true
           schema:
-            type: string
+            $ref: "#/components/schemas/DocId"
         - name: catalogId
           in: path
           description: Catalog ID to be imported into the profile
           required: true
           schema:
-            type: string
+            $ref: "#/components/schemas/DocId"
       requestBody:
         description: Further description of the controls imported
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                include-controls:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      with-ids:
-                        type: array
-                        items:
-                          type: string
+              $ref: "#/components/schemas/OSCALImport"
         required: false
       responses:
         400:
@@ -10359,6 +10546,51 @@ paths:
         - oscal_auth:
             - write:componentDefinitions
             - read:componentDefinitions
+  /component-definitions/metadata:
+    get:
+      tags:
+        - OSCAL Component Definition
+      summary: Finds the Metadata of an OSCAL Component-definition by ID
+      description: Returns the Metadata of a single OSCAL Component-definition
+      operationId: getComponent-definitionMetadataById
+      parameters:
+        - name: component-definitionId
+          in: path
+          description: ID of the parent Component-definition
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALMetadata"
+        400:
+          description: Invalid ID supplied
+          content::
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Catalog not found
+          content::
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:component-definitions
   /component-definitions/{componentDefinitionId}/roles:
     post:
       tags:
@@ -19039,6 +19271,13 @@ components:
       properties:
         profile:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
+    OSCALComponentDefinitions:
+      type: object
+      properties:
+        roles:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALComponentDefinition"
     OSCALComponentDefinition:
       type: object
       properties:
@@ -19073,19 +19312,19 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALComponentDefinitionComponentControlImplementation"
-    OSCALSsp:
+    OSCALSystemSecurityPlan:
       type: object
       properties:
         system-security-plan:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_system-security-plan"
-    OSCALSsps:
+    OSCALSystemSecurityPlans:
       type: object
       properties:
         system-security-plans:
           type: array
           items:
-            $ref: "#/components/schemas/OSCALSsp"
+            $ref: "#/components/schemas/OSCALSystemSecurityPlan"
     OSCALSspUpdateExample:
       type: object
       properties:
@@ -19403,16 +19642,19 @@ components:
           properties:
             title:
               type: string
-    OSCALPoam:
+    OSCALPlanOfActionAndMilestones:
       type: object
       properties:
         plan-of-action-and-milestones:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_poam_schema.json#/definitions/assembly_oscal-poam_plan-of-action-and-milestones"
-    OSCALPoams:
-      type: array
-      items:
-        $ref: "#/components/schemas/OSCALPoam"
+    OSCALPlanOfActionAndMilestonesList:
+      type: object
+      properties:
+        plan-of-action-and-milestones:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
     OSCALPoamUpdateExample:
       type: object
       properties:
@@ -19421,13 +19663,20 @@ components:
     OSCALAssessmentPlan:
       type: object
       properties:
-        assessment-plans:
+        assessment-plan:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-ap_assessment-plan"
+    OSCALAssessmentPlans:
+      type: object
+      properties:
+        assessment-plan:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALAssessmentPlan"
     OSCALAssessmentPlanUpdateExample:
       type: object
       properties:
-        assessment-plans:
+        assessment-plan:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
     OSCALErrorMessage:
       type: object
@@ -19442,6 +19691,13 @@ components:
       properties:
         detail:
           type: object
+    OSCALAssessmentResultsList:
+      type: object
+      properties:
+        assessment-results:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALAssessmentResults"
     OSCALAssessmentResults:
       type: object
       properties:
@@ -19453,6 +19709,157 @@ components:
       properties:
         assessment-results:
           $ref: "#/components/schemas/OSCALPartialUpdateExample"
+    OSCALImportAp:
+      type: object
+      properties:
+        import-ap:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-ar_import-ap"
+    OSCALLocalDefinitions:
+      type: object
+      properties:
+        local-definitions:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/sassembly_oscal-ar_import-ap"
+    OSCALResources:
+      type: object
+      properties:
+        resources:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALResource"
+    OSCALResource:
+      type: object
+      properties:
+        uuid:
+          type: string
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        title:
+          type: string
+        description:
+          type: string
+        document-ids:
+          $ref: "#/components/schemas/OSCALDocumentIds"
+        citation:
+          $ref: "#/components/schemas/OSCALCitation"
+        rlinks:
+          $ref: "#/components/schemas/OSCALRLinks"
+        base64:
+          $ref: "#/components/schemas/OSCALBase64"
+        remarks:
+          $ref: "#/components/schemas/OSCALRemarks"
+    OSCALCitation:
+      type: object
+      properties:
+        text:
+          type: string
+        props:
+          $ref: "#/components/schemas/OSCALProps"
+        links:
+          $ref: "#/components/schemas/OSCALLinks"
+    OSCALRLinks:
+      type: object
+      properties:
+        rlinks:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALRLink"
+    OSCALRLink:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri-reference
+        media-type:
+          type: string
+          pattern: "^\\S(.*\\S)?$"
+        hashes:
+          $ref: "#/components/schemas/OSCALHashes"
+    OSCALHash:
+      type: object
+      properties:
+        hash:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_hash"
+    OSCALHashes:
+      type: object
+      properties:
+        hashes:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALHash"
+    OSCALBase64:
+      type: object
+      properties:
+        filename:
+          type: string
+          format: uri-reference
+        media-type:
+          type: string
+          pattern: "^\\S(.*\\S)?$"
+        value:
+          type: string
+    OSCALRemarks:
+      type: object
+      properties:
+        remarks:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_remarks"
+    OSCALAssessmentAssets:
+      type: object
+      properties:
+        assessment-assets:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_assessment-assets"
+    OSCALActivities:
+      type: object
+      properties:
+        aactivities:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALActivity"
+    OSCALActivity:
+      type: object
+      properties:
+        activity:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_activity"
+    OSCALObjectivesAndMethods:
+      type: object
+      properties:
+        aactivities:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALObjectives"
+    OSCALObjective:
+      type: object
+      properties:
+        activity:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_local-objective"
+    OSCALResults:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALResult"
+    OSCALResult:
+      type: object
+      properties:
+        result:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-ar_result"
+    OSCALTasks:
+      type: object
+      properties:
+        tasks:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALTask"
+    OSCALTask:
+      type: object
+      properties:
+        task:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_task"
     DocId:
       type: string
       minLength: 1
@@ -19465,24 +19872,24 @@ components:
         implicit:
           authorizationUrl: https://localhost/oauth/dialog
           scopes:
-            write:catalogs: modify catalogs in your account
-            read:catalogs: read your catalogs
-            write:profiles: modify profiles in your account
-            read:profiles: read your profiles
-            write:componentDefinitions: modify component definitions in your account
-            read:componentDefinitions: read your component definitions
-            write:ssps: modify ssps in your account
-            read:ssps: read your ssps
-            write:parties: modify parties in your account
-            read:parties: read your parties
-            write:poams: modify poams in your account
-            read:poams: read your poams
-            write:assessmentPlans: modify assessment plans in your account
-            read:assessmentPlans: read your assessment plans
+            write:catalog: modify catalogs in your account
+            read:catalog: read your catalogs
+            write:profile: modify profiles in your account
+            read:profile: read your profiles
+            write:componentDefinition: modify component definitions in your account
+            read:componentDefinition: read your component definitions
+            write:systemSecurityPlan: modify system security plans in your account
+            read:systemSecurityPlan: read your system security plans
+            write:party: modify parties in your account
+            read:party: read your parties
+            write:poam: modify poams in your account
+            read:poam: read your poams
+            write:assessmentPlan: modify assessment plans in your account
+            read:assessmentPlan: read your assessment plans
             write:assessmentResults: modify assessment results in your account
             read:assessmentResults: read your assessment results
-            write:implementedRequirements: modify implemented requirements in your account
-            read:implementedRequirements: read your implemented requirements
+            write:implementedRequirement: modify implemented requirements in your account
+            read:implementedRequirement: read your implemented requirements
             write:metadata: modify metadata in your account
             read:metadata: read your metadata
             write:backmatter: modify back-matter in your account

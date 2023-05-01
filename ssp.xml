@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <system-security-plan card="inf" id="1">
+        <metadata card="1">
+            <revision card="inf">
+            </revision>
+            <document-id card="inf" scheme="0"/>
+            <link card="inf" href="1"></link>
+            <prop card="inf" uuid="0"></prop>
+            <role card="inf" id="0"></role>
+            <location uuid="1" card="inf"></location>
+            <party uuid="1" card="inf"></party>
+            <responsible-party role-id="1" card="inf"></responsible-party>
+        </metadata>
+        <import-profile  card="1"></import-profile>
+        <system-characteristics card="1">
+            <link card="inf" href="1"></link>
+            <prop card="inf" uuid="0"></prop>
+            <system-information card="1">
+                <link card="inf" href="1"></link>
+                 <prop card="inf" uuid="0"></prop>
+                 <information-type uuid="0" card="inf"></information-type>
+                 <security-impact-level card="1"></security-impact-level>
+                 <authorization-boundary card="1"></authorization-boundary>
+                 <network-architecture card="0"></network-architecture>
+                 <data-flow card="0"></data-flow>
+                 <responsible-party role-id="1" card="inf"></responsible-party>
+            </system-information>
+        </system-characteristics>
+        <system-implementation card="1">
+            <link card="inf" href="1"></link>
+            <prop card="inf" uuid="0"></prop>
+            <leveraged-authorization uuid="1" card="inf"></leveraged-authorization>
+            <user uuid="1" card="inf"></user>
+            <inventory-item uuid="1" card="inf"></inventory-item>
+            <component uuid="1" card="inf"></component>
+        </system-implementation>
+        <control-implementation card="1">
+            <set-parameter param-id="1" card="inf"></set-parameter>
+            <implemented-requirement control-id="1" card="inf">
+                <link card="inf" href="1"></link>
+                <prop card="inf" uuid="0"></prop>
+                <set-parameter param-id="1" card="inf"></set-parameter>
+                <responsible-role role-id="1" card="inf"></responsible-role>
+                <by-component component-uuid="1" card="inf"></by-component>
+            </implemented-requirement>
+        </control-implementation>
+        <back-matter card="0">
+            <resource  uuid="1" card="inf"></resource>
+        </back-matter>
+    </system-security-plan>

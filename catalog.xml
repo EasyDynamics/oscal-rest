@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<catalog card="inf" id="1">
+        <metadata card="1">
+            <document-id card ="inf" scheme="0"/>
+            <revision></revision>
+            <link href="1" card="inf"></link>
+            <prop uuid="0" card="inf"></prop>
+            <role id="0"></role>
+            <location uuid="0" card="inf"></location>
+            <party uuid="0" card="inf"></party>
+            <responsible-party role-id="0" card="inf"></responsible-party>
+        </metadata>
+        <param id="1" card="inf">
+            <link href="1" card="inf"></link>
+            <prop uuid="0" card="inf"></prop>
+            <constraint card="inf"></constraint>
+            <guideline card="inf"></guideline>
+        </param>
+        <control id="1" card="inf">
+            <param id="1" card="inf"></param>
+            <link href="1" card="inf"></link>
+            <prop uuid="0" card="inf"></prop>
+            <part id="0" card="inf">
+                <link href="1" card="inf"></link>
+                <prop uuid="0" card="inf"></prop>
+                <part id="0" card="inf"></part>
+            </part>
+            <control id="1" card="inf"></control>
+        </control>
+        <group id ="0" card="inf">
+            <param id="1" card="inf"></param>
+            <link href="1" card="inf"></link>
+            <prop uuid="0" card="inf"></prop>
+            <part id="0" card="inf"></part>
+            <control id="1" card="inf"></control>
+            <group id ="0" card="inf"></group>
+        </group>
+        <back-matter>
+            <resource  uuid="1" card="inf"></resource>
+        </back-matter>
+    </catalog>

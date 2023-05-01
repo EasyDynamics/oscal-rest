@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <plan-of-action-and-milestones card="inf" id="1">
+        <metadata card="1">
+            <revision card="inf">
+            </revision>
+            <document-id card="inf" scheme="0"/>
+            <link card="inf" href="1"></link>
+            <prop card="inf" uuid="0"></prop>
+            <role card="inf" id="0"></role>
+            <location uuid="1" card="inf"></location>
+            <party uuid="1" card="inf"></party>
+            <responsible-party role-id="1" card="inf"></responsible-party>
+        </metadata>
+        <import-ssp  card="0"></import-ssp>
+        <system-id card="0"></system-id>
+         <local-definitions card="0">
+            <component uuid="1" card="inf"></component>
+            <inventory-item uuid="1" card="inf"></inventory-item>
+        </local-definitions>
+        <observation uuid="1" card="inf">
+            <link href="1" card="inf"></link>
+            <prop uuid="0" card="inf"></prop>
+            <method card="inf"></method>
+            <origin card="inf"></origin>
+            <subject subject-uuid="1" card="inf"></subject>
+            <relevant-evidence href="0"></relevant-evidence>
+        </observation>
+        <risk uuid="1" card="inf">
+            <characterization href="1" card="inf"></characterization>
+            <prop uuid="0" card="inf"></prop>
+            <origin card="inf"></origin>
+            <threat-id system="1" card="inf"></threat-id>
+            <mitigation-factor uuid="1" card="inf"></mitigation-factor>
+            <response uuid="1" card="inf"></response>
+            <risk-log card="0">
+                <entry uuid="1" card="inf"></entry>
+            </risk-log>
+            <related-observation observation-uuid="1"></related-observation>
+            </risk>
+        <poam-item uuid="1" card="inf">
+            <link href="1" card="inf"></link>
+            <prop uuid="0" card="inf"></prop>
+            <origin card="inf"></origin>
+            <related-observation  observation-uuid="1" card="inf"></related-observation>        
+            <associated-risk risk-uuid="1" card="inf"></associated-risk>
+            <relevant-evidence href="0"></relevant-evidence>
+        </poam-item>
+        <back-matter card="0">
+            <resource  uuid="1" card="inf"></resource>
+        </back-matter>
+    </plan-of-action-and-milestones>

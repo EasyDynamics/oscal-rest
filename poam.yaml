@@ -3099,8 +3099,8 @@ paths:
     get:
       tags:
         - OSCAL Plan Of Action And Milestones
-      summary: When the id is available, returns the role represented by the identifier.
-      description: When the id is available, returns the role represented by the identifier.
+      summary: Returns the role represented by the id.
+      description: Returns the role represented by the id.
       operationId: getPlanOfActionAndMilestonesMetadataRoleById
       parameters:
         - name: planOfActionAndMilestonesId
@@ -3176,8 +3176,8 @@ paths:
     put:
       tags:
         - OSCAL Plan Of Action And Milestones
-      summary: When the id is available, updates the role represented by the identifier, and returns the updated role.
-      description: When the id is available, updates the role represented by the identifier, and returns the updated role.
+      summary: Updates the role represented by the id.
+      description: Updates the role represented by the id.
       operationId: putPlanOfActionAndMilestonesMetadataRole
       parameters:
         - name: planOfActionAndMilestonesId
@@ -3293,8 +3293,8 @@ paths:
     patch:
       tags:
         - OSCAL Plan Of Action And Milestones
-      summary: When the id is available, updates the role represented by the identifier, and returns the updated role.
-      description: When the id is available, updates the role represented by the identifier, and returns the updated role.
+      summary: Updates the role represented by the id.
+      description: Updates the role represented by the id.
       operationId: patchPlanOfActionAndMilestonesMetadataRole
       parameters:
         - name: planOfActionAndMilestonesId
@@ -3398,8 +3398,8 @@ paths:
     delete:
       tags:
         - OSCAL Plan Of Action And Milestones
-      summary: When the id is available, Deletes the role represented by the identifier.
-      description: When the id is available, Deletes the role represented by the identifier.
+      summary: Deletes the role represented by the id.
+      description: Deletes the role represented by the id.
       operationId: deletePlanOfActionAndMilestonesMetadataRole
       parameters:
         - name: planOfActionAndMilestonesId

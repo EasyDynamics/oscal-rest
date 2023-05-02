@@ -2547,8 +2547,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, returns the location represented by the identifier.
-      description: When the uuid is available, returns the location represented by the identifier.
+      summary: Returns the location represented by the uuid.
+      description: Returns the location represented by the uuid.
       operationId: getAssessmentPlanMetadataLocationByUuid
       parameters:
         - name: assessmentPlanId
@@ -2624,8 +2624,8 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, updates the location represented by the identifier, and returns the updated location.
-      description: When the uuid is available, updates the location represented by the identifier, and returns the updated location.
+      summary: Updates the location represented by the uuid.
+      description: Updates the location represented by the uuid.
       operationId: putAssessmentPlanMetadataLocation
       parameters:
         - name: assessmentPlanId
@@ -2741,8 +2741,8 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, updates the location represented by the identifier, and returns the updated location.
-      description: When the uuid is available, updates the location represented by the identifier, and returns the updated location.
+      summary: Updates the location represented by the uuid.
+      description: Updates the location represented by the uuid.
       operationId: patchAssessmentPlanMetadataLocation
       parameters:
         - name: assessmentPlanId
@@ -2846,8 +2846,8 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, Deletes the location represented by the identifier.
-      description: When the uuid is available, Deletes the location represented by the identifier.
+      summary: Deletes the location represented by the uuid.
+      description: Deletes the location represented by the uuid.
       operationId: deleteAssessmentPlanMetadataLocation
       parameters:
         - name: assessmentPlanId
@@ -3099,8 +3099,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, returns the party represented by the identifier.
-      description: When the uuid is available, returns the party represented by the identifier.
+      summary: Returns the party represented by the uuid.
+      description: Returns the party represented by the uuid.
       operationId: getAssessmentPlanMetadataPartyByUuid
       parameters:
         - name: assessmentPlanId
@@ -3176,8 +3176,8 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, updates the party represented by the identifier, and returns the updated party.
-      description: When the uuid is available, updates the party represented by the identifier, and returns the updated party.
+      summary: Updates the party represented by the uuid.
+      description: Updates the party represented by the uuid.
       operationId: putAssessmentPlanMetadataParty
       parameters:
         - name: assessmentPlanId
@@ -3293,8 +3293,8 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, updates the party represented by the identifier, and returns the updated party.
-      description: When the uuid is available, updates the party represented by the identifier, and returns the updated party.
+      summary: Updates the party represented by the uuid.
+      description: Updates the party represented by the uuid.
       operationId: patchAssessmentPlanMetadataParty
       parameters:
         - name: assessmentPlanId
@@ -3398,8 +3398,8 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, Deletes the party represented by the identifier.
-      description: When the uuid is available, Deletes the party represented by the identifier.
+      summary: Deletes the party represented by the uuid.
+      description: Deletes the party represented by the uuid.
       operationId: deleteAssessmentPlanMetadataParty
       parameters:
         - name: assessmentPlanId

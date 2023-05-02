@@ -5,9 +5,9 @@
             <revision></revision>
             <link href="1" card ="inf"></link>
             <prop uuid="0"></prop>
-            <role id="0"></role>
-            <location uuid="0" card="inf"></location>
-            <party uuid="0" card="inf"></party>
+            <role id="1"></role>
+            <location uuid="1" card="inf"></location>
+            <party uuid="1" card="inf"></party>
             <responsible-party role-id="0" card="inf"></responsible-party>
         </metadata>
         <import-ssp card="1"/>

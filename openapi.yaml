@@ -119,6 +119,20 @@ tags:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-results/
 paths:
+  /:
+    get:
+      summary: Returns the currently running API version.
+      operationId: getAPIInfo
+      responses:
+        200:
+          description: successful operation
+          content:
+            schema:
+              type: object
+              properties:
+                version:
+                  type: string
+                  format: binary
   /catalogs:
     get:
       tags:

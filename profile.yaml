@@ -102,7 +102,7 @@ tags:
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/implementation/component-definition/
-  - name: OSCAL Plan Of Action And Milestones
+  - name: OSCAL Plan of Action and Milestones
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/poam/
@@ -5606,8 +5606,8 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the import represented by the href.
-      description: Deletes the import represented by the href.
+      summary: Deletes the import represented by the href. Deletion will not be allowed if there is only one remaining import.
+      description: Deletes the import represented by the href. Deletion will not be allowed if there is only one remaining import.
       operationId: deleteProfileImport
       parameters:
         - name: profileId
@@ -5632,6 +5632,384 @@ paths:
             application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALImport"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
+            - write:profile
+  /profile/{profileId}/import/{importHref}/include-controls:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns every relevant include controls.
+      description: Returns every relevant include controls.
+      operationId: getProfileImportIncludeControls
+      parameters:
+        - name: profileId
+          in: path
+          description:  Id of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: importHref
+          in: path
+          description:  Href of Import
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALIncludeControlsList"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALIncludeControlsList"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Uppdates the include controls.
+      description: Uppdates the include controls.
+      operationId: putProfileImportIncludeControls
+      parameters:
+        - name: profileId
+          in: path
+          description:  Id of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: importHref
+          in: path
+          description:  Href of Import
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALIncludeControlsList"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALIncludeControlsList"
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALIncludeControlsList"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALIncludeControlsList"
+            location-header:
+              schema:
+                type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
+            - write:profile
+    patch:
+      tags:
+        - OSCAL Profile
+      summary: Updates the include controls.
+      description: Updates the include controls.
+      operationId: patchProfileImportIncludeControls
+      parameters:
+        - name: profileId
+          in: path
+          description:  Id of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: importHref
+          in: path
+          description:  Href of Import
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALIncludeControlsList"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALIncludeControlsList"
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
+            - write:profile
+    delete:
+      tags:
+        - OSCAL Profile
+      summary: Deletes the include controls. Deletion will not be allowed if there is only one remaining include controls.
+      description: Deletes the include controls. Deletion will not be allowed if there is only one remaining include controls.
+      operationId: deleteProfileImportIncludeControls
+      parameters:
+        - name: profileId
+          in: path
+          description:  Id of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: importHref
+          in: path
+          description:  Href of Import
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALIncludeControlsList"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALIncludeControlsList"
         401:
           description: Unauthorized
           content:
@@ -6010,384 +6388,6 @@ paths:
             application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALExcludeControlsList"
-        401:
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        403:
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        404:
-          description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        409:
-          description: Conflit
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        410:
-          description: Gone
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-      security:
-        - oscal_auth:
-            - read:profile
-            - write:profile
-  /profile/{profileId}/import/{importHref}/include-controls:
-    get:
-      tags:
-        - OSCAL Profile
-      summary: Returns every relevant include controls.
-      description: Returns every relevant include controls.
-      operationId: getProfileImportIncludeControls
-      parameters:
-        - name: profileId
-          in: path
-          description:  Id of Profile
-          required: true
-          schema:
-            $ref: "#/components/schemas/DocId"
-        - name: importHref
-          in: path
-          description:  Href of Import
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeControlsList"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeControlsList"
-        401:
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        403:
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        404:
-          description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        410:
-          description: Gone
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        422:
-          description: Unprocessable Content
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-      security:
-        - oscal_auth:
-            - read:profile
-    put:
-      tags:
-        - OSCAL Profile
-      summary: Uppdates the include controls.
-      description: Uppdates the include controls.
-      operationId: putProfileImportIncludeControls
-      parameters:
-        - name: profileId
-          in: path
-          description:  Id of Profile
-          required: true
-          schema:
-            $ref: "#/components/schemas/DocId"
-        - name: importHref
-          in: path
-          description:  Href of Import
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeControlsList"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeControlsList"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeControlsList"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeControlsList"
-            location-header:
-              schema:
-                type: string
-        400:
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        401:
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        403:
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        404:
-          description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        409:
-          description: Conflit
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        410:
-          description: Gone
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        415:
-          description: Unsupported Media Type
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        422:
-          description: Unprocessable Content
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-      security:
-        - oscal_auth:
-            - read:profile
-            - write:profile
-    patch:
-      tags:
-        - OSCAL Profile
-      summary: Updates the include controls.
-      description: Updates the include controls.
-      operationId: patchProfileImportIncludeControls
-      parameters:
-        - name: profileId
-          in: path
-          description:  Id of Profile
-          required: true
-          schema:
-            $ref: "#/components/schemas/DocId"
-        - name: importHref
-          in: path
-          description:  Href of Import
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeControlsList"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeControlsList"
-        400:
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        401:
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        403:
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        404:
-          description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        409:
-          description: Conflit
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        410:
-          description: Gone
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        415:
-          description: Unsupported Media Type
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        422:
-          description: Unprocessable Content
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-      security:
-        - oscal_auth:
-            - read:profile
-            - write:profile
-    delete:
-      tags:
-        - OSCAL Profile
-      summary: Deletes the include controls.
-      description: Deletes the include controls.
-      operationId: deleteProfileImportIncludeControls
-      parameters:
-        - name: profileId
-          in: path
-          description:  Id of Profile
-          required: true
-          schema:
-            $ref: "#/components/schemas/DocId"
-        - name: importHref
-          in: path
-          description:  Href of Import
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeControlsList"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeControlsList"
         401:
           description: Unauthorized
           content:

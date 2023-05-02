@@ -102,7 +102,7 @@ tags:
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/implementation/component-definition/
-  - name: OSCAL Plan Of Action And Milestones
+  - name: OSCAL Plan of Action and Milestones
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/poam/

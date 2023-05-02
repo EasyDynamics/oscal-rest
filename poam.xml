@@ -20,10 +20,10 @@
         <observation uuid="1" card="inf">
             <link href="1" card="inf"></link>
             <prop uuid="0" card="inf"></prop>
-            <method card="inf"></method>
+            <method card="inf" min="1"></method>
             <origin card="inf"></origin>
             <subject subject-uuid="1" card="inf"></subject>
-            <relevant-evidence href="0"></relevant-evidence>
+            <relevant-evidence href="0" card="inf"></relevant-evidence>
         </observation>
         <risk uuid="1" card="inf">
             <characterization href="1" card="inf"></characterization>
@@ -33,11 +33,11 @@
             <mitigation-factor uuid="1" card="inf"></mitigation-factor>
             <response uuid="1" card="inf"></response>
             <risk-log card="0">
-                <entry uuid="1" card="inf"></entry>
+                <entry uuid="1" card="inf" min="1"></entry>
             </risk-log>
-            <related-observation observation-uuid="1"></related-observation>
+            <related-observation observation-uuid="1" card="inf"></related-observation>
             </risk>
-        <poam-item uuid="1" card="inf">
+        <poam-item uuid="1" card="inf" min="1">
             <link href="1" card="inf"></link>
             <prop uuid="0" card="inf"></prop>
             <origin card="inf"></origin>

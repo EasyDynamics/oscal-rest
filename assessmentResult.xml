@@ -15,13 +15,16 @@
             <objectives-and-methods control-id="1" card="inf">
             </objectives-and-methods>
             <activity uuid="0" card="inf">
+				<link href="1" card="inf"></link>
+				<prop uuid="0" card="inf"></prop>
+				<step uuid="1" card="inf"></step>
+				<related-controls card="0"></related-controls>
+				<responsible-role role-id="1" card="inf"></responsible-role>
             </activity>
         </local-definitions>
-        <result uuid="0">
-            <link>
-            </link>
-            <prop uuid="0">
-            </prop>
+        <result uuid="0" card="inf" min="1">
+			<link href="1" card="inf"></link>
+			<prop uuid="0" card="inf"></prop>
             <local-definitions card="0">
                 <component uuid="1" card="inf">
                 </component>
@@ -36,46 +39,43 @@
                 </link>
                 <prop uuid="0">
                 </prop>
-                <control-selection card="inf"></control-selection>
+                <control-selection card="inf" min="1"></control-selection>
                 <control-objective-selection card="inf"></control-objective-selection>
             </reviewed-controls>
             <attestation card="inf">
-                <party uuid="1" card="inf"></party>
+                <part uuid="0" card="inf" min="1"></part>
                 <responsible-party role-id="1" card="inf"></responsible-party>
             </attestation>
             <assessment-log card="0">
-                <entry uuid="1" card="inf"></entry>
+                <entry uuid="1" card="inf" min="1"></entry>
             </assessment-log>
             <observation uuid="1" card="inf">
                 <link href="1" card="inf"></link>
                 <prop uuid="0" card="inf"></prop>
-                <method card="inf"></method>
+                <method card="inf" min="1"></method>
                 <origin card="inf"></origin>
                 <subject subject-uuid="1" card="inf"></subject>
                 <relevant-evidence href="0"></relevant-evidence>
             </observation>
             <risk uuid="1" card="inf">
-                <link>
-                </link>
-                <prop uuid="0"> </prop>
+				<link href="1" card="inf"></link>
+				<prop uuid="0" card="inf"></prop>
                 <origin card="inf"></origin>
                 <threat-id system="1" card="inf"></threat-id>
                 <characterization card="inf"></characterization>
                 <mitigation-factor uuid="1" card="inf"></mitigation-factor>
                 <response uuid="1" card="inf"></response>
                 <risk-log card="0">
-                    <entry uuid="1" card="inf"></entry>
+                    <entry uuid="1" card="inf" min="1"></entry>
                 </risk-log>
                 <related-observation observation-uuid="1"></related-observation>
             </risk>
             <finding uuid="1" card="inf">
-                <link>
-                </link>
-                <prop uuid="0">
-                </prop>
+				<link href="1" card="inf"></link>
+				<prop uuid="0" card="inf"></prop>
                 <origin card="inf"></origin>
                 <target target-id="1"></target>
-                <related-observation observation-uuid="1"></related-observation>
+                <related-observation observation-uuid="1" card="inf"></related-observation>
                 <associated-risk risk-uuid="1" card="inf"></associated-risk>
             </finding>
         </result>

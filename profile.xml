@@ -11,10 +11,10 @@
             <party uuid="1" card="inf"></party>
             <responsible-party role-id="1" card="inf"></responsible-party>
         </metadata>
-        <import card ="inf" href="1"> 
-            <exclude-controls card="inf" />
-            <include-controls card="inf" />
-        </import>
+        <import card ="inf" min="1" href="1"> 
+            <include-controls card="inf" min="1" />
+			<exclude-controls card="inf" />
+        </import> 
         <merge card="0">  
             <custom card="0">
                 <group id="0" card="inf"></group>

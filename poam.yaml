@@ -102,7 +102,7 @@ tags:
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/implementation/component-definition/
-  - name: OSCAL Plan Of Action And Milestones
+  - name: OSCAL Plan of Action and Milestones
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/poam/
@@ -9326,8 +9326,8 @@ paths:
     delete:
       tags:
         - OSCAL Plan Of Action And Milestones
-      summary: Deletes the method.
-      description: Deletes the method.
+      summary: Deletes the method. Deletion will not be allowed if there is only one remaining method.
+      description: Deletes the method. Deletion will not be allowed if there is only one remaining method.
       operationId: deletePlanOfActionAndMilestonesObservationMethod
       parameters:
         - name: planOfActionAndMilestonesId
@@ -10318,6 +10318,594 @@ paths:
             application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALSubject"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation/{observationUuid}/relevant-evidence:
+    get:
+      tags:
+        - OSCAL Plan Of Action And Milestones
+      summary: Returns every relevant relevant evidence.
+      description: Returns every relevant relevant evidence.
+      operationId: getPlanOfActionAndMilestonesObservationRelevantEvidence
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description:  Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: observationUuid
+          in: path
+          description:  Uuid of Observation
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidences"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidences"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+    post:
+      tags:
+        - OSCAL Plan Of Action And Milestones
+      summary: Adds a new relevant evidence.
+      description: Adds a new relevant evidence.
+      operationId: postPlanOfActionAndMilestonesObservationRelevantEvidence
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description:  Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: observationUuid
+          in: path
+          description:  Uuid of Observation
+          required: true
+          schema:
+            type: string
+      responses:
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidence"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidence"
+            location-header:
+              schema:
+                type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation/{observationUuid}/relevant-evidence/{relevantEvidenceHref}:
+    get:
+      tags:
+        - OSCAL Plan Of Action And Milestones
+      summary: When the href is available, returns the relevant evidence represented by the identifier.
+      description: When the href is available, returns the relevant evidence represented by the identifier.
+      operationId: getPlanOfActionAndMilestonesObservationRelevantEvidenceByHref
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description:  Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: observationUuid
+          in: path
+          description:  Uuid of Observation
+          required: true
+          schema:
+            type: string
+        - name: relevantEvidenceHref
+          in: path
+          description:  Href of RelevantEvidence
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidence"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidence"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+    put:
+      tags:
+        - OSCAL Plan Of Action And Milestones
+      summary: When the href is available, updates the relevant evidence represented by the identifier, and returns the updated relevant evidence.
+      description: When the href is available, updates the relevant evidence represented by the identifier, and returns the updated relevant evidence.
+      operationId: putPlanOfActionAndMilestonesObservationRelevantEvidence
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description:  Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: observationUuid
+          in: path
+          description:  Uuid of Observation
+          required: true
+          schema:
+            type: string
+        - name: relevantEvidenceHref
+          in: path
+          description:  Href of RelevantEvidence
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidence"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidence"
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidence"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidence"
+            location-header:
+              schema:
+                type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+    patch:
+      tags:
+        - OSCAL Plan Of Action And Milestones
+      summary: When the href is available, updates the relevant evidence represented by the identifier, and returns the updated relevant evidence.
+      description: When the href is available, updates the relevant evidence represented by the identifier, and returns the updated relevant evidence.
+      operationId: patchPlanOfActionAndMilestonesObservationRelevantEvidence
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description:  Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: observationUuid
+          in: path
+          description:  Uuid of Observation
+          required: true
+          schema:
+            type: string
+        - name: relevantEvidenceHref
+          in: path
+          description:  Href of RelevantEvidence
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidence"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidence"
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+    delete:
+      tags:
+        - OSCAL Plan Of Action And Milestones
+      summary: When the href is available, Deletes the relevant evidence represented by the identifier.
+      description: When the href is available, Deletes the relevant evidence represented by the identifier.
+      operationId: deletePlanOfActionAndMilestonesObservationRelevantEvidence
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description:  Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: observationUuid
+          in: path
+          description:  Uuid of Observation
+          required: true
+          schema:
+            type: string
+        - name: relevantEvidenceHref
+          in: path
+          description:  Href of RelevantEvidence
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidence"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelevantEvidence"
         401:
           description: Unauthorized
           content:
@@ -15122,8 +15710,8 @@ paths:
     delete:
       tags:
         - OSCAL Plan Of Action And Milestones
-      summary: Deletes the entry represented by the uuid.
-      description: Deletes the entry represented by the uuid.
+      summary: Deletes the entry represented by the uuid. Deletion will not be allowed if there is only one remaining entry.
+      description: Deletes the entry represented by the uuid. Deletion will not be allowed if there is only one remaining entry.
       operationId: deletePlanOfActionAndMilestonesRiskRiskLogEntry
       parameters:
         - name: planOfActionAndMilestonesId
@@ -15154,6 +15742,594 @@ paths:
             application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALEntry"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/related-observation:
+    get:
+      tags:
+        - OSCAL Plan Of Action And Milestones
+      summary: Returns every relevant related observation.
+      description: Returns every relevant related observation.
+      operationId: getPlanOfActionAndMilestonesRiskRelatedObservation
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description:  Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: riskUuid
+          in: path
+          description:  Uuid of Risk
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservations"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservations"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+    post:
+      tags:
+        - OSCAL Plan Of Action And Milestones
+      summary: Adds a new related observation.
+      description: Adds a new related observation.
+      operationId: postPlanOfActionAndMilestonesRiskRelatedObservation
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description:  Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: riskUuid
+          in: path
+          description:  Uuid of Risk
+          required: true
+          schema:
+            type: string
+      responses:
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservation"
+            location-header:
+              schema:
+                type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/related-observation/{relatedObservationObservationUuid}:
+    get:
+      tags:
+        - OSCAL Plan Of Action And Milestones
+      summary: Returns the related observation represented by the observation-uuid.
+      description: Returns the related observation represented by the observation-uuid.
+      operationId: getPlanOfActionAndMilestonesRiskRelatedObservationByObservation Uuid
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description:  Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: riskUuid
+          in: path
+          description:  Uuid of Risk
+          required: true
+          schema:
+            type: string
+        - name: relatedObservationObservationUuid
+          in: path
+          description:  ObservationUuid of RelatedObservation
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservation"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+    put:
+      tags:
+        - OSCAL Plan Of Action And Milestones
+      summary: Updates the related observation represented by the observation-uuid.
+      description: Updates the related observation represented by the observation-uuid.
+      operationId: putPlanOfActionAndMilestonesRiskRelatedObservation
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description:  Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: riskUuid
+          in: path
+          description:  Uuid of Risk
+          required: true
+          schema:
+            type: string
+        - name: relatedObservationObservationUuid
+          in: path
+          description:  ObservationUuid of RelatedObservation
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservation"
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservation"
+            location-header:
+              schema:
+                type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+    patch:
+      tags:
+        - OSCAL Plan Of Action And Milestones
+      summary: Updates the related observation represented by the observation-uuid.
+      description: Updates the related observation represented by the observation-uuid.
+      operationId: patchPlanOfActionAndMilestonesRiskRelatedObservation
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description:  Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: riskUuid
+          in: path
+          description:  Uuid of Risk
+          required: true
+          schema:
+            type: string
+        - name: relatedObservationObservationUuid
+          in: path
+          description:  ObservationUuid of RelatedObservation
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservation"
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+    delete:
+      tags:
+        - OSCAL Plan Of Action And Milestones
+      summary: Deletes the related observation represented by the observation-uuid.
+      description: Deletes the related observation represented by the observation-uuid.
+      operationId: deletePlanOfActionAndMilestonesRiskRelatedObservation
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description:  Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: riskUuid
+          in: path
+          description:  Uuid of Risk
+          required: true
+          schema:
+            type: string
+        - name: relatedObservationObservationUuid
+          in: path
+          description:  ObservationUuid of RelatedObservation
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservation"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALRelatedObservation"
         401:
           description: Unauthorized
           content:
@@ -15680,8 +16856,8 @@ paths:
     delete:
       tags:
         - OSCAL Plan Of Action And Milestones
-      summary: Deletes the poam item represented by the uuid.
-      description: Deletes the poam item represented by the uuid.
+      summary: Deletes the poam item represented by the uuid. Deletion will not be allowed if there is only one remaining poam item.
+      description: Deletes the poam item represented by the uuid. Deletion will not be allowed if there is only one remaining poam item.
       operationId: deletePlanOfActionAndMilestonesPoamItem
       parameters:
         - name: planOfActionAndMilestonesId

@@ -102,7 +102,7 @@ tags:
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/implementation/component-definition/
-  - name: OSCAL Plan Of Action And Milestones
+  - name: OSCAL Plan of Action and Milestones
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/poam/
@@ -8660,8 +8660,8 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, Deletes the information type represented by the identifier.
-      description: When the uuid is available, Deletes the information type represented by the identifier.
+      summary: When the uuid is available, Deletes the information type represented by the identifier. Deletion will not be allowed if there is only one remaining information type.
+      description: When the uuid is available, Deletes the information type represented by the identifier. Deletion will not be allowed if there is only one remaining information type.
       operationId: deleteSystemSecurityPlanSystemCharacteristicsSystemInformationInformationType
       parameters:
         - name: systemSecurityPlanId
@@ -8735,13 +8735,13 @@ paths:
         - oscal_auth:
             - read:systemSecurityPlan
             - write:systemSecurityPlan
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/security-impact-level:
+  /system-security-plan/{systemSecurityPlanId}/system-characteristics/security-impact-level:
     get:
       tags:
         - OSCAL System Security Plan
       summary: Returns the security impact level.
       description: Returns the security impact level.
-      operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationSecurityImpactLevelBy
+      operationId: getSystemSecurityPlanSystemCharacteristicsSecurityImpactLevelBy
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -8812,7 +8812,7 @@ paths:
         - OSCAL System Security Plan
       summary: Uppdates the security impact level.
       description: Uppdates the security impact level.
-      operationId: putSystemSecurityPlanSystemCharacteristicsSystemInformationSecurityImpactLevel
+      operationId: putSystemSecurityPlanSystemCharacteristicsSecurityImpactLevel
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -8923,7 +8923,7 @@ paths:
         - OSCAL System Security Plan
       summary: Updates the security impact level.
       description: Updates the security impact level.
-      operationId: patchSystemSecurityPlanSystemCharacteristicsSystemInformationSecurityImpactLevel
+      operationId: patchSystemSecurityPlanSystemCharacteristicsSecurityImpactLevel
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -9017,13 +9017,13 @@ paths:
         - oscal_auth:
             - read:systemSecurityPlan
             - write:systemSecurityPlan
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/authorization-boundary:
+  /system-security-plan/{systemSecurityPlanId}/system-characteristics/authorization-boundary:
     get:
       tags:
         - OSCAL System Security Plan
       summary: Returns the authorization boundary.
       description: Returns the authorization boundary.
-      operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationAuthorizationBoundaryBy
+      operationId: getSystemSecurityPlanSystemCharacteristicsAuthorizationBoundaryBy
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -9094,7 +9094,7 @@ paths:
         - OSCAL System Security Plan
       summary: Uppdates the authorization boundary.
       description: Uppdates the authorization boundary.
-      operationId: putSystemSecurityPlanSystemCharacteristicsSystemInformationAuthorizationBoundary
+      operationId: putSystemSecurityPlanSystemCharacteristicsAuthorizationBoundary
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -9205,7 +9205,7 @@ paths:
         - OSCAL System Security Plan
       summary: Updates the authorization boundary.
       description: Updates the authorization boundary.
-      operationId: patchSystemSecurityPlanSystemCharacteristicsSystemInformationAuthorizationBoundary
+      operationId: patchSystemSecurityPlanSystemCharacteristicsAuthorizationBoundary
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -9299,13 +9299,13 @@ paths:
         - oscal_auth:
             - read:systemSecurityPlan
             - write:systemSecurityPlan
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/network-architecture:
+  /system-security-plan/{systemSecurityPlanId}/system-characteristics/network-architecture:
     get:
       tags:
         - OSCAL System Security Plan
       summary: Returns the network architecture.
       description: Returns the network architecture.
-      operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationNetworkArchitectureBy
+      operationId: getSystemSecurityPlanSystemCharacteristicsNetworkArchitectureBy
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -9376,7 +9376,7 @@ paths:
         - OSCAL System Security Plan
       summary: Uppdates the network architecture.
       description: Uppdates the network architecture.
-      operationId: putSystemSecurityPlanSystemCharacteristicsSystemInformationNetworkArchitecture
+      operationId: putSystemSecurityPlanSystemCharacteristicsNetworkArchitecture
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -9487,7 +9487,7 @@ paths:
         - OSCAL System Security Plan
       summary: Updates the network architecture.
       description: Updates the network architecture.
-      operationId: patchSystemSecurityPlanSystemCharacteristicsSystemInformationNetworkArchitecture
+      operationId: patchSystemSecurityPlanSystemCharacteristicsNetworkArchitecture
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -9586,7 +9586,7 @@ paths:
         - OSCAL System Security Plan
       summary: Deletes the network architecture.
       description: Deletes the network architecture.
-      operationId: deleteSystemSecurityPlanSystemCharacteristicsSystemInformationNetworkArchitecture
+      operationId: deleteSystemSecurityPlanSystemCharacteristicsNetworkArchitecture
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -9653,13 +9653,13 @@ paths:
         - oscal_auth:
             - read:systemSecurityPlan
             - write:systemSecurityPlan
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/data-flow:
+  /system-security-plan/{systemSecurityPlanId}/system-characteristics/data-flow:
     get:
       tags:
         - OSCAL System Security Plan
       summary: Returns the data flow.
       description: Returns the data flow.
-      operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationDataFlowBy
+      operationId: getSystemSecurityPlanSystemCharacteristicsDataFlowBy
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -9730,7 +9730,7 @@ paths:
         - OSCAL System Security Plan
       summary: Uppdates the data flow.
       description: Uppdates the data flow.
-      operationId: putSystemSecurityPlanSystemCharacteristicsSystemInformationDataFlow
+      operationId: putSystemSecurityPlanSystemCharacteristicsDataFlow
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -9841,7 +9841,7 @@ paths:
         - OSCAL System Security Plan
       summary: Updates the data flow.
       description: Updates the data flow.
-      operationId: patchSystemSecurityPlanSystemCharacteristicsSystemInformationDataFlow
+      operationId: patchSystemSecurityPlanSystemCharacteristicsDataFlow
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -9940,7 +9940,7 @@ paths:
         - OSCAL System Security Plan
       summary: Deletes the data flow.
       description: Deletes the data flow.
-      operationId: deleteSystemSecurityPlanSystemCharacteristicsSystemInformationDataFlow
+      operationId: deleteSystemSecurityPlanSystemCharacteristicsDataFlow
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -10007,13 +10007,13 @@ paths:
         - oscal_auth:
             - read:systemSecurityPlan
             - write:systemSecurityPlan
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/responsible-party:
+  /system-security-plan/{systemSecurityPlanId}/system-characteristics/responsible-party:
     get:
       tags:
         - OSCAL System Security Plan
       summary: Returns every relevant responsible party.
       description: Returns every relevant responsible party.
-      operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationResponsibleParty
+      operationId: getSystemSecurityPlanSystemCharacteristicsResponsibleParty
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -10084,7 +10084,7 @@ paths:
         - OSCAL System Security Plan
       summary: Adds a new responsible party.
       description: Adds a new responsible party.
-      operationId: postSystemSecurityPlanSystemCharacteristicsSystemInformationResponsibleParty
+      operationId: postSystemSecurityPlanSystemCharacteristicsResponsibleParty
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -10181,13 +10181,13 @@ paths:
         - oscal_auth:
             - read:systemSecurityPlan
             - write:systemSecurityPlan
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/responsible-party/{responsiblePartyRoleId}:
+  /system-security-plan/{systemSecurityPlanId}/system-characteristics/responsible-party/{responsiblePartyRoleId}:
     get:
       tags:
         - OSCAL System Security Plan
       summary: Returns the responsible party represented by the role-id.
       description: Returns the responsible party represented by the role-id.
-      operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationResponsiblePartyByRole Id
+      operationId: getSystemSecurityPlanSystemCharacteristicsResponsiblePartyByRole Id
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -10264,7 +10264,7 @@ paths:
         - OSCAL System Security Plan
       summary: Updates the responsible party represented by the role-id.
       description: Updates the responsible party represented by the role-id.
-      operationId: putSystemSecurityPlanSystemCharacteristicsSystemInformationResponsibleParty
+      operationId: putSystemSecurityPlanSystemCharacteristicsResponsibleParty
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -10381,7 +10381,7 @@ paths:
         - OSCAL System Security Plan
       summary: Updates the responsible party represented by the role-id.
       description: Updates the responsible party represented by the role-id.
-      operationId: patchSystemSecurityPlanSystemCharacteristicsSystemInformationResponsibleParty
+      operationId: patchSystemSecurityPlanSystemCharacteristicsResponsibleParty
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -10486,7 +10486,7 @@ paths:
         - OSCAL System Security Plan
       summary: Deletes the responsible party represented by the role-id.
       description: Deletes the responsible party represented by the role-id.
-      operationId: deleteSystemSecurityPlanSystemCharacteristicsSystemInformationResponsibleParty
+      operationId: deleteSystemSecurityPlanSystemCharacteristicsResponsibleParty
       parameters:
         - name: systemSecurityPlanId
           in: path
@@ -12974,8 +12974,8 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the user represented by the uuid.
-      description: Deletes the user represented by the uuid.
+      summary: Deletes the user represented by the uuid. Deletion will not be allowed if there is only one remaining user.
+      description: Deletes the user represented by the uuid. Deletion will not be allowed if there is only one remaining user.
       operationId: deleteSystemSecurityPlanSystemImplementationUser
       parameters:
         - name: systemSecurityPlanId
@@ -14078,8 +14078,8 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the component represented by the uuid.
-      description: Deletes the component represented by the uuid.
+      summary: Deletes the component represented by the uuid. Deletion will not be allowed if there is only one remaining component.
+      description: Deletes the component represented by the uuid. Deletion will not be allowed if there is only one remaining component.
       operationId: deleteSystemSecurityPlanSystemImplementationComponent
       parameters:
         - name: systemSecurityPlanId
@@ -15464,8 +15464,8 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the implemented requirement represented by the control-id.
-      description: Deletes the implemented requirement represented by the control-id.
+      summary: Deletes the implemented requirement represented by the control-id. Deletion will not be allowed if there is only one remaining implemented requirement.
+      description: Deletes the implemented requirement represented by the control-id. Deletion will not be allowed if there is only one remaining implemented requirement.
       operationId: deleteSystemSecurityPlanControlImplementationImplementedRequirement
       parameters:
         - name: systemSecurityPlanId

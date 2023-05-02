@@ -102,7 +102,7 @@ tags:
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/implementation/component-definition/
-  - name: OSCAL Plan Of Action And Milestones
+  - name: OSCAL Plan of Action and Milestones
     externalDocs:
       description: Find out more
       url: https://pages.nist.gov/OSCAL/concepts/layer/assessment/poam/
@@ -7421,6 +7421,912 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
+  /assessment-plan/{assessmentPlanId}/terms-and-conditions:
+    get:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Returns the terms and conditions.
+      description: Returns the terms and conditions.
+      operationId: getAssessmentPlanTermsAndConditionsBy
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description:  Id of AssessmentPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALTermsAndConditions"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALTermsAndConditions"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentPlan
+    put:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Uppdates the terms and conditions.
+      description: Uppdates the terms and conditions.
+      operationId: putAssessmentPlanTermsAndConditions
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description:  Id of AssessmentPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALTermsAndConditions"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALTermsAndConditions"
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALTermsAndConditions"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALTermsAndConditions"
+            location-header:
+              schema:
+                type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentPlan
+            - write:assessmentPlan
+    patch:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Updates the terms and conditions.
+      description: Updates the terms and conditions.
+      operationId: patchAssessmentPlanTermsAndConditions
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description:  Id of AssessmentPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALTermsAndConditions"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALTermsAndConditions"
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentPlan
+            - write:assessmentPlan
+    delete:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Deletes the terms and conditions.
+      description: Deletes the terms and conditions.
+      operationId: deleteAssessmentPlanTermsAndConditions
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description:  Id of AssessmentPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALTermsAndConditions"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALTermsAndConditions"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentPlan
+            - write:assessmentPlan
+  /assessment-plan/{assessmentPlanId}/terms-and-conditions/part:
+    get:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Returns every relevant part.
+      description: Returns every relevant part.
+      operationId: getAssessmentPlanTermsAndConditionsPart
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description:  Id of AssessmentPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALParts"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALParts"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentPlan
+    post:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Adds a new part.
+      description: Adds a new part.
+      operationId: postAssessmentPlanTermsAndConditionsPart
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description:  Id of AssessmentPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+            location-header:
+              schema:
+                type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentPlan
+            - write:assessmentPlan
+  /assessment-plan/{assessmentPlanId}/terms-and-conditions/part/{partUuid}:
+    get:
+      tags:
+        - OSCAL Assessment Plan
+      summary: When the uuid is available, returns the part represented by the identifier.
+      description: When the uuid is available, returns the part represented by the identifier.
+      operationId: getAssessmentPlanTermsAndConditionsPartByUuid
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description:  Id of AssessmentPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: partUuid
+          in: path
+          description:  Uuid of Part
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentPlan
+    put:
+      tags:
+        - OSCAL Assessment Plan
+      summary: When the uuid is available, updates the part represented by the identifier, and returns the updated part.
+      description: When the uuid is available, updates the part represented by the identifier, and returns the updated part.
+      operationId: putAssessmentPlanTermsAndConditionsPart
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description:  Id of AssessmentPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: partUuid
+          in: path
+          description:  Uuid of Part
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+            location-header:
+              schema:
+                type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentPlan
+            - write:assessmentPlan
+    patch:
+      tags:
+        - OSCAL Assessment Plan
+      summary: When the uuid is available, updates the part represented by the identifier, and returns the updated part.
+      description: When the uuid is available, updates the part represented by the identifier, and returns the updated part.
+      operationId: patchAssessmentPlanTermsAndConditionsPart
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description:  Id of AssessmentPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: partUuid
+          in: path
+          description:  Uuid of Part
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentPlan
+            - write:assessmentPlan
+    delete:
+      tags:
+        - OSCAL Assessment Plan
+      summary: When the uuid is available, Deletes the part represented by the identifier.
+      description: When the uuid is available, Deletes the part represented by the identifier.
+      operationId: deleteAssessmentPlanTermsAndConditionsPart
+      parameters:
+        - name: assessmentPlanId
+          in: path
+          description:  Id of AssessmentPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: partUuid
+          in: path
+          description:  Uuid of Part
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPart"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentPlan
+            - write:assessmentPlan
   /assessment-plan/{assessmentPlanId}/reviewed-controls:
     get:
       tags:
@@ -9092,8 +9998,8 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the control selection.
-      description: Deletes the control selection.
+      summary: Deletes the control selection. Deletion will not be allowed if there is only one remaining control selection.
+      description: Deletes the control selection. Deletion will not be allowed if there is only one remaining control selection.
       operationId: deleteAssessmentPlanReviewedControlsControlSelection
       parameters:
         - name: assessmentPlanId
@@ -10898,8 +11804,8 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the include subject represented by the subject-uuid.
-      description: Deletes the include subject represented by the subject-uuid.
+      summary: Deletes the include subject represented by the subject-uuid. Deletion will not be allowed if there is only one remaining include subject.
+      description: Deletes the include subject represented by the subject-uuid. Deletion will not be allowed if there is only one remaining include subject.
       operationId: deleteAssessmentPlanIncludeSubject
       parameters:
         - name: assessmentPlanId
@@ -12908,8 +13814,8 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the assesssment platform represented by the uuid.
-      description: Deletes the assesssment platform represented by the uuid.
+      summary: Deletes the assesssment platform represented by the uuid. Deletion will not be allowed if there is only one remaining assesssment platform.
+      description: Deletes the assesssment platform represented by the uuid. Deletion will not be allowed if there is only one remaining assesssment platform.
       operationId: deleteAssessmentPlanAssessmentAssetsAssesssmentPlatform
       parameters:
         - name: assessmentPlanId

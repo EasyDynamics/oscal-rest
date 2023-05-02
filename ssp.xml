@@ -18,25 +18,25 @@
             <system-information card="1">
                 <link card="inf" href="1"></link>
                  <prop card="inf" uuid="0"></prop>
-                 <information-type uuid="0" card="inf"></information-type>
-                 <security-impact-level card="1"></security-impact-level>
-                 <authorization-boundary card="1"></authorization-boundary>
-                 <network-architecture card="0"></network-architecture>
-                 <data-flow card="0"></data-flow>
-                 <responsible-party role-id="1" card="inf"></responsible-party>
+                 <information-type uuid="0" card="inf" min="1"></information-type>              
             </system-information>
+			<security-impact-level card="1"></security-impact-level>
+			<authorization-boundary card="1"></authorization-boundary>
+			<network-architecture card="0"></network-architecture>
+			<data-flow card="0"></data-flow>
+			<responsible-party role-id="1" card="inf"></responsible-party>
         </system-characteristics>
         <system-implementation card="1">
             <link card="inf" href="1"></link>
             <prop card="inf" uuid="0"></prop>
             <leveraged-authorization uuid="1" card="inf"></leveraged-authorization>
-            <user uuid="1" card="inf"></user>
+            <user uuid="1" card="inf" min="1"></user>
             <inventory-item uuid="1" card="inf"></inventory-item>
-            <component uuid="1" card="inf"></component>
+            <component uuid="1" card="inf" min="1"></component>
         </system-implementation>
         <control-implementation card="1">
             <set-parameter param-id="1" card="inf"></set-parameter>
-            <implemented-requirement control-id="1" card="inf">
+            <implemented-requirement control-id="1" card="inf" min="1">
                 <link card="inf" href="1"></link>
                 <prop card="inf" uuid="0"></prop>
                 <set-parameter param-id="1" card="inf"></set-parameter>

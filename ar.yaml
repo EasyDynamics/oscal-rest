@@ -30440,12 +30440,6 @@ components:
         profile:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_profile"
-    OSCALImport:
-      type: object
-      properties:
-        import:
-          $ref:
-            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_import"
     OSCALMerge:
       type: object
       properties:
@@ -30535,6 +30529,53 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALImplementedRequirement"
+    OSCALSelectControlById:
+      type: object
+      properties:
+        select-control-by-id:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_select-control-by-id"
+    OSCALIncludeControls:
+      type: object
+      properties:
+        include-controls:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALSelectControlById"
+    OSCALIncludeControlsList:
+      type: object
+      properties:
+        include-controls:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALIncludeControls"
+    OSCALExcludeControls:
+      type: object
+      properties:
+        include-controls:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALSelectControlById"
+    OSCALExcludeControlsList:
+      type: object
+      properties:
+        include-controls:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALExcludeControls"
+    OSCALInsertControls:
+      type: object
+      properties:
+        insert-controls:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_insert-controls"
+    OSCALInsertControlsList:
+      type: object
+      properties:
+        insert-controls:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALInsertControls"
     OSCALRole:
       type: object
       properties:
@@ -30940,6 +30981,13 @@ components:
           $ref: "#/components/schemas/OSCALBase64"
         remarks:
           $ref: "#/components/schemas/OSCALRemarks"
+    OSCALCustom:
+      type: object
+      properties:
+        groups:
+          $ref: "#/components/schemas/OSCALGroups"
+        insert-controls:
+          $ref: "#/components/schemas/OSCALInsertControlList"
     OSCALCitation:
       type: object
       properties:
@@ -31000,6 +31048,45 @@ components:
       properties:
         assessment-assets:
           $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_assessment-assets"
+    OSCALAlter:
+      type: object
+      properties:
+        alter:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_alter"
+    OSCALAlters:
+      type: object
+      properties:
+        alters:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALAlter"
+    OSCALRemove:
+      type: object
+      properties:
+        remove:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_remove"
+    OSCALRemoves:
+      type: object
+      properties:
+        removes:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALRemove"
+    OSCALAdd:
+      type: object
+      properties:
+        add:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_add"
+    OSCALAdds:
+      type: object
+      properties:
+        adds:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALAdd"
     OSCALActivities:
       type: object
       properties:
@@ -31016,14 +31103,14 @@ components:
     OSCALObjectivesAndMethods:
       type: object
       properties:
-        aactivities:
+        objectives-and-methods:
           type: array
           items:
-            $ref: "#/components/schemas/OSCALObjectives"
+            $ref: "#/components/schemas/OSCALObjective"
     OSCALObjective:
       type: object
       properties:
-        activity:
+        objective:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_local-objective"
     OSCALResults:
@@ -31052,6 +31139,45 @@ components:
         task:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_task"
+    OSCALConstraint:
+      type: object
+      properties:
+        constraint:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog-common_parameter-constraint"
+    OSCALConstraints:
+      type: object
+      properties:
+        constraints:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALConstraint"
+    OSCALImport:
+      type: object
+      properties:
+        import:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_import"
+    OSCALImports:
+      type: object
+      properties:
+        imports:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALImport"
+    OSCALGuideline:
+      type: object
+      properties:
+        group:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog-common_parameter-guideline"
+    OSCALGuidelines:
+      type: object
+      properties:
+        groups:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALGuideline"
     DocId:
       type: string
       minLength: 1

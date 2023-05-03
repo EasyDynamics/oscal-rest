@@ -4203,8 +4203,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the role-id is available, returns the responsible party represented by the identifier.
-      description: When the role-id is available, returns the responsible party represented by the identifier.
+      summary: Returns the responsible party represented by the role-id.
+      description: Returns the responsible party represented by the role-id.
       operationId: getCatalogMetadataResponsiblePartyByRole Id
       parameters:
         - name: catalogId
@@ -4280,8 +4280,8 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: When the role-id is available, updates the responsible party represented by the identifier, and returns the updated responsible party.
-      description: When the role-id is available, updates the responsible party represented by the identifier, and returns the updated responsible party.
+      summary: Updates the responsible party represented by the role-id.
+      description: Updates the responsible party represented by the role-id.
       operationId: putCatalogMetadataResponsibleParty
       parameters:
         - name: catalogId
@@ -4397,8 +4397,8 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: When the role-id is available, updates the responsible party represented by the identifier, and returns the updated responsible party.
-      description: When the role-id is available, updates the responsible party represented by the identifier, and returns the updated responsible party.
+      summary: Updates the responsible party represented by the role-id.
+      description: Updates the responsible party represented by the role-id.
       operationId: patchCatalogMetadataResponsibleParty
       parameters:
         - name: catalogId
@@ -4502,8 +4502,8 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: When the role-id is available, Deletes the responsible party represented by the identifier.
-      description: When the role-id is available, Deletes the responsible party represented by the identifier.
+      summary: Deletes the responsible party represented by the role-id.
+      description: Deletes the responsible party represented by the role-id.
       operationId: deleteCatalogMetadataResponsibleParty
       parameters:
         - name: catalogId
@@ -11213,13 +11213,13 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/part/{partId}/part:
+  /catalog/{catalogId}/control/{controlId}/part/{partId}/subpart:
     get:
       tags:
         - OSCAL Catalog
       summary: Returns every relevant part.
       description: Returns every relevant part.
-      operationId: getCatalogControlPartPart
+      operationId: getCatalogControlPartSubpart
       parameters:
         - name: catalogId
           in: path
@@ -11302,7 +11302,7 @@ paths:
         - OSCAL Catalog
       summary: Adds a new part.
       description: Adds a new part.
-      operationId: postCatalogControlPartPart
+      operationId: postCatalogControlPartSubpart
       parameters:
         - name: catalogId
           in: path
@@ -11411,13 +11411,13 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/part/{partId}/part/{partId}:
+  /catalog/{catalogId}/control/{controlId}/part/{partId}/subpart/{subpartId}:
     get:
       tags:
         - OSCAL Catalog
       summary: When the id is available, returns the part represented by the identifier.
       description: When the id is available, returns the part represented by the identifier.
-      operationId: getCatalogControlPartPartById
+      operationId: getCatalogControlPartSubpartById
       parameters:
         - name: catalogId
           in: path
@@ -11437,9 +11437,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: partId
+        - name: subpartId
           in: path
-          description:  Id of Part
+          description:  Id of Subpart
           required: true
           schema:
             type: string
@@ -11506,7 +11506,7 @@ paths:
         - OSCAL Catalog
       summary: When the id is available, updates the part represented by the identifier, and returns the updated part.
       description: When the id is available, updates the part represented by the identifier, and returns the updated part.
-      operationId: putCatalogControlPartPart
+      operationId: putCatalogControlPartSubpart
       parameters:
         - name: catalogId
           in: path
@@ -11526,9 +11526,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: partId
+        - name: subpartId
           in: path
-          description:  Id of Part
+          description:  Id of Subpart
           required: true
           schema:
             type: string
@@ -11635,7 +11635,7 @@ paths:
         - OSCAL Catalog
       summary: When the id is available, updates the part represented by the identifier, and returns the updated part.
       description: When the id is available, updates the part represented by the identifier, and returns the updated part.
-      operationId: patchCatalogControlPartPart
+      operationId: patchCatalogControlPartSubpart
       parameters:
         - name: catalogId
           in: path
@@ -11655,9 +11655,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: partId
+        - name: subpartId
           in: path
-          description:  Id of Part
+          description:  Id of Subpart
           required: true
           schema:
             type: string
@@ -11752,7 +11752,7 @@ paths:
         - OSCAL Catalog
       summary: When the id is available, Deletes the part represented by the identifier.
       description: When the id is available, Deletes the part represented by the identifier.
-      operationId: deleteCatalogControlPartPart
+      operationId: deleteCatalogControlPartSubpart
       parameters:
         - name: catalogId
           in: path
@@ -11772,9 +11772,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: partId
+        - name: subpartId
           in: path
-          description:  Id of Part
+          description:  Id of Subpart
           required: true
           schema:
             type: string
@@ -11837,13 +11837,13 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/control:
+  /catalog/{catalogId}/control/{controlId}/subcontrol:
     get:
       tags:
         - OSCAL Catalog
       summary: Returns every relevant control.
       description: Returns every relevant control.
-      operationId: getCatalogControlControl
+      operationId: getCatalogControlSubcontrol
       parameters:
         - name: catalogId
           in: path
@@ -11920,7 +11920,7 @@ paths:
         - OSCAL Catalog
       summary: Adds a new control.
       description: Adds a new control.
-      operationId: postCatalogControlControl
+      operationId: postCatalogControlSubcontrol
       parameters:
         - name: catalogId
           in: path
@@ -12023,13 +12023,13 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/control/{controlId}:
+  /catalog/{catalogId}/control/{controlId}/subcontrol/{subcontrolId}:
     get:
       tags:
         - OSCAL Catalog
       summary: Returns the control represented by the id.
       description: Returns the control represented by the id.
-      operationId: getCatalogControlControlById
+      operationId: getCatalogControlSubcontrolById
       parameters:
         - name: catalogId
           in: path
@@ -12043,9 +12043,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: controlId
+        - name: subcontrolId
           in: path
-          description:  Id of Control
+          description:  Id of Subcontrol
           required: true
           schema:
             type: string
@@ -12112,7 +12112,7 @@ paths:
         - OSCAL Catalog
       summary: Updates the control represented by the id.
       description: Updates the control represented by the id.
-      operationId: putCatalogControlControl
+      operationId: putCatalogControlSubcontrol
       parameters:
         - name: catalogId
           in: path
@@ -12126,9 +12126,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: controlId
+        - name: subcontrolId
           in: path
-          description:  Id of Control
+          description:  Id of Subcontrol
           required: true
           schema:
             type: string
@@ -12235,7 +12235,7 @@ paths:
         - OSCAL Catalog
       summary: Updates the control represented by the id.
       description: Updates the control represented by the id.
-      operationId: patchCatalogControlControl
+      operationId: patchCatalogControlSubcontrol
       parameters:
         - name: catalogId
           in: path
@@ -12249,9 +12249,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: controlId
+        - name: subcontrolId
           in: path
-          description:  Id of Control
+          description:  Id of Subcontrol
           required: true
           schema:
             type: string
@@ -12346,7 +12346,7 @@ paths:
         - OSCAL Catalog
       summary: Deletes the control represented by the id.
       description: Deletes the control represented by the id.
-      operationId: deleteCatalogControlControl
+      operationId: deleteCatalogControlSubcontrol
       parameters:
         - name: catalogId
           in: path
@@ -12360,9 +12360,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: controlId
+        - name: subcontrolId
           in: path
-          description:  Id of Control
+          description:  Id of Subcontrol
           required: true
           schema:
             type: string
@@ -15917,13 +15917,13 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/group:
+  /catalog/{catalogId}/group/{groupId}/subgroup:
     get:
       tags:
         - OSCAL Catalog
       summary: Returns every relevant group.
       description: Returns every relevant group.
-      operationId: getCatalogGroupGroup
+      operationId: getCatalogGroupSubgroup
       parameters:
         - name: catalogId
           in: path
@@ -16000,7 +16000,7 @@ paths:
         - OSCAL Catalog
       summary: Adds a new group.
       description: Adds a new group.
-      operationId: postCatalogGroupGroup
+      operationId: postCatalogGroupSubgroup
       parameters:
         - name: catalogId
           in: path
@@ -16103,13 +16103,13 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/group/{groupId}:
+  /catalog/{catalogId}/group/{groupId}/subgroup/{subgroupId}:
     get:
       tags:
         - OSCAL Catalog
       summary: When the id is available, returns the group represented by the identifier.
       description: When the id is available, returns the group represented by the identifier.
-      operationId: getCatalogGroupGroupById
+      operationId: getCatalogGroupSubgroupById
       parameters:
         - name: catalogId
           in: path
@@ -16123,9 +16123,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: groupId
+        - name: subgroupId
           in: path
-          description:  Id of Group
+          description:  Id of Subgroup
           required: true
           schema:
             type: string
@@ -16192,7 +16192,7 @@ paths:
         - OSCAL Catalog
       summary: When the id is available, updates the group represented by the identifier, and returns the updated group.
       description: When the id is available, updates the group represented by the identifier, and returns the updated group.
-      operationId: putCatalogGroupGroup
+      operationId: putCatalogGroupSubgroup
       parameters:
         - name: catalogId
           in: path
@@ -16206,9 +16206,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: groupId
+        - name: subgroupId
           in: path
-          description:  Id of Group
+          description:  Id of Subgroup
           required: true
           schema:
             type: string
@@ -16315,7 +16315,7 @@ paths:
         - OSCAL Catalog
       summary: When the id is available, updates the group represented by the identifier, and returns the updated group.
       description: When the id is available, updates the group represented by the identifier, and returns the updated group.
-      operationId: patchCatalogGroupGroup
+      operationId: patchCatalogGroupSubgroup
       parameters:
         - name: catalogId
           in: path
@@ -16329,9 +16329,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: groupId
+        - name: subgroupId
           in: path
-          description:  Id of Group
+          description:  Id of Subgroup
           required: true
           schema:
             type: string
@@ -16426,7 +16426,7 @@ paths:
         - OSCAL Catalog
       summary: When the id is available, Deletes the group represented by the identifier.
       description: When the id is available, Deletes the group represented by the identifier.
-      operationId: deleteCatalogGroupGroup
+      operationId: deleteCatalogGroupSubgroup
       parameters:
         - name: catalogId
           in: path
@@ -16440,9 +16440,9 @@ paths:
           required: true
           schema:
             type: string
-        - name: groupId
+        - name: subgroupId
           in: path
-          description:  Id of Group
+          description:  Id of Subgroup
           required: true
           schema:
             type: string
@@ -16509,9 +16509,9 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns every relevant back matter.
-      description: Returns every relevant back matter.
-      operationId: getCatalogBackMatter
+      summary: Returns the back matter.
+      description: Returns the back matter.
+      operationId: getCatalogBackMatterBy
       parameters:
         - name: catalogId
           in: path
@@ -16525,10 +16525,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALBackMatters"
+                $ref: "#/components/schemas/OSCALBackMatter"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALBackMatters"
+                $ref: "#/components/schemas/OSCALBackMatter"
         401:
           description: Unauthorized
           content:
@@ -16596,19 +16596,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALBackMatters"
+                $ref: "#/components/schemas/OSCALBackMatter"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALBackMatters"
+                $ref: "#/components/schemas/OSCALBackMatter"
         201:
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALBackMatters"
+                $ref: "#/components/schemas/OSCALBackMatter"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALBackMatters"
+                $ref: "#/components/schemas/OSCALBackMatter"
             location-header:
               schema:
                 type: string
@@ -16707,10 +16707,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALBackMatters"
+                $ref: "#/components/schemas/OSCALBackMatter"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALBackMatters"
+                $ref: "#/components/schemas/OSCALBackMatter"
         400:
           description: Bad Request
           content:
@@ -16806,10 +16806,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALBackMatters"
+                $ref: "#/components/schemas/OSCALBackMatter"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALBackMatters"
+                $ref: "#/components/schemas/OSCALBackMatter"
         401:
           description: Unauthorized
           content:
@@ -17444,12 +17444,6 @@ components:
         profile:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_profile"
-    OSCALImport:
-      type: object
-      properties:
-        import:
-          $ref:
-            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_import"
     OSCALMerge:
       type: object
       properties:
@@ -17539,6 +17533,53 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALImplementedRequirement"
+    OSCALSelectControlById:
+      type: object
+      properties:
+        select-control-by-id:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_select-control-by-id"
+    OSCALIncludeControls:
+      type: object
+      properties:
+        include-controls:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALSelectControlById"
+    OSCALIncludeControlsList:
+      type: object
+      properties:
+        include-controls:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALIncludeControls"
+    OSCALExcludeControls:
+      type: object
+      properties:
+        include-controls:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALSelectControlById"
+    OSCALExcludeControlsList:
+      type: object
+      properties:
+        include-controls:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALExcludeControls"
+    OSCALInsertControls:
+      type: object
+      properties:
+        insert-controls:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_insert-controls"
+    OSCALInsertControlsList:
+      type: object
+      properties:
+        insert-controls:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALInsertControls"
     OSCALRole:
       type: object
       properties:
@@ -17944,6 +17985,13 @@ components:
           $ref: "#/components/schemas/OSCALBase64"
         remarks:
           $ref: "#/components/schemas/OSCALRemarks"
+    OSCALCustom:
+      type: object
+      properties:
+        groups:
+          $ref: "#/components/schemas/OSCALGroups"
+        insert-controls:
+          $ref: "#/components/schemas/OSCALInsertControlList"
     OSCALCitation:
       type: object
       properties:
@@ -18004,6 +18052,45 @@ components:
       properties:
         assessment-assets:
           $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_assessment-assets"
+    OSCALAlter:
+      type: object
+      properties:
+        alter:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_alter"
+    OSCALAlters:
+      type: object
+      properties:
+        alters:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALAlter"
+    OSCALRemove:
+      type: object
+      properties:
+        remove:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_remove"
+    OSCALRemoves:
+      type: object
+      properties:
+        removes:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALRemove"
+    OSCALAdd:
+      type: object
+      properties:
+        add:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_add"
+    OSCALAdds:
+      type: object
+      properties:
+        adds:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALAdd"
     OSCALActivities:
       type: object
       properties:
@@ -18020,14 +18107,14 @@ components:
     OSCALObjectivesAndMethods:
       type: object
       properties:
-        aactivities:
+        objectives-and-methods:
           type: array
           items:
-            $ref: "#/components/schemas/OSCALObjectives"
+            $ref: "#/components/schemas/OSCALObjective"
     OSCALObjective:
       type: object
       properties:
-        activity:
+        objective:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_local-objective"
     OSCALResults:
@@ -18056,6 +18143,45 @@ components:
         task:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_task"
+    OSCALConstraint:
+      type: object
+      properties:
+        constraint:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog-common_parameter-constraint"
+    OSCALConstraints:
+      type: object
+      properties:
+        constraints:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALConstraint"
+    OSCALImport:
+      type: object
+      properties:
+        import:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_import"
+    OSCALImports:
+      type: object
+      properties:
+        imports:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALImport"
+    OSCALGuideline:
+      type: object
+      properties:
+        group:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog-common_parameter-guideline"
+    OSCALGuidelines:
+      type: object
+      properties:
+        groups:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALGuideline"
     DocId:
       type: string
       minLength: 1

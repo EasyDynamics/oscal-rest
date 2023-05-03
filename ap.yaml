@@ -285,7 +285,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -356,7 +356,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -467,7 +467,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -566,7 +566,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -639,7 +639,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -710,7 +710,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -821,7 +821,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -921,7 +921,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -992,7 +992,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1095,13 +1095,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: documentIdScheme
           in: path
-          description:  Scheme of DocumentId
+          description: Scheme of DocumentId
           required: true
           schema:
             type: string
@@ -1172,13 +1172,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: documentIdScheme
           in: path
-          description:  Scheme of DocumentId
+          description: Scheme of DocumentId
           required: true
           schema:
             type: string
@@ -1289,13 +1289,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: documentIdScheme
           in: path
-          description:  Scheme of DocumentId
+          description: Scheme of DocumentId
           required: true
           schema:
             type: string
@@ -1394,13 +1394,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: documentIdScheme
           in: path
-          description:  Scheme of DocumentId
+          description: Scheme of DocumentId
           required: true
           schema:
             type: string
@@ -1473,7 +1473,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1544,7 +1544,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1655,7 +1655,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1754,7 +1754,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1827,7 +1827,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1898,7 +1898,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2001,13 +2001,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -2078,13 +2078,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -2195,13 +2195,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -2300,13 +2300,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -2379,7 +2379,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2450,7 +2450,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2553,13 +2553,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: locationUuid
           in: path
-          description:  Uuid of Location
+          description: Uuid of Location
           required: true
           schema:
             type: string
@@ -2630,13 +2630,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: locationUuid
           in: path
-          description:  Uuid of Location
+          description: Uuid of Location
           required: true
           schema:
             type: string
@@ -2747,13 +2747,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: locationUuid
           in: path
-          description:  Uuid of Location
+          description: Uuid of Location
           required: true
           schema:
             type: string
@@ -2852,13 +2852,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: locationUuid
           in: path
-          description:  Uuid of Location
+          description: Uuid of Location
           required: true
           schema:
             type: string
@@ -2931,7 +2931,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3002,7 +3002,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3105,13 +3105,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: partyUuid
           in: path
-          description:  Uuid of Party
+          description: Uuid of Party
           required: true
           schema:
             type: string
@@ -3182,13 +3182,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: partyUuid
           in: path
-          description:  Uuid of Party
+          description: Uuid of Party
           required: true
           schema:
             type: string
@@ -3299,13 +3299,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: partyUuid
           in: path
-          description:  Uuid of Party
+          description: Uuid of Party
           required: true
           schema:
             type: string
@@ -3404,13 +3404,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: partyUuid
           in: path
-          description:  Uuid of Party
+          description: Uuid of Party
           required: true
           schema:
             type: string
@@ -3483,7 +3483,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3554,7 +3554,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3657,13 +3657,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -3734,13 +3734,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -3851,13 +3851,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -3956,13 +3956,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4035,7 +4035,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4106,7 +4106,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4217,7 +4217,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4317,7 +4317,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4388,7 +4388,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4499,7 +4499,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4598,7 +4598,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4671,7 +4671,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4742,7 +4742,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4845,13 +4845,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: componentUuid
           in: path
-          description:  Uuid of Component
+          description: Uuid of Component
           required: true
           schema:
             type: string
@@ -4922,13 +4922,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: componentUuid
           in: path
-          description:  Uuid of Component
+          description: Uuid of Component
           required: true
           schema:
             type: string
@@ -5039,13 +5039,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: componentUuid
           in: path
-          description:  Uuid of Component
+          description: Uuid of Component
           required: true
           schema:
             type: string
@@ -5144,13 +5144,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: componentUuid
           in: path
-          description:  Uuid of Component
+          description: Uuid of Component
           required: true
           schema:
             type: string
@@ -5223,7 +5223,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5294,7 +5294,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5397,13 +5397,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: inventoryItemUuid
           in: path
-          description:  Uuid of InventoryItem
+          description: Uuid of InventoryItem
           required: true
           schema:
             type: string
@@ -5474,13 +5474,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: inventoryItemUuid
           in: path
-          description:  Uuid of InventoryItem
+          description: Uuid of InventoryItem
           required: true
           schema:
             type: string
@@ -5591,13 +5591,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: inventoryItemUuid
           in: path
-          description:  Uuid of InventoryItem
+          description: Uuid of InventoryItem
           required: true
           schema:
             type: string
@@ -5696,13 +5696,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: inventoryItemUuid
           in: path
-          description:  Uuid of InventoryItem
+          description: Uuid of InventoryItem
           required: true
           schema:
             type: string
@@ -5775,7 +5775,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5846,7 +5846,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5949,13 +5949,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: userUuid
           in: path
-          description:  Uuid of User
+          description: Uuid of User
           required: true
           schema:
             type: string
@@ -6026,13 +6026,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: userUuid
           in: path
-          description:  Uuid of User
+          description: Uuid of User
           required: true
           schema:
             type: string
@@ -6143,13 +6143,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: userUuid
           in: path
-          description:  Uuid of User
+          description: Uuid of User
           required: true
           schema:
             type: string
@@ -6248,13 +6248,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: userUuid
           in: path
-          description:  Uuid of User
+          description: Uuid of User
           required: true
           schema:
             type: string
@@ -6327,7 +6327,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6398,7 +6398,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6501,13 +6501,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: objectivesAndMethodsControlId
           in: path
-          description:  ControlId of ObjectivesAndMethods
+          description: ControlId of ObjectivesAndMethods
           required: true
           schema:
             type: string
@@ -6578,13 +6578,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: objectivesAndMethodsControlId
           in: path
-          description:  ControlId of ObjectivesAndMethods
+          description: ControlId of ObjectivesAndMethods
           required: true
           schema:
             type: string
@@ -6695,13 +6695,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: objectivesAndMethodsControlId
           in: path
-          description:  ControlId of ObjectivesAndMethods
+          description: ControlId of ObjectivesAndMethods
           required: true
           schema:
             type: string
@@ -6800,13 +6800,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: objectivesAndMethodsControlId
           in: path
-          description:  ControlId of ObjectivesAndMethods
+          description: ControlId of ObjectivesAndMethods
           required: true
           schema:
             type: string
@@ -6879,7 +6879,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6950,7 +6950,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7053,13 +7053,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: activityUuid
           in: path
-          description:  Uuid of Activity
+          description: Uuid of Activity
           required: true
           schema:
             type: string
@@ -7130,13 +7130,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: activityUuid
           in: path
-          description:  Uuid of Activity
+          description: Uuid of Activity
           required: true
           schema:
             type: string
@@ -7247,13 +7247,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: activityUuid
           in: path
-          description:  Uuid of Activity
+          description: Uuid of Activity
           required: true
           schema:
             type: string
@@ -7352,13 +7352,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: activityUuid
           in: path
-          description:  Uuid of Activity
+          description: Uuid of Activity
           required: true
           schema:
             type: string
@@ -7431,7 +7431,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7502,7 +7502,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7613,7 +7613,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7712,7 +7712,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7785,7 +7785,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7856,7 +7856,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7959,13 +7959,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: partUuid
           in: path
-          description:  Uuid of Part
+          description: Uuid of Part
           required: true
           schema:
             type: string
@@ -8036,13 +8036,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: partUuid
           in: path
-          description:  Uuid of Part
+          description: Uuid of Part
           required: true
           schema:
             type: string
@@ -8153,13 +8153,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: partUuid
           in: path
-          description:  Uuid of Part
+          description: Uuid of Part
           required: true
           schema:
             type: string
@@ -8258,13 +8258,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: partUuid
           in: path
-          description:  Uuid of Part
+          description: Uuid of Part
           required: true
           schema:
             type: string
@@ -8337,7 +8337,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8408,7 +8408,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8519,7 +8519,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8619,7 +8619,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8690,7 +8690,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8793,13 +8793,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -8870,13 +8870,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -8987,13 +8987,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -9092,13 +9092,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -9171,7 +9171,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9242,7 +9242,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9345,13 +9345,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -9422,13 +9422,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -9539,13 +9539,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -9644,13 +9644,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -9723,7 +9723,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9794,7 +9794,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9905,7 +9905,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10004,7 +10004,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10077,7 +10077,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10148,7 +10148,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10259,7 +10259,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10358,7 +10358,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10431,7 +10431,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10502,7 +10502,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10613,7 +10613,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10712,7 +10712,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10785,7 +10785,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10856,7 +10856,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10959,13 +10959,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -11036,13 +11036,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -11153,13 +11153,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -11258,13 +11258,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -11337,7 +11337,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11408,7 +11408,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11511,13 +11511,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: includeSubjectSubjectUuid
           in: path
-          description:  SubjectUuid of IncludeSubject
+          description: SubjectUuid of IncludeSubject
           required: true
           schema:
             type: string
@@ -11588,13 +11588,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: includeSubjectSubjectUuid
           in: path
-          description:  SubjectUuid of IncludeSubject
+          description: SubjectUuid of IncludeSubject
           required: true
           schema:
             type: string
@@ -11705,13 +11705,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: includeSubjectSubjectUuid
           in: path
-          description:  SubjectUuid of IncludeSubject
+          description: SubjectUuid of IncludeSubject
           required: true
           schema:
             type: string
@@ -11810,13 +11810,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: includeSubjectSubjectUuid
           in: path
-          description:  SubjectUuid of IncludeSubject
+          description: SubjectUuid of IncludeSubject
           required: true
           schema:
             type: string
@@ -11889,7 +11889,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11960,7 +11960,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12063,13 +12063,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: excludeSubjectSubjectUuid
           in: path
-          description:  SubjectUuid of ExcludeSubject
+          description: SubjectUuid of ExcludeSubject
           required: true
           schema:
             type: string
@@ -12140,13 +12140,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: excludeSubjectSubjectUuid
           in: path
-          description:  SubjectUuid of ExcludeSubject
+          description: SubjectUuid of ExcludeSubject
           required: true
           schema:
             type: string
@@ -12257,13 +12257,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: excludeSubjectSubjectUuid
           in: path
-          description:  SubjectUuid of ExcludeSubject
+          description: SubjectUuid of ExcludeSubject
           required: true
           schema:
             type: string
@@ -12362,13 +12362,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: excludeSubjectSubjectUuid
           in: path
-          description:  SubjectUuid of ExcludeSubject
+          description: SubjectUuid of ExcludeSubject
           required: true
           schema:
             type: string
@@ -12441,7 +12441,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12512,7 +12512,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12623,7 +12623,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12722,7 +12722,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12795,7 +12795,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12866,7 +12866,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12969,13 +12969,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: componentUuid
           in: path
-          description:  Uuid of Component
+          description: Uuid of Component
           required: true
           schema:
             type: string
@@ -13046,13 +13046,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: componentUuid
           in: path
-          description:  Uuid of Component
+          description: Uuid of Component
           required: true
           schema:
             type: string
@@ -13163,13 +13163,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: componentUuid
           in: path
-          description:  Uuid of Component
+          description: Uuid of Component
           required: true
           schema:
             type: string
@@ -13268,13 +13268,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: componentUuid
           in: path
-          description:  Uuid of Component
+          description: Uuid of Component
           required: true
           schema:
             type: string
@@ -13347,7 +13347,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13418,7 +13418,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13521,13 +13521,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: assesssmentPlatformUuid
           in: path
-          description:  Uuid of AssesssmentPlatform
+          description: Uuid of AssesssmentPlatform
           required: true
           schema:
             type: string
@@ -13598,13 +13598,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: assesssmentPlatformUuid
           in: path
-          description:  Uuid of AssesssmentPlatform
+          description: Uuid of AssesssmentPlatform
           required: true
           schema:
             type: string
@@ -13715,13 +13715,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: assesssmentPlatformUuid
           in: path
-          description:  Uuid of AssesssmentPlatform
+          description: Uuid of AssesssmentPlatform
           required: true
           schema:
             type: string
@@ -13820,13 +13820,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: assesssmentPlatformUuid
           in: path
-          description:  Uuid of AssesssmentPlatform
+          description: Uuid of AssesssmentPlatform
           required: true
           schema:
             type: string
@@ -13899,7 +13899,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13970,7 +13970,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14073,13 +14073,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -14150,13 +14150,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -14267,13 +14267,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -14372,13 +14372,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -14451,13 +14451,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -14528,13 +14528,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -14637,19 +14637,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -14720,19 +14720,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -14843,19 +14843,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -14954,19 +14954,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -15039,13 +15039,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -15116,13 +15116,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -15225,19 +15225,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -15308,19 +15308,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -15431,19 +15431,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -15542,19 +15542,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -15627,13 +15627,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -15704,13 +15704,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -15813,19 +15813,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: dependencyTaskUuid
           in: path
-          description:  TaskUuid of Dependency
+          description: TaskUuid of Dependency
           required: true
           schema:
             type: string
@@ -15896,19 +15896,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: dependencyTaskUuid
           in: path
-          description:  TaskUuid of Dependency
+          description: TaskUuid of Dependency
           required: true
           schema:
             type: string
@@ -16019,19 +16019,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: dependencyTaskUuid
           in: path
-          description:  TaskUuid of Dependency
+          description: TaskUuid of Dependency
           required: true
           schema:
             type: string
@@ -16130,19 +16130,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: dependencyTaskUuid
           in: path
-          description:  TaskUuid of Dependency
+          description: TaskUuid of Dependency
           required: true
           schema:
             type: string
@@ -16215,13 +16215,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -16292,13 +16292,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -16401,19 +16401,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: subtaskUuid
           in: path
-          description:  Uuid of Subtask
+          description: Uuid of Subtask
           required: true
           schema:
             type: string
@@ -16484,19 +16484,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: subtaskUuid
           in: path
-          description:  Uuid of Subtask
+          description: Uuid of Subtask
           required: true
           schema:
             type: string
@@ -16607,19 +16607,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: subtaskUuid
           in: path
-          description:  Uuid of Subtask
+          description: Uuid of Subtask
           required: true
           schema:
             type: string
@@ -16718,19 +16718,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: subtaskUuid
           in: path
-          description:  Uuid of Subtask
+          description: Uuid of Subtask
           required: true
           schema:
             type: string
@@ -16803,13 +16803,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -16880,13 +16880,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -16989,19 +16989,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: associatedActivityActivityUuid
           in: path
-          description:  ActivityUuid of AssociatedActivity
+          description: ActivityUuid of AssociatedActivity
           required: true
           schema:
             type: string
@@ -17072,19 +17072,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: associatedActivityActivityUuid
           in: path
-          description:  ActivityUuid of AssociatedActivity
+          description: ActivityUuid of AssociatedActivity
           required: true
           schema:
             type: string
@@ -17195,19 +17195,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: associatedActivityActivityUuid
           in: path
-          description:  ActivityUuid of AssociatedActivity
+          description: ActivityUuid of AssociatedActivity
           required: true
           schema:
             type: string
@@ -17306,19 +17306,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: associatedActivityActivityUuid
           in: path
-          description:  ActivityUuid of AssociatedActivity
+          description: ActivityUuid of AssociatedActivity
           required: true
           schema:
             type: string
@@ -17391,13 +17391,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -17468,13 +17468,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -17585,13 +17585,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -17690,13 +17690,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -17769,13 +17769,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -17846,13 +17846,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
@@ -17955,19 +17955,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -18038,19 +18038,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -18161,19 +18161,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -18272,19 +18272,19 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: taskUuid
           in: path
-          description:  Uuid of Task
+          description: Uuid of Task
           required: true
           schema:
             type: string
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -18357,7 +18357,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18428,7 +18428,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18539,7 +18539,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18638,7 +18638,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18711,7 +18711,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18782,7 +18782,7 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18885,13 +18885,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: resourceUuid
           in: path
-          description:  Uuid of Resource
+          description: Uuid of Resource
           required: true
           schema:
             type: string
@@ -18962,13 +18962,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: resourceUuid
           in: path
-          description:  Uuid of Resource
+          description: Uuid of Resource
           required: true
           schema:
             type: string
@@ -19079,13 +19079,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: resourceUuid
           in: path
-          description:  Uuid of Resource
+          description: Uuid of Resource
           required: true
           schema:
             type: string
@@ -19184,13 +19184,13 @@ paths:
       parameters:
         - name: assessmentPlanId
           in: path
-          description:  Id of AssessmentPlan
+          description: Id of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: resourceUuid
           in: path
-          description:  Uuid of Resource
+          description: Uuid of Resource
           required: true
           schema:
             type: string

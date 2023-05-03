@@ -285,7 +285,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -356,7 +356,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -467,7 +467,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -566,7 +566,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -639,7 +639,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -710,7 +710,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -821,7 +821,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -921,7 +921,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -992,7 +992,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1103,7 +1103,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1202,7 +1202,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1275,7 +1275,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1346,7 +1346,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1449,13 +1449,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: documentIdScheme
           in: path
-          description:  Scheme of DocumentId
+          description: Scheme of DocumentId
           required: true
           schema:
             type: string
@@ -1526,13 +1526,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: documentIdScheme
           in: path
-          description:  Scheme of DocumentId
+          description: Scheme of DocumentId
           required: true
           schema:
             type: string
@@ -1643,13 +1643,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: documentIdScheme
           in: path
-          description:  Scheme of DocumentId
+          description: Scheme of DocumentId
           required: true
           schema:
             type: string
@@ -1748,13 +1748,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: documentIdScheme
           in: path
-          description:  Scheme of DocumentId
+          description: Scheme of DocumentId
           required: true
           schema:
             type: string
@@ -1827,7 +1827,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1898,7 +1898,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2001,13 +2001,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -2078,13 +2078,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -2195,13 +2195,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -2300,13 +2300,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -2379,7 +2379,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2450,7 +2450,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2553,13 +2553,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -2630,13 +2630,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -2747,13 +2747,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -2852,13 +2852,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -2931,7 +2931,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3002,7 +3002,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3105,13 +3105,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: roleId
           in: path
-          description:  Id of Role
+          description: Id of Role
           required: true
           schema:
             type: string
@@ -3182,13 +3182,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: roleId
           in: path
-          description:  Id of Role
+          description: Id of Role
           required: true
           schema:
             type: string
@@ -3299,13 +3299,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: roleId
           in: path
-          description:  Id of Role
+          description: Id of Role
           required: true
           schema:
             type: string
@@ -3404,13 +3404,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: roleId
           in: path
-          description:  Id of Role
+          description: Id of Role
           required: true
           schema:
             type: string
@@ -3483,7 +3483,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3554,7 +3554,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3657,13 +3657,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: locationUuid
           in: path
-          description:  Uuid of Location
+          description: Uuid of Location
           required: true
           schema:
             type: string
@@ -3734,13 +3734,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: locationUuid
           in: path
-          description:  Uuid of Location
+          description: Uuid of Location
           required: true
           schema:
             type: string
@@ -3851,13 +3851,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: locationUuid
           in: path
-          description:  Uuid of Location
+          description: Uuid of Location
           required: true
           schema:
             type: string
@@ -3956,13 +3956,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: locationUuid
           in: path
-          description:  Uuid of Location
+          description: Uuid of Location
           required: true
           schema:
             type: string
@@ -4035,7 +4035,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4106,7 +4106,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4209,13 +4209,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: partyUuid
           in: path
-          description:  Uuid of Party
+          description: Uuid of Party
           required: true
           schema:
             type: string
@@ -4286,13 +4286,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: partyUuid
           in: path
-          description:  Uuid of Party
+          description: Uuid of Party
           required: true
           schema:
             type: string
@@ -4403,13 +4403,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: partyUuid
           in: path
-          description:  Uuid of Party
+          description: Uuid of Party
           required: true
           schema:
             type: string
@@ -4508,13 +4508,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: partyUuid
           in: path
-          description:  Uuid of Party
+          description: Uuid of Party
           required: true
           schema:
             type: string
@@ -4587,7 +4587,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4658,7 +4658,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4761,13 +4761,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4838,13 +4838,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4955,13 +4955,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -5060,13 +5060,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -5139,7 +5139,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5210,7 +5210,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5321,7 +5321,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5421,7 +5421,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5492,7 +5492,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5603,7 +5603,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5703,7 +5703,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5774,7 +5774,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5877,13 +5877,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -5954,13 +5954,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -6071,13 +6071,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -6176,13 +6176,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -6255,7 +6255,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6326,7 +6326,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6429,13 +6429,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -6506,13 +6506,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -6623,13 +6623,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -6728,13 +6728,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -6807,7 +6807,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6878,7 +6878,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6989,7 +6989,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7089,7 +7089,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7160,7 +7160,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7263,13 +7263,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -7340,13 +7340,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -7457,13 +7457,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -7562,13 +7562,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -7641,7 +7641,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7712,7 +7712,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7815,13 +7815,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -7892,13 +7892,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -8009,13 +8009,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -8114,13 +8114,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -8193,7 +8193,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8264,7 +8264,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8367,13 +8367,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: informationTypeUuid
           in: path
-          description:  Uuid of InformationType
+          description: Uuid of InformationType
           required: true
           schema:
             type: string
@@ -8444,13 +8444,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: informationTypeUuid
           in: path
-          description:  Uuid of InformationType
+          description: Uuid of InformationType
           required: true
           schema:
             type: string
@@ -8561,13 +8561,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: informationTypeUuid
           in: path
-          description:  Uuid of InformationType
+          description: Uuid of InformationType
           required: true
           schema:
             type: string
@@ -8666,13 +8666,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: informationTypeUuid
           in: path
-          description:  Uuid of InformationType
+          description: Uuid of InformationType
           required: true
           schema:
             type: string
@@ -8745,7 +8745,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8816,7 +8816,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8927,7 +8927,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9027,7 +9027,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9098,7 +9098,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9209,7 +9209,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9309,7 +9309,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9380,7 +9380,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9491,7 +9491,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9590,7 +9590,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9663,7 +9663,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9734,7 +9734,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9845,7 +9845,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9944,7 +9944,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10017,7 +10017,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10088,7 +10088,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10191,13 +10191,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -10268,13 +10268,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -10385,13 +10385,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -10490,13 +10490,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: responsiblePartyRoleId
           in: path
-          description:  RoleId of ResponsibleParty
+          description: RoleId of ResponsibleParty
           required: true
           schema:
             type: string
@@ -10569,7 +10569,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10640,7 +10640,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10751,7 +10751,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10851,7 +10851,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10922,7 +10922,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11025,13 +11025,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -11102,13 +11102,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -11219,13 +11219,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -11324,13 +11324,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -11403,7 +11403,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11474,7 +11474,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11577,13 +11577,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -11654,13 +11654,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -11771,13 +11771,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -11876,13 +11876,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -11955,7 +11955,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12026,7 +12026,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12129,13 +12129,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: leveragedAuthorizationUuid
           in: path
-          description:  Uuid of LeveragedAuthorization
+          description: Uuid of LeveragedAuthorization
           required: true
           schema:
             type: string
@@ -12206,13 +12206,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: leveragedAuthorizationUuid
           in: path
-          description:  Uuid of LeveragedAuthorization
+          description: Uuid of LeveragedAuthorization
           required: true
           schema:
             type: string
@@ -12323,13 +12323,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: leveragedAuthorizationUuid
           in: path
-          description:  Uuid of LeveragedAuthorization
+          description: Uuid of LeveragedAuthorization
           required: true
           schema:
             type: string
@@ -12428,13 +12428,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: leveragedAuthorizationUuid
           in: path
-          description:  Uuid of LeveragedAuthorization
+          description: Uuid of LeveragedAuthorization
           required: true
           schema:
             type: string
@@ -12507,7 +12507,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12578,7 +12578,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12681,13 +12681,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: userUuid
           in: path
-          description:  Uuid of User
+          description: Uuid of User
           required: true
           schema:
             type: string
@@ -12758,13 +12758,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: userUuid
           in: path
-          description:  Uuid of User
+          description: Uuid of User
           required: true
           schema:
             type: string
@@ -12875,13 +12875,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: userUuid
           in: path
-          description:  Uuid of User
+          description: Uuid of User
           required: true
           schema:
             type: string
@@ -12980,13 +12980,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: userUuid
           in: path
-          description:  Uuid of User
+          description: Uuid of User
           required: true
           schema:
             type: string
@@ -13059,7 +13059,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13130,7 +13130,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13233,13 +13233,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: inventoryItemUuid
           in: path
-          description:  Uuid of InventoryItem
+          description: Uuid of InventoryItem
           required: true
           schema:
             type: string
@@ -13310,13 +13310,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: inventoryItemUuid
           in: path
-          description:  Uuid of InventoryItem
+          description: Uuid of InventoryItem
           required: true
           schema:
             type: string
@@ -13427,13 +13427,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: inventoryItemUuid
           in: path
-          description:  Uuid of InventoryItem
+          description: Uuid of InventoryItem
           required: true
           schema:
             type: string
@@ -13532,13 +13532,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: inventoryItemUuid
           in: path
-          description:  Uuid of InventoryItem
+          description: Uuid of InventoryItem
           required: true
           schema:
             type: string
@@ -13611,7 +13611,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13682,7 +13682,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13785,13 +13785,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: componentUuid
           in: path
-          description:  Uuid of Component
+          description: Uuid of Component
           required: true
           schema:
             type: string
@@ -13862,13 +13862,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: componentUuid
           in: path
-          description:  Uuid of Component
+          description: Uuid of Component
           required: true
           schema:
             type: string
@@ -13979,13 +13979,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: componentUuid
           in: path
-          description:  Uuid of Component
+          description: Uuid of Component
           required: true
           schema:
             type: string
@@ -14084,13 +14084,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: componentUuid
           in: path
-          description:  Uuid of Component
+          description: Uuid of Component
           required: true
           schema:
             type: string
@@ -14163,7 +14163,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14234,7 +14234,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14345,7 +14345,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14445,7 +14445,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14516,7 +14516,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14619,13 +14619,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: setParameterParamId
           in: path
-          description:  ParamId of SetParameter
+          description: ParamId of SetParameter
           required: true
           schema:
             type: string
@@ -14696,13 +14696,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: setParameterParamId
           in: path
-          description:  ParamId of SetParameter
+          description: ParamId of SetParameter
           required: true
           schema:
             type: string
@@ -14813,13 +14813,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: setParameterParamId
           in: path
-          description:  ParamId of SetParameter
+          description: ParamId of SetParameter
           required: true
           schema:
             type: string
@@ -14918,13 +14918,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: setParameterParamId
           in: path
-          description:  ParamId of SetParameter
+          description: ParamId of SetParameter
           required: true
           schema:
             type: string
@@ -14997,7 +14997,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -15068,7 +15068,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -15171,13 +15171,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -15248,13 +15248,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -15365,13 +15365,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -15470,13 +15470,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -15549,13 +15549,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -15626,13 +15626,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -15735,19 +15735,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -15818,19 +15818,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -15941,19 +15941,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -16052,19 +16052,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: linkHref
           in: path
-          description:  Href of Link
+          description: Href of Link
           required: true
           schema:
             type: string
@@ -16137,13 +16137,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -16214,13 +16214,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -16323,19 +16323,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -16406,19 +16406,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -16529,19 +16529,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -16640,19 +16640,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: propUuid
           in: path
-          description:  Uuid of Prop
+          description: Uuid of Prop
           required: true
           schema:
             type: string
@@ -16725,13 +16725,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -16802,13 +16802,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -16911,19 +16911,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: setParameterParamId
           in: path
-          description:  ParamId of SetParameter
+          description: ParamId of SetParameter
           required: true
           schema:
             type: string
@@ -16994,19 +16994,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: setParameterParamId
           in: path
-          description:  ParamId of SetParameter
+          description: ParamId of SetParameter
           required: true
           schema:
             type: string
@@ -17117,19 +17117,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: setParameterParamId
           in: path
-          description:  ParamId of SetParameter
+          description: ParamId of SetParameter
           required: true
           schema:
             type: string
@@ -17228,19 +17228,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: setParameterParamId
           in: path
-          description:  ParamId of SetParameter
+          description: ParamId of SetParameter
           required: true
           schema:
             type: string
@@ -17313,13 +17313,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -17390,13 +17390,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -17499,19 +17499,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: responsibleRoleRoleId
           in: path
-          description:  RoleId of ResponsibleRole
+          description: RoleId of ResponsibleRole
           required: true
           schema:
             type: string
@@ -17582,19 +17582,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: responsibleRoleRoleId
           in: path
-          description:  RoleId of ResponsibleRole
+          description: RoleId of ResponsibleRole
           required: true
           schema:
             type: string
@@ -17705,19 +17705,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: responsibleRoleRoleId
           in: path
-          description:  RoleId of ResponsibleRole
+          description: RoleId of ResponsibleRole
           required: true
           schema:
             type: string
@@ -17816,19 +17816,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: responsibleRoleRoleId
           in: path
-          description:  RoleId of ResponsibleRole
+          description: RoleId of ResponsibleRole
           required: true
           schema:
             type: string
@@ -17901,13 +17901,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -17978,13 +17978,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -18087,19 +18087,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: byComponentComponentUuid
           in: path
-          description:  ComponentUuid of ByComponent
+          description: ComponentUuid of ByComponent
           required: true
           schema:
             type: string
@@ -18170,19 +18170,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: byComponentComponentUuid
           in: path
-          description:  ComponentUuid of ByComponent
+          description: ComponentUuid of ByComponent
           required: true
           schema:
             type: string
@@ -18293,19 +18293,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: byComponentComponentUuid
           in: path
-          description:  ComponentUuid of ByComponent
+          description: ComponentUuid of ByComponent
           required: true
           schema:
             type: string
@@ -18404,19 +18404,19 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: implementedRequirementControlId
           in: path
-          description:  ControlId of ImplementedRequirement
+          description: ControlId of ImplementedRequirement
           required: true
           schema:
             type: string
         - name: byComponentComponentUuid
           in: path
-          description:  ComponentUuid of ByComponent
+          description: ComponentUuid of ByComponent
           required: true
           schema:
             type: string
@@ -18489,7 +18489,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18560,7 +18560,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18671,7 +18671,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18770,7 +18770,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18843,7 +18843,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18914,7 +18914,7 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -19017,13 +19017,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: resourceUuid
           in: path
-          description:  Uuid of Resource
+          description: Uuid of Resource
           required: true
           schema:
             type: string
@@ -19094,13 +19094,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: resourceUuid
           in: path
-          description:  Uuid of Resource
+          description: Uuid of Resource
           required: true
           schema:
             type: string
@@ -19211,13 +19211,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: resourceUuid
           in: path
-          description:  Uuid of Resource
+          description: Uuid of Resource
           required: true
           schema:
             type: string
@@ -19316,13 +19316,13 @@ paths:
       parameters:
         - name: systemSecurityPlanId
           in: path
-          description:  Id of SystemSecurityPlan
+          description: Id of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
         - name: resourceUuid
           in: path
-          description:  Uuid of Resource
+          description: Uuid of Resource
           required: true
           schema:
             type: string

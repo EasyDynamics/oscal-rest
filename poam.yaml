@@ -21376,14 +21376,13 @@ components:
     OSCALInformationTypeIds:
       type: array
       items:
-          $ref: "#/components/schemas/OSCALId"
-          pattern: 
+        $ref: "#/components/schemas/OSCALId"
     OSCALCategorizations:
       type: object
       properties:
         categorizations:
           type: array
-          items: 
+          items:
             $ref: "#/components/schemas/OSCALCategorization"
     OSCALCategorization:
       type: object
@@ -21420,7 +21419,7 @@ components:
         selected:
           $ref: "#/components/schemas/OSCALSelected"
         adjustment-justification:
-          $ref: "#/components/schemas/OSCALAdjustmentJustification" 
+          $ref: "#/components/schemas/OSCALAdjustmentJustification"
     OSCALLeveragedAuthorization:
       type: object
       properties:

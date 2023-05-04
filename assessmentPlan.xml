@@ -34,7 +34,7 @@
             <exclude-subject subject-uuid="1" card="inf"></exclude-subject>
         <assessment-assets card="0">
              <component uuid="1" card="inf"></component>
-             <assesssment-platform uuid="1" card="inf" min="1"></assesssment-platform>
+             <assessment-platform uuid="1" card="inf" min="1"></assessment-platform>
         </assessment-assets>
         <task uuid="1" card="inf">
             <link href="1" card="inf"></link>

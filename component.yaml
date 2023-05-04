@@ -16133,6 +16133,146 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALAlter"
+    OSCALAssessmentSubject:
+      type: object
+      properties:
+        assessment-subject:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-assessment-common_assessment-subject"
+    OSCALAssessmentSubjects:
+      type: object
+      properties:
+        assessment-subjects:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALAssessmentSubject"
+    OSCALIncludeSubject:
+      type: object
+      properties:
+        include-subject:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-assessment-common_select-subject-by-id"
+    OSCALIncludeSubjects:
+      type: object
+      properties:
+        include-subjects:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALIncludeSubject"
+    OSCALExcludeSubject:
+      type: object
+      properties:
+        exclude-subject:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-assessment-common_select-subject-by-id"
+    OSCALExcludeSubjects:
+      type: object
+      properties:
+        exclude-subjects:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALExcludeSubject"
+    OSCALSubject:
+      type: object
+      properties:
+        subject:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-assessment-common_assessment-subject"
+    OSCALSubjects:
+      type: object
+      properties:
+        subjects:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALSubject"
+    OSCALUsesComponent:
+      type: object
+      properties:
+        component-uuid:
+          type: string
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        props:
+          $ref: "#/components/schemas/OSCALProps"
+        links:
+          $ref: "#/components/schemas/OSCALLinks"
+        responsible-parties:
+          $ref: "#/components/schemas/OSCALResponsibleParties"
+        remarks:
+          $ref: "#/components/schemas/OSCALRemarks"
+    OSCALAssessmentPlatform:
+      type: object
+      properties:
+        uuid:
+          type: string
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        title:
+          type: string
+        props:
+          $ref: "#/components/schemas/OSCALProps"
+        links:
+          $ref: "#/components/schemas/OSCALLinks"
+        uses-components:
+          $ref: "#/components/schemas/OSCALUsesComponents"
+        remarks:
+          $ref: "#/components/schemas/OSCALRemarks"
+    OSCALAssessmentPlatforms:
+      type: object
+      properties:
+        assessment-platforms:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALAssessmentPlatform"
+    OSCALUsesComponents:
+      type: object
+      properties:
+        uses-components:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALSubject"
+    OSCALDependency:
+      type: object
+      properties:
+        dependency:
+          type: object
+          properties:
+            task-uuid:
+              type: string
+              pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+            remarks:
+              $ref: "#/components/schemas/OSCALRemarks"
+    OSCALDependencies:
+      type: object
+      properties:
+        dependencies:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALDependency"
+    OSCALAssociatedActivity:
+      type: object
+      properties:
+        associated-activity:
+          type: object
+          properties:
+            activity-uuid:
+              type: string
+              pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+            props:
+              $ref: "#/components/schemas/OSCALProps"
+            links:
+              $ref: "#/components/schemas/OSCALLinks"
+            responsible-roles:
+              $ref: "#/components/schemas/OSCALResponsibleRoles"
+            subjects:
+              $ref: "#/components/schemas/OSCALSubjects"
+            remarks:
+              $ref: "#/components/schemas/OSCALRemarks"
+    OSCALAssociatedActivities:
+      type: object
+      properties:
+        associated-activities:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALAssociatedActivity"
     OSCALRemove:
       type: object
       properties:
@@ -16152,6 +16292,90 @@ components:
         add:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_add"
+    OSCALReviewedControls:
+      type: object
+      properties:
+        reviewed-controls:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-assessment-common_reviewed-controls"
+    OSCALControlSelection:
+      type: object
+      properties:
+        control-selection:
+          properties:
+            description:
+              type: string
+            props:
+              $ref: "#/components/schemas/OSCALProps"
+            links:
+              $ref: "#/components/schemas/OSCALLinks"
+            include-all:
+              type: string
+            include-controls:
+              $ref: "#/components/schemas/OSCALIncludeControlsList"
+            exclude-controls:
+              $ref: "#/components/schemas/OSCALExcludeControlsList"
+            remarks:
+              $ref: "#/components/schemas/OSCALRemarks"
+    OSCALControlObjectiveSelections:
+      type: object
+      properties:
+        control-objective-selections:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALControlObjectiveSelection"
+    OSCALControlObjectiveSelection:
+      type: object
+      properties:
+        control-objective-selection:
+          properties:
+            description:
+              type: string
+            props:
+              $ref: "#/components/schemas/OSCALProps"
+            links:
+              $ref: "#/components/schemas/OSCALLinks"
+            include-all:
+              type: string
+            include-objectives:
+              $ref: "#/components/schemas/OSCALIncludeObjectives"
+            exclude-objectives:
+              $ref: "#/components/schemas/OSCALExcludeObjectives"
+            remarks:
+              $ref: "#/components/schemas/OSCALRemarks"
+    OSCALIncludeObjective:
+      type: object
+      properties:
+        include-objective:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-assessment-common_select-objective-by-id"
+    OSCALExcludeObjective:
+      type: object
+      properties:
+        exclude-objective:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-assessment-common_select-objective-by-id"
+    OSCALExcludeObjectives:
+      type: object
+      properties:
+        exclude-objectives:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALExcludeObjective"
+    OSCALIncludeObjectives:
+      type: object
+      properties:
+        include-objectives:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALIncludeObjective"
+    OSCALControlSelections:
+      type: object
+      properties:
+        control-selections:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALControlSelection"
     OSCALAdds:
       type: object
       properties:
@@ -16172,6 +16396,13 @@ components:
         activity:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_activity"
+    OSCALObjectivesAndMethodsList:
+      type: object
+      properties:
+        objectives-and-methods:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALObjectivesAndMethods"
     OSCALObjectivesAndMethods:
       type: object
       properties:
@@ -16185,6 +16416,13 @@ components:
         objective:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_local-objective"
+    OSCALTermsAndConditions:
+      type: object
+      properties:
+        terms-and-conditions:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALParts"
     OSCALResults:
       type: object
       properties:
@@ -16409,6 +16647,12 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALByComponent"
+    OSCALImportSsp:
+      type: object
+      properties:
+        import-ssp:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-assessment-common_import-ssp"
     DocId:
       type: string
       minLength: 1

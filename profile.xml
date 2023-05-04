@@ -6,7 +6,7 @@
             <document-id card="inf" scheme="0"/>
             <link card="inf" href="1"></link>
             <prop card="inf" uuid="0"></prop>
-            <role card="inf" id="0"></role>
+            <role card="inf" id="1"></role>
             <location uuid="1" card="inf"></location>
             <party uuid="1" card="inf"></party>
             <responsible-party role-id="1" card="inf"></responsible-party>

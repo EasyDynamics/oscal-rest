@@ -3099,8 +3099,8 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: When the id is available, returns the role represented by the identifier.
-      description: When the id is available, returns the role represented by the identifier.
+      summary: Returns the role represented by the id.
+      description: Returns the role represented by the id.
       operationId: getProfileMetadataRoleById
       parameters:
         - name: profileId
@@ -3176,8 +3176,8 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: When the id is available, updates the role represented by the identifier, and returns the updated role.
-      description: When the id is available, updates the role represented by the identifier, and returns the updated role.
+      summary: Updates the role represented by the id.
+      description: Updates the role represented by the id.
       operationId: putProfileMetadataRole
       parameters:
         - name: profileId
@@ -3293,8 +3293,8 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: When the id is available, updates the role represented by the identifier, and returns the updated role.
-      description: When the id is available, updates the role represented by the identifier, and returns the updated role.
+      summary: Updates the role represented by the id.
+      description: Updates the role represented by the id.
       operationId: patchProfileMetadataRole
       parameters:
         - name: profileId
@@ -3398,8 +3398,8 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: When the id is available, Deletes the role represented by the identifier.
-      description: When the id is available, Deletes the role represented by the identifier.
+      summary: Deletes the role represented by the id.
+      description: Deletes the role represented by the id.
       operationId: deleteProfileMetadataRole
       parameters:
         - name: profileId
@@ -14103,7 +14103,7 @@ components:
         groups:
           $ref: "#/components/schemas/OSCALGroups"
         insert-controls:
-          $ref: "#/components/schemas/OSCALInsertControlList"
+          $ref: "#/components/schemas/OSCALInsertControlsList"
     OSCALCitation:
       type: object
       properties:
@@ -14294,6 +14294,166 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALGuideline"
+    OSCALInformationTypes:
+      type: object
+      properties:
+        information-types:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALInformationType"
+    OSCALInformationType:
+      type: object
+      properties:
+        uuid:
+          type: string
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        title:
+          type: string
+        description:
+          type: string
+        categorizations:
+          $ref: "#/components/schemas/OSCALCategorizations"
+        props:
+          $ref: "#/components/schemas/OSCALProps"
+        links:
+          $ref: "#/components/schemas/OSCALLinks"
+        confidentiality-impact:
+          $ref: "#/components/schemas/OSCALConfidentialityImpact"
+        integrity-impact:
+          $ref: "#/components/schemas/OSCALIntegrityImpact"
+        availability-impact:
+          $ref: "#/components/schemas/OSCALAvailabilityImpact"
+    OSCALId:
+      type: object
+      properties:
+        id:
+          type: string
+          pattern: "^\\S(.*\\S)?$"
+    OSCALInformationTypeIds:
+      type: array
+      items:
+          $ref: "#/components/schemas/OSCALId"
+          pattern: 
+    OSCALCategorizations:
+      type: object
+      properties:
+        categorizations:
+          type: array
+          items: 
+            $ref: "#/components/schemas/OSCALCategorization"
+    OSCALCategorization:
+      type: object
+      properties:
+        system:
+          type: string
+          format: "uri"
+          pattern: "^[a-zA-Z][a-zA-Z0-9+\\-.]+:.+$"
+        information-type-ids:
+          $ref: "#/components/schemas/OSCALInformationTypeIds"
+    OSCALConfidentialityImpact:
+      type: object
+      properties:
+        confidentiality-impact:
+          $ref:
+            "#/components/schemas/OSCALImpact"
+    OSCALAvailabilityImpact:
+      type: object
+      properties:
+        availability-impact:
+          $ref:
+            "#/components/schemas/OSCALImpact"
+    OSCALIntegrityImpact:
+      type: object
+      properties:
+        integrity-impact:
+          $ref:
+            "#/components/schemas/OSCALImpact"
+    OSCALImpact:
+      type: object
+      properties:
+        base:
+          $ref: "#/components/schemas/OSCALBase"
+        selected:
+          $ref: "#/components/schemas/OSCALSelected"
+        adjustment-justification:
+          $ref: "#/components/schemas/OSCALAdjustmentJustification" 
+    OSCALLeveragedAuthorization:
+      type: object
+      properties:
+        uuid:
+          type: string
+          format: "uri"
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        title:
+          type: string
+        props:
+          $ref: "#/components/schemas/OSCALProps"
+        links:
+          $ref: "#/components/schemas/OSCALLink"
+        party-uuid:
+          type: string
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        date-authorized:
+          $ref: "#/components/schemas/OSCALDateAuthorized"
+        remarks:
+          $ref: "#/components/schemas/OSCALRemarks"
+    OSCALLeveragedAuthorizations:
+      type: object
+      properties:
+        leveraged-authorizations:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALLeveragedAuthorization"
+    OSCALDateAuthorized:
+      type: object
+      properties:
+        date-authorized:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/field_oscal-ssp_date-authorized"
+    OSCALBase:
+      type: object
+      properties:
+        base:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/field_oscal-ssp_base"
+    OSCALSelected:
+      type: object
+      properties:
+        selected:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/field_oscal-ssp_selected"
+    OSCALAdjustmentJustification:
+      type: object
+      properties:
+        adjustment-justification:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/field_oscal-ssp_adjustment-justification"
+    OSCALResponsibleRole:
+      type: object
+      properties:
+        responsible-role:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-metadata_responsible-role"
+    OSCALResponsibleRoles:
+      type: object
+      properties:
+        responsible-roles:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALResponsibleRole"
+    OSCALByComponent:
+      type: object
+      properties:
+        by-component:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_by-component"
+
+    OSCALByComponents:
+      type: object
+      properties:
+        by-components:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALByComponent"
     DocId:
       type: string
       minLength: 1

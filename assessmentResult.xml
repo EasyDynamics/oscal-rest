@@ -8,7 +8,7 @@
             <role id="1"></role>
             <location uuid="1" card="inf"></location>
             <party uuid="1" card="inf"></party>
-            <responsible-party role-id="0" card="inf"></responsible-party>
+            <responsible-party role-id="1" card="inf"></responsible-party>
         </metadata>
         <import-ap card="1"/>
         <local-definitions card="0">

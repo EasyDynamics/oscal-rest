@@ -19438,7 +19438,7 @@ components:
     OSCALComponentDefinitions:
       type: object
       properties:
-        roles:
+        component-definitions:
           type: array
           items:
             $ref: "#/components/schemas/OSCALComponentDefinition"
@@ -19448,6 +19448,72 @@ components:
         component-definition:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_component-definition"
+    OSCALImportComponentDefinitions:
+      type: object
+      properties:
+        import-component-definitions:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALImportComponentDefinition"
+    OSCALImportComponentDefinition:
+      type: object
+      properties:
+        import-component-definition:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_component-definition"
+    OSCALProtocols:
+      type: object
+      properties:
+        protocols:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALProtocol"
+    OSCALProtocol:
+      type: object
+      properties:
+        protocol:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-implementation-common_protocol"
+    OSCALCapabilities:
+      type: object
+      properties:
+        capabilities:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALCapability"
+    OSCALCapability:
+      type: object
+      properties:
+        capability:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_capability"
+    OSCALIncorporatesComponents:
+      type: object
+      properties:
+        incorporates-components:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALIncorporatesComponent"
+    OSCALIncorporatesComponent:
+      type: object
+      properties:
+        incorporates-component:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_incorporates-component"
+    OSCALControlImplementations:
+      type: object
+      properties:
+        control-implementations:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALComponentControlImplementation"
+    OSCALComponentControlImplementation:
+      type: object
+      properties:
+        control-implementation:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_control-implementation"
+
     OSCALComponentDefinitionUpdateExample:
       type: object
       properties:
@@ -20293,6 +20359,19 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALRemove"
+    OSCALPoamItem:
+      type: object
+      properties:
+        poam-item:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_poam_schema.json#/definitions/assembly_oscal-poam_poam-item"
+    OSCALPoamItems:
+      type: object
+      properties:
+        poam-items:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALPoamItem"
     OSCALLoggedBy:
       type: object
       properties:

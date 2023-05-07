@@ -63,7 +63,7 @@
                 <origin card="inf"></origin>
                 <threat-id system="1" card="inf"></threat-id>
                 <characterization card="inf"></characterization>
-                <mitigation-factor uuid="1" card="inf"></mitigation-factor>
+                <mitigating-factor uuid="1" card="inf"></mitigating-factor>
                 <response uuid="1" card="inf"></response>
                 <risk-log card="0">
                     <entry uuid="1" card="inf" min="1"></entry>
@@ -76,7 +76,7 @@
                 <origin card="inf"></origin>
                 <target target-id="1"></target>
                 <related-observation observation-uuid="1" card="inf"></related-observation>
-                <associated-risk risk-uuid="1" card="inf"></associated-risk>
+                <related-risk risk-uuid="1" card="inf"></related-risk>
             </finding>
         </result>
         <back-matter card="0">

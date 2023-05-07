@@ -14291,6 +14291,77 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALDependency"
+    OSCALAttestation:
+      type: object
+      properties:
+        attestation:
+          type: object
+          properties:
+            responsible-parties:
+              $ref: "#/components/schemas/OSCALResponsibleParties"
+            parts:
+              $ref: "#/components/schemas/OSCALParts"
+    OSCALAttestations:
+      type: object
+      properties:
+        Attestations:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALAttestation"
+    OSCALAssessmentLog:
+      type: object
+      properties:
+        assessment-log:
+          type: object
+          properties:
+            entries:
+              $ref: "#/components/schemas/OSCALEntries"
+    OSCALRelatedObservation:
+      type: object
+      properties:
+        related-observation:
+          type: object
+          properties:
+            observation-uuid:
+              type: string
+              pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+    OSCALRelatedObservations:
+      type: object
+      properties:
+        related-observations:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALRelatedObservation"
+    OSCALRelatedRisk:
+      type: object
+      properties:
+        related-risk:
+          type: object
+          properties:
+            risk-uuid:
+              type: string
+              pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+    OSCALRelatedRisks:
+      type: object
+      properties:
+        related-risks:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALRelatedRisk"
+    OSCALRiskLog:
+      type: object
+      properties:
+        risk-log:
+          type: object
+          properties:
+            entries:
+              $ref: "#/components/schemas/OSCALEntries"
+    OSCALRelatedControls:
+      type: object
+      properties:
+        related-controls:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_reviewed-controls"
     OSCALAssociatedActivity:
       type: object
       properties:
@@ -14317,6 +14388,36 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALAssociatedActivity"
+    OSCALStep:
+      type: object
+      properties:
+        step:
+          type: object
+          properties:
+            uuid:
+              type: string
+              pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+            title:
+              type: string
+            description:
+              type: string
+            props:
+              $ref: "#/components/schemas/OSCALProps"
+            links:
+              $ref: "#/components/schemas/OSCALLinks"
+            reviewed-controls:
+              $ref: "#/components/schemas/OSCALReviewedControls"
+            responsible-roles:
+              $ref: "#/components/schemas/OSCALResponsibleRoles"
+            remarks:
+              $ref: "#/components/schemas/OSCALRemarks"
+    OSCALSteps:
+      type: object
+      properties:
+        steps:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALStep"
     OSCALRemove:
       type: object
       properties:
@@ -14330,6 +14431,195 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALRemove"
+    OSCALLoggedBy:
+      type: object
+      properties:
+        logged-by:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_logged-by"
+    OSCALLoggedBies:
+      type: object
+      properties:
+        logged-by:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALLoggedBy"
+    OSCALRelatedTask:
+      type: object
+      properties:
+        related-task:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_related-task"
+    OSCALRelatedTasks:
+      type: object
+      properties:
+        related-tasks:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALRelatedTask"
+    OSCALEntry:
+      type: object
+      properties:
+        entry:
+          type: object
+          properties:
+            uuid:
+              type: string
+              pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+            title:
+              type: string
+            description:
+              type: string
+            start:
+              type: string
+              format: date-time
+              pattern: "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+            end:
+              type: string
+              format: date-time
+              pattern: "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+            props:
+              $ref: "#/components/schemas/OSCALProps"
+            links:
+              $ref: "#/components/schemas/OSCALLinks"
+            logged-by:
+              $ref: "#/components/schemas/OSCALLoggedBies"
+            related-tasks:
+              $ref: "#/components/schemas/OSCALRelatedTasks"
+            remarks:
+              $ref: "#/components/schemas/OSCALRemarks"
+    OSCALEntries:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALEntries"
+    OSCALObservation:
+      type: object
+      properties:
+        observation:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_observation"
+    OSCALObservations:
+      type: object
+      properties:
+        observations:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALObservations"
+    OSCALFinding:
+      type: object
+      properties:
+        finding:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-ar_finding"
+    OSCALFindings:
+      type: object
+      properties:
+        findings:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALFinding"
+    OSCALRisk:
+      type: object
+      properties:
+        risk:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_risk"
+    OSCALRisks:
+      type: object
+      properties:
+        risks:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALRisk"
+    OSCALMethod:
+      type: string
+      pattern: "^\\S(.*\\S)?$"
+    OSCALMethods:
+      type: object
+      properties:
+        methods:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALMethod"
+    OSCALRelevantEvidence:
+      type: object
+      properties:
+        relevant-evidence:
+          type: object
+          properties:
+            href:
+              type: string
+              format: "uri-reference"
+            description:
+              type: string
+            props:
+              $ref: "#/components/schemas/OSCALProps"
+            links:
+              $ref: "#/components/schemas/OSCALLinks"
+            remarks:
+              $ref: "#/components/schemas/OSCALRemarks"
+    OSCALRelevantEvidences:
+      type: object
+      properties:
+        relevant-evidences:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALRelevantEvidence"
+    OSCALOrigin:
+      type: object
+      properties:
+        origin:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_origin"
+    OSCALOrigins:
+      type: object
+      properties:
+        origins:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALOrigin"
+    OSCALThreatId:
+      type: object
+      properties:
+        threat-id:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_threat-id"
+    OSCALThreatIds:
+      type: object
+      properties:
+        threat-ids:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALThreatId"
+    OSCALResponse:
+      type: object
+      properties:
+        response:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_response"
+    OSCALResponses:
+      type: object
+      properties:
+        responses:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALResponse"
+    OSCALCharacterization:
+      type: object
+      properties:
+        characterization:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-assessment-common_characterization"
+    OSCALCharacterizations:
+      type: object
+      properties:
+        characterizations:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALCharacterization"
     OSCALAdd:
       type: object
       properties:
@@ -14387,6 +14677,33 @@ components:
               $ref: "#/components/schemas/OSCALExcludeObjectives"
             remarks:
               $ref: "#/components/schemas/OSCALRemarks"
+    OSCALMitigatingFactor:
+      type: object
+      properties:
+        mitigating-factor:
+          type: object
+          properties:
+            uuid:
+              type: string
+              pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+            implementation-uuid:
+              type: string
+              pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+            description:
+              type: string
+            props:
+              $ref: "#/components/schemas/OSCALProps"
+            links:
+              $ref: "#/components/schemas/OSCALLinks"
+            subjects:
+              $ref: "#/components/schemas/OSCALSubjects"
+    OSCALMitigatingFactors:
+      type: object
+      properties:
+        mitigating-factors:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALMitigatingFactor"
     OSCALIncludeObjective:
       type: object
       properties:

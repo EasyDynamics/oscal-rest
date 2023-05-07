@@ -700,7 +700,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     put:
       tags:
         - OSCAL System Security Plan
@@ -810,8 +810,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     patch:
       tags:
         - OSCAL System Security Plan
@@ -909,8 +909,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/revision:
     get:
       tags:
@@ -982,7 +982,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     put:
       tags:
         - OSCAL System Security Plan
@@ -1092,8 +1092,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     patch:
       tags:
         - OSCAL System Security Plan
@@ -1191,8 +1191,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     delete:
       tags:
         - OSCAL System Security Plan
@@ -1263,8 +1263,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/document-id:
     get:
       tags:
@@ -1336,7 +1336,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     post:
       tags:
         - OSCAL System Security Plan
@@ -1437,8 +1437,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/document-id/{documentIdScheme}:
     get:
       tags:
@@ -1516,7 +1516,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     put:
       tags:
         - OSCAL System Security Plan
@@ -1632,8 +1632,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     patch:
       tags:
         - OSCAL System Security Plan
@@ -1737,8 +1737,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     delete:
       tags:
         - OSCAL System Security Plan
@@ -1815,8 +1815,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/link:
     get:
       tags:
@@ -1888,7 +1888,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     post:
       tags:
         - OSCAL System Security Plan
@@ -1989,8 +1989,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/link/{linkHref}:
     get:
       tags:
@@ -2068,7 +2068,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     put:
       tags:
         - OSCAL System Security Plan
@@ -2184,8 +2184,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     patch:
       tags:
         - OSCAL System Security Plan
@@ -2289,8 +2289,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     delete:
       tags:
         - OSCAL System Security Plan
@@ -2367,8 +2367,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/prop:
     get:
       tags:
@@ -2440,7 +2440,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     post:
       tags:
         - OSCAL System Security Plan
@@ -2541,8 +2541,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/prop/{propUuid}:
     get:
       tags:
@@ -2620,7 +2620,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     put:
       tags:
         - OSCAL System Security Plan
@@ -2736,8 +2736,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     patch:
       tags:
         - OSCAL System Security Plan
@@ -2841,8 +2841,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     delete:
       tags:
         - OSCAL System Security Plan
@@ -2919,8 +2919,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/role:
     get:
       tags:
@@ -2992,7 +2992,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     post:
       tags:
         - OSCAL System Security Plan
@@ -3093,8 +3093,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/role/{roleId}:
     get:
       tags:
@@ -3172,7 +3172,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     put:
       tags:
         - OSCAL System Security Plan
@@ -3288,8 +3288,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     patch:
       tags:
         - OSCAL System Security Plan
@@ -3393,8 +3393,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     delete:
       tags:
         - OSCAL System Security Plan
@@ -3471,8 +3471,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/location:
     get:
       tags:
@@ -3544,7 +3544,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     post:
       tags:
         - OSCAL System Security Plan
@@ -3645,8 +3645,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/location/{locationUuid}:
     get:
       tags:
@@ -3724,7 +3724,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     put:
       tags:
         - OSCAL System Security Plan
@@ -3840,8 +3840,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     patch:
       tags:
         - OSCAL System Security Plan
@@ -3945,8 +3945,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     delete:
       tags:
         - OSCAL System Security Plan
@@ -4023,8 +4023,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/party:
     get:
       tags:
@@ -4096,7 +4096,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     post:
       tags:
         - OSCAL System Security Plan
@@ -4197,8 +4197,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/party/{partyUuid}:
     get:
       tags:
@@ -4276,7 +4276,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     put:
       tags:
         - OSCAL System Security Plan
@@ -4392,8 +4392,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     patch:
       tags:
         - OSCAL System Security Plan
@@ -4497,8 +4497,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     delete:
       tags:
         - OSCAL System Security Plan
@@ -4575,8 +4575,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/responsible-party:
     get:
       tags:
@@ -4648,7 +4648,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     post:
       tags:
         - OSCAL System Security Plan
@@ -4749,8 +4749,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/metadata/responsible-party/{responsiblePartyRoleId}:
     get:
       tags:
@@ -4828,7 +4828,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:metadata
     put:
       tags:
         - OSCAL System Security Plan
@@ -4944,8 +4944,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     patch:
       tags:
         - OSCAL System Security Plan
@@ -5049,8 +5049,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
     delete:
       tags:
         - OSCAL System Security Plan
@@ -5127,8 +5127,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:metadata
+            - write:metadata
   /system-security-plan/{systemSecurityPlanId}/import-profile:
     get:
       tags:
@@ -5200,7 +5200,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:importProfile
     put:
       tags:
         - OSCAL System Security Plan
@@ -5310,8 +5310,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:importProfile
+            - write:importProfile
     patch:
       tags:
         - OSCAL System Security Plan
@@ -5409,8 +5409,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:importProfile
+            - write:importProfile
   /system-security-plan/{systemSecurityPlanId}/system-characteristics:
     get:
       tags:
@@ -5482,7 +5482,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     put:
       tags:
         - OSCAL System Security Plan
@@ -5592,8 +5592,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     patch:
       tags:
         - OSCAL System Security Plan
@@ -5691,8 +5691,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/link:
     get:
       tags:
@@ -5764,7 +5764,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     post:
       tags:
         - OSCAL System Security Plan
@@ -5865,8 +5865,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/link/{linkHref}:
     get:
       tags:
@@ -5944,7 +5944,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     put:
       tags:
         - OSCAL System Security Plan
@@ -6060,8 +6060,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     patch:
       tags:
         - OSCAL System Security Plan
@@ -6165,8 +6165,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     delete:
       tags:
         - OSCAL System Security Plan
@@ -6243,8 +6243,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/prop:
     get:
       tags:
@@ -6316,7 +6316,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     post:
       tags:
         - OSCAL System Security Plan
@@ -6417,8 +6417,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/prop/{propUuid}:
     get:
       tags:
@@ -6496,7 +6496,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     put:
       tags:
         - OSCAL System Security Plan
@@ -6612,8 +6612,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     patch:
       tags:
         - OSCAL System Security Plan
@@ -6717,8 +6717,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     delete:
       tags:
         - OSCAL System Security Plan
@@ -6795,8 +6795,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information:
     get:
       tags:
@@ -6868,7 +6868,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     put:
       tags:
         - OSCAL System Security Plan
@@ -6978,8 +6978,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     patch:
       tags:
         - OSCAL System Security Plan
@@ -7077,8 +7077,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/link:
     get:
       tags:
@@ -7150,7 +7150,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     post:
       tags:
         - OSCAL System Security Plan
@@ -7251,8 +7251,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/link/{linkHref}:
     get:
       tags:
@@ -7330,7 +7330,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     put:
       tags:
         - OSCAL System Security Plan
@@ -7446,8 +7446,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     patch:
       tags:
         - OSCAL System Security Plan
@@ -7551,8 +7551,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     delete:
       tags:
         - OSCAL System Security Plan
@@ -7629,8 +7629,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/prop:
     get:
       tags:
@@ -7702,7 +7702,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     post:
       tags:
         - OSCAL System Security Plan
@@ -7803,8 +7803,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/prop/{propUuid}:
     get:
       tags:
@@ -7882,7 +7882,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     put:
       tags:
         - OSCAL System Security Plan
@@ -7998,8 +7998,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     patch:
       tags:
         - OSCAL System Security Plan
@@ -8103,8 +8103,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     delete:
       tags:
         - OSCAL System Security Plan
@@ -8181,8 +8181,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/information-type:
     get:
       tags:
@@ -8254,7 +8254,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     post:
       tags:
         - OSCAL System Security Plan
@@ -8355,8 +8355,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/information-type/{informationTypeUuid}:
     get:
       tags:
@@ -8434,7 +8434,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     put:
       tags:
         - OSCAL System Security Plan
@@ -8550,8 +8550,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     patch:
       tags:
         - OSCAL System Security Plan
@@ -8655,8 +8655,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     delete:
       tags:
         - OSCAL System Security Plan
@@ -8733,8 +8733,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/security-impact-level:
     get:
       tags:
@@ -8806,7 +8806,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     put:
       tags:
         - OSCAL System Security Plan
@@ -8916,8 +8916,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     patch:
       tags:
         - OSCAL System Security Plan
@@ -9015,8 +9015,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/authorization-boundary:
     get:
       tags:
@@ -9088,7 +9088,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     put:
       tags:
         - OSCAL System Security Plan
@@ -9198,8 +9198,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     patch:
       tags:
         - OSCAL System Security Plan
@@ -9297,8 +9297,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/network-architecture:
     get:
       tags:
@@ -9370,7 +9370,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     put:
       tags:
         - OSCAL System Security Plan
@@ -9480,8 +9480,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     patch:
       tags:
         - OSCAL System Security Plan
@@ -9579,8 +9579,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     delete:
       tags:
         - OSCAL System Security Plan
@@ -9651,8 +9651,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/data-flow:
     get:
       tags:
@@ -9724,7 +9724,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     put:
       tags:
         - OSCAL System Security Plan
@@ -9834,8 +9834,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     patch:
       tags:
         - OSCAL System Security Plan
@@ -9933,8 +9933,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     delete:
       tags:
         - OSCAL System Security Plan
@@ -10005,8 +10005,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/responsible-party:
     get:
       tags:
@@ -10078,7 +10078,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     post:
       tags:
         - OSCAL System Security Plan
@@ -10179,8 +10179,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-characteristics/responsible-party/{responsiblePartyRoleId}:
     get:
       tags:
@@ -10258,7 +10258,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemCharacteristics
     put:
       tags:
         - OSCAL System Security Plan
@@ -10374,8 +10374,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     patch:
       tags:
         - OSCAL System Security Plan
@@ -10479,8 +10479,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
     delete:
       tags:
         - OSCAL System Security Plan
@@ -10557,8 +10557,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemCharacteristics
+            - write:systemCharacteristics
   /system-security-plan/{systemSecurityPlanId}/system-implementation:
     get:
       tags:
@@ -10630,7 +10630,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemImplementation
     put:
       tags:
         - OSCAL System Security Plan
@@ -10740,8 +10740,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
     patch:
       tags:
         - OSCAL System Security Plan
@@ -10839,8 +10839,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
   /system-security-plan/{systemSecurityPlanId}/system-implementation/link:
     get:
       tags:
@@ -10912,7 +10912,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemImplementation
     post:
       tags:
         - OSCAL System Security Plan
@@ -11013,8 +11013,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
   /system-security-plan/{systemSecurityPlanId}/system-implementation/link/{linkHref}:
     get:
       tags:
@@ -11092,7 +11092,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemImplementation
     put:
       tags:
         - OSCAL System Security Plan
@@ -11208,8 +11208,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
     patch:
       tags:
         - OSCAL System Security Plan
@@ -11313,8 +11313,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
     delete:
       tags:
         - OSCAL System Security Plan
@@ -11391,8 +11391,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
   /system-security-plan/{systemSecurityPlanId}/system-implementation/prop:
     get:
       tags:
@@ -11464,7 +11464,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemImplementation
     post:
       tags:
         - OSCAL System Security Plan
@@ -11565,8 +11565,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
   /system-security-plan/{systemSecurityPlanId}/system-implementation/prop/{propUuid}:
     get:
       tags:
@@ -11644,7 +11644,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemImplementation
     put:
       tags:
         - OSCAL System Security Plan
@@ -11760,8 +11760,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
     patch:
       tags:
         - OSCAL System Security Plan
@@ -11865,8 +11865,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
     delete:
       tags:
         - OSCAL System Security Plan
@@ -11943,8 +11943,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
   /system-security-plan/{systemSecurityPlanId}/system-implementation/leveraged-authorization:
     get:
       tags:
@@ -12016,7 +12016,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemImplementation
     post:
       tags:
         - OSCAL System Security Plan
@@ -12117,8 +12117,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
   /system-security-plan/{systemSecurityPlanId}/system-implementation/leveraged-authorization/{leveragedAuthorizationUuid}:
     get:
       tags:
@@ -12196,7 +12196,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemImplementation
     put:
       tags:
         - OSCAL System Security Plan
@@ -12312,8 +12312,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
     patch:
       tags:
         - OSCAL System Security Plan
@@ -12417,8 +12417,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
     delete:
       tags:
         - OSCAL System Security Plan
@@ -12495,8 +12495,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
   /system-security-plan/{systemSecurityPlanId}/system-implementation/user:
     get:
       tags:
@@ -12568,7 +12568,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemImplementation
     post:
       tags:
         - OSCAL System Security Plan
@@ -12669,8 +12669,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
   /system-security-plan/{systemSecurityPlanId}/system-implementation/user/{userUuid}:
     get:
       tags:
@@ -12748,7 +12748,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemImplementation
     put:
       tags:
         - OSCAL System Security Plan
@@ -12864,8 +12864,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
     patch:
       tags:
         - OSCAL System Security Plan
@@ -12969,8 +12969,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
     delete:
       tags:
         - OSCAL System Security Plan
@@ -13047,8 +13047,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
   /system-security-plan/{systemSecurityPlanId}/system-implementation/inventory-item:
     get:
       tags:
@@ -13120,7 +13120,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemImplementation
     post:
       tags:
         - OSCAL System Security Plan
@@ -13221,8 +13221,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
   /system-security-plan/{systemSecurityPlanId}/system-implementation/inventory-item/{inventoryItemUuid}:
     get:
       tags:
@@ -13300,7 +13300,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemImplementation
     put:
       tags:
         - OSCAL System Security Plan
@@ -13416,8 +13416,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
     patch:
       tags:
         - OSCAL System Security Plan
@@ -13521,8 +13521,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
     delete:
       tags:
         - OSCAL System Security Plan
@@ -13599,8 +13599,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
   /system-security-plan/{systemSecurityPlanId}/system-implementation/component:
     get:
       tags:
@@ -13672,7 +13672,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemImplementation
     post:
       tags:
         - OSCAL System Security Plan
@@ -13773,8 +13773,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
   /system-security-plan/{systemSecurityPlanId}/system-implementation/component/{componentUuid}:
     get:
       tags:
@@ -13852,7 +13852,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:systemImplementation
     put:
       tags:
         - OSCAL System Security Plan
@@ -13968,8 +13968,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
     patch:
       tags:
         - OSCAL System Security Plan
@@ -14073,8 +14073,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
     delete:
       tags:
         - OSCAL System Security Plan
@@ -14151,8 +14151,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:systemImplementation
+            - write:systemImplementation
   /system-security-plan/{systemSecurityPlanId}/control-implementation:
     get:
       tags:
@@ -14224,7 +14224,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:controlImplementation
     put:
       tags:
         - OSCAL System Security Plan
@@ -14334,8 +14334,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:controlImplementation
+            - write:controlImplementation
     patch:
       tags:
         - OSCAL System Security Plan
@@ -14433,8 +14433,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:controlImplementation
+            - write:controlImplementation
   /system-security-plan/{systemSecurityPlanId}/control-implementation/set-parameter:
     get:
       tags:
@@ -14506,7 +14506,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:controlImplementation
     post:
       tags:
         - OSCAL System Security Plan
@@ -14607,8 +14607,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:controlImplementation
+            - write:controlImplementation
   /system-security-plan/{systemSecurityPlanId}/control-implementation/set-parameter/{setParameterParamId}:
     get:
       tags:
@@ -14686,7 +14686,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:controlImplementation
     put:
       tags:
         - OSCAL System Security Plan
@@ -14802,8 +14802,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:controlImplementation
+            - write:controlImplementation
     patch:
       tags:
         - OSCAL System Security Plan
@@ -14907,8 +14907,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:controlImplementation
+            - write:controlImplementation
     delete:
       tags:
         - OSCAL System Security Plan
@@ -14985,8 +14985,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:controlImplementation
+            - write:controlImplementation
   /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement:
     get:
       tags:
@@ -15058,7 +15058,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:implementedRequirement
     post:
       tags:
         - OSCAL System Security Plan
@@ -15159,8 +15159,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
   /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}:
     get:
       tags:
@@ -15238,7 +15238,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:implementedRequirement
     put:
       tags:
         - OSCAL System Security Plan
@@ -15354,8 +15354,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
     patch:
       tags:
         - OSCAL System Security Plan
@@ -15459,8 +15459,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
     delete:
       tags:
         - OSCAL System Security Plan
@@ -15537,8 +15537,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
   /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/link:
     get:
       tags:
@@ -15616,7 +15616,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:implementedRequirement
     post:
       tags:
         - OSCAL System Security Plan
@@ -15723,8 +15723,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
   /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/link/{linkHref}:
     get:
       tags:
@@ -15808,7 +15808,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:implementedRequirement
     put:
       tags:
         - OSCAL System Security Plan
@@ -15930,8 +15930,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
     patch:
       tags:
         - OSCAL System Security Plan
@@ -16041,8 +16041,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
     delete:
       tags:
         - OSCAL System Security Plan
@@ -16125,8 +16125,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
   /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/prop:
     get:
       tags:
@@ -16204,7 +16204,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:implementedRequirement
     post:
       tags:
         - OSCAL System Security Plan
@@ -16311,8 +16311,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
   /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/prop/{propUuid}:
     get:
       tags:
@@ -16396,7 +16396,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:implementedRequirement
     put:
       tags:
         - OSCAL System Security Plan
@@ -16518,8 +16518,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
     patch:
       tags:
         - OSCAL System Security Plan
@@ -16629,8 +16629,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
     delete:
       tags:
         - OSCAL System Security Plan
@@ -16713,8 +16713,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
   /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/set-parameter:
     get:
       tags:
@@ -16792,7 +16792,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:implementedRequirement
     post:
       tags:
         - OSCAL System Security Plan
@@ -16899,8 +16899,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
   /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/set-parameter/{setParameterParamId}:
     get:
       tags:
@@ -16984,7 +16984,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:implementedRequirement
     put:
       tags:
         - OSCAL System Security Plan
@@ -17106,8 +17106,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
     patch:
       tags:
         - OSCAL System Security Plan
@@ -17217,8 +17217,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
     delete:
       tags:
         - OSCAL System Security Plan
@@ -17301,8 +17301,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
   /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/responsible-role:
     get:
       tags:
@@ -17380,7 +17380,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:implementedRequirement
     post:
       tags:
         - OSCAL System Security Plan
@@ -17487,8 +17487,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
   /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/responsible-role/{responsibleRoleRoleId}:
     get:
       tags:
@@ -17572,7 +17572,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:implementedRequirement
     put:
       tags:
         - OSCAL System Security Plan
@@ -17694,8 +17694,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
     patch:
       tags:
         - OSCAL System Security Plan
@@ -17805,8 +17805,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
     delete:
       tags:
         - OSCAL System Security Plan
@@ -17889,8 +17889,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
   /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/by-component:
     get:
       tags:
@@ -17968,7 +17968,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:implementedRequirement
     post:
       tags:
         - OSCAL System Security Plan
@@ -18075,8 +18075,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
   /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/by-component/{byComponentComponentUuid}:
     get:
       tags:
@@ -18160,7 +18160,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:implementedRequirement
     put:
       tags:
         - OSCAL System Security Plan
@@ -18282,8 +18282,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
     patch:
       tags:
         - OSCAL System Security Plan
@@ -18393,8 +18393,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
     delete:
       tags:
         - OSCAL System Security Plan
@@ -18477,8 +18477,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:implementedRequirement
+            - write:implementedRequirement
   /system-security-plan/{systemSecurityPlanId}/back-matter:
     get:
       tags:
@@ -18550,7 +18550,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:backMatter
     put:
       tags:
         - OSCAL System Security Plan
@@ -18660,8 +18660,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:backMatter
+            - write:backMatter
     patch:
       tags:
         - OSCAL System Security Plan
@@ -18759,8 +18759,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:backMatter
+            - write:backMatter
     delete:
       tags:
         - OSCAL System Security Plan
@@ -18831,8 +18831,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:backMatter
+            - write:backMatter
   /system-security-plan/{systemSecurityPlanId}/back-matter/resource:
     get:
       tags:
@@ -18904,7 +18904,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:backMatter
     post:
       tags:
         - OSCAL System Security Plan
@@ -19005,8 +19005,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:backMatter
+            - write:backMatter
   /system-security-plan/{systemSecurityPlanId}/back-matter/resource/{resourceUuid}:
     get:
       tags:
@@ -19084,7 +19084,7 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
+            - read:backMatter
     put:
       tags:
         - OSCAL System Security Plan
@@ -19200,8 +19200,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:backMatter
+            - write:backMatter
     patch:
       tags:
         - OSCAL System Security Plan
@@ -19305,8 +19305,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:backMatter
+            - write:backMatter
     delete:
       tags:
         - OSCAL System Security Plan
@@ -19383,8 +19383,8 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
       security:
         - oscal_auth:
-            - read:systemSecurityPlan
-            - write:systemSecurityPlan
+            - read:backMatter
+            - write:backMatter
 components:
   schemas:
     OSCALCatalog:

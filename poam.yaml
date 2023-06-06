@@ -20567,6 +20567,1110 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/attachment:
+    get:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Returns every relevant attachment.
+      description: Returns every relevant attachment.
+      operationId: getPlanOfActionAndMilestonesAttachment
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description: Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachments"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachments"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+    post:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Adds a new attachment.
+      description: Adds a new attachment.
+      operationId: postPlanOfActionAndMilestonesAttachment
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description: Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            location-header:
+              schema:
+                type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/attachment/{attachmentId}:
+    get:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Returns the attachment represented by the id.
+      description: Returns the attachment represented by the id.
+      operationId: getPlanOfActionAndMilestonesAttachmentById
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description: Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: attachmentId
+          in: path
+          description: Id of Attachment
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+    put:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Updates the attachment represented by the id.
+      description: Updates the attachment represented by the id.
+      operationId: putPlanOfActionAndMilestonesAttachment
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description: Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: attachmentId
+          in: path
+          description: Id of Attachment
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            location-header:
+              schema:
+                type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+    patch:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Updates the attachment represented by the id.
+      description: Updates the attachment represented by the id.
+      operationId: patchPlanOfActionAndMilestonesAttachment
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description: Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: attachmentId
+          in: path
+          description: Id of Attachment
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+    delete:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Deletes the attachment represented by the id.
+      description: Deletes the attachment represented by the id.
+      operationId: deletePlanOfActionAndMilestonesAttachment
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description: Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: attachmentId
+          in: path
+          description: Id of Attachment
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/snapshot:
+    get:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Returns every relevant snapshot.
+      description: Returns every relevant snapshot.
+      operationId: getPlanOfActionAndMilestonesSnapshot
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description: Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesList"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesList"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+    post:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Adds a new snapshot.
+      description: Adds a new snapshot.
+      operationId: postPlanOfActionAndMilestonesSnapshot
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description: Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+            location-header:
+              schema:
+                type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/snapshot/{snapshotId}:
+    get:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Returns the snapshot represented by the id.
+      description: Returns the snapshot represented by the id.
+      operationId: getPlanOfActionAndMilestonesSnapshotById
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description: Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: snapshotId
+          in: path
+          description: Id of Snapshot
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+    put:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Updates the snapshot represented by the id.
+      description: Updates the snapshot represented by the id.
+      operationId: putPlanOfActionAndMilestonesSnapshot
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description: Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: snapshotId
+          in: path
+          description: Id of Snapshot
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+            location-header:
+              schema:
+                type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+    patch:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Updates the snapshot represented by the id.
+      description: Updates the snapshot represented by the id.
+      operationId: patchPlanOfActionAndMilestonesSnapshot
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description: Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: snapshotId
+          in: path
+          description: Id of Snapshot
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+    delete:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Deletes the snapshot represented by the id.
+      description: Deletes the snapshot represented by the id.
+      operationId: deletePlanOfActionAndMilestonesSnapshot
+      parameters:
+        - name: planOfActionAndMilestonesId
+          in: path
+          description: Id of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: snapshotId
+          in: path
+          description: Id of Snapshot
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
 components:
   schemas:
     OSCALCatalog:
@@ -21962,13 +23066,13 @@ components:
     OSCALGuideline:
       type: object
       properties:
-        group:
+        guideline:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog-common_parameter-guideline"
     OSCALGuidelines:
       type: object
       properties:
-        groups:
+        guidelines:
           type: array
           items:
             $ref: "#/components/schemas/OSCALGuideline"
@@ -22001,6 +23105,40 @@ components:
           $ref: "#/components/schemas/OSCALIntegrityImpact"
         availability-impact:
           $ref: "#/components/schemas/OSCALAvailabilityImpact"
+    OSCALFile:
+      type: object
+      properties:
+        fileName:
+          type: string
+        extension:
+          type: string
+        binary:
+          type: string
+    OSCALAttachment:
+      type: object
+      properties:
+        file:
+          properties:
+            fileName:
+              type: string
+            extension:
+              type: string
+            binary:
+              type: string
+    OSCALFiles:
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALFile"
+    OSCALAttachments:
+      type: object
+      properties:
+        attachments:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALAttachment"          
     OSCALId:
       type: object
       properties:

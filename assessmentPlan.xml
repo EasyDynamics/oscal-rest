@@ -48,4 +48,8 @@
         <back-matter card="0">
             <resource  uuid="1" card="inf"></resource>
         </back-matter>
+		<attachment card="inf" basic="1" id="1">
+		</attachment>
+		<snapshot card="inf" basic="1" id="1">
+		</snapshot>
     </assessment-plan> 

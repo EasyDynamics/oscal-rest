@@ -20610,13 +20610,13 @@ components:
     OSCALGuideline:
       type: object
       properties:
-        group:
+        guideline:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog-common_parameter-guideline"
     OSCALGuidelines:
       type: object
       properties:
-        groups:
+        guidelines:
           type: array
           items:
             $ref: "#/components/schemas/OSCALGuideline"
@@ -20649,6 +20649,40 @@ components:
           $ref: "#/components/schemas/OSCALIntegrityImpact"
         availability-impact:
           $ref: "#/components/schemas/OSCALAvailabilityImpact"
+    OSCALFile:
+      type: object
+      properties:
+        fileName:
+          type: string
+        extension:
+          type: string
+        binary:
+          type: string
+    OSCALAttachment:
+      type: object
+      properties:
+        file:
+          properties:
+            fileName:
+              type: string
+            extension:
+              type: string
+            binary:
+              type: string
+    OSCALFiles:
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALFile"
+    OSCALAttachments:
+      type: object
+      properties:
+        attachments:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALAttachment"          
     OSCALId:
       type: object
       properties:

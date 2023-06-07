@@ -19760,7 +19760,7 @@ components:
         attachments:
           type: array
           items:
-            $ref: "#/components/schemas/OSCALAttachment"
+            $ref: "#/components/schemas/OSCALAttachment" 
     OSCALId:
       type: object
       properties:

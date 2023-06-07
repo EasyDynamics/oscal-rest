@@ -13523,6 +13523,78 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
+  /profile/{profileId}/resolved:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns the resolved profile catalog.
+      description: Returns the resolved profile catalog.
+      operationId: getProfileResolvedBy
+      parameters:
+        - name: profileId
+          in: path
+          description: Id of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
   /profile/{profileId}/attachment:
     get:
       tags:
@@ -13816,111 +13888,6 @@ paths:
             location-header:
               schema:
                 type: string
-        400:
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        401:
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        403:
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        404:
-          description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        409:
-          description: Conflit
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        410:
-          description: Gone
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        415:
-          description: Unsupported Media Type
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        422:
-          description: Unprocessable Content
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-      security:
-        - oscal_auth:
-            - read:profile
-            - write:profile
-    patch:
-      tags:
-        - OSCAL Profile
-      summary: Updates the attachment represented by the id.
-      description: Updates the attachment represented by the id.
-      operationId: patchProfileAttachment
-      parameters:
-        - name: profileId
-          in: path
-          description: Id of Profile
-          required: true
-          schema:
-            $ref: "#/components/schemas/DocId"
-        - name: attachmentId
-          in: path
-          description: Id of Attachment
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -14327,123 +14294,6 @@ paths:
       security:
         - oscal_auth:
             - read:profile
-    put:
-      tags:
-        - OSCAL Profile
-      summary: Updates the snapshot represented by the id.
-      description: Updates the snapshot represented by the id.
-      operationId: putProfileSnapshot
-      parameters:
-        - name: profileId
-          in: path
-          description: Id of Profile
-          required: true
-          schema:
-            $ref: "#/components/schemas/DocId"
-        - name: snapshotId
-          in: path
-          description: Id of Snapshot
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
-            location-header:
-              schema:
-                type: string
-        400:
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        401:
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        403:
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        404:
-          description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        409:
-          description: Conflit
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        410:
-          description: Gone
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        415:
-          description: Unsupported Media Type
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-        422:
-          description: Unprocessable Content
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALErrorMessage"
-      security:
-        - oscal_auth:
-            - read:profile
-            - write:profile
     patch:
       tags:
         - OSCAL Profile
@@ -14578,6 +14428,336 @@ paths:
             application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALProfile"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
+            - write:profile
+  /profile/{profileId}/resolved-snapshot:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns every relevant resolved snapshot.
+      description: Returns every relevant resolved snapshot.
+      operationId: getProfileResolvedSnapshot
+      parameters:
+        - name: profileId
+          in: path
+          description: Id of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalogs"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalogs"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
+    post:
+      tags:
+        - OSCAL Profile
+      summary: Adds a new resolved snapshot.
+      description: Adds a new resolved snapshot.
+      operationId: postProfileResolvedSnapshot
+      parameters:
+        - name: profileId
+          in: path
+          description: Id of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        201:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
+            location-header:
+              schema:
+                type: string
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
+            - write:profile
+  /profile/{profileId}/resolved-snapshot/{resolvedSnapshotId}:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns the resolved snapshot represented by the id.
+      description: Returns the resolved snapshot represented by the id.
+      operationId: getProfileResolvedSnapshotById
+      parameters:
+        - name: profileId
+          in: path
+          description: Id of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resolvedSnapshotId
+          in: path
+          description: Id of ResolvedSnapshot
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
+    delete:
+      tags:
+        - OSCAL Profile
+      summary: Deletes the resolved snapshot represented by the id.
+      description: Deletes the resolved snapshot represented by the id.
+      operationId: deleteProfileResolvedSnapshot
+      parameters:
+        - name: profileId
+          in: path
+          description: Id of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resolvedSnapshotId
+          in: path
+          description: Id of ResolvedSnapshot
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
         401:
           description: Unauthorized
           content:

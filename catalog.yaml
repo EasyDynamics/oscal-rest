@@ -128,10 +128,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogs"
+                $ref: "#/components/schemas/OSCALCatalogsEntries"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogs"
+                $ref: "#/components/schemas/OSCALCatalogsEntries"
         401:
           description: Unauthorized
           content:
@@ -19897,6 +19897,84 @@ components:
         import-ssp:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-assessment-common_import-ssp"
+    OSCALProfilesEntries:
+      type: object
+      properties:
+        profiles:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALComponentDefinitionsEntries:
+      type: object
+      properties:
+        componenent-definition:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALPlanOfActionAndMilestonesListEntries:
+      type: object
+      properties:
+        plan-of-actions-and-milestones:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALAssessmentResultsListEntries:
+      type: object
+      properties:
+        assessment-results:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALAssessmentPlansEntries:
+      type: object
+      properties:
+        assessment-plans:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALSystemSecurityPlansEntries:
+      type: object
+      properties:
+        system-security-plans:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALCatalogsEntries:
+      type: object
+      properties:
+        catalogs:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALModelEntries:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALModelEntry:
+      type: object
+      properties:
+        file-uuid:
+          type: string
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        title:
+          type: string
+        published:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_published"
+        last-modified:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_last-modified"
+        version:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_version"
+        oscal-version:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_oscal-version"
+        document-ids:
+          $ref: "#/components/schemas/OSCALDocumentIds"
+        marking:
+          $ref: "#/components/schemas/OSCALProps"
+        remarks:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_remarks"
     DocId:
       type: string
       minLength: 1

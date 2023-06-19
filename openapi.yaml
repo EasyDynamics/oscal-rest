@@ -20819,49 +20819,49 @@ components:
         import-ssp:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-assessment-common_import-ssp"
-    OSCALProfileEntries:
+    OSCALProfilesEntries:
       type: object
       properties:
         profiles:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
-    OSCALComponentDefinitionEntries:
+    OSCALComponentDefinitionsEntries:
       type: object
       properties:
         componenent-definition:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
-    OSCALPlanOfActionsAndMilestonesEntries:
+    OSCALPlanOfActionAndMilestonesListEntries:
       type: object
       properties:
         plan-of-actions-and-milestones:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
-    OSCALAssessmentResultsEntries:
+    OSCALAssessmentResultsListEntries:
       type: object
       properties:
         assessment-results:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
-    OSCALAssessmentPlanEntries:
+    OSCALAssessmentPlansEntries:
       type: object
       properties:
         assessment-plans:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
-    OSCALSystemSecurityPlanEntries:
+    OSCALSystemSecurityPlansEntries:
       type: object
       properties:
         system-security-plans:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
-    OSCALCatalogEntries:
+    OSCALCatalogsEntries:
       type: object
       properties:
         catalogs:
@@ -20878,7 +20878,7 @@ components:
     OSCALModelEntry:
       type: object
       properties:
-        file-uuid:
+        file-id:
           type: string
           pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         title:

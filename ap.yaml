@@ -21798,7 +21798,7 @@ components:
     OSCALModelEntry:
       type: object
       properties:
-        file-uuid:
+        file-id:
           type: string
           pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         title:

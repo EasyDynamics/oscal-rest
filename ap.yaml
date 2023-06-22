@@ -19727,8 +19727,8 @@ paths:
     post:
       tags:
         - OSCAL Assessment Plan
-      summary: Creates a snapshot of the file in its current state
-      description: Creates a snapshot of the file in its current state
+      summary: Creates a snapshot of the file in its current state.
+      description: Creates a snapshot of the file in its current state.
       operationId: postAssessmentPlanSnapshot
       parameters:
         - name: assessmentPlanId

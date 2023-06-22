@@ -21041,8 +21041,8 @@ paths:
     post:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Creates a snapshot of the file in its current state
-      description: Creates a snapshot of the file in its current state
+      summary: Creates a snapshot of the file in its current state.
+      description: Creates a snapshot of the file in its current state.
       operationId: postPlanOfActionAndMilestonesSnapshot
       parameters:
         - name: planOfActionAndMilestonesId

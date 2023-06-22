@@ -14069,8 +14069,8 @@ paths:
     post:
       tags:
         - OSCAL Profile
-      summary: Creates a snapshot of the file in its current state
-      description: Creates a snapshot of the file in its current state
+      summary: Creates a snapshot of the file in its current state.
+      description: Creates a snapshot of the file in its current state.
       operationId: postProfileSnapshot
       parameters:
         - name: profileId

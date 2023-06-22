@@ -15953,8 +15953,8 @@ paths:
     post:
       tags:
         - OSCAL Component Definition
-      summary: Creates a snapshot of the file in its current state
-      description: Creates a snapshot of the file in its current state
+      summary: Creates a snapshot of the file in its current state.
+      description: Creates a snapshot of the file in its current state.
       operationId: postComponentDefinitionSnapshot
       parameters:
         - name: componentDefinitionId

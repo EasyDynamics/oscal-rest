@@ -14014,10 +14014,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALProfiles"
+                $ref: "#/components/schemas/OSCALProfilesEntries"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProfiles"
+                $ref: "#/components/schemas/OSCALProfilesEntries"
         401:
           description: Unauthorized
           content:

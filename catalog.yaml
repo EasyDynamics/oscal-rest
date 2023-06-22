@@ -17830,10 +17830,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogs"
+                $ref: "#/components/schemas/OSCALCatalogsEntries"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogs"
+                $ref: "#/components/schemas/OSCALCatalogsEntries"
         401:
           description: Unauthorized
           content:

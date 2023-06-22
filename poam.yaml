@@ -20986,10 +20986,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesList"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListEntries"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesList"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListEntries"
         401:
           description: Unauthorized
           content:

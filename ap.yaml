@@ -19672,10 +19672,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlans"
+                $ref: "#/components/schemas/OSCALAssessmentPlansEntries"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlans"
+                $ref: "#/components/schemas/OSCALAssessmentPlansEntries"
         401:
           description: Unauthorized
           content:

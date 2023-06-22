@@ -19804,10 +19804,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlans"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlansEntries"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlans"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlansEntries"
         401:
           description: Unauthorized
           content:

@@ -30826,10 +30826,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsList"
+                $ref: "#/components/schemas/OSCALAssessmentResultsListEntries"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsList"
+                $ref: "#/components/schemas/OSCALAssessmentResultsListEntries"
         401:
           description: Unauthorized
           content:

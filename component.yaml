@@ -15898,10 +15898,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitions"
+                $ref: "#/components/schemas/OSCALComponentDefinitionsEntries"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitions"
+                $ref: "#/components/schemas/OSCALComponentDefinitionsEntries"
         401:
           description: Unauthorized
           content:

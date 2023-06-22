@@ -14069,8 +14069,8 @@ paths:
     post:
       tags:
         - OSCAL Profile
-      summary: Creates a snapshot of the snapshot in its current state
-      description: Creates a snapshot of the snapshot in its current state
+      summary: Creates a snapshot of the file in its current state
+      description: Creates a snapshot of the file in its current state
       operationId: postProfileSnapshot
       parameters:
         - name: profileId
@@ -14504,8 +14504,8 @@ paths:
     post:
       tags:
         - OSCAL Profile
-      summary: Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog
-      description: Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog
+      summary: Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog.
+      description: Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog.
       operationId: postProfileResolvedSnapshot
       parameters:
         - name: profileId

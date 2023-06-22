@@ -1103,8 +1103,8 @@ paths:
     post:
       tags:
         - OSCAL Assessment Plan
-      summary: Creates a snapshot of the snapshot in its current state
-      description: Creates a snapshot of the snapshot in its current state
+      summary: Creates a snapshot of the file in its current state
+      description: Creates a snapshot of the file in its current state
       operationId: postAssessmentPlanSnapshot
       parameters:
         - name: assessmentPlanId
@@ -2571,8 +2571,8 @@ paths:
     post:
       tags:
         - OSCAL Profile
-      summary: Creates a snapshot of the snapshot in its current state
-      description: Creates a snapshot of the snapshot in its current state
+      summary: Creates a snapshot of the file in its current state
+      description: Creates a snapshot of the file in its current state
       operationId: postProfileSnapshot
       parameters:
         - name: profileId
@@ -3006,8 +3006,8 @@ paths:
     post:
       tags:
         - OSCAL Profile
-      summary: Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog
-      description: Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog
+      summary: Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog.
+      description: Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog.
       operationId: postProfileResolvedSnapshot
       parameters:
         - name: profileId
@@ -4297,8 +4297,8 @@ paths:
     post:
       tags:
         - OSCAL Assessment Results
-      summary: Creates a snapshot of the snapshot in its current state
-      description: Creates a snapshot of the snapshot in its current state
+      summary: Creates a snapshot of the file in its current state
+      description: Creates a snapshot of the file in its current state
       operationId: postAssessmentResultsSnapshot
       parameters:
         - name: assessmentResultsId
@@ -5693,8 +5693,8 @@ paths:
     post:
       tags:
         - OSCAL Catalog
-      summary: Creates a snapshot of the snapshot in its current state
-      description: Creates a snapshot of the snapshot in its current state
+      summary: Creates a snapshot of the file in its current state
+      description: Creates a snapshot of the file in its current state
       operationId: postCatalogSnapshot
       parameters:
         - name: catalogId
@@ -7089,8 +7089,8 @@ paths:
     post:
       tags:
         - OSCAL System Security Plan
-      summary: Creates a snapshot of the snapshot in its current state
-      description: Creates a snapshot of the snapshot in its current state
+      summary: Creates a snapshot of the file in its current state
+      description: Creates a snapshot of the file in its current state
       operationId: postSystemSecurityPlanSnapshot
       parameters:
         - name: systemSecurityPlanId
@@ -8485,8 +8485,8 @@ paths:
     post:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Creates a snapshot of the snapshot in its current state
-      description: Creates a snapshot of the snapshot in its current state
+      summary: Creates a snapshot of the file in its current state
+      description: Creates a snapshot of the file in its current state
       operationId: postPlanOfActionAndMilestonesSnapshot
       parameters:
         - name: planOfActionAndMilestonesId
@@ -9881,8 +9881,8 @@ paths:
     post:
       tags:
         - OSCAL Component Definition
-      summary: Creates a snapshot of the snapshot in its current state
-      description: Creates a snapshot of the snapshot in its current state
+      summary: Creates a snapshot of the file in its current state
+      description: Creates a snapshot of the file in its current state
       operationId: postComponentDefinitionSnapshot
       parameters:
         - name: componentDefinitionId

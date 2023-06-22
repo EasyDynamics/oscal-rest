@@ -17885,8 +17885,8 @@ paths:
     post:
       tags:
         - OSCAL Catalog
-      summary: Creates a snapshot of the snapshot in its current state
-      description: Creates a snapshot of the snapshot in its current state
+      summary: Creates a snapshot of the file in its current state
+      description: Creates a snapshot of the file in its current state
       operationId: postCatalogSnapshot
       parameters:
         - name: catalogId

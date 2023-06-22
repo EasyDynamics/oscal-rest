@@ -11,33 +11,7 @@ info:
     simple CRUD operations, but should also describe how to manipulate relationships and make partial changes.
 
     Such an API will likely see the most success across various vendors and projects when maintained by a
-    standards body or community, and we're looking to Returnsthat conversation started with this effort.
-
-    ## Identifier Scope
-    Note that all object identifiers are **scoped to the system** implementing the REST API
-      and are expected to be unique.
-
-    <details>
-      <summary>Example</summary>
-      To associate a Party with a known Component Definition with a UUID you might:
-      1. Search for the Party:
-          ```
-          Returns/parties/search?query=bob
-          ```
-          ```
-          [
-            {
-              "uuid": "d834ed5e-9652-4b78-87e7-a9f8686f4e60",
-              "type": "person",
-              "name": "Bob Johnson"
-            }
-          ]
-          ```
-      2. Use the found Party's ID to associate with the component definition:
-          ```
-          PUT /component-definitions/599b6fa5-3e18-4580-bd8f-8a181776c6e8/parties/d834ed5e-9652-4b78-87e7-a9f8686f4e60
-          ```
-    </details>
+    standards body or community, and we're looking to get that conversation started with this effort.
 
     ## Partial Payloads in PATCH Requests
 
@@ -52,28 +26,6 @@ info:
 
     The UUID of the root object must not change in the payload and implementations should throw an error
     if such a request is made.
-    <details>
-      <summary>Example</summary>
-      Example request:
-      ```
-      PATCH /system-security-plans/cff8385f-108e-40a5-8f7a-82f3dc0eaba8
-      {
-        "system-security-plan": {
-          "uuid": "cff8385f-108e-40a5-8f7a-82f3dc0eaba8",
-          "metadata": {
-            "title": "Some New Title"
-            "revisions": [
-              { "version": "220220517" }
-            ]
-          }
-        }
-      }
-      ```
-      In this example, the title is being updated and the version is being added to the list of
-      revisions. No other changes are being made to the original metadata object, so the rest of its
-      fields will remain the same. The list of revisions will still contain its previous items,
-      along with the new version item.
-    </details>
 
     For guidance on handling UUIDs in `POST` and `PUT` operations, please review
     [handling-uuids-on-post-put.md](https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).
@@ -21089,8 +21041,8 @@ paths:
     post:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Adds a new snapshot.
-      description: Adds a new snapshot.
+      summary: Creates a snapshot of the snapshot in its current state
+      description: Creates a snapshot of the snapshot in its current state
       operationId: postPlanOfActionAndMilestonesSnapshot
       parameters:
         - name: planOfActionAndMilestonesId

@@ -24,8 +24,15 @@ info:
     All updates to 'root' OSCAL objects via `PATCH` requests should accept a partial payload containing
     only the changed data and the entire updated object should be returned.
 
-    The UUID of the root object can only be changed in the server-side implementation, any attempt to change the UUID 
-    of the root object in the client-side implementation should throw an error. 
+    The document (root)-level uuid field and metadata.last-modified fields have
+    specific semantics in the OSCAL specifications. Client implementations of this
+    API specification must not modify the uuid or metadata.last-modified fields
+    as part of a PATCH request. Server implementations may return an error when
+    a client includes these fields in a request or they may ignore those attributes.
+    As with all modifications, if the server elects to ignore the uuid and
+    metadata.last-modified field in the request body, it must generate a new UUID
+    and appropriately set the last-modified field in the document. These newly
+    calculated values must be included in the response as part of the document content. 
 
     For guidance on handling UUIDs in `POST` and `PUT` operations, please review
     [handling-uuids-on-post-put.md](https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).
@@ -30826,10 +30833,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsListEntries"
+                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsListEntries"
+                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
         401:
           description: Unauthorized
           content:
@@ -32926,8 +32933,7 @@ components:
         markings:
           type: array
           items:
-            marking:
-              type: string
+            type: string
         remarks:
           $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_remarks"
     OSCALModelSnapshotEntries:
@@ -32958,8 +32964,7 @@ components:
         markings:
           type: array
           items:
-            marking:
-              type: string
+            type: string
         status:
           type: string
         remarks:

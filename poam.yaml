@@ -24,8 +24,8 @@ info:
     All updates to 'root' OSCAL objects via `PATCH` requests should accept a partial payload containing
     only the changed data and the entire updated object should be returned.
 
-    The UUID of the root object must not change in the payload and implementations should throw an error
-    if such a request is made.
+    The UUID of the root object can only be changed in the server-side implementation, any attempt to change the UUID 
+    of the root object in the client-side implementation should throw an error. 
 
     For guidance on handling UUIDs in `POST` and `PUT` operations, please review
     [handling-uuids-on-post-put.md](https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).
@@ -22838,22 +22838,26 @@ components:
     OSCALFile:
       type: object
       properties:
-        fileName:
+        id:
+          $ref: "#/components/schemas/DocId"
+        name:
           type: string
-        extension:
+        media-type:
           type: string
-        binary:
+        base64:
           type: string
     OSCALAttachment:
       type: object
       properties:
         file:
           properties:
-            fileName:
+            id:
+              $ref: "#/components/schemas/DocId"
+            name:
               type: string
-            extension:
+            media-type:
               type: string
-            binary:
+            base64:
               type: string
     OSCALFiles:
       type: object
@@ -23079,8 +23083,45 @@ components:
           $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_oscal-version"
         document-ids:
           $ref: "#/components/schemas/OSCALDocumentIds"
-        marking:
-          $ref: "#/components/schemas/OSCALProps"
+        markings:
+          type: array
+          items:
+            marking:
+              type: string
+        remarks:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_remarks"
+    OSCALModelSnapshotEntries:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALModelSnapshotEntry:
+      type: object
+      properties:
+        file-id:
+          type: string
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        title:
+          type: string
+        published:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_published"
+        last-modified:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_last-modified"
+        version:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_version"
+        oscal-version:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_oscal-version"
+        document-ids:
+          $ref: "#/components/schemas/OSCALDocumentIds"
+        markings:
+          type: array
+          items:
+            marking:
+              type: string
+        status:
+          type: string
         remarks:
           $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_remarks"
     DocId:

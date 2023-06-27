@@ -32,7 +32,7 @@ info:
     As with all modifications, if the server elects to ignore the uuid and
     metadata.last-modified field in the request body, it must generate a new UUID
     and appropriately set the last-modified field in the document. These newly
-    calculated values must be included in the response as part of the document content. 
+    calculated values must be included in the response as part of the document content.
 
     For guidance on handling UUIDs in `POST` and `PUT` operations, please review
     [handling-uuids-on-post-put.md](https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).

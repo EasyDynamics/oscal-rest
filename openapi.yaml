@@ -20407,6 +20407,19 @@ components:
               $ref: "#/components/schemas/OSCALExcludeObjectives"
             remarks:
               $ref: "#/components/schemas/OSCALRemarks"
+    OSCALPostReturn:
+      type: object
+      property:
+        file-id:
+          type: string
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        model-uuid:
+          type: string
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        last-modified:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_last-modified"
+        location-header:
+          type: uri    
     OSCALMitigatingFactor:
       type: object
       properties:

@@ -151,10 +151,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -1315,10 +1315,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALDocumentId"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALDocumentId"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -1867,10 +1867,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALLink"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALLink"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -2419,10 +2419,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALProp"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProp"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -2971,10 +2971,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALRole"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALRole"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -3523,10 +3523,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALLocation"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALLocation"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -4075,10 +4075,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALParty"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALParty"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -4627,10 +4627,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -6241,10 +6241,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALComponent"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALComponent"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -6793,10 +6793,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALInventoryItem"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALInventoryItem"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -7345,10 +7345,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALObservation"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALObservation"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -7909,10 +7909,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALLink"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALLink"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -8497,10 +8497,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALProp"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProp"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -9841,10 +9841,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALSubject"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALSubject"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -10429,10 +10429,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALRelevantEvidence"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALRelevantEvidence"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -11005,10 +11005,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALRisk"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALRisk"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -11569,10 +11569,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCharacterization"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCharacterization"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -12157,10 +12157,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALProp"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProp"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -13123,10 +13123,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALThreatId"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALThreatId"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -13711,10 +13711,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALMitigatingFactor"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALMitigatingFactor"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -14299,10 +14299,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALResponse"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALResponse"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -15265,10 +15265,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALEntry"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALEntry"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -15853,10 +15853,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALRelatedObservation"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALRelatedObservation"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -16429,10 +16429,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPoamItem"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPoamItem"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -16993,10 +16993,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALLink"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALLink"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -17581,10 +17581,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALProp"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProp"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -18547,10 +18547,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALRelatedObservation"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALRelatedObservation"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -19135,10 +19135,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALRelatedRisk"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALRelatedRisk"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -20065,10 +20065,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALResource"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALResource"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -20617,10 +20617,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALAttachment"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAttachment"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -21064,10 +21064,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+                $ref: "#/components/schemas/OSCALPostReturn"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+                $ref: "#/components/schemas/OSCALPostReturn"
             location-header:
               schema:
                 type: string
@@ -22641,6 +22641,20 @@ components:
               $ref: "#/components/schemas/OSCALExcludeObjectives"
             remarks:
               $ref: "#/components/schemas/OSCALRemarks"
+    OSCALPostReturn:
+      type: object
+      properties:
+        file-id:
+          type: string
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        model-uuid:
+          type: string
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        last-modified:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_last-modified"
+        location-header:
+          type: string
+          format: uri    
     OSCALMitigatingFactor:
       type: object
       properties:

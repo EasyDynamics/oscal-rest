@@ -20409,7 +20409,7 @@ components:
               $ref: "#/components/schemas/OSCALRemarks"
     OSCALPostReturn:
       type: object
-      property:
+      properties:
         file-id:
           type: string
           pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
@@ -20419,7 +20419,8 @@ components:
         last-modified:
           $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_last-modified"
         location-header:
-          type: uri    
+          type: string
+          format: uri    
     OSCALMitigatingFactor:
       type: object
       properties:
@@ -20645,6 +20646,11 @@ components:
               type: string
             base64:
               type: string
+    OSCALAttachmentEntry:
+      type: object
+      properties:
+        attachement:
+          $ref: "#/components/schemas/OSCALAttachment"
     OSCALFiles:
       type: object
       properties:
@@ -20655,7 +20661,7 @@ components:
     OSCALAttachments:
       type: object
       properties:
-        attachments:
+        attachment-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALAttachment"
@@ -20795,52 +20801,87 @@ components:
         import-ssp:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-assessment-common_import-ssp"
+    OSCALProfileEntry:
+      type: object
+      properties:
+        profile:
+          $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALCatalogEntry:
+      type: object
+      properties:
+        catalog:
+          $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALSystemSecurityPlanEntry:
+      type: object
+      properties:
+        system-security-plan:
+          $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALComponentDefinitionEntry:
+      type: object
+      properties:
+        component-definition:
+          $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALAssessmentPlanEntry:
+      type: object
+      properties:
+        assessment-plan:
+          $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALAssessmentResultsEntry:
+      type: object
+      properties:
+        assessment-results:
+          $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALPlanOfActionAndMilestonesEntry:
+      type: object
+      properties:
+        plan-of-action-and-milestones:
+          $ref: "#/components/schemas/OSCALModelEntry"
     OSCALProfilesEntries:
       type: object
       properties:
-        profiles:
+        profile-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
     OSCALComponentDefinitionsEntries:
       type: object
       properties:
-        componenent-definition:
+        component-definition-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
     OSCALPlanOfActionAndMilestonesListEntries:
       type: object
       properties:
-        plan-of-actions-and-milestones:
+        plan-of-action-and-milestones-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentResultsListEntries:
       type: object
       properties:
-        assessment-results:
+        assessment-results-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentPlansEntries:
       type: object
       properties:
-        assessment-plans:
+        assessment-plan-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
     OSCALSystemSecurityPlansEntries:
       type: object
       properties:
-        system-security-plans:
+        system-security-plan-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
     OSCALCatalogsEntries:
       type: object
       properties:
-        catalogs:
+        catalog-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"

@@ -151,10 +151,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAssessmentPlanEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAssessmentPlanEntry"
             location-header:
               schema:
                 type: string
@@ -320,27 +320,20 @@ paths:
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAssessmentPlan"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAssessmentPlan"
         400:
           description: Bad Request
           content:
@@ -679,10 +672,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             location-header:
               schema:
                 type: string
@@ -860,27 +853,20 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -1126,10 +1112,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAssessmentPlanEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAssessmentPlanEntry"
             location-header:
               schema:
                 type: string
@@ -1547,10 +1533,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALProfileEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALProfileEntry"
             location-header:
               schema:
                 type: string
@@ -1716,27 +1702,20 @@ paths:
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALProfile"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALProfile"
         400:
           description: Bad Request
           content:
@@ -1984,13 +1963,13 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/resolved:
+  /profile/{profileId}/resolved-catalog:
     get:
       tags:
         - OSCAL Profile
-      summary: Resolves the identified profile based on currently available sources and returns a resolved profile catalog
-      description: Resolves the identified profile based on currently available sources and returns a resolved profile catalog
-      operationId: getProfileResolvedBy
+      summary: Returns the resolved catalog.
+      description: Returns the resolved catalog.
+      operationId: getProfileResolvedCatalogBy
       parameters:
         - name: profileId
           in: path
@@ -2056,6 +2035,209 @@ paths:
       security:
         - oscal_auth:
             - read:profile
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Uppdates the resolved catalog.
+      description: Uppdates the resolved catalog.
+      operationId: putProfileResolvedCatalog
+      parameters:
+        - name: profileId
+          in: path
+          description: Id of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        204:
+          description: Successful operation
+          headers:
+            location:
+              schema:
+                type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
+            - write:profile
+    patch:
+      tags:
+        - OSCAL Profile
+      summary: Updates the resolved catalog.
+      description: Updates the resolved catalog.
+      operationId: patchProfileResolvedCatalog
+      parameters:
+        - name: profileId
+          in: path
+          description: Id of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
+            - write:profile
   /profile/{profileId}/attachment:
     get:
       tags:
@@ -2147,10 +2329,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             location-header:
               schema:
                 type: string
@@ -2328,27 +2510,20 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -2594,10 +2769,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALProfileEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALProfileEntry"
             location-header:
               schema:
                 type: string
@@ -3029,10 +3204,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALCatalogEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALCatalogEntry"
             location-header:
               schema:
                 type: string
@@ -3345,10 +3520,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAssessmentResultsEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAssessmentResultsEntry"
             location-header:
               schema:
                 type: string
@@ -3514,27 +3689,20 @@ paths:
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResults"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResults"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResults"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResults"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAssessmentResults"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAssessmentResults"
         400:
           description: Bad Request
           content:
@@ -3873,10 +4041,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             location-header:
               schema:
                 type: string
@@ -4054,27 +4222,20 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -4320,10 +4481,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAssessmentResultsEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAssessmentResultsEntry"
             location-header:
               schema:
                 type: string
@@ -4741,10 +4902,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALCatalogEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALCatalogEntry"
             location-header:
               schema:
                 type: string
@@ -4910,27 +5071,20 @@ paths:
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALCatalog"
         400:
           description: Bad Request
           content:
@@ -5269,10 +5423,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             location-header:
               schema:
                 type: string
@@ -5450,27 +5604,20 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -5716,10 +5863,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALCatalogEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALCatalogEntry"
             location-header:
               schema:
                 type: string
@@ -6137,10 +6284,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlanEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlanEntry"
             location-header:
               schema:
                 type: string
@@ -6306,27 +6453,20 @@ paths:
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
         400:
           description: Bad Request
           content:
@@ -6665,10 +6805,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             location-header:
               schema:
                 type: string
@@ -6846,27 +6986,20 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -7112,10 +7245,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlanEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlanEntry"
             location-header:
               schema:
                 type: string
@@ -7533,10 +7666,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntry"
             location-header:
               schema:
                 type: string
@@ -7702,27 +7835,20 @@ paths:
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
         400:
           description: Bad Request
           content:
@@ -8061,10 +8187,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             location-header:
               schema:
                 type: string
@@ -8242,27 +8368,20 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -8508,10 +8627,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntry"
             location-header:
               schema:
                 type: string
@@ -8929,10 +9048,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALComponentDefinitionEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALComponentDefinitionEntry"
             location-header:
               schema:
                 type: string
@@ -9098,27 +9217,20 @@ paths:
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALComponentDefinition"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALComponentDefinition"
         400:
           description: Bad Request
           content:
@@ -9457,10 +9569,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALAttachmentEntry"
             location-header:
               schema:
                 type: string
@@ -9638,27 +9750,20 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-        201:
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            location-header:
+          headers:
+            location:
               schema:
                 type: string
+                pattern: uri
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -9904,10 +10009,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALComponentDefinitionEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPostReturn"
+                $ref: "#/components/schemas/OSCALComponentDefinitionEntry"
             location-header:
               schema:
                 type: string
@@ -11707,6 +11812,17 @@ components:
           type: string
         base64:
           type: string
+    OSCALAttachmentNoBase64:
+      type: object
+      properties:
+        file:
+          properties:
+            id:
+              $ref: "#/components/schemas/DocId"
+            name:
+              type: string
+            media-type:
+              type: string
     OSCALAttachment:
       type: object
       properties:
@@ -11720,6 +11836,11 @@ components:
               type: string
             base64:
               type: string
+    OSCALAttachmentEntry:
+      type: object
+      properties:
+        attachement:
+          $ref: "#/components/schemas/OSCALAttachment"
     OSCALFiles:
       type: object
       properties:
@@ -11730,10 +11851,10 @@ components:
     OSCALAttachments:
       type: object
       properties:
-        attachments:
+        attachment-list:
           type: array
           items:
-            $ref: "#/components/schemas/OSCALAttachment"
+            $ref: "#/components/schemas/OSCALAttachmentNoBase64"
     OSCALId:
       type: object
       properties:
@@ -11870,52 +11991,87 @@ components:
         import-ssp:
           $ref:
             "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-assessment-common_import-ssp"
+    OSCALProfileEntry:
+      type: object
+      properties:
+        profile:
+          $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALCatalogEntry:
+      type: object
+      properties:
+        catalog:
+          $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALSystemSecurityPlanEntry:
+      type: object
+      properties:
+        system-security-plan:
+          $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALComponentDefinitionEntry:
+      type: object
+      properties:
+        component-definition:
+          $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALAssessmentPlanEntry:
+      type: object
+      properties:
+        assessment-plan:
+          $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALAssessmentResultsEntry:
+      type: object
+      properties:
+        assessment-results:
+          $ref: "#/components/schemas/OSCALModelEntry"
+    OSCALPlanOfActionAndMilestonesEntry:
+      type: object
+      properties:
+        plan-of-action-and-milestones:
+          $ref: "#/components/schemas/OSCALModelEntry"
     OSCALProfilesEntries:
       type: object
       properties:
-        profiles:
+        profile-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
     OSCALComponentDefinitionsEntries:
       type: object
       properties:
-        componenent-definition:
+        component-definition-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
     OSCALPlanOfActionAndMilestonesListEntries:
       type: object
       properties:
-        plan-of-actions-and-milestones:
+        plan-of-action-and-milestones-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentResultsListEntries:
       type: object
       properties:
-        assessment-results:
+        assessment-results-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentPlansEntries:
       type: object
       properties:
-        assessment-plans:
+        assessment-plan-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
     OSCALSystemSecurityPlansEntries:
       type: object
       properties:
-        system-security-plans:
+        system-security-plan-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"
     OSCALCatalogsEntries:
       type: object
       properties:
-        catalogs:
+        catalog-list:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelEntry"

@@ -20633,6 +20633,17 @@ components:
           type: string
         base64:
           type: string
+    OSCALAttachmentNoBase64:
+      type: object
+      properties:
+        file:
+          properties:
+            id:
+              $ref: "#/components/schemas/DocId"
+            name:
+              type: string
+            media-type:
+              type: string
     OSCALAttachment:
       type: object
       properties:
@@ -20644,8 +20655,9 @@ components:
               type: string
             media-type:
               type: string
-            base64:
+            attachment-binary:
               type: string
+              format: binary
     OSCALAttachmentEntry:
       type: object
       properties:
@@ -20664,7 +20676,7 @@ components:
         attachment-list:
           type: array
           items:
-            $ref: "#/components/schemas/OSCALAttachment"
+            $ref: "#/components/schemas/OSCALAttachmentNoBase64"
     OSCALId:
       type: object
       properties:
@@ -20923,6 +20935,90 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALCatalogsSnapshots:
+      type: object
+      properties:
+        catalog-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALCatalogSnapshot:
+      type: object
+      properties:
+        catalog-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALProfilesSnapshots:
+      type: object
+      properties:
+        profile-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALProfileSnapshot:
+      type: object
+      properties:
+        profile-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALSystemSecurityPlansSnapshots:
+      type: object
+      properties:
+        system-security-plan-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALSystemSecurityPlanSnapshot:
+      type: object
+      properties:
+        system-security-plan-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALAssessmentPlansSnapshots:
+      type: object
+      properties:
+        assessment-plan-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALAssessmentPlanSnapshot:
+      type: object
+      properties:
+        assessment-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALComponentDefinitionsSnapshots:
+      type: object
+      properties:
+        component-definition-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALComponentDefinitionSnapshot:
+      type: object
+      properties:
+        component-definition-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALAssessmentResultsListSnapshots:
+      type: object
+      properties:
+        assessment-results-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALAssessmentResultsSnapshot:
+      type: object
+      properties:
+        assessment-results-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALPlanOfActionAndMilestonesListSnapshots:
+      type: object
+      properties:
+        plan-of-action-and-milestones-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALPlanOfActionAndMilestonesSnapshot:
+      type: object
+      properties:
+        plan-of-action-and-milestones-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
     OSCALModelSnapshotEntry:
       type: object
       properties:

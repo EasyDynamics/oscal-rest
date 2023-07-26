@@ -322,18 +322,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
         400:
           description: Bad Request
           content:
@@ -777,14 +765,24 @@ paths:
             type: string
       responses:
         200:
-          description: Successful operation
+          description: A binary file in any type
           content:
-            application/json:
+            multipart/form-data:
               schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
+                type: object
+                properties:
+                  file:
+                    type: object
+                    properties:
+                      id:
+                        $ref: "#/components/schemas/DocId"
+                      name:
+                        type: string
+                      media-type:
+                        type: string
+                      attachment-binary:
+                        type: string
+                        format: binary
         401:
           description: Unauthorized
           content:
@@ -855,18 +853,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -1041,10 +1027,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALAssessmentPlansSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALAssessmentPlansSnapshots"
         401:
           description: Unauthorized
           content:
@@ -1704,18 +1690,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
         400:
           description: Bad Request
           content:
@@ -2051,18 +2025,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
         400:
           description: Bad Request
           content:
@@ -2434,14 +2396,24 @@ paths:
             type: string
       responses:
         200:
-          description: Successful operation
+          description: A binary file in any type
           content:
-            application/json:
+            multipart/form-data:
               schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
+                type: object
+                properties:
+                  file:
+                    type: object
+                    properties:
+                      id:
+                        $ref: "#/components/schemas/DocId"
+                      name:
+                        type: string
+                      media-type:
+                        type: string
+                      attachment-binary:
+                        type: string
+                        format: binary
         401:
           description: Unauthorized
           content:
@@ -2512,18 +2484,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -2698,10 +2658,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALProfilesSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALProfilesSnapshots"
         401:
           description: Unauthorized
           content:
@@ -3691,18 +3651,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResults"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResults"
         400:
           description: Bad Request
           content:
@@ -4146,14 +4094,24 @@ paths:
             type: string
       responses:
         200:
-          description: Successful operation
+          description: A binary file in any type
           content:
-            application/json:
+            multipart/form-data:
               schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
+                type: object
+                properties:
+                  file:
+                    type: object
+                    properties:
+                      id:
+                        $ref: "#/components/schemas/DocId"
+                      name:
+                        type: string
+                      media-type:
+                        type: string
+                      attachment-binary:
+                        type: string
+                        format: binary
         401:
           description: Unauthorized
           content:
@@ -4224,18 +4182,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -4410,10 +4356,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALAssessmentResultsListSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALAssessmentResultsListSnapshots"
         401:
           description: Unauthorized
           content:
@@ -5073,18 +5019,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
         400:
           description: Bad Request
           content:
@@ -5528,14 +5462,24 @@ paths:
             type: string
       responses:
         200:
-          description: Successful operation
+          description: A binary file in any type
           content:
-            application/json:
+            multipart/form-data:
               schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
+                type: object
+                properties:
+                  file:
+                    type: object
+                    properties:
+                      id:
+                        $ref: "#/components/schemas/DocId"
+                      name:
+                        type: string
+                      media-type:
+                        type: string
+                      attachment-binary:
+                        type: string
+                        format: binary
         401:
           description: Unauthorized
           content:
@@ -5606,18 +5550,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -5792,10 +5724,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALCatalogsSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALCatalogsSnapshots"
         401:
           description: Unauthorized
           content:
@@ -6455,18 +6387,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
         400:
           description: Bad Request
           content:
@@ -6910,14 +6830,24 @@ paths:
             type: string
       responses:
         200:
-          description: Successful operation
+          description: A binary file in any type
           content:
-            application/json:
+            multipart/form-data:
               schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
+                type: object
+                properties:
+                  file:
+                    type: object
+                    properties:
+                      id:
+                        $ref: "#/components/schemas/DocId"
+                      name:
+                        type: string
+                      media-type:
+                        type: string
+                      attachment-binary:
+                        type: string
+                        format: binary
         401:
           description: Unauthorized
           content:
@@ -6988,18 +6918,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -7174,10 +7092,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlansSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlansSnapshots"
         401:
           description: Unauthorized
           content:
@@ -7837,18 +7755,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
         400:
           description: Bad Request
           content:
@@ -8292,14 +8198,24 @@ paths:
             type: string
       responses:
         200:
-          description: Successful operation
+          description: A binary file in any type
           content:
-            application/json:
+            multipart/form-data:
               schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
+                type: object
+                properties:
+                  file:
+                    type: object
+                    properties:
+                      id:
+                        $ref: "#/components/schemas/DocId"
+                      name:
+                        type: string
+                      media-type:
+                        type: string
+                      attachment-binary:
+                        type: string
+                        format: binary
         401:
           description: Unauthorized
           content:
@@ -8370,18 +8286,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -8556,10 +8460,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListSnapshots"
         401:
           description: Unauthorized
           content:
@@ -9219,18 +9123,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
         400:
           description: Bad Request
           content:
@@ -9674,14 +9566,24 @@ paths:
             type: string
       responses:
         200:
-          description: Successful operation
+          description: A binary file in any type
           content:
-            application/json:
+            multipart/form-data:
               schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
+                type: object
+                properties:
+                  file:
+                    type: object
+                    properties:
+                      id:
+                        $ref: "#/components/schemas/DocId"
+                      name:
+                        type: string
+                      media-type:
+                        type: string
+                      attachment-binary:
+                        type: string
+                        format: binary
         401:
           description: Unauthorized
           content:
@@ -9752,18 +9654,6 @@ paths:
       responses:
         204:
           description: Successful operation
-          headers:
-            location:
-              schema:
-                type: string
-                pattern: uri
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
         400:
           description: Bad Request
           content:
@@ -9938,10 +9828,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALComponentDefinitionsSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALModelSnapshotEntries"
+                $ref: "#/components/schemas/OSCALComponentDefinitionsSnapshots"
         401:
           description: Unauthorized
           content:
@@ -11599,7 +11489,7 @@ components:
           $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_last-modified"
         location-header:
           type: string
-          format: uri    
+          format: uri
     OSCALMitigatingFactor:
       type: object
       properties:
@@ -11834,8 +11724,9 @@ components:
               type: string
             media-type:
               type: string
-            base64:
+            attachment-binary:
               type: string
+              format: binary
     OSCALAttachmentEntry:
       type: object
       properties:
@@ -12113,6 +12004,90 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALCatalogsSnapshots:
+      type: object
+      properties:
+        catalog-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALCatalogSnapshot:
+      type: object
+      properties:
+        catalog-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALProfilesSnapshots:
+      type: object
+      properties:
+        profile-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALProfileSnapshot:
+      type: object
+      properties:
+        profile-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALSystemSecurityPlansSnapshots:
+      type: object
+      properties:
+        system-security-plan-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALSystemSecurityPlanSnapshot:
+      type: object
+      properties:
+        system-security-plan-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALAssessmentPlansSnapshots:
+      type: object
+      properties:
+        assessment-plan-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALAssessmentPlanSnapshot:
+      type: object
+      properties:
+        assessment-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALComponentDefinitionsSnapshots:
+      type: object
+      properties:
+        component-definition-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALComponentDefinitionSnapshot:
+      type: object
+      properties:
+        component-definition-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALAssessmentResultsListSnapshots:
+      type: object
+      properties:
+        assessment-results-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALAssessmentResultsSnapshot:
+      type: object
+      properties:
+        assessment-results-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALPlanOfActionAndMilestonesListSnapshots:
+      type: object
+      properties:
+        plan-of-action-and-milestones-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALPlanOfActionAndMilestonesSnapshot:
+      type: object
+      properties:
+        plan-of-action-and-milestones-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
     OSCALModelSnapshotEntry:
       type: object
       properties:

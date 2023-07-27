@@ -29625,15 +29625,8 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachment"
         401:
           description: Unauthorized
           content:

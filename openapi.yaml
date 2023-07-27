@@ -20420,7 +20420,7 @@ components:
           $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_last-modified"
         location-header:
           type: string
-          format: uri    
+          format: uri
     OSCALMitigatingFactor:
       type: object
       properties:

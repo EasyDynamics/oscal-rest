@@ -238,13 +238,13 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the system security plan represented by the id.
-      description: Returns the system security plan represented by the id.
+      summary: Returns the system security plan represented by the system security plan ID.
+      description: Returns the system security plan represented by the system security plan ID.
       operationId: getSystemSecurityPlanById
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -309,13 +309,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the system security plan represented by the id.
-      description: Updates the system security plan represented by the id.
+      summary: Replaces the system security plan represented by the system security plan ID.
+      description: Replaces the system security plan represented by the system security plan ID.
       operationId: putSystemSecurityPlan
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -401,13 +401,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the system security plan represented by the id.
-      description: Updates the system security plan represented by the id.
+      summary: Updates a portion of the system security plan represented by the system security plan ID.
+      description: Updates a portion of the system security plan represented by the system security plan ID.
       operationId: patchSystemSecurityPlan
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -500,26 +500,19 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the system security plan represented by the id.
-      description: Deletes the system security plan represented by the id.
+      summary: Deletes the system security plan represented by the system security plan ID.
+      description: Deletes the system security plan represented by the system security plan ID.
       operationId: deleteSystemSecurityPlan
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
         401:
           description: Unauthorized
           content:
@@ -577,9 +570,9 @@ paths:
       description: Returns the metadata.
       operationId: getSystemSecurityPlanMetadataBy
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -644,13 +637,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Uppdates the metadata.
-      description: Uppdates the metadata.
+      summary: Replaces the metadata.
+      description: Replaces the metadata.
       operationId: putSystemSecurityPlanMetadata
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -736,13 +729,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the metadata.
-      description: Updates the metadata.
+      summary: Updates a portion of the metadata.
+      description: Updates a portion of the metadata.
       operationId: patchSystemSecurityPlanMetadata
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -840,9 +833,9 @@ paths:
       description: Returns every relevant revision.
       operationId: getSystemSecurityPlanMetadataRevision
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -907,13 +900,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Uppdates the revision.
-      description: Uppdates the revision.
+      summary: Replaces the revision.
+      description: Replaces the revision.
       operationId: putSystemSecurityPlanMetadataRevision
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -999,13 +992,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the revision.
-      description: Updates the revision.
+      summary: Updates a portion of the revision.
+      description: Updates a portion of the revision.
       operationId: patchSystemSecurityPlanMetadataRevision
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1102,22 +1095,15 @@ paths:
       description: Deletes the revision.
       operationId: deleteSystemSecurityPlanMetadataRevision
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALRevisions"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALRevisions"
         401:
           description: Unauthorized
           content:
@@ -1175,9 +1161,9 @@ paths:
       description: Returns every relevant document id.
       operationId: getSystemSecurityPlanMetadataDocumentId
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1246,9 +1232,9 @@ paths:
       description: Adds a new document id.
       operationId: postSystemSecurityPlanMetadataDocumentId
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1345,19 +1331,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the scheme is available, returns the document id represented by the identifier.
-      description: When the scheme is available, returns the document id represented by the identifier.
+      summary: When the SCHEME is available, returns the document id represented by the identifier.
+      description: When the SCHEME is available, returns the document id represented by the identifier.
       operationId: getSystemSecurityPlanMetadataDocumentIdByScheme
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1422,19 +1408,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
-      description: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
+      summary: When the SCHEME is available, updates the document id represented by the identifier, and returns the updated document id.
+      description: When the SCHEME is available, updates the document id represented by the identifier, and returns the updated document id.
       operationId: putSystemSecurityPlanMetadataDocumentId
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1520,19 +1506,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
-      description: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
+      summary: When the SCHEME is available, updates a portion of the document id represented by the identifier, and returns the updated document id.
+      description: When the SCHEME is available, updates a portion of the document id represented by the identifier, and returns the updated document id.
       operationId: patchSystemSecurityPlanMetadataDocumentId
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1625,32 +1611,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: When the scheme is available, Deletes the document id represented by the identifier.
-      description: When the scheme is available, Deletes the document id represented by the identifier.
+      summary: When the SCHEME is available, Deletes the document id represented by the identifier.
+      description: When the SCHEME is available, Deletes the document id represented by the identifier.
       operationId: deleteSystemSecurityPlanMetadataDocumentId
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALDocumentId"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALDocumentId"
         401:
           description: Unauthorized
           content:
@@ -1708,9 +1687,9 @@ paths:
       description: Returns every relevant link.
       operationId: getSystemSecurityPlanMetadataLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1779,9 +1758,9 @@ paths:
       description: Adds a new link.
       operationId: postSystemSecurityPlanMetadataLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1878,19 +1857,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getSystemSecurityPlanMetadataLinkByHref
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -1955,19 +1934,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putSystemSecurityPlanMetadataLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -2053,19 +2032,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchSystemSecurityPlanMetadataLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -2158,32 +2137,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteSystemSecurityPlanMetadataLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -2241,9 +2213,9 @@ paths:
       description: Returns every relevant prop.
       operationId: getSystemSecurityPlanMetadataProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2312,9 +2284,9 @@ paths:
       description: Adds a new prop.
       operationId: postSystemSecurityPlanMetadataProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2411,19 +2383,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getSystemSecurityPlanMetadataPropByUuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -2488,19 +2460,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putSystemSecurityPlanMetadataProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -2586,19 +2558,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchSystemSecurityPlanMetadataProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -2691,32 +2663,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteSystemSecurityPlanMetadataProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -2774,9 +2739,9 @@ paths:
       description: Returns every relevant role.
       operationId: getSystemSecurityPlanMetadataRole
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2845,9 +2810,9 @@ paths:
       description: Adds a new role.
       operationId: postSystemSecurityPlanMetadataRole
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2944,19 +2909,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the role represented by the id.
-      description: Returns the role represented by the id.
+      summary: Returns the role represented by the role ID.
+      description: Returns the role represented by the role ID.
       operationId: getSystemSecurityPlanMetadataRoleById
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: roleId
+        - name: roleID
           in: path
-          description: Id of Role
+          description: ID of Role
           required: true
           schema:
             type: string
@@ -3021,19 +2986,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the role represented by the id.
-      description: Updates the role represented by the id.
+      summary: Replaces the role represented by the role ID.
+      description: Replaces the role represented by the role ID.
       operationId: putSystemSecurityPlanMetadataRole
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: roleId
+        - name: roleID
           in: path
-          description: Id of Role
+          description: ID of Role
           required: true
           schema:
             type: string
@@ -3119,19 +3084,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the role represented by the id.
-      description: Updates the role represented by the id.
+      summary: Updates a portion of the role represented by the role ID.
+      description: Updates a portion of the role represented by the role ID.
       operationId: patchSystemSecurityPlanMetadataRole
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: roleId
+        - name: roleID
           in: path
-          description: Id of Role
+          description: ID of Role
           required: true
           schema:
             type: string
@@ -3224,32 +3189,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the role represented by the id.
-      description: Deletes the role represented by the id.
+      summary: Deletes the role represented by the role ID.
+      description: Deletes the role represented by the role ID.
       operationId: deleteSystemSecurityPlanMetadataRole
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: roleId
+        - name: roleID
           in: path
-          description: Id of Role
+          description: ID of Role
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALRole"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALRole"
         401:
           description: Unauthorized
           content:
@@ -3307,9 +3265,9 @@ paths:
       description: Returns every relevant location.
       operationId: getSystemSecurityPlanMetadataLocation
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3378,9 +3336,9 @@ paths:
       description: Adds a new location.
       operationId: postSystemSecurityPlanMetadataLocation
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3477,19 +3435,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the location represented by the uuid.
-      description: Returns the location represented by the uuid.
+      summary: Returns the location represented by the location UUID.
+      description: Returns the location represented by the location UUID.
       operationId: getSystemSecurityPlanMetadataLocationByUuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -3554,19 +3512,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the location represented by the uuid.
-      description: Updates the location represented by the uuid.
+      summary: Replaces the location represented by the location UUID.
+      description: Replaces the location represented by the location UUID.
       operationId: putSystemSecurityPlanMetadataLocation
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -3652,19 +3610,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the location represented by the uuid.
-      description: Updates the location represented by the uuid.
+      summary: Updates a portion of the location represented by the location UUID.
+      description: Updates a portion of the location represented by the location UUID.
       operationId: patchSystemSecurityPlanMetadataLocation
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -3757,32 +3715,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the location represented by the uuid.
-      description: Deletes the location represented by the uuid.
+      summary: Deletes the location represented by the location UUID.
+      description: Deletes the location represented by the location UUID.
       operationId: deleteSystemSecurityPlanMetadataLocation
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLocation"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLocation"
         401:
           description: Unauthorized
           content:
@@ -3840,9 +3791,9 @@ paths:
       description: Returns every relevant party.
       operationId: getSystemSecurityPlanMetadataParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3911,9 +3862,9 @@ paths:
       description: Adds a new party.
       operationId: postSystemSecurityPlanMetadataParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4010,19 +3961,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the party represented by the uuid.
-      description: Returns the party represented by the uuid.
+      summary: Returns the party represented by the party UUID.
+      description: Returns the party represented by the party UUID.
       operationId: getSystemSecurityPlanMetadataPartyByUuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -4087,19 +4038,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the party represented by the uuid.
-      description: Updates the party represented by the uuid.
+      summary: Replaces the party represented by the party UUID.
+      description: Replaces the party represented by the party UUID.
       operationId: putSystemSecurityPlanMetadataParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -4185,19 +4136,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the party represented by the uuid.
-      description: Updates the party represented by the uuid.
+      summary: Updates a portion of the party represented by the party UUID.
+      description: Updates a portion of the party represented by the party UUID.
       operationId: patchSystemSecurityPlanMetadataParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -4290,32 +4241,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the party represented by the uuid.
-      description: Deletes the party represented by the uuid.
+      summary: Deletes the party represented by the party UUID.
+      description: Deletes the party represented by the party UUID.
       operationId: deleteSystemSecurityPlanMetadataParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALParty"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALParty"
         401:
           description: Unauthorized
           content:
@@ -4373,9 +4317,9 @@ paths:
       description: Returns every relevant responsible party.
       operationId: getSystemSecurityPlanMetadataResponsibleParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4444,9 +4388,9 @@ paths:
       description: Adds a new responsible party.
       operationId: postSystemSecurityPlanMetadataResponsibleParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4543,19 +4487,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the responsible party represented by the role-id.
-      description: Returns the responsible party represented by the role-id.
+      summary: Returns the responsible party represented by the responsible party ROLE-ID.
+      description: Returns the responsible party represented by the responsible party ROLE-ID.
       operationId: getSystemSecurityPlanMetadataResponsiblePartyByRole Id
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4620,19 +4564,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the responsible party represented by the role-id.
-      description: Updates the responsible party represented by the role-id.
+      summary: Replaces the responsible party represented by the responsible party ROLE-ID.
+      description: Replaces the responsible party represented by the responsible party ROLE-ID.
       operationId: putSystemSecurityPlanMetadataResponsibleParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4718,19 +4662,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the responsible party represented by the role-id.
-      description: Updates the responsible party represented by the role-id.
+      summary: Updates a portion of the responsible party represented by the responsible party ROLE-ID.
+      description: Updates a portion of the responsible party represented by the responsible party ROLE-ID.
       operationId: patchSystemSecurityPlanMetadataResponsibleParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4823,32 +4767,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the responsible party represented by the role-id.
-      description: Deletes the responsible party represented by the role-id.
+      summary: Deletes the responsible party represented by the responsible party ROLE-ID.
+      description: Deletes the responsible party represented by the responsible party ROLE-ID.
       operationId: deleteSystemSecurityPlanMetadataResponsibleParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
         401:
           description: Unauthorized
           content:
@@ -4906,9 +4843,9 @@ paths:
       description: Returns the import profile.
       operationId: getSystemSecurityPlanImportProfileBy
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4973,13 +4910,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Uppdates the import profile.
-      description: Uppdates the import profile.
+      summary: Replaces the import profile.
+      description: Replaces the import profile.
       operationId: putSystemSecurityPlanImportProfile
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5065,13 +5002,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the import profile.
-      description: Updates the import profile.
+      summary: Updates a portion of the import profile.
+      description: Updates a portion of the import profile.
       operationId: patchSystemSecurityPlanImportProfile
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5169,9 +5106,9 @@ paths:
       description: Returns the system characteristics.
       operationId: getSystemSecurityPlanSystemCharacteristicsBy
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5236,13 +5173,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Uppdates the system characteristics.
-      description: Uppdates the system characteristics.
+      summary: Replaces the system characteristics.
+      description: Replaces the system characteristics.
       operationId: putSystemSecurityPlanSystemCharacteristics
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5328,13 +5265,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the system characteristics.
-      description: Updates the system characteristics.
+      summary: Updates a portion of the system characteristics.
+      description: Updates a portion of the system characteristics.
       operationId: patchSystemSecurityPlanSystemCharacteristics
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5432,9 +5369,9 @@ paths:
       description: Returns every relevant link.
       operationId: getSystemSecurityPlanSystemCharacteristicsLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5503,9 +5440,9 @@ paths:
       description: Adds a new link.
       operationId: postSystemSecurityPlanSystemCharacteristicsLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5602,19 +5539,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getSystemSecurityPlanSystemCharacteristicsLinkByHref
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -5679,19 +5616,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putSystemSecurityPlanSystemCharacteristicsLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -5777,19 +5714,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchSystemSecurityPlanSystemCharacteristicsLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -5882,32 +5819,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteSystemSecurityPlanSystemCharacteristicsLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -5965,9 +5895,9 @@ paths:
       description: Returns every relevant prop.
       operationId: getSystemSecurityPlanSystemCharacteristicsProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6036,9 +5966,9 @@ paths:
       description: Adds a new prop.
       operationId: postSystemSecurityPlanSystemCharacteristicsProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6135,19 +6065,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getSystemSecurityPlanSystemCharacteristicsPropByUuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -6212,19 +6142,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putSystemSecurityPlanSystemCharacteristicsProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -6310,19 +6240,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchSystemSecurityPlanSystemCharacteristicsProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -6415,32 +6345,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteSystemSecurityPlanSystemCharacteristicsProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -6498,9 +6421,9 @@ paths:
       description: Returns the system information.
       operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationBy
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6565,13 +6488,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Uppdates the system information.
-      description: Uppdates the system information.
+      summary: Replaces the system information.
+      description: Replaces the system information.
       operationId: putSystemSecurityPlanSystemCharacteristicsSystemInformation
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6657,13 +6580,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the system information.
-      description: Updates the system information.
+      summary: Updates a portion of the system information.
+      description: Updates a portion of the system information.
       operationId: patchSystemSecurityPlanSystemCharacteristicsSystemInformation
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6761,9 +6684,9 @@ paths:
       description: Returns every relevant link.
       operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6832,9 +6755,9 @@ paths:
       description: Adds a new link.
       operationId: postSystemSecurityPlanSystemCharacteristicsSystemInformationLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6931,19 +6854,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationLinkByHref
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -7008,19 +6931,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putSystemSecurityPlanSystemCharacteristicsSystemInformationLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -7106,19 +7029,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchSystemSecurityPlanSystemCharacteristicsSystemInformationLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -7211,32 +7134,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteSystemSecurityPlanSystemCharacteristicsSystemInformationLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -7294,9 +7210,9 @@ paths:
       description: Returns every relevant prop.
       operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7365,9 +7281,9 @@ paths:
       description: Adds a new prop.
       operationId: postSystemSecurityPlanSystemCharacteristicsSystemInformationProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7464,19 +7380,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationPropByUuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -7541,19 +7457,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putSystemSecurityPlanSystemCharacteristicsSystemInformationProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -7639,19 +7555,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchSystemSecurityPlanSystemCharacteristicsSystemInformationProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -7744,32 +7660,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteSystemSecurityPlanSystemCharacteristicsSystemInformationProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -7827,9 +7736,9 @@ paths:
       description: Returns every relevant information type.
       operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationInformationType
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7898,9 +7807,9 @@ paths:
       description: Adds a new information type.
       operationId: postSystemSecurityPlanSystemCharacteristicsSystemInformationInformationType
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7997,19 +7906,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, returns the information type represented by the identifier.
-      description: When the uuid is available, returns the information type represented by the identifier.
+      summary: When the UUID is available, returns the information type represented by the identifier.
+      description: When the UUID is available, returns the information type represented by the identifier.
       operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationInformationTypeByUuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: informationTypeUuid
+        - name: informationTypeUUID
           in: path
-          description: Uuid of InformationType
+          description: UUID of InformationType
           required: true
           schema:
             type: string
@@ -8074,19 +7983,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, updates the information type represented by the identifier, and returns the updated information type.
-      description: When the uuid is available, updates the information type represented by the identifier, and returns the updated information type.
+      summary: When the UUID is available, updates the information type represented by the identifier, and returns the updated information type.
+      description: When the UUID is available, updates the information type represented by the identifier, and returns the updated information type.
       operationId: putSystemSecurityPlanSystemCharacteristicsSystemInformationInformationType
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: informationTypeUuid
+        - name: informationTypeUUID
           in: path
-          description: Uuid of InformationType
+          description: UUID of InformationType
           required: true
           schema:
             type: string
@@ -8172,19 +8081,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, updates the information type represented by the identifier, and returns the updated information type.
-      description: When the uuid is available, updates the information type represented by the identifier, and returns the updated information type.
+      summary: When the UUID is available, updates a portion of the information type represented by the identifier, and returns the updated information type.
+      description: When the UUID is available, updates a portion of the information type represented by the identifier, and returns the updated information type.
       operationId: patchSystemSecurityPlanSystemCharacteristicsSystemInformationInformationType
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: informationTypeUuid
+        - name: informationTypeUUID
           in: path
-          description: Uuid of InformationType
+          description: UUID of InformationType
           required: true
           schema:
             type: string
@@ -8277,32 +8186,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, Deletes the information type represented by the identifier. Deletion will not be allowed if there is only one remaining information type.
-      description: When the uuid is available, Deletes the information type represented by the identifier. Deletion will not be allowed if there is only one remaining information type.
+      summary: When the UUID is available, Deletes the information type represented by the identifier. Deletion will not be allowed if there is only one remaining information type.
+      description: When the UUID is available, Deletes the information type represented by the identifier. Deletion will not be allowed if there is only one remaining information type.
       operationId: deleteSystemSecurityPlanSystemCharacteristicsSystemInformationInformationType
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: informationTypeUuid
+        - name: informationTypeUUID
           in: path
-          description: Uuid of InformationType
+          description: UUID of InformationType
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALInformationType"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALInformationType"
         401:
           description: Unauthorized
           content:
@@ -8360,9 +8262,9 @@ paths:
       description: Returns the security impact level.
       operationId: getSystemSecurityPlanSystemCharacteristicsSecurityImpactLevelBy
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8427,13 +8329,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Uppdates the security impact level.
-      description: Uppdates the security impact level.
+      summary: Replaces the security impact level.
+      description: Replaces the security impact level.
       operationId: putSystemSecurityPlanSystemCharacteristicsSecurityImpactLevel
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8519,13 +8421,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the security impact level.
-      description: Updates the security impact level.
+      summary: Updates a portion of the security impact level.
+      description: Updates a portion of the security impact level.
       operationId: patchSystemSecurityPlanSystemCharacteristicsSecurityImpactLevel
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8623,9 +8525,9 @@ paths:
       description: Returns the authorization boundary.
       operationId: getSystemSecurityPlanSystemCharacteristicsAuthorizationBoundaryBy
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8690,13 +8592,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Uppdates the authorization boundary.
-      description: Uppdates the authorization boundary.
+      summary: Replaces the authorization boundary.
+      description: Replaces the authorization boundary.
       operationId: putSystemSecurityPlanSystemCharacteristicsAuthorizationBoundary
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8782,13 +8684,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the authorization boundary.
-      description: Updates the authorization boundary.
+      summary: Updates a portion of the authorization boundary.
+      description: Updates a portion of the authorization boundary.
       operationId: patchSystemSecurityPlanSystemCharacteristicsAuthorizationBoundary
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8886,9 +8788,9 @@ paths:
       description: Returns the network architecture.
       operationId: getSystemSecurityPlanSystemCharacteristicsNetworkArchitectureBy
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8953,13 +8855,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Uppdates the network architecture.
-      description: Uppdates the network architecture.
+      summary: Replaces the network architecture.
+      description: Replaces the network architecture.
       operationId: putSystemSecurityPlanSystemCharacteristicsNetworkArchitecture
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9045,13 +8947,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the network architecture.
-      description: Updates the network architecture.
+      summary: Updates a portion of the network architecture.
+      description: Updates a portion of the network architecture.
       operationId: patchSystemSecurityPlanSystemCharacteristicsNetworkArchitecture
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9148,22 +9050,15 @@ paths:
       description: Deletes the network architecture.
       operationId: deleteSystemSecurityPlanSystemCharacteristicsNetworkArchitecture
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALNetworkArchitecture"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALNetworkArchitecture"
         401:
           description: Unauthorized
           content:
@@ -9221,9 +9116,9 @@ paths:
       description: Returns the data flow.
       operationId: getSystemSecurityPlanSystemCharacteristicsDataFlowBy
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9288,13 +9183,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Uppdates the data flow.
-      description: Uppdates the data flow.
+      summary: Replaces the data flow.
+      description: Replaces the data flow.
       operationId: putSystemSecurityPlanSystemCharacteristicsDataFlow
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9380,13 +9275,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the data flow.
-      description: Updates the data flow.
+      summary: Updates a portion of the data flow.
+      description: Updates a portion of the data flow.
       operationId: patchSystemSecurityPlanSystemCharacteristicsDataFlow
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9483,22 +9378,15 @@ paths:
       description: Deletes the data flow.
       operationId: deleteSystemSecurityPlanSystemCharacteristicsDataFlow
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALDataFlow"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALDataFlow"
         401:
           description: Unauthorized
           content:
@@ -9556,9 +9444,9 @@ paths:
       description: Returns every relevant responsible party.
       operationId: getSystemSecurityPlanSystemCharacteristicsResponsibleParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9627,9 +9515,9 @@ paths:
       description: Adds a new responsible party.
       operationId: postSystemSecurityPlanSystemCharacteristicsResponsibleParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9726,19 +9614,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the responsible party represented by the role-id.
-      description: Returns the responsible party represented by the role-id.
+      summary: Returns the responsible party represented by the responsible party ROLE-ID.
+      description: Returns the responsible party represented by the responsible party ROLE-ID.
       operationId: getSystemSecurityPlanSystemCharacteristicsResponsiblePartyByRole Id
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -9803,19 +9691,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the responsible party represented by the role-id.
-      description: Updates the responsible party represented by the role-id.
+      summary: Replaces the responsible party represented by the responsible party ROLE-ID.
+      description: Replaces the responsible party represented by the responsible party ROLE-ID.
       operationId: putSystemSecurityPlanSystemCharacteristicsResponsibleParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -9901,19 +9789,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the responsible party represented by the role-id.
-      description: Updates the responsible party represented by the role-id.
+      summary: Updates a portion of the responsible party represented by the responsible party ROLE-ID.
+      description: Updates a portion of the responsible party represented by the responsible party ROLE-ID.
       operationId: patchSystemSecurityPlanSystemCharacteristicsResponsibleParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -10006,32 +9894,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the responsible party represented by the role-id.
-      description: Deletes the responsible party represented by the role-id.
+      summary: Deletes the responsible party represented by the responsible party ROLE-ID.
+      description: Deletes the responsible party represented by the responsible party ROLE-ID.
       operationId: deleteSystemSecurityPlanSystemCharacteristicsResponsibleParty
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
         401:
           description: Unauthorized
           content:
@@ -10089,9 +9970,9 @@ paths:
       description: Returns the system implementation.
       operationId: getSystemSecurityPlanSystemImplementationBy
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10156,13 +10037,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Uppdates the system implementation.
-      description: Uppdates the system implementation.
+      summary: Replaces the system implementation.
+      description: Replaces the system implementation.
       operationId: putSystemSecurityPlanSystemImplementation
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10248,13 +10129,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the system implementation.
-      description: Updates the system implementation.
+      summary: Updates a portion of the system implementation.
+      description: Updates a portion of the system implementation.
       operationId: patchSystemSecurityPlanSystemImplementation
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10352,9 +10233,9 @@ paths:
       description: Returns every relevant link.
       operationId: getSystemSecurityPlanSystemImplementationLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10423,9 +10304,9 @@ paths:
       description: Adds a new link.
       operationId: postSystemSecurityPlanSystemImplementationLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10522,19 +10403,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getSystemSecurityPlanSystemImplementationLinkByHref
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -10599,19 +10480,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putSystemSecurityPlanSystemImplementationLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -10697,19 +10578,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchSystemSecurityPlanSystemImplementationLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -10802,32 +10683,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteSystemSecurityPlanSystemImplementationLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -10885,9 +10759,9 @@ paths:
       description: Returns every relevant prop.
       operationId: getSystemSecurityPlanSystemImplementationProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10956,9 +10830,9 @@ paths:
       description: Adds a new prop.
       operationId: postSystemSecurityPlanSystemImplementationProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11055,19 +10929,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getSystemSecurityPlanSystemImplementationPropByUuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -11132,19 +11006,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putSystemSecurityPlanSystemImplementationProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -11230,19 +11104,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchSystemSecurityPlanSystemImplementationProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -11335,32 +11209,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteSystemSecurityPlanSystemImplementationProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -11418,9 +11285,9 @@ paths:
       description: Returns every relevant leveraged authorization.
       operationId: getSystemSecurityPlanSystemImplementationLeveragedAuthorization
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11489,9 +11356,9 @@ paths:
       description: Adds a new leveraged authorization.
       operationId: postSystemSecurityPlanSystemImplementationLeveragedAuthorization
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11588,19 +11455,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the leveraged authorization represented by the uuid.
-      description: Returns the leveraged authorization represented by the uuid.
+      summary: Returns the leveraged authorization represented by the leveraged authorization UUID.
+      description: Returns the leveraged authorization represented by the leveraged authorization UUID.
       operationId: getSystemSecurityPlanSystemImplementationLeveragedAuthorizationByUuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: leveragedAuthorizationUuid
+        - name: leveragedAuthorizationUUID
           in: path
-          description: Uuid of LeveragedAuthorization
+          description: UUID of LeveragedAuthorization
           required: true
           schema:
             type: string
@@ -11665,19 +11532,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the leveraged authorization represented by the uuid.
-      description: Updates the leveraged authorization represented by the uuid.
+      summary: Replaces the leveraged authorization represented by the leveraged authorization UUID.
+      description: Replaces the leveraged authorization represented by the leveraged authorization UUID.
       operationId: putSystemSecurityPlanSystemImplementationLeveragedAuthorization
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: leveragedAuthorizationUuid
+        - name: leveragedAuthorizationUUID
           in: path
-          description: Uuid of LeveragedAuthorization
+          description: UUID of LeveragedAuthorization
           required: true
           schema:
             type: string
@@ -11763,19 +11630,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the leveraged authorization represented by the uuid.
-      description: Updates the leveraged authorization represented by the uuid.
+      summary: Updates a portion of the leveraged authorization represented by the leveraged authorization UUID.
+      description: Updates a portion of the leveraged authorization represented by the leveraged authorization UUID.
       operationId: patchSystemSecurityPlanSystemImplementationLeveragedAuthorization
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: leveragedAuthorizationUuid
+        - name: leveragedAuthorizationUUID
           in: path
-          description: Uuid of LeveragedAuthorization
+          description: UUID of LeveragedAuthorization
           required: true
           schema:
             type: string
@@ -11868,32 +11735,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the leveraged authorization represented by the uuid.
-      description: Deletes the leveraged authorization represented by the uuid.
+      summary: Deletes the leveraged authorization represented by the leveraged authorization UUID.
+      description: Deletes the leveraged authorization represented by the leveraged authorization UUID.
       operationId: deleteSystemSecurityPlanSystemImplementationLeveragedAuthorization
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: leveragedAuthorizationUuid
+        - name: leveragedAuthorizationUUID
           in: path
-          description: Uuid of LeveragedAuthorization
+          description: UUID of LeveragedAuthorization
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLeveragedAuthorization"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLeveragedAuthorization"
         401:
           description: Unauthorized
           content:
@@ -11951,9 +11811,9 @@ paths:
       description: Returns every relevant user.
       operationId: getSystemSecurityPlanSystemImplementationUser
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12022,9 +11882,9 @@ paths:
       description: Adds a new user.
       operationId: postSystemSecurityPlanSystemImplementationUser
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12121,19 +11981,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the user represented by the uuid.
-      description: Returns the user represented by the uuid.
+      summary: Returns the user represented by the user UUID.
+      description: Returns the user represented by the user UUID.
       operationId: getSystemSecurityPlanSystemImplementationUserByUuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: userUuid
+        - name: userUUID
           in: path
-          description: Uuid of User
+          description: UUID of User
           required: true
           schema:
             type: string
@@ -12198,19 +12058,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the user represented by the uuid.
-      description: Updates the user represented by the uuid.
+      summary: Replaces the user represented by the user UUID.
+      description: Replaces the user represented by the user UUID.
       operationId: putSystemSecurityPlanSystemImplementationUser
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: userUuid
+        - name: userUUID
           in: path
-          description: Uuid of User
+          description: UUID of User
           required: true
           schema:
             type: string
@@ -12296,19 +12156,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the user represented by the uuid.
-      description: Updates the user represented by the uuid.
+      summary: Updates a portion of the user represented by the user UUID.
+      description: Updates a portion of the user represented by the user UUID.
       operationId: patchSystemSecurityPlanSystemImplementationUser
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: userUuid
+        - name: userUUID
           in: path
-          description: Uuid of User
+          description: UUID of User
           required: true
           schema:
             type: string
@@ -12401,32 +12261,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the user represented by the uuid. Deletion will not be allowed if there is only one remaining user.
-      description: Deletes the user represented by the uuid. Deletion will not be allowed if there is only one remaining user.
+      summary: Deletes the user represented by the user UUID. Deletion will not be allowed if there is only one remaining user.
+      description: Deletes the user represented by the user UUID. Deletion will not be allowed if there is only one remaining user.
       operationId: deleteSystemSecurityPlanSystemImplementationUser
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: userUuid
+        - name: userUUID
           in: path
-          description: Uuid of User
+          description: UUID of User
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALUser"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALUser"
         401:
           description: Unauthorized
           content:
@@ -12484,9 +12337,9 @@ paths:
       description: Returns every relevant inventory item.
       operationId: getSystemSecurityPlanSystemImplementationInventoryItem
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12555,9 +12408,9 @@ paths:
       description: Adds a new inventory item.
       operationId: postSystemSecurityPlanSystemImplementationInventoryItem
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12654,19 +12507,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the inventory item represented by the uuid.
-      description: Returns the inventory item represented by the uuid.
+      summary: Returns the inventory item represented by the inventory item UUID.
+      description: Returns the inventory item represented by the inventory item UUID.
       operationId: getSystemSecurityPlanSystemImplementationInventoryItemByUuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: inventoryItemUuid
+        - name: inventoryItemUUID
           in: path
-          description: Uuid of InventoryItem
+          description: UUID of InventoryItem
           required: true
           schema:
             type: string
@@ -12731,19 +12584,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the inventory item represented by the uuid.
-      description: Updates the inventory item represented by the uuid.
+      summary: Replaces the inventory item represented by the inventory item UUID.
+      description: Replaces the inventory item represented by the inventory item UUID.
       operationId: putSystemSecurityPlanSystemImplementationInventoryItem
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: inventoryItemUuid
+        - name: inventoryItemUUID
           in: path
-          description: Uuid of InventoryItem
+          description: UUID of InventoryItem
           required: true
           schema:
             type: string
@@ -12829,19 +12682,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the inventory item represented by the uuid.
-      description: Updates the inventory item represented by the uuid.
+      summary: Updates a portion of the inventory item represented by the inventory item UUID.
+      description: Updates a portion of the inventory item represented by the inventory item UUID.
       operationId: patchSystemSecurityPlanSystemImplementationInventoryItem
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: inventoryItemUuid
+        - name: inventoryItemUUID
           in: path
-          description: Uuid of InventoryItem
+          description: UUID of InventoryItem
           required: true
           schema:
             type: string
@@ -12934,32 +12787,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the inventory item represented by the uuid.
-      description: Deletes the inventory item represented by the uuid.
+      summary: Deletes the inventory item represented by the inventory item UUID.
+      description: Deletes the inventory item represented by the inventory item UUID.
       operationId: deleteSystemSecurityPlanSystemImplementationInventoryItem
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: inventoryItemUuid
+        - name: inventoryItemUUID
           in: path
-          description: Uuid of InventoryItem
+          description: UUID of InventoryItem
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALInventoryItem"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALInventoryItem"
         401:
           description: Unauthorized
           content:
@@ -13017,9 +12863,9 @@ paths:
       description: Returns every relevant component.
       operationId: getSystemSecurityPlanSystemImplementationComponent
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13088,9 +12934,9 @@ paths:
       description: Adds a new component.
       operationId: postSystemSecurityPlanSystemImplementationComponent
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13187,19 +13033,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the component represented by the uuid.
-      description: Returns the component represented by the uuid.
+      summary: Returns the component represented by the component UUID.
+      description: Returns the component represented by the component UUID.
       operationId: getSystemSecurityPlanSystemImplementationComponentByUuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -13264,19 +13110,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the component represented by the uuid.
-      description: Updates the component represented by the uuid.
+      summary: Replaces the component represented by the component UUID.
+      description: Replaces the component represented by the component UUID.
       operationId: putSystemSecurityPlanSystemImplementationComponent
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -13362,19 +13208,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the component represented by the uuid.
-      description: Updates the component represented by the uuid.
+      summary: Updates a portion of the component represented by the component UUID.
+      description: Updates a portion of the component represented by the component UUID.
       operationId: patchSystemSecurityPlanSystemImplementationComponent
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -13467,32 +13313,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the component represented by the uuid. Deletion will not be allowed if there is only one remaining component.
-      description: Deletes the component represented by the uuid. Deletion will not be allowed if there is only one remaining component.
+      summary: Deletes the component represented by the component UUID. Deletion will not be allowed if there is only one remaining component.
+      description: Deletes the component represented by the component UUID. Deletion will not be allowed if there is only one remaining component.
       operationId: deleteSystemSecurityPlanSystemImplementationComponent
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALComponent"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponent"
         401:
           description: Unauthorized
           content:
@@ -13550,9 +13389,9 @@ paths:
       description: Returns the control implementation.
       operationId: getSystemSecurityPlanControlImplementationBy
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13617,13 +13456,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Uppdates the control implementation.
-      description: Uppdates the control implementation.
+      summary: Replaces the control implementation.
+      description: Replaces the control implementation.
       operationId: putSystemSecurityPlanControlImplementation
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13709,13 +13548,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the control implementation.
-      description: Updates the control implementation.
+      summary: Updates a portion of the control implementation.
+      description: Updates a portion of the control implementation.
       operationId: patchSystemSecurityPlanControlImplementation
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13813,9 +13652,9 @@ paths:
       description: Returns every relevant set parameter.
       operationId: getSystemSecurityPlanControlImplementationSetParameter
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13884,9 +13723,9 @@ paths:
       description: Adds a new set parameter.
       operationId: postSystemSecurityPlanControlImplementationSetParameter
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13983,19 +13822,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the set parameter represented by the param-id.
-      description: Returns the set parameter represented by the param-id.
+      summary: Returns the set parameter represented by the set parameter PARAM-ID.
+      description: Returns the set parameter represented by the set parameter PARAM-ID.
       operationId: getSystemSecurityPlanControlImplementationSetParameterByParam Id
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -14060,19 +13899,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the set parameter represented by the param-id.
-      description: Updates the set parameter represented by the param-id.
+      summary: Replaces the set parameter represented by the set parameter PARAM-ID.
+      description: Replaces the set parameter represented by the set parameter PARAM-ID.
       operationId: putSystemSecurityPlanControlImplementationSetParameter
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -14158,19 +13997,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the set parameter represented by the param-id.
-      description: Updates the set parameter represented by the param-id.
+      summary: Updates a portion of the set parameter represented by the set parameter PARAM-ID.
+      description: Updates a portion of the set parameter represented by the set parameter PARAM-ID.
       operationId: patchSystemSecurityPlanControlImplementationSetParameter
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -14263,32 +14102,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the set parameter represented by the param-id.
-      description: Deletes the set parameter represented by the param-id.
+      summary: Deletes the set parameter represented by the set parameter PARAM-ID.
+      description: Deletes the set parameter represented by the set parameter PARAM-ID.
       operationId: deleteSystemSecurityPlanControlImplementationSetParameter
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALSetParameter"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSetParameter"
         401:
           description: Unauthorized
           content:
@@ -14346,9 +14178,9 @@ paths:
       description: Returns every relevant implemented requirement.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirement
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14417,9 +14249,9 @@ paths:
       description: Adds a new implemented requirement.
       operationId: postSystemSecurityPlanControlImplementationImplementedRequirement
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14516,19 +14348,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the implemented requirement represented by the control-id.
-      description: Returns the implemented requirement represented by the control-id.
+      summary: Returns the implemented requirement represented by the implemented requirement CONTROL-ID.
+      description: Returns the implemented requirement represented by the implemented requirement CONTROL-ID.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementByControl Id
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -14593,19 +14425,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the implemented requirement represented by the control-id.
-      description: Updates the implemented requirement represented by the control-id.
+      summary: Replaces the implemented requirement represented by the implemented requirement CONTROL-ID.
+      description: Replaces the implemented requirement represented by the implemented requirement CONTROL-ID.
       operationId: putSystemSecurityPlanControlImplementationImplementedRequirement
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -14691,19 +14523,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the implemented requirement represented by the control-id.
-      description: Updates the implemented requirement represented by the control-id.
+      summary: Updates a portion of the implemented requirement represented by the implemented requirement CONTROL-ID.
+      description: Updates a portion of the implemented requirement represented by the implemented requirement CONTROL-ID.
       operationId: patchSystemSecurityPlanControlImplementationImplementedRequirement
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -14796,32 +14628,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the implemented requirement represented by the control-id. Deletion will not be allowed if there is only one remaining implemented requirement.
-      description: Deletes the implemented requirement represented by the control-id. Deletion will not be allowed if there is only one remaining implemented requirement.
+      summary: Deletes the implemented requirement represented by the implemented requirement CONTROL-ID. Deletion will not be allowed if there is only one remaining implemented requirement.
+      description: Deletes the implemented requirement represented by the implemented requirement CONTROL-ID. Deletion will not be allowed if there is only one remaining implemented requirement.
       operationId: deleteSystemSecurityPlanControlImplementationImplementedRequirement
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALImplementedRequirement"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALImplementedRequirement"
         401:
           description: Unauthorized
           content:
@@ -14879,15 +14704,15 @@ paths:
       description: Returns every relevant link.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -14956,15 +14781,15 @@ paths:
       description: Adds a new link.
       operationId: postSystemSecurityPlanControlImplementationImplementedRequirementLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -15061,25 +14886,25 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementLinkByHref
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -15144,25 +14969,25 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putSystemSecurityPlanControlImplementationImplementedRequirementLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -15248,25 +15073,25 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchSystemSecurityPlanControlImplementationImplementedRequirementLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -15359,38 +15184,31 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteSystemSecurityPlanControlImplementationImplementedRequirementLink
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -15448,15 +15266,15 @@ paths:
       description: Returns every relevant prop.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -15525,15 +15343,15 @@ paths:
       description: Adds a new prop.
       operationId: postSystemSecurityPlanControlImplementationImplementedRequirementProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -15630,25 +15448,25 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementPropByUuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -15713,25 +15531,25 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putSystemSecurityPlanControlImplementationImplementedRequirementProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -15817,25 +15635,25 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchSystemSecurityPlanControlImplementationImplementedRequirementProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -15928,38 +15746,31 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteSystemSecurityPlanControlImplementationImplementedRequirementProp
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -16017,15 +15828,15 @@ paths:
       description: Returns every relevant set parameter.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementSetParameter
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -16094,15 +15905,15 @@ paths:
       description: Adds a new set parameter.
       operationId: postSystemSecurityPlanControlImplementationImplementedRequirementSetParameter
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -16199,25 +16010,25 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the set parameter represented by the param-id.
-      description: Returns the set parameter represented by the param-id.
+      summary: Returns the set parameter represented by the set parameter PARAM-ID.
+      description: Returns the set parameter represented by the set parameter PARAM-ID.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementSetParameterByParam Id
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -16282,25 +16093,25 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the set parameter represented by the param-id.
-      description: Updates the set parameter represented by the param-id.
+      summary: Replaces the set parameter represented by the set parameter PARAM-ID.
+      description: Replaces the set parameter represented by the set parameter PARAM-ID.
       operationId: putSystemSecurityPlanControlImplementationImplementedRequirementSetParameter
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -16386,25 +16197,25 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the set parameter represented by the param-id.
-      description: Updates the set parameter represented by the param-id.
+      summary: Updates a portion of the set parameter represented by the set parameter PARAM-ID.
+      description: Updates a portion of the set parameter represented by the set parameter PARAM-ID.
       operationId: patchSystemSecurityPlanControlImplementationImplementedRequirementSetParameter
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -16497,38 +16308,31 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the set parameter represented by the param-id.
-      description: Deletes the set parameter represented by the param-id.
+      summary: Deletes the set parameter represented by the set parameter PARAM-ID.
+      description: Deletes the set parameter represented by the set parameter PARAM-ID.
       operationId: deleteSystemSecurityPlanControlImplementationImplementedRequirementSetParameter
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALSetParameter"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSetParameter"
         401:
           description: Unauthorized
           content:
@@ -16586,15 +16390,15 @@ paths:
       description: Returns every relevant responsible role.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementResponsibleRole
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -16663,15 +16467,15 @@ paths:
       description: Adds a new responsible role.
       operationId: postSystemSecurityPlanControlImplementationImplementedRequirementResponsibleRole
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -16768,25 +16572,25 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the responsible role represented by the role-id.
-      description: Returns the responsible role represented by the role-id.
+      summary: Returns the responsible role represented by the responsible role ROLE-ID.
+      description: Returns the responsible role represented by the responsible role ROLE-ID.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementResponsibleRoleByRole Id
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: responsibleRoleRoleId
+        - name: responsibleRoleROLEID
           in: path
-          description: RoleId of ResponsibleRole
+          description: ROLEID of ResponsibleRole
           required: true
           schema:
             type: string
@@ -16851,25 +16655,25 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the responsible role represented by the role-id.
-      description: Updates the responsible role represented by the role-id.
+      summary: Replaces the responsible role represented by the responsible role ROLE-ID.
+      description: Replaces the responsible role represented by the responsible role ROLE-ID.
       operationId: putSystemSecurityPlanControlImplementationImplementedRequirementResponsibleRole
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: responsibleRoleRoleId
+        - name: responsibleRoleROLEID
           in: path
-          description: RoleId of ResponsibleRole
+          description: ROLEID of ResponsibleRole
           required: true
           schema:
             type: string
@@ -16955,25 +16759,25 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the responsible role represented by the role-id.
-      description: Updates the responsible role represented by the role-id.
+      summary: Updates a portion of the responsible role represented by the responsible role ROLE-ID.
+      description: Updates a portion of the responsible role represented by the responsible role ROLE-ID.
       operationId: patchSystemSecurityPlanControlImplementationImplementedRequirementResponsibleRole
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: responsibleRoleRoleId
+        - name: responsibleRoleROLEID
           in: path
-          description: RoleId of ResponsibleRole
+          description: ROLEID of ResponsibleRole
           required: true
           schema:
             type: string
@@ -17066,38 +16870,31 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the responsible role represented by the role-id.
-      description: Deletes the responsible role represented by the role-id.
+      summary: Deletes the responsible role represented by the responsible role ROLE-ID.
+      description: Deletes the responsible role represented by the responsible role ROLE-ID.
       operationId: deleteSystemSecurityPlanControlImplementationImplementedRequirementResponsibleRole
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: responsibleRoleRoleId
+        - name: responsibleRoleROLEID
           in: path
-          description: RoleId of ResponsibleRole
+          description: ROLEID of ResponsibleRole
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleRole"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleRole"
         401:
           description: Unauthorized
           content:
@@ -17155,15 +16952,15 @@ paths:
       description: Returns every relevant by component.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementByComponent
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -17232,15 +17029,15 @@ paths:
       description: Adds a new by component.
       operationId: postSystemSecurityPlanControlImplementationImplementedRequirementByComponent
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -17337,25 +17134,25 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the by component represented by the component-uuid.
-      description: Returns the by component represented by the component-uuid.
+      summary: Returns the by component represented by the by component COMPONENT-UUID.
+      description: Returns the by component represented by the by component COMPONENT-UUID.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementByComponentByComponent Uuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: byComponentComponentUuid
+        - name: byComponentCOMPONENTUUID
           in: path
-          description: ComponentUuid of ByComponent
+          description: COMPONENTUUID of ByComponent
           required: true
           schema:
             type: string
@@ -17420,25 +17217,25 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the by component represented by the component-uuid.
-      description: Updates the by component represented by the component-uuid.
+      summary: Replaces the by component represented by the by component COMPONENT-UUID.
+      description: Replaces the by component represented by the by component COMPONENT-UUID.
       operationId: putSystemSecurityPlanControlImplementationImplementedRequirementByComponent
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: byComponentComponentUuid
+        - name: byComponentCOMPONENTUUID
           in: path
-          description: ComponentUuid of ByComponent
+          description: COMPONENTUUID of ByComponent
           required: true
           schema:
             type: string
@@ -17524,25 +17321,25 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the by component represented by the component-uuid.
-      description: Updates the by component represented by the component-uuid.
+      summary: Updates a portion of the by component represented by the by component COMPONENT-UUID.
+      description: Updates a portion of the by component represented by the by component COMPONENT-UUID.
       operationId: patchSystemSecurityPlanControlImplementationImplementedRequirementByComponent
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: byComponentComponentUuid
+        - name: byComponentCOMPONENTUUID
           in: path
-          description: ComponentUuid of ByComponent
+          description: COMPONENTUUID of ByComponent
           required: true
           schema:
             type: string
@@ -17635,38 +17432,31 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the by component represented by the component-uuid.
-      description: Deletes the by component represented by the component-uuid.
+      summary: Deletes the by component represented by the by component COMPONENT-UUID.
+      description: Deletes the by component represented by the by component COMPONENT-UUID.
       operationId: deleteSystemSecurityPlanControlImplementationImplementedRequirementByComponent
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
-        - name: byComponentComponentUuid
+        - name: byComponentCOMPONENTUUID
           in: path
-          description: ComponentUuid of ByComponent
+          description: COMPONENTUUID of ByComponent
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALByComponent"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALByComponent"
         401:
           description: Unauthorized
           content:
@@ -17724,9 +17514,9 @@ paths:
       description: Returns the back matter.
       operationId: getSystemSecurityPlanBackMatterBy
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -17791,13 +17581,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Uppdates the back matter.
-      description: Uppdates the back matter.
+      summary: Replaces the back matter.
+      description: Replaces the back matter.
       operationId: putSystemSecurityPlanBackMatter
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -17883,13 +17673,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the back matter.
-      description: Updates the back matter.
+      summary: Updates a portion of the back matter.
+      description: Updates a portion of the back matter.
       operationId: patchSystemSecurityPlanBackMatter
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -17986,22 +17776,15 @@ paths:
       description: Deletes the back matter.
       operationId: deleteSystemSecurityPlanBackMatter
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALBackMatter"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALBackMatter"
         401:
           description: Unauthorized
           content:
@@ -18059,9 +17842,9 @@ paths:
       description: Returns every relevant resource.
       operationId: getSystemSecurityPlanBackMatterResource
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18130,9 +17913,9 @@ paths:
       description: Adds a new resource.
       operationId: postSystemSecurityPlanBackMatterResource
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18229,19 +18012,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the resource represented by the uuid.
-      description: Returns the resource represented by the uuid.
+      summary: Returns the resource represented by the resource UUID.
+      description: Returns the resource represented by the resource UUID.
       operationId: getSystemSecurityPlanBackMatterResourceByUuid
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -18306,19 +18089,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the resource represented by the uuid.
-      description: Updates the resource represented by the uuid.
+      summary: Replaces the resource represented by the resource UUID.
+      description: Replaces the resource represented by the resource UUID.
       operationId: putSystemSecurityPlanBackMatterResource
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -18404,19 +18187,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the resource represented by the uuid.
-      description: Updates the resource represented by the uuid.
+      summary: Updates a portion of the resource represented by the resource UUID.
+      description: Updates a portion of the resource represented by the resource UUID.
       operationId: patchSystemSecurityPlanBackMatterResource
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -18509,32 +18292,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the resource represented by the uuid.
-      description: Deletes the resource represented by the uuid.
+      summary: Deletes the resource represented by the resource UUID.
+      description: Deletes the resource represented by the resource UUID.
       operationId: deleteSystemSecurityPlanBackMatterResource
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResource"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResource"
         401:
           description: Unauthorized
           content:
@@ -18592,9 +18368,9 @@ paths:
       description: Returns every relevant attachment.
       operationId: getSystemSecurityPlanAttachment
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18663,9 +18439,9 @@ paths:
       description: Adds a new attachment.
       operationId: postSystemSecurityPlanAttachment
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18762,19 +18538,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the attachment represented by the id.
-      description: Returns the attachment represented by the id.
+      summary: Returns the attachment represented by the attachment ID.
+      description: Returns the attachment represented by the attachment ID.
       operationId: getSystemSecurityPlanAttachmentById
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -18849,19 +18625,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the attachment represented by the id.
-      description: Updates the attachment represented by the id.
+      summary: Replaces the attachment represented by the attachment ID.
+      description: Replaces the attachment represented by the attachment ID.
       operationId: putSystemSecurityPlanAttachment
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -18947,19 +18723,19 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the attachment represented by the id.
-      description: Deletes the attachment represented by the id.
+      summary: Deletes the attachment represented by the attachment ID.
+      description: Deletes the attachment represented by the attachment ID.
       operationId: deleteSystemSecurityPlanAttachment
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -19023,9 +18799,9 @@ paths:
       description: Returns every relevant snapshot.
       operationId: getSystemSecurityPlanSnapshot
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -19094,9 +18870,9 @@ paths:
       description: Creates a snapshot of the file in its current state.
       operationId: postSystemSecurityPlanSnapshot
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -19193,19 +18969,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the snapshot represented by the id.
-      description: Returns the snapshot represented by the id.
+      summary: Returns the snapshot represented by the snapshot ID.
+      description: Returns the snapshot represented by the snapshot ID.
       operationId: getSystemSecurityPlanSnapshotById
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -19270,19 +19046,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the snapshot represented by the id.
-      description: Updates the snapshot represented by the id.
+      summary: Updates a portion of the snapshot represented by the snapshot ID.
+      description: Updates a portion of the snapshot represented by the snapshot ID.
       operationId: patchSystemSecurityPlanSnapshot
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -19375,32 +19151,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the snapshot represented by the id.
-      description: Deletes the snapshot represented by the id.
+      summary: Deletes the snapshot represented by the snapshot ID.
+      description: Deletes the snapshot represented by the snapshot ID.
       operationId: deleteSystemSecurityPlanSnapshot
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
         401:
           description: Unauthorized
           content:
@@ -21092,37 +20861,37 @@ components:
     OSCALProfileEntry:
       type: object
       properties:
-        profile:
+        profile-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALCatalogEntry:
       type: object
       properties:
-        catalog:
+        catalog-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALSystemSecurityPlanEntry:
       type: object
       properties:
-        system-security-plan:
+        system-security-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALComponentDefinitionEntry:
       type: object
       properties:
-        component-definition:
+        component-definition-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentPlanEntry:
       type: object
       properties:
-        assessment-plan:
+        assessment-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentResultsEntry:
       type: object
       properties:
-        assessment-results:
+        assessment-results-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALPlanOfActionAndMilestonesEntry:
       type: object
       properties:
-        plan-of-action-and-milestones:
+        plan-of-action-and-milestones-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALProfilesEntries:
       type: object
@@ -21211,6 +20980,18 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshots:
+      type: object
+      properties:
+        resolved-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshot:
+      type: object
+      properties:
+        resolved-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
     OSCALCatalogsSnapshots:
       type: object
       properties:

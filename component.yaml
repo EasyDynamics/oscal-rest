@@ -238,13 +238,13 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the component definition represented by the id.
-      description: Returns the component definition represented by the id.
+      summary: Returns the component definition represented by the component definition ID.
+      description: Returns the component definition represented by the component definition ID.
       operationId: getComponentDefinitionById
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -309,13 +309,13 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the component definition represented by the id.
-      description: Updates the component definition represented by the id.
+      summary: Replaces the component definition represented by the component definition ID.
+      description: Replaces the component definition represented by the component definition ID.
       operationId: putComponentDefinition
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -401,13 +401,13 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the component definition represented by the id.
-      description: Updates the component definition represented by the id.
+      summary: Updates a portion of the component definition represented by the component definition ID.
+      description: Updates a portion of the component definition represented by the component definition ID.
       operationId: patchComponentDefinition
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -500,26 +500,19 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the component definition represented by the id.
-      description: Deletes the component definition represented by the id.
+      summary: Deletes the component definition represented by the component definition ID.
+      description: Deletes the component definition represented by the component definition ID.
       operationId: deleteComponentDefinition
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
         401:
           description: Unauthorized
           content:
@@ -577,9 +570,9 @@ paths:
       description: Returns the metadata.
       operationId: getComponentDefinitionMetadataBy
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -644,13 +637,13 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Uppdates the metadata.
-      description: Uppdates the metadata.
+      summary: Replaces the metadata.
+      description: Replaces the metadata.
       operationId: putComponentDefinitionMetadata
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -736,13 +729,13 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the metadata.
-      description: Updates the metadata.
+      summary: Updates a portion of the metadata.
+      description: Updates a portion of the metadata.
       operationId: patchComponentDefinitionMetadata
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -840,9 +833,9 @@ paths:
       description: Returns every relevant revision.
       operationId: getComponentDefinitionMetadataRevision
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -907,13 +900,13 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Uppdates the revision.
-      description: Uppdates the revision.
+      summary: Replaces the revision.
+      description: Replaces the revision.
       operationId: putComponentDefinitionMetadataRevision
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -999,13 +992,13 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the revision.
-      description: Updates the revision.
+      summary: Updates a portion of the revision.
+      description: Updates a portion of the revision.
       operationId: patchComponentDefinitionMetadataRevision
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1102,22 +1095,15 @@ paths:
       description: Deletes the revision.
       operationId: deleteComponentDefinitionMetadataRevision
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALRevisions"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALRevisions"
         401:
           description: Unauthorized
           content:
@@ -1175,9 +1161,9 @@ paths:
       description: Returns every relevant document id.
       operationId: getComponentDefinitionMetadataDocumentId
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1246,9 +1232,9 @@ paths:
       description: Adds a new document id.
       operationId: postComponentDefinitionMetadataDocumentId
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1345,19 +1331,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: When the scheme is available, returns the document id represented by the identifier.
-      description: When the scheme is available, returns the document id represented by the identifier.
+      summary: When the SCHEME is available, returns the document id represented by the identifier.
+      description: When the SCHEME is available, returns the document id represented by the identifier.
       operationId: getComponentDefinitionMetadataDocumentIdByScheme
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1422,19 +1408,19 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
-      description: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
+      summary: When the SCHEME is available, updates the document id represented by the identifier, and returns the updated document id.
+      description: When the SCHEME is available, updates the document id represented by the identifier, and returns the updated document id.
       operationId: putComponentDefinitionMetadataDocumentId
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1520,19 +1506,19 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
-      description: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
+      summary: When the SCHEME is available, updates a portion of the document id represented by the identifier, and returns the updated document id.
+      description: When the SCHEME is available, updates a portion of the document id represented by the identifier, and returns the updated document id.
       operationId: patchComponentDefinitionMetadataDocumentId
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1625,32 +1611,25 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: When the scheme is available, Deletes the document id represented by the identifier.
-      description: When the scheme is available, Deletes the document id represented by the identifier.
+      summary: When the SCHEME is available, Deletes the document id represented by the identifier.
+      description: When the SCHEME is available, Deletes the document id represented by the identifier.
       operationId: deleteComponentDefinitionMetadataDocumentId
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALDocumentId"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALDocumentId"
         401:
           description: Unauthorized
           content:
@@ -1708,9 +1687,9 @@ paths:
       description: Returns every relevant link.
       operationId: getComponentDefinitionMetadataLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1779,9 +1758,9 @@ paths:
       description: Adds a new link.
       operationId: postComponentDefinitionMetadataLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1878,19 +1857,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getComponentDefinitionMetadataLinkByHref
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -1955,19 +1934,19 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putComponentDefinitionMetadataLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -2053,19 +2032,19 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchComponentDefinitionMetadataLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -2158,32 +2137,25 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteComponentDefinitionMetadataLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -2241,9 +2213,9 @@ paths:
       description: Returns every relevant prop.
       operationId: getComponentDefinitionMetadataProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2312,9 +2284,9 @@ paths:
       description: Adds a new prop.
       operationId: postComponentDefinitionMetadataProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2411,19 +2383,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getComponentDefinitionMetadataPropByUuid
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -2488,19 +2460,19 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putComponentDefinitionMetadataProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -2586,19 +2558,19 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchComponentDefinitionMetadataProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -2691,32 +2663,25 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteComponentDefinitionMetadataProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -2774,9 +2739,9 @@ paths:
       description: Returns every relevant role.
       operationId: getComponentDefinitionMetadataRole
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2845,9 +2810,9 @@ paths:
       description: Adds a new role.
       operationId: postComponentDefinitionMetadataRole
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2944,19 +2909,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the role represented by the id.
-      description: Returns the role represented by the id.
+      summary: Returns the role represented by the role ID.
+      description: Returns the role represented by the role ID.
       operationId: getComponentDefinitionMetadataRoleById
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: roleId
+        - name: roleID
           in: path
-          description: Id of Role
+          description: ID of Role
           required: true
           schema:
             type: string
@@ -3021,19 +2986,19 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the role represented by the id.
-      description: Updates the role represented by the id.
+      summary: Replaces the role represented by the role ID.
+      description: Replaces the role represented by the role ID.
       operationId: putComponentDefinitionMetadataRole
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: roleId
+        - name: roleID
           in: path
-          description: Id of Role
+          description: ID of Role
           required: true
           schema:
             type: string
@@ -3119,19 +3084,19 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the role represented by the id.
-      description: Updates the role represented by the id.
+      summary: Updates a portion of the role represented by the role ID.
+      description: Updates a portion of the role represented by the role ID.
       operationId: patchComponentDefinitionMetadataRole
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: roleId
+        - name: roleID
           in: path
-          description: Id of Role
+          description: ID of Role
           required: true
           schema:
             type: string
@@ -3224,32 +3189,25 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the role represented by the id.
-      description: Deletes the role represented by the id.
+      summary: Deletes the role represented by the role ID.
+      description: Deletes the role represented by the role ID.
       operationId: deleteComponentDefinitionMetadataRole
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: roleId
+        - name: roleID
           in: path
-          description: Id of Role
+          description: ID of Role
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALRole"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALRole"
         401:
           description: Unauthorized
           content:
@@ -3307,9 +3265,9 @@ paths:
       description: Returns every relevant location.
       operationId: getComponentDefinitionMetadataLocation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3378,9 +3336,9 @@ paths:
       description: Adds a new location.
       operationId: postComponentDefinitionMetadataLocation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3477,19 +3435,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the location represented by the uuid.
-      description: Returns the location represented by the uuid.
+      summary: Returns the location represented by the location UUID.
+      description: Returns the location represented by the location UUID.
       operationId: getComponentDefinitionMetadataLocationByUuid
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -3554,19 +3512,19 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the location represented by the uuid.
-      description: Updates the location represented by the uuid.
+      summary: Replaces the location represented by the location UUID.
+      description: Replaces the location represented by the location UUID.
       operationId: putComponentDefinitionMetadataLocation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -3652,19 +3610,19 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the location represented by the uuid.
-      description: Updates the location represented by the uuid.
+      summary: Updates a portion of the location represented by the location UUID.
+      description: Updates a portion of the location represented by the location UUID.
       operationId: patchComponentDefinitionMetadataLocation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -3757,32 +3715,25 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the location represented by the uuid.
-      description: Deletes the location represented by the uuid.
+      summary: Deletes the location represented by the location UUID.
+      description: Deletes the location represented by the location UUID.
       operationId: deleteComponentDefinitionMetadataLocation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLocation"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLocation"
         401:
           description: Unauthorized
           content:
@@ -3840,9 +3791,9 @@ paths:
       description: Returns every relevant party.
       operationId: getComponentDefinitionMetadataParty
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3911,9 +3862,9 @@ paths:
       description: Adds a new party.
       operationId: postComponentDefinitionMetadataParty
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4010,19 +3961,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the party represented by the uuid.
-      description: Returns the party represented by the uuid.
+      summary: Returns the party represented by the party UUID.
+      description: Returns the party represented by the party UUID.
       operationId: getComponentDefinitionMetadataPartyByUuid
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -4087,19 +4038,19 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the party represented by the uuid.
-      description: Updates the party represented by the uuid.
+      summary: Replaces the party represented by the party UUID.
+      description: Replaces the party represented by the party UUID.
       operationId: putComponentDefinitionMetadataParty
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -4185,19 +4136,19 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the party represented by the uuid.
-      description: Updates the party represented by the uuid.
+      summary: Updates a portion of the party represented by the party UUID.
+      description: Updates a portion of the party represented by the party UUID.
       operationId: patchComponentDefinitionMetadataParty
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -4290,32 +4241,25 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the party represented by the uuid.
-      description: Deletes the party represented by the uuid.
+      summary: Deletes the party represented by the party UUID.
+      description: Deletes the party represented by the party UUID.
       operationId: deleteComponentDefinitionMetadataParty
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALParty"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALParty"
         401:
           description: Unauthorized
           content:
@@ -4373,9 +4317,9 @@ paths:
       description: Returns every relevant responsible party.
       operationId: getComponentDefinitionMetadataResponsibleParty
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4444,9 +4388,9 @@ paths:
       description: Adds a new responsible party.
       operationId: postComponentDefinitionMetadataResponsibleParty
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4543,19 +4487,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the responsible party represented by the role-id.
-      description: Returns the responsible party represented by the role-id.
+      summary: Returns the responsible party represented by the responsible party ROLE-ID.
+      description: Returns the responsible party represented by the responsible party ROLE-ID.
       operationId: getComponentDefinitionMetadataResponsiblePartyByRole Id
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4620,19 +4564,19 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the responsible party represented by the role-id.
-      description: Updates the responsible party represented by the role-id.
+      summary: Replaces the responsible party represented by the responsible party ROLE-ID.
+      description: Replaces the responsible party represented by the responsible party ROLE-ID.
       operationId: putComponentDefinitionMetadataResponsibleParty
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4718,19 +4662,19 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the responsible party represented by the role-id.
-      description: Updates the responsible party represented by the role-id.
+      summary: Updates a portion of the responsible party represented by the responsible party ROLE-ID.
+      description: Updates a portion of the responsible party represented by the responsible party ROLE-ID.
       operationId: patchComponentDefinitionMetadataResponsibleParty
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4823,32 +4767,25 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the responsible party represented by the role-id.
-      description: Deletes the responsible party represented by the role-id.
+      summary: Deletes the responsible party represented by the responsible party ROLE-ID.
+      description: Deletes the responsible party represented by the responsible party ROLE-ID.
       operationId: deleteComponentDefinitionMetadataResponsibleParty
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
         401:
           description: Unauthorized
           content:
@@ -4906,9 +4843,9 @@ paths:
       description: Returns every relevant import component definition.
       operationId: getComponentDefinitionImportComponentDefinition
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4977,9 +4914,9 @@ paths:
       description: Adds a new import component definition.
       operationId: postComponentDefinitionImportComponentDefinition
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5076,19 +5013,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the import component definition represented by the href.
-      description: Returns the import component definition represented by the href.
+      summary: Returns the import component definition represented by the import component definition HREF.
+      description: Returns the import component definition represented by the import component definition HREF.
       operationId: getComponentDefinitionImportComponentDefinitionByHref
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importComponentDefinitionHref
+        - name: importComponentDefinitionHREF
           in: path
-          description: Href of ImportComponentDefinition
+          description: HREF of ImportComponentDefinition
           required: true
           schema:
             type: string
@@ -5153,19 +5090,19 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the import component definition represented by the href.
-      description: Updates the import component definition represented by the href.
+      summary: Replaces the import component definition represented by the import component definition HREF.
+      description: Replaces the import component definition represented by the import component definition HREF.
       operationId: putComponentDefinitionImportComponentDefinition
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importComponentDefinitionHref
+        - name: importComponentDefinitionHREF
           in: path
-          description: Href of ImportComponentDefinition
+          description: HREF of ImportComponentDefinition
           required: true
           schema:
             type: string
@@ -5251,19 +5188,19 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the import component definition represented by the href.
-      description: Updates the import component definition represented by the href.
+      summary: Updates a portion of the import component definition represented by the import component definition HREF.
+      description: Updates a portion of the import component definition represented by the import component definition HREF.
       operationId: patchComponentDefinitionImportComponentDefinition
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importComponentDefinitionHref
+        - name: importComponentDefinitionHREF
           in: path
-          description: Href of ImportComponentDefinition
+          description: HREF of ImportComponentDefinition
           required: true
           schema:
             type: string
@@ -5356,32 +5293,25 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the import component definition represented by the href.
-      description: Deletes the import component definition represented by the href.
+      summary: Deletes the import component definition represented by the import component definition HREF.
+      description: Deletes the import component definition represented by the import component definition HREF.
       operationId: deleteComponentDefinitionImportComponentDefinition
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importComponentDefinitionHref
+        - name: importComponentDefinitionHREF
           in: path
-          description: Href of ImportComponentDefinition
+          description: HREF of ImportComponentDefinition
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALImportComponentDefinition"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALImportComponentDefinition"
         401:
           description: Unauthorized
           content:
@@ -5439,9 +5369,9 @@ paths:
       description: Returns every relevant component.
       operationId: getComponentDefinitionComponent
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5510,9 +5440,9 @@ paths:
       description: Adds a new component.
       operationId: postComponentDefinitionComponent
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5609,19 +5539,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the component represented by the uuid.
-      description: Returns the component represented by the uuid.
+      summary: Returns the component represented by the component UUID.
+      description: Returns the component represented by the component UUID.
       operationId: getComponentDefinitionComponentByUuid
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -5686,19 +5616,19 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the component represented by the uuid.
-      description: Updates the component represented by the uuid.
+      summary: Replaces the component represented by the component UUID.
+      description: Replaces the component represented by the component UUID.
       operationId: putComponentDefinitionComponent
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -5784,19 +5714,19 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the component represented by the uuid.
-      description: Updates the component represented by the uuid.
+      summary: Updates a portion of the component represented by the component UUID.
+      description: Updates a portion of the component represented by the component UUID.
       operationId: patchComponentDefinitionComponent
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -5889,32 +5819,25 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the component represented by the uuid.
-      description: Deletes the component represented by the uuid.
+      summary: Deletes the component represented by the component UUID.
+      description: Deletes the component represented by the component UUID.
       operationId: deleteComponentDefinitionComponent
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALComponent"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponent"
         401:
           description: Unauthorized
           content:
@@ -5972,15 +5895,15 @@ paths:
       description: Returns every relevant link.
       operationId: getComponentDefinitionComponentLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -6049,15 +5972,15 @@ paths:
       description: Adds a new link.
       operationId: postComponentDefinitionComponentLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -6154,25 +6077,25 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getComponentDefinitionComponentLinkByHref
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -6237,25 +6160,25 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putComponentDefinitionComponentLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -6341,25 +6264,25 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchComponentDefinitionComponentLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -6452,38 +6375,31 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteComponentDefinitionComponentLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -6541,15 +6457,15 @@ paths:
       description: Returns every relevant prop.
       operationId: getComponentDefinitionComponentProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -6618,15 +6534,15 @@ paths:
       description: Adds a new prop.
       operationId: postComponentDefinitionComponentProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -6723,25 +6639,25 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getComponentDefinitionComponentPropByUuid
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -6806,25 +6722,25 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putComponentDefinitionComponentProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -6910,25 +6826,25 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchComponentDefinitionComponentProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -7021,38 +6937,31 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteComponentDefinitionComponentProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -7110,15 +7019,15 @@ paths:
       description: Returns every relevant responsible role.
       operationId: getComponentDefinitionComponentResponsibleRole
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -7187,15 +7096,15 @@ paths:
       description: Adds a new responsible role.
       operationId: postComponentDefinitionComponentResponsibleRole
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -7292,25 +7201,25 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the responsible role represented by the role-id.
-      description: Returns the responsible role represented by the role-id.
+      summary: Returns the responsible role represented by the responsible role ROLE-ID.
+      description: Returns the responsible role represented by the responsible role ROLE-ID.
       operationId: getComponentDefinitionComponentResponsibleRoleByRole Id
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: responsibleRoleRoleId
+        - name: responsibleRoleROLEID
           in: path
-          description: RoleId of ResponsibleRole
+          description: ROLEID of ResponsibleRole
           required: true
           schema:
             type: string
@@ -7375,25 +7284,25 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the responsible role represented by the role-id.
-      description: Updates the responsible role represented by the role-id.
+      summary: Replaces the responsible role represented by the responsible role ROLE-ID.
+      description: Replaces the responsible role represented by the responsible role ROLE-ID.
       operationId: putComponentDefinitionComponentResponsibleRole
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: responsibleRoleRoleId
+        - name: responsibleRoleROLEID
           in: path
-          description: RoleId of ResponsibleRole
+          description: ROLEID of ResponsibleRole
           required: true
           schema:
             type: string
@@ -7479,25 +7388,25 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the responsible role represented by the role-id.
-      description: Updates the responsible role represented by the role-id.
+      summary: Updates a portion of the responsible role represented by the responsible role ROLE-ID.
+      description: Updates a portion of the responsible role represented by the responsible role ROLE-ID.
       operationId: patchComponentDefinitionComponentResponsibleRole
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: responsibleRoleRoleId
+        - name: responsibleRoleROLEID
           in: path
-          description: RoleId of ResponsibleRole
+          description: ROLEID of ResponsibleRole
           required: true
           schema:
             type: string
@@ -7590,38 +7499,31 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the responsible role represented by the role-id.
-      description: Deletes the responsible role represented by the role-id.
+      summary: Deletes the responsible role represented by the responsible role ROLE-ID.
+      description: Deletes the responsible role represented by the responsible role ROLE-ID.
       operationId: deleteComponentDefinitionComponentResponsibleRole
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: responsibleRoleRoleId
+        - name: responsibleRoleROLEID
           in: path
-          description: RoleId of ResponsibleRole
+          description: ROLEID of ResponsibleRole
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleRole"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleRole"
         401:
           description: Unauthorized
           content:
@@ -7679,15 +7581,15 @@ paths:
       description: Returns every relevant protocol.
       operationId: getComponentDefinitionComponentProtocol
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -7756,15 +7658,15 @@ paths:
       description: Adds a new protocol.
       operationId: postComponentDefinitionComponentProtocol
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -7861,25 +7763,25 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the protocol represented by the uuid.
-      description: Returns the protocol represented by the uuid.
+      summary: Returns the protocol represented by the protocol UUID.
+      description: Returns the protocol represented by the protocol UUID.
       operationId: getComponentDefinitionComponentProtocolByUuid
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: protocolUuid
+        - name: protocolUUID
           in: path
-          description: Uuid of Protocol
+          description: UUID of Protocol
           required: true
           schema:
             type: string
@@ -7944,25 +7846,25 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the protocol represented by the uuid.
-      description: Updates the protocol represented by the uuid.
+      summary: Replaces the protocol represented by the protocol UUID.
+      description: Replaces the protocol represented by the protocol UUID.
       operationId: putComponentDefinitionComponentProtocol
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: protocolUuid
+        - name: protocolUUID
           in: path
-          description: Uuid of Protocol
+          description: UUID of Protocol
           required: true
           schema:
             type: string
@@ -8048,25 +7950,25 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the protocol represented by the uuid.
-      description: Updates the protocol represented by the uuid.
+      summary: Updates a portion of the protocol represented by the protocol UUID.
+      description: Updates a portion of the protocol represented by the protocol UUID.
       operationId: patchComponentDefinitionComponentProtocol
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: protocolUuid
+        - name: protocolUUID
           in: path
-          description: Uuid of Protocol
+          description: UUID of Protocol
           required: true
           schema:
             type: string
@@ -8159,38 +8061,31 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the protocol represented by the uuid.
-      description: Deletes the protocol represented by the uuid.
+      summary: Deletes the protocol represented by the protocol UUID.
+      description: Deletes the protocol represented by the protocol UUID.
       operationId: deleteComponentDefinitionComponentProtocol
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: protocolUuid
+        - name: protocolUUID
           in: path
-          description: Uuid of Protocol
+          description: UUID of Protocol
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProtocol"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProtocol"
         401:
           description: Unauthorized
           content:
@@ -8248,15 +8143,15 @@ paths:
       description: Returns every relevant control implementation.
       operationId: getComponentDefinitionComponentControlImplementation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -8325,15 +8220,15 @@ paths:
       description: Adds a new control implementation.
       operationId: postComponentDefinitionComponentControlImplementation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -8430,25 +8325,25 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the control implementation represented by the uuid.
-      description: Returns the control implementation represented by the uuid.
+      summary: Returns the control implementation represented by the control implementation UUID.
+      description: Returns the control implementation represented by the control implementation UUID.
       operationId: getComponentDefinitionComponentControlImplementationByUuid
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -8513,25 +8408,25 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the control implementation represented by the uuid.
-      description: Updates the control implementation represented by the uuid.
+      summary: Replaces the control implementation represented by the control implementation UUID.
+      description: Replaces the control implementation represented by the control implementation UUID.
       operationId: putComponentDefinitionComponentControlImplementation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -8617,25 +8512,25 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the control implementation represented by the uuid.
-      description: Updates the control implementation represented by the uuid.
+      summary: Updates a portion of the control implementation represented by the control implementation UUID.
+      description: Updates a portion of the control implementation represented by the control implementation UUID.
       operationId: patchComponentDefinitionComponentControlImplementation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -8728,38 +8623,31 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the control implementation represented by the uuid.
-      description: Deletes the control implementation represented by the uuid.
+      summary: Deletes the control implementation represented by the control implementation UUID.
+      description: Deletes the control implementation represented by the control implementation UUID.
       operationId: deleteComponentDefinitionComponentControlImplementation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALControlImplementation"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALControlImplementation"
         401:
           description: Unauthorized
           content:
@@ -8817,21 +8705,21 @@ paths:
       description: Returns every relevant link.
       operationId: getComponentDefinitionComponentControlImplementationLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -8900,21 +8788,21 @@ paths:
       description: Adds a new link.
       operationId: postComponentDefinitionComponentControlImplementationLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -9011,31 +8899,31 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getComponentDefinitionComponentControlImplementationLinkByHref
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -9100,31 +8988,31 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putComponentDefinitionComponentControlImplementationLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -9210,31 +9098,31 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchComponentDefinitionComponentControlImplementationLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -9327,44 +9215,37 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteComponentDefinitionComponentControlImplementationLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -9422,21 +9303,21 @@ paths:
       description: Returns every relevant prop.
       operationId: getComponentDefinitionComponentControlImplementationProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -9505,21 +9386,21 @@ paths:
       description: Adds a new prop.
       operationId: postComponentDefinitionComponentControlImplementationProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -9616,31 +9497,31 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getComponentDefinitionComponentControlImplementationPropByUuid
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -9705,31 +9586,31 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putComponentDefinitionComponentControlImplementationProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -9815,31 +9696,31 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchComponentDefinitionComponentControlImplementationProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -9932,44 +9813,37 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteComponentDefinitionComponentControlImplementationProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -10027,21 +9901,21 @@ paths:
       description: Returns every relevant set parameter.
       operationId: getComponentDefinitionComponentControlImplementationSetParameter
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -10110,21 +9984,21 @@ paths:
       description: Adds a new set parameter.
       operationId: postComponentDefinitionComponentControlImplementationSetParameter
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -10221,31 +10095,31 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the set parameter represented by the param-id.
-      description: Returns the set parameter represented by the param-id.
+      summary: Returns the set parameter represented by the set parameter PARAM-ID.
+      description: Returns the set parameter represented by the set parameter PARAM-ID.
       operationId: getComponentDefinitionComponentControlImplementationSetParameterByParam Id
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -10310,31 +10184,31 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the set parameter represented by the param-id.
-      description: Updates the set parameter represented by the param-id.
+      summary: Replaces the set parameter represented by the set parameter PARAM-ID.
+      description: Replaces the set parameter represented by the set parameter PARAM-ID.
       operationId: putComponentDefinitionComponentControlImplementationSetParameter
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -10420,31 +10294,31 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the set parameter represented by the param-id.
-      description: Updates the set parameter represented by the param-id.
+      summary: Updates a portion of the set parameter represented by the set parameter PARAM-ID.
+      description: Updates a portion of the set parameter represented by the set parameter PARAM-ID.
       operationId: patchComponentDefinitionComponentControlImplementationSetParameter
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -10537,44 +10411,37 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the set parameter represented by the param-id.
-      description: Deletes the set parameter represented by the param-id.
+      summary: Deletes the set parameter represented by the set parameter PARAM-ID.
+      description: Deletes the set parameter represented by the set parameter PARAM-ID.
       operationId: deleteComponentDefinitionComponentControlImplementationSetParameter
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALSetParameter"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSetParameter"
         401:
           description: Unauthorized
           content:
@@ -10632,21 +10499,21 @@ paths:
       description: Returns every relevant implemented requirement.
       operationId: getComponentDefinitionComponentControlImplementationImplementedRequirement
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -10715,21 +10582,21 @@ paths:
       description: Adds a new implemented requirement.
       operationId: postComponentDefinitionComponentControlImplementationImplementedRequirement
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -10826,31 +10693,31 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the implemented requirement represented by the control-id.
-      description: Returns the implemented requirement represented by the control-id.
+      summary: Returns the implemented requirement represented by the implemented requirement CONTROL-ID.
+      description: Returns the implemented requirement represented by the implemented requirement CONTROL-ID.
       operationId: getComponentDefinitionComponentControlImplementationImplementedRequirementByControl Id
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -10915,31 +10782,31 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the implemented requirement represented by the control-id.
-      description: Updates the implemented requirement represented by the control-id.
+      summary: Replaces the implemented requirement represented by the implemented requirement CONTROL-ID.
+      description: Replaces the implemented requirement represented by the implemented requirement CONTROL-ID.
       operationId: putComponentDefinitionComponentControlImplementationImplementedRequirement
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -11025,31 +10892,31 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the implemented requirement represented by the control-id.
-      description: Updates the implemented requirement represented by the control-id.
+      summary: Updates a portion of the implemented requirement represented by the implemented requirement CONTROL-ID.
+      description: Updates a portion of the implemented requirement represented by the implemented requirement CONTROL-ID.
       operationId: patchComponentDefinitionComponentControlImplementationImplementedRequirement
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
@@ -11142,44 +11009,37 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the implemented requirement represented by the control-id.
-      description: Deletes the implemented requirement represented by the control-id.
+      summary: Deletes the implemented requirement represented by the implemented requirement CONTROL-ID.
+      description: Deletes the implemented requirement represented by the implemented requirement CONTROL-ID.
       operationId: deleteComponentDefinitionComponentControlImplementationImplementedRequirement
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
-        - name: implementedRequirementControlId
+        - name: implementedRequirementCONTROLID
           in: path
-          description: ControlId of ImplementedRequirement
+          description: CONTROLID of ImplementedRequirement
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALImplementedRequirement"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALImplementedRequirement"
         401:
           description: Unauthorized
           content:
@@ -11237,9 +11097,9 @@ paths:
       description: Returns every relevant capability.
       operationId: getComponentDefinitionCapability
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11308,9 +11168,9 @@ paths:
       description: Adds a new capability.
       operationId: postComponentDefinitionCapability
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11407,19 +11267,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the capability represented by the uuid.
-      description: Returns the capability represented by the uuid.
+      summary: Returns the capability represented by the capability UUID.
+      description: Returns the capability represented by the capability UUID.
       operationId: getComponentDefinitionCapabilityByUuid
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
@@ -11484,19 +11344,19 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the capability represented by the uuid.
-      description: Updates the capability represented by the uuid.
+      summary: Replaces the capability represented by the capability UUID.
+      description: Replaces the capability represented by the capability UUID.
       operationId: putComponentDefinitionCapability
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
@@ -11582,19 +11442,19 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the capability represented by the uuid.
-      description: Updates the capability represented by the uuid.
+      summary: Updates a portion of the capability represented by the capability UUID.
+      description: Updates a portion of the capability represented by the capability UUID.
       operationId: patchComponentDefinitionCapability
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
@@ -11687,32 +11547,25 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the capability represented by the uuid.
-      description: Deletes the capability represented by the uuid.
+      summary: Deletes the capability represented by the capability UUID.
+      description: Deletes the capability represented by the capability UUID.
       operationId: deleteComponentDefinitionCapability
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCapability"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCapability"
         401:
           description: Unauthorized
           content:
@@ -11770,15 +11623,15 @@ paths:
       description: Returns every relevant link.
       operationId: getComponentDefinitionCapabilityLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
@@ -11847,15 +11700,15 @@ paths:
       description: Adds a new link.
       operationId: postComponentDefinitionCapabilityLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
@@ -11952,25 +11805,25 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getComponentDefinitionCapabilityLinkByHref
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -12035,25 +11888,25 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putComponentDefinitionCapabilityLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -12139,25 +11992,25 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchComponentDefinitionCapabilityLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -12250,38 +12103,31 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteComponentDefinitionCapabilityLink
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -12339,15 +12185,15 @@ paths:
       description: Returns every relevant prop.
       operationId: getComponentDefinitionCapabilityProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
@@ -12416,15 +12262,15 @@ paths:
       description: Adds a new prop.
       operationId: postComponentDefinitionCapabilityProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
@@ -12521,25 +12367,25 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getComponentDefinitionCapabilityPropByUuid
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -12604,25 +12450,25 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putComponentDefinitionCapabilityProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -12708,25 +12554,25 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchComponentDefinitionCapabilityProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -12819,38 +12665,31 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteComponentDefinitionCapabilityProp
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -12908,15 +12747,15 @@ paths:
       description: Returns every relevant incorporates component.
       operationId: getComponentDefinitionCapabilityIncorporatesComponent
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
@@ -12985,15 +12824,15 @@ paths:
       description: Adds a new incorporates component.
       operationId: postComponentDefinitionCapabilityIncorporatesComponent
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
@@ -13090,25 +12929,25 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the incorporates component represented by the component-uuid.
-      description: Returns the incorporates component represented by the component-uuid.
+      summary: Returns the incorporates component represented by the incorporates component COMPONENT-UUID.
+      description: Returns the incorporates component represented by the incorporates component COMPONENT-UUID.
       operationId: getComponentDefinitionCapabilityIncorporatesComponentByComponent Uuid
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: incorporatesComponentComponentUuid
+        - name: incorporatesComponentCOMPONENTUUID
           in: path
-          description: ComponentUuid of IncorporatesComponent
+          description: COMPONENTUUID of IncorporatesComponent
           required: true
           schema:
             type: string
@@ -13173,25 +13012,25 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the incorporates component represented by the component-uuid.
-      description: Updates the incorporates component represented by the component-uuid.
+      summary: Replaces the incorporates component represented by the incorporates component COMPONENT-UUID.
+      description: Replaces the incorporates component represented by the incorporates component COMPONENT-UUID.
       operationId: putComponentDefinitionCapabilityIncorporatesComponent
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: incorporatesComponentComponentUuid
+        - name: incorporatesComponentCOMPONENTUUID
           in: path
-          description: ComponentUuid of IncorporatesComponent
+          description: COMPONENTUUID of IncorporatesComponent
           required: true
           schema:
             type: string
@@ -13277,25 +13116,25 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the incorporates component represented by the component-uuid.
-      description: Updates the incorporates component represented by the component-uuid.
+      summary: Updates a portion of the incorporates component represented by the incorporates component COMPONENT-UUID.
+      description: Updates a portion of the incorporates component represented by the incorporates component COMPONENT-UUID.
       operationId: patchComponentDefinitionCapabilityIncorporatesComponent
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: incorporatesComponentComponentUuid
+        - name: incorporatesComponentCOMPONENTUUID
           in: path
-          description: ComponentUuid of IncorporatesComponent
+          description: COMPONENTUUID of IncorporatesComponent
           required: true
           schema:
             type: string
@@ -13388,38 +13227,31 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the incorporates component represented by the component-uuid.
-      description: Deletes the incorporates component represented by the component-uuid.
+      summary: Deletes the incorporates component represented by the incorporates component COMPONENT-UUID.
+      description: Deletes the incorporates component represented by the incorporates component COMPONENT-UUID.
       operationId: deleteComponentDefinitionCapabilityIncorporatesComponent
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: incorporatesComponentComponentUuid
+        - name: incorporatesComponentCOMPONENTUUID
           in: path
-          description: ComponentUuid of IncorporatesComponent
+          description: COMPONENTUUID of IncorporatesComponent
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALIncorporatesComponent"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALIncorporatesComponent"
         401:
           description: Unauthorized
           content:
@@ -13477,15 +13309,15 @@ paths:
       description: Returns every relevant control implementation.
       operationId: getComponentDefinitionCapabilityControlImplementation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
@@ -13554,15 +13386,15 @@ paths:
       description: Adds a new control implementation.
       operationId: postComponentDefinitionCapabilityControlImplementation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
@@ -13659,25 +13491,25 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the control implementation represented by the uuid.
-      description: Returns the control implementation represented by the uuid.
+      summary: Returns the control implementation represented by the control implementation UUID.
+      description: Returns the control implementation represented by the control implementation UUID.
       operationId: getComponentDefinitionCapabilityControlImplementationByUuid
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -13742,25 +13574,25 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the control implementation represented by the uuid.
-      description: Updates the control implementation represented by the uuid.
+      summary: Replaces the control implementation represented by the control implementation UUID.
+      description: Replaces the control implementation represented by the control implementation UUID.
       operationId: putComponentDefinitionCapabilityControlImplementation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -13846,25 +13678,25 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the control implementation represented by the uuid.
-      description: Updates the control implementation represented by the uuid.
+      summary: Updates a portion of the control implementation represented by the control implementation UUID.
+      description: Updates a portion of the control implementation represented by the control implementation UUID.
       operationId: patchComponentDefinitionCapabilityControlImplementation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
@@ -13957,38 +13789,31 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the control implementation represented by the uuid.
-      description: Deletes the control implementation represented by the uuid.
+      summary: Deletes the control implementation represented by the control implementation UUID.
+      description: Deletes the control implementation represented by the control implementation UUID.
       operationId: deleteComponentDefinitionCapabilityControlImplementation
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: capabilityUuid
+        - name: capabilityUUID
           in: path
-          description: Uuid of Capability
+          description: UUID of Capability
           required: true
           schema:
             type: string
-        - name: controlImplementationUuid
+        - name: controlImplementationUUID
           in: path
-          description: Uuid of ControlImplementation
+          description: UUID of ControlImplementation
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALControlImplementation"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALControlImplementation"
         401:
           description: Unauthorized
           content:
@@ -14046,9 +13871,9 @@ paths:
       description: Returns the back matter.
       operationId: getComponentDefinitionBackMatterBy
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14113,13 +13938,13 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Uppdates the back matter.
-      description: Uppdates the back matter.
+      summary: Replaces the back matter.
+      description: Replaces the back matter.
       operationId: putComponentDefinitionBackMatter
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14205,13 +14030,13 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the back matter.
-      description: Updates the back matter.
+      summary: Updates a portion of the back matter.
+      description: Updates a portion of the back matter.
       operationId: patchComponentDefinitionBackMatter
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14308,22 +14133,15 @@ paths:
       description: Deletes the back matter.
       operationId: deleteComponentDefinitionBackMatter
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALBackMatter"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALBackMatter"
         401:
           description: Unauthorized
           content:
@@ -14381,9 +14199,9 @@ paths:
       description: Returns every relevant resource.
       operationId: getComponentDefinitionBackMatterResource
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14452,9 +14270,9 @@ paths:
       description: Adds a new resource.
       operationId: postComponentDefinitionBackMatterResource
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14551,19 +14369,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the resource represented by the uuid.
-      description: Returns the resource represented by the uuid.
+      summary: Returns the resource represented by the resource UUID.
+      description: Returns the resource represented by the resource UUID.
       operationId: getComponentDefinitionBackMatterResourceByUuid
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -14628,19 +14446,19 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the resource represented by the uuid.
-      description: Updates the resource represented by the uuid.
+      summary: Replaces the resource represented by the resource UUID.
+      description: Replaces the resource represented by the resource UUID.
       operationId: putComponentDefinitionBackMatterResource
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -14726,19 +14544,19 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the resource represented by the uuid.
-      description: Updates the resource represented by the uuid.
+      summary: Updates a portion of the resource represented by the resource UUID.
+      description: Updates a portion of the resource represented by the resource UUID.
       operationId: patchComponentDefinitionBackMatterResource
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -14831,32 +14649,25 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the resource represented by the uuid.
-      description: Deletes the resource represented by the uuid.
+      summary: Deletes the resource represented by the resource UUID.
+      description: Deletes the resource represented by the resource UUID.
       operationId: deleteComponentDefinitionBackMatterResource
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResource"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResource"
         401:
           description: Unauthorized
           content:
@@ -14914,9 +14725,9 @@ paths:
       description: Returns every relevant attachment.
       operationId: getComponentDefinitionAttachment
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14985,9 +14796,9 @@ paths:
       description: Adds a new attachment.
       operationId: postComponentDefinitionAttachment
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -15084,19 +14895,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the attachment represented by the id.
-      description: Returns the attachment represented by the id.
+      summary: Returns the attachment represented by the attachment ID.
+      description: Returns the attachment represented by the attachment ID.
       operationId: getComponentDefinitionAttachmentById
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -15171,19 +14982,19 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the attachment represented by the id.
-      description: Updates the attachment represented by the id.
+      summary: Replaces the attachment represented by the attachment ID.
+      description: Replaces the attachment represented by the attachment ID.
       operationId: putComponentDefinitionAttachment
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -15269,19 +15080,19 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the attachment represented by the id.
-      description: Deletes the attachment represented by the id.
+      summary: Deletes the attachment represented by the attachment ID.
+      description: Deletes the attachment represented by the attachment ID.
       operationId: deleteComponentDefinitionAttachment
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -15345,9 +15156,9 @@ paths:
       description: Returns every relevant snapshot.
       operationId: getComponentDefinitionSnapshot
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -15416,9 +15227,9 @@ paths:
       description: Creates a snapshot of the file in its current state.
       operationId: postComponentDefinitionSnapshot
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -15515,19 +15326,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the snapshot represented by the id.
-      description: Returns the snapshot represented by the id.
+      summary: Returns the snapshot represented by the snapshot ID.
+      description: Returns the snapshot represented by the snapshot ID.
       operationId: getComponentDefinitionSnapshotById
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -15592,19 +15403,19 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the snapshot represented by the id.
-      description: Updates the snapshot represented by the id.
+      summary: Updates a portion of the snapshot represented by the snapshot ID.
+      description: Updates a portion of the snapshot represented by the snapshot ID.
       operationId: patchComponentDefinitionSnapshot
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -15697,32 +15508,25 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the snapshot represented by the id.
-      description: Deletes the snapshot represented by the id.
+      summary: Deletes the snapshot represented by the snapshot ID.
+      description: Deletes the snapshot represented by the snapshot ID.
       operationId: deleteComponentDefinitionSnapshot
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
         401:
           description: Unauthorized
           content:
@@ -17414,37 +17218,37 @@ components:
     OSCALProfileEntry:
       type: object
       properties:
-        profile:
+        profile-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALCatalogEntry:
       type: object
       properties:
-        catalog:
+        catalog-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALSystemSecurityPlanEntry:
       type: object
       properties:
-        system-security-plan:
+        system-security-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALComponentDefinitionEntry:
       type: object
       properties:
-        component-definition:
+        component-definition-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentPlanEntry:
       type: object
       properties:
-        assessment-plan:
+        assessment-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentResultsEntry:
       type: object
       properties:
-        assessment-results:
+        assessment-results-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALPlanOfActionAndMilestonesEntry:
       type: object
       properties:
-        plan-of-action-and-milestones:
+        plan-of-action-and-milestones-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALProfilesEntries:
       type: object
@@ -17533,6 +17337,18 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshots:
+      type: object
+      properties:
+        resolved-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshot:
+      type: object
+      properties:
+        resolved-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
     OSCALCatalogsSnapshots:
       type: object
       properties:

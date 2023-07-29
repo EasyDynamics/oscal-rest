@@ -238,13 +238,13 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the assessment plan represented by the id.
-      description: Returns the assessment plan represented by the id.
+      summary: Returns the assessment plan represented by the assessment plan ID.
+      description: Returns the assessment plan represented by the assessment plan ID.
       operationId: getAssessmentPlanById
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -309,13 +309,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the assessment plan represented by the id.
-      description: Updates the assessment plan represented by the id.
+      summary: Replaces the assessment plan represented by the assessment plan ID.
+      description: Replaces the assessment plan represented by the assessment plan ID.
       operationId: putAssessmentPlan
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -401,13 +401,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the assessment plan represented by the id.
-      description: Updates the assessment plan represented by the id.
+      summary: Updates a portion of the assessment plan represented by the assessment plan ID.
+      description: Updates a portion of the assessment plan represented by the assessment plan ID.
       operationId: patchAssessmentPlan
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -500,26 +500,19 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the assessment plan represented by the id.
-      description: Deletes the assessment plan represented by the id.
+      summary: Deletes the assessment plan represented by the assessment plan ID.
+      description: Deletes the assessment plan represented by the assessment plan ID.
       operationId: deleteAssessmentPlan
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
         401:
           description: Unauthorized
           content:
@@ -577,9 +570,9 @@ paths:
       description: Returns every relevant attachment.
       operationId: getAssessmentPlanAttachment
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -648,9 +641,9 @@ paths:
       description: Adds a new attachment.
       operationId: postAssessmentPlanAttachment
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -747,19 +740,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the attachment represented by the id.
-      description: Returns the attachment represented by the id.
+      summary: Returns the attachment represented by the attachment ID.
+      description: Returns the attachment represented by the attachment ID.
       operationId: getAssessmentPlanAttachmentById
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -834,19 +827,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the attachment represented by the id.
-      description: Updates the attachment represented by the id.
+      summary: Replaces the attachment represented by the attachment ID.
+      description: Replaces the attachment represented by the attachment ID.
       operationId: putAssessmentPlanAttachment
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -932,19 +925,19 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the attachment represented by the id.
-      description: Deletes the attachment represented by the id.
+      summary: Deletes the attachment represented by the attachment ID.
+      description: Deletes the attachment represented by the attachment ID.
       operationId: deleteAssessmentPlanAttachment
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -1008,9 +1001,9 @@ paths:
       description: Returns every relevant snapshot.
       operationId: getAssessmentPlanSnapshot
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1079,9 +1072,9 @@ paths:
       description: Creates a snapshot of the file in its current state.
       operationId: postAssessmentPlanSnapshot
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1178,19 +1171,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the snapshot represented by the id.
-      description: Returns the snapshot represented by the id.
+      summary: Returns the snapshot represented by the snapshot ID.
+      description: Returns the snapshot represented by the snapshot ID.
       operationId: getAssessmentPlanSnapshotById
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -1255,19 +1248,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the snapshot represented by the id.
-      description: Updates the snapshot represented by the id.
+      summary: Updates a portion of the snapshot represented by the snapshot ID.
+      description: Updates a portion of the snapshot represented by the snapshot ID.
       operationId: patchAssessmentPlanSnapshot
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -1360,32 +1353,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the snapshot represented by the id.
-      description: Deletes the snapshot represented by the id.
+      summary: Deletes the snapshot represented by the snapshot ID.
+      description: Deletes the snapshot represented by the snapshot ID.
       operationId: deleteAssessmentPlanSnapshot
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
         401:
           description: Unauthorized
           content:
@@ -1599,13 +1585,13 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the profile represented by the id.
-      description: Returns the profile represented by the id.
+      summary: Returns the profile represented by the profile ID.
+      description: Returns the profile represented by the profile ID.
       operationId: getProfileById
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1670,13 +1656,13 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the profile represented by the id.
-      description: Updates the profile represented by the id.
+      summary: Replaces the profile represented by the profile ID.
+      description: Replaces the profile represented by the profile ID.
       operationId: putProfile
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1762,13 +1748,13 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the profile represented by the id.
-      description: Updates the profile represented by the id.
+      summary: Updates a portion of the profile represented by the profile ID.
+      description: Updates a portion of the profile represented by the profile ID.
       operationId: patchProfile
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1861,26 +1847,19 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the profile represented by the id.
-      description: Deletes the profile represented by the id.
+      summary: Deletes the profile represented by the profile ID.
+      description: Deletes the profile represented by the profile ID.
       operationId: deleteProfile
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
         401:
           description: Unauthorized
           content:
@@ -1934,13 +1913,13 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the resolved catalog.
-      description: Returns the resolved catalog.
+      summary: Resolves the identified profile based on currently available sources and returns a resolved profile catalog
+      description: Resolves the identified profile based on currently available sources and returns a resolved profile catalog
       operationId: getProfileResolvedCatalogBy
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2005,13 +1984,13 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Uppdates the resolved catalog.
-      description: Uppdates the resolved catalog.
+      summary: Replaces the resolved catalog.
+      description: Replaces the resolved catalog.
       operationId: putProfileResolvedCatalog
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2097,13 +2076,13 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the resolved catalog.
-      description: Updates the resolved catalog.
+      summary: Updates a portion of the resolved catalog.
+      description: Updates a portion of the resolved catalog.
       operationId: patchProfileResolvedCatalog
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2201,9 +2180,9 @@ paths:
       description: Returns every relevant attachment.
       operationId: getProfileAttachment
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2272,9 +2251,9 @@ paths:
       description: Adds a new attachment.
       operationId: postProfileAttachment
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2371,19 +2350,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the attachment represented by the id.
-      description: Returns the attachment represented by the id.
+      summary: Returns the attachment represented by the attachment ID.
+      description: Returns the attachment represented by the attachment ID.
       operationId: getProfileAttachmentById
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -2458,19 +2437,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the attachment represented by the id.
-      description: Updates the attachment represented by the id.
+      summary: Replaces the attachment represented by the attachment ID.
+      description: Replaces the attachment represented by the attachment ID.
       operationId: putProfileAttachment
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -2556,19 +2535,19 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the attachment represented by the id.
-      description: Deletes the attachment represented by the id.
+      summary: Deletes the attachment represented by the attachment ID.
+      description: Deletes the attachment represented by the attachment ID.
       operationId: deleteProfileAttachment
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -2632,9 +2611,9 @@ paths:
       description: Returns every relevant snapshot.
       operationId: getProfileSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2703,9 +2682,9 @@ paths:
       description: Creates a snapshot of the file in its current state.
       operationId: postProfileSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2802,19 +2781,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the snapshot represented by the id.
-      description: Returns the snapshot represented by the id.
+      summary: Returns the snapshot represented by the snapshot ID.
+      description: Returns the snapshot represented by the snapshot ID.
       operationId: getProfileSnapshotById
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -2879,19 +2858,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the snapshot represented by the id.
-      description: Updates the snapshot represented by the id.
+      summary: Updates a portion of the snapshot represented by the snapshot ID.
+      description: Updates a portion of the snapshot represented by the snapshot ID.
       operationId: patchProfileSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -2984,32 +2963,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the snapshot represented by the id.
-      description: Deletes the snapshot represented by the id.
+      summary: Deletes the snapshot represented by the snapshot ID.
+      description: Deletes the snapshot represented by the snapshot ID.
       operationId: deleteProfileSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
         401:
           description: Unauthorized
           content:
@@ -3063,13 +3035,13 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns every relevant resolved snapshot.
-      description: Returns every relevant resolved snapshot.
+      summary: Returns every relevant resolved profile catalog.
+      description: Returns every relevant resolved profile catalog.
       operationId: getProfileResolvedSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3079,10 +3051,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogs"
+                $ref: "#/components/schemas/OSCALCatalogsSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogs"
+                $ref: "#/components/schemas/OSCALCatalogsSnapshots"
         401:
           description: Unauthorized
           content:
@@ -3138,9 +3110,9 @@ paths:
       description: Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog.
       operationId: postProfileResolvedSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3237,19 +3209,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the resolved snapshot represented by the id.
-      description: Returns the resolved snapshot represented by the id.
+      summary: Returns the resolved profile catalog represented by the resolved profile catalog ID.
+      description: Returns the resolved profile catalog represented by the resolved profile catalog ID.
       operationId: getProfileResolvedSnapshotById
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resolvedSnapshotId
+        - name: resolvedSnapshotID
           in: path
-          description: Id of ResolvedSnapshot
+          description: ID of ResolvedSnapshot
           required: true
           schema:
             type: string
@@ -3314,32 +3286,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the resolved snapshot represented by the id.
-      description: Deletes the resolved snapshot represented by the id.
+      summary: Deletes the resolved snapshot represented by the resolved snapshot ID.
+      description: Deletes the resolved snapshot represented by the resolved snapshot ID.
       operationId: deleteProfileResolvedSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resolvedSnapshotId
+        - name: resolvedSnapshotID
           in: path
-          description: Id of ResolvedSnapshot
+          description: ID of ResolvedSnapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
         401:
           description: Unauthorized
           content:
@@ -3553,13 +3518,13 @@ paths:
     get:
       tags:
         - OSCAL Assessment Results
-      summary: Returns the assessment results represented by the id.
-      description: Returns the assessment results represented by the id.
+      summary: Returns the assessment results represented by the assessment results ID.
+      description: Returns the assessment results represented by the assessment results ID.
       operationId: getAssessmentResultsById
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3624,13 +3589,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Results
-      summary: Updates the assessment results represented by the id.
-      description: Updates the assessment results represented by the id.
+      summary: Replaces the assessment results represented by the assessment results ID.
+      description: Replaces the assessment results represented by the assessment results ID.
       operationId: putAssessmentResults
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3716,13 +3681,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Results
-      summary: Updates the assessment results represented by the id.
-      description: Updates the assessment results represented by the id.
+      summary: Updates a portion of the assessment results represented by the assessment results ID.
+      description: Updates a portion of the assessment results represented by the assessment results ID.
       operationId: patchAssessmentResults
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3815,26 +3780,19 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Results
-      summary: Deletes the assessment results represented by the id.
-      description: Deletes the assessment results represented by the id.
+      summary: Deletes the assessment results represented by the assessment results ID.
+      description: Deletes the assessment results represented by the assessment results ID.
       operationId: deleteAssessmentResults
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResults"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResults"
         401:
           description: Unauthorized
           content:
@@ -3892,9 +3850,9 @@ paths:
       description: Returns every relevant attachment.
       operationId: getAssessmentResultsAttachment
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3963,9 +3921,9 @@ paths:
       description: Adds a new attachment.
       operationId: postAssessmentResultsAttachment
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4062,19 +4020,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Results
-      summary: Returns the attachment represented by the id.
-      description: Returns the attachment represented by the id.
+      summary: Returns the attachment represented by the attachment ID.
+      description: Returns the attachment represented by the attachment ID.
       operationId: getAssessmentResultsAttachmentById
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -4149,19 +4107,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Results
-      summary: Updates the attachment represented by the id.
-      description: Updates the attachment represented by the id.
+      summary: Replaces the attachment represented by the attachment ID.
+      description: Replaces the attachment represented by the attachment ID.
       operationId: putAssessmentResultsAttachment
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -4247,19 +4205,19 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Results
-      summary: Deletes the attachment represented by the id.
-      description: Deletes the attachment represented by the id.
+      summary: Deletes the attachment represented by the attachment ID.
+      description: Deletes the attachment represented by the attachment ID.
       operationId: deleteAssessmentResultsAttachment
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -4323,9 +4281,9 @@ paths:
       description: Returns every relevant snapshot.
       operationId: getAssessmentResultsSnapshot
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4394,9 +4352,9 @@ paths:
       description: Creates a snapshot of the file in its current state.
       operationId: postAssessmentResultsSnapshot
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4493,19 +4451,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Results
-      summary: Returns the snapshot represented by the id.
-      description: Returns the snapshot represented by the id.
+      summary: Returns the snapshot represented by the snapshot ID.
+      description: Returns the snapshot represented by the snapshot ID.
       operationId: getAssessmentResultsSnapshotById
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -4570,19 +4528,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Results
-      summary: Updates the snapshot represented by the id.
-      description: Updates the snapshot represented by the id.
+      summary: Updates a portion of the snapshot represented by the snapshot ID.
+      description: Updates a portion of the snapshot represented by the snapshot ID.
       operationId: patchAssessmentResultsSnapshot
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -4675,32 +4633,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Results
-      summary: Deletes the snapshot represented by the id.
-      description: Deletes the snapshot represented by the id.
+      summary: Deletes the snapshot represented by the snapshot ID.
+      description: Deletes the snapshot represented by the snapshot ID.
       operationId: deleteAssessmentResultsSnapshot
       parameters:
-        - name: assessmentResultsId
+        - name: assessmentResultsID
           in: path
-          description: Id of AssessmentResults
+          description: ID of AssessmentResults
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResults"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResults"
         401:
           description: Unauthorized
           content:
@@ -4914,13 +4865,13 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the catalog represented by the id.
-      description: Returns the catalog represented by the id.
+      summary: Returns the catalog represented by the catalog ID.
+      description: Returns the catalog represented by the catalog ID.
       operationId: getCatalogById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4985,13 +4936,13 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the catalog represented by the id.
-      description: Updates the catalog represented by the id.
+      summary: Replaces the catalog represented by the catalog ID.
+      description: Replaces the catalog represented by the catalog ID.
       operationId: putCatalog
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5077,13 +5028,13 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the catalog represented by the id.
-      description: Updates the catalog represented by the id.
+      summary: Updates a portion of the catalog represented by the catalog ID.
+      description: Updates a portion of the catalog represented by the catalog ID.
       operationId: patchCatalog
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5176,26 +5127,19 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the catalog represented by the id.
-      description: Deletes the catalog represented by the id.
+      summary: Deletes the catalog represented by the catalog ID.
+      description: Deletes the catalog represented by the catalog ID.
       operationId: deleteCatalog
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
         401:
           description: Unauthorized
           content:
@@ -5253,9 +5197,9 @@ paths:
       description: Returns every relevant attachment.
       operationId: getCatalogAttachment
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5324,9 +5268,9 @@ paths:
       description: Adds a new attachment.
       operationId: postCatalogAttachment
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5423,19 +5367,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the attachment represented by the id.
-      description: Returns the attachment represented by the id.
+      summary: Returns the attachment represented by the attachment ID.
+      description: Returns the attachment represented by the attachment ID.
       operationId: getCatalogAttachmentById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -5510,19 +5454,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the attachment represented by the id.
-      description: Updates the attachment represented by the id.
+      summary: Replaces the attachment represented by the attachment ID.
+      description: Replaces the attachment represented by the attachment ID.
       operationId: putCatalogAttachment
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -5608,19 +5552,19 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the attachment represented by the id.
-      description: Deletes the attachment represented by the id.
+      summary: Deletes the attachment represented by the attachment ID.
+      description: Deletes the attachment represented by the attachment ID.
       operationId: deleteCatalogAttachment
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -5684,9 +5628,9 @@ paths:
       description: Returns every relevant snapshot.
       operationId: getCatalogSnapshot
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5755,9 +5699,9 @@ paths:
       description: Creates a snapshot of the file in its current state.
       operationId: postCatalogSnapshot
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5854,19 +5798,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the snapshot represented by the id.
-      description: Returns the snapshot represented by the id.
+      summary: Returns the snapshot represented by the snapshot ID.
+      description: Returns the snapshot represented by the snapshot ID.
       operationId: getCatalogSnapshotById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -5931,19 +5875,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the snapshot represented by the id.
-      description: Updates the snapshot represented by the id.
+      summary: Updates a portion of the snapshot represented by the snapshot ID.
+      description: Updates a portion of the snapshot represented by the snapshot ID.
       operationId: patchCatalogSnapshot
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -6036,32 +5980,25 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the snapshot represented by the id.
-      description: Deletes the snapshot represented by the id.
+      summary: Deletes the snapshot represented by the snapshot ID.
+      description: Deletes the snapshot represented by the snapshot ID.
       operationId: deleteCatalogSnapshot
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
         401:
           description: Unauthorized
           content:
@@ -6275,13 +6212,13 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the system security plan represented by the id.
-      description: Returns the system security plan represented by the id.
+      summary: Returns the system security plan represented by the system security plan ID.
+      description: Returns the system security plan represented by the system security plan ID.
       operationId: getSystemSecurityPlanById
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6346,13 +6283,13 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the system security plan represented by the id.
-      description: Updates the system security plan represented by the id.
+      summary: Replaces the system security plan represented by the system security plan ID.
+      description: Replaces the system security plan represented by the system security plan ID.
       operationId: putSystemSecurityPlan
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6438,13 +6375,13 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the system security plan represented by the id.
-      description: Updates the system security plan represented by the id.
+      summary: Updates a portion of the system security plan represented by the system security plan ID.
+      description: Updates a portion of the system security plan represented by the system security plan ID.
       operationId: patchSystemSecurityPlan
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6537,26 +6474,19 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the system security plan represented by the id.
-      description: Deletes the system security plan represented by the id.
+      summary: Deletes the system security plan represented by the system security plan ID.
+      description: Deletes the system security plan represented by the system security plan ID.
       operationId: deleteSystemSecurityPlan
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
         401:
           description: Unauthorized
           content:
@@ -6614,9 +6544,9 @@ paths:
       description: Returns every relevant attachment.
       operationId: getSystemSecurityPlanAttachment
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6685,9 +6615,9 @@ paths:
       description: Adds a new attachment.
       operationId: postSystemSecurityPlanAttachment
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6784,19 +6714,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the attachment represented by the id.
-      description: Returns the attachment represented by the id.
+      summary: Returns the attachment represented by the attachment ID.
+      description: Returns the attachment represented by the attachment ID.
       operationId: getSystemSecurityPlanAttachmentById
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -6871,19 +6801,19 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the attachment represented by the id.
-      description: Updates the attachment represented by the id.
+      summary: Replaces the attachment represented by the attachment ID.
+      description: Replaces the attachment represented by the attachment ID.
       operationId: putSystemSecurityPlanAttachment
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -6969,19 +6899,19 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the attachment represented by the id.
-      description: Deletes the attachment represented by the id.
+      summary: Deletes the attachment represented by the attachment ID.
+      description: Deletes the attachment represented by the attachment ID.
       operationId: deleteSystemSecurityPlanAttachment
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -7045,9 +6975,9 @@ paths:
       description: Returns every relevant snapshot.
       operationId: getSystemSecurityPlanSnapshot
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7116,9 +7046,9 @@ paths:
       description: Creates a snapshot of the file in its current state.
       operationId: postSystemSecurityPlanSnapshot
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7215,19 +7145,19 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the snapshot represented by the id.
-      description: Returns the snapshot represented by the id.
+      summary: Returns the snapshot represented by the snapshot ID.
+      description: Returns the snapshot represented by the snapshot ID.
       operationId: getSystemSecurityPlanSnapshotById
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -7292,19 +7222,19 @@ paths:
     patch:
       tags:
         - OSCAL System Security Plan
-      summary: Updates the snapshot represented by the id.
-      description: Updates the snapshot represented by the id.
+      summary: Updates a portion of the snapshot represented by the snapshot ID.
+      description: Updates a portion of the snapshot represented by the snapshot ID.
       operationId: patchSystemSecurityPlanSnapshot
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -7397,32 +7327,25 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the snapshot represented by the id.
-      description: Deletes the snapshot represented by the id.
+      summary: Deletes the snapshot represented by the snapshot ID.
+      description: Deletes the snapshot represented by the snapshot ID.
       operationId: deleteSystemSecurityPlanSnapshot
       parameters:
-        - name: systemSecurityPlanId
+        - name: systemSecurityPlanID
           in: path
-          description: Id of SystemSecurityPlan
+          description: ID of SystemSecurityPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
         401:
           description: Unauthorized
           content:
@@ -7636,13 +7559,13 @@ paths:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Returns the plan of action and milestones represented by the id.
-      description: Returns the plan of action and milestones represented by the id.
+      summary: Returns the plan of action and milestones represented by the plan of action and milestones ID.
+      description: Returns the plan of action and milestones represented by the plan of action and milestones ID.
       operationId: getPlanOfActionAndMilestonesById
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7707,13 +7630,13 @@ paths:
     put:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Updates the plan of action and milestones represented by the id.
-      description: Updates the plan of action and milestones represented by the id.
+      summary: Replaces the plan of action and milestones represented by the plan of action and milestones ID.
+      description: Replaces the plan of action and milestones represented by the plan of action and milestones ID.
       operationId: putPlanOfActionAndMilestones
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7799,13 +7722,13 @@ paths:
     patch:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Updates the plan of action and milestones represented by the id.
-      description: Updates the plan of action and milestones represented by the id.
+      summary: Updates a portion of the plan of action and milestones represented by the plan of action and milestones ID.
+      description: Updates a portion of the plan of action and milestones represented by the plan of action and milestones ID.
       operationId: patchPlanOfActionAndMilestones
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7898,26 +7821,19 @@ paths:
     delete:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Deletes the plan of action and milestones represented by the id.
-      description: Deletes the plan of action and milestones represented by the id.
+      summary: Deletes the plan of action and milestones represented by the plan of action and milestones ID.
+      description: Deletes the plan of action and milestones represented by the plan of action and milestones ID.
       operationId: deletePlanOfActionAndMilestones
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
         401:
           description: Unauthorized
           content:
@@ -7975,9 +7891,9 @@ paths:
       description: Returns every relevant attachment.
       operationId: getPlanOfActionAndMilestonesAttachment
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8046,9 +7962,9 @@ paths:
       description: Adds a new attachment.
       operationId: postPlanOfActionAndMilestonesAttachment
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8145,19 +8061,19 @@ paths:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Returns the attachment represented by the id.
-      description: Returns the attachment represented by the id.
+      summary: Returns the attachment represented by the attachment ID.
+      description: Returns the attachment represented by the attachment ID.
       operationId: getPlanOfActionAndMilestonesAttachmentById
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -8232,19 +8148,19 @@ paths:
     put:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Updates the attachment represented by the id.
-      description: Updates the attachment represented by the id.
+      summary: Replaces the attachment represented by the attachment ID.
+      description: Replaces the attachment represented by the attachment ID.
       operationId: putPlanOfActionAndMilestonesAttachment
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -8330,19 +8246,19 @@ paths:
     delete:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Deletes the attachment represented by the id.
-      description: Deletes the attachment represented by the id.
+      summary: Deletes the attachment represented by the attachment ID.
+      description: Deletes the attachment represented by the attachment ID.
       operationId: deletePlanOfActionAndMilestonesAttachment
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -8406,9 +8322,9 @@ paths:
       description: Returns every relevant snapshot.
       operationId: getPlanOfActionAndMilestonesSnapshot
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8477,9 +8393,9 @@ paths:
       description: Creates a snapshot of the file in its current state.
       operationId: postPlanOfActionAndMilestonesSnapshot
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8576,19 +8492,19 @@ paths:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Returns the snapshot represented by the id.
-      description: Returns the snapshot represented by the id.
+      summary: Returns the snapshot represented by the snapshot ID.
+      description: Returns the snapshot represented by the snapshot ID.
       operationId: getPlanOfActionAndMilestonesSnapshotById
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -8653,19 +8569,19 @@ paths:
     patch:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Updates the snapshot represented by the id.
-      description: Updates the snapshot represented by the id.
+      summary: Updates a portion of the snapshot represented by the snapshot ID.
+      description: Updates a portion of the snapshot represented by the snapshot ID.
       operationId: patchPlanOfActionAndMilestonesSnapshot
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -8758,32 +8674,25 @@ paths:
     delete:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Deletes the snapshot represented by the id.
-      description: Deletes the snapshot represented by the id.
+      summary: Deletes the snapshot represented by the snapshot ID.
+      description: Deletes the snapshot represented by the snapshot ID.
       operationId: deletePlanOfActionAndMilestonesSnapshot
       parameters:
-        - name: planOfActionAndMilestonesId
+        - name: planOfActionAndMilestonesID
           in: path
-          description: Id of PlanOfActionAndMilestones
+          description: ID of PlanOfActionAndMilestones
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
         401:
           description: Unauthorized
           content:
@@ -8997,13 +8906,13 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the component definition represented by the id.
-      description: Returns the component definition represented by the id.
+      summary: Returns the component definition represented by the component definition ID.
+      description: Returns the component definition represented by the component definition ID.
       operationId: getComponentDefinitionById
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9068,13 +8977,13 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the component definition represented by the id.
-      description: Updates the component definition represented by the id.
+      summary: Replaces the component definition represented by the component definition ID.
+      description: Replaces the component definition represented by the component definition ID.
       operationId: putComponentDefinition
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9160,13 +9069,13 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the component definition represented by the id.
-      description: Updates the component definition represented by the id.
+      summary: Updates a portion of the component definition represented by the component definition ID.
+      description: Updates a portion of the component definition represented by the component definition ID.
       operationId: patchComponentDefinition
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9259,26 +9168,19 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the component definition represented by the id.
-      description: Deletes the component definition represented by the id.
+      summary: Deletes the component definition represented by the component definition ID.
+      description: Deletes the component definition represented by the component definition ID.
       operationId: deleteComponentDefinition
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
         401:
           description: Unauthorized
           content:
@@ -9336,9 +9238,9 @@ paths:
       description: Returns every relevant attachment.
       operationId: getComponentDefinitionAttachment
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9407,9 +9309,9 @@ paths:
       description: Adds a new attachment.
       operationId: postComponentDefinitionAttachment
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9506,19 +9408,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the attachment represented by the id.
-      description: Returns the attachment represented by the id.
+      summary: Returns the attachment represented by the attachment ID.
+      description: Returns the attachment represented by the attachment ID.
       operationId: getComponentDefinitionAttachmentById
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -9593,19 +9495,19 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Updates the attachment represented by the id.
-      description: Updates the attachment represented by the id.
+      summary: Replaces the attachment represented by the attachment ID.
+      description: Replaces the attachment represented by the attachment ID.
       operationId: putComponentDefinitionAttachment
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -9691,19 +9593,19 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the attachment represented by the id.
-      description: Deletes the attachment represented by the id.
+      summary: Deletes the attachment represented by the attachment ID.
+      description: Deletes the attachment represented by the attachment ID.
       operationId: deleteComponentDefinitionAttachment
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -9767,9 +9669,9 @@ paths:
       description: Returns every relevant snapshot.
       operationId: getComponentDefinitionSnapshot
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9838,9 +9740,9 @@ paths:
       description: Creates a snapshot of the file in its current state.
       operationId: postComponentDefinitionSnapshot
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9937,19 +9839,19 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the snapshot represented by the id.
-      description: Returns the snapshot represented by the id.
+      summary: Returns the snapshot represented by the snapshot ID.
+      description: Returns the snapshot represented by the snapshot ID.
       operationId: getComponentDefinitionSnapshotById
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -10014,19 +9916,19 @@ paths:
     patch:
       tags:
         - OSCAL Component Definition
-      summary: Updates the snapshot represented by the id.
-      description: Updates the snapshot represented by the id.
+      summary: Updates a portion of the snapshot represented by the snapshot ID.
+      description: Updates a portion of the snapshot represented by the snapshot ID.
       operationId: patchComponentDefinitionSnapshot
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -10119,32 +10021,25 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the snapshot represented by the id.
-      description: Deletes the snapshot represented by the id.
+      summary: Deletes the snapshot represented by the snapshot ID.
+      description: Deletes the snapshot represented by the snapshot ID.
       operationId: deleteComponentDefinitionSnapshot
       parameters:
-        - name: componentDefinitionId
+        - name: componentDefinitionID
           in: path
-          description: Id of ComponentDefinition
+          description: ID of ComponentDefinition
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
         401:
           description: Unauthorized
           content:
@@ -11836,37 +11731,37 @@ components:
     OSCALProfileEntry:
       type: object
       properties:
-        profile:
+        profile-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALCatalogEntry:
       type: object
       properties:
-        catalog:
+        catalog-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALSystemSecurityPlanEntry:
       type: object
       properties:
-        system-security-plan:
+        system-security-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALComponentDefinitionEntry:
       type: object
       properties:
-        component-definition:
+        component-definition-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentPlanEntry:
       type: object
       properties:
-        assessment-plan:
+        assessment-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentResultsEntry:
       type: object
       properties:
-        assessment-results:
+        assessment-results-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALPlanOfActionAndMilestonesEntry:
       type: object
       properties:
-        plan-of-action-and-milestones:
+        plan-of-action-and-milestones-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALProfilesEntries:
       type: object
@@ -11955,6 +11850,18 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshots:
+      type: object
+      properties:
+        resolved-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshot:
+      type: object
+      properties:
+        resolved-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
     OSCALCatalogsSnapshots:
       type: object
       properties:

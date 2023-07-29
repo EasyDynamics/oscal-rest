@@ -20935,6 +20935,18 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshots:
+      type: object
+      properties:
+        resolved-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshot:
+      type: object
+      properties:
+        resolved-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
     OSCALCatalogsSnapshots:
       type: object
       properties:

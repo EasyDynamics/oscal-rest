@@ -238,13 +238,13 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the assessment plan represented by the id.
-      description: Returns the assessment plan represented by the id.
+      summary: Returns the assessment plan represented by the assessment plan ID.
+      description: Returns the assessment plan represented by the assessment plan ID.
       operationId: getAssessmentPlanById
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -309,13 +309,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the assessment plan represented by the id.
-      description: Updates the assessment plan represented by the id.
+      summary: Replaces the assessment plan represented by the assessment plan ID.
+      description: Replaces the assessment plan represented by the assessment plan ID.
       operationId: putAssessmentPlan
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -401,13 +401,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the assessment plan represented by the id.
-      description: Updates the assessment plan represented by the id.
+      summary: Updates a portion of the assessment plan represented by the assessment plan ID.
+      description: Updates a portion of the assessment plan represented by the assessment plan ID.
       operationId: patchAssessmentPlan
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -500,26 +500,19 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the assessment plan represented by the id.
-      description: Deletes the assessment plan represented by the id.
+      summary: Deletes the assessment plan represented by the assessment plan ID.
+      description: Deletes the assessment plan represented by the assessment plan ID.
       operationId: deleteAssessmentPlan
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
         401:
           description: Unauthorized
           content:
@@ -577,9 +570,9 @@ paths:
       description: Returns the metadata.
       operationId: getAssessmentPlanMetadataBy
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -644,13 +637,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Uppdates the metadata.
-      description: Uppdates the metadata.
+      summary: Replaces the metadata.
+      description: Replaces the metadata.
       operationId: putAssessmentPlanMetadata
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -736,13 +729,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the metadata.
-      description: Updates the metadata.
+      summary: Updates a portion of the metadata.
+      description: Updates a portion of the metadata.
       operationId: patchAssessmentPlanMetadata
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -840,9 +833,9 @@ paths:
       description: Returns every relevant document id.
       operationId: getAssessmentPlanMetadataDocumentId
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -911,9 +904,9 @@ paths:
       description: Adds a new document id.
       operationId: postAssessmentPlanMetadataDocumentId
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1010,19 +1003,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the scheme is available, returns the document id represented by the identifier.
-      description: When the scheme is available, returns the document id represented by the identifier.
+      summary: When the SCHEME is available, returns the document id represented by the identifier.
+      description: When the SCHEME is available, returns the document id represented by the identifier.
       operationId: getAssessmentPlanMetadataDocumentIdByScheme
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1087,19 +1080,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
-      description: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
+      summary: When the SCHEME is available, updates the document id represented by the identifier, and returns the updated document id.
+      description: When the SCHEME is available, updates the document id represented by the identifier, and returns the updated document id.
       operationId: putAssessmentPlanMetadataDocumentId
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1185,19 +1178,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
-      description: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
+      summary: When the SCHEME is available, updates a portion of the document id represented by the identifier, and returns the updated document id.
+      description: When the SCHEME is available, updates a portion of the document id represented by the identifier, and returns the updated document id.
       operationId: patchAssessmentPlanMetadataDocumentId
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1290,32 +1283,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: When the scheme is available, Deletes the document id represented by the identifier.
-      description: When the scheme is available, Deletes the document id represented by the identifier.
+      summary: When the SCHEME is available, Deletes the document id represented by the identifier.
+      description: When the SCHEME is available, Deletes the document id represented by the identifier.
       operationId: deleteAssessmentPlanMetadataDocumentId
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALDocumentId"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALDocumentId"
         401:
           description: Unauthorized
           content:
@@ -1373,9 +1359,9 @@ paths:
       description: Returns every relevant revision.
       operationId: getAssessmentPlanMetadataRevision
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1440,13 +1426,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Uppdates the revision.
-      description: Uppdates the revision.
+      summary: Replaces the revision.
+      description: Replaces the revision.
       operationId: putAssessmentPlanMetadataRevision
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1532,13 +1518,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the revision.
-      description: Updates the revision.
+      summary: Updates a portion of the revision.
+      description: Updates a portion of the revision.
       operationId: patchAssessmentPlanMetadataRevision
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1635,22 +1621,15 @@ paths:
       description: Deletes the revision.
       operationId: deleteAssessmentPlanMetadataRevision
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALRevisions"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALRevisions"
         401:
           description: Unauthorized
           content:
@@ -1708,9 +1687,9 @@ paths:
       description: Returns every relevant link.
       operationId: getAssessmentPlanMetadataLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1779,9 +1758,9 @@ paths:
       description: Adds a new link.
       operationId: postAssessmentPlanMetadataLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1878,19 +1857,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getAssessmentPlanMetadataLinkByHref
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -1955,19 +1934,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putAssessmentPlanMetadataLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -2053,19 +2032,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchAssessmentPlanMetadataLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -2158,32 +2137,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteAssessmentPlanMetadataLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -2241,9 +2213,9 @@ paths:
       description: Returns every relevant location.
       operationId: getAssessmentPlanMetadataLocation
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2312,9 +2284,9 @@ paths:
       description: Adds a new location.
       operationId: postAssessmentPlanMetadataLocation
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2411,19 +2383,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the location represented by the uuid.
-      description: Returns the location represented by the uuid.
+      summary: Returns the location represented by the location UUID.
+      description: Returns the location represented by the location UUID.
       operationId: getAssessmentPlanMetadataLocationByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -2488,19 +2460,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the location represented by the uuid.
-      description: Updates the location represented by the uuid.
+      summary: Replaces the location represented by the location UUID.
+      description: Replaces the location represented by the location UUID.
       operationId: putAssessmentPlanMetadataLocation
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -2586,19 +2558,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the location represented by the uuid.
-      description: Updates the location represented by the uuid.
+      summary: Updates a portion of the location represented by the location UUID.
+      description: Updates a portion of the location represented by the location UUID.
       operationId: patchAssessmentPlanMetadataLocation
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -2691,32 +2663,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the location represented by the uuid.
-      description: Deletes the location represented by the uuid.
+      summary: Deletes the location represented by the location UUID.
+      description: Deletes the location represented by the location UUID.
       operationId: deleteAssessmentPlanMetadataLocation
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLocation"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLocation"
         401:
           description: Unauthorized
           content:
@@ -2774,9 +2739,9 @@ paths:
       description: Returns every relevant party.
       operationId: getAssessmentPlanMetadataParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2845,9 +2810,9 @@ paths:
       description: Adds a new party.
       operationId: postAssessmentPlanMetadataParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2944,19 +2909,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the party represented by the uuid.
-      description: Returns the party represented by the uuid.
+      summary: Returns the party represented by the party UUID.
+      description: Returns the party represented by the party UUID.
       operationId: getAssessmentPlanMetadataPartyByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -3021,19 +2986,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the party represented by the uuid.
-      description: Updates the party represented by the uuid.
+      summary: Replaces the party represented by the party UUID.
+      description: Replaces the party represented by the party UUID.
       operationId: putAssessmentPlanMetadataParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -3119,19 +3084,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the party represented by the uuid.
-      description: Updates the party represented by the uuid.
+      summary: Updates a portion of the party represented by the party UUID.
+      description: Updates a portion of the party represented by the party UUID.
       operationId: patchAssessmentPlanMetadataParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -3224,32 +3189,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the party represented by the uuid.
-      description: Deletes the party represented by the uuid.
+      summary: Deletes the party represented by the party UUID.
+      description: Deletes the party represented by the party UUID.
       operationId: deleteAssessmentPlanMetadataParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALParty"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALParty"
         401:
           description: Unauthorized
           content:
@@ -3307,9 +3265,9 @@ paths:
       description: Returns every relevant responsible party.
       operationId: getAssessmentPlanMetadataResponsibleParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3378,9 +3336,9 @@ paths:
       description: Adds a new responsible party.
       operationId: postAssessmentPlanMetadataResponsibleParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3477,19 +3435,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the responsible party represented by the role-id.
-      description: Returns the responsible party represented by the role-id.
+      summary: Returns the responsible party represented by the responsible party ROLE-ID.
+      description: Returns the responsible party represented by the responsible party ROLE-ID.
       operationId: getAssessmentPlanMetadataResponsiblePartyByRole Id
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -3554,19 +3512,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the responsible party represented by the role-id.
-      description: Updates the responsible party represented by the role-id.
+      summary: Replaces the responsible party represented by the responsible party ROLE-ID.
+      description: Replaces the responsible party represented by the responsible party ROLE-ID.
       operationId: putAssessmentPlanMetadataResponsibleParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -3652,19 +3610,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the responsible party represented by the role-id.
-      description: Updates the responsible party represented by the role-id.
+      summary: Updates a portion of the responsible party represented by the responsible party ROLE-ID.
+      description: Updates a portion of the responsible party represented by the responsible party ROLE-ID.
       operationId: patchAssessmentPlanMetadataResponsibleParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -3757,32 +3715,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the responsible party represented by the role-id.
-      description: Deletes the responsible party represented by the role-id.
+      summary: Deletes the responsible party represented by the responsible party ROLE-ID.
+      description: Deletes the responsible party represented by the responsible party ROLE-ID.
       operationId: deleteAssessmentPlanMetadataResponsibleParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
         401:
           description: Unauthorized
           content:
@@ -3840,9 +3791,9 @@ paths:
       description: Returns the import ssp.
       operationId: getAssessmentPlanImportSspBy
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3907,13 +3858,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Uppdates the import ssp.
-      description: Uppdates the import ssp.
+      summary: Replaces the import ssp.
+      description: Replaces the import ssp.
       operationId: putAssessmentPlanImportSsp
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3999,13 +3950,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the import ssp.
-      description: Updates the import ssp.
+      summary: Updates a portion of the import ssp.
+      description: Updates a portion of the import ssp.
       operationId: patchAssessmentPlanImportSsp
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4103,9 +4054,9 @@ paths:
       description: Returns the local definitions.
       operationId: getAssessmentPlanLocalDefinitionsBy
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4170,13 +4121,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Uppdates the local definitions.
-      description: Uppdates the local definitions.
+      summary: Replaces the local definitions.
+      description: Replaces the local definitions.
       operationId: putAssessmentPlanLocalDefinitions
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4262,13 +4213,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the local definitions.
-      description: Updates the local definitions.
+      summary: Updates a portion of the local definitions.
+      description: Updates a portion of the local definitions.
       operationId: patchAssessmentPlanLocalDefinitions
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4365,22 +4316,15 @@ paths:
       description: Deletes the local definitions.
       operationId: deleteAssessmentPlanLocalDefinitions
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLocalDefinitions"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLocalDefinitions"
         401:
           description: Unauthorized
           content:
@@ -4438,9 +4382,9 @@ paths:
       description: Returns every relevant component.
       operationId: getAssessmentPlanLocalDefinitionsComponent
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4509,9 +4453,9 @@ paths:
       description: Adds a new component.
       operationId: postAssessmentPlanLocalDefinitionsComponent
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4608,19 +4552,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the component represented by the uuid.
-      description: Returns the component represented by the uuid.
+      summary: Returns the component represented by the component UUID.
+      description: Returns the component represented by the component UUID.
       operationId: getAssessmentPlanLocalDefinitionsComponentByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -4685,19 +4629,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the component represented by the uuid.
-      description: Updates the component represented by the uuid.
+      summary: Replaces the component represented by the component UUID.
+      description: Replaces the component represented by the component UUID.
       operationId: putAssessmentPlanLocalDefinitionsComponent
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -4783,19 +4727,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the component represented by the uuid.
-      description: Updates the component represented by the uuid.
+      summary: Updates a portion of the component represented by the component UUID.
+      description: Updates a portion of the component represented by the component UUID.
       operationId: patchAssessmentPlanLocalDefinitionsComponent
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -4888,32 +4832,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the component represented by the uuid.
-      description: Deletes the component represented by the uuid.
+      summary: Deletes the component represented by the component UUID.
+      description: Deletes the component represented by the component UUID.
       operationId: deleteAssessmentPlanLocalDefinitionsComponent
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALComponent"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponent"
         401:
           description: Unauthorized
           content:
@@ -4971,9 +4908,9 @@ paths:
       description: Returns every relevant inventory item.
       operationId: getAssessmentPlanLocalDefinitionsInventoryItem
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5042,9 +4979,9 @@ paths:
       description: Adds a new inventory item.
       operationId: postAssessmentPlanLocalDefinitionsInventoryItem
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5141,19 +5078,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the inventory item represented by the uuid.
-      description: Returns the inventory item represented by the uuid.
+      summary: Returns the inventory item represented by the inventory item UUID.
+      description: Returns the inventory item represented by the inventory item UUID.
       operationId: getAssessmentPlanLocalDefinitionsInventoryItemByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: inventoryItemUuid
+        - name: inventoryItemUUID
           in: path
-          description: Uuid of InventoryItem
+          description: UUID of InventoryItem
           required: true
           schema:
             type: string
@@ -5218,19 +5155,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the inventory item represented by the uuid.
-      description: Updates the inventory item represented by the uuid.
+      summary: Replaces the inventory item represented by the inventory item UUID.
+      description: Replaces the inventory item represented by the inventory item UUID.
       operationId: putAssessmentPlanLocalDefinitionsInventoryItem
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: inventoryItemUuid
+        - name: inventoryItemUUID
           in: path
-          description: Uuid of InventoryItem
+          description: UUID of InventoryItem
           required: true
           schema:
             type: string
@@ -5316,19 +5253,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the inventory item represented by the uuid.
-      description: Updates the inventory item represented by the uuid.
+      summary: Updates a portion of the inventory item represented by the inventory item UUID.
+      description: Updates a portion of the inventory item represented by the inventory item UUID.
       operationId: patchAssessmentPlanLocalDefinitionsInventoryItem
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: inventoryItemUuid
+        - name: inventoryItemUUID
           in: path
-          description: Uuid of InventoryItem
+          description: UUID of InventoryItem
           required: true
           schema:
             type: string
@@ -5421,32 +5358,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the inventory item represented by the uuid.
-      description: Deletes the inventory item represented by the uuid.
+      summary: Deletes the inventory item represented by the inventory item UUID.
+      description: Deletes the inventory item represented by the inventory item UUID.
       operationId: deleteAssessmentPlanLocalDefinitionsInventoryItem
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: inventoryItemUuid
+        - name: inventoryItemUUID
           in: path
-          description: Uuid of InventoryItem
+          description: UUID of InventoryItem
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALInventoryItem"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALInventoryItem"
         401:
           description: Unauthorized
           content:
@@ -5504,9 +5434,9 @@ paths:
       description: Returns every relevant user.
       operationId: getAssessmentPlanLocalDefinitionsUser
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5575,9 +5505,9 @@ paths:
       description: Adds a new user.
       operationId: postAssessmentPlanLocalDefinitionsUser
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5674,19 +5604,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the user represented by the uuid.
-      description: Returns the user represented by the uuid.
+      summary: Returns the user represented by the user UUID.
+      description: Returns the user represented by the user UUID.
       operationId: getAssessmentPlanLocalDefinitionsUserByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: userUuid
+        - name: userUUID
           in: path
-          description: Uuid of User
+          description: UUID of User
           required: true
           schema:
             type: string
@@ -5751,19 +5681,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the user represented by the uuid.
-      description: Updates the user represented by the uuid.
+      summary: Replaces the user represented by the user UUID.
+      description: Replaces the user represented by the user UUID.
       operationId: putAssessmentPlanLocalDefinitionsUser
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: userUuid
+        - name: userUUID
           in: path
-          description: Uuid of User
+          description: UUID of User
           required: true
           schema:
             type: string
@@ -5849,19 +5779,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the user represented by the uuid.
-      description: Updates the user represented by the uuid.
+      summary: Updates a portion of the user represented by the user UUID.
+      description: Updates a portion of the user represented by the user UUID.
       operationId: patchAssessmentPlanLocalDefinitionsUser
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: userUuid
+        - name: userUUID
           in: path
-          description: Uuid of User
+          description: UUID of User
           required: true
           schema:
             type: string
@@ -5954,32 +5884,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the user represented by the uuid.
-      description: Deletes the user represented by the uuid.
+      summary: Deletes the user represented by the user UUID.
+      description: Deletes the user represented by the user UUID.
       operationId: deleteAssessmentPlanLocalDefinitionsUser
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: userUuid
+        - name: userUUID
           in: path
-          description: Uuid of User
+          description: UUID of User
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALUser"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALUser"
         401:
           description: Unauthorized
           content:
@@ -6037,9 +5960,9 @@ paths:
       description: Returns every relevant objectives and methods.
       operationId: getAssessmentPlanLocalDefinitionsObjectivesAndMethods
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6108,9 +6031,9 @@ paths:
       description: Adds a new objectives and methods.
       operationId: postAssessmentPlanLocalDefinitionsObjectivesAndMethods
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6207,19 +6130,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the objectives and methods represented by the control-id.
-      description: Returns the objectives and methods represented by the control-id.
+      summary: Returns the objectives and methods represented by the objectives and methods CONTROL-ID.
+      description: Returns the objectives and methods represented by the objectives and methods CONTROL-ID.
       operationId: getAssessmentPlanLocalDefinitionsObjectivesAndMethodsByControl Id
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: objectivesAndMethodsControlId
+        - name: objectivesAndMethodsCONTROLID
           in: path
-          description: ControlId of ObjectivesAndMethods
+          description: CONTROLID of ObjectivesAndMethods
           required: true
           schema:
             type: string
@@ -6284,19 +6207,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the objectives and methods represented by the control-id.
-      description: Updates the objectives and methods represented by the control-id.
+      summary: Replaces the objectives and methods represented by the objectives and methods CONTROL-ID.
+      description: Replaces the objectives and methods represented by the objectives and methods CONTROL-ID.
       operationId: putAssessmentPlanLocalDefinitionsObjectivesAndMethods
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: objectivesAndMethodsControlId
+        - name: objectivesAndMethodsCONTROLID
           in: path
-          description: ControlId of ObjectivesAndMethods
+          description: CONTROLID of ObjectivesAndMethods
           required: true
           schema:
             type: string
@@ -6382,19 +6305,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the objectives and methods represented by the control-id.
-      description: Updates the objectives and methods represented by the control-id.
+      summary: Updates a portion of the objectives and methods represented by the objectives and methods CONTROL-ID.
+      description: Updates a portion of the objectives and methods represented by the objectives and methods CONTROL-ID.
       operationId: patchAssessmentPlanLocalDefinitionsObjectivesAndMethods
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: objectivesAndMethodsControlId
+        - name: objectivesAndMethodsCONTROLID
           in: path
-          description: ControlId of ObjectivesAndMethods
+          description: CONTROLID of ObjectivesAndMethods
           required: true
           schema:
             type: string
@@ -6487,32 +6410,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the objectives and methods represented by the control-id.
-      description: Deletes the objectives and methods represented by the control-id.
+      summary: Deletes the objectives and methods represented by the objectives and methods CONTROL-ID.
+      description: Deletes the objectives and methods represented by the objectives and methods CONTROL-ID.
       operationId: deleteAssessmentPlanLocalDefinitionsObjectivesAndMethods
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: objectivesAndMethodsControlId
+        - name: objectivesAndMethodsCONTROLID
           in: path
-          description: ControlId of ObjectivesAndMethods
+          description: CONTROLID of ObjectivesAndMethods
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALObjectivesAndMethods"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALObjectivesAndMethods"
         401:
           description: Unauthorized
           content:
@@ -6570,9 +6486,9 @@ paths:
       description: Returns every relevant activity.
       operationId: getAssessmentPlanLocalDefinitionsActivity
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6641,9 +6557,9 @@ paths:
       description: Adds a new activity.
       operationId: postAssessmentPlanLocalDefinitionsActivity
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6740,19 +6656,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, returns the activity represented by the identifier.
-      description: When the uuid is available, returns the activity represented by the identifier.
+      summary: When the UUID is available, returns the activity represented by the identifier.
+      description: When the UUID is available, returns the activity represented by the identifier.
       operationId: getAssessmentPlanLocalDefinitionsActivityByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: activityUuid
+        - name: activityUUID
           in: path
-          description: Uuid of Activity
+          description: UUID of Activity
           required: true
           schema:
             type: string
@@ -6817,19 +6733,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, updates the activity represented by the identifier, and returns the updated activity.
-      description: When the uuid is available, updates the activity represented by the identifier, and returns the updated activity.
+      summary: When the UUID is available, updates the activity represented by the identifier, and returns the updated activity.
+      description: When the UUID is available, updates the activity represented by the identifier, and returns the updated activity.
       operationId: putAssessmentPlanLocalDefinitionsActivity
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: activityUuid
+        - name: activityUUID
           in: path
-          description: Uuid of Activity
+          description: UUID of Activity
           required: true
           schema:
             type: string
@@ -6915,19 +6831,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, updates the activity represented by the identifier, and returns the updated activity.
-      description: When the uuid is available, updates the activity represented by the identifier, and returns the updated activity.
+      summary: When the UUID is available, updates a portion of the activity represented by the identifier, and returns the updated activity.
+      description: When the UUID is available, updates a portion of the activity represented by the identifier, and returns the updated activity.
       operationId: patchAssessmentPlanLocalDefinitionsActivity
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: activityUuid
+        - name: activityUUID
           in: path
-          description: Uuid of Activity
+          description: UUID of Activity
           required: true
           schema:
             type: string
@@ -7020,32 +6936,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, Deletes the activity represented by the identifier.
-      description: When the uuid is available, Deletes the activity represented by the identifier.
+      summary: When the UUID is available, Deletes the activity represented by the identifier.
+      description: When the UUID is available, Deletes the activity represented by the identifier.
       operationId: deleteAssessmentPlanLocalDefinitionsActivity
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: activityUuid
+        - name: activityUUID
           in: path
-          description: Uuid of Activity
+          description: UUID of Activity
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALActivity"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALActivity"
         401:
           description: Unauthorized
           content:
@@ -7103,9 +7012,9 @@ paths:
       description: Returns the terms and conditions.
       operationId: getAssessmentPlanTermsAndConditionsBy
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7170,13 +7079,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Uppdates the terms and conditions.
-      description: Uppdates the terms and conditions.
+      summary: Replaces the terms and conditions.
+      description: Replaces the terms and conditions.
       operationId: putAssessmentPlanTermsAndConditions
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7262,13 +7171,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the terms and conditions.
-      description: Updates the terms and conditions.
+      summary: Updates a portion of the terms and conditions.
+      description: Updates a portion of the terms and conditions.
       operationId: patchAssessmentPlanTermsAndConditions
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7365,22 +7274,15 @@ paths:
       description: Deletes the terms and conditions.
       operationId: deleteAssessmentPlanTermsAndConditions
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALTermsAndConditions"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALTermsAndConditions"
         401:
           description: Unauthorized
           content:
@@ -7438,9 +7340,9 @@ paths:
       description: Returns every relevant part.
       operationId: getAssessmentPlanTermsAndConditionsPart
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7509,9 +7411,9 @@ paths:
       description: Adds a new part.
       operationId: postAssessmentPlanTermsAndConditionsPart
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7608,19 +7510,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, returns the part represented by the identifier.
-      description: When the uuid is available, returns the part represented by the identifier.
+      summary: When the UUID is available, returns the part represented by the identifier.
+      description: When the UUID is available, returns the part represented by the identifier.
       operationId: getAssessmentPlanTermsAndConditionsPartByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partUuid
+        - name: partUUID
           in: path
-          description: Uuid of Part
+          description: UUID of Part
           required: true
           schema:
             type: string
@@ -7685,19 +7587,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, updates the part represented by the identifier, and returns the updated part.
-      description: When the uuid is available, updates the part represented by the identifier, and returns the updated part.
+      summary: When the UUID is available, updates the part represented by the identifier, and returns the updated part.
+      description: When the UUID is available, updates the part represented by the identifier, and returns the updated part.
       operationId: putAssessmentPlanTermsAndConditionsPart
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partUuid
+        - name: partUUID
           in: path
-          description: Uuid of Part
+          description: UUID of Part
           required: true
           schema:
             type: string
@@ -7783,19 +7685,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, updates the part represented by the identifier, and returns the updated part.
-      description: When the uuid is available, updates the part represented by the identifier, and returns the updated part.
+      summary: When the UUID is available, updates a portion of the part represented by the identifier, and returns the updated part.
+      description: When the UUID is available, updates a portion of the part represented by the identifier, and returns the updated part.
       operationId: patchAssessmentPlanTermsAndConditionsPart
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partUuid
+        - name: partUUID
           in: path
-          description: Uuid of Part
+          description: UUID of Part
           required: true
           schema:
             type: string
@@ -7888,32 +7790,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, Deletes the part represented by the identifier.
-      description: When the uuid is available, Deletes the part represented by the identifier.
+      summary: When the UUID is available, Deletes the part represented by the identifier.
+      description: When the UUID is available, Deletes the part represented by the identifier.
       operationId: deleteAssessmentPlanTermsAndConditionsPart
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partUuid
+        - name: partUUID
           in: path
-          description: Uuid of Part
+          description: UUID of Part
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALPart"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALPart"
         401:
           description: Unauthorized
           content:
@@ -7971,9 +7866,9 @@ paths:
       description: Returns the reviewed controls.
       operationId: getAssessmentPlanReviewedControlsBy
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8038,13 +7933,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Uppdates the reviewed controls.
-      description: Uppdates the reviewed controls.
+      summary: Replaces the reviewed controls.
+      description: Replaces the reviewed controls.
       operationId: putAssessmentPlanReviewedControls
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8130,13 +8025,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the reviewed controls.
-      description: Updates the reviewed controls.
+      summary: Updates a portion of the reviewed controls.
+      description: Updates a portion of the reviewed controls.
       operationId: patchAssessmentPlanReviewedControls
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8234,9 +8129,9 @@ paths:
       description: Returns every relevant link.
       operationId: getAssessmentPlanReviewedControlsLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8305,9 +8200,9 @@ paths:
       description: Adds a new link.
       operationId: postAssessmentPlanReviewedControlsLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8404,19 +8299,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getAssessmentPlanReviewedControlsLinkByHref
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -8481,19 +8376,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putAssessmentPlanReviewedControlsLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -8579,19 +8474,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchAssessmentPlanReviewedControlsLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -8684,32 +8579,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteAssessmentPlanReviewedControlsLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -8767,9 +8655,9 @@ paths:
       description: Returns every relevant prop.
       operationId: getAssessmentPlanReviewedControlsProp
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8838,9 +8726,9 @@ paths:
       description: Adds a new prop.
       operationId: postAssessmentPlanReviewedControlsProp
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8937,19 +8825,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getAssessmentPlanReviewedControlsPropByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -9014,19 +8902,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putAssessmentPlanReviewedControlsProp
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -9112,19 +9000,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchAssessmentPlanReviewedControlsProp
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -9217,32 +9105,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteAssessmentPlanReviewedControlsProp
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -9300,9 +9181,9 @@ paths:
       description: Returns every relevant control selection.
       operationId: getAssessmentPlanReviewedControlsControlSelection
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9367,13 +9248,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Uppdates the control selection.
-      description: Uppdates the control selection.
+      summary: Replaces the control selection.
+      description: Replaces the control selection.
       operationId: putAssessmentPlanReviewedControlsControlSelection
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9459,13 +9340,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the control selection.
-      description: Updates the control selection.
+      summary: Updates a portion of the control selection.
+      description: Updates a portion of the control selection.
       operationId: patchAssessmentPlanReviewedControlsControlSelection
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9562,22 +9443,15 @@ paths:
       description: Deletes the control selection. Deletion will not be allowed if there is only one remaining control selection.
       operationId: deleteAssessmentPlanReviewedControlsControlSelection
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALControlSelections"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALControlSelections"
         401:
           description: Unauthorized
           content:
@@ -9635,9 +9509,9 @@ paths:
       description: Returns every relevant control objective selection.
       operationId: getAssessmentPlanReviewedControlsControlObjectiveSelection
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9702,13 +9576,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Uppdates the control objective selection.
-      description: Uppdates the control objective selection.
+      summary: Replaces the control objective selection.
+      description: Replaces the control objective selection.
       operationId: putAssessmentPlanReviewedControlsControlObjectiveSelection
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9794,13 +9668,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the control objective selection.
-      description: Updates the control objective selection.
+      summary: Updates a portion of the control objective selection.
+      description: Updates a portion of the control objective selection.
       operationId: patchAssessmentPlanReviewedControlsControlObjectiveSelection
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -9897,22 +9771,15 @@ paths:
       description: Deletes the control objective selection.
       operationId: deleteAssessmentPlanReviewedControlsControlObjectiveSelection
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALControlObjectiveSelections"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALControlObjectiveSelections"
         401:
           description: Unauthorized
           content:
@@ -9970,9 +9837,9 @@ paths:
       description: Returns every relevant assessment subject.
       operationId: getAssessmentPlanAssessmentSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10037,13 +9904,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Uppdates the assessment subject.
-      description: Uppdates the assessment subject.
+      summary: Replaces the assessment subject.
+      description: Replaces the assessment subject.
       operationId: putAssessmentPlanAssessmentSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10129,13 +9996,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the assessment subject.
-      description: Updates the assessment subject.
+      summary: Updates a portion of the assessment subject.
+      description: Updates a portion of the assessment subject.
       operationId: patchAssessmentPlanAssessmentSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10232,22 +10099,15 @@ paths:
       description: Deletes the assessment subject.
       operationId: deleteAssessmentPlanAssessmentSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentSubjects"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentSubjects"
         401:
           description: Unauthorized
           content:
@@ -10305,9 +10165,9 @@ paths:
       description: Returns every relevant link.
       operationId: getAssessmentPlanLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10376,9 +10236,9 @@ paths:
       description: Adds a new link.
       operationId: postAssessmentPlanLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10475,19 +10335,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getAssessmentPlanLinkByHref
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -10552,19 +10412,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putAssessmentPlanLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -10650,19 +10510,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchAssessmentPlanLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -10755,32 +10615,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteAssessmentPlanLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -10838,9 +10691,9 @@ paths:
       description: Returns every relevant include subject.
       operationId: getAssessmentPlanIncludeSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10909,9 +10762,9 @@ paths:
       description: Adds a new include subject.
       operationId: postAssessmentPlanIncludeSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11008,19 +10861,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the include subject represented by the subject-uuid.
-      description: Returns the include subject represented by the subject-uuid.
+      summary: Returns the include subject represented by the include subject SUBJECT-UUID.
+      description: Returns the include subject represented by the include subject SUBJECT-UUID.
       operationId: getAssessmentPlanIncludeSubjectBySubject Uuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: includeSubjectSubjectUuid
+        - name: includeSubjectSUBJECTUUID
           in: path
-          description: SubjectUuid of IncludeSubject
+          description: SUBJECTUUID of IncludeSubject
           required: true
           schema:
             type: string
@@ -11085,19 +10938,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the include subject represented by the subject-uuid.
-      description: Updates the include subject represented by the subject-uuid.
+      summary: Replaces the include subject represented by the include subject SUBJECT-UUID.
+      description: Replaces the include subject represented by the include subject SUBJECT-UUID.
       operationId: putAssessmentPlanIncludeSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: includeSubjectSubjectUuid
+        - name: includeSubjectSUBJECTUUID
           in: path
-          description: SubjectUuid of IncludeSubject
+          description: SUBJECTUUID of IncludeSubject
           required: true
           schema:
             type: string
@@ -11183,19 +11036,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the include subject represented by the subject-uuid.
-      description: Updates the include subject represented by the subject-uuid.
+      summary: Updates a portion of the include subject represented by the include subject SUBJECT-UUID.
+      description: Updates a portion of the include subject represented by the include subject SUBJECT-UUID.
       operationId: patchAssessmentPlanIncludeSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: includeSubjectSubjectUuid
+        - name: includeSubjectSUBJECTUUID
           in: path
-          description: SubjectUuid of IncludeSubject
+          description: SUBJECTUUID of IncludeSubject
           required: true
           schema:
             type: string
@@ -11288,32 +11141,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the include subject represented by the subject-uuid. Deletion will not be allowed if there is only one remaining include subject.
-      description: Deletes the include subject represented by the subject-uuid. Deletion will not be allowed if there is only one remaining include subject.
+      summary: Deletes the include subject represented by the include subject SUBJECT-UUID. Deletion will not be allowed if there is only one remaining include subject.
+      description: Deletes the include subject represented by the include subject SUBJECT-UUID. Deletion will not be allowed if there is only one remaining include subject.
       operationId: deleteAssessmentPlanIncludeSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: includeSubjectSubjectUuid
+        - name: includeSubjectSUBJECTUUID
           in: path
-          description: SubjectUuid of IncludeSubject
+          description: SUBJECTUUID of IncludeSubject
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeSubject"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeSubject"
         401:
           description: Unauthorized
           content:
@@ -11371,9 +11217,9 @@ paths:
       description: Returns every relevant exclude subject.
       operationId: getAssessmentPlanExcludeSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11442,9 +11288,9 @@ paths:
       description: Adds a new exclude subject.
       operationId: postAssessmentPlanExcludeSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11541,19 +11387,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the exclude subject represented by the subject-uuid.
-      description: Returns the exclude subject represented by the subject-uuid.
+      summary: Returns the exclude subject represented by the exclude subject SUBJECT-UUID.
+      description: Returns the exclude subject represented by the exclude subject SUBJECT-UUID.
       operationId: getAssessmentPlanExcludeSubjectBySubject Uuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: excludeSubjectSubjectUuid
+        - name: excludeSubjectSUBJECTUUID
           in: path
-          description: SubjectUuid of ExcludeSubject
+          description: SUBJECTUUID of ExcludeSubject
           required: true
           schema:
             type: string
@@ -11618,19 +11464,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the exclude subject represented by the subject-uuid.
-      description: Updates the exclude subject represented by the subject-uuid.
+      summary: Replaces the exclude subject represented by the exclude subject SUBJECT-UUID.
+      description: Replaces the exclude subject represented by the exclude subject SUBJECT-UUID.
       operationId: putAssessmentPlanExcludeSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: excludeSubjectSubjectUuid
+        - name: excludeSubjectSUBJECTUUID
           in: path
-          description: SubjectUuid of ExcludeSubject
+          description: SUBJECTUUID of ExcludeSubject
           required: true
           schema:
             type: string
@@ -11716,19 +11562,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the exclude subject represented by the subject-uuid.
-      description: Updates the exclude subject represented by the subject-uuid.
+      summary: Updates a portion of the exclude subject represented by the exclude subject SUBJECT-UUID.
+      description: Updates a portion of the exclude subject represented by the exclude subject SUBJECT-UUID.
       operationId: patchAssessmentPlanExcludeSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: excludeSubjectSubjectUuid
+        - name: excludeSubjectSUBJECTUUID
           in: path
-          description: SubjectUuid of ExcludeSubject
+          description: SUBJECTUUID of ExcludeSubject
           required: true
           schema:
             type: string
@@ -11821,32 +11667,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the exclude subject represented by the subject-uuid.
-      description: Deletes the exclude subject represented by the subject-uuid.
+      summary: Deletes the exclude subject represented by the exclude subject SUBJECT-UUID.
+      description: Deletes the exclude subject represented by the exclude subject SUBJECT-UUID.
       operationId: deleteAssessmentPlanExcludeSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: excludeSubjectSubjectUuid
+        - name: excludeSubjectSUBJECTUUID
           in: path
-          description: SubjectUuid of ExcludeSubject
+          description: SUBJECTUUID of ExcludeSubject
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALExcludeSubject"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALExcludeSubject"
         401:
           description: Unauthorized
           content:
@@ -11904,9 +11743,9 @@ paths:
       description: Returns the assessment assets.
       operationId: getAssessmentPlanAssessmentAssetsBy
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -11971,13 +11810,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Uppdates the assessment assets.
-      description: Uppdates the assessment assets.
+      summary: Replaces the assessment assets.
+      description: Replaces the assessment assets.
       operationId: putAssessmentPlanAssessmentAssets
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12063,13 +11902,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the assessment assets.
-      description: Updates the assessment assets.
+      summary: Updates a portion of the assessment assets.
+      description: Updates a portion of the assessment assets.
       operationId: patchAssessmentPlanAssessmentAssets
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12166,22 +12005,15 @@ paths:
       description: Deletes the assessment assets.
       operationId: deleteAssessmentPlanAssessmentAssets
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentAssets"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentAssets"
         401:
           description: Unauthorized
           content:
@@ -12239,9 +12071,9 @@ paths:
       description: Returns every relevant component.
       operationId: getAssessmentPlanAssessmentAssetsComponent
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12310,9 +12142,9 @@ paths:
       description: Adds a new component.
       operationId: postAssessmentPlanAssessmentAssetsComponent
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12409,19 +12241,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the component represented by the uuid.
-      description: Returns the component represented by the uuid.
+      summary: Returns the component represented by the component UUID.
+      description: Returns the component represented by the component UUID.
       operationId: getAssessmentPlanAssessmentAssetsComponentByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -12486,19 +12318,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the component represented by the uuid.
-      description: Updates the component represented by the uuid.
+      summary: Replaces the component represented by the component UUID.
+      description: Replaces the component represented by the component UUID.
       operationId: putAssessmentPlanAssessmentAssetsComponent
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -12584,19 +12416,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the component represented by the uuid.
-      description: Updates the component represented by the uuid.
+      summary: Updates a portion of the component represented by the component UUID.
+      description: Updates a portion of the component represented by the component UUID.
       operationId: patchAssessmentPlanAssessmentAssetsComponent
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
@@ -12689,32 +12521,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the component represented by the uuid.
-      description: Deletes the component represented by the uuid.
+      summary: Deletes the component represented by the component UUID.
+      description: Deletes the component represented by the component UUID.
       operationId: deleteAssessmentPlanAssessmentAssetsComponent
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: componentUuid
+        - name: componentUUID
           in: path
-          description: Uuid of Component
+          description: UUID of Component
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALComponent"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponent"
         401:
           description: Unauthorized
           content:
@@ -12772,9 +12597,9 @@ paths:
       description: Returns every relevant assessment platform.
       operationId: getAssessmentPlanAssessmentAssetsAssessmentPlatform
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12843,9 +12668,9 @@ paths:
       description: Adds a new assessment platform.
       operationId: postAssessmentPlanAssessmentAssetsAssessmentPlatform
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12942,19 +12767,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the assessment platform represented by the uuid.
-      description: Returns the assessment platform represented by the uuid.
+      summary: Returns the assessment platform represented by the assessment platform UUID.
+      description: Returns the assessment platform represented by the assessment platform UUID.
       operationId: getAssessmentPlanAssessmentAssetsAssessmentPlatformByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: assessmentPlatformUuid
+        - name: assessmentPlatformUUID
           in: path
-          description: Uuid of AssessmentPlatform
+          description: UUID of AssessmentPlatform
           required: true
           schema:
             type: string
@@ -13019,19 +12844,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the assessment platform represented by the uuid.
-      description: Updates the assessment platform represented by the uuid.
+      summary: Replaces the assessment platform represented by the assessment platform UUID.
+      description: Replaces the assessment platform represented by the assessment platform UUID.
       operationId: putAssessmentPlanAssessmentAssetsAssessmentPlatform
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: assessmentPlatformUuid
+        - name: assessmentPlatformUUID
           in: path
-          description: Uuid of AssessmentPlatform
+          description: UUID of AssessmentPlatform
           required: true
           schema:
             type: string
@@ -13117,19 +12942,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the assessment platform represented by the uuid.
-      description: Updates the assessment platform represented by the uuid.
+      summary: Updates a portion of the assessment platform represented by the assessment platform UUID.
+      description: Updates a portion of the assessment platform represented by the assessment platform UUID.
       operationId: patchAssessmentPlanAssessmentAssetsAssessmentPlatform
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: assessmentPlatformUuid
+        - name: assessmentPlatformUUID
           in: path
-          description: Uuid of AssessmentPlatform
+          description: UUID of AssessmentPlatform
           required: true
           schema:
             type: string
@@ -13222,32 +13047,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the assessment platform represented by the uuid. Deletion will not be allowed if there is only one remaining assessment platform.
-      description: Deletes the assessment platform represented by the uuid. Deletion will not be allowed if there is only one remaining assessment platform.
+      summary: Deletes the assessment platform represented by the assessment platform UUID. Deletion will not be allowed if there is only one remaining assessment platform.
+      description: Deletes the assessment platform represented by the assessment platform UUID. Deletion will not be allowed if there is only one remaining assessment platform.
       operationId: deleteAssessmentPlanAssessmentAssetsAssessmentPlatform
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: assessmentPlatformUuid
+        - name: assessmentPlatformUUID
           in: path
-          description: Uuid of AssessmentPlatform
+          description: UUID of AssessmentPlatform
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlatform"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlatform"
         401:
           description: Unauthorized
           content:
@@ -13305,9 +13123,9 @@ paths:
       description: Returns every relevant task.
       operationId: getAssessmentPlanTask
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13376,9 +13194,9 @@ paths:
       description: Adds a new task.
       operationId: postAssessmentPlanTask
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13475,19 +13293,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the task represented by the uuid.
-      description: Returns the task represented by the uuid.
+      summary: Returns the task represented by the task UUID.
+      description: Returns the task represented by the task UUID.
       operationId: getAssessmentPlanTaskByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -13552,19 +13370,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the task represented by the uuid.
-      description: Updates the task represented by the uuid.
+      summary: Replaces the task represented by the task UUID.
+      description: Replaces the task represented by the task UUID.
       operationId: putAssessmentPlanTask
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -13650,19 +13468,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the task represented by the uuid.
-      description: Updates the task represented by the uuid.
+      summary: Updates a portion of the task represented by the task UUID.
+      description: Updates a portion of the task represented by the task UUID.
       operationId: patchAssessmentPlanTask
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -13755,32 +13573,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the task represented by the uuid.
-      description: Deletes the task represented by the uuid.
+      summary: Deletes the task represented by the task UUID.
+      description: Deletes the task represented by the task UUID.
       operationId: deleteAssessmentPlanTask
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALTask"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALTask"
         401:
           description: Unauthorized
           content:
@@ -13838,15 +13649,15 @@ paths:
       description: Returns every relevant link.
       operationId: getAssessmentPlanTaskLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -13915,15 +13726,15 @@ paths:
       description: Adds a new link.
       operationId: postAssessmentPlanTaskLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -14020,25 +13831,25 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getAssessmentPlanTaskLinkByHref
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -14103,25 +13914,25 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putAssessmentPlanTaskLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -14207,25 +14018,25 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchAssessmentPlanTaskLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -14318,38 +14129,31 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteAssessmentPlanTaskLink
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -14407,15 +14211,15 @@ paths:
       description: Returns every relevant prop.
       operationId: getAssessmentPlanTaskProp
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -14484,15 +14288,15 @@ paths:
       description: Adds a new prop.
       operationId: postAssessmentPlanTaskProp
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -14589,25 +14393,25 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getAssessmentPlanTaskPropByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -14672,25 +14476,25 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putAssessmentPlanTaskProp
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -14776,25 +14580,25 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchAssessmentPlanTaskProp
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -14887,38 +14691,31 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteAssessmentPlanTaskProp
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -14976,15 +14773,15 @@ paths:
       description: Returns every relevant dependency.
       operationId: getAssessmentPlanTaskDependency
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -15053,15 +14850,15 @@ paths:
       description: Adds a new dependency.
       operationId: postAssessmentPlanTaskDependency
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -15158,25 +14955,25 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the dependency represented by the task-uuid.
-      description: Returns the dependency represented by the task-uuid.
+      summary: Returns the dependency represented by the dependency TASK-UUID.
+      description: Returns the dependency represented by the dependency TASK-UUID.
       operationId: getAssessmentPlanTaskDependencyByTask Uuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: dependencyTaskUuid
+        - name: dependencyTASKUUID
           in: path
-          description: TaskUuid of Dependency
+          description: TASKUUID of Dependency
           required: true
           schema:
             type: string
@@ -15241,25 +15038,25 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the dependency represented by the task-uuid.
-      description: Updates the dependency represented by the task-uuid.
+      summary: Replaces the dependency represented by the dependency TASK-UUID.
+      description: Replaces the dependency represented by the dependency TASK-UUID.
       operationId: putAssessmentPlanTaskDependency
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: dependencyTaskUuid
+        - name: dependencyTASKUUID
           in: path
-          description: TaskUuid of Dependency
+          description: TASKUUID of Dependency
           required: true
           schema:
             type: string
@@ -15345,25 +15142,25 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the dependency represented by the task-uuid.
-      description: Updates the dependency represented by the task-uuid.
+      summary: Updates a portion of the dependency represented by the dependency TASK-UUID.
+      description: Updates a portion of the dependency represented by the dependency TASK-UUID.
       operationId: patchAssessmentPlanTaskDependency
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: dependencyTaskUuid
+        - name: dependencyTASKUUID
           in: path
-          description: TaskUuid of Dependency
+          description: TASKUUID of Dependency
           required: true
           schema:
             type: string
@@ -15456,38 +15253,31 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the dependency represented by the task-uuid.
-      description: Deletes the dependency represented by the task-uuid.
+      summary: Deletes the dependency represented by the dependency TASK-UUID.
+      description: Deletes the dependency represented by the dependency TASK-UUID.
       operationId: deleteAssessmentPlanTaskDependency
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: dependencyTaskUuid
+        - name: dependencyTASKUUID
           in: path
-          description: TaskUuid of Dependency
+          description: TASKUUID of Dependency
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALDependency"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALDependency"
         401:
           description: Unauthorized
           content:
@@ -15545,15 +15335,15 @@ paths:
       description: Returns every relevant task.
       operationId: getAssessmentPlanTaskSubtask
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -15622,15 +15412,15 @@ paths:
       description: Adds a new task.
       operationId: postAssessmentPlanTaskSubtask
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -15727,25 +15517,25 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the task represented by the uuid.
-      description: Returns the task represented by the uuid.
+      summary: Returns the task represented by the task UUID.
+      description: Returns the task represented by the task UUID.
       operationId: getAssessmentPlanTaskSubtaskByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: subtaskUuid
+        - name: subtaskUUID
           in: path
-          description: Uuid of Subtask
+          description: UUID of Subtask
           required: true
           schema:
             type: string
@@ -15810,25 +15600,25 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the task represented by the uuid.
-      description: Updates the task represented by the uuid.
+      summary: Replaces the task represented by the task UUID.
+      description: Replaces the task represented by the task UUID.
       operationId: putAssessmentPlanTaskSubtask
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: subtaskUuid
+        - name: subtaskUUID
           in: path
-          description: Uuid of Subtask
+          description: UUID of Subtask
           required: true
           schema:
             type: string
@@ -15914,25 +15704,25 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the task represented by the uuid.
-      description: Updates the task represented by the uuid.
+      summary: Updates a portion of the task represented by the task UUID.
+      description: Updates a portion of the task represented by the task UUID.
       operationId: patchAssessmentPlanTaskSubtask
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: subtaskUuid
+        - name: subtaskUUID
           in: path
-          description: Uuid of Subtask
+          description: UUID of Subtask
           required: true
           schema:
             type: string
@@ -16025,38 +15815,31 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the task represented by the uuid.
-      description: Deletes the task represented by the uuid.
+      summary: Deletes the task represented by the task UUID.
+      description: Deletes the task represented by the task UUID.
       operationId: deleteAssessmentPlanTaskSubtask
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: subtaskUuid
+        - name: subtaskUUID
           in: path
-          description: Uuid of Subtask
+          description: UUID of Subtask
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALTask"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALTask"
         401:
           description: Unauthorized
           content:
@@ -16114,15 +15897,15 @@ paths:
       description: Returns every relevant associated activity.
       operationId: getAssessmentPlanTaskAssociatedActivity
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -16191,15 +15974,15 @@ paths:
       description: Adds a new associated activity.
       operationId: postAssessmentPlanTaskAssociatedActivity
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -16296,25 +16079,25 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the associated activity represented by the activity-uuid.
-      description: Returns the associated activity represented by the activity-uuid.
+      summary: Returns the associated activity represented by the associated activity ACTIVITY-UUID.
+      description: Returns the associated activity represented by the associated activity ACTIVITY-UUID.
       operationId: getAssessmentPlanTaskAssociatedActivityByActivity Uuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: associatedActivityActivityUuid
+        - name: associatedActivityACTIVITYUUID
           in: path
-          description: ActivityUuid of AssociatedActivity
+          description: ACTIVITYUUID of AssociatedActivity
           required: true
           schema:
             type: string
@@ -16379,25 +16162,25 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the associated activity represented by the activity-uuid.
-      description: Updates the associated activity represented by the activity-uuid.
+      summary: Replaces the associated activity represented by the associated activity ACTIVITY-UUID.
+      description: Replaces the associated activity represented by the associated activity ACTIVITY-UUID.
       operationId: putAssessmentPlanTaskAssociatedActivity
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: associatedActivityActivityUuid
+        - name: associatedActivityACTIVITYUUID
           in: path
-          description: ActivityUuid of AssociatedActivity
+          description: ACTIVITYUUID of AssociatedActivity
           required: true
           schema:
             type: string
@@ -16483,25 +16266,25 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the associated activity represented by the activity-uuid.
-      description: Updates the associated activity represented by the activity-uuid.
+      summary: Updates a portion of the associated activity represented by the associated activity ACTIVITY-UUID.
+      description: Updates a portion of the associated activity represented by the associated activity ACTIVITY-UUID.
       operationId: patchAssessmentPlanTaskAssociatedActivity
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: associatedActivityActivityUuid
+        - name: associatedActivityACTIVITYUUID
           in: path
-          description: ActivityUuid of AssociatedActivity
+          description: ACTIVITYUUID of AssociatedActivity
           required: true
           schema:
             type: string
@@ -16594,38 +16377,31 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the associated activity represented by the activity-uuid.
-      description: Deletes the associated activity represented by the activity-uuid.
+      summary: Deletes the associated activity represented by the associated activity ACTIVITY-UUID.
+      description: Deletes the associated activity represented by the associated activity ACTIVITY-UUID.
       operationId: deleteAssessmentPlanTaskAssociatedActivity
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: associatedActivityActivityUuid
+        - name: associatedActivityACTIVITYUUID
           in: path
-          description: ActivityUuid of AssociatedActivity
+          description: ACTIVITYUUID of AssociatedActivity
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssociatedActivity"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssociatedActivity"
         401:
           description: Unauthorized
           content:
@@ -16683,15 +16459,15 @@ paths:
       description: Returns every relevant subject.
       operationId: getAssessmentPlanTaskSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -16756,19 +16532,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Uppdates the subject.
-      description: Uppdates the subject.
+      summary: Replaces the subject.
+      description: Replaces the subject.
       operationId: putAssessmentPlanTaskSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -16854,19 +16630,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the subject.
-      description: Updates the subject.
+      summary: Updates a portion of the subject.
+      description: Updates a portion of the subject.
       operationId: patchAssessmentPlanTaskSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -16963,28 +16739,21 @@ paths:
       description: Deletes the subject.
       operationId: deleteAssessmentPlanTaskSubject
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALSubjects"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSubjects"
         401:
           description: Unauthorized
           content:
@@ -17042,15 +16811,15 @@ paths:
       description: Returns every relevant responsible party.
       operationId: getAssessmentPlanTaskResponsibleParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -17119,15 +16888,15 @@ paths:
       description: Adds a new responsible party.
       operationId: postAssessmentPlanTaskResponsibleParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
@@ -17224,25 +16993,25 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the role-id is available, returns the responsible party represented by the identifier.
-      description: When the role-id is available, returns the responsible party represented by the identifier.
+      summary: When the ROLE-ID is available, returns the responsible party represented by the identifier.
+      description: When the ROLE-ID is available, returns the responsible party represented by the identifier.
       operationId: getAssessmentPlanTaskResponsiblePartyByRole Id
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -17307,25 +17076,25 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: When the role-id is available, updates the responsible party represented by the identifier, and returns the updated responsible party.
-      description: When the role-id is available, updates the responsible party represented by the identifier, and returns the updated responsible party.
+      summary: When the ROLE-ID is available, updates the responsible party represented by the identifier, and returns the updated responsible party.
+      description: When the ROLE-ID is available, updates the responsible party represented by the identifier, and returns the updated responsible party.
       operationId: putAssessmentPlanTaskResponsibleParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -17411,25 +17180,25 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: When the role-id is available, updates the responsible party represented by the identifier, and returns the updated responsible party.
-      description: When the role-id is available, updates the responsible party represented by the identifier, and returns the updated responsible party.
+      summary: When the ROLE-ID is available, updates a portion of the responsible party represented by the identifier, and returns the updated responsible party.
+      description: When the ROLE-ID is available, updates a portion of the responsible party represented by the identifier, and returns the updated responsible party.
       operationId: patchAssessmentPlanTaskResponsibleParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -17522,38 +17291,31 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: When the role-id is available, Deletes the responsible party represented by the identifier.
-      description: When the role-id is available, Deletes the responsible party represented by the identifier.
+      summary: When the ROLE-ID is available, Deletes the responsible party represented by the identifier.
+      description: When the ROLE-ID is available, Deletes the responsible party represented by the identifier.
       operationId: deleteAssessmentPlanTaskResponsibleParty
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: taskUuid
+        - name: taskUUID
           in: path
-          description: Uuid of Task
+          description: UUID of Task
           required: true
           schema:
             type: string
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
         401:
           description: Unauthorized
           content:
@@ -17611,9 +17373,9 @@ paths:
       description: Returns the back matter.
       operationId: getAssessmentPlanBackMatterBy
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -17678,13 +17440,13 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Uppdates the back matter.
-      description: Uppdates the back matter.
+      summary: Replaces the back matter.
+      description: Replaces the back matter.
       operationId: putAssessmentPlanBackMatter
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -17770,13 +17532,13 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the back matter.
-      description: Updates the back matter.
+      summary: Updates a portion of the back matter.
+      description: Updates a portion of the back matter.
       operationId: patchAssessmentPlanBackMatter
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -17873,22 +17635,15 @@ paths:
       description: Deletes the back matter.
       operationId: deleteAssessmentPlanBackMatter
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALBackMatter"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALBackMatter"
         401:
           description: Unauthorized
           content:
@@ -17946,9 +17701,9 @@ paths:
       description: Returns every relevant resource.
       operationId: getAssessmentPlanBackMatterResource
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18017,9 +17772,9 @@ paths:
       description: Adds a new resource.
       operationId: postAssessmentPlanBackMatterResource
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18116,19 +17871,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the resource represented by the uuid.
-      description: Returns the resource represented by the uuid.
+      summary: Returns the resource represented by the resource UUID.
+      description: Returns the resource represented by the resource UUID.
       operationId: getAssessmentPlanBackMatterResourceByUuid
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -18193,19 +17948,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the resource represented by the uuid.
-      description: Updates the resource represented by the uuid.
+      summary: Replaces the resource represented by the resource UUID.
+      description: Replaces the resource represented by the resource UUID.
       operationId: putAssessmentPlanBackMatterResource
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -18291,19 +18046,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the resource represented by the uuid.
-      description: Updates the resource represented by the uuid.
+      summary: Updates a portion of the resource represented by the resource UUID.
+      description: Updates a portion of the resource represented by the resource UUID.
       operationId: patchAssessmentPlanBackMatterResource
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -18396,32 +18151,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the resource represented by the uuid.
-      description: Deletes the resource represented by the uuid.
+      summary: Deletes the resource represented by the resource UUID.
+      description: Deletes the resource represented by the resource UUID.
       operationId: deleteAssessmentPlanBackMatterResource
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResource"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResource"
         401:
           description: Unauthorized
           content:
@@ -18479,9 +18227,9 @@ paths:
       description: Returns every relevant attachment.
       operationId: getAssessmentPlanAttachment
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18550,9 +18298,9 @@ paths:
       description: Adds a new attachment.
       operationId: postAssessmentPlanAttachment
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18649,19 +18397,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the attachment represented by the id.
-      description: Returns the attachment represented by the id.
+      summary: Returns the attachment represented by the attachment ID.
+      description: Returns the attachment represented by the attachment ID.
       operationId: getAssessmentPlanAttachmentById
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -18736,19 +18484,19 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the attachment represented by the id.
-      description: Updates the attachment represented by the id.
+      summary: Replaces the attachment represented by the attachment ID.
+      description: Replaces the attachment represented by the attachment ID.
       operationId: putAssessmentPlanAttachment
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -18834,19 +18582,19 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the attachment represented by the id.
-      description: Deletes the attachment represented by the id.
+      summary: Deletes the attachment represented by the attachment ID.
+      description: Deletes the attachment represented by the attachment ID.
       operationId: deleteAssessmentPlanAttachment
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -18910,9 +18658,9 @@ paths:
       description: Returns every relevant snapshot.
       operationId: getAssessmentPlanSnapshot
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -18981,9 +18729,9 @@ paths:
       description: Creates a snapshot of the file in its current state.
       operationId: postAssessmentPlanSnapshot
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -19080,19 +18828,19 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the snapshot represented by the id.
-      description: Returns the snapshot represented by the id.
+      summary: Returns the snapshot represented by the snapshot ID.
+      description: Returns the snapshot represented by the snapshot ID.
       operationId: getAssessmentPlanSnapshotById
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -19157,19 +18905,19 @@ paths:
     patch:
       tags:
         - OSCAL Assessment Plan
-      summary: Updates the snapshot represented by the id.
-      description: Updates the snapshot represented by the id.
+      summary: Updates a portion of the snapshot represented by the snapshot ID.
+      description: Updates a portion of the snapshot represented by the snapshot ID.
       operationId: patchAssessmentPlanSnapshot
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -19262,32 +19010,25 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the snapshot represented by the id.
-      description: Deletes the snapshot represented by the id.
+      summary: Deletes the snapshot represented by the snapshot ID.
+      description: Deletes the snapshot represented by the snapshot ID.
       operationId: deleteAssessmentPlanSnapshot
       parameters:
-        - name: assessmentPlanId
+        - name: assessmentPlanID
           in: path
-          description: Id of AssessmentPlan
+          description: ID of AssessmentPlan
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
         401:
           description: Unauthorized
           content:
@@ -20979,37 +20720,37 @@ components:
     OSCALProfileEntry:
       type: object
       properties:
-        profile:
+        profile-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALCatalogEntry:
       type: object
       properties:
-        catalog:
+        catalog-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALSystemSecurityPlanEntry:
       type: object
       properties:
-        system-security-plan:
+        system-security-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALComponentDefinitionEntry:
       type: object
       properties:
-        component-definition:
+        component-definition-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentPlanEntry:
       type: object
       properties:
-        assessment-plan:
+        assessment-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentResultsEntry:
       type: object
       properties:
-        assessment-results:
+        assessment-results-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALPlanOfActionAndMilestonesEntry:
       type: object
       properties:
-        plan-of-action-and-milestones:
+        plan-of-action-and-milestones-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALProfilesEntries:
       type: object
@@ -21098,6 +20839,18 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshots:
+      type: object
+      properties:
+        resolved-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshot:
+      type: object
+      properties:
+        resolved-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
     OSCALCatalogsSnapshots:
       type: object
       properties:

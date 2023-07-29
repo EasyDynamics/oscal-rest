@@ -238,13 +238,13 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the profile represented by the id.
-      description: Returns the profile represented by the id.
+      summary: Returns the profile represented by the profile ID.
+      description: Returns the profile represented by the profile ID.
       operationId: getProfileById
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -309,13 +309,13 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the profile represented by the id.
-      description: Updates the profile represented by the id.
+      summary: Replaces the profile represented by the profile ID.
+      description: Replaces the profile represented by the profile ID.
       operationId: putProfile
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -401,13 +401,13 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the profile represented by the id.
-      description: Updates the profile represented by the id.
+      summary: Updates a portion of the profile represented by the profile ID.
+      description: Updates a portion of the profile represented by the profile ID.
       operationId: patchProfile
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -500,26 +500,19 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the profile represented by the id.
-      description: Deletes the profile represented by the id.
+      summary: Deletes the profile represented by the profile ID.
+      description: Deletes the profile represented by the profile ID.
       operationId: deleteProfile
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
         401:
           description: Unauthorized
           content:
@@ -577,9 +570,9 @@ paths:
       description: Returns the metadata.
       operationId: getProfileMetadataBy
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -644,13 +637,13 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Uppdates the metadata.
-      description: Uppdates the metadata.
+      summary: Replaces the metadata.
+      description: Replaces the metadata.
       operationId: putProfileMetadata
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -736,13 +729,13 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the metadata.
-      description: Updates the metadata.
+      summary: Updates a portion of the metadata.
+      description: Updates a portion of the metadata.
       operationId: patchProfileMetadata
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -840,9 +833,9 @@ paths:
       description: Returns every relevant revision.
       operationId: getProfileMetadataRevision
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -907,13 +900,13 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Uppdates the revision.
-      description: Uppdates the revision.
+      summary: Replaces the revision.
+      description: Replaces the revision.
       operationId: putProfileMetadataRevision
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -999,13 +992,13 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the revision.
-      description: Updates the revision.
+      summary: Updates a portion of the revision.
+      description: Updates a portion of the revision.
       operationId: patchProfileMetadataRevision
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1102,22 +1095,15 @@ paths:
       description: Deletes the revision.
       operationId: deleteProfileMetadataRevision
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALRevisions"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALRevisions"
         401:
           description: Unauthorized
           content:
@@ -1175,9 +1161,9 @@ paths:
       description: Returns every relevant document id.
       operationId: getProfileMetadataDocumentId
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1246,9 +1232,9 @@ paths:
       description: Adds a new document id.
       operationId: postProfileMetadataDocumentId
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1345,19 +1331,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: When the scheme is available, returns the document id represented by the identifier.
-      description: When the scheme is available, returns the document id represented by the identifier.
+      summary: When the SCHEME is available, returns the document id represented by the identifier.
+      description: When the SCHEME is available, returns the document id represented by the identifier.
       operationId: getProfileMetadataDocumentIdByScheme
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1422,19 +1408,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
-      description: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
+      summary: When the SCHEME is available, updates the document id represented by the identifier, and returns the updated document id.
+      description: When the SCHEME is available, updates the document id represented by the identifier, and returns the updated document id.
       operationId: putProfileMetadataDocumentId
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1520,19 +1506,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
-      description: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
+      summary: When the SCHEME is available, updates a portion of the document id represented by the identifier, and returns the updated document id.
+      description: When the SCHEME is available, updates a portion of the document id represented by the identifier, and returns the updated document id.
       operationId: patchProfileMetadataDocumentId
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1625,32 +1611,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: When the scheme is available, Deletes the document id represented by the identifier.
-      description: When the scheme is available, Deletes the document id represented by the identifier.
+      summary: When the SCHEME is available, Deletes the document id represented by the identifier.
+      description: When the SCHEME is available, Deletes the document id represented by the identifier.
       operationId: deleteProfileMetadataDocumentId
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALDocumentId"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALDocumentId"
         401:
           description: Unauthorized
           content:
@@ -1708,9 +1687,9 @@ paths:
       description: Returns every relevant link.
       operationId: getProfileMetadataLink
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1779,9 +1758,9 @@ paths:
       description: Adds a new link.
       operationId: postProfileMetadataLink
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1878,19 +1857,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getProfileMetadataLinkByHref
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -1955,19 +1934,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putProfileMetadataLink
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -2053,19 +2032,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchProfileMetadataLink
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -2158,32 +2137,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteProfileMetadataLink
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -2241,9 +2213,9 @@ paths:
       description: Returns every relevant prop.
       operationId: getProfileMetadataProp
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2312,9 +2284,9 @@ paths:
       description: Adds a new prop.
       operationId: postProfileMetadataProp
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2411,19 +2383,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getProfileMetadataPropByUuid
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -2488,19 +2460,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putProfileMetadataProp
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -2586,19 +2558,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchProfileMetadataProp
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -2691,32 +2663,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteProfileMetadataProp
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -2774,9 +2739,9 @@ paths:
       description: Returns every relevant role.
       operationId: getProfileMetadataRole
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2845,9 +2810,9 @@ paths:
       description: Adds a new role.
       operationId: postProfileMetadataRole
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2944,19 +2909,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the role represented by the id.
-      description: Returns the role represented by the id.
+      summary: Returns the role represented by the role ID.
+      description: Returns the role represented by the role ID.
       operationId: getProfileMetadataRoleById
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: roleId
+        - name: roleID
           in: path
-          description: Id of Role
+          description: ID of Role
           required: true
           schema:
             type: string
@@ -3021,19 +2986,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the role represented by the id.
-      description: Updates the role represented by the id.
+      summary: Replaces the role represented by the role ID.
+      description: Replaces the role represented by the role ID.
       operationId: putProfileMetadataRole
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: roleId
+        - name: roleID
           in: path
-          description: Id of Role
+          description: ID of Role
           required: true
           schema:
             type: string
@@ -3119,19 +3084,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the role represented by the id.
-      description: Updates the role represented by the id.
+      summary: Updates a portion of the role represented by the role ID.
+      description: Updates a portion of the role represented by the role ID.
       operationId: patchProfileMetadataRole
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: roleId
+        - name: roleID
           in: path
-          description: Id of Role
+          description: ID of Role
           required: true
           schema:
             type: string
@@ -3224,32 +3189,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the role represented by the id.
-      description: Deletes the role represented by the id.
+      summary: Deletes the role represented by the role ID.
+      description: Deletes the role represented by the role ID.
       operationId: deleteProfileMetadataRole
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: roleId
+        - name: roleID
           in: path
-          description: Id of Role
+          description: ID of Role
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALRole"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALRole"
         401:
           description: Unauthorized
           content:
@@ -3307,9 +3265,9 @@ paths:
       description: Returns every relevant location.
       operationId: getProfileMetadataLocation
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3378,9 +3336,9 @@ paths:
       description: Adds a new location.
       operationId: postProfileMetadataLocation
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3477,19 +3435,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the location represented by the uuid.
-      description: Returns the location represented by the uuid.
+      summary: Returns the location represented by the location UUID.
+      description: Returns the location represented by the location UUID.
       operationId: getProfileMetadataLocationByUuid
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -3554,19 +3512,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the location represented by the uuid.
-      description: Updates the location represented by the uuid.
+      summary: Replaces the location represented by the location UUID.
+      description: Replaces the location represented by the location UUID.
       operationId: putProfileMetadataLocation
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -3652,19 +3610,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the location represented by the uuid.
-      description: Updates the location represented by the uuid.
+      summary: Updates a portion of the location represented by the location UUID.
+      description: Updates a portion of the location represented by the location UUID.
       operationId: patchProfileMetadataLocation
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -3757,32 +3715,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the location represented by the uuid.
-      description: Deletes the location represented by the uuid.
+      summary: Deletes the location represented by the location UUID.
+      description: Deletes the location represented by the location UUID.
       operationId: deleteProfileMetadataLocation
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLocation"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLocation"
         401:
           description: Unauthorized
           content:
@@ -3840,9 +3791,9 @@ paths:
       description: Returns every relevant party.
       operationId: getProfileMetadataParty
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3911,9 +3862,9 @@ paths:
       description: Adds a new party.
       operationId: postProfileMetadataParty
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4010,19 +3961,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the party represented by the uuid.
-      description: Returns the party represented by the uuid.
+      summary: Returns the party represented by the party UUID.
+      description: Returns the party represented by the party UUID.
       operationId: getProfileMetadataPartyByUuid
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -4087,19 +4038,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the party represented by the uuid.
-      description: Updates the party represented by the uuid.
+      summary: Replaces the party represented by the party UUID.
+      description: Replaces the party represented by the party UUID.
       operationId: putProfileMetadataParty
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -4185,19 +4136,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the party represented by the uuid.
-      description: Updates the party represented by the uuid.
+      summary: Updates a portion of the party represented by the party UUID.
+      description: Updates a portion of the party represented by the party UUID.
       operationId: patchProfileMetadataParty
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -4290,32 +4241,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the party represented by the uuid.
-      description: Deletes the party represented by the uuid.
+      summary: Deletes the party represented by the party UUID.
+      description: Deletes the party represented by the party UUID.
       operationId: deleteProfileMetadataParty
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALParty"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALParty"
         401:
           description: Unauthorized
           content:
@@ -4373,9 +4317,9 @@ paths:
       description: Returns every relevant responsible party.
       operationId: getProfileMetadataResponsibleParty
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4444,9 +4388,9 @@ paths:
       description: Adds a new responsible party.
       operationId: postProfileMetadataResponsibleParty
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4543,19 +4487,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the responsible party represented by the role-id.
-      description: Returns the responsible party represented by the role-id.
+      summary: Returns the responsible party represented by the responsible party ROLE-ID.
+      description: Returns the responsible party represented by the responsible party ROLE-ID.
       operationId: getProfileMetadataResponsiblePartyByRole Id
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4620,19 +4564,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the responsible party represented by the role-id.
-      description: Updates the responsible party represented by the role-id.
+      summary: Replaces the responsible party represented by the responsible party ROLE-ID.
+      description: Replaces the responsible party represented by the responsible party ROLE-ID.
       operationId: putProfileMetadataResponsibleParty
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4718,19 +4662,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the responsible party represented by the role-id.
-      description: Updates the responsible party represented by the role-id.
+      summary: Updates a portion of the responsible party represented by the responsible party ROLE-ID.
+      description: Updates a portion of the responsible party represented by the responsible party ROLE-ID.
       operationId: patchProfileMetadataResponsibleParty
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4823,32 +4767,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the responsible party represented by the role-id.
-      description: Deletes the responsible party represented by the role-id.
+      summary: Deletes the responsible party represented by the responsible party ROLE-ID.
+      description: Deletes the responsible party represented by the responsible party ROLE-ID.
       operationId: deleteProfileMetadataResponsibleParty
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
         401:
           description: Unauthorized
           content:
@@ -4906,9 +4843,9 @@ paths:
       description: Returns every relevant import.
       operationId: getProfileImport
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4977,9 +4914,9 @@ paths:
       description: Adds a new import.
       operationId: postProfileImport
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -5076,19 +5013,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the import represented by the href.
-      description: Returns the import represented by the href.
+      summary: Returns the import represented by the import HREF.
+      description: Returns the import represented by the import HREF.
       operationId: getProfileImportByHref
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importHref
+        - name: importHREF
           in: path
-          description: Href of Import
+          description: HREF of Import
           required: true
           schema:
             type: string
@@ -5153,19 +5090,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the import represented by the href.
-      description: Updates the import represented by the href.
+      summary: Replaces the import represented by the import HREF.
+      description: Replaces the import represented by the import HREF.
       operationId: putProfileImport
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importHref
+        - name: importHREF
           in: path
-          description: Href of Import
+          description: HREF of Import
           required: true
           schema:
             type: string
@@ -5251,19 +5188,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the import represented by the href.
-      description: Updates the import represented by the href.
+      summary: Updates a portion of the import represented by the import HREF.
+      description: Updates a portion of the import represented by the import HREF.
       operationId: patchProfileImport
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importHref
+        - name: importHREF
           in: path
-          description: Href of Import
+          description: HREF of Import
           required: true
           schema:
             type: string
@@ -5356,32 +5293,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the import represented by the href. Deletion will not be allowed if there is only one remaining import.
-      description: Deletes the import represented by the href. Deletion will not be allowed if there is only one remaining import.
+      summary: Deletes the import represented by the import HREF. Deletion will not be allowed if there is only one remaining import.
+      description: Deletes the import represented by the import HREF. Deletion will not be allowed if there is only one remaining import.
       operationId: deleteProfileImport
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importHref
+        - name: importHREF
           in: path
-          description: Href of Import
+          description: HREF of Import
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALImport"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALImport"
         401:
           description: Unauthorized
           content:
@@ -5439,15 +5369,15 @@ paths:
       description: Returns every relevant include controls.
       operationId: getProfileImportIncludeControls
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importHref
+        - name: importHREF
           in: path
-          description: Href of Import
+          description: HREF of Import
           required: true
           schema:
             type: string
@@ -5512,19 +5442,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Uppdates the include controls.
-      description: Uppdates the include controls.
+      summary: Replaces the include controls.
+      description: Replaces the include controls.
       operationId: putProfileImportIncludeControls
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importHref
+        - name: importHREF
           in: path
-          description: Href of Import
+          description: HREF of Import
           required: true
           schema:
             type: string
@@ -5610,19 +5540,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the include controls.
-      description: Updates the include controls.
+      summary: Updates a portion of the include controls.
+      description: Updates a portion of the include controls.
       operationId: patchProfileImportIncludeControls
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importHref
+        - name: importHREF
           in: path
-          description: Href of Import
+          description: HREF of Import
           required: true
           schema:
             type: string
@@ -5719,28 +5649,21 @@ paths:
       description: Deletes the include controls. Deletion will not be allowed if there is only one remaining include controls.
       operationId: deleteProfileImportIncludeControls
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importHref
+        - name: importHREF
           in: path
-          description: Href of Import
+          description: HREF of Import
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeControlsList"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALIncludeControlsList"
         401:
           description: Unauthorized
           content:
@@ -5798,15 +5721,15 @@ paths:
       description: Returns every relevant exclude controls.
       operationId: getProfileImportExcludeControls
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importHref
+        - name: importHREF
           in: path
-          description: Href of Import
+          description: HREF of Import
           required: true
           schema:
             type: string
@@ -5871,19 +5794,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Uppdates the exclude controls.
-      description: Uppdates the exclude controls.
+      summary: Replaces the exclude controls.
+      description: Replaces the exclude controls.
       operationId: putProfileImportExcludeControls
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importHref
+        - name: importHREF
           in: path
-          description: Href of Import
+          description: HREF of Import
           required: true
           schema:
             type: string
@@ -5969,19 +5892,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the exclude controls.
-      description: Updates the exclude controls.
+      summary: Updates a portion of the exclude controls.
+      description: Updates a portion of the exclude controls.
       operationId: patchProfileImportExcludeControls
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importHref
+        - name: importHREF
           in: path
-          description: Href of Import
+          description: HREF of Import
           required: true
           schema:
             type: string
@@ -6078,28 +6001,21 @@ paths:
       description: Deletes the exclude controls.
       operationId: deleteProfileImportExcludeControls
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: importHref
+        - name: importHREF
           in: path
-          description: Href of Import
+          description: HREF of Import
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALExcludeControlsList"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALExcludeControlsList"
         401:
           description: Unauthorized
           content:
@@ -6157,9 +6073,9 @@ paths:
       description: Returns the merge.
       operationId: getProfileMergeBy
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6224,13 +6140,13 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Uppdates the merge.
-      description: Uppdates the merge.
+      summary: Replaces the merge.
+      description: Replaces the merge.
       operationId: putProfileMerge
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6316,13 +6232,13 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the merge.
-      description: Updates the merge.
+      summary: Updates a portion of the merge.
+      description: Updates a portion of the merge.
       operationId: patchProfileMerge
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6419,22 +6335,15 @@ paths:
       description: Deletes the merge.
       operationId: deleteProfileMerge
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALMerge"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALMerge"
         401:
           description: Unauthorized
           content:
@@ -6492,9 +6401,9 @@ paths:
       description: Returns the custom.
       operationId: getProfileMergeCustomBy
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6559,13 +6468,13 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Uppdates the custom.
-      description: Uppdates the custom.
+      summary: Replaces the custom.
+      description: Replaces the custom.
       operationId: putProfileMergeCustom
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6651,13 +6560,13 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the custom.
-      description: Updates the custom.
+      summary: Updates a portion of the custom.
+      description: Updates a portion of the custom.
       operationId: patchProfileMergeCustom
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6754,22 +6663,15 @@ paths:
       description: Deletes the custom.
       operationId: deleteProfileMergeCustom
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCustom"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCustom"
         401:
           description: Unauthorized
           content:
@@ -6827,9 +6729,9 @@ paths:
       description: Returns every relevant group.
       operationId: getProfileMergeCustomGroup
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6898,9 +6800,9 @@ paths:
       description: Adds a new group.
       operationId: postProfileMergeCustomGroup
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6997,19 +6899,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: When the id is available, returns the group represented by the identifier.
-      description: When the id is available, returns the group represented by the identifier.
+      summary: When the ID is available, returns the group represented by the identifier.
+      description: When the ID is available, returns the group represented by the identifier.
       operationId: getProfileMergeCustomGroupById
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -7074,19 +6976,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: When the id is available, updates the group represented by the identifier, and returns the updated group.
-      description: When the id is available, updates the group represented by the identifier, and returns the updated group.
+      summary: When the ID is available, updates the group represented by the identifier, and returns the updated group.
+      description: When the ID is available, updates the group represented by the identifier, and returns the updated group.
       operationId: putProfileMergeCustomGroup
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -7172,19 +7074,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: When the id is available, updates the group represented by the identifier, and returns the updated group.
-      description: When the id is available, updates the group represented by the identifier, and returns the updated group.
+      summary: When the ID is available, updates a portion of the group represented by the identifier, and returns the updated group.
+      description: When the ID is available, updates a portion of the group represented by the identifier, and returns the updated group.
       operationId: patchProfileMergeCustomGroup
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -7277,32 +7179,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: When the id is available, Deletes the group represented by the identifier.
-      description: When the id is available, Deletes the group represented by the identifier.
+      summary: When the ID is available, Deletes the group represented by the identifier.
+      description: When the ID is available, Deletes the group represented by the identifier.
       operationId: deleteProfileMergeCustomGroup
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALGroup"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALGroup"
         401:
           description: Unauthorized
           content:
@@ -7360,9 +7255,9 @@ paths:
       description: Returns every relevant insert controls.
       operationId: getProfileMergeCustomInsertControls
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7427,13 +7322,13 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Uppdates the insert controls.
-      description: Uppdates the insert controls.
+      summary: Replaces the insert controls.
+      description: Replaces the insert controls.
       operationId: putProfileMergeCustomInsertControls
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7519,13 +7414,13 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the insert controls.
-      description: Updates the insert controls.
+      summary: Updates a portion of the insert controls.
+      description: Updates a portion of the insert controls.
       operationId: patchProfileMergeCustomInsertControls
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7622,22 +7517,15 @@ paths:
       description: Deletes the insert controls.
       operationId: deleteProfileMergeCustomInsertControls
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALInsertControlsList"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALInsertControlsList"
         401:
           description: Unauthorized
           content:
@@ -7695,9 +7583,9 @@ paths:
       description: Returns the modify.
       operationId: getProfileModifyBy
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7762,13 +7650,13 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Uppdates the modify.
-      description: Uppdates the modify.
+      summary: Replaces the modify.
+      description: Replaces the modify.
       operationId: putProfileModify
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7854,13 +7742,13 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the modify.
-      description: Updates the modify.
+      summary: Updates a portion of the modify.
+      description: Updates a portion of the modify.
       operationId: patchProfileModify
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -7957,22 +7845,15 @@ paths:
       description: Deletes the modify.
       operationId: deleteProfileModify
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALModify"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALModify"
         401:
           description: Unauthorized
           content:
@@ -8030,9 +7911,9 @@ paths:
       description: Returns every relevant set parameter.
       operationId: getProfileModifySetParameter
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8101,9 +7982,9 @@ paths:
       description: Adds a new set parameter.
       operationId: postProfileModifySetParameter
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -8200,19 +8081,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the set parameter represented by the param-id.
-      description: Returns the set parameter represented by the param-id.
+      summary: Returns the set parameter represented by the set parameter PARAM-ID.
+      description: Returns the set parameter represented by the set parameter PARAM-ID.
       operationId: getProfileModifySetParameterByParam Id
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -8277,19 +8158,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the set parameter represented by the param-id.
-      description: Updates the set parameter represented by the param-id.
+      summary: Replaces the set parameter represented by the set parameter PARAM-ID.
+      description: Replaces the set parameter represented by the set parameter PARAM-ID.
       operationId: putProfileModifySetParameter
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -8375,19 +8256,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the set parameter represented by the param-id.
-      description: Updates the set parameter represented by the param-id.
+      summary: Updates a portion of the set parameter represented by the set parameter PARAM-ID.
+      description: Updates a portion of the set parameter represented by the set parameter PARAM-ID.
       operationId: patchProfileModifySetParameter
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -8480,32 +8361,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the set parameter represented by the param-id.
-      description: Deletes the set parameter represented by the param-id.
+      summary: Deletes the set parameter represented by the set parameter PARAM-ID.
+      description: Deletes the set parameter represented by the set parameter PARAM-ID.
       operationId: deleteProfileModifySetParameter
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALSetParameter"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSetParameter"
         401:
           description: Unauthorized
           content:
@@ -8563,15 +8437,15 @@ paths:
       description: Returns every relevant link.
       operationId: getProfileModifySetParameterLink
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -8640,15 +8514,15 @@ paths:
       description: Adds a new link.
       operationId: postProfileModifySetParameterLink
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -8745,25 +8619,25 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getProfileModifySetParameterLinkByHref
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -8828,25 +8702,25 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putProfileModifySetParameterLink
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -8932,25 +8806,25 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchProfileModifySetParameterLink
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -9043,38 +8917,31 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteProfileModifySetParameterLink
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -9132,15 +8999,15 @@ paths:
       description: Returns every relevant prop.
       operationId: getProfileModifySetParameterProp
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -9209,15 +9076,15 @@ paths:
       description: Adds a new prop.
       operationId: postProfileModifySetParameterProp
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -9314,25 +9181,25 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getProfileModifySetParameterPropByUuid
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -9397,25 +9264,25 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putProfileModifySetParameterProp
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -9501,25 +9368,25 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchProfileModifySetParameterProp
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -9612,38 +9479,31 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteProfileModifySetParameterProp
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -9701,15 +9561,15 @@ paths:
       description: Returns every relevant constraint.
       operationId: getProfileModifySetParameterConstraint
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -9774,19 +9634,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Uppdates the constraint.
-      description: Uppdates the constraint.
+      summary: Replaces the constraint.
+      description: Replaces the constraint.
       operationId: putProfileModifySetParameterConstraint
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -9872,19 +9732,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the constraint.
-      description: Updates the constraint.
+      summary: Updates a portion of the constraint.
+      description: Updates a portion of the constraint.
       operationId: patchProfileModifySetParameterConstraint
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -9981,28 +9841,21 @@ paths:
       description: Deletes the constraint.
       operationId: deleteProfileModifySetParameterConstraint
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALConstraints"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALConstraints"
         401:
           description: Unauthorized
           content:
@@ -10060,15 +9913,15 @@ paths:
       description: Returns every relevant guideline.
       operationId: getProfileModifySetParameterGuideline
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -10133,19 +9986,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Uppdates the guideline.
-      description: Uppdates the guideline.
+      summary: Replaces the guideline.
+      description: Replaces the guideline.
       operationId: putProfileModifySetParameterGuideline
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -10231,19 +10084,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the guideline.
-      description: Updates the guideline.
+      summary: Updates a portion of the guideline.
+      description: Updates a portion of the guideline.
       operationId: patchProfileModifySetParameterGuideline
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
@@ -10340,28 +10193,21 @@ paths:
       description: Deletes the guideline.
       operationId: deleteProfileModifySetParameterGuideline
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: setParameterParamId
+        - name: setParameterPARAMID
           in: path
-          description: ParamId of SetParameter
+          description: PARAMID of SetParameter
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALGuidelines"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALGuidelines"
         401:
           description: Unauthorized
           content:
@@ -10419,9 +10265,9 @@ paths:
       description: Returns every relevant alter.
       operationId: getProfileModifyAlter
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10490,9 +10336,9 @@ paths:
       description: Adds a new alter.
       operationId: postProfileModifyAlter
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -10589,19 +10435,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the alter represented by the control-id.
-      description: Returns the alter represented by the control-id.
+      summary: Returns the alter represented by the alter CONTROL-ID.
+      description: Returns the alter represented by the alter CONTROL-ID.
       operationId: getProfileModifyAlterByControl Id
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
@@ -10666,19 +10512,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the alter represented by the control-id.
-      description: Updates the alter represented by the control-id.
+      summary: Replaces the alter represented by the alter CONTROL-ID.
+      description: Replaces the alter represented by the alter CONTROL-ID.
       operationId: putProfileModifyAlter
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
@@ -10764,19 +10610,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the alter represented by the control-id.
-      description: Updates the alter represented by the control-id.
+      summary: Updates a portion of the alter represented by the alter CONTROL-ID.
+      description: Updates a portion of the alter represented by the alter CONTROL-ID.
       operationId: patchProfileModifyAlter
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
@@ -10869,32 +10715,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the alter represented by the control-id.
-      description: Deletes the alter represented by the control-id.
+      summary: Deletes the alter represented by the alter CONTROL-ID.
+      description: Deletes the alter represented by the alter CONTROL-ID.
       operationId: deleteProfileModifyAlter
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAlter"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAlter"
         401:
           description: Unauthorized
           content:
@@ -10952,15 +10791,15 @@ paths:
       description: Returns every relevant remove.
       operationId: getProfileModifyAlterRemove
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
@@ -11029,15 +10868,15 @@ paths:
       description: Adds a new remove.
       operationId: postProfileModifyAlterRemove
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
@@ -11134,25 +10973,25 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: When the by-id is available, returns the remove represented by the identifier.
-      description: When the by-id is available, returns the remove represented by the identifier.
+      summary: When the BY-ID is available, returns the remove represented by the identifier.
+      description: When the BY-ID is available, returns the remove represented by the identifier.
       operationId: getProfileModifyAlterRemoveByBy Id
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
-        - name: removeById
+        - name: removeBYID
           in: path
-          description: ById of Remove
+          description: BYID of Remove
           required: true
           schema:
             type: string
@@ -11217,25 +11056,25 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: When the by-id is available, updates the remove represented by the identifier, and returns the updated remove.
-      description: When the by-id is available, updates the remove represented by the identifier, and returns the updated remove.
+      summary: When the BY-ID is available, updates the remove represented by the identifier, and returns the updated remove.
+      description: When the BY-ID is available, updates the remove represented by the identifier, and returns the updated remove.
       operationId: putProfileModifyAlterRemove
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
-        - name: removeById
+        - name: removeBYID
           in: path
-          description: ById of Remove
+          description: BYID of Remove
           required: true
           schema:
             type: string
@@ -11321,25 +11160,25 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: When the by-id is available, updates the remove represented by the identifier, and returns the updated remove.
-      description: When the by-id is available, updates the remove represented by the identifier, and returns the updated remove.
+      summary: When the BY-ID is available, updates a portion of the remove represented by the identifier, and returns the updated remove.
+      description: When the BY-ID is available, updates a portion of the remove represented by the identifier, and returns the updated remove.
       operationId: patchProfileModifyAlterRemove
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
-        - name: removeById
+        - name: removeBYID
           in: path
-          description: ById of Remove
+          description: BYID of Remove
           required: true
           schema:
             type: string
@@ -11432,38 +11271,31 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: When the by-id is available, Deletes the remove represented by the identifier.
-      description: When the by-id is available, Deletes the remove represented by the identifier.
+      summary: When the BY-ID is available, Deletes the remove represented by the identifier.
+      description: When the BY-ID is available, Deletes the remove represented by the identifier.
       operationId: deleteProfileModifyAlterRemove
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
-        - name: removeById
+        - name: removeBYID
           in: path
-          description: ById of Remove
+          description: BYID of Remove
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALRemove"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALRemove"
         401:
           description: Unauthorized
           content:
@@ -11521,15 +11353,15 @@ paths:
       description: Returns every relevant add.
       operationId: getProfileModifyAlterAdd
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
@@ -11598,15 +11430,15 @@ paths:
       description: Adds a new add.
       operationId: postProfileModifyAlterAdd
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
@@ -11703,25 +11535,25 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the add represented by the by-id.
-      description: Returns the add represented by the by-id.
+      summary: Returns the add represented by the add BY-ID.
+      description: Returns the add represented by the add BY-ID.
       operationId: getProfileModifyAlterAddByBy Id
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
-        - name: addById
+        - name: addBYID
           in: path
-          description: ById of Add
+          description: BYID of Add
           required: true
           schema:
             type: string
@@ -11786,25 +11618,25 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the add represented by the by-id.
-      description: Updates the add represented by the by-id.
+      summary: Replaces the add represented by the add BY-ID.
+      description: Replaces the add represented by the add BY-ID.
       operationId: putProfileModifyAlterAdd
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
-        - name: addById
+        - name: addBYID
           in: path
-          description: ById of Add
+          description: BYID of Add
           required: true
           schema:
             type: string
@@ -11890,25 +11722,25 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the add represented by the by-id.
-      description: Updates the add represented by the by-id.
+      summary: Updates a portion of the add represented by the add BY-ID.
+      description: Updates a portion of the add represented by the add BY-ID.
       operationId: patchProfileModifyAlterAdd
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
-        - name: addById
+        - name: addBYID
           in: path
-          description: ById of Add
+          description: BYID of Add
           required: true
           schema:
             type: string
@@ -12001,38 +11833,31 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the add represented by the by-id.
-      description: Deletes the add represented by the by-id.
+      summary: Deletes the add represented by the add BY-ID.
+      description: Deletes the add represented by the add BY-ID.
       operationId: deleteProfileModifyAlterAdd
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: alterControlId
+        - name: alterCONTROLID
           in: path
-          description: ControlId of Alter
+          description: CONTROLID of Alter
           required: true
           schema:
             type: string
-        - name: addById
+        - name: addBYID
           in: path
-          description: ById of Add
+          description: BYID of Add
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALAdd"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAdd"
         401:
           description: Unauthorized
           content:
@@ -12090,9 +11915,9 @@ paths:
       description: Returns the back matter.
       operationId: getProfileBackMatterBy
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12157,13 +11982,13 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Uppdates the back matter.
-      description: Uppdates the back matter.
+      summary: Replaces the back matter.
+      description: Replaces the back matter.
       operationId: putProfileBackMatter
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12249,13 +12074,13 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the back matter.
-      description: Updates the back matter.
+      summary: Updates a portion of the back matter.
+      description: Updates a portion of the back matter.
       operationId: patchProfileBackMatter
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12352,22 +12177,15 @@ paths:
       description: Deletes the back matter.
       operationId: deleteProfileBackMatter
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALBackMatter"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALBackMatter"
         401:
           description: Unauthorized
           content:
@@ -12425,9 +12243,9 @@ paths:
       description: Returns every relevant resource.
       operationId: getProfileBackMatterResource
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12496,9 +12314,9 @@ paths:
       description: Adds a new resource.
       operationId: postProfileBackMatterResource
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12595,19 +12413,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the resource represented by the uuid.
-      description: Returns the resource represented by the uuid.
+      summary: Returns the resource represented by the resource UUID.
+      description: Returns the resource represented by the resource UUID.
       operationId: getProfileBackMatterResourceByUuid
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -12672,19 +12490,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the resource represented by the uuid.
-      description: Updates the resource represented by the uuid.
+      summary: Replaces the resource represented by the resource UUID.
+      description: Replaces the resource represented by the resource UUID.
       operationId: putProfileBackMatterResource
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -12770,19 +12588,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the resource represented by the uuid.
-      description: Updates the resource represented by the uuid.
+      summary: Updates a portion of the resource represented by the resource UUID.
+      description: Updates a portion of the resource represented by the resource UUID.
       operationId: patchProfileBackMatterResource
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -12875,32 +12693,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the resource represented by the uuid.
-      description: Deletes the resource represented by the uuid.
+      summary: Deletes the resource represented by the resource UUID.
+      description: Deletes the resource represented by the resource UUID.
       operationId: deleteProfileBackMatterResource
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResource"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResource"
         401:
           description: Unauthorized
           content:
@@ -12954,13 +12765,13 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the resolved catalog.
-      description: Returns the resolved catalog.
+      summary: Resolves the identified profile based on currently available sources and returns a resolved profile catalog
+      description: Resolves the identified profile based on currently available sources and returns a resolved profile catalog
       operationId: getProfileResolvedCatalogBy
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13025,13 +12836,13 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Uppdates the resolved catalog.
-      description: Uppdates the resolved catalog.
+      summary: Replaces the resolved catalog.
+      description: Replaces the resolved catalog.
       operationId: putProfileResolvedCatalog
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13117,13 +12928,13 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the resolved catalog.
-      description: Updates the resolved catalog.
+      summary: Updates a portion of the resolved catalog.
+      description: Updates a portion of the resolved catalog.
       operationId: patchProfileResolvedCatalog
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13221,9 +13032,9 @@ paths:
       description: Returns every relevant attachment.
       operationId: getProfileAttachment
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13292,9 +13103,9 @@ paths:
       description: Adds a new attachment.
       operationId: postProfileAttachment
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13391,19 +13202,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the attachment represented by the id.
-      description: Returns the attachment represented by the id.
+      summary: Returns the attachment represented by the attachment ID.
+      description: Returns the attachment represented by the attachment ID.
       operationId: getProfileAttachmentById
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -13478,19 +13289,19 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Updates the attachment represented by the id.
-      description: Updates the attachment represented by the id.
+      summary: Replaces the attachment represented by the attachment ID.
+      description: Replaces the attachment represented by the attachment ID.
       operationId: putProfileAttachment
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -13576,19 +13387,19 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the attachment represented by the id.
-      description: Deletes the attachment represented by the id.
+      summary: Deletes the attachment represented by the attachment ID.
+      description: Deletes the attachment represented by the attachment ID.
       operationId: deleteProfileAttachment
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -13652,9 +13463,9 @@ paths:
       description: Returns every relevant snapshot.
       operationId: getProfileSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13723,9 +13534,9 @@ paths:
       description: Creates a snapshot of the file in its current state.
       operationId: postProfileSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -13822,19 +13633,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the snapshot represented by the id.
-      description: Returns the snapshot represented by the id.
+      summary: Returns the snapshot represented by the snapshot ID.
+      description: Returns the snapshot represented by the snapshot ID.
       operationId: getProfileSnapshotById
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -13899,19 +13710,19 @@ paths:
     patch:
       tags:
         - OSCAL Profile
-      summary: Updates the snapshot represented by the id.
-      description: Updates the snapshot represented by the id.
+      summary: Updates a portion of the snapshot represented by the snapshot ID.
+      description: Updates a portion of the snapshot represented by the snapshot ID.
       operationId: patchProfileSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -14004,32 +13815,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the snapshot represented by the id.
-      description: Deletes the snapshot represented by the id.
+      summary: Deletes the snapshot represented by the snapshot ID.
+      description: Deletes the snapshot represented by the snapshot ID.
       operationId: deleteProfileSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProfile"
         401:
           description: Unauthorized
           content:
@@ -14083,13 +13887,13 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns every relevant resolved snapshot.
-      description: Returns every relevant resolved snapshot.
+      summary: Returns every relevant resolved profile catalog.
+      description: Returns every relevant resolved profile catalog.
       operationId: getProfileResolvedSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14099,10 +13903,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogs"
+                $ref: "#/components/schemas/OSCALCatalogsSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogs"
+                $ref: "#/components/schemas/OSCALCatalogsSnapshots"
         401:
           description: Unauthorized
           content:
@@ -14158,9 +13962,9 @@ paths:
       description: Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog.
       operationId: postProfileResolvedSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -14257,19 +14061,19 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the resolved snapshot represented by the id.
-      description: Returns the resolved snapshot represented by the id.
+      summary: Returns the resolved profile catalog represented by the resolved profile catalog ID.
+      description: Returns the resolved profile catalog represented by the resolved profile catalog ID.
       operationId: getProfileResolvedSnapshotById
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resolvedSnapshotId
+        - name: resolvedSnapshotID
           in: path
-          description: Id of ResolvedSnapshot
+          description: ID of ResolvedSnapshot
           required: true
           schema:
             type: string
@@ -14334,32 +14138,25 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the resolved snapshot represented by the id.
-      description: Deletes the resolved snapshot represented by the id.
+      summary: Deletes the resolved snapshot represented by the resolved snapshot ID.
+      description: Deletes the resolved snapshot represented by the resolved snapshot ID.
       operationId: deleteProfileResolvedSnapshot
       parameters:
-        - name: profileId
+        - name: profileID
           in: path
-          description: Id of Profile
+          description: ID of Profile
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resolvedSnapshotId
+        - name: resolvedSnapshotID
           in: path
-          description: Id of ResolvedSnapshot
+          description: ID of ResolvedSnapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
         401:
           description: Unauthorized
           content:
@@ -16051,37 +15848,37 @@ components:
     OSCALProfileEntry:
       type: object
       properties:
-        profile:
+        profile-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALCatalogEntry:
       type: object
       properties:
-        catalog:
+        catalog-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALSystemSecurityPlanEntry:
       type: object
       properties:
-        system-security-plan:
+        system-security-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALComponentDefinitionEntry:
       type: object
       properties:
-        component-definition:
+        component-definition-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentPlanEntry:
       type: object
       properties:
-        assessment-plan:
+        assessment-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentResultsEntry:
       type: object
       properties:
-        assessment-results:
+        assessment-results-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALPlanOfActionAndMilestonesEntry:
       type: object
       properties:
-        plan-of-action-and-milestones:
+        plan-of-action-and-milestones-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALProfilesEntries:
       type: object
@@ -16170,6 +15967,18 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshots:
+      type: object
+      properties:
+        resolved-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshot:
+      type: object
+      properties:
+        resolved-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
     OSCALCatalogsSnapshots:
       type: object
       properties:

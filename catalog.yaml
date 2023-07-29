@@ -238,13 +238,13 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the catalog represented by the id.
-      description: Returns the catalog represented by the id.
+      summary: Returns the catalog represented by the catalog ID.
+      description: Returns the catalog represented by the catalog ID.
       operationId: getCatalogById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -309,13 +309,13 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the catalog represented by the id.
-      description: Updates the catalog represented by the id.
+      summary: Replaces the catalog represented by the catalog ID.
+      description: Replaces the catalog represented by the catalog ID.
       operationId: putCatalog
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -401,13 +401,13 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the catalog represented by the id.
-      description: Updates the catalog represented by the id.
+      summary: Updates a portion of the catalog represented by the catalog ID.
+      description: Updates a portion of the catalog represented by the catalog ID.
       operationId: patchCatalog
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -500,26 +500,19 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the catalog represented by the id.
-      description: Deletes the catalog represented by the id.
+      summary: Deletes the catalog represented by the catalog ID.
+      description: Deletes the catalog represented by the catalog ID.
       operationId: deleteCatalog
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
         401:
           description: Unauthorized
           content:
@@ -577,9 +570,9 @@ paths:
       description: Returns the metadata.
       operationId: getCatalogMetadataBy
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -644,13 +637,13 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Uppdates the metadata.
-      description: Uppdates the metadata.
+      summary: Replaces the metadata.
+      description: Replaces the metadata.
       operationId: putCatalogMetadata
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -736,13 +729,13 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the metadata.
-      description: Updates the metadata.
+      summary: Updates a portion of the metadata.
+      description: Updates a portion of the metadata.
       operationId: patchCatalogMetadata
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -840,9 +833,9 @@ paths:
       description: Returns every relevant document id.
       operationId: getCatalogMetadataDocumentId
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -911,9 +904,9 @@ paths:
       description: Adds a new document id.
       operationId: postCatalogMetadataDocumentId
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1010,19 +1003,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the scheme is available, returns the document id represented by the identifier.
-      description: When the scheme is available, returns the document id represented by the identifier.
+      summary: When the SCHEME is available, returns the document id represented by the identifier.
+      description: When the SCHEME is available, returns the document id represented by the identifier.
       operationId: getCatalogMetadataDocumentIdByScheme
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1087,19 +1080,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
-      description: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
+      summary: When the SCHEME is available, updates the document id represented by the identifier, and returns the updated document id.
+      description: When the SCHEME is available, updates the document id represented by the identifier, and returns the updated document id.
       operationId: putCatalogMetadataDocumentId
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1185,19 +1178,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
-      description: When the scheme is available, updates the document id represented by the identifier, and returns the updated document id.
+      summary: When the SCHEME is available, updates a portion of the document id represented by the identifier, and returns the updated document id.
+      description: When the SCHEME is available, updates a portion of the document id represented by the identifier, and returns the updated document id.
       operationId: patchCatalogMetadataDocumentId
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
@@ -1290,32 +1283,25 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: When the scheme is available, Deletes the document id represented by the identifier.
-      description: When the scheme is available, Deletes the document id represented by the identifier.
+      summary: When the SCHEME is available, Deletes the document id represented by the identifier.
+      description: When the SCHEME is available, Deletes the document id represented by the identifier.
       operationId: deleteCatalogMetadataDocumentId
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: documentIdScheme
+        - name: documentIdSCHEME
           in: path
-          description: Scheme of DocumentId
+          description: SCHEME of DocumentId
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALDocumentId"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALDocumentId"
         401:
           description: Unauthorized
           content:
@@ -1373,9 +1359,9 @@ paths:
       description: Returns every relevant revision.
       operationId: getCatalogMetadataRevision
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1440,13 +1426,13 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Uppdates the revision.
-      description: Uppdates the revision.
+      summary: Replaces the revision.
+      description: Replaces the revision.
       operationId: putCatalogMetadataRevision
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1532,13 +1518,13 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the revision.
-      description: Updates the revision.
+      summary: Updates a portion of the revision.
+      description: Updates a portion of the revision.
       operationId: patchCatalogMetadataRevision
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1635,22 +1621,15 @@ paths:
       description: Deletes the revision.
       operationId: deleteCatalogMetadataRevision
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALRevisions"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALRevisions"
         401:
           description: Unauthorized
           content:
@@ -1708,9 +1687,9 @@ paths:
       description: Returns every relevant link.
       operationId: getCatalogMetadataLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1779,9 +1758,9 @@ paths:
       description: Adds a new link.
       operationId: postCatalogMetadataLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -1878,19 +1857,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getCatalogMetadataLinkByHref
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -1955,19 +1934,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putCatalogMetadataLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -2053,19 +2032,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchCatalogMetadataLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -2158,32 +2137,25 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteCatalogMetadataLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -2241,9 +2213,9 @@ paths:
       description: Returns every relevant prop.
       operationId: getCatalogMetadataProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2312,9 +2284,9 @@ paths:
       description: Adds a new prop.
       operationId: postCatalogMetadataProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2411,19 +2383,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getCatalogMetadataPropByUuid
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -2488,19 +2460,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putCatalogMetadataProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -2586,19 +2558,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchCatalogMetadataProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -2691,32 +2663,25 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteCatalogMetadataProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -2774,9 +2739,9 @@ paths:
       description: Returns every relevant location.
       operationId: getCatalogMetadataLocation
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2845,9 +2810,9 @@ paths:
       description: Adds a new location.
       operationId: postCatalogMetadataLocation
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -2944,19 +2909,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the location represented by the uuid.
-      description: Returns the location represented by the uuid.
+      summary: Returns the location represented by the location UUID.
+      description: Returns the location represented by the location UUID.
       operationId: getCatalogMetadataLocationByUuid
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -3021,19 +2986,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the location represented by the uuid.
-      description: Updates the location represented by the uuid.
+      summary: Replaces the location represented by the location UUID.
+      description: Replaces the location represented by the location UUID.
       operationId: putCatalogMetadataLocation
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -3119,19 +3084,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the location represented by the uuid.
-      description: Updates the location represented by the uuid.
+      summary: Updates a portion of the location represented by the location UUID.
+      description: Updates a portion of the location represented by the location UUID.
       operationId: patchCatalogMetadataLocation
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
@@ -3224,32 +3189,25 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the location represented by the uuid.
-      description: Deletes the location represented by the uuid.
+      summary: Deletes the location represented by the location UUID.
+      description: Deletes the location represented by the location UUID.
       operationId: deleteCatalogMetadataLocation
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: locationUuid
+        - name: locationUUID
           in: path
-          description: Uuid of Location
+          description: UUID of Location
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLocation"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLocation"
         401:
           description: Unauthorized
           content:
@@ -3307,9 +3265,9 @@ paths:
       description: Returns every relevant party.
       operationId: getCatalogMetadataParty
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3378,9 +3336,9 @@ paths:
       description: Adds a new party.
       operationId: postCatalogMetadataParty
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3477,19 +3435,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the party represented by the uuid.
-      description: Returns the party represented by the uuid.
+      summary: Returns the party represented by the party UUID.
+      description: Returns the party represented by the party UUID.
       operationId: getCatalogMetadataPartyByUuid
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -3554,19 +3512,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the party represented by the uuid.
-      description: Updates the party represented by the uuid.
+      summary: Replaces the party represented by the party UUID.
+      description: Replaces the party represented by the party UUID.
       operationId: putCatalogMetadataParty
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -3652,19 +3610,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the party represented by the uuid.
-      description: Updates the party represented by the uuid.
+      summary: Updates a portion of the party represented by the party UUID.
+      description: Updates a portion of the party represented by the party UUID.
       operationId: patchCatalogMetadataParty
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
@@ -3757,32 +3715,25 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the party represented by the uuid.
-      description: Deletes the party represented by the uuid.
+      summary: Deletes the party represented by the party UUID.
+      description: Deletes the party represented by the party UUID.
       operationId: deleteCatalogMetadataParty
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: partyUuid
+        - name: partyUUID
           in: path
-          description: Uuid of Party
+          description: UUID of Party
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALParty"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALParty"
         401:
           description: Unauthorized
           content:
@@ -3840,9 +3791,9 @@ paths:
       description: Returns every relevant responsible party.
       operationId: getCatalogMetadataResponsibleParty
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -3911,9 +3862,9 @@ paths:
       description: Adds a new responsible party.
       operationId: postCatalogMetadataResponsibleParty
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4010,19 +3961,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the responsible party represented by the role-id.
-      description: Returns the responsible party represented by the role-id.
+      summary: Returns the responsible party represented by the responsible party ROLE-ID.
+      description: Returns the responsible party represented by the responsible party ROLE-ID.
       operationId: getCatalogMetadataResponsiblePartyByRole Id
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4087,19 +4038,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the responsible party represented by the role-id.
-      description: Updates the responsible party represented by the role-id.
+      summary: Replaces the responsible party represented by the responsible party ROLE-ID.
+      description: Replaces the responsible party represented by the responsible party ROLE-ID.
       operationId: putCatalogMetadataResponsibleParty
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4185,19 +4136,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the responsible party represented by the role-id.
-      description: Updates the responsible party represented by the role-id.
+      summary: Updates a portion of the responsible party represented by the responsible party ROLE-ID.
+      description: Updates a portion of the responsible party represented by the responsible party ROLE-ID.
       operationId: patchCatalogMetadataResponsibleParty
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
@@ -4290,32 +4241,25 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the responsible party represented by the role-id.
-      description: Deletes the responsible party represented by the role-id.
+      summary: Deletes the responsible party represented by the responsible party ROLE-ID.
+      description: Deletes the responsible party represented by the responsible party ROLE-ID.
       operationId: deleteCatalogMetadataResponsibleParty
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: responsiblePartyRoleId
+        - name: responsiblePartyROLEID
           in: path
-          description: RoleId of ResponsibleParty
+          description: ROLEID of ResponsibleParty
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResponsibleParty"
         401:
           description: Unauthorized
           content:
@@ -4373,9 +4317,9 @@ paths:
       description: Returns every relevant param.
       operationId: getCatalogParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4444,9 +4388,9 @@ paths:
       description: Adds a new param.
       operationId: postCatalogParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -4543,19 +4487,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the param represented by the id.
-      description: Returns the param represented by the id.
+      summary: Returns the param represented by the param ID.
+      description: Returns the param represented by the param ID.
       operationId: getCatalogParamById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -4620,19 +4564,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the param represented by the id.
-      description: Updates the param represented by the id.
+      summary: Replaces the param represented by the param ID.
+      description: Replaces the param represented by the param ID.
       operationId: putCatalogParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -4718,19 +4662,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the param represented by the id.
-      description: Updates the param represented by the id.
+      summary: Updates a portion of the param represented by the param ID.
+      description: Updates a portion of the param represented by the param ID.
       operationId: patchCatalogParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -4823,32 +4767,25 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the param represented by the id.
-      description: Deletes the param represented by the id.
+      summary: Deletes the param represented by the param ID.
+      description: Deletes the param represented by the param ID.
       operationId: deleteCatalogParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALParam"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALParam"
         401:
           description: Unauthorized
           content:
@@ -4906,15 +4843,15 @@ paths:
       description: Returns every relevant link.
       operationId: getCatalogParamLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -4983,15 +4920,15 @@ paths:
       description: Adds a new link.
       operationId: postCatalogParamLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -5088,25 +5025,25 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getCatalogParamLinkByHref
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -5171,25 +5108,25 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putCatalogParamLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -5275,25 +5212,25 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchCatalogParamLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -5386,38 +5323,31 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteCatalogParamLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -5475,15 +5405,15 @@ paths:
       description: Returns every relevant prop.
       operationId: getCatalogParamProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -5552,15 +5482,15 @@ paths:
       description: Adds a new prop.
       operationId: postCatalogParamProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -5657,25 +5587,25 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getCatalogParamPropByUuid
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -5740,25 +5670,25 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putCatalogParamProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -5844,25 +5774,25 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchCatalogParamProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -5955,38 +5885,31 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteCatalogParamProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -6044,15 +5967,15 @@ paths:
       description: Returns every relevant constraint.
       operationId: getCatalogParamConstraint
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -6117,19 +6040,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Uppdates the constraint.
-      description: Uppdates the constraint.
+      summary: Replaces the constraint.
+      description: Replaces the constraint.
       operationId: putCatalogParamConstraint
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -6215,19 +6138,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the constraint.
-      description: Updates the constraint.
+      summary: Updates a portion of the constraint.
+      description: Updates a portion of the constraint.
       operationId: patchCatalogParamConstraint
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -6324,28 +6247,21 @@ paths:
       description: Deletes the constraint.
       operationId: deleteCatalogParamConstraint
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALConstraints"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALConstraints"
         401:
           description: Unauthorized
           content:
@@ -6403,15 +6319,15 @@ paths:
       description: Returns every relevant guideline.
       operationId: getCatalogParamGuideline
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -6476,19 +6392,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Uppdates the guideline.
-      description: Uppdates the guideline.
+      summary: Replaces the guideline.
+      description: Replaces the guideline.
       operationId: putCatalogParamGuideline
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -6574,19 +6490,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the guideline.
-      description: Updates the guideline.
+      summary: Updates a portion of the guideline.
+      description: Updates a portion of the guideline.
       operationId: patchCatalogParamGuideline
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -6683,28 +6599,21 @@ paths:
       description: Deletes the guideline.
       operationId: deleteCatalogParamGuideline
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALGuidelines"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALGuidelines"
         401:
           description: Unauthorized
           content:
@@ -6762,9 +6671,9 @@ paths:
       description: Returns every relevant control.
       operationId: getCatalogControl
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6833,9 +6742,9 @@ paths:
       description: Adds a new control.
       operationId: postCatalogControl
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -6932,19 +6841,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the control represented by the id.
-      description: Returns the control represented by the id.
+      summary: Returns the control represented by the control ID.
+      description: Returns the control represented by the control ID.
       operationId: getCatalogControlById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -7009,19 +6918,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the control represented by the id.
-      description: Updates the control represented by the id.
+      summary: Replaces the control represented by the control ID.
+      description: Replaces the control represented by the control ID.
       operationId: putCatalogControl
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -7107,19 +7016,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the control represented by the id.
-      description: Updates the control represented by the id.
+      summary: Updates a portion of the control represented by the control ID.
+      description: Updates a portion of the control represented by the control ID.
       operationId: patchCatalogControl
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -7212,32 +7121,25 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the control represented by the id.
-      description: Deletes the control represented by the id.
+      summary: Deletes the control represented by the control ID.
+      description: Deletes the control represented by the control ID.
       operationId: deleteCatalogControl
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALControl"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALControl"
         401:
           description: Unauthorized
           content:
@@ -7295,15 +7197,15 @@ paths:
       description: Returns every relevant param.
       operationId: getCatalogControlParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -7372,15 +7274,15 @@ paths:
       description: Adds a new param.
       operationId: postCatalogControlParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -7477,25 +7379,25 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the param represented by the id.
-      description: Returns the param represented by the id.
+      summary: Returns the param represented by the param ID.
+      description: Returns the param represented by the param ID.
       operationId: getCatalogControlParamById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -7560,25 +7462,25 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the param represented by the id.
-      description: Updates the param represented by the id.
+      summary: Replaces the param represented by the param ID.
+      description: Replaces the param represented by the param ID.
       operationId: putCatalogControlParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -7664,25 +7566,25 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the param represented by the id.
-      description: Updates the param represented by the id.
+      summary: Updates a portion of the param represented by the param ID.
+      description: Updates a portion of the param represented by the param ID.
       operationId: patchCatalogControlParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -7775,38 +7677,31 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the param represented by the id.
-      description: Deletes the param represented by the id.
+      summary: Deletes the param represented by the param ID.
+      description: Deletes the param represented by the param ID.
       operationId: deleteCatalogControlParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALParam"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALParam"
         401:
           description: Unauthorized
           content:
@@ -7864,15 +7759,15 @@ paths:
       description: Returns every relevant link.
       operationId: getCatalogControlLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -7941,15 +7836,15 @@ paths:
       description: Adds a new link.
       operationId: postCatalogControlLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -8046,25 +7941,25 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getCatalogControlLinkByHref
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -8129,25 +8024,25 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putCatalogControlLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -8233,25 +8128,25 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchCatalogControlLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -8344,38 +8239,31 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteCatalogControlLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -8433,15 +8321,15 @@ paths:
       description: Returns every relevant prop.
       operationId: getCatalogControlProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -8510,15 +8398,15 @@ paths:
       description: Adds a new prop.
       operationId: postCatalogControlProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -8615,25 +8503,25 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getCatalogControlPropByUuid
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -8698,25 +8586,25 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putCatalogControlProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -8802,25 +8690,25 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchCatalogControlProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -8913,38 +8801,31 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteCatalogControlProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -9002,15 +8883,15 @@ paths:
       description: Returns every relevant part.
       operationId: getCatalogControlPart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -9079,15 +8960,15 @@ paths:
       description: Adds a new part.
       operationId: postCatalogControlPart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -9184,25 +9065,25 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, returns the part represented by the identifier.
-      description: When the id is available, returns the part represented by the identifier.
+      summary: When the ID is available, returns the part represented by the identifier.
+      description: When the ID is available, returns the part represented by the identifier.
       operationId: getCatalogControlPartById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
@@ -9267,25 +9148,25 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, updates the part represented by the identifier, and returns the updated part.
-      description: When the id is available, updates the part represented by the identifier, and returns the updated part.
+      summary: When the ID is available, updates the part represented by the identifier, and returns the updated part.
+      description: When the ID is available, updates the part represented by the identifier, and returns the updated part.
       operationId: putCatalogControlPart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
@@ -9371,25 +9252,25 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, updates the part represented by the identifier, and returns the updated part.
-      description: When the id is available, updates the part represented by the identifier, and returns the updated part.
+      summary: When the ID is available, updates a portion of the part represented by the identifier, and returns the updated part.
+      description: When the ID is available, updates a portion of the part represented by the identifier, and returns the updated part.
       operationId: patchCatalogControlPart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
@@ -9482,38 +9363,31 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, Deletes the part represented by the identifier.
-      description: When the id is available, Deletes the part represented by the identifier.
+      summary: When the ID is available, Deletes the part represented by the identifier.
+      description: When the ID is available, Deletes the part represented by the identifier.
       operationId: deleteCatalogControlPart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALPart"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALPart"
         401:
           description: Unauthorized
           content:
@@ -9571,21 +9445,21 @@ paths:
       description: Returns every relevant link.
       operationId: getCatalogControlPartLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
@@ -9654,21 +9528,21 @@ paths:
       description: Adds a new link.
       operationId: postCatalogControlPartLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
@@ -9765,31 +9639,31 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getCatalogControlPartLinkByHref
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -9854,31 +9728,31 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putCatalogControlPartLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -9964,31 +9838,31 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchCatalogControlPartLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -10081,44 +9955,37 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteCatalogControlPartLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -10176,21 +10043,21 @@ paths:
       description: Returns every relevant prop.
       operationId: getCatalogControlPartProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
@@ -10259,21 +10126,21 @@ paths:
       description: Adds a new prop.
       operationId: postCatalogControlPartProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
@@ -10370,31 +10237,31 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getCatalogControlPartPropByUuid
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -10459,31 +10326,31 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putCatalogControlPartProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -10569,31 +10436,31 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchCatalogControlPartProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -10686,44 +10553,37 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteCatalogControlPartProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -10781,21 +10641,21 @@ paths:
       description: Returns every relevant part.
       operationId: getCatalogControlPartSubpart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
@@ -10864,21 +10724,21 @@ paths:
       description: Adds a new part.
       operationId: postCatalogControlPartSubpart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
@@ -10975,31 +10835,31 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, returns the part represented by the identifier.
-      description: When the id is available, returns the part represented by the identifier.
+      summary: When the ID is available, returns the part represented by the identifier.
+      description: When the ID is available, returns the part represented by the identifier.
       operationId: getCatalogControlPartSubpartById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
-        - name: subpartId
+        - name: subpartID
           in: path
-          description: Id of Subpart
+          description: ID of Subpart
           required: true
           schema:
             type: string
@@ -11064,31 +10924,31 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, updates the part represented by the identifier, and returns the updated part.
-      description: When the id is available, updates the part represented by the identifier, and returns the updated part.
+      summary: When the ID is available, updates the part represented by the identifier, and returns the updated part.
+      description: When the ID is available, updates the part represented by the identifier, and returns the updated part.
       operationId: putCatalogControlPartSubpart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
-        - name: subpartId
+        - name: subpartID
           in: path
-          description: Id of Subpart
+          description: ID of Subpart
           required: true
           schema:
             type: string
@@ -11174,31 +11034,31 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, updates the part represented by the identifier, and returns the updated part.
-      description: When the id is available, updates the part represented by the identifier, and returns the updated part.
+      summary: When the ID is available, updates a portion of the part represented by the identifier, and returns the updated part.
+      description: When the ID is available, updates a portion of the part represented by the identifier, and returns the updated part.
       operationId: patchCatalogControlPartSubpart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
-        - name: subpartId
+        - name: subpartID
           in: path
-          description: Id of Subpart
+          description: ID of Subpart
           required: true
           schema:
             type: string
@@ -11291,44 +11151,37 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, Deletes the part represented by the identifier.
-      description: When the id is available, Deletes the part represented by the identifier.
+      summary: When the ID is available, Deletes the part represented by the identifier.
+      description: When the ID is available, Deletes the part represented by the identifier.
       operationId: deleteCatalogControlPartSubpart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
-        - name: subpartId
+        - name: subpartID
           in: path
-          description: Id of Subpart
+          description: ID of Subpart
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALPart"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALPart"
         401:
           description: Unauthorized
           content:
@@ -11386,15 +11239,15 @@ paths:
       description: Returns every relevant control.
       operationId: getCatalogControlSubcontrol
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -11463,15 +11316,15 @@ paths:
       description: Adds a new control.
       operationId: postCatalogControlSubcontrol
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -11568,25 +11421,25 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the control represented by the id.
-      description: Returns the control represented by the id.
+      summary: Returns the control represented by the control ID.
+      description: Returns the control represented by the control ID.
       operationId: getCatalogControlSubcontrolById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: subcontrolId
+        - name: subcontrolID
           in: path
-          description: Id of Subcontrol
+          description: ID of Subcontrol
           required: true
           schema:
             type: string
@@ -11651,25 +11504,25 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the control represented by the id.
-      description: Updates the control represented by the id.
+      summary: Replaces the control represented by the control ID.
+      description: Replaces the control represented by the control ID.
       operationId: putCatalogControlSubcontrol
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: subcontrolId
+        - name: subcontrolID
           in: path
-          description: Id of Subcontrol
+          description: ID of Subcontrol
           required: true
           schema:
             type: string
@@ -11755,25 +11608,25 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the control represented by the id.
-      description: Updates the control represented by the id.
+      summary: Updates a portion of the control represented by the control ID.
+      description: Updates a portion of the control represented by the control ID.
       operationId: patchCatalogControlSubcontrol
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: subcontrolId
+        - name: subcontrolID
           in: path
-          description: Id of Subcontrol
+          description: ID of Subcontrol
           required: true
           schema:
             type: string
@@ -11866,38 +11719,31 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the control represented by the id.
-      description: Deletes the control represented by the id.
+      summary: Deletes the control represented by the control ID.
+      description: Deletes the control represented by the control ID.
       operationId: deleteCatalogControlSubcontrol
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
-        - name: subcontrolId
+        - name: subcontrolID
           in: path
-          description: Id of Subcontrol
+          description: ID of Subcontrol
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALControl"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALControl"
         401:
           description: Unauthorized
           content:
@@ -11955,9 +11801,9 @@ paths:
       description: Returns every relevant group.
       operationId: getCatalogGroup
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12026,9 +11872,9 @@ paths:
       description: Adds a new group.
       operationId: postCatalogGroup
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -12125,19 +11971,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, returns the group represented by the identifier.
-      description: When the id is available, returns the group represented by the identifier.
+      summary: When the ID is available, returns the group represented by the identifier.
+      description: When the ID is available, returns the group represented by the identifier.
       operationId: getCatalogGroupById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -12202,19 +12048,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, updates the group represented by the identifier, and returns the updated group.
-      description: When the id is available, updates the group represented by the identifier, and returns the updated group.
+      summary: When the ID is available, updates the group represented by the identifier, and returns the updated group.
+      description: When the ID is available, updates the group represented by the identifier, and returns the updated group.
       operationId: putCatalogGroup
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -12300,19 +12146,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, updates the group represented by the identifier, and returns the updated group.
-      description: When the id is available, updates the group represented by the identifier, and returns the updated group.
+      summary: When the ID is available, updates a portion of the group represented by the identifier, and returns the updated group.
+      description: When the ID is available, updates a portion of the group represented by the identifier, and returns the updated group.
       operationId: patchCatalogGroup
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -12405,32 +12251,25 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, Deletes the group represented by the identifier.
-      description: When the id is available, Deletes the group represented by the identifier.
+      summary: When the ID is available, Deletes the group represented by the identifier.
+      description: When the ID is available, Deletes the group represented by the identifier.
       operationId: deleteCatalogGroup
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALGroup"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALGroup"
         401:
           description: Unauthorized
           content:
@@ -12488,15 +12327,15 @@ paths:
       description: Returns every relevant param.
       operationId: getCatalogGroupParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -12565,15 +12404,15 @@ paths:
       description: Adds a new param.
       operationId: postCatalogGroupParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -12670,25 +12509,25 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the param represented by the id.
-      description: Returns the param represented by the id.
+      summary: Returns the param represented by the param ID.
+      description: Returns the param represented by the param ID.
       operationId: getCatalogGroupParamById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -12753,25 +12592,25 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the param represented by the id.
-      description: Updates the param represented by the id.
+      summary: Replaces the param represented by the param ID.
+      description: Replaces the param represented by the param ID.
       operationId: putCatalogGroupParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -12857,25 +12696,25 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the param represented by the id.
-      description: Updates the param represented by the id.
+      summary: Updates a portion of the param represented by the param ID.
+      description: Updates a portion of the param represented by the param ID.
       operationId: patchCatalogGroupParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
@@ -12968,38 +12807,31 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the param represented by the id.
-      description: Deletes the param represented by the id.
+      summary: Deletes the param represented by the param ID.
+      description: Deletes the param represented by the param ID.
       operationId: deleteCatalogGroupParam
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: paramId
+        - name: paramID
           in: path
-          description: Id of Param
+          description: ID of Param
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALParam"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALParam"
         401:
           description: Unauthorized
           content:
@@ -13057,15 +12889,15 @@ paths:
       description: Returns every relevant link.
       operationId: getCatalogGroupLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -13134,15 +12966,15 @@ paths:
       description: Adds a new link.
       operationId: postCatalogGroupLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -13239,25 +13071,25 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the link represented by the href.
-      description: Returns the link represented by the href.
+      summary: Returns the link represented by the link HREF.
+      description: Returns the link represented by the link HREF.
       operationId: getCatalogGroupLinkByHref
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -13322,25 +13154,25 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Replaces the link represented by the link HREF.
+      description: Replaces the link represented by the link HREF.
       operationId: putCatalogGroupLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -13426,25 +13258,25 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the link represented by the href.
-      description: Updates the link represented by the href.
+      summary: Updates a portion of the link represented by the link HREF.
+      description: Updates a portion of the link represented by the link HREF.
       operationId: patchCatalogGroupLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
@@ -13537,38 +13369,31 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the link represented by the href.
-      description: Deletes the link represented by the href.
+      summary: Deletes the link represented by the link HREF.
+      description: Deletes the link represented by the link HREF.
       operationId: deleteCatalogGroupLink
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: linkHref
+        - name: linkHREF
           in: path
-          description: Href of Link
+          description: HREF of Link
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALLink"
         401:
           description: Unauthorized
           content:
@@ -13626,15 +13451,15 @@ paths:
       description: Returns every relevant prop.
       operationId: getCatalogGroupProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -13703,15 +13528,15 @@ paths:
       description: Adds a new prop.
       operationId: postCatalogGroupProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -13808,25 +13633,25 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, returns the prop represented by the identifier.
-      description: When the uuid is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier.
+      description: When the UUID is available, returns the prop represented by the identifier.
       operationId: getCatalogGroupPropByUuid
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -13891,25 +13716,25 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates the prop represented by the identifier, and returns the updated prop.
       operationId: putCatalogGroupProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -13995,25 +13820,25 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
-      description: When the uuid is available, updates the prop represented by the identifier, and returns the updated prop.
+      summary: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
+      description: When the UUID is available, updates a portion of the prop represented by the identifier, and returns the updated prop.
       operationId: patchCatalogGroupProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
@@ -14106,38 +13931,31 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: When the uuid is available, Deletes the prop represented by the identifier.
-      description: When the uuid is available, Deletes the prop represented by the identifier.
+      summary: When the UUID is available, Deletes the prop represented by the identifier.
+      description: When the UUID is available, Deletes the prop represented by the identifier.
       operationId: deleteCatalogGroupProp
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: propUuid
+        - name: propUUID
           in: path
-          description: Uuid of Prop
+          description: UUID of Prop
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProp"
         401:
           description: Unauthorized
           content:
@@ -14195,15 +14013,15 @@ paths:
       description: Returns every relevant part.
       operationId: getCatalogGroupPart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -14272,15 +14090,15 @@ paths:
       description: Adds a new part.
       operationId: postCatalogGroupPart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -14377,25 +14195,25 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, returns the part represented by the identifier.
-      description: When the id is available, returns the part represented by the identifier.
+      summary: When the ID is available, returns the part represented by the identifier.
+      description: When the ID is available, returns the part represented by the identifier.
       operationId: getCatalogGroupPartById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
@@ -14460,25 +14278,25 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, updates the part represented by the identifier, and returns the updated part.
-      description: When the id is available, updates the part represented by the identifier, and returns the updated part.
+      summary: When the ID is available, updates the part represented by the identifier, and returns the updated part.
+      description: When the ID is available, updates the part represented by the identifier, and returns the updated part.
       operationId: putCatalogGroupPart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
@@ -14564,25 +14382,25 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, updates the part represented by the identifier, and returns the updated part.
-      description: When the id is available, updates the part represented by the identifier, and returns the updated part.
+      summary: When the ID is available, updates a portion of the part represented by the identifier, and returns the updated part.
+      description: When the ID is available, updates a portion of the part represented by the identifier, and returns the updated part.
       operationId: patchCatalogGroupPart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
@@ -14675,38 +14493,31 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, Deletes the part represented by the identifier.
-      description: When the id is available, Deletes the part represented by the identifier.
+      summary: When the ID is available, Deletes the part represented by the identifier.
+      description: When the ID is available, Deletes the part represented by the identifier.
       operationId: deleteCatalogGroupPart
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: partId
+        - name: partID
           in: path
-          description: Id of Part
+          description: ID of Part
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALPart"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALPart"
         401:
           description: Unauthorized
           content:
@@ -14764,15 +14575,15 @@ paths:
       description: Returns every relevant control.
       operationId: getCatalogGroupControl
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -14841,15 +14652,15 @@ paths:
       description: Adds a new control.
       operationId: postCatalogGroupControl
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -14946,25 +14757,25 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the control represented by the id.
-      description: Returns the control represented by the id.
+      summary: Returns the control represented by the control ID.
+      description: Returns the control represented by the control ID.
       operationId: getCatalogGroupControlById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -15029,25 +14840,25 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the control represented by the id.
-      description: Updates the control represented by the id.
+      summary: Replaces the control represented by the control ID.
+      description: Replaces the control represented by the control ID.
       operationId: putCatalogGroupControl
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -15133,25 +14944,25 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the control represented by the id.
-      description: Updates the control represented by the id.
+      summary: Updates a portion of the control represented by the control ID.
+      description: Updates a portion of the control represented by the control ID.
       operationId: patchCatalogGroupControl
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
@@ -15244,38 +15055,31 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the control represented by the id.
-      description: Deletes the control represented by the id.
+      summary: Deletes the control represented by the control ID.
+      description: Deletes the control represented by the control ID.
       operationId: deleteCatalogGroupControl
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: controlId
+        - name: controlID
           in: path
-          description: Id of Control
+          description: ID of Control
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALControl"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALControl"
         401:
           description: Unauthorized
           content:
@@ -15333,15 +15137,15 @@ paths:
       description: Returns every relevant group.
       operationId: getCatalogGroupSubgroup
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -15410,15 +15214,15 @@ paths:
       description: Adds a new group.
       operationId: postCatalogGroupSubgroup
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
@@ -15515,25 +15319,25 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, returns the group represented by the identifier.
-      description: When the id is available, returns the group represented by the identifier.
+      summary: When the ID is available, returns the group represented by the identifier.
+      description: When the ID is available, returns the group represented by the identifier.
       operationId: getCatalogGroupSubgroupById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: subgroupId
+        - name: subgroupID
           in: path
-          description: Id of Subgroup
+          description: ID of Subgroup
           required: true
           schema:
             type: string
@@ -15598,25 +15402,25 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, updates the group represented by the identifier, and returns the updated group.
-      description: When the id is available, updates the group represented by the identifier, and returns the updated group.
+      summary: When the ID is available, updates the group represented by the identifier, and returns the updated group.
+      description: When the ID is available, updates the group represented by the identifier, and returns the updated group.
       operationId: putCatalogGroupSubgroup
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: subgroupId
+        - name: subgroupID
           in: path
-          description: Id of Subgroup
+          description: ID of Subgroup
           required: true
           schema:
             type: string
@@ -15702,25 +15506,25 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, updates the group represented by the identifier, and returns the updated group.
-      description: When the id is available, updates the group represented by the identifier, and returns the updated group.
+      summary: When the ID is available, updates a portion of the group represented by the identifier, and returns the updated group.
+      description: When the ID is available, updates a portion of the group represented by the identifier, and returns the updated group.
       operationId: patchCatalogGroupSubgroup
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: subgroupId
+        - name: subgroupID
           in: path
-          description: Id of Subgroup
+          description: ID of Subgroup
           required: true
           schema:
             type: string
@@ -15813,38 +15617,31 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: When the id is available, Deletes the group represented by the identifier.
-      description: When the id is available, Deletes the group represented by the identifier.
+      summary: When the ID is available, Deletes the group represented by the identifier.
+      description: When the ID is available, Deletes the group represented by the identifier.
       operationId: deleteCatalogGroupSubgroup
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: groupId
+        - name: groupID
           in: path
-          description: Id of Group
+          description: ID of Group
           required: true
           schema:
             type: string
-        - name: subgroupId
+        - name: subgroupID
           in: path
-          description: Id of Subgroup
+          description: ID of Subgroup
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALGroup"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALGroup"
         401:
           description: Unauthorized
           content:
@@ -15902,9 +15699,9 @@ paths:
       description: Returns the back matter.
       operationId: getCatalogBackMatterBy
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -15969,13 +15766,13 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Uppdates the back matter.
-      description: Uppdates the back matter.
+      summary: Replaces the back matter.
+      description: Replaces the back matter.
       operationId: putCatalogBackMatter
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -16061,13 +15858,13 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the back matter.
-      description: Updates the back matter.
+      summary: Updates a portion of the back matter.
+      description: Updates a portion of the back matter.
       operationId: patchCatalogBackMatter
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -16164,22 +15961,15 @@ paths:
       description: Deletes the back matter.
       operationId: deleteCatalogBackMatter
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALBackMatter"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALBackMatter"
         401:
           description: Unauthorized
           content:
@@ -16237,9 +16027,9 @@ paths:
       description: Returns every relevant resource.
       operationId: getCatalogBackMatterResource
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -16308,9 +16098,9 @@ paths:
       description: Adds a new resource.
       operationId: postCatalogBackMatterResource
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -16407,19 +16197,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the resource represented by the uuid.
-      description: Returns the resource represented by the uuid.
+      summary: Returns the resource represented by the resource UUID.
+      description: Returns the resource represented by the resource UUID.
       operationId: getCatalogBackMatterResourceByUuid
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -16484,19 +16274,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the resource represented by the uuid.
-      description: Updates the resource represented by the uuid.
+      summary: Replaces the resource represented by the resource UUID.
+      description: Replaces the resource represented by the resource UUID.
       operationId: putCatalogBackMatterResource
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -16582,19 +16372,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the resource represented by the uuid.
-      description: Updates the resource represented by the uuid.
+      summary: Updates a portion of the resource represented by the resource UUID.
+      description: Updates a portion of the resource represented by the resource UUID.
       operationId: patchCatalogBackMatterResource
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
@@ -16687,32 +16477,25 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the resource represented by the uuid.
-      description: Deletes the resource represented by the uuid.
+      summary: Deletes the resource represented by the resource UUID.
+      description: Deletes the resource represented by the resource UUID.
       operationId: deleteCatalogBackMatterResource
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: resourceUuid
+        - name: resourceUUID
           in: path
-          description: Uuid of Resource
+          description: UUID of Resource
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALResource"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResource"
         401:
           description: Unauthorized
           content:
@@ -16770,9 +16553,9 @@ paths:
       description: Returns every relevant attachment.
       operationId: getCatalogAttachment
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -16841,9 +16624,9 @@ paths:
       description: Adds a new attachment.
       operationId: postCatalogAttachment
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -16940,19 +16723,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the attachment represented by the id.
-      description: Returns the attachment represented by the id.
+      summary: Returns the attachment represented by the attachment ID.
+      description: Returns the attachment represented by the attachment ID.
       operationId: getCatalogAttachmentById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -17027,19 +16810,19 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Updates the attachment represented by the id.
-      description: Updates the attachment represented by the id.
+      summary: Replaces the attachment represented by the attachment ID.
+      description: Replaces the attachment represented by the attachment ID.
       operationId: putCatalogAttachment
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -17125,19 +16908,19 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the attachment represented by the id.
-      description: Deletes the attachment represented by the id.
+      summary: Deletes the attachment represented by the attachment ID.
+      description: Deletes the attachment represented by the attachment ID.
       operationId: deleteCatalogAttachment
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentId
+        - name: attachmentID
           in: path
-          description: Id of Attachment
+          description: ID of Attachment
           required: true
           schema:
             type: string
@@ -17201,9 +16984,9 @@ paths:
       description: Returns every relevant snapshot.
       operationId: getCatalogSnapshot
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -17272,9 +17055,9 @@ paths:
       description: Creates a snapshot of the file in its current state.
       operationId: postCatalogSnapshot
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
@@ -17371,19 +17154,19 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the snapshot represented by the id.
-      description: Returns the snapshot represented by the id.
+      summary: Returns the snapshot represented by the snapshot ID.
+      description: Returns the snapshot represented by the snapshot ID.
       operationId: getCatalogSnapshotById
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -17448,19 +17231,19 @@ paths:
     patch:
       tags:
         - OSCAL Catalog
-      summary: Updates the snapshot represented by the id.
-      description: Updates the snapshot represented by the id.
+      summary: Updates a portion of the snapshot represented by the snapshot ID.
+      description: Updates a portion of the snapshot represented by the snapshot ID.
       operationId: patchCatalogSnapshot
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
@@ -17553,32 +17336,25 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the snapshot represented by the id.
-      description: Deletes the snapshot represented by the id.
+      summary: Deletes the snapshot represented by the snapshot ID.
+      description: Deletes the snapshot represented by the snapshot ID.
       operationId: deleteCatalogSnapshot
       parameters:
-        - name: catalogId
+        - name: catalogID
           in: path
-          description: Id of Catalog
+          description: ID of Catalog
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: snapshotId
+        - name: snapshotID
           in: path
-          description: Id of Snapshot
+          description: ID of Snapshot
           required: true
           schema:
             type: string
       responses:
-        200:
+        204:
           description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalog"
         401:
           description: Unauthorized
           content:
@@ -19270,37 +19046,37 @@ components:
     OSCALProfileEntry:
       type: object
       properties:
-        profile:
+        profile-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALCatalogEntry:
       type: object
       properties:
-        catalog:
+        catalog-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALSystemSecurityPlanEntry:
       type: object
       properties:
-        system-security-plan:
+        system-security-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALComponentDefinitionEntry:
       type: object
       properties:
-        component-definition:
+        component-definition-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentPlanEntry:
       type: object
       properties:
-        assessment-plan:
+        assessment-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentResultsEntry:
       type: object
       properties:
-        assessment-results:
+        assessment-results-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALPlanOfActionAndMilestonesEntry:
       type: object
       properties:
-        plan-of-action-and-milestones:
+        plan-of-action-and-milestones-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALProfilesEntries:
       type: object
@@ -19389,6 +19165,18 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshots:
+      type: object
+      properties:
+        resolved-snapshot-list:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALModelSnapshotEntry"
+    OSCALResolvedSnapshot:
+      type: object
+      properties:
+        resolved-snapshot:
+          $ref: "#/components/schemas/OSCALModelSnapshotEntry"
     OSCALCatalogsSnapshots:
       type: object
       properties:

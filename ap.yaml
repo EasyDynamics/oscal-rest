@@ -34,11 +34,9 @@ info:
     and appropriately set the last-modified field in the document. These newly
     calculated values must be included in the response as part of the document content.
 
-    For guidance on handling UUIDs in `POST` and `PUT` operations, please review
-    [handling-uuids-on-post-put.md](https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).
   contact:
-    email: info@easydynamics.com
-  version: 0.1.0
+    email: oscal@oscal.io
+  version: 0.2.0
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -234,7 +232,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}:
+  /assessment-plan/{assessmentPlanID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -562,7 +560,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/metadata:
+  /assessment-plan/{assessmentPlanID}/metadata:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -825,7 +823,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/metadata/document-id:
+  /assessment-plan/{assessmentPlanID}/metadata/document-id:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -999,7 +997,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/metadata/document-id/{documentIdScheme}:
+  /assessment-plan/{assessmentPlanID}/metadata/document-id/{documentIdSCHEME}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -1351,7 +1349,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/metadata/revision:
+  /assessment-plan/{assessmentPlanID}/metadata/revision:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -1679,7 +1677,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/metadata/link:
+  /assessment-plan/{assessmentPlanID}/metadata/link:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -1853,7 +1851,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/metadata/link/{linkHref}:
+  /assessment-plan/{assessmentPlanID}/metadata/link/{linkHREF}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -2205,7 +2203,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/metadata/location:
+  /assessment-plan/{assessmentPlanID}/metadata/location:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -2379,7 +2377,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/metadata/location/{locationUuid}:
+  /assessment-plan/{assessmentPlanID}/metadata/location/{locationUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -2731,7 +2729,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/metadata/party:
+  /assessment-plan/{assessmentPlanID}/metadata/party:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -2905,7 +2903,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/metadata/party/{partyUuid}:
+  /assessment-plan/{assessmentPlanID}/metadata/party/{partyUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -3257,7 +3255,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/metadata/responsible-party:
+  /assessment-plan/{assessmentPlanID}/metadata/responsible-party:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -3431,7 +3429,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/metadata/responsible-party/{responsiblePartyRoleId}:
+  /assessment-plan/{assessmentPlanID}/metadata/responsible-party/{responsiblePartyROLEID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -3783,7 +3781,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/import-ssp:
+  /assessment-plan/{assessmentPlanID}/import-ssp:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -4046,7 +4044,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/local-definitions:
+  /assessment-plan/{assessmentPlanID}/local-definitions:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -4374,7 +4372,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/local-definitions/component:
+  /assessment-plan/{assessmentPlanID}/local-definitions/component:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -4548,7 +4546,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/local-definitions/component/{componentUuid}:
+  /assessment-plan/{assessmentPlanID}/local-definitions/component/{componentUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -4900,7 +4898,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/local-definitions/inventory-item:
+  /assessment-plan/{assessmentPlanID}/local-definitions/inventory-item:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -5074,7 +5072,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/local-definitions/inventory-item/{inventoryItemUuid}:
+  /assessment-plan/{assessmentPlanID}/local-definitions/inventory-item/{inventoryItemUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -5426,7 +5424,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/local-definitions/user:
+  /assessment-plan/{assessmentPlanID}/local-definitions/user:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -5600,7 +5598,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/local-definitions/user/{userUuid}:
+  /assessment-plan/{assessmentPlanID}/local-definitions/user/{userUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -5952,7 +5950,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/local-definitions/objectives-and-methods:
+  /assessment-plan/{assessmentPlanID}/local-definitions/objectives-and-methods:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -6126,7 +6124,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/local-definitions/objectives-and-methods/{objectivesAndMethodsControlId}:
+  /assessment-plan/{assessmentPlanID}/local-definitions/objectives-and-methods/{objectivesAndMethodsCONTROLID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -6478,7 +6476,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/local-definitions/activity:
+  /assessment-plan/{assessmentPlanID}/local-definitions/activity:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -6652,7 +6650,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/local-definitions/activity/{activityUuid}:
+  /assessment-plan/{assessmentPlanID}/local-definitions/activity/{activityUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -7004,7 +7002,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/terms-and-conditions:
+  /assessment-plan/{assessmentPlanID}/terms-and-conditions:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -7332,7 +7330,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/terms-and-conditions/part:
+  /assessment-plan/{assessmentPlanID}/terms-and-conditions/part:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -7506,7 +7504,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/terms-and-conditions/part/{partUuid}:
+  /assessment-plan/{assessmentPlanID}/terms-and-conditions/part/{partUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -7858,7 +7856,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/reviewed-controls:
+  /assessment-plan/{assessmentPlanID}/reviewed-controls:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -8121,7 +8119,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/reviewed-controls/link:
+  /assessment-plan/{assessmentPlanID}/reviewed-controls/link:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -8295,7 +8293,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/reviewed-controls/link/{linkHref}:
+  /assessment-plan/{assessmentPlanID}/reviewed-controls/link/{linkHREF}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -8647,7 +8645,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/reviewed-controls/prop:
+  /assessment-plan/{assessmentPlanID}/reviewed-controls/prop:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -8821,7 +8819,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/reviewed-controls/prop/{propUuid}:
+  /assessment-plan/{assessmentPlanID}/reviewed-controls/prop/{propUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -9173,7 +9171,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/reviewed-controls/control-selection:
+  /assessment-plan/{assessmentPlanID}/reviewed-controls/control-selection:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -9501,7 +9499,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/reviewed-controls/control-objective-selection:
+  /assessment-plan/{assessmentPlanID}/reviewed-controls/control-objective-selection:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -9829,7 +9827,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/assessment-subject:
+  /assessment-plan/{assessmentPlanID}/assessment-subject:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -10157,7 +10155,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/link:
+  /assessment-plan/{assessmentPlanID}/link:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -10331,7 +10329,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/link/{linkHref}:
+  /assessment-plan/{assessmentPlanID}/link/{linkHREF}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -10683,7 +10681,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/include-subject:
+  /assessment-plan/{assessmentPlanID}/include-subject:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -10857,7 +10855,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/include-subject/{includeSubjectSubjectUuid}:
+  /assessment-plan/{assessmentPlanID}/include-subject/{includeSubjectSUBJECTUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -11209,7 +11207,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/exclude-subject:
+  /assessment-plan/{assessmentPlanID}/exclude-subject:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -11383,7 +11381,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/exclude-subject/{excludeSubjectSubjectUuid}:
+  /assessment-plan/{assessmentPlanID}/exclude-subject/{excludeSubjectSUBJECTUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -11735,7 +11733,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/assessment-assets:
+  /assessment-plan/{assessmentPlanID}/assessment-assets:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -12063,7 +12061,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/assessment-assets/component:
+  /assessment-plan/{assessmentPlanID}/assessment-assets/component:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -12237,7 +12235,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/assessment-assets/component/{componentUuid}:
+  /assessment-plan/{assessmentPlanID}/assessment-assets/component/{componentUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -12589,7 +12587,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/assessment-assets/assessment-platform:
+  /assessment-plan/{assessmentPlanID}/assessment-assets/assessment-platform:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -12763,7 +12761,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/assessment-assets/assessment-platform/{assessmentPlatformUuid}:
+  /assessment-plan/{assessmentPlanID}/assessment-assets/assessment-platform/{assessmentPlatformUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -13115,7 +13113,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task:
+  /assessment-plan/{assessmentPlanID}/task:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -13289,7 +13287,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -13641,7 +13639,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}/link:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}/link:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -13827,7 +13825,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}/link/{linkHref}:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}/link/{linkHREF}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -14203,7 +14201,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}/prop:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}/prop:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -14389,7 +14387,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}/prop/{propUuid}:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}/prop/{propUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -14765,7 +14763,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}/dependency:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}/dependency:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -14951,7 +14949,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}/dependency/{dependencyTaskUuid}:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}/dependency/{dependencyTASKUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -15327,7 +15325,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}/subtask:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}/subtask:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -15513,7 +15511,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}/subtask/{subtaskUuid}:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}/subtask/{subtaskUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -15889,7 +15887,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}/associated-activity:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}/associated-activity:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -16075,7 +16073,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}/associated-activity/{associatedActivityActivityUuid}:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}/associated-activity/{associatedActivityACTIVITYUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -16451,7 +16449,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}/subject:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}/subject:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -16803,7 +16801,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}/responsible-party:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}/responsible-party:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -16989,7 +16987,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/task/{taskUuid}/responsible-party/{responsiblePartyRoleId}:
+  /assessment-plan/{assessmentPlanID}/task/{taskUUID}/responsible-party/{responsiblePartyROLEID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -17365,7 +17363,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/back-matter:
+  /assessment-plan/{assessmentPlanID}/back-matter:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -17693,7 +17691,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/back-matter/resource:
+  /assessment-plan/{assessmentPlanID}/back-matter/resource:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -17867,7 +17865,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/back-matter/resource/{resourceUuid}:
+  /assessment-plan/{assessmentPlanID}/back-matter/resource/{resourceUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -18219,7 +18217,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/attachment:
+  /assessment-plan/{assessmentPlanID}/attachment:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -18393,7 +18391,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/attachment/{attachmentId}:
+  /assessment-plan/{assessmentPlanID}/attachment/{attachmentID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -18650,7 +18648,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/snapshot:
+  /assessment-plan/{assessmentPlanID}/snapshot:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -18824,7 +18822,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/snapshot/{snapshotId}:
+  /assessment-plan/{assessmentPlanID}/snapshot/{snapshotID}:
     get:
       tags:
         - OSCAL Assessment Plan

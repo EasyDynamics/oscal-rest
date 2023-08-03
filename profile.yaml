@@ -34,11 +34,9 @@ info:
     and appropriately set the last-modified field in the document. These newly
     calculated values must be included in the response as part of the document content.
 
-    For guidance on handling UUIDs in `POST` and `PUT` operations, please review
-    [handling-uuids-on-post-put.md](https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).
   contact:
-    email: info@easydynamics.com
-  version: 0.1.0
+    email: oscal@oscal.io
+  version: 0.2.0
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -234,7 +232,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}:
+  /profile/{profileID}:
     get:
       tags:
         - OSCAL Profile
@@ -562,7 +560,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata:
+  /profile/{profileID}/metadata:
     get:
       tags:
         - OSCAL Profile
@@ -825,7 +823,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/revision:
+  /profile/{profileID}/metadata/revision:
     get:
       tags:
         - OSCAL Profile
@@ -1153,7 +1151,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/document-id:
+  /profile/{profileID}/metadata/document-id:
     get:
       tags:
         - OSCAL Profile
@@ -1327,7 +1325,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/document-id/{documentIdScheme}:
+  /profile/{profileID}/metadata/document-id/{documentIdSCHEME}:
     get:
       tags:
         - OSCAL Profile
@@ -1679,7 +1677,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/link:
+  /profile/{profileID}/metadata/link:
     get:
       tags:
         - OSCAL Profile
@@ -1853,7 +1851,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/link/{linkHref}:
+  /profile/{profileID}/metadata/link/{linkHREF}:
     get:
       tags:
         - OSCAL Profile
@@ -2205,7 +2203,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/prop:
+  /profile/{profileID}/metadata/prop:
     get:
       tags:
         - OSCAL Profile
@@ -2379,7 +2377,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/prop/{propUuid}:
+  /profile/{profileID}/metadata/prop/{propUUID}:
     get:
       tags:
         - OSCAL Profile
@@ -2731,7 +2729,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/role:
+  /profile/{profileID}/metadata/role:
     get:
       tags:
         - OSCAL Profile
@@ -2905,7 +2903,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/role/{roleId}:
+  /profile/{profileID}/metadata/role/{roleID}:
     get:
       tags:
         - OSCAL Profile
@@ -3257,7 +3255,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/location:
+  /profile/{profileID}/metadata/location:
     get:
       tags:
         - OSCAL Profile
@@ -3431,7 +3429,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/location/{locationUuid}:
+  /profile/{profileID}/metadata/location/{locationUUID}:
     get:
       tags:
         - OSCAL Profile
@@ -3783,7 +3781,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/party:
+  /profile/{profileID}/metadata/party:
     get:
       tags:
         - OSCAL Profile
@@ -3957,7 +3955,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/party/{partyUuid}:
+  /profile/{profileID}/metadata/party/{partyUUID}:
     get:
       tags:
         - OSCAL Profile
@@ -4309,7 +4307,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/responsible-party:
+  /profile/{profileID}/metadata/responsible-party:
     get:
       tags:
         - OSCAL Profile
@@ -4483,7 +4481,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/metadata/responsible-party/{responsiblePartyRoleId}:
+  /profile/{profileID}/metadata/responsible-party/{responsiblePartyROLEID}:
     get:
       tags:
         - OSCAL Profile
@@ -4835,7 +4833,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/import:
+  /profile/{profileID}/import:
     get:
       tags:
         - OSCAL Profile
@@ -5009,7 +5007,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/import/{importHref}:
+  /profile/{profileID}/import/{importHREF}:
     get:
       tags:
         - OSCAL Profile
@@ -5361,7 +5359,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/import/{importHref}/include-controls:
+  /profile/{profileID}/import/{importHREF}/include-controls:
     get:
       tags:
         - OSCAL Profile
@@ -5713,7 +5711,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/import/{importHref}/exclude-controls:
+  /profile/{profileID}/import/{importHREF}/exclude-controls:
     get:
       tags:
         - OSCAL Profile
@@ -6065,7 +6063,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/merge:
+  /profile/{profileID}/merge:
     get:
       tags:
         - OSCAL Profile
@@ -6393,7 +6391,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/merge/custom:
+  /profile/{profileID}/merge/custom:
     get:
       tags:
         - OSCAL Profile
@@ -6721,7 +6719,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/merge/custom/group:
+  /profile/{profileID}/merge/custom/group:
     get:
       tags:
         - OSCAL Profile
@@ -6895,7 +6893,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/merge/custom/group/{groupId}:
+  /profile/{profileID}/merge/custom/group/{groupID}:
     get:
       tags:
         - OSCAL Profile
@@ -7247,7 +7245,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/merge/custom/insert-controls:
+  /profile/{profileID}/merge/custom/insert-controls:
     get:
       tags:
         - OSCAL Profile
@@ -7575,7 +7573,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify:
+  /profile/{profileID}/modify:
     get:
       tags:
         - OSCAL Profile
@@ -7903,7 +7901,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/set-parameter:
+  /profile/{profileID}/modify/set-parameter:
     get:
       tags:
         - OSCAL Profile
@@ -8077,7 +8075,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/set-parameter/{setParameterParamId}:
+  /profile/{profileID}/modify/set-parameter/{setParameterPARAMID}:
     get:
       tags:
         - OSCAL Profile
@@ -8429,7 +8427,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/set-parameter/{setParameterParamId}/link:
+  /profile/{profileID}/modify/set-parameter/{setParameterPARAMID}/link:
     get:
       tags:
         - OSCAL Profile
@@ -8615,7 +8613,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/set-parameter/{setParameterParamId}/link/{linkHref}:
+  /profile/{profileID}/modify/set-parameter/{setParameterPARAMID}/link/{linkHREF}:
     get:
       tags:
         - OSCAL Profile
@@ -8991,7 +8989,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/set-parameter/{setParameterParamId}/prop:
+  /profile/{profileID}/modify/set-parameter/{setParameterPARAMID}/prop:
     get:
       tags:
         - OSCAL Profile
@@ -9177,7 +9175,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/set-parameter/{setParameterParamId}/prop/{propUuid}:
+  /profile/{profileID}/modify/set-parameter/{setParameterPARAMID}/prop/{propUUID}:
     get:
       tags:
         - OSCAL Profile
@@ -9553,7 +9551,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/set-parameter/{setParameterParamId}/constraint:
+  /profile/{profileID}/modify/set-parameter/{setParameterPARAMID}/constraint:
     get:
       tags:
         - OSCAL Profile
@@ -9905,7 +9903,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/set-parameter/{setParameterParamId}/guideline:
+  /profile/{profileID}/modify/set-parameter/{setParameterPARAMID}/guideline:
     get:
       tags:
         - OSCAL Profile
@@ -10257,7 +10255,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/alter:
+  /profile/{profileID}/modify/alter:
     get:
       tags:
         - OSCAL Profile
@@ -10431,7 +10429,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/alter/{alterControlId}:
+  /profile/{profileID}/modify/alter/{alterCONTROLID}:
     get:
       tags:
         - OSCAL Profile
@@ -10783,7 +10781,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/alter/{alterControlId}/remove:
+  /profile/{profileID}/modify/alter/{alterCONTROLID}/remove:
     get:
       tags:
         - OSCAL Profile
@@ -10969,7 +10967,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/alter/{alterControlId}/remove/{removeById}:
+  /profile/{profileID}/modify/alter/{alterCONTROLID}/remove/{removeBYID}:
     get:
       tags:
         - OSCAL Profile
@@ -11345,7 +11343,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/alter/{alterControlId}/add:
+  /profile/{profileID}/modify/alter/{alterCONTROLID}/add:
     get:
       tags:
         - OSCAL Profile
@@ -11531,7 +11529,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/modify/alter/{alterControlId}/add/{addById}:
+  /profile/{profileID}/modify/alter/{alterCONTROLID}/add/{addBYID}:
     get:
       tags:
         - OSCAL Profile
@@ -11907,7 +11905,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/back-matter:
+  /profile/{profileID}/back-matter:
     get:
       tags:
         - OSCAL Profile
@@ -12235,7 +12233,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/back-matter/resource:
+  /profile/{profileID}/back-matter/resource:
     get:
       tags:
         - OSCAL Profile
@@ -12409,7 +12407,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/back-matter/resource/{resourceUuid}:
+  /profile/{profileID}/back-matter/resource/{resourceUUID}:
     get:
       tags:
         - OSCAL Profile
@@ -12761,7 +12759,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/resolved-catalog:
+  /profile/{profileID}/resolved-catalog:
     get:
       tags:
         - OSCAL Profile
@@ -13024,7 +13022,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/attachment:
+  /profile/{profileID}/attachment:
     get:
       tags:
         - OSCAL Profile
@@ -13198,7 +13196,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/attachment/{attachmentId}:
+  /profile/{profileID}/attachment/{attachmentID}:
     get:
       tags:
         - OSCAL Profile
@@ -13455,7 +13453,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/snapshot:
+  /profile/{profileID}/snapshot:
     get:
       tags:
         - OSCAL Profile
@@ -13629,7 +13627,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/snapshot/{snapshotId}:
+  /profile/{profileID}/snapshot/{snapshotID}:
     get:
       tags:
         - OSCAL Profile
@@ -13883,7 +13881,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/resolved-snapshot:
+  /profile/{profileID}/resolved-snapshot:
     get:
       tags:
         - OSCAL Profile
@@ -14057,7 +14055,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/resolved-snapshot/{resolvedSnapshotId}:
+  /profile/{profileID}/resolved-snapshot/{resolvedSnapshotID}:
     get:
       tags:
         - OSCAL Profile

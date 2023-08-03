@@ -20816,37 +20816,37 @@ components:
     OSCALProfileEntry:
       type: object
       properties:
-        profile:
+        profile-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALCatalogEntry:
       type: object
       properties:
-        catalog:
+        catalog-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALSystemSecurityPlanEntry:
       type: object
       properties:
-        system-security-plan:
+        system-security-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALComponentDefinitionEntry:
       type: object
       properties:
-        component-definition:
+        component-definition-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentPlanEntry:
       type: object
       properties:
-        assessment-plan:
+        assessment-plan-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALAssessmentResultsEntry:
       type: object
       properties:
-        assessment-results:
+        assessment-results-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALPlanOfActionAndMilestonesEntry:
       type: object
       properties:
-        plan-of-action-and-milestones:
+        plan-of-action-and-milestones-list:
           $ref: "#/components/schemas/OSCALModelEntry"
     OSCALProfilesEntries:
       type: object

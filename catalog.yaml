@@ -34,11 +34,9 @@ info:
     and appropriately set the last-modified field in the document. These newly
     calculated values must be included in the response as part of the document content.
 
-    For guidance on handling UUIDs in `POST` and `PUT` operations, please review
-    [handling-uuids-on-post-put.md](https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).
   contact:
-    email: info@easydynamics.com
-  version: 0.1.0
+    email: oscal@oscal.io
+  version: 0.2.0
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -234,7 +232,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}:
+  /catalog/{catalogID}:
     get:
       tags:
         - OSCAL Catalog
@@ -562,7 +560,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata:
+  /catalog/{catalogID}/metadata:
     get:
       tags:
         - OSCAL Catalog
@@ -825,7 +823,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata/document-id:
+  /catalog/{catalogID}/metadata/document-id:
     get:
       tags:
         - OSCAL Catalog
@@ -999,7 +997,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata/document-id/{documentIdScheme}:
+  /catalog/{catalogID}/metadata/document-id/{documentIdSCHEME}:
     get:
       tags:
         - OSCAL Catalog
@@ -1351,7 +1349,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata/revision:
+  /catalog/{catalogID}/metadata/revision:
     get:
       tags:
         - OSCAL Catalog
@@ -1679,7 +1677,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata/link:
+  /catalog/{catalogID}/metadata/link:
     get:
       tags:
         - OSCAL Catalog
@@ -1853,7 +1851,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata/link/{linkHref}:
+  /catalog/{catalogID}/metadata/link/{linkHREF}:
     get:
       tags:
         - OSCAL Catalog
@@ -2205,7 +2203,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata/prop:
+  /catalog/{catalogID}/metadata/prop:
     get:
       tags:
         - OSCAL Catalog
@@ -2379,7 +2377,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata/prop/{propUuid}:
+  /catalog/{catalogID}/metadata/prop/{propUUID}:
     get:
       tags:
         - OSCAL Catalog
@@ -2731,7 +2729,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata/location:
+  /catalog/{catalogID}/metadata/location:
     get:
       tags:
         - OSCAL Catalog
@@ -2905,7 +2903,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata/location/{locationUuid}:
+  /catalog/{catalogID}/metadata/location/{locationUUID}:
     get:
       tags:
         - OSCAL Catalog
@@ -3257,7 +3255,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata/party:
+  /catalog/{catalogID}/metadata/party:
     get:
       tags:
         - OSCAL Catalog
@@ -3431,7 +3429,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata/party/{partyUuid}:
+  /catalog/{catalogID}/metadata/party/{partyUUID}:
     get:
       tags:
         - OSCAL Catalog
@@ -3783,7 +3781,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata/responsible-party:
+  /catalog/{catalogID}/metadata/responsible-party:
     get:
       tags:
         - OSCAL Catalog
@@ -3957,7 +3955,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/metadata/responsible-party/{responsiblePartyRoleId}:
+  /catalog/{catalogID}/metadata/responsible-party/{responsiblePartyROLEID}:
     get:
       tags:
         - OSCAL Catalog
@@ -4309,7 +4307,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/param:
+  /catalog/{catalogID}/param:
     get:
       tags:
         - OSCAL Catalog
@@ -4483,7 +4481,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/param/{paramId}:
+  /catalog/{catalogID}/param/{paramID}:
     get:
       tags:
         - OSCAL Catalog
@@ -4835,7 +4833,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/param/{paramId}/link:
+  /catalog/{catalogID}/param/{paramID}/link:
     get:
       tags:
         - OSCAL Catalog
@@ -5021,7 +5019,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/param/{paramId}/link/{linkHref}:
+  /catalog/{catalogID}/param/{paramID}/link/{linkHREF}:
     get:
       tags:
         - OSCAL Catalog
@@ -5397,7 +5395,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/param/{paramId}/prop:
+  /catalog/{catalogID}/param/{paramID}/prop:
     get:
       tags:
         - OSCAL Catalog
@@ -5583,7 +5581,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/param/{paramId}/prop/{propUuid}:
+  /catalog/{catalogID}/param/{paramID}/prop/{propUUID}:
     get:
       tags:
         - OSCAL Catalog
@@ -5959,7 +5957,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/param/{paramId}/constraint:
+  /catalog/{catalogID}/param/{paramID}/constraint:
     get:
       tags:
         - OSCAL Catalog
@@ -6311,7 +6309,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/param/{paramId}/guideline:
+  /catalog/{catalogID}/param/{paramID}/guideline:
     get:
       tags:
         - OSCAL Catalog
@@ -6663,7 +6661,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control:
+  /catalog/{catalogID}/control:
     get:
       tags:
         - OSCAL Catalog
@@ -6837,7 +6835,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}:
+  /catalog/{catalogID}/control/{controlID}:
     get:
       tags:
         - OSCAL Catalog
@@ -7189,7 +7187,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/param:
+  /catalog/{catalogID}/control/{controlID}/param:
     get:
       tags:
         - OSCAL Catalog
@@ -7375,7 +7373,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/param/{paramId}:
+  /catalog/{catalogID}/control/{controlID}/param/{paramID}:
     get:
       tags:
         - OSCAL Catalog
@@ -7751,7 +7749,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/link:
+  /catalog/{catalogID}/control/{controlID}/link:
     get:
       tags:
         - OSCAL Catalog
@@ -7937,7 +7935,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/link/{linkHref}:
+  /catalog/{catalogID}/control/{controlID}/link/{linkHREF}:
     get:
       tags:
         - OSCAL Catalog
@@ -8313,7 +8311,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/prop:
+  /catalog/{catalogID}/control/{controlID}/prop:
     get:
       tags:
         - OSCAL Catalog
@@ -8499,7 +8497,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/prop/{propUuid}:
+  /catalog/{catalogID}/control/{controlID}/prop/{propUUID}:
     get:
       tags:
         - OSCAL Catalog
@@ -8875,7 +8873,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/part:
+  /catalog/{catalogID}/control/{controlID}/part:
     get:
       tags:
         - OSCAL Catalog
@@ -9061,7 +9059,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/part/{partId}:
+  /catalog/{catalogID}/control/{controlID}/part/{partID}:
     get:
       tags:
         - OSCAL Catalog
@@ -9437,7 +9435,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/part/{partId}/link:
+  /catalog/{catalogID}/control/{controlID}/part/{partID}/link:
     get:
       tags:
         - OSCAL Catalog
@@ -9635,7 +9633,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/part/{partId}/link/{linkHref}:
+  /catalog/{catalogID}/control/{controlID}/part/{partID}/link/{linkHREF}:
     get:
       tags:
         - OSCAL Catalog
@@ -10035,7 +10033,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/part/{partId}/prop:
+  /catalog/{catalogID}/control/{controlID}/part/{partID}/prop:
     get:
       tags:
         - OSCAL Catalog
@@ -10233,7 +10231,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/part/{partId}/prop/{propUuid}:
+  /catalog/{catalogID}/control/{controlID}/part/{partID}/prop/{propUUID}:
     get:
       tags:
         - OSCAL Catalog
@@ -10633,7 +10631,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/part/{partId}/subpart:
+  /catalog/{catalogID}/control/{controlID}/part/{partID}/subpart:
     get:
       tags:
         - OSCAL Catalog
@@ -10831,7 +10829,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/part/{partId}/subpart/{subpartId}:
+  /catalog/{catalogID}/control/{controlID}/part/{partID}/subpart/{subpartID}:
     get:
       tags:
         - OSCAL Catalog
@@ -11231,7 +11229,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/subcontrol:
+  /catalog/{catalogID}/control/{controlID}/subcontrol:
     get:
       tags:
         - OSCAL Catalog
@@ -11417,7 +11415,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/control/{controlId}/subcontrol/{subcontrolId}:
+  /catalog/{catalogID}/control/{controlID}/subcontrol/{subcontrolID}:
     get:
       tags:
         - OSCAL Catalog
@@ -11793,7 +11791,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group:
+  /catalog/{catalogID}/group:
     get:
       tags:
         - OSCAL Catalog
@@ -11967,7 +11965,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}:
+  /catalog/{catalogID}/group/{groupID}:
     get:
       tags:
         - OSCAL Catalog
@@ -12319,7 +12317,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/param:
+  /catalog/{catalogID}/group/{groupID}/param:
     get:
       tags:
         - OSCAL Catalog
@@ -12505,7 +12503,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/param/{paramId}:
+  /catalog/{catalogID}/group/{groupID}/param/{paramID}:
     get:
       tags:
         - OSCAL Catalog
@@ -12881,7 +12879,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/link:
+  /catalog/{catalogID}/group/{groupID}/link:
     get:
       tags:
         - OSCAL Catalog
@@ -13067,7 +13065,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/link/{linkHref}:
+  /catalog/{catalogID}/group/{groupID}/link/{linkHREF}:
     get:
       tags:
         - OSCAL Catalog
@@ -13443,7 +13441,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/prop:
+  /catalog/{catalogID}/group/{groupID}/prop:
     get:
       tags:
         - OSCAL Catalog
@@ -13629,7 +13627,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/prop/{propUuid}:
+  /catalog/{catalogID}/group/{groupID}/prop/{propUUID}:
     get:
       tags:
         - OSCAL Catalog
@@ -14005,7 +14003,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/part:
+  /catalog/{catalogID}/group/{groupID}/part:
     get:
       tags:
         - OSCAL Catalog
@@ -14191,7 +14189,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/part/{partId}:
+  /catalog/{catalogID}/group/{groupID}/part/{partID}:
     get:
       tags:
         - OSCAL Catalog
@@ -14567,7 +14565,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/control:
+  /catalog/{catalogID}/group/{groupID}/control:
     get:
       tags:
         - OSCAL Catalog
@@ -14753,7 +14751,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/control/{controlId}:
+  /catalog/{catalogID}/group/{groupID}/control/{controlID}:
     get:
       tags:
         - OSCAL Catalog
@@ -15129,7 +15127,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/subgroup:
+  /catalog/{catalogID}/group/{groupID}/subgroup:
     get:
       tags:
         - OSCAL Catalog
@@ -15315,7 +15313,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/group/{groupId}/subgroup/{subgroupId}:
+  /catalog/{catalogID}/group/{groupID}/subgroup/{subgroupID}:
     get:
       tags:
         - OSCAL Catalog
@@ -15691,7 +15689,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/back-matter:
+  /catalog/{catalogID}/back-matter:
     get:
       tags:
         - OSCAL Catalog
@@ -16019,7 +16017,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/back-matter/resource:
+  /catalog/{catalogID}/back-matter/resource:
     get:
       tags:
         - OSCAL Catalog
@@ -16193,7 +16191,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/back-matter/resource/{resourceUuid}:
+  /catalog/{catalogID}/back-matter/resource/{resourceUUID}:
     get:
       tags:
         - OSCAL Catalog
@@ -16545,7 +16543,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/attachment:
+  /catalog/{catalogID}/attachment:
     get:
       tags:
         - OSCAL Catalog
@@ -16719,7 +16717,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/attachment/{attachmentId}:
+  /catalog/{catalogID}/attachment/{attachmentID}:
     get:
       tags:
         - OSCAL Catalog
@@ -16976,7 +16974,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/snapshot:
+  /catalog/{catalogID}/snapshot:
     get:
       tags:
         - OSCAL Catalog
@@ -17150,7 +17148,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/snapshot/{snapshotId}:
+  /catalog/{catalogID}/snapshot/{snapshotID}:
     get:
       tags:
         - OSCAL Catalog

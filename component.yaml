@@ -34,11 +34,9 @@ info:
     and appropriately set the last-modified field in the document. These newly
     calculated values must be included in the response as part of the document content.
 
-    For guidance on handling UUIDs in `POST` and `PUT` operations, please review
-    [handling-uuids-on-post-put.md](https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).
   contact:
-    email: info@easydynamics.com
-  version: 0.1.0
+    email: oscal@oscal.io
+  version: 0.2.0
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -234,7 +232,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}:
+  /component-definition/{componentDefinitionID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -562,7 +560,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata:
+  /component-definition/{componentDefinitionID}/metadata:
     get:
       tags:
         - OSCAL Component Definition
@@ -825,7 +823,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/revision:
+  /component-definition/{componentDefinitionID}/metadata/revision:
     get:
       tags:
         - OSCAL Component Definition
@@ -1153,7 +1151,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/document-id:
+  /component-definition/{componentDefinitionID}/metadata/document-id:
     get:
       tags:
         - OSCAL Component Definition
@@ -1327,7 +1325,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/document-id/{documentIdScheme}:
+  /component-definition/{componentDefinitionID}/metadata/document-id/{documentIdSCHEME}:
     get:
       tags:
         - OSCAL Component Definition
@@ -1679,7 +1677,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/link:
+  /component-definition/{componentDefinitionID}/metadata/link:
     get:
       tags:
         - OSCAL Component Definition
@@ -1853,7 +1851,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/link/{linkHref}:
+  /component-definition/{componentDefinitionID}/metadata/link/{linkHREF}:
     get:
       tags:
         - OSCAL Component Definition
@@ -2205,7 +2203,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/prop:
+  /component-definition/{componentDefinitionID}/metadata/prop:
     get:
       tags:
         - OSCAL Component Definition
@@ -2379,7 +2377,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/prop/{propUuid}:
+  /component-definition/{componentDefinitionID}/metadata/prop/{propUUID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -2731,7 +2729,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/role:
+  /component-definition/{componentDefinitionID}/metadata/role:
     get:
       tags:
         - OSCAL Component Definition
@@ -2905,7 +2903,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/role/{roleId}:
+  /component-definition/{componentDefinitionID}/metadata/role/{roleID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -3257,7 +3255,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/location:
+  /component-definition/{componentDefinitionID}/metadata/location:
     get:
       tags:
         - OSCAL Component Definition
@@ -3431,7 +3429,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/location/{locationUuid}:
+  /component-definition/{componentDefinitionID}/metadata/location/{locationUUID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -3783,7 +3781,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/party:
+  /component-definition/{componentDefinitionID}/metadata/party:
     get:
       tags:
         - OSCAL Component Definition
@@ -3957,7 +3955,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/party/{partyUuid}:
+  /component-definition/{componentDefinitionID}/metadata/party/{partyUUID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -4309,7 +4307,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/responsible-party:
+  /component-definition/{componentDefinitionID}/metadata/responsible-party:
     get:
       tags:
         - OSCAL Component Definition
@@ -4483,7 +4481,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/metadata/responsible-party/{responsiblePartyRoleId}:
+  /component-definition/{componentDefinitionID}/metadata/responsible-party/{responsiblePartyROLEID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -4835,7 +4833,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/import-component-definition:
+  /component-definition/{componentDefinitionID}/import-component-definition:
     get:
       tags:
         - OSCAL Component Definition
@@ -5009,7 +5007,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/import-component-definition/{importComponentDefinitionHref}:
+  /component-definition/{componentDefinitionID}/import-component-definition/{importComponentDefinitionHREF}:
     get:
       tags:
         - OSCAL Component Definition
@@ -5361,7 +5359,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component:
+  /component-definition/{componentDefinitionID}/component:
     get:
       tags:
         - OSCAL Component Definition
@@ -5535,7 +5533,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -5887,7 +5885,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/link:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/link:
     get:
       tags:
         - OSCAL Component Definition
@@ -6073,7 +6071,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/link/{linkHref}:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/link/{linkHREF}:
     get:
       tags:
         - OSCAL Component Definition
@@ -6449,7 +6447,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/prop:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/prop:
     get:
       tags:
         - OSCAL Component Definition
@@ -6635,7 +6633,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/prop/{propUuid}:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/prop/{propUUID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -7011,7 +7009,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/responsible-role:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/responsible-role:
     get:
       tags:
         - OSCAL Component Definition
@@ -7197,7 +7195,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/responsible-role/{responsibleRoleRoleId}:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/responsible-role/{responsibleRoleROLEID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -7573,7 +7571,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/protocol:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/protocol:
     get:
       tags:
         - OSCAL Component Definition
@@ -7759,7 +7757,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/protocol/{protocolUuid}:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/protocol/{protocolUUID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -8135,7 +8133,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/control-implementation:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/control-implementation:
     get:
       tags:
         - OSCAL Component Definition
@@ -8321,7 +8319,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/control-implementation/{controlImplementationUuid}:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/control-implementation/{controlImplementationUUID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -8697,7 +8695,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/control-implementation/{controlImplementationUuid}/link:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/control-implementation/{controlImplementationUUID}/link:
     get:
       tags:
         - OSCAL Component Definition
@@ -8895,7 +8893,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/control-implementation/{controlImplementationUuid}/link/{linkHref}:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/control-implementation/{controlImplementationUUID}/link/{linkHREF}:
     get:
       tags:
         - OSCAL Component Definition
@@ -9295,7 +9293,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/control-implementation/{controlImplementationUuid}/prop:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/control-implementation/{controlImplementationUUID}/prop:
     get:
       tags:
         - OSCAL Component Definition
@@ -9493,7 +9491,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/control-implementation/{controlImplementationUuid}/prop/{propUuid}:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/control-implementation/{controlImplementationUUID}/prop/{propUUID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -9893,7 +9891,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/control-implementation/{controlImplementationUuid}/set-parameter:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/control-implementation/{controlImplementationUUID}/set-parameter:
     get:
       tags:
         - OSCAL Component Definition
@@ -10091,7 +10089,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/control-implementation/{controlImplementationUuid}/set-parameter/{setParameterParamId}:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/control-implementation/{controlImplementationUUID}/set-parameter/{setParameterPARAMID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -10491,7 +10489,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/control-implementation/{controlImplementationUuid}/implemented-requirement:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/control-implementation/{controlImplementationUUID}/implemented-requirement:
     get:
       tags:
         - OSCAL Component Definition
@@ -10689,7 +10687,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/component/{componentUuid}/control-implementation/{controlImplementationUuid}/implemented-requirement/{implementedRequirementControlId}:
+  /component-definition/{componentDefinitionID}/component/{componentUUID}/control-implementation/{controlImplementationUUID}/implemented-requirement/{implementedRequirementCONTROLID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -11089,7 +11087,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/capability:
+  /component-definition/{componentDefinitionID}/capability:
     get:
       tags:
         - OSCAL Component Definition
@@ -11263,7 +11261,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/capability/{capabilityUuid}:
+  /component-definition/{componentDefinitionID}/capability/{capabilityUUID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -11615,7 +11613,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/capability/{capabilityUuid}/link:
+  /component-definition/{componentDefinitionID}/capability/{capabilityUUID}/link:
     get:
       tags:
         - OSCAL Component Definition
@@ -11801,7 +11799,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/capability/{capabilityUuid}/link/{linkHref}:
+  /component-definition/{componentDefinitionID}/capability/{capabilityUUID}/link/{linkHREF}:
     get:
       tags:
         - OSCAL Component Definition
@@ -12177,7 +12175,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/capability/{capabilityUuid}/prop:
+  /component-definition/{componentDefinitionID}/capability/{capabilityUUID}/prop:
     get:
       tags:
         - OSCAL Component Definition
@@ -12363,7 +12361,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/capability/{capabilityUuid}/prop/{propUuid}:
+  /component-definition/{componentDefinitionID}/capability/{capabilityUUID}/prop/{propUUID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -12739,7 +12737,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/capability/{capabilityUuid}/incorporates-component:
+  /component-definition/{componentDefinitionID}/capability/{capabilityUUID}/incorporates-component:
     get:
       tags:
         - OSCAL Component Definition
@@ -12925,7 +12923,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/capability/{capabilityUuid}/incorporates-component/{incorporatesComponentComponentUuid}:
+  /component-definition/{componentDefinitionID}/capability/{capabilityUUID}/incorporates-component/{incorporatesComponentCOMPONENTUUID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -13301,7 +13299,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/capability/{capabilityUuid}/control-implementation:
+  /component-definition/{componentDefinitionID}/capability/{capabilityUUID}/control-implementation:
     get:
       tags:
         - OSCAL Component Definition
@@ -13487,7 +13485,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/capability/{capabilityUuid}/control-implementation/{controlImplementationUuid}:
+  /component-definition/{componentDefinitionID}/capability/{capabilityUUID}/control-implementation/{controlImplementationUUID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -13863,7 +13861,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/back-matter:
+  /component-definition/{componentDefinitionID}/back-matter:
     get:
       tags:
         - OSCAL Component Definition
@@ -14191,7 +14189,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/back-matter/resource:
+  /component-definition/{componentDefinitionID}/back-matter/resource:
     get:
       tags:
         - OSCAL Component Definition
@@ -14365,7 +14363,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/back-matter/resource/{resourceUuid}:
+  /component-definition/{componentDefinitionID}/back-matter/resource/{resourceUUID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -14717,7 +14715,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/attachment:
+  /component-definition/{componentDefinitionID}/attachment:
     get:
       tags:
         - OSCAL Component Definition
@@ -14891,7 +14889,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/attachment/{attachmentId}:
+  /component-definition/{componentDefinitionID}/attachment/{attachmentID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -15148,7 +15146,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/snapshot:
+  /component-definition/{componentDefinitionID}/snapshot:
     get:
       tags:
         - OSCAL Component Definition
@@ -15322,7 +15320,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/snapshot/{snapshotId}:
+  /component-definition/{componentDefinitionID}/snapshot/{snapshotID}:
     get:
       tags:
         - OSCAL Component Definition

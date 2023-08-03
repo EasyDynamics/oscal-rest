@@ -34,11 +34,9 @@ info:
     and appropriately set the last-modified field in the document. These newly
     calculated values must be included in the response as part of the document content.
 
-    For guidance on handling UUIDs in `POST` and `PUT` operations, please review
-    [handling-uuids-on-post-put.md](https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).
   contact:
-    email: info@easydynamics.com
-  version: 0.1.0
+    email: oscal@oscal.io
+  version: 0.2.0
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -234,7 +232,7 @@ paths:
         - oscal_auth:
             - read:systemSecurityPlan
             - write:systemSecurityPlan
-  /system-security-plan/{systemSecurityPlanId}:
+  /system-security-plan/{systemSecurityPlanID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -562,7 +560,7 @@ paths:
         - oscal_auth:
             - read:systemSecurityPlan
             - write:systemSecurityPlan
-  /system-security-plan/{systemSecurityPlanId}/metadata:
+  /system-security-plan/{systemSecurityPlanID}/metadata:
     get:
       tags:
         - OSCAL System Security Plan
@@ -825,7 +823,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/revision:
+  /system-security-plan/{systemSecurityPlanID}/metadata/revision:
     get:
       tags:
         - OSCAL System Security Plan
@@ -1153,7 +1151,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/document-id:
+  /system-security-plan/{systemSecurityPlanID}/metadata/document-id:
     get:
       tags:
         - OSCAL System Security Plan
@@ -1327,7 +1325,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/document-id/{documentIdScheme}:
+  /system-security-plan/{systemSecurityPlanID}/metadata/document-id/{documentIdSCHEME}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -1679,7 +1677,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/link:
+  /system-security-plan/{systemSecurityPlanID}/metadata/link:
     get:
       tags:
         - OSCAL System Security Plan
@@ -1853,7 +1851,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/link/{linkHref}:
+  /system-security-plan/{systemSecurityPlanID}/metadata/link/{linkHREF}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -2205,7 +2203,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/prop:
+  /system-security-plan/{systemSecurityPlanID}/metadata/prop:
     get:
       tags:
         - OSCAL System Security Plan
@@ -2379,7 +2377,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/prop/{propUuid}:
+  /system-security-plan/{systemSecurityPlanID}/metadata/prop/{propUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -2731,7 +2729,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/role:
+  /system-security-plan/{systemSecurityPlanID}/metadata/role:
     get:
       tags:
         - OSCAL System Security Plan
@@ -2905,7 +2903,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/role/{roleId}:
+  /system-security-plan/{systemSecurityPlanID}/metadata/role/{roleID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -3257,7 +3255,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/location:
+  /system-security-plan/{systemSecurityPlanID}/metadata/location:
     get:
       tags:
         - OSCAL System Security Plan
@@ -3431,7 +3429,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/location/{locationUuid}:
+  /system-security-plan/{systemSecurityPlanID}/metadata/location/{locationUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -3783,7 +3781,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/party:
+  /system-security-plan/{systemSecurityPlanID}/metadata/party:
     get:
       tags:
         - OSCAL System Security Plan
@@ -3957,7 +3955,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/party/{partyUuid}:
+  /system-security-plan/{systemSecurityPlanID}/metadata/party/{partyUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -4309,7 +4307,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/responsible-party:
+  /system-security-plan/{systemSecurityPlanID}/metadata/responsible-party:
     get:
       tags:
         - OSCAL System Security Plan
@@ -4483,7 +4481,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/metadata/responsible-party/{responsiblePartyRoleId}:
+  /system-security-plan/{systemSecurityPlanID}/metadata/responsible-party/{responsiblePartyROLEID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -4835,7 +4833,7 @@ paths:
         - oscal_auth:
             - read:metadata
             - write:metadata
-  /system-security-plan/{systemSecurityPlanId}/import-profile:
+  /system-security-plan/{systemSecurityPlanID}/import-profile:
     get:
       tags:
         - OSCAL System Security Plan
@@ -5098,7 +5096,7 @@ paths:
         - oscal_auth:
             - read:importProfile
             - write:importProfile
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics:
     get:
       tags:
         - OSCAL System Security Plan
@@ -5361,7 +5359,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/link:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/link:
     get:
       tags:
         - OSCAL System Security Plan
@@ -5535,7 +5533,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/link/{linkHref}:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/link/{linkHREF}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -5887,7 +5885,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/prop:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/prop:
     get:
       tags:
         - OSCAL System Security Plan
@@ -6061,7 +6059,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/prop/{propUuid}:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/prop/{propUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -6413,7 +6411,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/system-information:
     get:
       tags:
         - OSCAL System Security Plan
@@ -6676,7 +6674,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/link:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/system-information/link:
     get:
       tags:
         - OSCAL System Security Plan
@@ -6850,7 +6848,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/link/{linkHref}:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/system-information/link/{linkHREF}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -7202,7 +7200,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/prop:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/system-information/prop:
     get:
       tags:
         - OSCAL System Security Plan
@@ -7376,7 +7374,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/prop/{propUuid}:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/system-information/prop/{propUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -7728,7 +7726,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/information-type:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/system-information/information-type:
     get:
       tags:
         - OSCAL System Security Plan
@@ -7902,7 +7900,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/system-information/information-type/{informationTypeUuid}:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/system-information/information-type/{informationTypeUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -8254,7 +8252,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/security-impact-level:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/security-impact-level:
     get:
       tags:
         - OSCAL System Security Plan
@@ -8517,7 +8515,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/authorization-boundary:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/authorization-boundary:
     get:
       tags:
         - OSCAL System Security Plan
@@ -8780,7 +8778,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/network-architecture:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/network-architecture:
     get:
       tags:
         - OSCAL System Security Plan
@@ -9108,7 +9106,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/data-flow:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/data-flow:
     get:
       tags:
         - OSCAL System Security Plan
@@ -9436,7 +9434,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/responsible-party:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/responsible-party:
     get:
       tags:
         - OSCAL System Security Plan
@@ -9610,7 +9608,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-characteristics/responsible-party/{responsiblePartyRoleId}:
+  /system-security-plan/{systemSecurityPlanID}/system-characteristics/responsible-party/{responsiblePartyROLEID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -9962,7 +9960,7 @@ paths:
         - oscal_auth:
             - read:systemCharacteristics
             - write:systemCharacteristics
-  /system-security-plan/{systemSecurityPlanId}/system-implementation:
+  /system-security-plan/{systemSecurityPlanID}/system-implementation:
     get:
       tags:
         - OSCAL System Security Plan
@@ -10225,7 +10223,7 @@ paths:
         - oscal_auth:
             - read:systemImplementation
             - write:systemImplementation
-  /system-security-plan/{systemSecurityPlanId}/system-implementation/link:
+  /system-security-plan/{systemSecurityPlanID}/system-implementation/link:
     get:
       tags:
         - OSCAL System Security Plan
@@ -10399,7 +10397,7 @@ paths:
         - oscal_auth:
             - read:systemImplementation
             - write:systemImplementation
-  /system-security-plan/{systemSecurityPlanId}/system-implementation/link/{linkHref}:
+  /system-security-plan/{systemSecurityPlanID}/system-implementation/link/{linkHREF}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -10751,7 +10749,7 @@ paths:
         - oscal_auth:
             - read:systemImplementation
             - write:systemImplementation
-  /system-security-plan/{systemSecurityPlanId}/system-implementation/prop:
+  /system-security-plan/{systemSecurityPlanID}/system-implementation/prop:
     get:
       tags:
         - OSCAL System Security Plan
@@ -10925,7 +10923,7 @@ paths:
         - oscal_auth:
             - read:systemImplementation
             - write:systemImplementation
-  /system-security-plan/{systemSecurityPlanId}/system-implementation/prop/{propUuid}:
+  /system-security-plan/{systemSecurityPlanID}/system-implementation/prop/{propUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -11277,7 +11275,7 @@ paths:
         - oscal_auth:
             - read:systemImplementation
             - write:systemImplementation
-  /system-security-plan/{systemSecurityPlanId}/system-implementation/leveraged-authorization:
+  /system-security-plan/{systemSecurityPlanID}/system-implementation/leveraged-authorization:
     get:
       tags:
         - OSCAL System Security Plan
@@ -11451,7 +11449,7 @@ paths:
         - oscal_auth:
             - read:systemImplementation
             - write:systemImplementation
-  /system-security-plan/{systemSecurityPlanId}/system-implementation/leveraged-authorization/{leveragedAuthorizationUuid}:
+  /system-security-plan/{systemSecurityPlanID}/system-implementation/leveraged-authorization/{leveragedAuthorizationUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -11803,7 +11801,7 @@ paths:
         - oscal_auth:
             - read:systemImplementation
             - write:systemImplementation
-  /system-security-plan/{systemSecurityPlanId}/system-implementation/user:
+  /system-security-plan/{systemSecurityPlanID}/system-implementation/user:
     get:
       tags:
         - OSCAL System Security Plan
@@ -11977,7 +11975,7 @@ paths:
         - oscal_auth:
             - read:systemImplementation
             - write:systemImplementation
-  /system-security-plan/{systemSecurityPlanId}/system-implementation/user/{userUuid}:
+  /system-security-plan/{systemSecurityPlanID}/system-implementation/user/{userUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -12329,7 +12327,7 @@ paths:
         - oscal_auth:
             - read:systemImplementation
             - write:systemImplementation
-  /system-security-plan/{systemSecurityPlanId}/system-implementation/inventory-item:
+  /system-security-plan/{systemSecurityPlanID}/system-implementation/inventory-item:
     get:
       tags:
         - OSCAL System Security Plan
@@ -12503,7 +12501,7 @@ paths:
         - oscal_auth:
             - read:systemImplementation
             - write:systemImplementation
-  /system-security-plan/{systemSecurityPlanId}/system-implementation/inventory-item/{inventoryItemUuid}:
+  /system-security-plan/{systemSecurityPlanID}/system-implementation/inventory-item/{inventoryItemUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -12855,7 +12853,7 @@ paths:
         - oscal_auth:
             - read:systemImplementation
             - write:systemImplementation
-  /system-security-plan/{systemSecurityPlanId}/system-implementation/component:
+  /system-security-plan/{systemSecurityPlanID}/system-implementation/component:
     get:
       tags:
         - OSCAL System Security Plan
@@ -13029,7 +13027,7 @@ paths:
         - oscal_auth:
             - read:systemImplementation
             - write:systemImplementation
-  /system-security-plan/{systemSecurityPlanId}/system-implementation/component/{componentUuid}:
+  /system-security-plan/{systemSecurityPlanID}/system-implementation/component/{componentUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -13381,7 +13379,7 @@ paths:
         - oscal_auth:
             - read:systemImplementation
             - write:systemImplementation
-  /system-security-plan/{systemSecurityPlanId}/control-implementation:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation:
     get:
       tags:
         - OSCAL System Security Plan
@@ -13644,7 +13642,7 @@ paths:
         - oscal_auth:
             - read:controlImplementation
             - write:controlImplementation
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/set-parameter:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/set-parameter:
     get:
       tags:
         - OSCAL System Security Plan
@@ -13818,7 +13816,7 @@ paths:
         - oscal_auth:
             - read:controlImplementation
             - write:controlImplementation
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/set-parameter/{setParameterParamId}:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/set-parameter/{setParameterPARAMID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -14170,7 +14168,7 @@ paths:
         - oscal_auth:
             - read:controlImplementation
             - write:controlImplementation
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/implemented-requirement:
     get:
       tags:
         - OSCAL System Security Plan
@@ -14344,7 +14342,7 @@ paths:
         - oscal_auth:
             - read:implementedRequirement
             - write:implementedRequirement
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/implemented-requirement/{implementedRequirementCONTROLID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -14696,7 +14694,7 @@ paths:
         - oscal_auth:
             - read:implementedRequirement
             - write:implementedRequirement
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/link:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/implemented-requirement/{implementedRequirementCONTROLID}/link:
     get:
       tags:
         - OSCAL System Security Plan
@@ -14882,7 +14880,7 @@ paths:
         - oscal_auth:
             - read:implementedRequirement
             - write:implementedRequirement
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/link/{linkHref}:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/implemented-requirement/{implementedRequirementCONTROLID}/link/{linkHREF}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -15258,7 +15256,7 @@ paths:
         - oscal_auth:
             - read:implementedRequirement
             - write:implementedRequirement
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/prop:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/implemented-requirement/{implementedRequirementCONTROLID}/prop:
     get:
       tags:
         - OSCAL System Security Plan
@@ -15444,7 +15442,7 @@ paths:
         - oscal_auth:
             - read:implementedRequirement
             - write:implementedRequirement
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/prop/{propUuid}:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/implemented-requirement/{implementedRequirementCONTROLID}/prop/{propUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -15820,7 +15818,7 @@ paths:
         - oscal_auth:
             - read:implementedRequirement
             - write:implementedRequirement
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/set-parameter:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/implemented-requirement/{implementedRequirementCONTROLID}/set-parameter:
     get:
       tags:
         - OSCAL System Security Plan
@@ -16006,7 +16004,7 @@ paths:
         - oscal_auth:
             - read:implementedRequirement
             - write:implementedRequirement
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/set-parameter/{setParameterParamId}:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/implemented-requirement/{implementedRequirementCONTROLID}/set-parameter/{setParameterPARAMID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -16382,7 +16380,7 @@ paths:
         - oscal_auth:
             - read:implementedRequirement
             - write:implementedRequirement
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/responsible-role:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/implemented-requirement/{implementedRequirementCONTROLID}/responsible-role:
     get:
       tags:
         - OSCAL System Security Plan
@@ -16568,7 +16566,7 @@ paths:
         - oscal_auth:
             - read:implementedRequirement
             - write:implementedRequirement
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/responsible-role/{responsibleRoleRoleId}:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/implemented-requirement/{implementedRequirementCONTROLID}/responsible-role/{responsibleRoleROLEID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -16944,7 +16942,7 @@ paths:
         - oscal_auth:
             - read:implementedRequirement
             - write:implementedRequirement
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/by-component:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/implemented-requirement/{implementedRequirementCONTROLID}/by-component:
     get:
       tags:
         - OSCAL System Security Plan
@@ -17130,7 +17128,7 @@ paths:
         - oscal_auth:
             - read:implementedRequirement
             - write:implementedRequirement
-  /system-security-plan/{systemSecurityPlanId}/control-implementation/implemented-requirement/{implementedRequirementControlId}/by-component/{byComponentComponentUuid}:
+  /system-security-plan/{systemSecurityPlanID}/control-implementation/implemented-requirement/{implementedRequirementCONTROLID}/by-component/{byComponentCOMPONENTUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -17506,7 +17504,7 @@ paths:
         - oscal_auth:
             - read:implementedRequirement
             - write:implementedRequirement
-  /system-security-plan/{systemSecurityPlanId}/back-matter:
+  /system-security-plan/{systemSecurityPlanID}/back-matter:
     get:
       tags:
         - OSCAL System Security Plan
@@ -17834,7 +17832,7 @@ paths:
         - oscal_auth:
             - read:backMatter
             - write:backMatter
-  /system-security-plan/{systemSecurityPlanId}/back-matter/resource:
+  /system-security-plan/{systemSecurityPlanID}/back-matter/resource:
     get:
       tags:
         - OSCAL System Security Plan
@@ -18008,7 +18006,7 @@ paths:
         - oscal_auth:
             - read:backMatter
             - write:backMatter
-  /system-security-plan/{systemSecurityPlanId}/back-matter/resource/{resourceUuid}:
+  /system-security-plan/{systemSecurityPlanID}/back-matter/resource/{resourceUUID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -18360,7 +18358,7 @@ paths:
         - oscal_auth:
             - read:backMatter
             - write:backMatter
-  /system-security-plan/{systemSecurityPlanId}/attachment:
+  /system-security-plan/{systemSecurityPlanID}/attachment:
     get:
       tags:
         - OSCAL System Security Plan
@@ -18534,7 +18532,7 @@ paths:
         - oscal_auth:
             - read:attachment
             - write:attachment
-  /system-security-plan/{systemSecurityPlanId}/attachment/{attachmentId}:
+  /system-security-plan/{systemSecurityPlanID}/attachment/{attachmentID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -18791,7 +18789,7 @@ paths:
         - oscal_auth:
             - read:attachment
             - write:attachment
-  /system-security-plan/{systemSecurityPlanId}/snapshot:
+  /system-security-plan/{systemSecurityPlanID}/snapshot:
     get:
       tags:
         - OSCAL System Security Plan
@@ -18965,7 +18963,7 @@ paths:
         - oscal_auth:
             - read:snapshot
             - write:snapshot
-  /system-security-plan/{systemSecurityPlanId}/snapshot/{snapshotId}:
+  /system-security-plan/{systemSecurityPlanID}/snapshot/{snapshotID}:
     get:
       tags:
         - OSCAL System Security Plan

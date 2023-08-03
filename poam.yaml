@@ -34,11 +34,9 @@ info:
     and appropriately set the last-modified field in the document. These newly
     calculated values must be included in the response as part of the document content.
 
-    For guidance on handling UUIDs in `POST` and `PUT` operations, please review
-    [handling-uuids-on-post-put.md](https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).
   contact:
-    email: info@easydynamics.com
-  version: 0.1.0
+    email: oscal@oscal.io
+  version: 0.2.0
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -234,7 +232,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -562,7 +560,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -825,7 +823,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/revision:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/revision:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -1153,7 +1151,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/document-id:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/document-id:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -1327,7 +1325,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/document-id/{documentIdScheme}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/document-id/{documentIdSCHEME}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -1679,7 +1677,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/link:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/link:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -1853,7 +1851,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/link/{linkHref}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/link/{linkHREF}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -2205,7 +2203,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/prop:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/prop:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -2379,7 +2377,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/prop/{propUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/prop/{propUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -2731,7 +2729,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/role:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/role:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -2905,7 +2903,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/role/{roleId}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/role/{roleID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -3257,7 +3255,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/location:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/location:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -3431,7 +3429,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/location/{locationUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/location/{locationUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -3783,7 +3781,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/party:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/party:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -3957,7 +3955,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/party/{partyUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/party/{partyUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -4309,7 +4307,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/responsible-party:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/responsible-party:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -4483,7 +4481,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/metadata/responsible-party/{responsiblePartyRoleId}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/metadata/responsible-party/{responsiblePartyROLEID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -4835,7 +4833,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/import-ssp:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/import-ssp:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -5163,7 +5161,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/system-id:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/system-id:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -5491,7 +5489,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/local-definitions:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/local-definitions:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -5819,7 +5817,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/local-definitions/component:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/local-definitions/component:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -5993,7 +5991,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/local-definitions/component/{componentUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/local-definitions/component/{componentUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -6345,7 +6343,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/local-definitions/inventory-item:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/local-definitions/inventory-item:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -6519,7 +6517,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/local-definitions/inventory-item/{inventoryItemUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/local-definitions/inventory-item/{inventoryItemUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -6871,7 +6869,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/observation:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -7045,7 +7043,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation/{observationUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/observation/{observationUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -7397,7 +7395,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation/{observationUuid}/link:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/observation/{observationUUID}/link:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -7583,7 +7581,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation/{observationUuid}/link/{linkHref}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/observation/{observationUUID}/link/{linkHREF}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -7959,7 +7957,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation/{observationUuid}/prop:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/observation/{observationUUID}/prop:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -8145,7 +8143,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation/{observationUuid}/prop/{propUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/observation/{observationUUID}/prop/{propUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -8521,7 +8519,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation/{observationUuid}/method:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/observation/{observationUUID}/method:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -8873,7 +8871,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation/{observationUuid}/origin:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/observation/{observationUUID}/origin:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -9225,7 +9223,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation/{observationUuid}/subject:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/observation/{observationUUID}/subject:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -9411,7 +9409,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation/{observationUuid}/subject/{subjectSubjectUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/observation/{observationUUID}/subject/{subjectSUBJECTUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -9787,7 +9785,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation/{observationUuid}/relevant-evidence:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/observation/{observationUUID}/relevant-evidence:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -9973,7 +9971,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/observation/{observationUuid}/relevant-evidence/{relevantEvidenceHref}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/observation/{observationUUID}/relevant-evidence/{relevantEvidenceHREF}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -10349,7 +10347,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -10523,7 +10521,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -10875,7 +10873,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/characterization:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/characterization:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -11061,7 +11059,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/characterization/{characterizationHref}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/characterization/{characterizationHREF}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -11437,7 +11435,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/prop:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/prop:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -11623,7 +11621,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/prop/{propUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/prop/{propUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -11999,7 +11997,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/origin:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/origin:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -12351,7 +12349,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/threat-id:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/threat-id:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -12537,7 +12535,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/threat-id/{threatIdSystem}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/threat-id/{threatIdSYSTEM}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -12913,7 +12911,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/mitigating-factor:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/mitigating-factor:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -13099,7 +13097,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/mitigating-factor/{mitigatingFactorUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/mitigating-factor/{mitigatingFactorUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -13475,7 +13473,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/response:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/response:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -13661,7 +13659,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/response/{responseUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/response/{responseUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -14037,7 +14035,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/risk-log:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/risk-log:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -14389,7 +14387,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/risk-log/entry:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/risk-log/entry:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -14575,7 +14573,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/risk-log/entry/{entryUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/risk-log/entry/{entryUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -14951,7 +14949,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/related-observation:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/related-observation:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -15137,7 +15135,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/risk/{riskUuid}/related-observation/{relatedObservationObservationUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/risk/{riskUUID}/related-observation/{relatedObservationOBSERVATIONUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -15513,7 +15511,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/poam-item:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/poam-item:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -15687,7 +15685,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/poam-item/{poamItemUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/poam-item/{poamItemUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -16039,7 +16037,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/poam-item/{poamItemUuid}/link:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/poam-item/{poamItemUUID}/link:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -16225,7 +16223,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/poam-item/{poamItemUuid}/link/{linkHref}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/poam-item/{poamItemUUID}/link/{linkHREF}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -16601,7 +16599,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/poam-item/{poamItemUuid}/prop:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/poam-item/{poamItemUUID}/prop:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -16787,7 +16785,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/poam-item/{poamItemUuid}/prop/{propUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/poam-item/{poamItemUUID}/prop/{propUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -17163,7 +17161,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/poam-item/{poamItemUuid}/origin:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/poam-item/{poamItemUUID}/origin:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -17515,7 +17513,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/poam-item/{poamItemUuid}/related-observation:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/poam-item/{poamItemUUID}/related-observation:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -17701,7 +17699,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/poam-item/{poamItemUuid}/related-observation/{relatedObservationObservationUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/poam-item/{poamItemUUID}/related-observation/{relatedObservationOBSERVATIONUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -18077,7 +18075,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/poam-item/{poamItemUuid}/related-risk:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/poam-item/{poamItemUUID}/related-risk:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -18263,7 +18261,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/poam-item/{poamItemUuid}/related-risk/{relatedRiskRiskUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/poam-item/{poamItemUUID}/related-risk/{relatedRiskRISKUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -18639,7 +18637,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/back-matter:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/back-matter:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -18967,7 +18965,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/back-matter/resource:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/back-matter/resource:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -19141,7 +19139,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/back-matter/resource/{resourceUuid}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/back-matter/resource/{resourceUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -19493,7 +19491,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/attachment:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/attachment:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -19667,7 +19665,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/attachment/{attachmentId}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/attachment/{attachmentID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -19924,7 +19922,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/snapshot:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/snapshot:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -20098,7 +20096,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/snapshot/{snapshotId}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/snapshot/{snapshotID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones

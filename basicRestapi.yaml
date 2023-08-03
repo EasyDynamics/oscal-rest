@@ -34,11 +34,9 @@ info:
     and appropriately set the last-modified field in the document. These newly
     calculated values must be included in the response as part of the document content.
 
-    For guidance on handling UUIDs in `POST` and `PUT` operations, please review
-    [handling-uuids-on-post-put.md](https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).
   contact:
-    email: info@easydynamics.com
-  version: 0.1.0
+    email: oscal@oscal.io
+  version: 0.2.0
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -234,7 +232,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}:
+  /assessment-plan/{assessmentPlanID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -562,7 +560,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/attachment:
+  /assessment-plan/{assessmentPlanID}/attachment:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -736,7 +734,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/attachment/{attachmentId}:
+  /assessment-plan/{assessmentPlanID}/attachment/{attachmentID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -993,7 +991,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/snapshot:
+  /assessment-plan/{assessmentPlanID}/snapshot:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -1167,7 +1165,7 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanId}/snapshot/{snapshotId}:
+  /assessment-plan/{assessmentPlanID}/snapshot/{snapshotID}:
     get:
       tags:
         - OSCAL Assessment Plan
@@ -1581,7 +1579,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}:
+  /profile/{profileID}:
     get:
       tags:
         - OSCAL Profile
@@ -1909,7 +1907,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/resolved-catalog:
+  /profile/{profileID}/resolved-catalog:
     get:
       tags:
         - OSCAL Profile
@@ -2172,7 +2170,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/attachment:
+  /profile/{profileID}/attachment:
     get:
       tags:
         - OSCAL Profile
@@ -2346,7 +2344,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/attachment/{attachmentId}:
+  /profile/{profileID}/attachment/{attachmentID}:
     get:
       tags:
         - OSCAL Profile
@@ -2603,7 +2601,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/snapshot:
+  /profile/{profileID}/snapshot:
     get:
       tags:
         - OSCAL Profile
@@ -2777,7 +2775,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/snapshot/{snapshotId}:
+  /profile/{profileID}/snapshot/{snapshotID}:
     get:
       tags:
         - OSCAL Profile
@@ -3031,7 +3029,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/resolved-snapshot:
+  /profile/{profileID}/resolved-snapshot:
     get:
       tags:
         - OSCAL Profile
@@ -3205,7 +3203,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileId}/resolved-snapshot/{resolvedSnapshotId}:
+  /profile/{profileID}/resolved-snapshot/{resolvedSnapshotID}:
     get:
       tags:
         - OSCAL Profile
@@ -3514,7 +3512,7 @@ paths:
         - oscal_auth:
             - read:assessmentResults
             - write:assessmentResults
-  /assessment-results/{assessmentResultsId}:
+  /assessment-results/{assessmentResultsID}:
     get:
       tags:
         - OSCAL Assessment Results
@@ -3842,7 +3840,7 @@ paths:
         - oscal_auth:
             - read:assessmentResults
             - write:assessmentResults
-  /assessment-results/{assessmentResultsId}/attachment:
+  /assessment-results/{assessmentResultsID}/attachment:
     get:
       tags:
         - OSCAL Assessment Results
@@ -4016,7 +4014,7 @@ paths:
         - oscal_auth:
             - read:assessmentResults
             - write:assessmentResults
-  /assessment-results/{assessmentResultsId}/attachment/{attachmentId}:
+  /assessment-results/{assessmentResultsID}/attachment/{attachmentID}:
     get:
       tags:
         - OSCAL Assessment Results
@@ -4273,7 +4271,7 @@ paths:
         - oscal_auth:
             - read:assessmentResults
             - write:assessmentResults
-  /assessment-results/{assessmentResultsId}/snapshot:
+  /assessment-results/{assessmentResultsID}/snapshot:
     get:
       tags:
         - OSCAL Assessment Results
@@ -4447,7 +4445,7 @@ paths:
         - oscal_auth:
             - read:assessmentResults
             - write:assessmentResults
-  /assessment-results/{assessmentResultsId}/snapshot/{snapshotId}:
+  /assessment-results/{assessmentResultsID}/snapshot/{snapshotID}:
     get:
       tags:
         - OSCAL Assessment Results
@@ -4861,7 +4859,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}:
+  /catalog/{catalogID}:
     get:
       tags:
         - OSCAL Catalog
@@ -5189,7 +5187,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/attachment:
+  /catalog/{catalogID}/attachment:
     get:
       tags:
         - OSCAL Catalog
@@ -5363,7 +5361,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/attachment/{attachmentId}:
+  /catalog/{catalogID}/attachment/{attachmentID}:
     get:
       tags:
         - OSCAL Catalog
@@ -5620,7 +5618,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/snapshot:
+  /catalog/{catalogID}/snapshot:
     get:
       tags:
         - OSCAL Catalog
@@ -5794,7 +5792,7 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogId}/snapshot/{snapshotId}:
+  /catalog/{catalogID}/snapshot/{snapshotID}:
     get:
       tags:
         - OSCAL Catalog
@@ -6208,7 +6206,7 @@ paths:
         - oscal_auth:
             - read:systemSecurityPlan
             - write:systemSecurityPlan
-  /system-security-plan/{systemSecurityPlanId}:
+  /system-security-plan/{systemSecurityPlanID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -6536,7 +6534,7 @@ paths:
         - oscal_auth:
             - read:systemSecurityPlan
             - write:systemSecurityPlan
-  /system-security-plan/{systemSecurityPlanId}/attachment:
+  /system-security-plan/{systemSecurityPlanID}/attachment:
     get:
       tags:
         - OSCAL System Security Plan
@@ -6710,7 +6708,7 @@ paths:
         - oscal_auth:
             - read:attachment
             - write:attachment
-  /system-security-plan/{systemSecurityPlanId}/attachment/{attachmentId}:
+  /system-security-plan/{systemSecurityPlanID}/attachment/{attachmentID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -6967,7 +6965,7 @@ paths:
         - oscal_auth:
             - read:attachment
             - write:attachment
-  /system-security-plan/{systemSecurityPlanId}/snapshot:
+  /system-security-plan/{systemSecurityPlanID}/snapshot:
     get:
       tags:
         - OSCAL System Security Plan
@@ -7141,7 +7139,7 @@ paths:
         - oscal_auth:
             - read:snapshot
             - write:snapshot
-  /system-security-plan/{systemSecurityPlanId}/snapshot/{snapshotId}:
+  /system-security-plan/{systemSecurityPlanID}/snapshot/{snapshotID}:
     get:
       tags:
         - OSCAL System Security Plan
@@ -7555,7 +7553,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -7883,7 +7881,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/attachment:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/attachment:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -8057,7 +8055,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/attachment/{attachmentId}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/attachment/{attachmentID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -8314,7 +8312,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/snapshot:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/snapshot:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -8488,7 +8486,7 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesId}/snapshot/{snapshotId}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/snapshot/{snapshotID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
@@ -8902,7 +8900,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}:
+  /component-definition/{componentDefinitionID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -9230,7 +9228,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/attachment:
+  /component-definition/{componentDefinitionID}/attachment:
     get:
       tags:
         - OSCAL Component Definition
@@ -9404,7 +9402,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/attachment/{attachmentId}:
+  /component-definition/{componentDefinitionID}/attachment/{attachmentID}:
     get:
       tags:
         - OSCAL Component Definition
@@ -9661,7 +9659,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/snapshot:
+  /component-definition/{componentDefinitionID}/snapshot:
     get:
       tags:
         - OSCAL Component Definition
@@ -9835,7 +9833,7 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionId}/snapshot/{snapshotId}:
+  /component-definition/{componentDefinitionID}/snapshot/{snapshotID}:
     get:
       tags:
         - OSCAL Component Definition

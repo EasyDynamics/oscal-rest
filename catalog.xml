@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<catalog card="inf" id="1">
+	<catalog card="inf" id="1" model="true">
         <metadata card="1">
             <document-id card ="inf" scheme="0"/>
             <revision></revision>
@@ -40,6 +40,6 @@
         </back-matter>
 		<attachment card="inf" basic="1" id="1">
 		</attachment>
-		<snapshot card="inf" basic="1" id="1">
+		<snapshot card="inf" basic="1" id="1" model="true">
 		</snapshot>
     </catalog>

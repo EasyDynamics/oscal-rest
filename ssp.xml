@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <system-security-plan card="inf" id="1">
+    <system-security-plan card="inf" id="1" model="true">
         <metadata card="1">
             <revision card="inf">
             </revision>
@@ -49,7 +49,7 @@
         </back-matter>
 		<attachment card="inf" basic="1" id="1">
 		</attachment>
-		<snapshot card="inf" basic="1" id="1">
+		<snapshot card="inf" basic="1" id="1" model="true">
 		</snapshot>
 
 

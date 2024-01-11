@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <profile card="inf" id="1">
+    <profile card="inf" id="1" model="true">
         <metadata card="1">
             <revision card="inf">
             </revision>
@@ -40,9 +40,9 @@
 		</resolved-catalog>
 		<attachment card="inf" basic="1" id="1">
 		</attachment>
-	    <snapshot card="inf" basic="1" id="1">
+	    <snapshot card="inf" basic="1" id="1" model="true">
 		</snapshot>
-		<resolved-snapshot card="inf" basic="1" id="1" root="catalog">
+		<resolved-snapshot card="inf" basic="1" id="1" root="catalog" model="true">
 		</resolved-snapshot>
 		
     </profile> 

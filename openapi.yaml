@@ -34,11 +34,9 @@ info:
     and appropriately set the last-modified field in the document. These newly
     calculated values must be included in the response as part of the document content.
 
-    For guidance on handling UUIDs in `POST` and `PUT` operations, please review
-    [handling-uuids-on-post-put.md](https://github.com/EasyDynamics/oscal-rest/blob/develop/docs/handling-uuids-on-post-put.md).
   contact:
-    email: info@easydynamics.com
-  version: 0.1.0
+    email: oscal@oscal.io
+  version: 0.2.0
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL

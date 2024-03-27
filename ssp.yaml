@@ -1,5 +1,5 @@
 ---
-openapi: 3.0.1
+openapi: 3.1.0
 info:
   title: OSCAL REST
   description: |
@@ -36,7 +36,7 @@ info:
 
   contact:
     email: oscal@oscal.io
-  version: 0.2.0
+  version: 0.2.2
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -197,8 +197,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the system security plan represented by the system security plan ID.
-      description: Returns the system security plan represented by the system security plan ID.
+      summary: Returns the system security plan represented by the system security plan ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the system security plan represented by the system security plan ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanById
       parameters:
         - name: systemSecurityPlanID
@@ -1029,8 +1029,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the SCHEME is available, returns the document id represented by the identifier.
-      description: When the SCHEME is available, returns the document id represented by the identifier.
+      summary: When the SCHEME is available, returns the document id represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the SCHEME is available, returns the document id represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanMetadataDocumentIdByScheme
       parameters:
         - name: systemSecurityPlanID
@@ -1435,8 +1435,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanMetadataLinkByHref
       parameters:
         - name: systemSecurityPlanID
@@ -1841,8 +1841,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the UUID is available, returns the prop represented by the identifier.
-      description: When the UUID is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanMetadataPropByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -2247,8 +2247,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the role represented by the role ID.
-      description: Returns the role represented by the role ID.
+      summary: Returns the role represented by the role ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the role represented by the role ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanMetadataRoleById
       parameters:
         - name: systemSecurityPlanID
@@ -2653,8 +2653,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the location represented by the location UUID.
-      description: Returns the location represented by the location UUID.
+      summary: Returns the location represented by the location UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the location represented by the location UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanMetadataLocationByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -3059,8 +3059,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the party represented by the party UUID.
-      description: Returns the party represented by the party UUID.
+      summary: Returns the party represented by the party UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the party represented by the party UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanMetadataPartyByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -3465,8 +3465,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the responsible party represented by the responsible party ROLE-ID.
-      description: Returns the responsible party represented by the responsible party ROLE-ID.
+      summary: Returns the responsible party represented by the responsible party ROLE-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the responsible party represented by the responsible party ROLE-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanMetadataResponsiblePartyByRole Id
       parameters:
         - name: systemSecurityPlanID
@@ -4265,8 +4265,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanSystemCharacteristicsLinkByHref
       parameters:
         - name: systemSecurityPlanID
@@ -4671,8 +4671,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the UUID is available, returns the prop represented by the identifier.
-      description: When the UUID is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanSystemCharacteristicsPropByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -5274,8 +5274,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationLinkByHref
       parameters:
         - name: systemSecurityPlanID
@@ -5680,8 +5680,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the UUID is available, returns the prop represented by the identifier.
-      description: When the UUID is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationPropByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -6086,8 +6086,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the UUID is available, returns the information type represented by the identifier.
-      description: When the UUID is available, returns the information type represented by the identifier.
+      summary: When the UUID is available, returns the information type represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the information type represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanSystemCharacteristicsSystemInformationInformationTypeByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -7380,8 +7380,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the responsible party represented by the responsible party ROLE-ID.
-      description: Returns the responsible party represented by the responsible party ROLE-ID.
+      summary: Returns the responsible party represented by the responsible party ROLE-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the responsible party represented by the responsible party ROLE-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanSystemCharacteristicsResponsiblePartyByRole Id
       parameters:
         - name: systemSecurityPlanID
@@ -7983,8 +7983,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanSystemImplementationLinkByHref
       parameters:
         - name: systemSecurityPlanID
@@ -8389,8 +8389,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the UUID is available, returns the prop represented by the identifier.
-      description: When the UUID is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanSystemImplementationPropByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -8795,8 +8795,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the leveraged authorization represented by the leveraged authorization UUID.
-      description: Returns the leveraged authorization represented by the leveraged authorization UUID.
+      summary: Returns the leveraged authorization represented by the leveraged authorization UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the leveraged authorization represented by the leveraged authorization UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanSystemImplementationLeveragedAuthorizationByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -9201,8 +9201,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the user represented by the user UUID.
-      description: Returns the user represented by the user UUID.
+      summary: Returns the user represented by the user UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the user represented by the user UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanSystemImplementationUserByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -9607,8 +9607,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the inventory item represented by the inventory item UUID.
-      description: Returns the inventory item represented by the inventory item UUID.
+      summary: Returns the inventory item represented by the inventory item UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the inventory item represented by the inventory item UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanSystemImplementationInventoryItemByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -10013,8 +10013,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the component represented by the component UUID.
-      description: Returns the component represented by the component UUID.
+      summary: Returns the component represented by the component UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the component represented by the component UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanSystemImplementationComponentByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -10616,8 +10616,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the set parameter represented by the set parameter PARAM-ID.
-      description: Returns the set parameter represented by the set parameter PARAM-ID.
+      summary: Returns the set parameter represented by the set parameter PARAM-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the set parameter represented by the set parameter PARAM-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanControlImplementationSetParameterByParam Id
       parameters:
         - name: systemSecurityPlanID
@@ -11022,8 +11022,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the implemented requirement represented by the implemented requirement CONTROL-ID.
-      description: Returns the implemented requirement represented by the implemented requirement CONTROL-ID.
+      summary: Returns the implemented requirement represented by the implemented requirement CONTROL-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the implemented requirement represented by the implemented requirement CONTROL-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementByControl Id
       parameters:
         - name: systemSecurityPlanID
@@ -11440,8 +11440,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementLinkByHref
       parameters:
         - name: systemSecurityPlanID
@@ -11882,8 +11882,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: When the UUID is available, returns the prop represented by the identifier.
-      description: When the UUID is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementPropByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -12324,8 +12324,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the set parameter represented by the set parameter PARAM-ID.
-      description: Returns the set parameter represented by the set parameter PARAM-ID.
+      summary: Returns the set parameter represented by the set parameter PARAM-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the set parameter represented by the set parameter PARAM-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementSetParameterByParam Id
       parameters:
         - name: systemSecurityPlanID
@@ -12766,8 +12766,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the responsible role represented by the responsible role ROLE-ID.
-      description: Returns the responsible role represented by the responsible role ROLE-ID.
+      summary: Returns the responsible role represented by the responsible role ROLE-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the responsible role represented by the responsible role ROLE-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementResponsibleRoleByRole Id
       parameters:
         - name: systemSecurityPlanID
@@ -13208,8 +13208,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the by component represented by the by component COMPONENT-UUID.
-      description: Returns the by component represented by the by component COMPONENT-UUID.
+      summary: Returns the by component represented by the by component COMPONENT-UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the by component represented by the by component COMPONENT-UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanControlImplementationImplementedRequirementByComponentByComponent Uuid
       parameters:
         - name: systemSecurityPlanID
@@ -13885,8 +13885,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the resource represented by the resource UUID.
-      description: Returns the resource represented by the resource UUID.
+      summary: Returns the resource represented by the resource UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the resource represented by the resource UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanBackMatterResourceByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -14629,8 +14629,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the snapshot represented by the snapshot ID.
-      description: Returns the snapshot represented by the snapshot ID.
+      summary: Returns the snapshot represented by the snapshot ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the snapshot represented by the snapshot ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getSystemSecurityPlanSnapshotById
       parameters:
         - name: systemSecurityPlanID

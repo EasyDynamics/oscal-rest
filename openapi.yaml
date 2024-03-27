@@ -1,5 +1,5 @@
 ---
-openapi: 3.0.1
+openapi: 3.1.0
 info:
   title: OSCAL REST
   description: |
@@ -36,7 +36,7 @@ info:
 
   contact:
     email: oscal@oscal.io
-  version: 0.2.0
+  version: 0.2.2
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL

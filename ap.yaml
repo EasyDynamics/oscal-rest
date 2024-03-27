@@ -1,5 +1,5 @@
 ---
-openapi: 3.0.1
+openapi: 3.1.0
 info:
   title: OSCAL REST
   description: |
@@ -36,7 +36,7 @@ info:
 
   contact:
     email: oscal@oscal.io
-  version: 0.2.0
+  version: 0.2.2
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -197,8 +197,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the assessment plan represented by the assessment plan ID.
-      description: Returns the assessment plan represented by the assessment plan ID.
+      summary: Returns the assessment plan represented by the assessment plan ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the assessment plan represented by the assessment plan ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanById
       parameters:
         - name: assessmentPlanID
@@ -782,8 +782,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the SCHEME is available, returns the document id represented by the identifier.
-      description: When the SCHEME is available, returns the document id represented by the identifier.
+      summary: When the SCHEME is available, returns the document id represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the SCHEME is available, returns the document id represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanMetadataDocumentIdByScheme
       parameters:
         - name: assessmentPlanID
@@ -1435,8 +1435,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanMetadataLinkByHref
       parameters:
         - name: assessmentPlanID
@@ -1841,8 +1841,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the location represented by the location UUID.
-      description: Returns the location represented by the location UUID.
+      summary: Returns the location represented by the location UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the location represented by the location UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanMetadataLocationByUuid
       parameters:
         - name: assessmentPlanID
@@ -2247,8 +2247,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the party represented by the party UUID.
-      description: Returns the party represented by the party UUID.
+      summary: Returns the party represented by the party UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the party represented by the party UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanMetadataPartyByUuid
       parameters:
         - name: assessmentPlanID
@@ -2653,8 +2653,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the responsible party represented by the responsible party ROLE-ID.
-      description: Returns the responsible party represented by the responsible party ROLE-ID.
+      summary: Returns the responsible party represented by the responsible party ROLE-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the responsible party represented by the responsible party ROLE-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanMetadataResponsiblePartyByRole Id
       parameters:
         - name: assessmentPlanID
@@ -3503,8 +3503,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the component represented by the component UUID.
-      description: Returns the component represented by the component UUID.
+      summary: Returns the component represented by the component UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the component represented by the component UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanLocalDefinitionsComponentByUuid
       parameters:
         - name: assessmentPlanID
@@ -3909,8 +3909,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the inventory item represented by the inventory item UUID.
-      description: Returns the inventory item represented by the inventory item UUID.
+      summary: Returns the inventory item represented by the inventory item UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the inventory item represented by the inventory item UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanLocalDefinitionsInventoryItemByUuid
       parameters:
         - name: assessmentPlanID
@@ -4315,8 +4315,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the user represented by the user UUID.
-      description: Returns the user represented by the user UUID.
+      summary: Returns the user represented by the user UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the user represented by the user UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanLocalDefinitionsUserByUuid
       parameters:
         - name: assessmentPlanID
@@ -4721,8 +4721,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the objectives and methods represented by the objectives and methods CONTROL-ID.
-      description: Returns the objectives and methods represented by the objectives and methods CONTROL-ID.
+      summary: Returns the objectives and methods represented by the objectives and methods CONTROL-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the objectives and methods represented by the objectives and methods CONTROL-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanLocalDefinitionsObjectivesAndMethodsByControl Id
       parameters:
         - name: assessmentPlanID
@@ -5127,8 +5127,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the UUID is available, returns the activity represented by the identifier.
-      description: When the UUID is available, returns the activity represented by the identifier.
+      summary: When the UUID is available, returns the activity represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the activity represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanLocalDefinitionsActivityByUuid
       parameters:
         - name: assessmentPlanID
@@ -5780,8 +5780,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the UUID is available, returns the part represented by the identifier.
-      description: When the UUID is available, returns the part represented by the identifier.
+      summary: When the UUID is available, returns the part represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the part represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanTermsAndConditionsPartByUuid
       parameters:
         - name: assessmentPlanID
@@ -6383,8 +6383,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanReviewedControlsLinkByHref
       parameters:
         - name: assessmentPlanID
@@ -6789,8 +6789,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the UUID is available, returns the prop represented by the identifier.
-      description: When the UUID is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanReviewedControlsPropByUuid
       parameters:
         - name: assessmentPlanID
@@ -7936,8 +7936,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanLinkByHref
       parameters:
         - name: assessmentPlanID
@@ -8342,8 +8342,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the include subject represented by the include subject SUBJECT-UUID.
-      description: Returns the include subject represented by the include subject SUBJECT-UUID.
+      summary: Returns the include subject represented by the include subject SUBJECT-UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the include subject represented by the include subject SUBJECT-UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanIncludeSubjectBySubject Uuid
       parameters:
         - name: assessmentPlanID
@@ -8748,8 +8748,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the exclude subject represented by the exclude subject SUBJECT-UUID.
-      description: Returns the exclude subject represented by the exclude subject SUBJECT-UUID.
+      summary: Returns the exclude subject represented by the exclude subject SUBJECT-UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the exclude subject represented by the exclude subject SUBJECT-UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanExcludeSubjectBySubject Uuid
       parameters:
         - name: assessmentPlanID
@@ -9401,8 +9401,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the component represented by the component UUID.
-      description: Returns the component represented by the component UUID.
+      summary: Returns the component represented by the component UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the component represented by the component UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanAssessmentAssetsComponentByUuid
       parameters:
         - name: assessmentPlanID
@@ -9807,8 +9807,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the assessment platform represented by the assessment platform UUID.
-      description: Returns the assessment platform represented by the assessment platform UUID.
+      summary: Returns the assessment platform represented by the assessment platform UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the assessment platform represented by the assessment platform UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanAssessmentAssetsAssessmentPlatformByUuid
       parameters:
         - name: assessmentPlanID
@@ -10213,8 +10213,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the task represented by the task UUID.
-      description: Returns the task represented by the task UUID.
+      summary: Returns the task represented by the task UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the task represented by the task UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanTaskByUuid
       parameters:
         - name: assessmentPlanID
@@ -10631,8 +10631,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanTaskLinkByHref
       parameters:
         - name: assessmentPlanID
@@ -11073,8 +11073,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the UUID is available, returns the prop represented by the identifier.
-      description: When the UUID is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanTaskPropByUuid
       parameters:
         - name: assessmentPlanID
@@ -11515,8 +11515,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the dependency represented by the dependency TASK-UUID.
-      description: Returns the dependency represented by the dependency TASK-UUID.
+      summary: Returns the dependency represented by the dependency TASK-UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the dependency represented by the dependency TASK-UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanTaskDependencyByTask Uuid
       parameters:
         - name: assessmentPlanID
@@ -11957,8 +11957,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the task represented by the task UUID.
-      description: Returns the task represented by the task UUID.
+      summary: Returns the task represented by the task UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the task represented by the task UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanTaskSubtaskByUuid
       parameters:
         - name: assessmentPlanID
@@ -12399,8 +12399,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the associated activity represented by the associated activity ACTIVITY-UUID.
-      description: Returns the associated activity represented by the associated activity ACTIVITY-UUID.
+      summary: Returns the associated activity represented by the associated activity ACTIVITY-UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the associated activity represented by the associated activity ACTIVITY-UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanTaskAssociatedActivityByActivity Uuid
       parameters:
         - name: assessmentPlanID
@@ -13112,8 +13112,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: When the ROLE-ID is available, returns the responsible party represented by the identifier.
-      description: When the ROLE-ID is available, returns the responsible party represented by the identifier.
+      summary: When the ROLE-ID is available, returns the responsible party represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the ROLE-ID is available, returns the responsible party represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanTaskResponsiblePartyByRole Id
       parameters:
         - name: assessmentPlanID
@@ -13789,8 +13789,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the resource represented by the resource UUID.
-      description: Returns the resource represented by the resource UUID.
+      summary: Returns the resource represented by the resource UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the resource represented by the resource UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanBackMatterResourceByUuid
       parameters:
         - name: assessmentPlanID
@@ -14533,8 +14533,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the snapshot represented by the snapshot ID.
-      description: Returns the snapshot represented by the snapshot ID.
+      summary: Returns the snapshot represented by the snapshot ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the snapshot represented by the snapshot ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getAssessmentPlanSnapshotById
       parameters:
         - name: assessmentPlanID

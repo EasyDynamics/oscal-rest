@@ -1,5 +1,5 @@
 ---
-openapi: 3.0.1
+openapi: 3.1.0
 info:
   title: OSCAL REST
   description: |
@@ -36,7 +36,7 @@ info:
 
   contact:
     email: oscal@oscal.io
-  version: 0.2.0
+  version: 0.2.2
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -197,8 +197,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the catalog represented by the catalog ID.
-      description: Returns the catalog represented by the catalog ID.
+      summary: Returns the catalog represented by the catalog ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the catalog represented by the catalog ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogById
       parameters:
         - name: catalogID
@@ -782,8 +782,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the SCHEME is available, returns the document id represented by the identifier.
-      description: When the SCHEME is available, returns the document id represented by the identifier.
+      summary: When the SCHEME is available, returns the document id represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the SCHEME is available, returns the document id represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogMetadataDocumentIdByScheme
       parameters:
         - name: catalogID
@@ -1435,8 +1435,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogMetadataLinkByHref
       parameters:
         - name: catalogID
@@ -1841,8 +1841,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the UUID is available, returns the prop represented by the identifier.
-      description: When the UUID is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogMetadataPropByUuid
       parameters:
         - name: catalogID
@@ -2247,8 +2247,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the location represented by the location UUID.
-      description: Returns the location represented by the location UUID.
+      summary: Returns the location represented by the location UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the location represented by the location UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogMetadataLocationByUuid
       parameters:
         - name: catalogID
@@ -2653,8 +2653,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the party represented by the party UUID.
-      description: Returns the party represented by the party UUID.
+      summary: Returns the party represented by the party UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the party represented by the party UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogMetadataPartyByUuid
       parameters:
         - name: catalogID
@@ -3059,8 +3059,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the responsible party represented by the responsible party ROLE-ID.
-      description: Returns the responsible party represented by the responsible party ROLE-ID.
+      summary: Returns the responsible party represented by the responsible party ROLE-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the responsible party represented by the responsible party ROLE-ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogMetadataResponsiblePartyByRole Id
       parameters:
         - name: catalogID
@@ -3465,8 +3465,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the param represented by the param ID.
-      description: Returns the param represented by the param ID.
+      summary: Returns the param represented by the param ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the param represented by the param ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogParamById
       parameters:
         - name: catalogID
@@ -3883,8 +3883,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogParamLinkByHref
       parameters:
         - name: catalogID
@@ -4325,8 +4325,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the UUID is available, returns the prop represented by the identifier.
-      description: When the UUID is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogParamPropByUuid
       parameters:
         - name: catalogID
@@ -5297,8 +5297,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the control represented by the control ID.
-      description: Returns the control represented by the control ID.
+      summary: Returns the control represented by the control ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the control represented by the control ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogControlById
       parameters:
         - name: catalogID
@@ -5715,8 +5715,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the param represented by the param ID.
-      description: Returns the param represented by the param ID.
+      summary: Returns the param represented by the param ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the param represented by the param ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogControlParamById
       parameters:
         - name: catalogID
@@ -6157,8 +6157,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogControlLinkByHref
       parameters:
         - name: catalogID
@@ -6599,8 +6599,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the UUID is available, returns the prop represented by the identifier.
-      description: When the UUID is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogControlPropByUuid
       parameters:
         - name: catalogID
@@ -7041,8 +7041,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the ID is available, returns the part represented by the identifier.
-      description: When the ID is available, returns the part represented by the identifier.
+      summary: When the ID is available, returns the part represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the ID is available, returns the part represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogControlPartById
       parameters:
         - name: catalogID
@@ -7495,8 +7495,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogControlPartLinkByHref
       parameters:
         - name: catalogID
@@ -7973,8 +7973,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the UUID is available, returns the prop represented by the identifier.
-      description: When the UUID is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogControlPartPropByUuid
       parameters:
         - name: catalogID
@@ -8451,8 +8451,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the ID is available, returns the part represented by the identifier.
-      description: When the ID is available, returns the part represented by the identifier.
+      summary: When the ID is available, returns the part represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the ID is available, returns the part represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogControlPartSubpartById
       parameters:
         - name: catalogID
@@ -8917,8 +8917,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the control represented by the control ID.
-      description: Returns the control represented by the control ID.
+      summary: Returns the control represented by the control ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the control represented by the control ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogControlSubcontrolById
       parameters:
         - name: catalogID
@@ -9347,8 +9347,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the ID is available, returns the group represented by the identifier.
-      description: When the ID is available, returns the group represented by the identifier.
+      summary: When the ID is available, returns the group represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the ID is available, returns the group represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogGroupById
       parameters:
         - name: catalogID
@@ -9765,8 +9765,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the param represented by the param ID.
-      description: Returns the param represented by the param ID.
+      summary: Returns the param represented by the param ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the param represented by the param ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogGroupParamById
       parameters:
         - name: catalogID
@@ -10207,8 +10207,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the link represented by the link HREF.
-      description: Returns the link represented by the link HREF.
+      summary: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the link represented by the link HREF. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogGroupLinkByHref
       parameters:
         - name: catalogID
@@ -10649,8 +10649,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the UUID is available, returns the prop represented by the identifier.
-      description: When the UUID is available, returns the prop represented by the identifier.
+      summary: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the UUID is available, returns the prop represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogGroupPropByUuid
       parameters:
         - name: catalogID
@@ -11091,8 +11091,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the ID is available, returns the part represented by the identifier.
-      description: When the ID is available, returns the part represented by the identifier.
+      summary: When the ID is available, returns the part represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the ID is available, returns the part represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogGroupPartById
       parameters:
         - name: catalogID
@@ -11533,8 +11533,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the control represented by the control ID.
-      description: Returns the control represented by the control ID.
+      summary: Returns the control represented by the control ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the control represented by the control ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogGroupControlById
       parameters:
         - name: catalogID
@@ -11975,8 +11975,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: When the ID is available, returns the group represented by the identifier.
-      description: When the ID is available, returns the group represented by the identifier.
+      summary: When the ID is available, returns the group represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: When the ID is available, returns the group represented by the identifier. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogGroupSubgroupById
       parameters:
         - name: catalogID
@@ -12652,8 +12652,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the resource represented by the resource UUID.
-      description: Returns the resource represented by the resource UUID.
+      summary: Returns the resource represented by the resource UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the resource represented by the resource UUID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogBackMatterResourceByUuid
       parameters:
         - name: catalogID
@@ -13396,8 +13396,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the snapshot represented by the snapshot ID.
-      description: Returns the snapshot represented by the snapshot ID.
+      summary: Returns the snapshot represented by the snapshot ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
+      description: Returns the snapshot represented by the snapshot ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to `application/json` or `application/oscal+json` return the OSCAL content in JSON format; `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or `application/yaml` or `text/yaml` return the OSCAL content in YAML format. When returning the OSCAL content, the implementation _must_ set the `Content-type` header to `application/json` when returning the OSCAL content in JSON format; `application/xml` when returning the OSCAL content in XML format; or `application/yaml` when return the OSCAL content in YAML format.
       operationId: getCatalogSnapshotById
       parameters:
         - name: catalogID

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<assessment-plan id="1" model="true">    
+      <metadata card="1">
+           <document-id card ="inf" scheme="0"/>
+            <revision></revision>
+            <link href="1" card ="inf"></link>
+            <prop uuid="0"></prop>
+            <role id="1"></role>
+            <location uuid="1" card="inf"></location>
+            <party uuid="1" card="inf"></party>
+            <responsible-party role-id="1" card="inf"></responsible-party>
+        </metadata>
+        <import-ssp card="1"/>
+        <local-definitions card="0">
+            <component uuid="1" card="inf"></component>
+            <inventory-item uuid="1" card="inf"></inventory-item>
+            <user uuid="1" card="inf"></user>
+            <objectives-and-methods control-id="1" card="inf"></objectives-and-methods>
+            <activity uuid="0" card="inf"></activity>
+        </local-definitions>
+		<terms-and-conditions card="0">
+			<part uuid="0" card ="inf"></part>
+		</terms-and-conditions>
+         <reviewed-controls card="1">
+                <link href="1" card="inf"></link>
+                <prop uuid="0" card="inf"></prop>
+                <control-selection card="inf" min="1"></control-selection>
+                <control-objective-selection card="inf"></control-objective-selection>
+            </reviewed-controls>
+        <assessment-subject card="inf"></assessment-subject>
+            <link href="1" card ="inf"></link>
+            <prop uuid="0"></prop>
+            <include-subject subject-uuid="1" card="inf" min="1"></include-subject>
+            <exclude-subject subject-uuid="1" card="inf"></exclude-subject>
+        <assessment-assets card="0">
+             <component uuid="1" card="inf"></component>
+             <assessment-platform uuid="1" card="inf" min="1"></assessment-platform>
+        </assessment-assets>
+        <task uuid="1" card="inf">
+            <link href="1" card="inf"></link>
+            <prop uuid="0" card="inf"></prop>
+            <dependency task-uuid="1" card="inf"></dependency>
+            <task uuid="1" card="inf"></task>
+            <associated-activity  card="inf" activity-uuid="1"></associated-activity>
+            <subject card="inf"></subject>
+            <responsible-party role-id="0" card="inf"></responsible-party>
+        </task>
+        <back-matter card="0">
+            <resource  uuid="1" card="inf"></resource>
+        </back-matter>
+		<attachment card="inf" basic="1" id="1">
+		</attachment>
+		<snapshot card="inf" basic="1" id="1" model="true">
+		</snapshot>
+    </assessment-plan> 

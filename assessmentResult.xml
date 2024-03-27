@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<assessment-results card="inf" id="1" model="true">
+        <metadata card="1">
+            <document-id card ="inf" scheme="0"/>
+            <revision></revision>
+            <link href="1" card="inf"></link>
+            <prop uuid="0" card="inf"></prop>
+            <role id="1"></role>
+            <location uuid="1" card="inf"></location>
+            <party uuid="1" card="inf"></party>
+            <responsible-party role-id="1" card="inf"></responsible-party>
+        </metadata>
+        <import-ap card="1"/>
+        <local-definitions card="0">
+            <objectives-and-methods control-id="1" card="inf">
+            </objectives-and-methods>
+            <activity uuid="0" card="inf">
+				<link href="1" card="inf"></link>
+				<prop uuid="0" card="inf"></prop>
+				<step uuid="1" card="inf"></step>
+				<related-controls card="0"></related-controls>
+				<responsible-role role-id="1" card="inf"></responsible-role>
+            </activity>
+        </local-definitions>
+        <result uuid="0" card="inf" min="1">
+			<link href="1" card="inf"></link>
+			<prop uuid="0" card="inf"></prop>
+            <local-definitions card="0">
+                <component uuid="1" card="inf">
+                </component>
+                <inventory-item uuid="1" card="inf">
+                </inventory-item>
+                <user uuid="1" card="inf"></user>
+                <assessment-assets card="0"></assessment-assets>
+                <task uuid="1" card="inf"></task>
+            </local-definitions>
+            <reviewed-controls card="1">
+                <link>
+                </link>
+                <prop uuid="0">
+                </prop>
+                <control-selection card="inf" min="1"></control-selection>
+                <control-objective-selection card="inf"></control-objective-selection>
+            </reviewed-controls>
+            <attestation card="inf">
+                <part uuid="0" card="inf" min="1"></part>
+                <responsible-party role-id="1" card="inf"></responsible-party>
+            </attestation>
+            <assessment-log card="0">
+                <entry uuid="1" card="inf" min="1"></entry>
+            </assessment-log>
+            <observation uuid="1" card="inf">
+                <link href="1" card="inf"></link>
+                <prop uuid="0" card="inf"></prop>
+                <method card="inf" min="1"></method>
+                <origin card="inf"></origin>
+                <subject subject-uuid="1" card="inf"></subject>
+                <relevant-evidence href="0"></relevant-evidence>
+            </observation>
+            <risk uuid="1" card="inf">
+				<link href="1" card="inf"></link>
+				<prop uuid="0" card="inf"></prop>
+                <origin card="inf"></origin>
+                <threat-id system="1" card="inf"></threat-id>
+                <characterization card="inf"></characterization>
+                <mitigating-factor uuid="1" card="inf"></mitigating-factor>
+                <response uuid="1" card="inf"></response>
+                <risk-log card="0">
+                    <entry uuid="1" card="inf" min="1"></entry>
+                </risk-log>
+                <related-observation observation-uuid="1"></related-observation>
+            </risk>
+            <finding uuid="1" card="inf">
+				<link href="1" card="inf"></link>
+				<prop uuid="0" card="inf"></prop>
+                <origin card="inf"></origin>
+                <target target-id="1"></target>
+                <related-observation observation-uuid="1" card="inf"></related-observation>
+                <related-risk risk-uuid="1" card="inf"></related-risk>
+            </finding>
+        </result>
+        <back-matter card="0">
+            <resource  uuid="1" card="inf"></resource>
+        </back-matter>
+		<attachment card="inf" basic="1" id="1">
+		</attachment>
+		<snapshot card="inf" basic="1" id="1" model="true">
+		</snapshot>
+    </assessment-results>

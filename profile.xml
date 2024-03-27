@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <profile card="inf" id="1" model="true">
+        <metadata card="1">
+            <revision card="inf">
+            </revision>
+            <document-id card="inf" scheme="0"/>
+            <link card="inf" href="1"></link>
+            <prop card="inf" uuid="0"></prop>
+            <role card="inf" id="1"></role>
+            <location uuid="1" card="inf"></location>
+            <party uuid="1" card="inf"></party>
+            <responsible-party role-id="1" card="inf"></responsible-party>
+        </metadata>
+        <import card ="inf" min="1" href="1"> 
+            <include-controls card="inf" min="1" />
+			<exclude-controls card="inf" />
+        </import> 
+        <merge card="0">  
+            <custom card="0">
+                <group id="0" card="inf"></group>
+                <insert-controls card="inf"></insert-controls>
+            </custom>
+        </merge>
+        <modify card="0">
+            <set-parameter param-id="1" card="inf">
+                <link card="inf" href="1"></link>
+                <prop card="inf" uuid="0"></prop>
+                <constraint card="inf"></constraint>
+                <guideline card="inf"></guideline>
+            </set-parameter>
+            <alter control-id="1" card="inf">
+                <remove card="inf" by-id="0"></remove>
+                <add by-id="1" card="inf"></add>
+            </alter>
+        </modify>
+        <back-matter card="0">
+            <resource uuid="1" card="inf"></resource>
+        </back-matter>
+		<resolved-catalog card="1" basic="1" root="catalog">
+		</resolved-catalog>
+		<attachment card="inf" basic="1" id="1">
+		</attachment>
+	    <snapshot card="inf" basic="1" id="1" model="true">
+		</snapshot>
+		<resolved-snapshot card="inf" basic="1" id="1" root="catalog" model="true">
+		</resolved-snapshot>
+		
+    </profile> 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <component-definition card="inf" id="1" model="true">
+        <metadata card="1">
+            <revision card="inf">
+            </revision>
+            <document-id card="inf" scheme="0"/>
+            <link card="inf" href="1"></link>
+            <prop card="inf" uuid="0"></prop>
+            <role card="inf" id="1"></role>
+            <location uuid="1" card="inf"></location>
+            <party uuid="1" card="inf"></party>
+            <responsible-party role-id="1" card="inf"></responsible-party>
+        </metadata>
+        <import-component-definition href="1" card="inf"></import-component-definition>
+        <component uuid="1" card="inf">
+            <link card="inf" href="1"></link>
+            <prop card="inf" uuid="0"></prop>
+            <responsible-role role-id="1" card="inf"></responsible-role>
+            <protocol uuid="1" card="inf"></protocol>
+            <control-implementation uuid="1" card="inf">
+                <link card="inf" href="1"></link>
+                <prop card="inf" uuid="0"></prop>
+                <set-parameter param-id="1" card="inf"></set-parameter>
+                <implemented-requirement control-id="1" card="inf" ></implemented-requirement>
+            </control-implementation>
+        </component>
+        <capability uuid="1" card="inf">
+            <link card="inf" href="1"></link>
+            <prop card="inf" uuid="0"></prop>
+            <incorporates-component component-uuid="1" card="inf"></incorporates-component>
+             <control-implementation uuid="1" card="inf"></control-implementation>
+        </capability>
+        <back-matter card="0">
+            <resource  uuid="1" card="inf"></resource>
+        </back-matter>
+		<attachment card="inf" basic="1" id="1">
+		</attachment>
+		<snapshot card="inf" basic="1" id="1" model="true">
+		</snapshot>
+    </component-definition>    

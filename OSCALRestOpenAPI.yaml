@@ -198,7 +198,7 @@ paths:
       tags:
         - OSCAL Assessment Plan
       summary: Returns the assessment plan represented by the assessment plan ID.
-      description:  |
+      description: |
         Returns the assessment plan represented by the assessment plan ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -933,7 +933,7 @@ paths:
       tags:
         - OSCAL Assessment Plan
       summary: Returns the snapshot represented by the snapshot ID.
-      description:  |
+      description: |
         Returns the snapshot represented by the snapshot ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -1266,7 +1266,7 @@ paths:
       tags:
         - OSCAL Profile
       summary: Returns the profile represented by the profile ID.
-      description:  |
+      description: |
         Returns the profile represented by the profile ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -1528,7 +1528,7 @@ paths:
       tags:
         - OSCAL Profile
       summary: Resolves the identified profile based on currently available sources and returns a resolved profile catalog
-      description:  |
+      description: |
         Resolves the identified profile based on currently available sources and returns a resolved profile catalog When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -2213,7 +2213,7 @@ paths:
       tags:
         - OSCAL Profile
       summary: Returns the snapshot represented by the snapshot ID.
-      description:  |
+      description: |
         Returns the snapshot represented by the snapshot ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -2560,7 +2560,7 @@ paths:
       tags:
         - OSCAL Profile
       summary: Returns the resolved profile catalog represented by the resolved profile catalog ID.
-      description:  |
+      description: |
         Returns the resolved profile catalog represented by the resolved profile catalog ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -2812,7 +2812,7 @@ paths:
       tags:
         - OSCAL Assessment Results
       summary: Returns the assessment results represented by the assessment results ID.
-      description:  |
+      description: |
         Returns the assessment results represented by the assessment results ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -3547,7 +3547,7 @@ paths:
       tags:
         - OSCAL Assessment Results
       summary: Returns the snapshot represented by the snapshot ID.
-      description:  |
+      description: |
         Returns the snapshot represented by the snapshot ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -3880,7 +3880,7 @@ paths:
       tags:
         - OSCAL Catalog
       summary: Returns the catalog represented by the catalog ID.
-      description:  |
+      description: |
         Returns the catalog represented by the catalog ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -4615,7 +4615,7 @@ paths:
       tags:
         - OSCAL Catalog
       summary: Returns the snapshot represented by the snapshot ID.
-      description:  |
+      description: |
         Returns the snapshot represented by the snapshot ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -4948,7 +4948,7 @@ paths:
       tags:
         - OSCAL System Security Plan
       summary: Returns the system security plan represented by the system security plan ID.
-      description:  |
+      description: |
         Returns the system security plan represented by the system security plan ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -5683,7 +5683,7 @@ paths:
       tags:
         - OSCAL System Security Plan
       summary: Returns the snapshot represented by the snapshot ID.
-      description:  |
+      description: |
         Returns the snapshot represented by the snapshot ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -6016,7 +6016,7 @@ paths:
       tags:
         - OSCAL Plan of Action and Milestones
       summary: Returns the plan of action and milestones represented by the plan of action and milestones ID.
-      description:  |
+      description: |
         Returns the plan of action and milestones represented by the plan of action and milestones ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -6751,7 +6751,7 @@ paths:
       tags:
         - OSCAL Plan of Action and Milestones
       summary: Returns the snapshot represented by the snapshot ID.
-      description:  |
+      description: |
         Returns the snapshot represented by the snapshot ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -7084,7 +7084,7 @@ paths:
       tags:
         - OSCAL Component Definition
       summary: Returns the component definition represented by the component definition ID.
-      description:  |
+      description: |
         Returns the component definition represented by the component definition ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or
@@ -7819,7 +7819,7 @@ paths:
       tags:
         - OSCAL Component Definition
       summary: Returns the snapshot represented by the snapshot ID.
-      description:  |
+      description: |
         Returns the snapshot represented by the snapshot ID. When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:
         - `application/json` or `application/oscal+json` return the OSCAL content in JSON format;
         - `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or

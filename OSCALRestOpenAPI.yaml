@@ -36,7 +36,7 @@ info:
 
   contact:
     email: oscal@oscal.io
-  version: 0.2.2
+  version: 0.2.3
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -123,7 +123,11 @@ paths:
       tags:
         - OSCAL Assessment Plan
       summary: Adds a new assessment plan.
-      description: Adds a new assessment plan.
+      description: |
+        Adds a new assessment plan.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postAssessmentPlan
       responses:
         201:
@@ -513,7 +517,11 @@ paths:
       tags:
         - OSCAL Assessment Plan
       summary: Adds a new attachment.
-      description: Adds a new attachment.
+      description: |
+        Adds a new attachment.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postAssessmentPlanAttachment
       parameters:
         - name: assessmentPlanID
@@ -851,7 +859,11 @@ paths:
       tags:
         - OSCAL Assessment Plan
       summary: Creates a snapshot of the file in its current state.
-      description: Creates a snapshot of the file in its current state.
+      description: |
+        Creates a snapshot of the file in its current state.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.
       operationId: postAssessmentPlanSnapshot
       parameters:
         - name: assessmentPlanID
@@ -1191,7 +1203,11 @@ paths:
       tags:
         - OSCAL Profile
       summary: Adds a new profile.
-      description: Adds a new profile.
+      description: |
+        Adds a new profile.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postProfile
       responses:
         201:
@@ -1793,7 +1809,11 @@ paths:
       tags:
         - OSCAL Profile
       summary: Adds a new attachment.
-      description: Adds a new attachment.
+      description: |
+        Adds a new attachment.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postProfileAttachment
       parameters:
         - name: profileID
@@ -2131,7 +2151,11 @@ paths:
       tags:
         - OSCAL Profile
       summary: Creates a snapshot of the file in its current state.
-      description: Creates a snapshot of the file in its current state.
+      description: |
+        Creates a snapshot of the file in its current state.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.
       operationId: postProfileSnapshot
       parameters:
         - name: profileID
@@ -2478,7 +2502,11 @@ paths:
       tags:
         - OSCAL Profile
       summary: Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog.
-      description: Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog.
+      description: |
+        Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.
       operationId: postProfileResolvedSnapshot
       parameters:
         - name: profileID
@@ -2737,7 +2765,11 @@ paths:
       tags:
         - OSCAL Assessment Results
       summary: Adds a new assessment results.
-      description: Adds a new assessment results.
+      description: |
+        Adds a new assessment results.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postAssessmentResults
       responses:
         201:
@@ -3127,7 +3159,11 @@ paths:
       tags:
         - OSCAL Assessment Results
       summary: Adds a new attachment.
-      description: Adds a new attachment.
+      description: |
+        Adds a new attachment.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postAssessmentResultsAttachment
       parameters:
         - name: assessmentResultsID
@@ -3465,7 +3501,11 @@ paths:
       tags:
         - OSCAL Assessment Results
       summary: Creates a snapshot of the file in its current state.
-      description: Creates a snapshot of the file in its current state.
+      description: |
+        Creates a snapshot of the file in its current state.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.
       operationId: postAssessmentResultsSnapshot
       parameters:
         - name: assessmentResultsID
@@ -3805,7 +3845,11 @@ paths:
       tags:
         - OSCAL Catalog
       summary: Adds a new catalog.
-      description: Adds a new catalog.
+      description: |
+        Adds a new catalog.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postCatalog
       responses:
         201:
@@ -4195,7 +4239,11 @@ paths:
       tags:
         - OSCAL Catalog
       summary: Adds a new attachment.
-      description: Adds a new attachment.
+      description: |
+        Adds a new attachment.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postCatalogAttachment
       parameters:
         - name: catalogID
@@ -4533,7 +4581,11 @@ paths:
       tags:
         - OSCAL Catalog
       summary: Creates a snapshot of the file in its current state.
-      description: Creates a snapshot of the file in its current state.
+      description: |
+        Creates a snapshot of the file in its current state.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.
       operationId: postCatalogSnapshot
       parameters:
         - name: catalogID
@@ -4873,7 +4925,11 @@ paths:
       tags:
         - OSCAL System Security Plan
       summary: Adds a new system security plan.
-      description: Adds a new system security plan.
+      description: |
+        Adds a new system security plan.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postSystemSecurityPlan
       responses:
         201:
@@ -5263,7 +5319,11 @@ paths:
       tags:
         - OSCAL System Security Plan
       summary: Adds a new attachment.
-      description: Adds a new attachment.
+      description: |
+        Adds a new attachment.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postSystemSecurityPlanAttachment
       parameters:
         - name: systemSecurityPlanID
@@ -5601,7 +5661,11 @@ paths:
       tags:
         - OSCAL System Security Plan
       summary: Creates a snapshot of the file in its current state.
-      description: Creates a snapshot of the file in its current state.
+      description: |
+        Creates a snapshot of the file in its current state.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.
       operationId: postSystemSecurityPlanSnapshot
       parameters:
         - name: systemSecurityPlanID
@@ -5941,7 +6005,11 @@ paths:
       tags:
         - OSCAL Plan of Action and Milestones
       summary: Adds a new plan of action and milestones.
-      description: Adds a new plan of action and milestones.
+      description: |
+        Adds a new plan of action and milestones.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postPlanOfActionAndMilestones
       responses:
         201:
@@ -6331,7 +6399,11 @@ paths:
       tags:
         - OSCAL Plan of Action and Milestones
       summary: Adds a new attachment.
-      description: Adds a new attachment.
+      description: |
+        Adds a new attachment.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postPlanOfActionAndMilestonesAttachment
       parameters:
         - name: planOfActionAndMilestonesID
@@ -6669,7 +6741,11 @@ paths:
       tags:
         - OSCAL Plan of Action and Milestones
       summary: Creates a snapshot of the file in its current state.
-      description: Creates a snapshot of the file in its current state.
+      description: |
+        Creates a snapshot of the file in its current state.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.
       operationId: postPlanOfActionAndMilestonesSnapshot
       parameters:
         - name: planOfActionAndMilestonesID
@@ -7009,7 +7085,11 @@ paths:
       tags:
         - OSCAL Component Definition
       summary: Adds a new component definition.
-      description: Adds a new component definition.
+      description: |
+        Adds a new component definition.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postComponentDefinition
       responses:
         201:
@@ -7399,7 +7479,11 @@ paths:
       tags:
         - OSCAL Component Definition
       summary: Adds a new attachment.
-      description: Adds a new attachment.
+      description: |
+        Adds a new attachment.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: postComponentDefinitionAttachment
       parameters:
         - name: componentDefinitionID
@@ -7737,7 +7821,11 @@ paths:
       tags:
         - OSCAL Component Definition
       summary: Creates a snapshot of the file in its current state.
-      description: Creates a snapshot of the file in its current state.
+      description: |
+        Creates a snapshot of the file in its current state.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.
       operationId: postComponentDefinitionSnapshot
       parameters:
         - name: componentDefinitionID

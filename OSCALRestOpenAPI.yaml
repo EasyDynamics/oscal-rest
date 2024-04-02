@@ -76,8 +76,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns every relevant assessment plan.
-      description: Returns every relevant assessment plan.
+      summary: Returns a list of every relevant assessment plan.
+      description: Returns a list of every relevant assessment plan.
       operationId: getAssessmentPlan
       responses:
         200:
@@ -463,8 +463,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns every relevant attachment.
-      description: Returns every relevant attachment.
+      summary: Returns a list of every relevant attachment.
+      description: Returns a list of every relevant attachment.
       operationId: getAssessmentPlanAttachment
       parameters:
         - name: assessmentPlanID
@@ -805,8 +805,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns every relevant snapshot.
-      description: Returns every relevant snapshot.
+      summary: Returns a list of every relevant snapshot.
+      description: Returns a list of every relevant snapshot.
       operationId: getAssessmentPlanSnapshot
       parameters:
         - name: assessmentPlanID
@@ -1156,8 +1156,8 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns every relevant profile.
-      description: Returns every relevant profile.
+      summary: Returns a list of every relevant profile.
+      description: Returns a list of every relevant profile.
       operationId: getProfile
       responses:
         200:
@@ -1755,8 +1755,8 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns every relevant attachment.
-      description: Returns every relevant attachment.
+      summary: Returns a list of every relevant attachment.
+      description: Returns a list of every relevant attachment.
       operationId: getProfileAttachment
       parameters:
         - name: profileID
@@ -2097,8 +2097,8 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns every relevant snapshot.
-      description: Returns every relevant snapshot.
+      summary: Returns a list of every relevant snapshot.
+      description: Returns a list of every relevant snapshot.
       operationId: getProfileSnapshot
       parameters:
         - name: profileID
@@ -2448,8 +2448,8 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns every relevant resolved profile catalog.
-      description: Returns every relevant resolved profile catalog.
+      summary: Returns a list of every relevant resolved profile catalog.
+      description: Returns a list of every relevant resolved profile catalog.
       operationId: getProfileResolvedSnapshot
       parameters:
         - name: profileID
@@ -2718,8 +2718,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Results
-      summary: Returns every relevant assessment results.
-      description: Returns every relevant assessment results.
+      summary: Returns a list of every relevant assessment results.
+      description: Returns a list of every relevant assessment results.
       operationId: getAssessmentResults
       responses:
         200:
@@ -3105,8 +3105,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Results
-      summary: Returns every relevant attachment.
-      description: Returns every relevant attachment.
+      summary: Returns a list of every relevant attachment.
+      description: Returns a list of every relevant attachment.
       operationId: getAssessmentResultsAttachment
       parameters:
         - name: assessmentResultsID
@@ -3447,8 +3447,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Results
-      summary: Returns every relevant snapshot.
-      description: Returns every relevant snapshot.
+      summary: Returns a list of every relevant snapshot.
+      description: Returns a list of every relevant snapshot.
       operationId: getAssessmentResultsSnapshot
       parameters:
         - name: assessmentResultsID
@@ -3798,8 +3798,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns every relevant catalog.
-      description: Returns every relevant catalog.
+      summary: Returns a list of every relevant catalog.
+      description: Returns a list of every relevant catalog.
       operationId: getCatalog
       responses:
         200:
@@ -4185,8 +4185,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns every relevant attachment.
-      description: Returns every relevant attachment.
+      summary: Returns a list of every relevant attachment.
+      description: Returns a list of every relevant attachment.
       operationId: getCatalogAttachment
       parameters:
         - name: catalogID
@@ -4527,8 +4527,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns every relevant snapshot.
-      description: Returns every relevant snapshot.
+      summary: Returns a list of every relevant snapshot.
+      description: Returns a list of every relevant snapshot.
       operationId: getCatalogSnapshot
       parameters:
         - name: catalogID
@@ -4878,8 +4878,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns every relevant system security plan.
-      description: Returns every relevant system security plan.
+      summary: Returns a list of every relevant system security plan.
+      description: Returns a list of every relevant system security plan.
       operationId: getSystemSecurityPlan
       responses:
         200:
@@ -5265,8 +5265,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns every relevant attachment.
-      description: Returns every relevant attachment.
+      summary: Returns a list of every relevant attachment.
+      description: Returns a list of every relevant attachment.
       operationId: getSystemSecurityPlanAttachment
       parameters:
         - name: systemSecurityPlanID
@@ -5607,8 +5607,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns every relevant snapshot.
-      description: Returns every relevant snapshot.
+      summary: Returns a list of every relevant snapshot.
+      description: Returns a list of every relevant snapshot.
       operationId: getSystemSecurityPlanSnapshot
       parameters:
         - name: systemSecurityPlanID
@@ -5958,8 +5958,8 @@ paths:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Returns every relevant plan of action and milestones.
-      description: Returns every relevant plan of action and milestones.
+      summary: Returns a list of every relevant plan of action and milestones.
+      description: Returns a list of every relevant plan of action and milestones.
       operationId: getPlanOfActionAndMilestones
       responses:
         200:
@@ -6345,8 +6345,8 @@ paths:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Returns every relevant attachment.
-      description: Returns every relevant attachment.
+      summary: Returns a list of every relevant attachment.
+      description: Returns a list of every relevant attachment.
       operationId: getPlanOfActionAndMilestonesAttachment
       parameters:
         - name: planOfActionAndMilestonesID
@@ -6687,8 +6687,8 @@ paths:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Returns every relevant snapshot.
-      description: Returns every relevant snapshot.
+      summary: Returns a list of every relevant snapshot.
+      description: Returns a list of every relevant snapshot.
       operationId: getPlanOfActionAndMilestonesSnapshot
       parameters:
         - name: planOfActionAndMilestonesID
@@ -7038,8 +7038,8 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns every relevant component definition.
-      description: Returns every relevant component definition.
+      summary: Returns a list of every relevant component definition.
+      description: Returns a list of every relevant component definition.
       operationId: getComponentDefinition
       responses:
         200:
@@ -7425,8 +7425,8 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns every relevant attachment.
-      description: Returns every relevant attachment.
+      summary: Returns a list of every relevant attachment.
+      description: Returns a list of every relevant attachment.
       operationId: getComponentDefinitionAttachment
       parameters:
         - name: componentDefinitionID
@@ -7767,8 +7767,8 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns every relevant snapshot.
-      description: Returns every relevant snapshot.
+      summary: Returns a list of every relevant snapshot.
+      description: Returns a list of every relevant snapshot.
       operationId: getComponentDefinitionSnapshot
       parameters:
         - name: componentDefinitionID

@@ -249,7 +249,11 @@ paths:
       tags:
         - OSCAL Assessment Plan
       summary: Replaces the assessment plan represented by the assessment plan ID.
-      description: Replaces the assessment plan represented by the assessment plan ID.
+      description: |
+        Replaces the assessment plan represented by the assessment plan ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putAssessmentPlan
       parameters:
         - name: assessmentPlanID
@@ -579,7 +583,11 @@ paths:
       tags:
         - OSCAL Assessment Plan
       summary: Replaces the attachment represented by the attachment ID.
-      description: Replaces the attachment represented by the attachment ID.
+      description: |
+        Replaces the attachment represented by the attachment ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putAssessmentPlanAttachment
       parameters:
         - name: assessmentPlanID
@@ -1173,7 +1181,11 @@ paths:
       tags:
         - OSCAL Profile
       summary: Replaces the profile represented by the profile ID.
-      description: Replaces the profile represented by the profile ID.
+      description: |
+        Replaces the profile represented by the profile ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putProfile
       parameters:
         - name: profileID
@@ -1572,7 +1584,11 @@ paths:
       tags:
         - OSCAL Profile
       summary: Replaces the attachment represented by the attachment UUID.
-      description: Replaces the attachment represented by the attachment UUID.
+      description: |
+        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putProfileAttachment
       parameters:
         - name: profileID
@@ -2436,7 +2452,11 @@ paths:
       tags:
         - OSCAL Assessment Results
       summary: Replaces the assessment results represented by the assessment results ID.
-      description: Replaces the assessment results represented by the assessment results ID.
+      description: |
+        Replaces the assessment results represented by the assessment results ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putAssessmentResults
       parameters:
         - name: assessmentResultsID
@@ -2766,7 +2786,11 @@ paths:
       tags:
         - OSCAL Assessment Results
       summary: Replaces the attachment represented by the attachment ID.
-      description: Replaces the attachment represented by the attachment ID.
+      description: |
+        Replaces the attachment represented by the attachment ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putAssessmentResultsAttachment
       parameters:
         - name: assessmentResultsID
@@ -3360,7 +3384,11 @@ paths:
       tags:
         - OSCAL Catalog
       summary: Replaces the catalog represented by the catalog ID.
-      description: Replaces the catalog represented by the catalog ID.
+      description: |
+        Replaces the catalog represented by the catalog ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putCatalog
       parameters:
         - name: catalogID
@@ -3690,7 +3718,11 @@ paths:
       tags:
         - OSCAL Catalog
       summary: Replaces the attachment represented by the attachment ID.
-      description: Replaces the attachment represented by the attachment ID.
+      description: |
+        Replaces the attachment represented by the attachment ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putCatalogAttachment
       parameters:
         - name: catalogID
@@ -4284,7 +4316,11 @@ paths:
       tags:
         - OSCAL System Security Plan
       summary: Replaces the system security plan represented by the system security plan ID.
-      description: Replaces the system security plan represented by the system security plan ID.
+      description: |
+        Replaces the system security plan represented by the system security plan ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putSystemSecurityPlan
       parameters:
         - name: systemSecurityPlanID
@@ -4614,7 +4650,11 @@ paths:
       tags:
         - OSCAL System Security Plan
       summary: Replaces the attachment represented by the attachment ID.
-      description: Replaces the attachment represented by the attachment ID.
+      description: |
+        Replaces the attachment represented by the attachment ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putSystemSecurityPlanAttachment
       parameters:
         - name: systemSecurityPlanID
@@ -5208,7 +5248,11 @@ paths:
       tags:
         - OSCAL Plan of Action and Milestones
       summary: Replaces the plan of action and milestones represented by the plan of action and milestones ID.
-      description: Replaces the plan of action and milestones represented by the plan of action and milestones ID.
+      description: |
+        Replaces the plan of action and milestones represented by the plan of action and milestones ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putPlanOfActionAndMilestones
       parameters:
         - name: planOfActionAndMilestonesID
@@ -5538,7 +5582,11 @@ paths:
       tags:
         - OSCAL Plan of Action and Milestones
       summary: Replaces the attachment represented by the attachment ID.
-      description: Replaces the attachment represented by the attachment ID.
+      description: |
+        Replaces the attachment represented by the attachment ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putPlanOfActionAndMilestonesAttachment
       parameters:
         - name: planOfActionAndMilestonesID
@@ -6132,7 +6180,11 @@ paths:
       tags:
         - OSCAL Component Definition
       summary: Replaces the component definition represented by the component definition ID.
-      description: Replaces the component definition represented by the component definition ID.
+      description: |
+        Replaces the component definition represented by the component definition ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putComponentDefinition
       parameters:
         - name: componentDefinitionID
@@ -6462,7 +6514,11 @@ paths:
       tags:
         - OSCAL Component Definition
       summary: Replaces the attachment represented by the attachment ID.
-      description: Replaces the attachment represented by the attachment ID.
+      description: |
+        Replaces the attachment represented by the attachment ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
       operationId: putComponentDefinitionAttachment
       parameters:
         - name: componentDefinitionID

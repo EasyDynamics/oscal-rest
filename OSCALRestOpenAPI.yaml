@@ -15,7 +15,7 @@ info:
 
   contact:
     email: oscal@oscal.io
-  version: 0.2.6
+  version: 0.2.7
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -2158,13 +2158,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogSnapshot"
+                $ref: "#/components/schemas/OSCALCatalog"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogSnapshot"
+                $ref: "#/components/schemas/OSCALCatalog"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogSnapshot"
+                $ref: "#/components/schemas/OSCALCatalog"
         401:
           description: Unauthorized
           content:

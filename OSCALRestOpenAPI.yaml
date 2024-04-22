@@ -2316,13 +2316,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALProfileEntry"
+                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProfileEntry"
+                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALProfileEntry"
+                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
             location-header:
               schema:
                 type: string

@@ -768,31 +768,32 @@ paths:
         - OSCAL Assessment Plan
       summary: Creates a snapshot of the file in its current state.
       description: |
-                 Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
+        Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
 
-         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]: 
+         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:
            - `"name" : "snapshot-created"`
            - `"value" : "2024-03-24T16:10:42.251Z"` (date-time-with-timezone)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
+         The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:
 
-          - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
-            - `"name" : "snapshot-description"`
-            - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
-            - `"remarks" : "An optional snapshot description."` (markup-multiline)
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
+           - `"name" : "snapshot-description"`
+           - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+           - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-          - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-label"`
-            - `"value" : "v1.2.3"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-label"`
+           - `"value" : "v1.2.3"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-type"`
-            - `"value" : "published"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-type"`
+           - `"value" : "published"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
+         All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
 
       operationId: postAssessmentPlanSnapshot
       parameters:
@@ -808,13 +809,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlanEntry"
+                $ref: "#/components/schemas/OSCALAssessmentPlansSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlanEntry"
+                $ref: "#/components/schemas/OSCALAssessmentPlansSnapshots"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlanEntry"
+                $ref: "#/components/schemas/OSCALAssessmentPlansSnapshots"
             location-header:
               schema:
                 type: string
@@ -948,25 +949,22 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Replaces the snapshot represented by the snapshot ID.
+      summary: Modifies the snapshot description, types and labels.
       description: |
-        Replaces the snapshot represented by the snapshot ID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.         The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method. 
+        Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.
 
-         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
            - `"name" : "snapshot-description"`
            - `"value" : "na"` (Value is required by OSCAL, but not needed for this property. It can include any string.)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
            - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-label"`
            - `"value" : "v1.2.3"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-type"`
            - `"value" : "published"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
@@ -1883,31 +1881,32 @@ paths:
         - OSCAL Profile
       summary: Creates a snapshot of the file in its current state.
       description: |
-                 Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
+        Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
 
-         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]: 
+         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:
            - `"name" : "snapshot-created"`
            - `"value" : "2024-03-24T16:10:42.251Z"` (date-time-with-timezone)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
+         The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:
 
-          - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
-            - `"name" : "snapshot-description"`
-            - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
-            - `"remarks" : "An optional snapshot description."` (markup-multiline)
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
+           - `"name" : "snapshot-description"`
+           - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+           - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-          - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-label"`
-            - `"value" : "v1.2.3"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-label"`
+           - `"value" : "v1.2.3"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-type"`
-            - `"value" : "published"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-type"`
+           - `"value" : "published"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
+         All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
 
       operationId: postProfileSnapshot
       parameters:
@@ -1923,13 +1922,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALProfileEntry"
+                $ref: "#/components/schemas/OSCALProfilesSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProfileEntry"
+                $ref: "#/components/schemas/OSCALProfilesSnapshots"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALProfileEntry"
+                $ref: "#/components/schemas/OSCALProfilesSnapshots"
             location-header:
               schema:
                 type: string
@@ -2063,25 +2062,22 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Replaces the snapshot represented by the snapshot ID.
+      summary: Modifies the snapshot description, types and labels.
       description: |
-        Replaces the snapshot represented by the snapshot ID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.         The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method. 
+        Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.
 
-         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
            - `"name" : "snapshot-description"`
            - `"value" : "na"` (Value is required by OSCAL, but not needed for this property. It can include any string.)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
            - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-label"`
            - `"value" : "v1.2.3"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-type"`
            - `"value" : "published"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
@@ -2232,7 +2228,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogsSnapshots"
+                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
         401:
           description: Unauthorized
           content:
@@ -2269,9 +2265,40 @@ paths:
     post:
       tags:
         - OSCAL Profile
-      summary: Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog.
+      summary: Resolves the profile and saves the result.
       description: |
-        Processes the profile based on currently available sources and creates a snapshot as a resolved profile catalog.         The client must include the `Content-type` HTML header and set it to one of the following:
+        Processes the profile and creates a snapshot as a resolved profile catalog. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property and a `snapshot-type` set to `resolved-profile` in the OSCAL document's `metadata` as follows:
+
+         - **Resolved Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:
+           - `"name" : "snapshot-created"`
+           - `"value" : "2024-03-24T16:10:42.251Z"` (date-time-with-timezone)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+
+         - **Resolved Snapshot Type** Property [**1 or more**]:
+           - `"name" : "snapshot-type"`
+           - `"value" : "resolved-profile"`
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+
+         The implementation implementation _may_ set a `snapshot-description` property, as well as `snapshot-label` and additional `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:
+
+         - **Resolved Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
+           - `"name" : "snapshot-description"`
+           - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+           - `"remarks" : "An optional resolved snapshot description."` (markup-multiline)
+
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-label"`
+           - `"value" : "v1.2.3"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+
+         - **Resolved Snapshot Type** Property [**1 or more**]:
+           - `"name" : "snapshot-type"`
+           - `"value" : "resolved-profile"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+
+         All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
+         The client must include the `Content-type` HTML header and set it to one of the following:
          - `application/json` when sending an OSCAL file in JSON format;
          - `application/xml` when sending an OSCAL file in XML format; or
          - `application/yaml` when sending an OSCAL file in YAML format.
@@ -2289,13 +2316,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogEntry"
+                $ref: "#/components/schemas/OSCALProfileEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogEntry"
+                $ref: "#/components/schemas/OSCALProfileEntry"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogEntry"
+                $ref: "#/components/schemas/OSCALProfileEntry"
             location-header:
               schema:
                 type: string
@@ -2386,13 +2413,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalog"
+                $ref: "#/components/schemas/OSCALProfile"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalog"
+                $ref: "#/components/schemas/OSCALProfile"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalog"
+                $ref: "#/components/schemas/OSCALProfile"
         401:
           description: Unauthorized
           content:
@@ -2426,6 +2453,99 @@ paths:
       security:
         - oscal_auth:
             - read:profile
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Modifies the snapshot description, types and label.
+      description: |
+        Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.
+
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
+           - `"name" : "snapshot-description"`
+           - `"value" : "na"` (Value is required by OSCAL, but not needed for this property. It can include any string.)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+           - `"remarks" : "An optional snapshot description."` (markup-multiline)
+
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-label"`
+           - `"value" : "v1.2.3"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-type"`
+           - `"value" : "published"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+
+         All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
+      operationId: putProfileResolvedSnapshot
+      parameters:
+        - name: profileID
+          in: path
+          description: ID of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resolvedSnapshotID
+          in: path
+          description: ID of ResolvedSnapshot
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Successful operation
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
+            - write:profile
     delete:
       tags:
         - OSCAL Profile
@@ -3199,31 +3319,32 @@ paths:
         - OSCAL Assessment Results
       summary: Creates a snapshot of the file in its current state.
       description: |
-                 Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
+        Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
 
-         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]: 
+         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:
            - `"name" : "snapshot-created"`
            - `"value" : "2024-03-24T16:10:42.251Z"` (date-time-with-timezone)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
+         The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:
 
-          - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
-            - `"name" : "snapshot-description"`
-            - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
-            - `"remarks" : "An optional snapshot description."` (markup-multiline)
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
+           - `"name" : "snapshot-description"`
+           - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+           - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-          - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-label"`
-            - `"value" : "v1.2.3"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-label"`
+           - `"value" : "v1.2.3"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-type"`
-            - `"value" : "published"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-type"`
+           - `"value" : "published"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
+         All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
 
       operationId: postAssessmentResultsSnapshot
       parameters:
@@ -3239,13 +3360,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsEntry"
+                $ref: "#/components/schemas/OSCALAssessmentResultsListSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsEntry"
+                $ref: "#/components/schemas/OSCALAssessmentResultsListSnapshots"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsEntry"
+                $ref: "#/components/schemas/OSCALAssessmentResultsListSnapshots"
             location-header:
               schema:
                 type: string
@@ -3379,25 +3500,22 @@ paths:
     put:
       tags:
         - OSCAL Assessment Results
-      summary: Replaces the snapshot represented by the snapshot ID.
+      summary: Modifies the snapshot description, types and labels.
       description: |
-        Replaces the snapshot represented by the snapshot ID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.         The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method. 
+        Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.
 
-         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
            - `"name" : "snapshot-description"`
            - `"value" : "na"` (Value is required by OSCAL, but not needed for this property. It can include any string.)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
            - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-label"`
            - `"value" : "v1.2.3"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-type"`
            - `"value" : "published"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
@@ -4245,31 +4363,32 @@ paths:
         - OSCAL Catalog
       summary: Creates a snapshot of the file in its current state.
       description: |
-                 Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
+        Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
 
-         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]: 
+         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:
            - `"name" : "snapshot-created"`
            - `"value" : "2024-03-24T16:10:42.251Z"` (date-time-with-timezone)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
+         The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:
 
-          - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
-            - `"name" : "snapshot-description"`
-            - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
-            - `"remarks" : "An optional snapshot description."` (markup-multiline)
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
+           - `"name" : "snapshot-description"`
+           - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+           - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-          - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-label"`
-            - `"value" : "v1.2.3"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-label"`
+           - `"value" : "v1.2.3"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-type"`
-            - `"value" : "published"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-type"`
+           - `"value" : "published"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
+         All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
 
       operationId: postCatalogSnapshot
       parameters:
@@ -4285,13 +4404,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogEntry"
+                $ref: "#/components/schemas/OSCALCatalogsSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogEntry"
+                $ref: "#/components/schemas/OSCALCatalogsSnapshots"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogEntry"
+                $ref: "#/components/schemas/OSCALCatalogsSnapshots"
             location-header:
               schema:
                 type: string
@@ -4425,25 +4544,22 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Replaces the snapshot represented by the snapshot ID.
+      summary: Modifies the snapshot description, types and labels.
       description: |
-        Replaces the snapshot represented by the snapshot ID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.         The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method. 
+        Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.
 
-         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
            - `"name" : "snapshot-description"`
            - `"value" : "na"` (Value is required by OSCAL, but not needed for this property. It can include any string.)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
            - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-label"`
            - `"value" : "v1.2.3"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-type"`
            - `"value" : "published"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
@@ -5291,31 +5407,32 @@ paths:
         - OSCAL System Security Plan
       summary: Creates a snapshot of the file in its current state.
       description: |
-                 Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
+        Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
 
-         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]: 
+         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:
            - `"name" : "snapshot-created"`
            - `"value" : "2024-03-24T16:10:42.251Z"` (date-time-with-timezone)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
+         The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:
 
-          - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
-            - `"name" : "snapshot-description"`
-            - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
-            - `"remarks" : "An optional snapshot description."` (markup-multiline)
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
+           - `"name" : "snapshot-description"`
+           - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+           - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-          - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-label"`
-            - `"value" : "v1.2.3"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-label"`
+           - `"value" : "v1.2.3"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-type"`
-            - `"value" : "published"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-type"`
+           - `"value" : "published"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
+         All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
 
       operationId: postSystemSecurityPlanSnapshot
       parameters:
@@ -5331,13 +5448,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlanEntry"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlansSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlanEntry"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlansSnapshots"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlanEntry"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlansSnapshots"
             location-header:
               schema:
                 type: string
@@ -5471,25 +5588,22 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Replaces the snapshot represented by the snapshot ID.
+      summary: Modifies the snapshot description, types and labels.
       description: |
-        Replaces the snapshot represented by the snapshot ID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.         The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method. 
+        Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.
 
-         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
            - `"name" : "snapshot-description"`
            - `"value" : "na"` (Value is required by OSCAL, but not needed for this property. It can include any string.)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
            - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-label"`
            - `"value" : "v1.2.3"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-type"`
            - `"value" : "published"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
@@ -6337,31 +6451,32 @@ paths:
         - OSCAL Plan of Action and Milestones
       summary: Creates a snapshot of the file in its current state.
       description: |
-                 Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
+        Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
 
-         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]: 
+         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:
            - `"name" : "snapshot-created"`
            - `"value" : "2024-03-24T16:10:42.251Z"` (date-time-with-timezone)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
+         The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:
 
-          - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
-            - `"name" : "snapshot-description"`
-            - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
-            - `"remarks" : "An optional snapshot description."` (markup-multiline)
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
+           - `"name" : "snapshot-description"`
+           - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+           - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-          - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-label"`
-            - `"value" : "v1.2.3"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-label"`
+           - `"value" : "v1.2.3"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-type"`
-            - `"value" : "published"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-type"`
+           - `"value" : "published"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
+         All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
 
       operationId: postPlanOfActionAndMilestonesSnapshot
       parameters:
@@ -6377,13 +6492,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntry"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntry"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListSnapshots"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntry"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListSnapshots"
             location-header:
               schema:
                 type: string
@@ -6517,25 +6632,22 @@ paths:
     put:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Replaces the snapshot represented by the snapshot ID.
+      summary: Modifies the snapshot description, types and labels.
       description: |
-        Replaces the snapshot represented by the snapshot ID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.         The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method. 
+        Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.
 
-         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
            - `"name" : "snapshot-description"`
            - `"value" : "na"` (Value is required by OSCAL, but not needed for this property. It can include any string.)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
            - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-label"`
            - `"value" : "v1.2.3"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-type"`
            - `"value" : "published"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
@@ -7383,31 +7495,32 @@ paths:
         - OSCAL Component Definition
       summary: Creates a snapshot of the file in its current state.
       description: |
-                 Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
+        Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:
 
-         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]: 
+         - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:
            - `"name" : "snapshot-created"`
            - `"value" : "2024-03-24T16:10:42.251Z"` (date-time-with-timezone)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
+         The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:
 
-          - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
-            - `"name" : "snapshot-description"`
-            - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
-            - `"remarks" : "An optional snapshot description."` (markup-multiline)
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
+           - `"name" : "snapshot-description"`
+           - `"value" : "na"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+           - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-          - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-label"`
-            - `"value" : "v1.2.3"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-label"`
+           - `"value" : "v1.2.3"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
-            - `"name" : "snapshot-type"`
-            - `"value" : "published"` (token)
-            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
+           - `"name" : "snapshot-type"`
+           - `"value" : "published"` (token)
+           - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-          All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
+         All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
 
       operationId: postComponentDefinitionSnapshot
       parameters:
@@ -7423,13 +7536,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitionEntry"
+                $ref: "#/components/schemas/OSCALComponentDefinitionsSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitionEntry"
+                $ref: "#/components/schemas/OSCALComponentDefinitionsSnapshots"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitionEntry"
+                $ref: "#/components/schemas/OSCALComponentDefinitionsSnapshots"
             location-header:
               schema:
                 type: string
@@ -7563,25 +7676,22 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Replaces the snapshot represented by the snapshot ID.
+      summary: Modifies the snapshot description, types and labels.
       description: |
-        Replaces the snapshot represented by the snapshot ID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.         The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method. 
+        Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.
 
-         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]: 
+         - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:
            - `"name" : "snapshot-description"`
            - `"value" : "na"` (Value is required by OSCAL, but not needed for this property. It can include any string.)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
            - `"remarks" : "An optional snapshot description."` (markup-multiline)
 
-         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-label"`
            - `"value" : "v1.2.3"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
-         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]: 
+         - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:
            - `"name" : "snapshot-type"`
            - `"value" : "published"` (token)
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
@@ -7852,6 +7962,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OSCALModelEntry'
+    OSCALResolvedSnapshotsSnapshots:
+      type: object
+      properties:
+        resolved-snapshot-list:
+          type: array
+          items:
+            $ref: '#/components/schemas/OSCALModelSnapshotEntry'
     OSCALCatalogsSnapshots:
       type: object
       properties:

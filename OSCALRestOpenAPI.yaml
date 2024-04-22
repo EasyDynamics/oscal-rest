@@ -15,7 +15,7 @@ info:
 
   contact:
     email: oscal@oscal.io
-  version: 0.3.2
+  version: 0.3.3
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL

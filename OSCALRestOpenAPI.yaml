@@ -15,7 +15,7 @@ info:
 
   contact:
     email: oscal@oscal.io
-  version: 0.3.3
+  version: 0.3.4
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -2316,13 +2316,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
+                $ref: "#/components/schemas/OSCALProfilesSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
+                $ref: "#/components/schemas/OSCALProfilesSnapshots"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
+                $ref: "#/components/schemas/OSCALProfilesSnapshots"
             location-header:
               schema:
                 type: string
@@ -8055,7 +8055,9 @@ components:
         oscal-version:
           $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_oscal-version"
         document-ids:
-          $ref: "#/components/schemas/OSCALDocumentIds"
+          type: array
+          items:
+            $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_document-id"
         markings:
           type: array
           items:
@@ -8079,7 +8081,6 @@ components:
               type: array
               items:
                 $ref: "#/components/schemas/Token"
-
     OSCALModelEntry:
       type: object
       properties:
@@ -8097,14 +8098,15 @@ components:
         oscal-version:
           $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_oscal-version"
         document-ids:
-          $ref: "#/components/schemas/OSCALDocumentIds"
+          type: array
+          items:
+            $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_document-id"
         markings:
           type: array
           items:
             type: string
         remarks:
           $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_remarks"
-
     OSCALSystemSecurityPlanSnapshot:
       type: object
       properties:

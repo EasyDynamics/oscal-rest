@@ -2298,10 +2298,7 @@ paths:
            - `"ns" : "http://oscal.io/ns/oscal/1.0.0"`
 
          All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.
-         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.
+
       operationId: postProfileResolvedSnapshot
       parameters:
         - name: profileID
@@ -2316,13 +2313,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALProfilesSnapshots"
+                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProfilesSnapshots"
+                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALProfilesSnapshots"
+                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
             location-header:
               schema:
                 type: string
@@ -8025,19 +8022,6 @@ components:
             attachment-binary:
               type: string
               format: binary
-    OSCALDocumentId:
-      type: object
-      properties:
-        document-id:
-          $ref:
-            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_document-id"
-    OSCALDocumentIds:
-      type: object
-      properties:
-        document-ids:
-          type: array
-          items:
-            $ref: "#/components/schemas/OSCALDocumentId"
     OSCALModelSnapshotEntry:
       type: object
       properties:

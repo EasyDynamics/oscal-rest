@@ -15,7 +15,7 @@ info:
 
   contact:
     email: oscal@oscal.io
-  version: 0.3.4
+  version: 0.3.5
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -906,7 +906,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlanSnapshot"
+                $ref: "#/components/schemas/OSCALAssessmentPlan"
             application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentPlanSnapshot"
@@ -2019,7 +2019,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALProfileSnapshot"
+                $ref: "#/components/schemas/OSCALProfile"
             application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALProfileSnapshot"
@@ -3454,7 +3454,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsSnapshot"
+                $ref: "#/components/schemas/OSCALAssessmentResults"
             application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentResultsSnapshot"
@@ -4498,7 +4498,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogSnapshot"
+                $ref: "#/components/schemas/OSCALCatalog"
             application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALCatalogSnapshot"
@@ -5542,7 +5542,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlanSnapshot"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
             application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALSystemSecurityPlanSnapshot"
@@ -6586,7 +6586,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesSnapshot"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
             application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesSnapshot"
@@ -7630,7 +7630,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitionSnapshot"
+                $ref: "#/components/schemas/OSCALComponentDefinition"
             application/xml:
               schema:
                 $ref: "#/components/schemas/OSCALComponentDefinitionSnapshot"

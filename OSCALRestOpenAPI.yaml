@@ -909,10 +909,10 @@ paths:
                 $ref: "#/components/schemas/OSCALAssessmentPlan"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlanSnapshot"
+                $ref: "#/components/schemas/OSCALAssessmentPlan"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlanSnapshot"
+                $ref: "#/components/schemas/OSCALAssessmentPlan"
         401:
           description: Unauthorized
           content:
@@ -2022,10 +2022,10 @@ paths:
                 $ref: "#/components/schemas/OSCALProfile"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProfileSnapshot"
+                $ref: "#/components/schemas/OSCALProfile"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALProfileSnapshot"
+                $ref: "#/components/schemas/OSCALProfile"
         401:
           description: Unauthorized
           content:
@@ -3457,10 +3457,10 @@ paths:
                 $ref: "#/components/schemas/OSCALAssessmentResults"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsSnapshot"
+                $ref: "#/components/schemas/OSCALAssessmentResults"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsSnapshot"
+                $ref: "#/components/schemas/OSCALAssessmentResults"
         401:
           description: Unauthorized
           content:
@@ -4501,10 +4501,10 @@ paths:
                 $ref: "#/components/schemas/OSCALCatalog"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogSnapshot"
+                $ref: "#/components/schemas/OSCALCatalog"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogSnapshot"
+                $ref: "#/components/schemas/OSCALCatalog"
         401:
           description: Unauthorized
           content:
@@ -5545,10 +5545,10 @@ paths:
                 $ref: "#/components/schemas/OSCALSystemSecurityPlan"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlanSnapshot"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlanSnapshot"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
         401:
           description: Unauthorized
           content:
@@ -6589,10 +6589,10 @@ paths:
                 $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesSnapshot"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesSnapshot"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
         401:
           description: Unauthorized
           content:
@@ -7633,10 +7633,10 @@ paths:
                 $ref: "#/components/schemas/OSCALComponentDefinition"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitionSnapshot"
+                $ref: "#/components/schemas/OSCALComponentDefinition"
             application/yaml:
               schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitionSnapshot"
+                $ref: "#/components/schemas/OSCALComponentDefinition"
         401:
           description: Unauthorized
           content:

@@ -15,7 +15,7 @@ info:
 
   contact:
     email: oscal@oscal.io
-  version: 0.3.5
+  version: 0.3.6
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -424,8 +424,8 @@ paths:
     post:
       tags:
         - OSCAL Assessment Plan
-      summary: Adds a new attachment.
-      description: Adds a new attachment.
+      summary: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
+      description: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
       operationId: postAssessmentPlanAttachment
       parameters:
         - name: assessmentPlanID
@@ -502,13 +502,13 @@ paths:
         - oscal_auth:
             - read:assessmentPlan
             - write:assessmentPlan
-  /assessment-plan/{assessmentPlanID}/attachment/{attachmentID}:
+  /assessment-plan/{assessmentPlanID}/attachment/{resourceUUID}:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the attachment represented by the attachment ID.
-      description: Returns the attachment represented by the attachment ID.
-      operationId: getAssessmentPlanAttachmentById
+      summary: Returns the attachment represented by the attachment UUID.
+      description: Returns the attachment represented by the attachment UUID.
+      operationId: getAssessmentPlanAttachmentByUuid
       parameters:
         - name: assessmentPlanID
           in: path
@@ -516,9 +516,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -533,8 +533,9 @@ paths:
                   file:
                     type: object
                     properties:
-                      id:
-                        $ref: "#/components/schemas/DocId"
+                      uuid:
+                        type: string
+                        pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
                         type: string
                       media-type:
@@ -578,9 +579,9 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Replaces the attachment represented by the attachment ID.
+      summary: Replaces the attachment represented by the attachment UUID.
       description: |
-        Replaces the attachment represented by the attachment ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
          - `application/json` when sending an OSCAL file in JSON format;
          - `application/xml` when sending an OSCAL file in XML format; or
          - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
@@ -592,9 +593,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -656,8 +657,8 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Plan
-      summary: Deletes the attachment represented by the attachment ID.
-      description: Deletes the attachment represented by the attachment ID.
+      summary: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
+      description: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
       operationId: deleteAssessmentPlanAttachment
       parameters:
         - name: assessmentPlanID
@@ -666,9 +667,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -1537,8 +1538,8 @@ paths:
     post:
       tags:
         - OSCAL Profile
-      summary: Adds a new attachment.
-      description: Adds a new attachment.
+      summary: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
+      description: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
       operationId: postProfileAttachment
       parameters:
         - name: profileID
@@ -1615,7 +1616,7 @@ paths:
         - oscal_auth:
             - read:profile
             - write:profile
-  /profile/{profileID}/attachment/{attachmentUUID}:
+  /profile/{profileID}/attachment/{resourceUUID}:
     get:
       tags:
         - OSCAL Profile
@@ -1629,7 +1630,7 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentUUID
+        - name: resourceUUID
           in: path
           description: UUID of Attachment
           required: true
@@ -1646,8 +1647,9 @@ paths:
                   file:
                     type: object
                     properties:
-                      id:
-                        $ref: "#/components/schemas/DocId"
+                      uuid:
+                        type: string
+                        pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
                         type: string
                       media-type:
@@ -1705,7 +1707,7 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentUUID
+        - name: resourceUUID
           in: path
           description: UUID of Attachment
           required: true
@@ -1769,8 +1771,8 @@ paths:
     delete:
       tags:
         - OSCAL Profile
-      summary: Deletes the attachment represented by the attachment UUID.
-      description: Deletes the attachment represented by the attachment UUID.
+      summary: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
+      description: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
       operationId: deleteProfileAttachment
       parameters:
         - name: profileID
@@ -1779,7 +1781,7 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentUUID
+        - name: resourceUUID
           in: path
           description: UUID of Attachment
           required: true
@@ -2972,8 +2974,8 @@ paths:
     post:
       tags:
         - OSCAL Assessment Results
-      summary: Adds a new attachment.
-      description: Adds a new attachment.
+      summary: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
+      description: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
       operationId: postAssessmentResultsAttachment
       parameters:
         - name: assessmentResultsID
@@ -3050,13 +3052,13 @@ paths:
         - oscal_auth:
             - read:assessmentResults
             - write:assessmentResults
-  /assessment-results/{assessmentResultsID}/attachment/{attachmentID}:
+  /assessment-results/{assessmentResultsID}/attachment/{resourceUUID}:
     get:
       tags:
         - OSCAL Assessment Results
-      summary: Returns the attachment represented by the attachment ID.
-      description: Returns the attachment represented by the attachment ID.
-      operationId: getAssessmentResultsAttachmentById
+      summary: Returns the attachment represented by the attachment UUID.
+      description: Returns the attachment represented by the attachment UUID.
+      operationId: getAssessmentResultsAttachmentByUuid
       parameters:
         - name: assessmentResultsID
           in: path
@@ -3064,9 +3066,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -3081,8 +3083,9 @@ paths:
                   file:
                     type: object
                     properties:
-                      id:
-                        $ref: "#/components/schemas/DocId"
+                      uuid:
+                        type: string
+                        pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
                         type: string
                       media-type:
@@ -3126,9 +3129,9 @@ paths:
     put:
       tags:
         - OSCAL Assessment Results
-      summary: Replaces the attachment represented by the attachment ID.
+      summary: Replaces the attachment represented by the attachment UUID.
       description: |
-        Replaces the attachment represented by the attachment ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
          - `application/json` when sending an OSCAL file in JSON format;
          - `application/xml` when sending an OSCAL file in XML format; or
          - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
@@ -3140,9 +3143,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -3204,8 +3207,8 @@ paths:
     delete:
       tags:
         - OSCAL Assessment Results
-      summary: Deletes the attachment represented by the attachment ID.
-      description: Deletes the attachment represented by the attachment ID.
+      summary: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
+      description: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
       operationId: deleteAssessmentResultsAttachment
       parameters:
         - name: assessmentResultsID
@@ -3214,9 +3217,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -4016,8 +4019,8 @@ paths:
     post:
       tags:
         - OSCAL Catalog
-      summary: Adds a new attachment.
-      description: Adds a new attachment.
+      summary: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
+      description: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
       operationId: postCatalogAttachment
       parameters:
         - name: catalogID
@@ -4094,13 +4097,13 @@ paths:
         - oscal_auth:
             - read:catalog
             - write:catalog
-  /catalog/{catalogID}/attachment/{attachmentID}:
+  /catalog/{catalogID}/attachment/{resourceUUID}:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the attachment represented by the attachment ID.
-      description: Returns the attachment represented by the attachment ID.
-      operationId: getCatalogAttachmentById
+      summary: Returns the attachment represented by the attachment UUID.
+      description: Returns the attachment represented by the attachment UUID.
+      operationId: getCatalogAttachmentByUuid
       parameters:
         - name: catalogID
           in: path
@@ -4108,9 +4111,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -4125,8 +4128,9 @@ paths:
                   file:
                     type: object
                     properties:
-                      id:
-                        $ref: "#/components/schemas/DocId"
+                      uuid:
+                        type: string
+                        pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
                         type: string
                       media-type:
@@ -4170,9 +4174,9 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Replaces the attachment represented by the attachment ID.
+      summary: Replaces the attachment represented by the attachment UUID.
       description: |
-        Replaces the attachment represented by the attachment ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
          - `application/json` when sending an OSCAL file in JSON format;
          - `application/xml` when sending an OSCAL file in XML format; or
          - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
@@ -4184,9 +4188,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -4248,8 +4252,8 @@ paths:
     delete:
       tags:
         - OSCAL Catalog
-      summary: Deletes the attachment represented by the attachment ID.
-      description: Deletes the attachment represented by the attachment ID.
+      summary: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
+      description: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
       operationId: deleteCatalogAttachment
       parameters:
         - name: catalogID
@@ -4258,9 +4262,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -5060,8 +5064,8 @@ paths:
     post:
       tags:
         - OSCAL System Security Plan
-      summary: Adds a new attachment.
-      description: Adds a new attachment.
+      summary: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
+      description: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
       operationId: postSystemSecurityPlanAttachment
       parameters:
         - name: systemSecurityPlanID
@@ -5138,13 +5142,13 @@ paths:
         - oscal_auth:
             - read:attachment
             - write:attachment
-  /system-security-plan/{systemSecurityPlanID}/attachment/{attachmentID}:
+  /system-security-plan/{systemSecurityPlanID}/attachment/{resourceUUID}:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the attachment represented by the attachment ID.
-      description: Returns the attachment represented by the attachment ID.
-      operationId: getSystemSecurityPlanAttachmentById
+      summary: Returns the attachment represented by the attachment UUID.
+      description: Returns the attachment represented by the attachment UUID.
+      operationId: getSystemSecurityPlanAttachmentByUuid
       parameters:
         - name: systemSecurityPlanID
           in: path
@@ -5152,9 +5156,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -5169,8 +5173,9 @@ paths:
                   file:
                     type: object
                     properties:
-                      id:
-                        $ref: "#/components/schemas/DocId"
+                      uuid:
+                        type: string
+                        pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
                         type: string
                       media-type:
@@ -5214,9 +5219,9 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Replaces the attachment represented by the attachment ID.
+      summary: Replaces the attachment represented by the attachment UUID.
       description: |
-        Replaces the attachment represented by the attachment ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
          - `application/json` when sending an OSCAL file in JSON format;
          - `application/xml` when sending an OSCAL file in XML format; or
          - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
@@ -5228,9 +5233,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -5292,8 +5297,8 @@ paths:
     delete:
       tags:
         - OSCAL System Security Plan
-      summary: Deletes the attachment represented by the attachment ID.
-      description: Deletes the attachment represented by the attachment ID.
+      summary: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
+      description: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
       operationId: deleteSystemSecurityPlanAttachment
       parameters:
         - name: systemSecurityPlanID
@@ -5302,9 +5307,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -6104,8 +6109,8 @@ paths:
     post:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Adds a new attachment.
-      description: Adds a new attachment.
+      summary: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
+      description: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
       operationId: postPlanOfActionAndMilestonesAttachment
       parameters:
         - name: planOfActionAndMilestonesID
@@ -6182,13 +6187,13 @@ paths:
         - oscal_auth:
             - read:planOfActionAndMilestones
             - write:planOfActionAndMilestones
-  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/attachment/{attachmentID}:
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/attachment/{resourceUUID}:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Returns the attachment represented by the attachment ID.
-      description: Returns the attachment represented by the attachment ID.
-      operationId: getPlanOfActionAndMilestonesAttachmentById
+      summary: Returns the attachment represented by the attachment UUID.
+      description: Returns the attachment represented by the attachment UUID.
+      operationId: getPlanOfActionAndMilestonesAttachmentByUuid
       parameters:
         - name: planOfActionAndMilestonesID
           in: path
@@ -6196,9 +6201,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -6213,8 +6218,9 @@ paths:
                   file:
                     type: object
                     properties:
-                      id:
-                        $ref: "#/components/schemas/DocId"
+                      uuid:
+                        type: string
+                        pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
                         type: string
                       media-type:
@@ -6258,9 +6264,9 @@ paths:
     put:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Replaces the attachment represented by the attachment ID.
+      summary: Replaces the attachment represented by the attachment UUID.
       description: |
-        Replaces the attachment represented by the attachment ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
          - `application/json` when sending an OSCAL file in JSON format;
          - `application/xml` when sending an OSCAL file in XML format; or
          - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
@@ -6272,9 +6278,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -6336,8 +6342,8 @@ paths:
     delete:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Deletes the attachment represented by the attachment ID.
-      description: Deletes the attachment represented by the attachment ID.
+      summary: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
+      description: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
       operationId: deletePlanOfActionAndMilestonesAttachment
       parameters:
         - name: planOfActionAndMilestonesID
@@ -6346,9 +6352,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -7148,8 +7154,8 @@ paths:
     post:
       tags:
         - OSCAL Component Definition
-      summary: Adds a new attachment.
-      description: Adds a new attachment.
+      summary: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
+      description: Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.
       operationId: postComponentDefinitionAttachment
       parameters:
         - name: componentDefinitionID
@@ -7226,13 +7232,13 @@ paths:
         - oscal_auth:
             - read:componentDefinition
             - write:componentDefinition
-  /component-definition/{componentDefinitionID}/attachment/{attachmentID}:
+  /component-definition/{componentDefinitionID}/attachment/{resourceUUID}:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the attachment represented by the attachment ID.
-      description: Returns the attachment represented by the attachment ID.
-      operationId: getComponentDefinitionAttachmentById
+      summary: Returns the attachment represented by the attachment UUID.
+      description: Returns the attachment represented by the attachment UUID.
+      operationId: getComponentDefinitionAttachmentByUuid
       parameters:
         - name: componentDefinitionID
           in: path
@@ -7240,9 +7246,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -7257,8 +7263,9 @@ paths:
                   file:
                     type: object
                     properties:
-                      id:
-                        $ref: "#/components/schemas/DocId"
+                      uuid:
+                        type: string
+                        pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
                         type: string
                       media-type:
@@ -7302,9 +7309,9 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Replaces the attachment represented by the attachment ID.
+      summary: Replaces the attachment represented by the attachment UUID.
       description: |
-        Replaces the attachment represented by the attachment ID.         The client must include the `Content-type` HTML header and set it to one of the following:
+        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
          - `application/json` when sending an OSCAL file in JSON format;
          - `application/xml` when sending an OSCAL file in XML format; or
          - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
@@ -7316,9 +7323,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -7380,8 +7387,8 @@ paths:
     delete:
       tags:
         - OSCAL Component Definition
-      summary: Deletes the attachment represented by the attachment ID.
-      description: Deletes the attachment represented by the attachment ID.
+      summary: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
+      description: Deletes the attachment and the associated back-matter resource represented by the resource UUID.
       operationId: deleteComponentDefinitionAttachment
       parameters:
         - name: componentDefinitionID
@@ -7390,9 +7397,9 @@ paths:
           required: true
           schema:
             $ref: "#/components/schemas/DocId"
-        - name: attachmentID
+        - name: resourceUUID
           in: path
-          description: ID of Attachment
+          description: UUID of Attachment
           required: true
           schema:
             type: string
@@ -8002,8 +8009,9 @@ components:
       properties:
         file:
           properties:
-            id:
-              $ref: "#/components/schemas/DocId"
+            resource-uuid:
+              type: string
+              pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
             name:
               type: string
             media-type:
@@ -8013,8 +8021,9 @@ components:
       properties:
         file:
           properties:
-            id:
-              $ref: "#/components/schemas/DocId"
+            resource-uuid:
+              type: string
+              pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
             name:
               type: string
             media-type:

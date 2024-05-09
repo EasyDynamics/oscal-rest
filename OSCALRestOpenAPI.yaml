@@ -15,7 +15,7 @@ info:
 
   contact:
     email: oscal@oscal.io
-  version: 0.3.6
+  version: 0.3.8
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -518,7 +518,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -533,7 +533,7 @@ paths:
                   file:
                     type: object
                     properties:
-                      uuid:
+                      resource-uuid:
                         type: string
                         pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
@@ -595,7 +595,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -669,7 +669,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -702,6 +702,144 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
         410:
           description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentPlan
+            - write:assessmentPlan
+  /assessment-plan/{assessmentPlanID}/attachment/{resourceUUID}/resource:
+    get:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Returns the resource.
+      description: Returns the resource.
+      operationId: getAssessmentPlanAttachmentResourceBy
+      parameters:
+        - name: assessmentPlanID
+          in: path
+          description: ID of AssessmentPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResource"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentPlan
+    put:
+      tags:
+        - OSCAL Assessment Plan
+      summary: Replaces the resource.
+      description: |
+        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      operationId: putAssessmentPlanAttachmentResource
+      parameters:
+        - name: assessmentPlanID
+          in: path
+          description: ID of AssessmentPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Successful operation
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
           content:
             application/json:
               schema:
@@ -1632,7 +1770,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -1647,7 +1785,7 @@ paths:
                   file:
                     type: object
                     properties:
-                      uuid:
+                      resource-uuid:
                         type: string
                         pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
@@ -1709,7 +1847,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -1783,7 +1921,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -1816,6 +1954,144 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
         410:
           description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
+            - write:profile
+  /profile/{profileID}/attachment/{resourceUUID}/resource:
+    get:
+      tags:
+        - OSCAL Profile
+      summary: Returns the resource.
+      description: Returns the resource.
+      operationId: getProfileAttachmentResourceBy
+      parameters:
+        - name: profileID
+          in: path
+          description: ID of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResource"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:profile
+    put:
+      tags:
+        - OSCAL Profile
+      summary: Replaces the resource.
+      description: |
+        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      operationId: putProfileAttachmentResource
+      parameters:
+        - name: profileID
+          in: path
+          description: ID of Profile
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Successful operation
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
           content:
             application/json:
               schema:
@@ -3068,7 +3344,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -3083,7 +3359,7 @@ paths:
                   file:
                     type: object
                     properties:
-                      uuid:
+                      resource-uuid:
                         type: string
                         pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
@@ -3145,7 +3421,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -3219,7 +3495,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -3252,6 +3528,144 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
         410:
           description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentResults
+            - write:assessmentResults
+  /assessment-results/{assessmentResultsID}/attachment/{resourceUUID}/resource:
+    get:
+      tags:
+        - OSCAL Assessment Results
+      summary: Returns the resource.
+      description: Returns the resource.
+      operationId: getAssessmentResultsAttachmentResourceBy
+      parameters:
+        - name: assessmentResultsID
+          in: path
+          description: ID of AssessmentResults
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResource"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:assessmentResults
+    put:
+      tags:
+        - OSCAL Assessment Results
+      summary: Replaces the resource.
+      description: |
+        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      operationId: putAssessmentResultsAttachmentResource
+      parameters:
+        - name: assessmentResultsID
+          in: path
+          description: ID of AssessmentResults
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Successful operation
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
           content:
             application/json:
               schema:
@@ -4113,7 +4527,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -4128,7 +4542,7 @@ paths:
                   file:
                     type: object
                     properties:
-                      uuid:
+                      resource-uuid:
                         type: string
                         pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
@@ -4190,7 +4604,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -4264,7 +4678,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -4297,6 +4711,144 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
         410:
           description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalog
+            - write:catalog
+  /catalog/{catalogID}/attachment/{resourceUUID}/resource:
+    get:
+      tags:
+        - OSCAL Catalog
+      summary: Returns the resource.
+      description: Returns the resource.
+      operationId: getCatalogAttachmentResourceBy
+      parameters:
+        - name: catalogID
+          in: path
+          description: ID of Catalog
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResource"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:catalog
+    put:
+      tags:
+        - OSCAL Catalog
+      summary: Replaces the resource.
+      description: |
+        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      operationId: putCatalogAttachmentResource
+      parameters:
+        - name: catalogID
+          in: path
+          description: ID of Catalog
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Successful operation
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
           content:
             application/json:
               schema:
@@ -5158,7 +5710,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -5173,7 +5725,7 @@ paths:
                   file:
                     type: object
                     properties:
-                      uuid:
+                      resource-uuid:
                         type: string
                         pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
@@ -5235,7 +5787,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -5309,7 +5861,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -5342,6 +5894,144 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
         410:
           description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:attachment
+            - write:attachment
+  /system-security-plan/{systemSecurityPlanID}/attachment/{resourceUUID}/resource:
+    get:
+      tags:
+        - OSCAL System Security Plan
+      summary: Returns the resource.
+      description: Returns the resource.
+      operationId: getSystemSecurityPlanAttachmentResourceBy
+      parameters:
+        - name: systemSecurityPlanID
+          in: path
+          description: ID of SystemSecurityPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResource"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:attachment
+    put:
+      tags:
+        - OSCAL System Security Plan
+      summary: Replaces the resource.
+      description: |
+        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      operationId: putSystemSecurityPlanAttachmentResource
+      parameters:
+        - name: systemSecurityPlanID
+          in: path
+          description: ID of SystemSecurityPlan
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Successful operation
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
           content:
             application/json:
               schema:
@@ -6203,7 +6893,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -6218,7 +6908,7 @@ paths:
                   file:
                     type: object
                     properties:
-                      uuid:
+                      resource-uuid:
                         type: string
                         pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
@@ -6280,7 +6970,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -6354,7 +7044,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -6387,6 +7077,144 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
         410:
           description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+            - write:planOfActionAndMilestones
+  /plan-of-action-and-milestones/{planOfActionAndMilestonesID}/attachment/{resourceUUID}/resource:
+    get:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Returns the resource.
+      description: Returns the resource.
+      operationId: getPlanOfActionAndMilestonesAttachmentResourceBy
+      parameters:
+        - name: planOfActionAndMilestonesID
+          in: path
+          description: ID of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResource"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:planOfActionAndMilestones
+    put:
+      tags:
+        - OSCAL Plan of Action and Milestones
+      summary: Replaces the resource.
+      description: |
+        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      operationId: putPlanOfActionAndMilestonesAttachmentResource
+      parameters:
+        - name: planOfActionAndMilestonesID
+          in: path
+          description: ID of PlanOfActionAndMilestones
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Successful operation
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
           content:
             application/json:
               schema:
@@ -7248,7 +8076,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -7263,7 +8091,7 @@ paths:
                   file:
                     type: object
                     properties:
-                      uuid:
+                      resource-uuid:
                         type: string
                         pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                       name:
@@ -7325,7 +8153,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -7399,7 +8227,7 @@ paths:
             $ref: "#/components/schemas/DocId"
         - name: resourceUUID
           in: path
-          description: UUID of Attachment
+          description: UUID of Back Matter Resource
           required: true
           schema:
             type: string
@@ -7432,6 +8260,144 @@ paths:
                 $ref: "#/components/schemas/OSCALErrorMessage"
         410:
           description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:componentDefinition
+            - write:componentDefinition
+  /component-definition/{componentDefinitionID}/attachment/{resourceUUID}/resource:
+    get:
+      tags:
+        - OSCAL Component Definition
+      summary: Returns the resource.
+      description: Returns the resource.
+      operationId: getComponentDefinitionAttachmentResourceBy
+      parameters:
+        - name: componentDefinitionID
+          in: path
+          description: ID of ComponentDefinition
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALResource"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+      security:
+        - oscal_auth:
+            - read:componentDefinition
+    put:
+      tags:
+        - OSCAL Component Definition
+      summary: Replaces the resource.
+      description: |
+        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
+         - `application/json` when sending an OSCAL file in JSON format;
+         - `application/xml` when sending an OSCAL file in XML format; or
+         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      operationId: putComponentDefinitionAttachmentResource
+      parameters:
+        - name: componentDefinitionID
+          in: path
+          description: ID of ComponentDefinition
+          required: true
+          schema:
+            $ref: "#/components/schemas/DocId"
+        - name: resourceUUID
+          in: path
+          description: UUID of Back Matter Resource
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Successful operation
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        403:
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        409:
+          description: Conflit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        410:
+          description: Gone
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        415:
+          description: Unsupported Media Type
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OSCALErrorMessage"
+        422:
+          description: Unprocessable Content
           content:
             application/json:
               schema:
@@ -7871,10 +8837,7 @@ components:
         assessment-results:
           $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-ar_assessment-results
     OSCALAttachmentEntry:
-      type: object
-      properties:
-        attachement:
-          $ref: '#/components/schemas/OSCALAttachment'
+      $ref: '#/components/schemas/OSCALResource'
     OSCALAttachments:
       type: object
       properties:
@@ -8007,16 +8970,128 @@ components:
     OSCALAttachmentNoBase64:
       type: object
       properties:
-        file:
+        resource-uuid:
+          type: string
+          pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        file-name:
+          type: string
+        media-type:
+          type: string
+        title:
+          type: string
+        published:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_published"
+        remarks:
+          type: string
+    OSCALResource:
+      type: object
+      properties:
+        resource:
           properties:
-            resource-uuid:
+            uuid:
               type: string
               pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-            name:
+            title:
               type: string
-            media-type:
+            description:
               type: string
+            document-ids:
+              type: array
+              items:
+                $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_document-id"
+            citation:
+              $ref: "#/components/schemas/OSCALCitation"
+            rlinks:
+              $ref: "#/components/schemas/OSCALRLinks"
+            base64:
+              $ref: "#/components/schemas/OSCALBase64"
+            remarks:
+              $ref: "#/components/schemas/OSCALRemarks"
+    OSCALCitation:
+      type: object
+      properties:
+        text:
+          type: string
+        props:
+          $ref: "#/components/schemas/OSCALProps"
+        links:
+          $ref: "#/components/schemas/OSCALLinks"
+    OSCALLink:
+      type: object
+      properties:
+        link:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_link"
+    OSCALLinks:
+      type: object
+      properties:
+        links:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALLink"
+
+    OSCALProp:
+      type: object
+      properties:
+        prop:
+          $ref:
+            "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-metadata_property"
+    OSCALProps:
+      type: object
+      properties:
+        props:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALProp"
+    OSCALRLinks:
+      type: object
+      properties:
+        rlinks:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALRLink"
+    OSCALRLink:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri-reference
+        media-type:
+          type: string
+          pattern: "^\\S(.*\\S)?$"
+        hashes:
+          $ref: "#/components/schemas/OSCALHashes"
+    OSCALHash:
+      type: object
+      properties:
+        hash:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_hash"
+    OSCALHashes:
+      type: object
+      properties:
+        hashes:
+          type: array
+          items:
+            $ref: "#/components/schemas/OSCALHash"
+    OSCALBase64:
+      type: object
+      properties:
+        filename:
+          type: string
+          format: uri-reference
+        media-type:
+          type: string
+          pattern: "^\\S(.*\\S)?$"
+        value:
+          type: string
+    OSCALRemarks:
+      type: object
+      properties:
+        remarks:
+          $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_remarks"
     OSCALAttachment:
+       $ref: "#/components/schemas/OSCALResource"
+    OSCALAttachment64:
       type: object
       properties:
         file:

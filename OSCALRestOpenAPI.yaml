@@ -506,8 +506,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the attachment represented by the attachment UUID.
-      description: Returns the attachment represented by the attachment UUID.
+      summary: Returns the attachment represented by the back-matter resource UUID.
+      description: Returns the attachment represented by the back-matter resource UUID.
       operationId: getAssessmentPlanAttachmentByUuid
       parameters:
         - name: assessmentPlanID
@@ -579,12 +579,8 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Replaces the attachment represented by the attachment UUID.
-      description: |
-        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Replaces the attachment represented by the resource UUID.
+      description: Replaces the attachment represented by the resource UUID.
       operationId: putAssessmentPlanAttachment
       parameters:
         - name: assessmentPlanID
@@ -714,8 +710,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Plan
-      summary: Returns the resource.
-      description: Returns the resource.
+      summary: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: getAssessmentPlanAttachmentResourceBy
       parameters:
         - name: assessmentPlanID
@@ -773,12 +769,8 @@ paths:
     put:
       tags:
         - OSCAL Assessment Plan
-      summary: Replaces the resource.
-      description: |
-        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: putAssessmentPlanAttachmentResource
       parameters:
         - name: assessmentPlanID
@@ -1758,8 +1750,8 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the attachment represented by the attachment UUID.
-      description: Returns the attachment represented by the attachment UUID.
+      summary: Returns the attachment represented by the back-matter resource UUID.
+      description: Returns the attachment represented by the back-matter resource UUID.
       operationId: getProfileAttachmentByUuid
       parameters:
         - name: profileID
@@ -1831,12 +1823,8 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Replaces the attachment represented by the attachment UUID.
-      description: |
-        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Replaces the attachment represented by the resource UUID.
+      description: Replaces the attachment represented by the resource UUID.
       operationId: putProfileAttachment
       parameters:
         - name: profileID
@@ -1966,8 +1954,8 @@ paths:
     get:
       tags:
         - OSCAL Profile
-      summary: Returns the resource.
-      description: Returns the resource.
+      summary: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: getProfileAttachmentResourceBy
       parameters:
         - name: profileID
@@ -2025,12 +2013,8 @@ paths:
     put:
       tags:
         - OSCAL Profile
-      summary: Replaces the resource.
-      description: |
-        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: putProfileAttachmentResource
       parameters:
         - name: profileID
@@ -3332,8 +3316,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Results
-      summary: Returns the attachment represented by the attachment UUID.
-      description: Returns the attachment represented by the attachment UUID.
+      summary: Returns the attachment represented by the back-matter resource UUID.
+      description: Returns the attachment represented by the back-matter resource UUID.
       operationId: getAssessmentResultsAttachmentByUuid
       parameters:
         - name: assessmentResultsID
@@ -3405,12 +3389,8 @@ paths:
     put:
       tags:
         - OSCAL Assessment Results
-      summary: Replaces the attachment represented by the attachment UUID.
-      description: |
-        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Replaces the attachment represented by the resource UUID.
+      description: Replaces the attachment represented by the resource UUID.
       operationId: putAssessmentResultsAttachment
       parameters:
         - name: assessmentResultsID
@@ -3540,8 +3520,8 @@ paths:
     get:
       tags:
         - OSCAL Assessment Results
-      summary: Returns the resource.
-      description: Returns the resource.
+      summary: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: getAssessmentResultsAttachmentResourceBy
       parameters:
         - name: assessmentResultsID
@@ -3599,12 +3579,8 @@ paths:
     put:
       tags:
         - OSCAL Assessment Results
-      summary: Replaces the resource.
-      description: |
-        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: putAssessmentResultsAttachmentResource
       parameters:
         - name: assessmentResultsID
@@ -4515,8 +4491,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the attachment represented by the attachment UUID.
-      description: Returns the attachment represented by the attachment UUID.
+      summary: Returns the attachment represented by the back-matter resource UUID.
+      description: Returns the attachment represented by the back-matter resource UUID.
       operationId: getCatalogAttachmentByUuid
       parameters:
         - name: catalogID
@@ -4588,12 +4564,8 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Replaces the attachment represented by the attachment UUID.
-      description: |
-        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Replaces the attachment represented by the resource UUID.
+      description: Replaces the attachment represented by the resource UUID.
       operationId: putCatalogAttachment
       parameters:
         - name: catalogID
@@ -4723,8 +4695,8 @@ paths:
     get:
       tags:
         - OSCAL Catalog
-      summary: Returns the resource.
-      description: Returns the resource.
+      summary: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: getCatalogAttachmentResourceBy
       parameters:
         - name: catalogID
@@ -4782,12 +4754,8 @@ paths:
     put:
       tags:
         - OSCAL Catalog
-      summary: Replaces the resource.
-      description: |
-        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: putCatalogAttachmentResource
       parameters:
         - name: catalogID
@@ -5698,8 +5666,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the attachment represented by the attachment UUID.
-      description: Returns the attachment represented by the attachment UUID.
+      summary: Returns the attachment represented by the back-matter resource UUID.
+      description: Returns the attachment represented by the back-matter resource UUID.
       operationId: getSystemSecurityPlanAttachmentByUuid
       parameters:
         - name: systemSecurityPlanID
@@ -5771,12 +5739,8 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Replaces the attachment represented by the attachment UUID.
-      description: |
-        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Replaces the attachment represented by the resource UUID.
+      description: Replaces the attachment represented by the resource UUID.
       operationId: putSystemSecurityPlanAttachment
       parameters:
         - name: systemSecurityPlanID
@@ -5906,8 +5870,8 @@ paths:
     get:
       tags:
         - OSCAL System Security Plan
-      summary: Returns the resource.
-      description: Returns the resource.
+      summary: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: getSystemSecurityPlanAttachmentResourceBy
       parameters:
         - name: systemSecurityPlanID
@@ -5965,12 +5929,8 @@ paths:
     put:
       tags:
         - OSCAL System Security Plan
-      summary: Replaces the resource.
-      description: |
-        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: putSystemSecurityPlanAttachmentResource
       parameters:
         - name: systemSecurityPlanID
@@ -6881,8 +6841,8 @@ paths:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Returns the attachment represented by the attachment UUID.
-      description: Returns the attachment represented by the attachment UUID.
+      summary: Returns the attachment represented by the back-matter resource UUID.
+      description: Returns the attachment represented by the back-matter resource UUID.
       operationId: getPlanOfActionAndMilestonesAttachmentByUuid
       parameters:
         - name: planOfActionAndMilestonesID
@@ -6954,12 +6914,8 @@ paths:
     put:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Replaces the attachment represented by the attachment UUID.
-      description: |
-        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Replaces the attachment represented by the resource UUID.
+      description: Replaces the attachment represented by the resource UUID.
       operationId: putPlanOfActionAndMilestonesAttachment
       parameters:
         - name: planOfActionAndMilestonesID
@@ -7089,8 +7045,8 @@ paths:
     get:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Returns the resource.
-      description: Returns the resource.
+      summary: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: getPlanOfActionAndMilestonesAttachmentResourceBy
       parameters:
         - name: planOfActionAndMilestonesID
@@ -7148,12 +7104,8 @@ paths:
     put:
       tags:
         - OSCAL Plan of Action and Milestones
-      summary: Replaces the resource.
-      description: |
-        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: putPlanOfActionAndMilestonesAttachmentResource
       parameters:
         - name: planOfActionAndMilestonesID
@@ -8064,8 +8016,8 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the attachment represented by the attachment UUID.
-      description: Returns the attachment represented by the attachment UUID.
+      summary: Returns the attachment represented by the back-matter resource UUID.
+      description: Returns the attachment represented by the back-matter resource UUID.
       operationId: getComponentDefinitionAttachmentByUuid
       parameters:
         - name: componentDefinitionID
@@ -8137,12 +8089,8 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Replaces the attachment represented by the attachment UUID.
-      description: |
-        Replaces the attachment represented by the attachment UUID.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Replaces the attachment represented by the resource UUID.
+      description: Replaces the attachment represented by the resource UUID.
       operationId: putComponentDefinitionAttachment
       parameters:
         - name: componentDefinitionID
@@ -8272,8 +8220,8 @@ paths:
     get:
       tags:
         - OSCAL Component Definition
-      summary: Returns the resource.
-      description: Returns the resource.
+      summary: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: getComponentDefinitionAttachmentResourceBy
       parameters:
         - name: componentDefinitionID
@@ -8331,12 +8279,8 @@ paths:
     put:
       tags:
         - OSCAL Component Definition
-      summary: Replaces the resource.
-      description: |
-        Replaces the resource.         The client must include the `Content-type` HTML header and set it to one of the following:
-         - `application/json` when sending an OSCAL file in JSON format;
-         - `application/xml` when sending an OSCAL file in XML format; or
-         - `application/yaml` when sending an OSCAL file in YAML format.         The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.
+      summary: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
+      description: Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.
       operationId: putComponentDefinitionAttachmentResource
       parameters:
         - name: componentDefinitionID

@@ -15,7 +15,7 @@ info:
 
   contact:
     email: oscal@oscal.io
-  version: 0.3.8
+  version: 0.4.1
 externalDocs:
   description: Find out more about OSCAL
   url: https://pages.nist.gov/OSCAL
@@ -117,7 +117,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAssessmentPlanEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlanEntry"
+                $ref: "#/components/schemas/OSCALAssessmentPlanEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentPlanEntry"
@@ -208,7 +208,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAssessmentPlan"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
+                $ref: "#/components/schemas/OSCALAssessmentPlanXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentPlan"
@@ -443,7 +443,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
+                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
@@ -943,7 +943,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAssessmentPlansSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlansSnapshots"
+                $ref: "#/components/schemas/OSCALAssessmentPlansSnapshotsXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentPlansSnapshots"
@@ -1040,7 +1040,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAssessmentPlan"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlan"
+                $ref: "#/components/schemas/OSCALAssessmentPlanXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentPlan"
@@ -1292,7 +1292,7 @@ paths:
                 $ref: "#/components/schemas/OSCALProfileEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProfileEntry"
+                $ref: "#/components/schemas/OSCALProfileEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALProfileEntry"
@@ -1383,7 +1383,7 @@ paths:
                 $ref: "#/components/schemas/OSCALProfile"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProfile"
+                $ref: "#/components/schemas/OSCALProfileXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALProfile"
@@ -1574,7 +1574,7 @@ paths:
                 $ref: "#/components/schemas/OSCALCatalog"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalog"
+                $ref: "#/components/schemas/OSCALCatalogXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALCatalog"
@@ -1687,7 +1687,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
+                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
@@ -2187,7 +2187,7 @@ paths:
                 $ref: "#/components/schemas/OSCALProfilesSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProfilesSnapshots"
+                $ref: "#/components/schemas/OSCALProfilesSnapshotsXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALProfilesSnapshots"
@@ -2284,7 +2284,7 @@ paths:
                 $ref: "#/components/schemas/OSCALProfile"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProfile"
+                $ref: "#/components/schemas/OSCALProfileXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALProfile"
@@ -2578,7 +2578,7 @@ paths:
                 $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
+                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshotsXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
@@ -2675,7 +2675,7 @@ paths:
                 $ref: "#/components/schemas/OSCALProfile"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALProfile"
+                $ref: "#/components/schemas/OSCALProfileXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALProfile"
@@ -2927,7 +2927,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAssessmentResultsEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsEntry"
+                $ref: "#/components/schemas/OSCALAssessmentResultsEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentResultsEntry"
@@ -3018,7 +3018,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAssessmentResults"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResults"
+                $ref: "#/components/schemas/OSCALAssessmentResultsXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentResults"
@@ -3253,7 +3253,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
+                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
@@ -3753,7 +3753,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAssessmentResultsListSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsListSnapshots"
+                $ref: "#/components/schemas/OSCALAssessmentResultsListSnapshotsXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentResultsListSnapshots"
@@ -3850,7 +3850,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAssessmentResults"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAssessmentResults"
+                $ref: "#/components/schemas/OSCALAssessmentResultsXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentResults"
@@ -4102,7 +4102,7 @@ paths:
                 $ref: "#/components/schemas/OSCALCatalogEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogEntry"
+                $ref: "#/components/schemas/OSCALCatalogEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALCatalogEntry"
@@ -4193,7 +4193,7 @@ paths:
                 $ref: "#/components/schemas/OSCALCatalog"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalog"
+                $ref: "#/components/schemas/OSCALCatalogXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALCatalog"
@@ -4428,7 +4428,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
+                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
@@ -4928,7 +4928,7 @@ paths:
                 $ref: "#/components/schemas/OSCALCatalogsSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalogsSnapshots"
+                $ref: "#/components/schemas/OSCALCatalogsSnapshotsXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALCatalogsSnapshots"
@@ -5025,7 +5025,7 @@ paths:
                 $ref: "#/components/schemas/OSCALCatalog"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALCatalog"
+                $ref: "#/components/schemas/OSCALCatalogXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALCatalog"
@@ -5277,7 +5277,7 @@ paths:
                 $ref: "#/components/schemas/OSCALSystemSecurityPlanEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlanEntry"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlanEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALSystemSecurityPlanEntry"
@@ -5368,7 +5368,7 @@ paths:
                 $ref: "#/components/schemas/OSCALSystemSecurityPlan"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlanXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALSystemSecurityPlan"
@@ -5603,7 +5603,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
+                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
@@ -6103,7 +6103,7 @@ paths:
                 $ref: "#/components/schemas/OSCALSystemSecurityPlansSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlansSnapshots"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlansSnapshotsXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALSystemSecurityPlansSnapshots"
@@ -6200,7 +6200,7 @@ paths:
                 $ref: "#/components/schemas/OSCALSystemSecurityPlan"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlan"
+                $ref: "#/components/schemas/OSCALSystemSecurityPlanXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALSystemSecurityPlan"
@@ -6452,7 +6452,7 @@ paths:
                 $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntry"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntry"
@@ -6543,7 +6543,7 @@ paths:
                 $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
@@ -6778,7 +6778,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
+                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
@@ -7278,7 +7278,7 @@ paths:
                 $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListSnapshots"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListSnapshotsXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListSnapshots"
@@ -7375,7 +7375,7 @@ paths:
                 $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
+                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALPlanOfActionAndMilestones"
@@ -7627,7 +7627,7 @@ paths:
                 $ref: "#/components/schemas/OSCALComponentDefinitionEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitionEntry"
+                $ref: "#/components/schemas/OSCALComponentDefinitionEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALComponentDefinitionEntry"
@@ -7718,7 +7718,7 @@ paths:
                 $ref: "#/components/schemas/OSCALComponentDefinition"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
+                $ref: "#/components/schemas/OSCALComponentDefinitionXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALComponentDefinition"
@@ -7953,7 +7953,7 @@ paths:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
+                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
@@ -8453,7 +8453,7 @@ paths:
                 $ref: "#/components/schemas/OSCALComponentDefinitionsSnapshots"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitionsSnapshots"
+                $ref: "#/components/schemas/OSCALComponentDefinitionsSnapshotsXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALComponentDefinitionsSnapshots"
@@ -8550,7 +8550,7 @@ paths:
                 $ref: "#/components/schemas/OSCALComponentDefinition"
             application/xml:
               schema:
-                $ref: "#/components/schemas/OSCALComponentDefinition"
+                $ref: "#/components/schemas/OSCALComponentDefinitionXML"
             application/yaml:
               schema:
                 $ref: "#/components/schemas/OSCALComponentDefinition"
@@ -8743,31 +8743,61 @@ components:
       properties:
         catalog:
           $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog_catalog
+    OSCALCatalogXML:
+      type: object
+      $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog_catalog
+      xml:
+        name: catalog
     OSCALProfile:
       type: object
       properties:
         profile:
           $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_profile
+    OSCALProfileXML:
+      type: object
+      $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_profile
+      xml:
+        name: profile
     OSCALComponentDefinition:
       type: object
       properties:
         component-definition:
           $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_component-definition
+    OSCALComponentDefinitionXML:
+      type: object
+      $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_component-definition
+      xml:
+        name: component-definition
     OSCALSystemSecurityPlan:
       type: object
       properties:
         system-security-plan:
           $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_system-security-plan
+    OSCALSystemSecurityPlanXML:
+      type: object
+      $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_system-security-plan
+      xml:
+        name: system-security-plan
     OSCALPlanOfActionAndMilestones:
       type: object
       properties:
         plan-of-action-and-milestones:
           $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_poam_schema.json#/definitions/assembly_oscal-poam_plan-of-action-and-milestones
+    OSCALPlanOfActionAndMilestonesXML:
+      type: object
+      $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_poam_schema.json#/definitions/assembly_oscal-poam_plan-of-action-and-milestones
+      xml:
+        name: plan-of-action-and-milestones
     OSCALAssessmentPlan:
       type: object
       properties:
         assessment-plan:
           $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-ap_assessment-plan
+    OSCALAssessmentPlanXML:
+      type: object
+      $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-ap_assessment-plan
+      xml:
+        name: assessment-plan
     OSCALErrorMessage:
       type: object
       properties:
@@ -8780,8 +8810,15 @@ components:
       properties:
         assessment-results:
           $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-ar_assessment-results
+    OSCALAssessmentResultsXML:
+      type: object
+      $ref: https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-ar_assessment-results
+      xml:
+        name: assessment-results
     OSCALAttachmentEntry:
       $ref: '#/components/schemas/OSCALResource'
+    OSCALAttachmentEntryXML:
+      $ref: '#/components/schemas/OSCALResourceXML'
     OSCALAttachments:
       type: object
       properties:
@@ -8793,37 +8830,93 @@ components:
       type: object
       properties:
         profile-list:
-          $ref: '#/components/schemas/OSCALModelEntry'
+          type: array
+          items:
+            $ref: '#/components/schemas/OSCALModelEntry'
+    OSCALProfileEntryXML:
+       type: array
+       items:
+         $ref: '#/components/schemas/OSCALModelEntry'
+       xml:
+        name: profile-list
     OSCALCatalogEntry:
       type: object
       properties:
         catalog-list:
-          $ref: '#/components/schemas/OSCALModelEntry'
+          type: array
+          items:
+            $ref: '#/components/schemas/OSCALModelEntry'
+    OSCALCatalogEntryXML:
+       type: array
+       items:
+         $ref: '#/components/schemas/OSCALModelEntry'
+       xml:
+        name: catalog-list
     OSCALSystemSecurityPlanEntry:
       type: object
       properties:
         system-security-plan-list:
-          $ref: '#/components/schemas/OSCALModelEntry'
+          type: array
+          items:
+            $ref: '#/components/schemas/OSCALModelEntry'
+    OSCALSystemSecurityPlanEntryXML:
+       type: array
+       items:
+         $ref: '#/components/schemas/OSCALModelEntry'
+       xml:
+        name: system-security-plan-list
     OSCALComponentDefinitionEntry:
       type: object
       properties:
         component-definition-list:
-          $ref: '#/components/schemas/OSCALModelEntry'
+          type: array
+          items:
+            $ref: '#/components/schemas/OSCALModelEntry'
+    OSCALComponentDefinitionEntryXML:
+       type: array
+       items:
+         $ref: '#/components/schemas/OSCALModelEntry'
+       xml:
+        name: component-definition-list
     OSCALAssessmentPlanEntry:
       type: object
       properties:
         assessment-plan-list:
-          $ref: '#/components/schemas/OSCALModelEntry'
+          type: array
+          items:
+            $ref: '#/components/schemas/OSCALModelEntry'
+    OSCALAssessmentPlanEntryXML:
+       type: array
+       items:
+         $ref: '#/components/schemas/OSCALModelEntry'
+       xml:
+        name: assessment-plan-list
     OSCALAssessmentResultsEntry:
       type: object
       properties:
         assessment-results-list:
-          $ref: '#/components/schemas/OSCALModelEntry'
+          type: array
+          items:
+            $ref: '#/components/schemas/OSCALModelEntry'
+    OSCALAssessmentResultsEntryXML:
+       type: array
+       items:
+         $ref: '#/components/schemas/OSCALModelEntry'
+       xml:
+        name: assessment-results-list
     OSCALPlanOfActionAndMilestonesEntry:
       type: object
       properties:
         plan-of-action-and-milestones-list:
-          $ref: '#/components/schemas/OSCALModelEntry'
+          type: array
+          items:
+            $ref: '#/components/schemas/OSCALModelEntry'
+    OSCALPlanOfActionAndMilestonesEntryXML:
+       type: array
+       items:
+         $ref: '#/components/schemas/OSCALModelEntry'
+       xml:
+        name: plan-of-action-and-milestones-list
     OSCALProfilesEntries:
       type: object
       properties:
@@ -8880,6 +8973,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+    OSCALResolvedSnapshotsSnapshotsXML:
+      type: array
+      items:
+        $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+      xml:
+        name: resolved-snapshot-list
     OSCALCatalogsSnapshots:
       type: object
       properties:
@@ -8887,6 +8986,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+    OSCALCatalogsSnapshotsXML:
+      type: array
+      items:
+        $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+      xml:
+        name: catalog-snapshot-list
     OSCALCatalogSnapshot:
       type: object
       properties:
@@ -8899,6 +9004,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+    OSCALProfilesSnapshotsXML:
+      type: array
+      items:
+        $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+      xml:
+        name: profile-snapshot-list
     OSCALProfileSnapshot:
       type: object
       properties:
@@ -8911,6 +9022,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+    OSCALSystemSecurityPlansSnapshotsXML:
+      type: array
+      items:
+        $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+      xml:
+        name: system-security-plan-snapshot-list
     OSCALAttachmentNoBase64:
       type: object
       properties:
@@ -8951,6 +9068,30 @@ components:
               $ref: "#/components/schemas/OSCALBase64"
             remarks:
               $ref: "#/components/schemas/OSCALRemarks"
+    OSCALResourceXML:
+      type: object
+      properties:
+            uuid:
+              type: string
+              pattern: "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+            title:
+              type: string
+            description:
+              type: string
+            document-ids:
+              type: array
+              items:
+                $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_document-id"
+            citation:
+              $ref: "#/components/schemas/OSCALCitation"
+            rlinks:
+              $ref: "#/components/schemas/OSCALRLinks"
+            base64:
+              $ref: "#/components/schemas/OSCALBase64"
+            remarks:
+              $ref: "#/components/schemas/OSCALRemarks"
+      xml:
+        name: resource
     OSCALCitation:
       type: object
       properties:
@@ -9034,7 +9175,7 @@ components:
         remarks:
           $ref: "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_remarks"
     OSCALAttachment:
-       $ref: "#/components/schemas/OSCALResource"
+      $ref: "#/components/schemas/OSCALResource"
     OSCALAttachment64:
       type: object
       properties:
@@ -9136,6 +9277,12 @@ components:
       properties:
         assessment-snapshot:
           $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+    OSCALAssessmentPlansSnapshotsXML:
+      type: array
+      items:
+        $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+      xml:
+        name: assessment-plan-snapshot-list
     OSCALComponentDefinitionsSnapshots:
       type: object
       properties:
@@ -9143,6 +9290,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+    OSCALComponentDefinitionsSnapshotsXML:
+      type: array
+      items:
+        $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+      xml:
+        name: component-definition-snapshot-list
     OSCALComponentDefinitionSnapshot:
       type: object
       properties:
@@ -9155,6 +9308,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+    OSCALAssessmentResultsListSnapshotsXML:
+      type: array
+      items:
+        $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+      xml:
+        name:  assessment-results-snapshot-list
     OSCALAssessmentResultsSnapshot:
       type: object
       properties:
@@ -9167,6 +9326,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+    OSCALPlanOfActionAndMilestonesListSnapshotsXML:
+      type: array
+      items:
+        $ref: '#/components/schemas/OSCALModelSnapshotEntry'
+      xml:
+        name: plan-of-action-and-milestones-list
     OSCALPlanOfActionAndMilestonesSnapshot:
       type: object
       properties:

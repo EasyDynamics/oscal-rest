@@ -115,15 +115,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentPlanEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlanEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlanEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -441,15 +432,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -941,15 +923,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentPlansSnapshots"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlansSnapshotsXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentPlansSnapshots"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -1290,15 +1263,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALProfileEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProfileEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALProfileEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -1685,15 +1649,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -2185,15 +2140,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALProfilesSnapshots"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALProfilesSnapshotsXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALProfilesSnapshots"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -2576,15 +2522,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshotsXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALResolvedSnapshotsSnapshots"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -2925,15 +2862,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentResultsEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -3251,15 +3179,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -3751,15 +3670,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALAssessmentResultsListSnapshots"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsListSnapshotsXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALAssessmentResultsListSnapshots"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -4100,15 +4010,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALCatalogEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalogEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalogEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -4426,15 +4327,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -4926,15 +4818,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALCatalogsSnapshots"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalogsSnapshotsXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALCatalogsSnapshots"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -5275,15 +5158,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALSystemSecurityPlanEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlanEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlanEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -5601,15 +5475,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -6101,15 +5966,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALSystemSecurityPlansSnapshots"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlansSnapshotsXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALSystemSecurityPlansSnapshots"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -6450,15 +6306,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -6776,15 +6623,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -7276,15 +7114,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListSnapshots"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListSnapshotsXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALPlanOfActionAndMilestonesListSnapshots"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -7625,15 +7454,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALComponentDefinitionEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitionEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitionEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -7951,15 +7771,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALAttachmentEntry"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntryXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALAttachmentEntry"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:
@@ -8451,15 +8262,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/OSCALComponentDefinitionsSnapshots"
-            application/xml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitionsSnapshotsXML"
-            application/yaml:
-              schema:
-                $ref: "#/components/schemas/OSCALComponentDefinitionsSnapshots"
-            location-header:
-              schema:
-                type: string
         400:
           description: Bad Request
           content:

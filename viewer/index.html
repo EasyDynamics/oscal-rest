@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- For information about settings: https://rapidocweb.com/api.html -->
+<html>
+    <head>
+        <title>OSCAL REST OpenAPI Specification</title>
+        <meta charset="utf-8"> <!-- Important: rapi-doc uses utf8 characters -->
+        <!-- <script type="module" src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"></script> -->
+        <script type="text/javascript" src="rapidoc-min.js"></script>
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    </head>
+    <body>
+        <script>
+            var url_string = window.location.href; //window.location.href
+            var url = new URL(url_string);
+            var api_url = url.searchParams.get("url");
+            console.log(api_url);
+
+            // var body = document.getElementsByTagName("body") 
+            var rapidoc = document.createElement("rapi-doc");
+            rapidoc.setAttribute("spec-url", api_url);
+            rapidoc.setAttribute("theme", "dark")
+            rapidoc.setAttribute("heading-text", "OSCAL REST OpenAPI Specification")
+            rapidoc.setAttribute("render-style", "view")
+            rapidoc.setAttribute("schema-style", "table") // allowed values: table, tree
+            rapidoc.setAttribute("schema-expand-level", "2")
+            rapidoc.setAttribute("default-schema-tab", "schema") // allowed values: schema, example
+            rapidoc.setAttribute("show-header", "false")
+            rapidoc.setAttribute("show-info", "true")
+            rapidoc.setAttribute("allow-try", "false")
+            rapidoc.setAttribute("allow-authentication", "false")
+            rapidoc.setAttribute("allow-server-selection", "false")
+            rapidoc.setAttribute("allow-api-list-style-selection", "false")
+            rapidoc.setAttribute("bg-color", "#001131")
+            rapidoc.setAttribute("text-color", "#ffffff")
+            rapidoc.setAttribute("header-color", "#001131")
+            rapidoc.setAttribute("primary-color", "#00BDE3")
+            rapidoc.setAttribute("load-fonts", "true")
+            rapidoc.setAttribute("regular-font", "Arial")
+            rapidoc.setAttribute("mono-font", "Roboto Mono")
+            rapidoc.setAttribute("layout", "column")
+
+            var div = document.createElement("div");
+            div.setAttribute("style", "padding: 25px;")
+            div.innerHTML = '<a href="https://oscal.io"><img src="assets/img/oscalio-logo.svg" style="width:150px;" />'
+
+            rapidoc.append(div)
+            document.body.append(rapidoc)
+        </script>
+
+    </body>
+
+</html>

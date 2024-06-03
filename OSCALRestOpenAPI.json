@@ -11651,7 +11651,7 @@
               },
               "application/xml" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OSCALXMLComponentDefinition"
+                  "$ref" : "#/components/schemas/OSCALComponentDefinitionXML"
                 }
               },
               "application/yaml" : {

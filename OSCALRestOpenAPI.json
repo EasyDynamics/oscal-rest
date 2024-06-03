@@ -1571,7 +1571,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -1690,7 +1690,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -1819,7 +1819,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -3521,7 +3521,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -3760,7 +3760,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -4069,7 +4069,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -4308,7 +4308,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -5910,7 +5910,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -6149,7 +6149,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -7751,7 +7751,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -7990,7 +7990,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -9592,7 +9592,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -9831,7 +9831,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -11433,7 +11433,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -11672,7 +11672,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -13274,7 +13274,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -13513,7 +13513,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
               }
             }
           }
@@ -14355,6 +14355,15 @@
           },
           "snapshot": {
             "type": "object",
+            "ref$" : "#components/schemas/OSCALSnapshotAttributes"
+          }
+        }
+      },
+      "OSCALSnapshotAttributes": {
+        "type": "object",
+        "properties": {
+          "snapshot": {
+            "type": "object",
             "properties": {
               "created": {
                 "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_published"
@@ -14378,6 +14387,7 @@
           }
         }
       },
+
       "OSCALModelEntry": {
         "type": "object",
         "properties": {

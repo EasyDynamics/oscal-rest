@@ -2045,6 +2045,27 @@
             }
           }
         },
+        "requestBody": {
+          "required" : true,
+          "content" : 
+            {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALProfile"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALProfileXML"
+                }
+              },
+              "application/yaml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALProfile"
+                }
+              }
+            }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -4447,6 +4468,27 @@
             }
           }
         },
+        "requestBody": {
+          "required" : true,
+          "content" : 
+            {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALAssessmentResults"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALAssessmentResultsXML"
+                }
+              },
+              "application/yaml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALAssessmentResults"
+                }
+              }
+            }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -6218,6 +6260,27 @@
               }
             }
           }
+        },
+        "requestBody": {
+          "required" : true,
+          "content" : 
+            {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALCatalog"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALCatalogXML"
+                }
+              },
+              "application/yaml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALCatalogPlan"
+                }
+              }
+            }
         },
         "security": [
           {
@@ -7991,6 +8054,27 @@
             }
           }
         },
+        "requestBody": {
+          "required" : true,
+          "content" : 
+            {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALSystemSecurityPlan"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALSystemSecurityPlanXML"
+                }
+              },
+              "application/yaml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALSystemSecurityPlan"
+                }
+              }
+            }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -9763,6 +9847,27 @@
             }
           }
         },
+        "requestBody": {
+          "required" : true,
+          "content" : 
+            {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALPlanOfActionAndMilestones"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALPlanOfActionAndMilestonesXML"
+                }
+              },
+              "application/yaml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALPlanOfActionAndMilestones"
+                }
+              }
+            }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -11534,6 +11639,27 @@
               }
             }
           }
+        },
+        "requestBody": {
+          "required" : true,
+          "content" : 
+            {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALComponentDefinition"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALXMLComponentDefinition"
+                }
+              },
+              "application/yaml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALComponentDefinition"
+                }
+              }
+            }
         },
         "security": [
           {

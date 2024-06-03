@@ -643,7 +643,7 @@
         "tags": [
           "OSCAL Assessment Plan"
         ],
-        "summary": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
+        "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postAssessmentPlanAttachment",
         "parameters": [
@@ -1003,7 +1003,7 @@
         "tags": [
           "OSCAL Assessment Plan"
         ],
-        "summary": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
+        "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deleteAssessmentPlanAttachment",
         "parameters": [
@@ -1096,8 +1096,8 @@
         "tags": [
           "OSCAL Assessment Plan"
         ],
-        "summary": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Retrieves the OSCAL back-matter / resource information.",
+        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getAssessmentPlanAttachmentResourceBy",
         "parameters": [
           {
@@ -1193,8 +1193,8 @@
         "tags": [
           "OSCAL Assessment Plan"
         ],
-        "summary": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Updates the content of the back-matter resource.",
+        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putAssessmentPlanAttachmentResource",
         "parameters": [
           {
@@ -2515,7 +2515,7 @@
         "tags": [
           "OSCAL Profile"
         ],
-        "summary": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
+        "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postProfileAttachment",
         "parameters": [
@@ -2875,7 +2875,7 @@
         "tags": [
           "OSCAL Profile"
         ],
-        "summary": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
+        "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deleteProfileAttachment",
         "parameters": [
@@ -2968,8 +2968,8 @@
         "tags": [
           "OSCAL Profile"
         ],
-        "summary": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Retrieves the OSCAL back-matter / resource information.",
+        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getProfileAttachmentResourceBy",
         "parameters": [
           {
@@ -3065,8 +3065,8 @@
         "tags": [
           "OSCAL Profile"
         ],
-        "summary": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Updates the content of the back-matter resource.",
+        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putProfileAttachmentResource",
         "parameters": [
           {
@@ -4817,7 +4817,7 @@
         "tags": [
           "OSCAL Assessment Results"
         ],
-        "summary": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
+        "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postAssessmentResultsAttachment",
         "parameters": [
@@ -5177,7 +5177,7 @@
         "tags": [
           "OSCAL Assessment Results"
         ],
-        "summary": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
+        "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deleteAssessmentResultsAttachment",
         "parameters": [
@@ -5270,8 +5270,8 @@
         "tags": [
           "OSCAL Assessment Results"
         ],
-        "summary": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Retrieves the OSCAL back-matter / resource information.",
+        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getAssessmentResultsAttachmentResourceBy",
         "parameters": [
           {
@@ -5367,8 +5367,8 @@
         "tags": [
           "OSCAL Assessment Results"
         ],
-        "summary": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Updates the content of the back-matter resource.",
+        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putAssessmentResultsAttachmentResource",
         "parameters": [
           {
@@ -6589,7 +6589,7 @@
         "tags": [
           "OSCAL Catalog"
         ],
-        "summary": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
+        "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postCatalogAttachment",
         "parameters": [
@@ -6949,7 +6949,7 @@
         "tags": [
           "OSCAL Catalog"
         ],
-        "summary": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
+        "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deleteCatalogAttachment",
         "parameters": [
@@ -7042,8 +7042,8 @@
         "tags": [
           "OSCAL Catalog"
         ],
-        "summary": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Retrieves the OSCAL back-matter / resource information.",
+        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getCatalogAttachmentResourceBy",
         "parameters": [
           {
@@ -7139,8 +7139,8 @@
         "tags": [
           "OSCAL Catalog"
         ],
-        "summary": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Updates the content of the back-matter resource.",
+        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putCatalogAttachmentResource",
         "parameters": [
           {
@@ -8361,7 +8361,7 @@
         "tags": [
           "OSCAL System Security Plan"
         ],
-        "summary": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
+        "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postSystemSecurityPlanAttachment",
         "parameters": [
@@ -8721,7 +8721,7 @@
         "tags": [
           "OSCAL System Security Plan"
         ],
-        "summary": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
+        "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deleteSystemSecurityPlanAttachment",
         "parameters": [
@@ -8814,8 +8814,8 @@
         "tags": [
           "OSCAL System Security Plan"
         ],
-        "summary": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Retrieves the OSCAL back-matter / resource information.",
+        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getSystemSecurityPlanAttachmentResourceBy",
         "parameters": [
           {
@@ -8911,8 +8911,8 @@
         "tags": [
           "OSCAL System Security Plan"
         ],
-        "summary": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Updates the content of the back-matter resource.",
+        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putSystemSecurityPlanAttachmentResource",
         "parameters": [
           {
@@ -10133,7 +10133,7 @@
         "tags": [
           "OSCAL Plan of Action and Milestones"
         ],
-        "summary": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
+        "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postPlanOfActionAndMilestonesAttachment",
         "parameters": [
@@ -10493,7 +10493,7 @@
         "tags": [
           "OSCAL Plan of Action and Milestones"
         ],
-        "summary": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
+        "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deletePlanOfActionAndMilestonesAttachment",
         "parameters": [
@@ -10586,8 +10586,8 @@
         "tags": [
           "OSCAL Plan of Action and Milestones"
         ],
-        "summary": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Retrieves the OSCAL back-matter / resource information.",
+        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getPlanOfActionAndMilestonesAttachmentResourceBy",
         "parameters": [
           {
@@ -10683,8 +10683,8 @@
         "tags": [
           "OSCAL Plan of Action and Milestones"
         ],
-        "summary": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Updates the content of the back-matter resource.",
+        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putPlanOfActionAndMilestonesAttachmentResource",
         "parameters": [
           {
@@ -11905,7 +11905,7 @@
         "tags": [
           "OSCAL Component Definition"
         ],
-        "summary": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
+        "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postComponentDefinitionAttachment",
         "parameters": [
@@ -12265,7 +12265,7 @@
         "tags": [
           "OSCAL Component Definition"
         ],
-        "summary": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
+        "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deleteComponentDefinitionAttachment",
         "parameters": [
@@ -12358,8 +12358,8 @@
         "tags": [
           "OSCAL Component Definition"
         ],
-        "summary": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Retrieves the OSCAL back-matter / resource information.",
+        "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getComponentDefinitionAttachmentResourceBy",
         "parameters": [
           {
@@ -12455,8 +12455,8 @@
         "tags": [
           "OSCAL Component Definition"
         ],
-        "summary": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
-        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL 1.1.2 syntax for back-matter resource assemblies.",
+        "summary": "Updates the content of the back-matter resource.",
+        "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putComponentDefinitionAttachmentResource",
         "parameters": [
           {

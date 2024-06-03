@@ -1349,6 +1349,15 @@
             }
           }
         },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALResource"
+              }
+            }
+          }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -5607,6 +5616,15 @@
             }
           }
         },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALResource"
+              }
+            }
+          }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -7417,6 +7435,15 @@
                 "schema": {
                   "$ref": "#/components/schemas/OSCALErrorMessage"
                 }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALResource"
               }
             }
           }
@@ -9235,6 +9262,15 @@
             }
           }
         },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALResource"
+              }
+            }
+          }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -11049,6 +11085,15 @@
             }
           }
         },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALResource"
+              }
+            }
+          }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -12859,6 +12904,15 @@
                 "schema": {
                   "$ref": "#/components/schemas/OSCALErrorMessage"
                 }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALResource"
               }
             }
           }

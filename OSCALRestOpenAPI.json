@@ -3272,6 +3272,15 @@
             }
           }
         },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALResource"
+              }
+            }
+          }
+        },
         "security": [
           {
             "oscal_auth": [

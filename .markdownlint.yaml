@@ -29,16 +29,6 @@ MD013:
 MD035:
   style: "---"
 
-MD044:
-  names:
-    # These names have the potential to occur with incorrect capitalization
-    # within documentation; we want to ensure that they are always capitalized
-    # correctly.
-    - "OSCAL"
-    - "NIST"
-    - "Easy Dynamics"
-  # In code, these names are allowed to occur with incorrect capitalization
-  code_blocks: false
 
 MD046:
   # Using fenced (```) for code blocks more clearly delineates the code from

@@ -1,30 +1,47 @@
 # OSCAL REST API Definition
 
-A draft proposal from [Easy Dynamics](https://www.easydynamics.com) of an [OpenAPI](https://www.openapis.org/)
-REST specification for interacting with [OSCAL](https://pages.nist.gov/OSCAL/) models.
+This is an open-source REST API specification for exchanging [OSCAL](https://pages.nist.gov/OSCAL/) content between tools and organizations.
 
-Standardized data models like OSCAL lay the groundwork for interoperability of systems, and an ecosystem of
-meaningful integrations can be brought to life through a standardized REST API. That interface needs to define
-simple CRUD operations, but should also describe how to manipulate relationships and make partial changes.
+The _OSCAL REST OpenAPI Specification_ addresses OSCAL XML, JSON and YAML content for all seven OSCAL models. Each OSCAL model has a primary set of REST API methods and endpoints for the OSCAL content itself, as well as methods and endpoints for snapshots and attachments. OSCAL profiles also have methods and endpoints for live profile resolution and snapshots of resolved profiles.
 
-Such an API will likely see the most success across various vendors and projects when maintained by a
-standards body or community, and we're looking to get that conversation started with this effort.
+The _OSCAL REST OpenAPI Specification_ is expressed using [OpenAPI](https://www.openapis.org/) 3.1.
+
+For more information, vist and bookmark [https://docs.oscal.io/docs/oscal-rest-openapi](https://docs.oscal.io/docs/oscal-rest-openapi)
+
+## Conventions and Organization
+
+All endpoint syntax is provided as:
+
+|`METHOD /{model-name}`<br />`METHOD /{model-name}/{identifier}`<br />`METHOD /{model-name}/{identifier}/snapshot`<br />`METHOD /{model-name}/{identifier}/snapshot/{identifier}`<br />`METHOD /{model-name}/{identifier}/attachment`<br />`METHOD /{model-name}/{identifier}/attachment/{resource-uuid}`<br />`METHOD /{model-name}/{identifier}/attachment/{resource-uuid}/resource`|
+|:--- |
+
+The `{model-name}` is always one of the seven root-level OSCAL model names exactly as they are defined in the OSCAL syntax. Simply replace `{model-name}` with one of the following:
+
+- `catalog`
+- `profile`
+- `component-definition`
+- `system-security-plan`
+- `assessment plan`
+- `assessment-results`
+- `plan-of-action-and-milestones`
+
+Profiles have additional endpoints related to profile resolution:
+
+|`METHOD /profile/{identifier}/resolved-catalog`<br />`METHOD /profile/{identifier}/resolved-snapshot`<br />`METHOD /profile/{identifier}/resolved-snapshot/{identifier}`|
+|:--- |
 
 ## Viewing / Editing
 
-You can use a Swagger Editor, [local](https://github.com/swagger-api/swagger-editor) (Docker works great) or
-[online](https://editor.swagger.io/?url=https://raw.githubusercontent.com/EasyDynamics/oscal-rest/develop/openapi.yaml)
-to view the specification:
+The proposed OSCAL REST OpenAPI specification is expressed using the OpenAPI 3.1 standard:
+[RAW](OSCALRestOpenAPI.json) | [VIEWER](https://raw.githack.com/EasyDynamics/oscal-rest/develop/viewer/index.html?url=https://raw.githubusercontent.com/EasyDynamics/oscal-rest/develop/OSCALRestOpenAPI.json)
 
-![OSCSAL REST Swagger Screenshot](docs/resources/swagger-editor-oscal-screenshot.png)
 
-## Linting & Testing
+## Contributing and Feedback
 
-1. Install [`yamllint`](https://github.com/adrienverge/yamllint)
-2. Run `yamllint -c .yamllint.yaml .`
-    - This will lint all `.yaml` files
-
-## Contributing
+If you have feedback, please consider one of the following options:
+- Add a comment to an [existing issue](https://github.com/EasyDynamics/oscal-rest/issues);
+- If you don't see an appropriate existing issue, create a [new issue](https://github.com/EasyDynamics/oscal-rest/issues/new); or
+- send a message to us: [oscal@oscal.io](mailto:oscal@oscal.io).
 
 For the process of Contributing to the project, please review
 [CONTRIBUTING.md](https://github.com/EasyDynamics/.github/blob/main/CONTRIBUTING.md)

@@ -4,9 +4,15 @@
     "title": "OSCAL REST",
     "description": "A draft proposal from [Easy Dynamics](https://www.easydynamics.com) of a REST API specification for exchanging\n[OSCAL](https://pages.nist.gov/OSCAL/) content between tool instances and organizations.\n\nStandardized data models like OSCAL lay the groundwork for interoperability of systems, and an ecosystem of\nmeaningful integrations can be brought to life through a standardized REST API.  Such an API will likely see the most\nsuccess across various vendors and projects when maintained by a standards body or community, and we're looking\nto get that conversation started with this effort.\n\nFor an overview and more information, visit [https://docs.oscal.io/docs/oscal-rest-openapi](https://docs.oscal.io/docs/oscal-rest-openapi)\n",
     "contact": {
-      "email": "oscal@oscal.io"
+      "name" : "OSCAL Community",
+      "email": "oscal@oscal.io",
+      "url" : "https://docs.oscal.io/docs/oscal-rest-openapi"
     },
-    "version": "0.4.1"
+    "license" : {
+      "name" : "Creative Commons Attribution Share Alike 4.0 International",
+      "url" : "https://github.com/EasyDynamics/oscal-rest/blob/develop/LICENSE"
+    },
+    "version": "1.0.0"
   },
   "externalDocs": {
     "description": "Find out more about OSCAL",

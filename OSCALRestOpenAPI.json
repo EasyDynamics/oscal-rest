@@ -1567,6 +1567,15 @@
             }
           }
         },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+              }
+            }
+          }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -1802,6 +1811,15 @@
                 "schema": {
                   "$ref": "#/components/schemas/OSCALErrorMessage"
                 }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
               }
             }
           }
@@ -3499,6 +3517,15 @@
             }
           }
         },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+              }
+            }
+          }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -3725,6 +3752,15 @@
                 "schema": {
                   "$ref": "#/components/schemas/OSCALErrorMessage"
                 }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
               }
             }
           }
@@ -4029,6 +4065,15 @@
             }
           }
         },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+              }
+            }
+          }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -4255,6 +4300,15 @@
                 "schema": {
                   "$ref": "#/components/schemas/OSCALErrorMessage"
                 }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
               }
             }
           }
@@ -5852,6 +5906,15 @@
             }
           }
         },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+              }
+            }
+          }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -6078,6 +6141,15 @@
                 "schema": {
                   "$ref": "#/components/schemas/OSCALErrorMessage"
                 }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
               }
             }
           }
@@ -7675,6 +7747,15 @@
             }
           }
         },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+              }
+            }
+          }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -7901,6 +7982,15 @@
                 "schema": {
                   "$ref": "#/components/schemas/OSCALErrorMessage"
                 }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
               }
             }
           }
@@ -9498,6 +9588,15 @@
             }
           }
         },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+              }
+            }
+          }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -9724,6 +9823,15 @@
                 "schema": {
                   "$ref": "#/components/schemas/OSCALErrorMessage"
                 }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
               }
             }
           }
@@ -11321,6 +11429,15 @@
             }
           }
         },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+              }
+            }
+          }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -11547,6 +11664,15 @@
                 "schema": {
                   "$ref": "#/components/schemas/OSCALErrorMessage"
                 }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
               }
             }
           }
@@ -13144,6 +13270,15 @@
             }
           }
         },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
+              }
+            }
+          }
+        },
         "security": [
           {
             "oscal_auth": [
@@ -13370,6 +13505,15 @@
                 "schema": {
                   "$ref": "#/components/schemas/OSCALErrorMessage"
                 }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSCALModelSnapshotEntry"
               }
             }
           }

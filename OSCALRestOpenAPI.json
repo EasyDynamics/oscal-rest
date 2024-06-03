@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "OSCAL REST",
-    "description": "A draft proposal from [Easy Dynamics](https://www.easydynamics.com) of a REST API specification for exchanging\n[OSCAL](https://pages.nist.gov/OSCAL/) content between tool instances and organizations.\n\nStandardized data models like OSCAL lay the groundwork for interoperability of systems, and an ecosystem of\nmeaningful integrations can be brought to life through a standardized REST API.  Such an API will likely see the most\nsuccess across various vendors and projects when maintained by a standards body or community, and we're looking\nto get that conversation started with this effort.\n\nFor an overview and more information, visit [https://docs.oscal.io/docs/oscal-rest-openapi](https://docs.oscal.io/docs/oscal-rest-openapi)\n",
+    "description": "This is an open-source REST API specification for exchanging [OSCAL](https://pages.nist.gov/OSCAL/) content between tools and organizations.\n\nThe _OSCAL REST OpenAPI Specification_ addresses OSCAL XML, JSON and YAML content for all seven OSCAL models. Each OSCAL model has a primary set of REST API methods and endpoints for the OSCAL content itself, as well as methods and endpoints for snapshots and attachments. OSCAL profiles also have methods and endpoints for live profile resolution and snapshots of resolved profiles.\n\nFor an overview and more information, visit [https://docs.oscal.io/docs/oscal-rest-openapi](https://docs.oscal.io/docs/oscal-rest-openapi)\n\n## Known-Issue: OSCAL XML Representation\n\nWhen the specification calls for OSCAL content to be accepted or returned, the content must be fully OSCAL valid. Even if the specification shows a non-compliant schema or example.\n\nThere is a [known-issue](https://github.com/OAI/OpenAPI-Specification/issues/630) that prevents proper expression of OSCAL XML in OpenAPI.",
     "contact": {
       "name" : "OSCAL Community",
       "email": "oscal@oscal.io",
@@ -251,6 +251,27 @@
               }
             }
           }
+        },
+        "requestBody": {
+          "content" : [
+            {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALAssessmentPlan"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALAssessmentPlanXML"
+                }
+              },
+              "application/yaml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OSCALAssessmentPlan"
+                }
+              }
+            }
+          ]
         },
         "security": [
           {

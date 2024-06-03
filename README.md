@@ -30,6 +30,16 @@ Profiles have additional endpoints related to profile resolution:
 |`METHOD /profile/{identifier}/resolved-catalog`<br />`METHOD /profile/{identifier}/resolved-snapshot`<br />`METHOD /profile/{identifier}/resolved-snapshot/{identifier}`|
 |:--- |
 
+## Known Issue: XML Expression
+
+When the specification calls for OSCAL content to be accepted or returned, the content must be fully OSCAL valid. Even if the specification shows a non-compliant schema or example.
+
+There is a known-issue that prevents proper expression of OSCAL XML content in OpenAPI.
+
+XML elements have both _attributes_ and _children_. JSON elements only have _children_. There is no way to specify an element _attribute_ using a JSON schema.
+
+All versions of the OpenAPI specification, up to and including 3.1, only accept JSON schema definitions. As a result all OpenAPI viewers and code generators incorrectly represent OSCAL XML element _attributes_ as element _children_.
+
 ## Viewing / Editing
 
 The proposed OSCAL REST OpenAPI specification is expressed using the OpenAPI 3.1 standard:

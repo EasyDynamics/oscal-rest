@@ -25,58 +25,58 @@
   ],
   "tags": [
     {
-      "name": "OSCAL Catalog",
-      "description": "Information about the OSCAL Catalog Model.",
+      "name": "Catalog",
+      "description": "OSCAL Catalog Methods and Endpoints.",
       "externalDocs": {
-        "description": "Find out more",
+        "description": "OSCAL Catalog Model",
         "url": "https://pages.nist.gov/OSCAL/concepts/layer/control/catalog/"
       }
     },
     {
-      "name": "OSCAL Profile",
-      "description": "Information about the OSCAL Profile Model.",
+      "name": "Profile",
+      "description": "OSCAL Profile Methods and Endpoints.",
       "externalDocs": {
-        "description": "Find out more",
+        "description": "OSCAL Profile Model",
         "url": "https://pages.nist.gov/OSCAL/concepts/layer/control/profile/"
       }
     },
     {
-      "name": "OSCAL System Security Plan",
-      "description": "Information about the OSCAL SSP Model.",
+      "name": "System Security Plan",
+      "description": "OSCAL SSP Methods and Endpoints.",
       "externalDocs": {
-        "description": "Find out more",
+        "description": "OSCAL SSP Model",
         "url": "https://pages.nist.gov/OSCAL/concepts/layer/implementation/ssp/"
       }
     },
     {
-      "name": "OSCAL Component Definition",
-      "description": "Information about the OSCAL Component Definition Model.",
+      "name": "Component Definition",
+      "description": "OSCAL cDef Methods and Endpoints.",
       "externalDocs": {
-        "description": "Find out more",
+        "description": "OSCAL cDef Model",
         "url": "https://pages.nist.gov/OSCAL/concepts/layer/implementation/component-definition/"
       }
     },
     {
-      "name": "OSCAL Plan of Action and Milestones",
-      "description": "Information about the OSCAL POA&M Model.",
+      "name": "Plan of Action and Milestones",
+      "description": "OSCAL POA&M Methods and Endpoints.",
       "externalDocs": {
-        "description": "Find out more",
+        "description": "OSCAL POA&M Model",
         "url": "https://pages.nist.gov/OSCAL/concepts/layer/assessment/poam/"
       }
     },
     {
-      "name": "OSCAL Assessment Plan",
-      "description": "Information about the OSCAL Assessment Plan Model.",
+      "name": "Assessment Plan",
+      "description": "OSCAL Assessment Plan Methods and Endpoints.",
       "externalDocs": {
-        "description": "Find out more",
+        "description": "OSCAL AP Model",
         "url": "https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-plan/"
       }
     },
     {
-      "name": "OSCAL Assessment Results",
-      "description": "Information about the OSCAL Assessment Results Model.",
+      "name": "Assessment Results",
+      "description": "OSCAL Assessment Results Methods and Endpoints.",
       "externalDocs": {
-        "description": "Find out more",
+        "description": "OSCAL AR Model",
         "url": "https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-results/"
       }
     }
@@ -85,7 +85,7 @@
     "/assessment-plan": {
       "get": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Returns a list of every relevant assessment plan.",
         "description": "Returns a list of every relevant assessment plan.",
@@ -162,7 +162,7 @@
       },
       "post": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Adds a new assessment plan.",
         "description": "Adds a new assessment plan.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
@@ -290,22 +290,22 @@
         ]
       }
     },
-    "/assessment-plan/{ExternalUUID}": {
+    "/assessment-plan/{ContentUUID}": {
       "get": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Returns the assessment plan represented by the assessment plan ID.",
         "description": "Returns the assessment plan represented by the assessment plan ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getAssessmentPlanById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -391,19 +391,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Replaces the assessment plan represented by the assessment plan ID.",
         "description": "Replaces the assessment plan represented by the assessment plan ID.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
         "operationId": "putAssessmentPlan",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -524,19 +524,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Deletes the assessment plan represented by the assessment plan ID.",
         "description": "Deletes the assessment plan represented by the assessment plan ID.",
         "operationId": "deleteAssessmentPlan",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -605,22 +605,22 @@
         ]
       }
     },
-    "/assessment-plan/{ExternalUUID}/attachment": {
+    "/assessment-plan/{ContentUUID}/attachment": {
       "get": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Returns a list of every relevant attachment.",
         "description": "Returns a list of every relevant attachment.",
         "operationId": "getAssessmentPlanAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -696,19 +696,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postAssessmentPlanAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -814,22 +814,22 @@
         ]
       }
     },
-    "/assessment-plan/{ExternalUUID}/attachment/{resourceUUID}": {
+    "/assessment-plan/{ContentUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Returns the attachment represented by the back-matter resource UUID.",
         "description": "Returns the attachment represented by the back-matter resource UUID.",
         "operationId": "getAssessmentPlanAttachmentByUuid",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -935,19 +935,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Replaces the attachment represented by the resource UUID.",
         "description": "Replaces the attachment represented by the resource UUID.",
         "operationId": "putAssessmentPlanAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -1056,19 +1056,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deleteAssessmentPlanAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -1146,22 +1146,22 @@
         ]
       }
     },
-    "/assessment-plan/{ExternalUUID}/attachment/{resourceUUID}/resource": {
+    "/assessment-plan/{ContentUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Retrieves the OSCAL back-matter / resource information.",
         "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getAssessmentPlanAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -1246,19 +1246,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Updates the content of the back-matter resource.",
         "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putAssessmentPlanAttachmentResource",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -1375,22 +1375,22 @@
         ]
       }
     },
-    "/assessment-plan/{ExternalUUID}/snapshot": {
+    "/assessment-plan/{ContentUUID}/snapshot": {
       "get": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Returns a list of every relevant snapshot.",
         "description": "Returns a list of every relevant snapshot.",
         "operationId": "getAssessmentPlanSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -1466,19 +1466,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Creates a snapshot of the file in its current state.",
         "description": "Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:\n\n - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:\n   - `\"name\" : \"snapshot-created\"`\n   - `\"value\" : \"2024-03-24T16:10:42.251Z\"` (date-time-with-timezone)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "postAssessmentPlanSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -1593,22 +1593,22 @@
         ]
       }
     },
-    "/assessment-plan/{ExternalUUID}/snapshot/{snapshotID}": {
+    "/assessment-plan/{ContentUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Returns the snapshot represented by the snapshot ID.",
         "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getAssessmentPlanSnapshotById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -1703,19 +1703,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Modifies the snapshot description, types and labels.",
         "description": "Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (Value is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "putAssessmentPlanSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -1833,19 +1833,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Assessment Plan"
+          "Assessment Plan"
         ],
         "summary": "Deletes the snapshot represented by the snapshot ID.",
         "description": "Deletes the snapshot represented by the snapshot ID.",
         "operationId": "deleteAssessmentPlanSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -1926,7 +1926,7 @@
     "/profile": {
       "get": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Returns a list of every relevant profile.",
         "description": "Returns a list of every relevant profile.",
@@ -2003,7 +2003,7 @@
       },
       "post": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Adds a new profile.",
         "description": "Adds a new profile.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
@@ -2131,22 +2131,22 @@
         ]
       }
     },
-    "/profile/{ExternalUUID}": {
+    "/profile/{ContentUUID}": {
       "get": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Returns the profile represented by the profile ID.",
         "description": "Returns the profile represented by the profile ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getProfileById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -2232,19 +2232,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Replaces the profile represented by the profile ID.",
         "description": "Replaces the profile represented by the profile ID.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
         "operationId": "putProfile",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -2365,19 +2365,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Deletes the profile represented by the profile ID.",
         "description": "Deletes the profile represented by the profile ID.",
         "operationId": "deleteProfile",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -2446,22 +2446,22 @@
         ]
       }
     },
-    "/profile/{ExternalUUID}/resolved-catalog": {
+    "/profile/{ContentUUID}/resolved-catalog": {
       "get": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Resolves the identified profile based on currently available sources and returns a resolved profile catalog.",
         "description": "Resolves the identified profile based on currently available sources and returns a resolved profile catalog.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getProfileResolvedCatalogBy",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -2546,22 +2546,22 @@
         ]
       }
     },
-    "/profile/{ExternalUUID}/attachment": {
+    "/profile/{ContentUUID}/attachment": {
       "get": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Returns a list of every relevant attachment.",
         "description": "Returns a list of every relevant attachment.",
         "operationId": "getProfileAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -2637,19 +2637,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postProfileAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -2755,22 +2755,22 @@
         ]
       }
     },
-    "/profile/{ExternalUUID}/attachment/{resourceUUID}": {
+    "/profile/{ContentUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Returns the attachment represented by the back-matter resource UUID.",
         "description": "Returns the attachment represented by the back-matter resource UUID.",
         "operationId": "getProfileAttachmentByUuid",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -2876,19 +2876,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Replaces the attachment represented by the resource UUID.",
         "description": "Replaces the attachment represented by the resource UUID.",
         "operationId": "putProfileAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -2997,19 +2997,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deleteProfileAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -3087,22 +3087,22 @@
         ]
       }
     },
-    "/profile/{ExternalUUID}/attachment/{resourceUUID}/resource": {
+    "/profile/{ContentUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Retrieves the OSCAL back-matter / resource information.",
         "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getProfileAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -3187,19 +3187,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Updates the content of the back-matter resource.",
         "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putProfileAttachmentResource",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -3316,22 +3316,22 @@
         ]
       }
     },
-    "/profile/{ExternalUUID}/snapshot": {
+    "/profile/{ContentUUID}/snapshot": {
       "get": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Returns a list of every relevant snapshot.",
         "description": "Returns a list of every relevant snapshot.",
         "operationId": "getProfileSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -3407,19 +3407,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Creates a snapshot of the file in its current state.",
         "description": "Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:\n\n - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:\n   - `\"name\" : \"snapshot-created\"`\n   - `\"value\" : \"2024-03-24T16:10:42.251Z\"` (date-time-with-timezone)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "postProfileSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -3534,22 +3534,22 @@
         ]
       }
     },
-    "/profile/{ExternalUUID}/snapshot/{snapshotID}": {
+    "/profile/{ContentUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Returns the snapshot represented by the snapshot ID.",
         "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getProfileSnapshotById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -3644,19 +3644,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Modifies the snapshot description, types and labels.",
         "description": "Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (Value is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "putProfileSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -3774,19 +3774,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Deletes the snapshot represented by the snapshot ID.",
         "description": "Deletes the snapshot represented by the snapshot ID.",
         "operationId": "deleteProfileSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -3864,22 +3864,22 @@
         ]
       }
     },
-    "/profile/{ExternalUUID}/resolved-snapshot": {
+    "/profile/{ContentUUID}/resolved-snapshot": {
       "get": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Returns a list of every relevant resolved profile catalog.",
         "description": "Returns a list of every relevant resolved profile catalog.",
         "operationId": "getProfileResolvedSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -3955,19 +3955,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Resolves the profile and saves the result.",
         "description": "Processes the profile and creates a snapshot as a resolved profile catalog. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property and a `snapshot-type` set to `resolved-profile` in the OSCAL document's `metadata` as follows:\n\n - **Resolved Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:\n   - `\"name\" : \"snapshot-created\"`\n   - `\"value\" : \"2024-03-24T16:10:42.251Z\"` (date-time-with-timezone)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Resolved Snapshot Type** Property [**1 or more**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"resolved-profile\"`\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n The implementation implementation _may_ set a `snapshot-description` property, as well as `snapshot-label` and additional `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:\n\n - **Resolved Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional resolved snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Resolved Snapshot Type** Property [**1 or more**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"resolved-profile\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "postProfileResolvedSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -4082,22 +4082,22 @@
         ]
       }
     },
-    "/profile/{ExternalUUID}/resolved-snapshot/{resolvedSnapshotID}": {
+    "/profile/{ContentUUID}/resolved-snapshot/{resolvedSnapshotID}": {
       "get": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Returns the resolved profile catalog represented by the resolved profile catalog ID.",
         "description": "Returns the resolved profile catalog represented by the resolved profile catalog ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getProfileResolvedSnapshotById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -4192,19 +4192,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Modifies the snapshot description, types and label.",
         "description": "Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (Value is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "putProfileResolvedSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -4322,19 +4322,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Profile"
+          "Profile"
         ],
         "summary": "Deletes the resolved snapshot represented by the resolved snapshot ID.",
         "description": "Deletes the resolved snapshot represented by the resolved snapshot ID.",
         "operationId": "deleteProfileResolvedSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -4415,7 +4415,7 @@
     "/assessment-results": {
       "get": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Returns a list of every relevant assessment results.",
         "description": "Returns a list of every relevant assessment results.",
@@ -4492,7 +4492,7 @@
       },
       "post": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Adds a new assessment results.",
         "description": "Adds a new assessment results.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
@@ -4620,22 +4620,22 @@
         ]
       }
     },
-    "/assessment-results/{ExternalUUID}": {
+    "/assessment-results/{ContentUUID}": {
       "get": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Returns the assessment results represented by the assessment results ID.",
         "description": "Returns the assessment results represented by the assessment results ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getAssessmentResultsById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -4721,19 +4721,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Replaces the assessment results represented by the assessment results ID.",
         "description": "Replaces the assessment results represented by the assessment results ID.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
         "operationId": "putAssessmentResults",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -4854,19 +4854,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Deletes the assessment results represented by the assessment results ID.",
         "description": "Deletes the assessment results represented by the assessment results ID.",
         "operationId": "deleteAssessmentResults",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -4935,22 +4935,22 @@
         ]
       }
     },
-    "/assessment-results/{ExternalUUID}/attachment": {
+    "/assessment-results/{ContentUUID}/attachment": {
       "get": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Returns a list of every relevant attachment.",
         "description": "Returns a list of every relevant attachment.",
         "operationId": "getAssessmentResultsAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -5026,19 +5026,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postAssessmentResultsAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -5144,22 +5144,22 @@
         ]
       }
     },
-    "/assessment-results/{ExternalUUID}/attachment/{resourceUUID}": {
+    "/assessment-results/{ContentUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Returns the attachment represented by the back-matter resource UUID.",
         "description": "Returns the attachment represented by the back-matter resource UUID.",
         "operationId": "getAssessmentResultsAttachmentByUuid",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -5265,19 +5265,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Replaces the attachment represented by the resource UUID.",
         "description": "Replaces the attachment represented by the resource UUID.",
         "operationId": "putAssessmentResultsAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -5386,19 +5386,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deleteAssessmentResultsAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -5476,22 +5476,22 @@
         ]
       }
     },
-    "/assessment-results/{ExternalUUID}/attachment/{resourceUUID}/resource": {
+    "/assessment-results/{ContentUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Retrieves the OSCAL back-matter / resource information.",
         "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getAssessmentResultsAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -5576,19 +5576,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Updates the content of the back-matter resource.",
         "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putAssessmentResultsAttachmentResource",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -5705,22 +5705,22 @@
         ]
       }
     },
-    "/assessment-results/{ExternalUUID}/snapshot": {
+    "/assessment-results/{ContentUUID}/snapshot": {
       "get": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Returns a list of every relevant snapshot.",
         "description": "Returns a list of every relevant snapshot.",
         "operationId": "getAssessmentResultsSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -5796,19 +5796,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Creates a snapshot of the file in its current state.",
         "description": "Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:\n\n - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:\n   - `\"name\" : \"snapshot-created\"`\n   - `\"value\" : \"2024-03-24T16:10:42.251Z\"` (date-time-with-timezone)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "postAssessmentResultsSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -5923,22 +5923,22 @@
         ]
       }
     },
-    "/assessment-results/{ExternalUUID}/snapshot/{snapshotID}": {
+    "/assessment-results/{ContentUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Returns the snapshot represented by the snapshot ID.",
         "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getAssessmentResultsSnapshotById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -6033,19 +6033,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Modifies the snapshot description, types and labels.",
         "description": "Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (Value is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "putAssessmentResultsSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -6163,19 +6163,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Assessment Results"
+          "Assessment Results"
         ],
         "summary": "Deletes the snapshot represented by the snapshot ID.",
         "description": "Deletes the snapshot represented by the snapshot ID.",
         "operationId": "deleteAssessmentResultsSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -6256,7 +6256,7 @@
     "/catalog": {
       "get": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Returns a list of every relevant catalog.",
         "description": "Returns a list of every relevant catalog.",
@@ -6333,7 +6333,7 @@
       },
       "post": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Adds a new catalog.",
         "description": "Adds a new catalog.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
@@ -6461,22 +6461,22 @@
         ]
       }
     },
-    "/catalog/{ExternalUUID}": {
+    "/catalog/{ContentUUID}": {
       "get": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Returns the catalog represented by the catalog ID.",
         "description": "Returns the catalog represented by the catalog ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getCatalogById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -6562,19 +6562,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Replaces the catalog represented by the catalog ID.",
         "description": "Replaces the catalog represented by the catalog ID.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
         "operationId": "putCatalog",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -6695,19 +6695,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Deletes the catalog represented by the catalog ID.",
         "description": "Deletes the catalog represented by the catalog ID.",
         "operationId": "deleteCatalog",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -6776,22 +6776,22 @@
         ]
       }
     },
-    "/catalog/{ExternalUUID}/attachment": {
+    "/catalog/{ContentUUID}/attachment": {
       "get": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Returns a list of every relevant attachment.",
         "description": "Returns a list of every relevant attachment.",
         "operationId": "getCatalogAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -6867,19 +6867,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postCatalogAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -6985,22 +6985,22 @@
         ]
       }
     },
-    "/catalog/{ExternalUUID}/attachment/{resourceUUID}": {
+    "/catalog/{ContentUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Returns the attachment represented by the back-matter resource UUID.",
         "description": "Returns the attachment represented by the back-matter resource UUID.",
         "operationId": "getCatalogAttachmentByUuid",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -7106,19 +7106,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Replaces the attachment represented by the resource UUID.",
         "description": "Replaces the attachment represented by the resource UUID.",
         "operationId": "putCatalogAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -7227,19 +7227,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deleteCatalogAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -7317,22 +7317,22 @@
         ]
       }
     },
-    "/catalog/{ExternalUUID}/attachment/{resourceUUID}/resource": {
+    "/catalog/{ContentUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Retrieves the OSCAL back-matter / resource information.",
         "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getCatalogAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -7417,19 +7417,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Updates the content of the back-matter resource.",
         "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putCatalogAttachmentResource",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -7546,22 +7546,22 @@
         ]
       }
     },
-    "/catalog/{ExternalUUID}/snapshot": {
+    "/catalog/{ContentUUID}/snapshot": {
       "get": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Returns a list of every relevant snapshot.",
         "description": "Returns a list of every relevant snapshot.",
         "operationId": "getCatalogSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -7637,19 +7637,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Creates a snapshot of the file in its current state.",
         "description": "Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:\n\n - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:\n   - `\"name\" : \"snapshot-created\"`\n   - `\"value\" : \"2024-03-24T16:10:42.251Z\"` (date-time-with-timezone)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "postCatalogSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -7764,22 +7764,22 @@
         ]
       }
     },
-    "/catalog/{ExternalUUID}/snapshot/{snapshotID}": {
+    "/catalog/{ContentUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Returns the snapshot represented by the snapshot ID.",
         "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getCatalogSnapshotById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -7874,19 +7874,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Modifies the snapshot description, types and labels.",
         "description": "Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (Value is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "putCatalogSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -8004,19 +8004,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Catalog"
+          "Catalog"
         ],
         "summary": "Deletes the snapshot represented by the snapshot ID.",
         "description": "Deletes the snapshot represented by the snapshot ID.",
         "operationId": "deleteCatalogSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -8097,7 +8097,7 @@
     "/system-security-plan": {
       "get": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Returns a list of every relevant system security plan.",
         "description": "Returns a list of every relevant system security plan.",
@@ -8174,7 +8174,7 @@
       },
       "post": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Adds a new system security plan.",
         "description": "Adds a new system security plan.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
@@ -8302,22 +8302,22 @@
         ]
       }
     },
-    "/system-security-plan/{ExternalUUID}": {
+    "/system-security-plan/{ContentUUID}": {
       "get": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Returns the system security plan represented by the system security plan ID.",
         "description": "Returns the system security plan represented by the system security plan ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getSystemSecurityPlanById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -8403,19 +8403,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Replaces the system security plan represented by the system security plan ID.",
         "description": "Replaces the system security plan represented by the system security plan ID.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
         "operationId": "putSystemSecurityPlan",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -8536,19 +8536,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Deletes the system security plan represented by the system security plan ID.",
         "description": "Deletes the system security plan represented by the system security plan ID.",
         "operationId": "deleteSystemSecurityPlan",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -8617,22 +8617,22 @@
         ]
       }
     },
-    "/system-security-plan/{ExternalUUID}/attachment": {
+    "/system-security-plan/{ContentUUID}/attachment": {
       "get": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Returns a list of every relevant attachment.",
         "description": "Returns a list of every relevant attachment.",
         "operationId": "getSystemSecurityPlanAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -8708,19 +8708,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postSystemSecurityPlanAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -8826,22 +8826,22 @@
         ]
       }
     },
-    "/system-security-plan/{ExternalUUID}/attachment/{resourceUUID}": {
+    "/system-security-plan/{ContentUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Returns the attachment represented by the back-matter resource UUID.",
         "description": "Returns the attachment represented by the back-matter resource UUID.",
         "operationId": "getSystemSecurityPlanAttachmentByUuid",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -8947,19 +8947,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Replaces the attachment represented by the resource UUID.",
         "description": "Replaces the attachment represented by the resource UUID.",
         "operationId": "putSystemSecurityPlanAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -9068,19 +9068,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deleteSystemSecurityPlanAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -9158,22 +9158,22 @@
         ]
       }
     },
-    "/system-security-plan/{ExternalUUID}/attachment/{resourceUUID}/resource": {
+    "/system-security-plan/{ContentUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Retrieves the OSCAL back-matter / resource information.",
         "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getSystemSecurityPlanAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -9258,19 +9258,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Updates the content of the back-matter resource.",
         "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putSystemSecurityPlanAttachmentResource",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -9387,22 +9387,22 @@
         ]
       }
     },
-    "/system-security-plan/{ExternalUUID}/snapshot": {
+    "/system-security-plan/{ContentUUID}/snapshot": {
       "get": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Returns a list of every relevant snapshot.",
         "description": "Returns a list of every relevant snapshot.",
         "operationId": "getSystemSecurityPlanSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -9478,19 +9478,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Creates a snapshot of the file in its current state.",
         "description": "Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:\n\n - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:\n   - `\"name\" : \"snapshot-created\"`\n   - `\"value\" : \"2024-03-24T16:10:42.251Z\"` (date-time-with-timezone)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "postSystemSecurityPlanSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -9605,22 +9605,22 @@
         ]
       }
     },
-    "/system-security-plan/{ExternalUUID}/snapshot/{snapshotID}": {
+    "/system-security-plan/{ContentUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Returns the snapshot represented by the snapshot ID.",
         "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getSystemSecurityPlanSnapshotById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -9715,19 +9715,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Modifies the snapshot description, types and labels.",
         "description": "Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (Value is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "putSystemSecurityPlanSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -9845,19 +9845,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL System Security Plan"
+          "System Security Plan"
         ],
         "summary": "Deletes the snapshot represented by the snapshot ID.",
         "description": "Deletes the snapshot represented by the snapshot ID.",
         "operationId": "deleteSystemSecurityPlanSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -9938,7 +9938,7 @@
     "/plan-of-action-and-milestones": {
       "get": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Returns a list of every relevant plan of action and milestones.",
         "description": "Returns a list of every relevant plan of action and milestones.",
@@ -10015,7 +10015,7 @@
       },
       "post": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Adds a new plan of action and milestones.",
         "description": "Adds a new plan of action and milestones.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
@@ -10143,22 +10143,22 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{ExternalUUID}": {
+    "/plan-of-action-and-milestones/{ContentUUID}": {
       "get": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Returns the plan of action and milestones represented by the plan of action and milestones ID.",
         "description": "Returns the plan of action and milestones represented by the plan of action and milestones ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getPlanOfActionAndMilestonesById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -10244,19 +10244,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Replaces the plan of action and milestones represented by the plan of action and milestones ID.",
         "description": "Replaces the plan of action and milestones represented by the plan of action and milestones ID.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
         "operationId": "putPlanOfActionAndMilestones",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -10377,19 +10377,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Deletes the plan of action and milestones represented by the plan of action and milestones ID.",
         "description": "Deletes the plan of action and milestones represented by the plan of action and milestones ID.",
         "operationId": "deletePlanOfActionAndMilestones",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -10458,22 +10458,22 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{ExternalUUID}/attachment": {
+    "/plan-of-action-and-milestones/{ContentUUID}/attachment": {
       "get": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Returns a list of every relevant attachment.",
         "description": "Returns a list of every relevant attachment.",
         "operationId": "getPlanOfActionAndMilestonesAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -10549,19 +10549,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postPlanOfActionAndMilestonesAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -10667,22 +10667,22 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{ExternalUUID}/attachment/{resourceUUID}": {
+    "/plan-of-action-and-milestones/{ContentUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Returns the attachment represented by the back-matter resource UUID.",
         "description": "Returns the attachment represented by the back-matter resource UUID.",
         "operationId": "getPlanOfActionAndMilestonesAttachmentByUuid",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -10788,19 +10788,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Replaces the attachment represented by the resource UUID.",
         "description": "Replaces the attachment represented by the resource UUID.",
         "operationId": "putPlanOfActionAndMilestonesAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -10909,19 +10909,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deletePlanOfActionAndMilestonesAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -10999,22 +10999,22 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{ExternalUUID}/attachment/{resourceUUID}/resource": {
+    "/plan-of-action-and-milestones/{ContentUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Retrieves the OSCAL back-matter / resource information.",
         "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getPlanOfActionAndMilestonesAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -11099,19 +11099,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Updates the content of the back-matter resource.",
         "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putPlanOfActionAndMilestonesAttachmentResource",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -11228,22 +11228,22 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{ExternalUUID}/snapshot": {
+    "/plan-of-action-and-milestones/{ContentUUID}/snapshot": {
       "get": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Returns a list of every relevant snapshot.",
         "description": "Returns a list of every relevant snapshot.",
         "operationId": "getPlanOfActionAndMilestonesSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -11319,19 +11319,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Creates a snapshot of the file in its current state.",
         "description": "Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:\n\n - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:\n   - `\"name\" : \"snapshot-created\"`\n   - `\"value\" : \"2024-03-24T16:10:42.251Z\"` (date-time-with-timezone)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "postPlanOfActionAndMilestonesSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -11446,22 +11446,22 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{ExternalUUID}/snapshot/{snapshotID}": {
+    "/plan-of-action-and-milestones/{ContentUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Returns the snapshot represented by the snapshot ID.",
         "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getPlanOfActionAndMilestonesSnapshotById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -11556,19 +11556,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Modifies the snapshot description, types and labels.",
         "description": "Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (Value is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "putPlanOfActionAndMilestonesSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -11686,19 +11686,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Plan of Action and Milestones"
+          "Plan of Action and Milestones"
         ],
         "summary": "Deletes the snapshot represented by the snapshot ID.",
         "description": "Deletes the snapshot represented by the snapshot ID.",
         "operationId": "deletePlanOfActionAndMilestonesSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -11779,7 +11779,7 @@
     "/component-definition": {
       "get": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Returns a list of every relevant component definition.",
         "description": "Returns a list of every relevant component definition.",
@@ -11856,7 +11856,7 @@
       },
       "post": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Adds a new component definition.",
         "description": "Adds a new component definition.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
@@ -11984,22 +11984,22 @@
         ]
       }
     },
-    "/component-definition/{ExternalUUID}": {
+    "/component-definition/{ContentUUID}": {
       "get": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Returns the component definition represented by the component definition ID.",
         "description": "Returns the component definition represented by the component definition ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getComponentDefinitionById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -12085,19 +12085,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Replaces the component definition represented by the component definition ID.",
         "description": "Replaces the component definition represented by the component definition ID.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
         "operationId": "putComponentDefinition",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -12218,19 +12218,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Deletes the component definition represented by the component definition ID.",
         "description": "Deletes the component definition represented by the component definition ID.",
         "operationId": "deleteComponentDefinition",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -12299,22 +12299,22 @@
         ]
       }
     },
-    "/component-definition/{ExternalUUID}/attachment": {
+    "/component-definition/{ContentUUID}/attachment": {
       "get": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Returns a list of every relevant attachment.",
         "description": "Returns a list of every relevant attachment.",
         "operationId": "getComponentDefinitionAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -12390,19 +12390,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Adds a new attachment and returns the UUID of the resource.",
         "description": "Adds a new attachment and creates a new back-matter resource in the OSCAL file. The UUID of the resource is returned.",
         "operationId": "postComponentDefinitionAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -12508,22 +12508,22 @@
         ]
       }
     },
-    "/component-definition/{ExternalUUID}/attachment/{resourceUUID}": {
+    "/component-definition/{ContentUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Returns the attachment represented by the back-matter resource UUID.",
         "description": "Returns the attachment represented by the back-matter resource UUID.",
         "operationId": "getComponentDefinitionAttachmentByUuid",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -12629,19 +12629,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Replaces the attachment represented by the resource UUID.",
         "description": "Replaces the attachment represented by the resource UUID.",
         "operationId": "putComponentDefinitionAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -12750,19 +12750,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Deletes the attachment and associated resource.",
         "description": "Deletes the attachment and the associated back-matter resource represented by the resource UUID.",
         "operationId": "deleteComponentDefinitionAttachment",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -12840,22 +12840,22 @@
         ]
       }
     },
-    "/component-definition/{ExternalUUID}/attachment/{resourceUUID}/resource": {
+    "/component-definition/{ContentUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Retrieves the OSCAL back-matter / resource information.",
         "description": "Retrieves the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "getComponentDefinitionAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -12940,19 +12940,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Updates the content of the back-matter resource.",
         "description": "Updates the content of the back-matter resource represented by the resource UUID, consistent with the NIST OSCAL syntax for back-matter resource assemblies.",
         "operationId": "putComponentDefinitionAttachmentResource",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -13069,22 +13069,22 @@
         ]
       }
     },
-    "/component-definition/{ExternalUUID}/snapshot": {
+    "/component-definition/{ContentUUID}/snapshot": {
       "get": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Returns a list of every relevant snapshot.",
         "description": "Returns a list of every relevant snapshot.",
         "operationId": "getComponentDefinitionSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -13160,19 +13160,19 @@
       },
       "post": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Creates a snapshot of the file in its current state.",
         "description": "Creates a snapshot of the file in its current state. The implementation _must_ assign and track a unique identifier for the snapshot, by which the snapshot may be referenced later. The implementation _must_ add the `snapshot-created` property to the OSCAL document's `metadata` as follows:\n\n - **Snapshot Created** Property [**Exactly 1 (REQUIRED)**]:\n   - `\"name\" : \"snapshot-created\"`\n   - `\"value\" : \"2024-03-24T16:10:42.251Z\"` (date-time-with-timezone)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n The implementation _may_ add a `snapshot-description` property, as well as `snapshot-label` and `snapshot-type` properties to the OSCAL document's `metadata` as follows when included in the payload from the client:\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (`value` is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "postComponentDefinitionSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           }
         ],
@@ -13287,22 +13287,22 @@
         ]
       }
     },
-    "/component-definition/{ExternalUUID}/snapshot/{snapshotID}": {
+    "/component-definition/{ContentUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Returns the snapshot represented by the snapshot ID.",
         "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getComponentDefinitionSnapshotById",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -13397,19 +13397,19 @@
       },
       "put": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Modifies the snapshot description, types and labels.",
         "description": "Modifies the snapshot description, as well as the snapshot type and label tags. The implementation _must_ ensure the `snapshot-created` property is immutable.  The following properties may be added, changed, or removed by this method.\n\n - **Snapshot Description** Property [**0 or 1 (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-description\"`\n   - `\"value\" : \"na\"` (Value is required by OSCAL, but not needed for this property. It can include any string.)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n   - `\"remarks\" : \"An optional snapshot description.\"` (markup-multiline)\n\n - **Snapshot Label** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-label\"`\n   - `\"value\" : \"v1.2.3\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n - **Snapshot Type** Property [**0 or more (OPTIONAL)**]:\n   - `\"name\" : \"snapshot-type\"`\n   - `\"value\" : \"published\"` (token)\n   - `\"ns\" : \"http://oscal.io/ns/oscal/1.0.0\"`\n\n All of the above properties are OSCAL extensions and must include the namespace (`ns`) information.\n",
         "operationId": "putComponentDefinitionSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -13527,19 +13527,19 @@
       },
       "delete": {
         "tags": [
-          "OSCAL Component Definition"
+          "Component Definition"
         ],
         "summary": "Deletes the snapshot represented by the snapshot ID.",
         "description": "Deletes the snapshot represented by the snapshot ID.",
         "operationId": "deleteComponentDefinitionSnapshot",
         "parameters": [
           {
-            "name": "ExternalUUID",
+            "name": "ContentUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ExternalUUID"
+              "$ref": "#/components/schemas/ContentUUID"
             }
           },
           {
@@ -14333,7 +14333,7 @@
         "maxLength": 72,
         "pattern": "^(\\p{Ll}|_)(\\p{L}|\\p{N}|[.\\-_])*$"
       },
-      "ExternalUUID": {
+      "ContentUUID": {
         "type": "string",
         "minLength": 36,
         "maxLength": 36,

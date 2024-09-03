@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.0",
   "info": {
     "title": "OSCAL REST",
     "description": "This is an open-source REST API specification for exchanging [OSCAL](https://pages.nist.gov/OSCAL/) content between tools and organizations.\n\nThe _OSCAL REST OpenAPI Specification_ addresses OSCAL XML, JSON and YAML content for all seven OSCAL models. Each OSCAL model has a primary set of REST API methods and endpoints for the OSCAL content itself, as well as methods and endpoints for snapshots and attachments. OSCAL profiles also have methods and endpoints for live profile resolution and snapshots of resolved profiles.\n\nFor an overview and more information, visit [https://docs.oscal.io/docs/oscal-rest-openapi](https://docs.oscal.io/docs/oscal-rest-openapi)\n\n---\n\n**Known-Issue: OSCAL XML Representation**\n\nThere is a [known-issue](https://github.com/OAI/OpenAPI-Specification/issues/630) that prevents proper expression of OSCAL XML in OpenAPI.\n\nWhen the specification calls for OSCAL content to be accepted or returned, the content must be fully OSCAL valid. Even if the specification shows a non-compliant schema or example.",
@@ -12,7 +12,7 @@
       "name" : "Creative Commons Attribution Share Alike 4.0 International",
       "url" : "https://github.com/EasyDynamics/oscal-rest/blob/develop/LICENSE"
     },
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "externalDocs": {
     "description": "Find out more about OSCAL",
@@ -290,7 +290,7 @@
         ]
       }
     },
-    "/assessment-plan/{assessmentPlanID}": {
+    "/assessment-plan/{ExternalUUID}": {
       "get": {
         "tags": [
           "OSCAL Assessment Plan"
@@ -300,12 +300,12 @@
         "operationId": "getAssessmentPlanById",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -398,12 +398,12 @@
         "operationId": "putAssessmentPlan",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -531,12 +531,12 @@
         "operationId": "deleteAssessmentPlan",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -605,7 +605,7 @@
         ]
       }
     },
-    "/assessment-plan/{assessmentPlanID}/attachment": {
+    "/assessment-plan/{ExternalUUID}/attachment": {
       "get": {
         "tags": [
           "OSCAL Assessment Plan"
@@ -615,12 +615,12 @@
         "operationId": "getAssessmentPlanAttachment",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -703,12 +703,12 @@
         "operationId": "postAssessmentPlanAttachment",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -814,7 +814,7 @@
         ]
       }
     },
-    "/assessment-plan/{assessmentPlanID}/attachment/{resourceUUID}": {
+    "/assessment-plan/{ExternalUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
           "OSCAL Assessment Plan"
@@ -824,12 +824,12 @@
         "operationId": "getAssessmentPlanAttachmentByUuid",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -942,12 +942,12 @@
         "operationId": "putAssessmentPlanAttachment",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -1063,12 +1063,12 @@
         "operationId": "deleteAssessmentPlanAttachment",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -1146,7 +1146,7 @@
         ]
       }
     },
-    "/assessment-plan/{assessmentPlanID}/attachment/{resourceUUID}/resource": {
+    "/assessment-plan/{ExternalUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
           "OSCAL Assessment Plan"
@@ -1156,12 +1156,12 @@
         "operationId": "getAssessmentPlanAttachmentResourceBy",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -1253,12 +1253,12 @@
         "operationId": "putAssessmentPlanAttachmentResource",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -1375,7 +1375,7 @@
         ]
       }
     },
-    "/assessment-plan/{assessmentPlanID}/snapshot": {
+    "/assessment-plan/{ExternalUUID}/snapshot": {
       "get": {
         "tags": [
           "OSCAL Assessment Plan"
@@ -1385,12 +1385,12 @@
         "operationId": "getAssessmentPlanSnapshot",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -1473,12 +1473,12 @@
         "operationId": "postAssessmentPlanSnapshot",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -1593,7 +1593,7 @@
         ]
       }
     },
-    "/assessment-plan/{assessmentPlanID}/snapshot/{snapshotID}": {
+    "/assessment-plan/{ExternalUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
           "OSCAL Assessment Plan"
@@ -1603,12 +1603,12 @@
         "operationId": "getAssessmentPlanSnapshotById",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -1693,15 +1693,6 @@
             }
           }
         },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OSCALSnapshotAttributes"
-              }
-            }
-          }
-        },
         "security": [
           {
             "oscal_auth": [
@@ -1719,12 +1710,12 @@
         "operationId": "putAssessmentPlanSnapshot",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -1849,12 +1840,12 @@
         "operationId": "deleteAssessmentPlanSnapshot",
         "parameters": [
           {
-            "name": "assessmentPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -2140,7 +2131,7 @@
         ]
       }
     },
-    "/profile/{profileID}": {
+    "/profile/{ExternalUUID}": {
       "get": {
         "tags": [
           "OSCAL Profile"
@@ -2150,12 +2141,12 @@
         "operationId": "getProfileById",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -2248,12 +2239,12 @@
         "operationId": "putProfile",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -2381,12 +2372,12 @@
         "operationId": "deleteProfile",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -2455,7 +2446,7 @@
         ]
       }
     },
-    "/profile/{profileID}/resolved-catalog": {
+    "/profile/{ExternalUUID}/resolved-catalog": {
       "get": {
         "tags": [
           "OSCAL Profile"
@@ -2465,12 +2456,12 @@
         "operationId": "getProfileResolvedCatalogBy",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -2555,7 +2546,7 @@
         ]
       }
     },
-    "/profile/{profileID}/attachment": {
+    "/profile/{ExternalUUID}/attachment": {
       "get": {
         "tags": [
           "OSCAL Profile"
@@ -2565,12 +2556,12 @@
         "operationId": "getProfileAttachment",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -2653,12 +2644,12 @@
         "operationId": "postProfileAttachment",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -2764,7 +2755,7 @@
         ]
       }
     },
-    "/profile/{profileID}/attachment/{resourceUUID}": {
+    "/profile/{ExternalUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
           "OSCAL Profile"
@@ -2774,12 +2765,12 @@
         "operationId": "getProfileAttachmentByUuid",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -2892,12 +2883,12 @@
         "operationId": "putProfileAttachment",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -3013,12 +3004,12 @@
         "operationId": "deleteProfileAttachment",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -3096,7 +3087,7 @@
         ]
       }
     },
-    "/profile/{profileID}/attachment/{resourceUUID}/resource": {
+    "/profile/{ExternalUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
           "OSCAL Profile"
@@ -3106,12 +3097,12 @@
         "operationId": "getProfileAttachmentResourceBy",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -3203,12 +3194,12 @@
         "operationId": "putProfileAttachmentResource",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -3325,7 +3316,7 @@
         ]
       }
     },
-    "/profile/{profileID}/snapshot": {
+    "/profile/{ExternalUUID}/snapshot": {
       "get": {
         "tags": [
           "OSCAL Profile"
@@ -3335,12 +3326,12 @@
         "operationId": "getProfileSnapshot",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -3423,12 +3414,12 @@
         "operationId": "postProfileSnapshot",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -3543,7 +3534,7 @@
         ]
       }
     },
-    "/profile/{profileID}/snapshot/{snapshotID}": {
+    "/profile/{ExternalUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
           "OSCAL Profile"
@@ -3553,12 +3544,12 @@
         "operationId": "getProfileSnapshotById",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -3660,12 +3651,12 @@
         "operationId": "putProfileSnapshot",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -3790,12 +3781,12 @@
         "operationId": "deleteProfileSnapshot",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -3873,7 +3864,7 @@
         ]
       }
     },
-    "/profile/{profileID}/resolved-snapshot": {
+    "/profile/{ExternalUUID}/resolved-snapshot": {
       "get": {
         "tags": [
           "OSCAL Profile"
@@ -3883,12 +3874,12 @@
         "operationId": "getProfileResolvedSnapshot",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -3971,12 +3962,12 @@
         "operationId": "postProfileResolvedSnapshot",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -4091,7 +4082,7 @@
         ]
       }
     },
-    "/profile/{profileID}/resolved-snapshot/{resolvedSnapshotID}": {
+    "/profile/{ExternalUUID}/resolved-snapshot/{resolvedSnapshotID}": {
       "get": {
         "tags": [
           "OSCAL Profile"
@@ -4101,12 +4092,12 @@
         "operationId": "getProfileResolvedSnapshotById",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -4208,12 +4199,12 @@
         "operationId": "putProfileResolvedSnapshot",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -4338,12 +4329,12 @@
         "operationId": "deleteProfileResolvedSnapshot",
         "parameters": [
           {
-            "name": "profileID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -4629,7 +4620,7 @@
         ]
       }
     },
-    "/assessment-results/{assessmentResultsID}": {
+    "/assessment-results/{ExternalUUID}": {
       "get": {
         "tags": [
           "OSCAL Assessment Results"
@@ -4639,12 +4630,12 @@
         "operationId": "getAssessmentResultsById",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -4737,12 +4728,12 @@
         "operationId": "putAssessmentResults",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -4870,12 +4861,12 @@
         "operationId": "deleteAssessmentResults",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -4944,7 +4935,7 @@
         ]
       }
     },
-    "/assessment-results/{assessmentResultsID}/attachment": {
+    "/assessment-results/{ExternalUUID}/attachment": {
       "get": {
         "tags": [
           "OSCAL Assessment Results"
@@ -4954,12 +4945,12 @@
         "operationId": "getAssessmentResultsAttachment",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -5042,12 +5033,12 @@
         "operationId": "postAssessmentResultsAttachment",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -5153,7 +5144,7 @@
         ]
       }
     },
-    "/assessment-results/{assessmentResultsID}/attachment/{resourceUUID}": {
+    "/assessment-results/{ExternalUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
           "OSCAL Assessment Results"
@@ -5163,12 +5154,12 @@
         "operationId": "getAssessmentResultsAttachmentByUuid",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -5281,12 +5272,12 @@
         "operationId": "putAssessmentResultsAttachment",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -5402,12 +5393,12 @@
         "operationId": "deleteAssessmentResultsAttachment",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -5485,7 +5476,7 @@
         ]
       }
     },
-    "/assessment-results/{assessmentResultsID}/attachment/{resourceUUID}/resource": {
+    "/assessment-results/{ExternalUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
           "OSCAL Assessment Results"
@@ -5495,12 +5486,12 @@
         "operationId": "getAssessmentResultsAttachmentResourceBy",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -5592,12 +5583,12 @@
         "operationId": "putAssessmentResultsAttachmentResource",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -5714,7 +5705,7 @@
         ]
       }
     },
-    "/assessment-results/{assessmentResultsID}/snapshot": {
+    "/assessment-results/{ExternalUUID}/snapshot": {
       "get": {
         "tags": [
           "OSCAL Assessment Results"
@@ -5724,12 +5715,12 @@
         "operationId": "getAssessmentResultsSnapshot",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -5812,12 +5803,12 @@
         "operationId": "postAssessmentResultsSnapshot",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -5932,7 +5923,7 @@
         ]
       }
     },
-    "/assessment-results/{assessmentResultsID}/snapshot/{snapshotID}": {
+    "/assessment-results/{ExternalUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
           "OSCAL Assessment Results"
@@ -5942,12 +5933,12 @@
         "operationId": "getAssessmentResultsSnapshotById",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -6049,12 +6040,12 @@
         "operationId": "putAssessmentResultsSnapshot",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -6179,12 +6170,12 @@
         "operationId": "deleteAssessmentResultsSnapshot",
         "parameters": [
           {
-            "name": "assessmentResultsID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -6470,7 +6461,7 @@
         ]
       }
     },
-    "/catalog/{catalogID}": {
+    "/catalog/{ExternalUUID}": {
       "get": {
         "tags": [
           "OSCAL Catalog"
@@ -6480,12 +6471,12 @@
         "operationId": "getCatalogById",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -6578,12 +6569,12 @@
         "operationId": "putCatalog",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -6711,12 +6702,12 @@
         "operationId": "deleteCatalog",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -6785,7 +6776,7 @@
         ]
       }
     },
-    "/catalog/{catalogID}/attachment": {
+    "/catalog/{ExternalUUID}/attachment": {
       "get": {
         "tags": [
           "OSCAL Catalog"
@@ -6795,12 +6786,12 @@
         "operationId": "getCatalogAttachment",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -6883,12 +6874,12 @@
         "operationId": "postCatalogAttachment",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -6994,7 +6985,7 @@
         ]
       }
     },
-    "/catalog/{catalogID}/attachment/{resourceUUID}": {
+    "/catalog/{ExternalUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
           "OSCAL Catalog"
@@ -7004,12 +6995,12 @@
         "operationId": "getCatalogAttachmentByUuid",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -7122,12 +7113,12 @@
         "operationId": "putCatalogAttachment",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -7243,12 +7234,12 @@
         "operationId": "deleteCatalogAttachment",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -7326,7 +7317,7 @@
         ]
       }
     },
-    "/catalog/{catalogID}/attachment/{resourceUUID}/resource": {
+    "/catalog/{ExternalUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
           "OSCAL Catalog"
@@ -7336,12 +7327,12 @@
         "operationId": "getCatalogAttachmentResourceBy",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -7433,12 +7424,12 @@
         "operationId": "putCatalogAttachmentResource",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -7555,7 +7546,7 @@
         ]
       }
     },
-    "/catalog/{catalogID}/snapshot": {
+    "/catalog/{ExternalUUID}/snapshot": {
       "get": {
         "tags": [
           "OSCAL Catalog"
@@ -7565,12 +7556,12 @@
         "operationId": "getCatalogSnapshot",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -7653,12 +7644,12 @@
         "operationId": "postCatalogSnapshot",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -7773,7 +7764,7 @@
         ]
       }
     },
-    "/catalog/{catalogID}/snapshot/{snapshotID}": {
+    "/catalog/{ExternalUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
           "OSCAL Catalog"
@@ -7783,12 +7774,12 @@
         "operationId": "getCatalogSnapshotById",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -7890,12 +7881,12 @@
         "operationId": "putCatalogSnapshot",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -8020,12 +8011,12 @@
         "operationId": "deleteCatalogSnapshot",
         "parameters": [
           {
-            "name": "catalogID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -8311,7 +8302,7 @@
         ]
       }
     },
-    "/system-security-plan/{systemSecurityPlanID}": {
+    "/system-security-plan/{ExternalUUID}": {
       "get": {
         "tags": [
           "OSCAL System Security Plan"
@@ -8321,12 +8312,12 @@
         "operationId": "getSystemSecurityPlanById",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -8419,12 +8410,12 @@
         "operationId": "putSystemSecurityPlan",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -8552,12 +8543,12 @@
         "operationId": "deleteSystemSecurityPlan",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -8626,7 +8617,7 @@
         ]
       }
     },
-    "/system-security-plan/{systemSecurityPlanID}/attachment": {
+    "/system-security-plan/{ExternalUUID}/attachment": {
       "get": {
         "tags": [
           "OSCAL System Security Plan"
@@ -8636,12 +8627,12 @@
         "operationId": "getSystemSecurityPlanAttachment",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -8724,12 +8715,12 @@
         "operationId": "postSystemSecurityPlanAttachment",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -8835,7 +8826,7 @@
         ]
       }
     },
-    "/system-security-plan/{systemSecurityPlanID}/attachment/{resourceUUID}": {
+    "/system-security-plan/{ExternalUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
           "OSCAL System Security Plan"
@@ -8845,12 +8836,12 @@
         "operationId": "getSystemSecurityPlanAttachmentByUuid",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -8963,12 +8954,12 @@
         "operationId": "putSystemSecurityPlanAttachment",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -9084,12 +9075,12 @@
         "operationId": "deleteSystemSecurityPlanAttachment",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -9167,7 +9158,7 @@
         ]
       }
     },
-    "/system-security-plan/{systemSecurityPlanID}/attachment/{resourceUUID}/resource": {
+    "/system-security-plan/{ExternalUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
           "OSCAL System Security Plan"
@@ -9177,12 +9168,12 @@
         "operationId": "getSystemSecurityPlanAttachmentResourceBy",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -9274,12 +9265,12 @@
         "operationId": "putSystemSecurityPlanAttachmentResource",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -9396,7 +9387,7 @@
         ]
       }
     },
-    "/system-security-plan/{systemSecurityPlanID}/snapshot": {
+    "/system-security-plan/{ExternalUUID}/snapshot": {
       "get": {
         "tags": [
           "OSCAL System Security Plan"
@@ -9406,12 +9397,12 @@
         "operationId": "getSystemSecurityPlanSnapshot",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -9494,12 +9485,12 @@
         "operationId": "postSystemSecurityPlanSnapshot",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -9614,7 +9605,7 @@
         ]
       }
     },
-    "/system-security-plan/{systemSecurityPlanID}/snapshot/{snapshotID}": {
+    "/system-security-plan/{ExternalUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
           "OSCAL System Security Plan"
@@ -9624,12 +9615,12 @@
         "operationId": "getSystemSecurityPlanSnapshotById",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -9731,12 +9722,12 @@
         "operationId": "putSystemSecurityPlanSnapshot",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -9861,12 +9852,12 @@
         "operationId": "deleteSystemSecurityPlanSnapshot",
         "parameters": [
           {
-            "name": "systemSecurityPlanID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -10152,7 +10143,7 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{planOfActionAndMilestonesID}": {
+    "/plan-of-action-and-milestones/{ExternalUUID}": {
       "get": {
         "tags": [
           "OSCAL Plan of Action and Milestones"
@@ -10162,12 +10153,12 @@
         "operationId": "getPlanOfActionAndMilestonesById",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -10260,12 +10251,12 @@
         "operationId": "putPlanOfActionAndMilestones",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -10393,12 +10384,12 @@
         "operationId": "deletePlanOfActionAndMilestones",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -10467,7 +10458,7 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{planOfActionAndMilestonesID}/attachment": {
+    "/plan-of-action-and-milestones/{ExternalUUID}/attachment": {
       "get": {
         "tags": [
           "OSCAL Plan of Action and Milestones"
@@ -10477,12 +10468,12 @@
         "operationId": "getPlanOfActionAndMilestonesAttachment",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -10565,12 +10556,12 @@
         "operationId": "postPlanOfActionAndMilestonesAttachment",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -10676,7 +10667,7 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{planOfActionAndMilestonesID}/attachment/{resourceUUID}": {
+    "/plan-of-action-and-milestones/{ExternalUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
           "OSCAL Plan of Action and Milestones"
@@ -10686,12 +10677,12 @@
         "operationId": "getPlanOfActionAndMilestonesAttachmentByUuid",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -10804,12 +10795,12 @@
         "operationId": "putPlanOfActionAndMilestonesAttachment",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -10925,12 +10916,12 @@
         "operationId": "deletePlanOfActionAndMilestonesAttachment",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -11008,7 +10999,7 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{planOfActionAndMilestonesID}/attachment/{resourceUUID}/resource": {
+    "/plan-of-action-and-milestones/{ExternalUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
           "OSCAL Plan of Action and Milestones"
@@ -11018,12 +11009,12 @@
         "operationId": "getPlanOfActionAndMilestonesAttachmentResourceBy",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -11115,12 +11106,12 @@
         "operationId": "putPlanOfActionAndMilestonesAttachmentResource",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -11237,7 +11228,7 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{planOfActionAndMilestonesID}/snapshot": {
+    "/plan-of-action-and-milestones/{ExternalUUID}/snapshot": {
       "get": {
         "tags": [
           "OSCAL Plan of Action and Milestones"
@@ -11247,12 +11238,12 @@
         "operationId": "getPlanOfActionAndMilestonesSnapshot",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -11335,12 +11326,12 @@
         "operationId": "postPlanOfActionAndMilestonesSnapshot",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -11455,7 +11446,7 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{planOfActionAndMilestonesID}/snapshot/{snapshotID}": {
+    "/plan-of-action-and-milestones/{ExternalUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
           "OSCAL Plan of Action and Milestones"
@@ -11465,12 +11456,12 @@
         "operationId": "getPlanOfActionAndMilestonesSnapshotById",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -11572,12 +11563,12 @@
         "operationId": "putPlanOfActionAndMilestonesSnapshot",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -11702,12 +11693,12 @@
         "operationId": "deletePlanOfActionAndMilestonesSnapshot",
         "parameters": [
           {
-            "name": "planOfActionAndMilestonesID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -11993,7 +11984,7 @@
         ]
       }
     },
-    "/component-definition/{componentDefinitionID}": {
+    "/component-definition/{ExternalUUID}": {
       "get": {
         "tags": [
           "OSCAL Component Definition"
@@ -12003,12 +11994,12 @@
         "operationId": "getComponentDefinitionById",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -12101,12 +12092,12 @@
         "operationId": "putComponentDefinition",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -12234,12 +12225,12 @@
         "operationId": "deleteComponentDefinition",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -12308,7 +12299,7 @@
         ]
       }
     },
-    "/component-definition/{componentDefinitionID}/attachment": {
+    "/component-definition/{ExternalUUID}/attachment": {
       "get": {
         "tags": [
           "OSCAL Component Definition"
@@ -12318,12 +12309,12 @@
         "operationId": "getComponentDefinitionAttachment",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -12406,12 +12397,12 @@
         "operationId": "postComponentDefinitionAttachment",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -12517,7 +12508,7 @@
         ]
       }
     },
-    "/component-definition/{componentDefinitionID}/attachment/{resourceUUID}": {
+    "/component-definition/{ExternalUUID}/attachment/{resourceUUID}": {
       "get": {
         "tags": [
           "OSCAL Component Definition"
@@ -12527,12 +12518,12 @@
         "operationId": "getComponentDefinitionAttachmentByUuid",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -12645,12 +12636,12 @@
         "operationId": "putComponentDefinitionAttachment",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -12766,12 +12757,12 @@
         "operationId": "deleteComponentDefinitionAttachment",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -12849,7 +12840,7 @@
         ]
       }
     },
-    "/component-definition/{componentDefinitionID}/attachment/{resourceUUID}/resource": {
+    "/component-definition/{ExternalUUID}/attachment/{resourceUUID}/resource": {
       "get": {
         "tags": [
           "OSCAL Component Definition"
@@ -12859,12 +12850,12 @@
         "operationId": "getComponentDefinitionAttachmentResourceBy",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -12956,12 +12947,12 @@
         "operationId": "putComponentDefinitionAttachmentResource",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -13078,7 +13069,7 @@
         ]
       }
     },
-    "/component-definition/{componentDefinitionID}/snapshot": {
+    "/component-definition/{ExternalUUID}/snapshot": {
       "get": {
         "tags": [
           "OSCAL Component Definition"
@@ -13088,12 +13079,12 @@
         "operationId": "getComponentDefinitionSnapshot",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -13176,12 +13167,12 @@
         "operationId": "postComponentDefinitionSnapshot",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           }
         ],
@@ -13296,7 +13287,7 @@
         ]
       }
     },
-    "/component-definition/{componentDefinitionID}/snapshot/{snapshotID}": {
+    "/component-definition/{ExternalUUID}/snapshot/{snapshotID}": {
       "get": {
         "tags": [
           "OSCAL Component Definition"
@@ -13306,12 +13297,12 @@
         "operationId": "getComponentDefinitionSnapshotById",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -13413,12 +13404,12 @@
         "operationId": "putComponentDefinitionSnapshot",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -13543,12 +13534,12 @@
         "operationId": "deleteComponentDefinitionSnapshot",
         "parameters": [
           {
-            "name": "componentDefinitionID",
+            "name": "ExternalUUID",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/ExternalUUID"
             }
           },
           {
@@ -14342,7 +14333,7 @@
         "maxLength": 72,
         "pattern": "^(\\p{Ll}|_)(\\p{L}|\\p{N}|[.\\-_])*$"
       },
-      "ContentUUID": {
+      "ExternalUUID": {
         "type": "string",
         "minLength": 36,
         "maxLength": 36,

@@ -166,7 +166,7 @@
           "Assessment Plan"
         ],
         "summary": "Adds a new assessment plan.",
-        "description": "Adds a new assessment plan.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
+        "description": "Adds a new assessment plan.\n\n **The client _must_** include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.  \n\n **The implementation _must_** accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n\n **The implementation _must_** check for the presence of an `identifer` with a `scheme` value of `http://oscal.io/oscal/identifier/content-uuid` in the document ID array (`//metaschema/document-ids`). If present, the implementaiton must use this value as the `content-uuid`. If not present, the implementation must generate a v4 or v5 UUID for use as the `content-uuid` and insert it into document ID array using `http://oscal.io/oscal/identifier/content-uuid` as the `scheme` value. \n",
         "operationId": "postAssessmentPlan",
         "responses": {
           "201": {
@@ -291,22 +291,22 @@
         ]
       }
     },
-    "/assessment-plan/{ContentUUID}": {
+    "/assessment-plan/{content-uuid}": {
       "get": {
         "tags": [
           "Assessment Plan"
         ],
-        "summary": "Returns the assessment plan represented by the assessment plan ID.",
-        "description": "Returns the assessment plan represented by the assessment plan ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the assessment plan represented by the `content-uuid`.",
+        "description": "Returns the assessment plan represented by the `content-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getAssessmentPlanById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -394,17 +394,17 @@
         "tags": [
           "Assessment Plan"
         ],
-        "summary": "Replaces the assessment plan represented by the assessment plan ID.",
-        "description": "Replaces the assessment plan represented by the assessment plan ID.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
+        "summary": "Replaces the assessment plan represented by the `content-uuid`.",
+        "description": "Replaces the assessment plan represented by the `content-uuid`.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
         "operationId": "putAssessmentPlan",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -527,17 +527,17 @@
         "tags": [
           "Assessment Plan"
         ],
-        "summary": "Deletes the assessment plan represented by the assessment plan ID.",
-        "description": "Deletes the assessment plan represented by the assessment plan ID.",
+        "summary": "Deletes the assessment plan represented by the `content-uuid`.",
+        "description": "Deletes the assessment plan represented by the `content-uuid`.",
         "operationId": "deleteAssessmentPlan",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -606,7 +606,7 @@
         ]
       }
     },
-    "/assessment-plan/{ContentUUID}/attachment": {
+    "/assessment-plan/{content-uuid}/attachment": {
       "get": {
         "tags": [
           "Assessment Plan"
@@ -616,12 +616,12 @@
         "operationId": "getAssessmentPlanAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -704,12 +704,12 @@
         "operationId": "postAssessmentPlanAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -815,7 +815,7 @@
         ]
       }
     },
-    "/assessment-plan/{ContentUUID}/attachment/{resourceUUID}": {
+    "/assessment-plan/{content-uuid}/attachment/{resource-uuid}": {
       "get": {
         "tags": [
           "Assessment Plan"
@@ -825,12 +825,12 @@
         "operationId": "getAssessmentPlanAttachmentByUuid",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -943,12 +943,12 @@
         "operationId": "putAssessmentPlanAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -1064,12 +1064,12 @@
         "operationId": "deleteAssessmentPlanAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -1147,7 +1147,7 @@
         ]
       }
     },
-    "/assessment-plan/{ContentUUID}/attachment/{resourceUUID}/resource": {
+    "/assessment-plan/{content-uuid}/attachment/{resource-uuid}/resource": {
       "get": {
         "tags": [
           "Assessment Plan"
@@ -1157,12 +1157,12 @@
         "operationId": "getAssessmentPlanAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -1254,12 +1254,12 @@
         "operationId": "putAssessmentPlanAttachmentResource",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -1376,7 +1376,7 @@
         ]
       }
     },
-    "/assessment-plan/{ContentUUID}/snapshot": {
+    "/assessment-plan/{content-uuid}/snapshot": {
       "get": {
         "tags": [
           "Assessment Plan"
@@ -1386,12 +1386,12 @@
         "operationId": "getAssessmentPlanSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -1474,12 +1474,12 @@
         "operationId": "postAssessmentPlanSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -1594,22 +1594,22 @@
         ]
       }
     },
-    "/assessment-plan/{ContentUUID}/snapshot/{snapshotID}": {
+    "/assessment-plan/{content-uuid}/snapshot/{snapshot-uuid}": {
       "get": {
         "tags": [
           "Assessment Plan"
         ],
-        "summary": "Returns the snapshot represented by the snapshot ID.",
-        "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the snapshot represented by the `snapshot-uuid`.",
+        "description": "Returns the snapshot represented by the `snapshot-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getAssessmentPlanSnapshotById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -1711,12 +1711,12 @@
         "operationId": "putAssessmentPlanSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -1836,17 +1836,17 @@
         "tags": [
           "Assessment Plan"
         ],
-        "summary": "Deletes the snapshot represented by the snapshot ID.",
-        "description": "Deletes the snapshot represented by the snapshot ID.",
+        "summary": "Deletes the snapshot represented by the `snapshot-uuid`.",
+        "description": "Deletes the snapshot represented by the `snapshot-uuid`.",
         "operationId": "deleteAssessmentPlanSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -2007,7 +2007,7 @@
           "Profile"
         ],
         "summary": "Adds a new profile.",
-        "description": "Adds a new profile.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
+        "description": "Adds a new profile.\n\n **The client _must_** include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.  \n\n **The implementation _must_** accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n\n **The implementation _must_** check for the presence of an `identifer` with a `scheme` value of `http://oscal.io/oscal/identifier/content-uuid` in the document ID array (`//metaschema/document-ids`). If present, the implementaiton must use this value as the `content-uuid`. If not present, the implementation must generate a v4 or v5 UUID for use as the `content-uuid` and insert it into document ID array using `http://oscal.io/oscal/identifier/content-uuid` as the `scheme` value. \n",
         "operationId": "postProfile",
         "responses": {
           "201": {
@@ -2132,22 +2132,22 @@
         ]
       }
     },
-    "/profile/{ContentUUID}": {
+    "/profile/{content-uuid}": {
       "get": {
         "tags": [
           "Profile"
         ],
-        "summary": "Returns the profile represented by the profile ID.",
-        "description": "Returns the profile represented by the profile ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the profile represented by the `content-uuid`.",
+        "description": "Returns the profile represented by the `content-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getProfileById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -2235,17 +2235,17 @@
         "tags": [
           "Profile"
         ],
-        "summary": "Replaces the profile represented by the profile ID.",
-        "description": "Replaces the profile represented by the profile ID.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
+        "summary": "Replaces the profile represented by the `content-uuid`.",
+        "description": "Replaces the profile represented by the `content-uuid`.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
         "operationId": "putProfile",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -2368,17 +2368,17 @@
         "tags": [
           "Profile"
         ],
-        "summary": "Deletes the profile represented by the profile ID.",
-        "description": "Deletes the profile represented by the profile ID.",
+        "summary": "Deletes the profile represented by the `content-uuid`.",
+        "description": "Deletes the profile represented by the `content-uuid`.",
         "operationId": "deleteProfile",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -2447,7 +2447,7 @@
         ]
       }
     },
-    "/profile/{ContentUUID}/resolved-catalog": {
+    "/profile/{content-uuid}/resolved-catalog": {
       "get": {
         "tags": [
           "Profile"
@@ -2457,12 +2457,12 @@
         "operationId": "getProfileResolvedCatalogBy",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -2547,7 +2547,7 @@
         ]
       }
     },
-    "/profile/{ContentUUID}/attachment": {
+    "/profile/{content-uuid}/attachment": {
       "get": {
         "tags": [
           "Profile"
@@ -2557,12 +2557,12 @@
         "operationId": "getProfileAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -2645,12 +2645,12 @@
         "operationId": "postProfileAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -2756,7 +2756,7 @@
         ]
       }
     },
-    "/profile/{ContentUUID}/attachment/{resourceUUID}": {
+    "/profile/{content-uuid}/attachment/{resource-uuid}": {
       "get": {
         "tags": [
           "Profile"
@@ -2766,12 +2766,12 @@
         "operationId": "getProfileAttachmentByUuid",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -2884,12 +2884,12 @@
         "operationId": "putProfileAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -3005,12 +3005,12 @@
         "operationId": "deleteProfileAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -3088,7 +3088,7 @@
         ]
       }
     },
-    "/profile/{ContentUUID}/attachment/{resourceUUID}/resource": {
+    "/profile/{content-uuid}/attachment/{resource-uuid}/resource": {
       "get": {
         "tags": [
           "Profile"
@@ -3098,12 +3098,12 @@
         "operationId": "getProfileAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -3195,12 +3195,12 @@
         "operationId": "putProfileAttachmentResource",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -3317,7 +3317,7 @@
         ]
       }
     },
-    "/profile/{ContentUUID}/snapshot": {
+    "/profile/{content-uuid}/snapshot": {
       "get": {
         "tags": [
           "Profile"
@@ -3327,12 +3327,12 @@
         "operationId": "getProfileSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -3415,12 +3415,12 @@
         "operationId": "postProfileSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -3535,22 +3535,22 @@
         ]
       }
     },
-    "/profile/{ContentUUID}/snapshot/{snapshotID}": {
+    "/profile/{content-uuid}/snapshot/{snapshot-uuid}": {
       "get": {
         "tags": [
           "Profile"
         ],
-        "summary": "Returns the snapshot represented by the snapshot ID.",
-        "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the snapshot represented by the `snapshot-uuid`.",
+        "description": "Returns the snapshot represented by the `snapshot-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getProfileSnapshotById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -3652,12 +3652,12 @@
         "operationId": "putProfileSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -3777,17 +3777,17 @@
         "tags": [
           "Profile"
         ],
-        "summary": "Deletes the snapshot represented by the snapshot ID.",
-        "description": "Deletes the snapshot represented by the snapshot ID.",
+        "summary": "Deletes the snapshot represented by the `snapshot-uuid`.",
+        "description": "Deletes the snapshot represented by the `snapshot-uuid`.",
         "operationId": "deleteProfileSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -3865,7 +3865,7 @@
         ]
       }
     },
-    "/profile/{ContentUUID}/resolved-snapshot": {
+    "/profile/{content-uuid}/resolved-snapshot": {
       "get": {
         "tags": [
           "Profile"
@@ -3875,12 +3875,12 @@
         "operationId": "getProfileResolvedSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -3963,12 +3963,12 @@
         "operationId": "postProfileResolvedSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -4083,28 +4083,28 @@
         ]
       }
     },
-    "/profile/{ContentUUID}/resolved-snapshot/{resolvedSnapshotID}": {
+    "/profile/{content-uuid}/resolved-snapshot/{resolved-snapshot-uuid}": {
       "get": {
         "tags": [
           "Profile"
         ],
-        "summary": "Returns the resolved profile catalog represented by the resolved profile catalog ID.",
-        "description": "Returns the resolved profile catalog represented by the resolved profile catalog ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the resolved profile catalog represented by the `resolved-snapshot-uuid`.",
+        "description": "Returns the resolved profile catalog represented by the `resolved-snapshot-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getProfileResolvedSnapshotById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
-            "name": "resolvedSnapshotID",
+            "name": "resolved-snapshot-uuid",
             "in": "path",
-            "description": "ID of ResolvedSnapshot",
+            "description": "UUID of the resolved snapshot",
             "required": true,
             "schema": {
               "type": "string"
@@ -4200,18 +4200,18 @@
         "operationId": "putProfileResolvedSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
-            "name": "resolvedSnapshotID",
+            "name": "resolved-snapshot-uuid",
             "in": "path",
-            "description": "ID of ResolvedSnapshot",
+            "description": "UUID of the resolved snapshot",
             "required": true,
             "schema": {
               "type": "string"
@@ -4330,18 +4330,18 @@
         "operationId": "deleteProfileResolvedSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Profile",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
-            "name": "resolvedSnapshotID",
+            "name": "resolved-snapshot-uuid",
             "in": "path",
-            "description": "ID of ResolvedSnapshot",
+            "description": "UUID of the resolved snapshot",
             "required": true,
             "schema": {
               "type": "string"
@@ -4496,7 +4496,7 @@
           "Assessment Results"
         ],
         "summary": "Adds a new assessment results.",
-        "description": "Adds a new assessment results.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
+        "description": "Adds a new assessment results.\n\n **The client _must_** include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.  \n\n **The implementation _must_** accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n\n **The implementation _must_** check for the presence of an `identifer` with a `scheme` value of `http://oscal.io/oscal/identifier/content-uuid` in the document ID array (`//metaschema/document-ids`). If present, the implementaiton must use this value as the `content-uuid`. If not present, the implementation must generate a v4 or v5 UUID for use as the `content-uuid` and insert it into document ID array using `http://oscal.io/oscal/identifier/content-uuid` as the `scheme` value. \n",
         "operationId": "postAssessmentResults",
         "responses": {
           "201": {
@@ -4621,22 +4621,22 @@
         ]
       }
     },
-    "/assessment-results/{ContentUUID}": {
+    "/assessment-results/{content-uuid}": {
       "get": {
         "tags": [
           "Assessment Results"
         ],
-        "summary": "Returns the assessment results represented by the assessment results ID.",
-        "description": "Returns the assessment results represented by the assessment results ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the assessment results represented by the `content-uuid`.",
+        "description": "Returns the assessment results represented by the `content-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getAssessmentResultsById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -4724,17 +4724,17 @@
         "tags": [
           "Assessment Results"
         ],
-        "summary": "Replaces the assessment results represented by the assessment results ID.",
-        "description": "Replaces the assessment results represented by the assessment results ID.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
+        "summary": "Replaces the assessment results represented by the `content-uuid`.",
+        "description": "Replaces the assessment results represented by the `content-uuid`.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
         "operationId": "putAssessmentResults",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -4857,17 +4857,17 @@
         "tags": [
           "Assessment Results"
         ],
-        "summary": "Deletes the assessment results represented by the assessment results ID.",
-        "description": "Deletes the assessment results represented by the assessment results ID.",
+        "summary": "Deletes the assessment results represented by the `content-uuid`.",
+        "description": "Deletes the assessment results represented by the `content-uuid`.",
         "operationId": "deleteAssessmentResults",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -4936,7 +4936,7 @@
         ]
       }
     },
-    "/assessment-results/{ContentUUID}/attachment": {
+    "/assessment-results/{content-uuid}/attachment": {
       "get": {
         "tags": [
           "Assessment Results"
@@ -4946,12 +4946,12 @@
         "operationId": "getAssessmentResultsAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -5034,12 +5034,12 @@
         "operationId": "postAssessmentResultsAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -5145,7 +5145,7 @@
         ]
       }
     },
-    "/assessment-results/{ContentUUID}/attachment/{resourceUUID}": {
+    "/assessment-results/{content-uuid}/attachment/{resource-uuid}": {
       "get": {
         "tags": [
           "Assessment Results"
@@ -5155,12 +5155,12 @@
         "operationId": "getAssessmentResultsAttachmentByUuid",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -5273,12 +5273,12 @@
         "operationId": "putAssessmentResultsAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -5394,12 +5394,12 @@
         "operationId": "deleteAssessmentResultsAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -5477,7 +5477,7 @@
         ]
       }
     },
-    "/assessment-results/{ContentUUID}/attachment/{resourceUUID}/resource": {
+    "/assessment-results/{content-uuid}/attachment/{resource-uuid}/resource": {
       "get": {
         "tags": [
           "Assessment Results"
@@ -5487,12 +5487,12 @@
         "operationId": "getAssessmentResultsAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -5584,12 +5584,12 @@
         "operationId": "putAssessmentResultsAttachmentResource",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -5706,7 +5706,7 @@
         ]
       }
     },
-    "/assessment-results/{ContentUUID}/snapshot": {
+    "/assessment-results/{content-uuid}/snapshot": {
       "get": {
         "tags": [
           "Assessment Results"
@@ -5716,12 +5716,12 @@
         "operationId": "getAssessmentResultsSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -5804,12 +5804,12 @@
         "operationId": "postAssessmentResultsSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -5924,22 +5924,22 @@
         ]
       }
     },
-    "/assessment-results/{ContentUUID}/snapshot/{snapshotID}": {
+    "/assessment-results/{content-uuid}/snapshot/{snapshot-uuid}": {
       "get": {
         "tags": [
           "Assessment Results"
         ],
-        "summary": "Returns the snapshot represented by the snapshot ID.",
-        "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the snapshot represented by the `snapshot-uuid`.",
+        "description": "Returns the snapshot represented by the `snapshot-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getAssessmentResultsSnapshotById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -6041,12 +6041,12 @@
         "operationId": "putAssessmentResultsSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -6166,17 +6166,17 @@
         "tags": [
           "Assessment Results"
         ],
-        "summary": "Deletes the snapshot represented by the snapshot ID.",
-        "description": "Deletes the snapshot represented by the snapshot ID.",
+        "summary": "Deletes the snapshot represented by the `snapshot-uuid`.",
+        "description": "Deletes the snapshot represented by the `snapshot-uuid`.",
         "operationId": "deleteAssessmentResultsSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of AssessmentResults",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -6337,7 +6337,7 @@
           "Catalog"
         ],
         "summary": "Adds a new catalog.",
-        "description": "Adds a new catalog.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
+        "description": "Adds a new catalog.\n\n **The client _must_** include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.  \n\n **The implementation _must_** accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n\n **The implementation _must_** check for the presence of an `identifer` with a `scheme` value of `http://oscal.io/oscal/identifier/content-uuid` in the document ID array (`//metaschema/document-ids`). If present, the implementaiton must use this value as the `content-uuid`. If not present, the implementation must generate a v4 or v5 UUID for use as the `content-uuid` and insert it into document ID array using `http://oscal.io/oscal/identifier/content-uuid` as the `scheme` value. \n",
         "operationId": "postCatalog",
         "responses": {
           "201": {
@@ -6462,7 +6462,7 @@
         ]
       }
     },
-    "/catalog/{ContentUUID}": {
+    "/catalog/{content-uuid}": {
       "get": {
         "tags": [
           "Catalog"
@@ -6472,12 +6472,12 @@
         "operationId": "getCatalogById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -6570,12 +6570,12 @@
         "operationId": "putCatalog",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -6703,12 +6703,12 @@
         "operationId": "deleteCatalog",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -6777,7 +6777,7 @@
         ]
       }
     },
-    "/catalog/{ContentUUID}/attachment": {
+    "/catalog/{content-uuid}/attachment": {
       "get": {
         "tags": [
           "Catalog"
@@ -6787,12 +6787,12 @@
         "operationId": "getCatalogAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -6875,12 +6875,12 @@
         "operationId": "postCatalogAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -6986,7 +6986,7 @@
         ]
       }
     },
-    "/catalog/{ContentUUID}/attachment/{resourceUUID}": {
+    "/catalog/{content-uuid}/attachment/{resource-uuid}": {
       "get": {
         "tags": [
           "Catalog"
@@ -6996,12 +6996,12 @@
         "operationId": "getCatalogAttachmentByUuid",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -7114,12 +7114,12 @@
         "operationId": "putCatalogAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -7235,12 +7235,12 @@
         "operationId": "deleteCatalogAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -7318,7 +7318,7 @@
         ]
       }
     },
-    "/catalog/{ContentUUID}/attachment/{resourceUUID}/resource": {
+    "/catalog/{content-uuid}/attachment/{resource-uuid}/resource": {
       "get": {
         "tags": [
           "Catalog"
@@ -7328,12 +7328,12 @@
         "operationId": "getCatalogAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -7425,12 +7425,12 @@
         "operationId": "putCatalogAttachmentResource",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -7547,7 +7547,7 @@
         ]
       }
     },
-    "/catalog/{ContentUUID}/snapshot": {
+    "/catalog/{content-uuid}/snapshot": {
       "get": {
         "tags": [
           "Catalog"
@@ -7557,12 +7557,12 @@
         "operationId": "getCatalogSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -7645,12 +7645,12 @@
         "operationId": "postCatalogSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -7765,22 +7765,22 @@
         ]
       }
     },
-    "/catalog/{ContentUUID}/snapshot/{snapshotID}": {
+    "/catalog/{content-uuid}/snapshot/{snapshot-uuid}": {
       "get": {
         "tags": [
           "Catalog"
         ],
-        "summary": "Returns the snapshot represented by the snapshot ID.",
-        "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the snapshot represented by the `snapshot-uuid`.",
+        "description": "Returns the snapshot represented by the `snapshot-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getCatalogSnapshotById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -7882,12 +7882,12 @@
         "operationId": "putCatalogSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -8007,17 +8007,17 @@
         "tags": [
           "Catalog"
         ],
-        "summary": "Deletes the snapshot represented by the snapshot ID.",
-        "description": "Deletes the snapshot represented by the snapshot ID.",
+        "summary": "Deletes the snapshot represented by the `snapshot-uuid`.",
+        "description": "Deletes the snapshot represented by the `snapshot-uuid`.",
         "operationId": "deleteCatalogSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of Catalog",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -8178,7 +8178,7 @@
           "System Security Plan"
         ],
         "summary": "Adds a new system security plan.",
-        "description": "Adds a new system security plan.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
+        "description": "Adds a new system security plan.\n\n **The client _must_** include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.  \n\n **The implementation _must_** accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n\n **The implementation _must_** check for the presence of an `identifer` with a `scheme` value of `http://oscal.io/oscal/identifier/content-uuid` in the document ID array (`//metaschema/document-ids`). If present, the implementaiton must use this value as the `content-uuid`. If not present, the implementation must generate a v4 or v5 UUID for use as the `content-uuid` and insert it into document ID array using `http://oscal.io/oscal/identifier/content-uuid` as the `scheme` value. \n",
         "operationId": "postSystemSecurityPlan",
         "responses": {
           "201": {
@@ -8303,22 +8303,22 @@
         ]
       }
     },
-    "/system-security-plan/{ContentUUID}": {
+    "/system-security-plan/{content-uuid}": {
       "get": {
         "tags": [
           "System Security Plan"
         ],
-        "summary": "Returns the system security plan represented by the system security plan ID.",
-        "description": "Returns the system security plan represented by the system security plan ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the system security plan represented by the `content-uuid`.",
+        "description": "Returns the system security plan represented by the `content-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getSystemSecurityPlanById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -8406,17 +8406,17 @@
         "tags": [
           "System Security Plan"
         ],
-        "summary": "Replaces the system security plan represented by the system security plan ID.",
-        "description": "Replaces the system security plan represented by the system security plan ID.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
+        "summary": "Replaces the system security plan represented by the `content-uuid`.",
+        "description": "Replaces the system security plan represented by the `content-uuid`.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
         "operationId": "putSystemSecurityPlan",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -8539,17 +8539,17 @@
         "tags": [
           "System Security Plan"
         ],
-        "summary": "Deletes the system security plan represented by the system security plan ID.",
-        "description": "Deletes the system security plan represented by the system security plan ID.",
+        "summary": "Deletes the system security plan represented by the `content-uuid`.",
+        "description": "Deletes the system security plan represented by the `content-uuid`.",
         "operationId": "deleteSystemSecurityPlan",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -8618,7 +8618,7 @@
         ]
       }
     },
-    "/system-security-plan/{ContentUUID}/attachment": {
+    "/system-security-plan/{content-uuid}/attachment": {
       "get": {
         "tags": [
           "System Security Plan"
@@ -8628,12 +8628,12 @@
         "operationId": "getSystemSecurityPlanAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -8716,12 +8716,12 @@
         "operationId": "postSystemSecurityPlanAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -8827,7 +8827,7 @@
         ]
       }
     },
-    "/system-security-plan/{ContentUUID}/attachment/{resourceUUID}": {
+    "/system-security-plan/{content-uuid}/attachment/{resource-uuid}": {
       "get": {
         "tags": [
           "System Security Plan"
@@ -8837,12 +8837,12 @@
         "operationId": "getSystemSecurityPlanAttachmentByUuid",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -8955,12 +8955,12 @@
         "operationId": "putSystemSecurityPlanAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -9076,12 +9076,12 @@
         "operationId": "deleteSystemSecurityPlanAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -9159,7 +9159,7 @@
         ]
       }
     },
-    "/system-security-plan/{ContentUUID}/attachment/{resourceUUID}/resource": {
+    "/system-security-plan/{content-uuid}/attachment/{resource-uuid}/resource": {
       "get": {
         "tags": [
           "System Security Plan"
@@ -9169,12 +9169,12 @@
         "operationId": "getSystemSecurityPlanAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -9266,12 +9266,12 @@
         "operationId": "putSystemSecurityPlanAttachmentResource",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -9388,7 +9388,7 @@
         ]
       }
     },
-    "/system-security-plan/{ContentUUID}/snapshot": {
+    "/system-security-plan/{content-uuid}/snapshot": {
       "get": {
         "tags": [
           "System Security Plan"
@@ -9398,12 +9398,12 @@
         "operationId": "getSystemSecurityPlanSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -9486,12 +9486,12 @@
         "operationId": "postSystemSecurityPlanSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -9606,22 +9606,22 @@
         ]
       }
     },
-    "/system-security-plan/{ContentUUID}/snapshot/{snapshotID}": {
+    "/system-security-plan/{content-uuid}/snapshot/{snapshot-uuid}": {
       "get": {
         "tags": [
           "System Security Plan"
         ],
-        "summary": "Returns the snapshot represented by the snapshot ID.",
-        "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the snapshot represented by the `snapshot-uuid`.",
+        "description": "Returns the snapshot represented by the `snapshot-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getSystemSecurityPlanSnapshotById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -9723,12 +9723,12 @@
         "operationId": "putSystemSecurityPlanSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -9848,17 +9848,17 @@
         "tags": [
           "System Security Plan"
         ],
-        "summary": "Deletes the snapshot represented by the snapshot ID.",
-        "description": "Deletes the snapshot represented by the snapshot ID.",
+        "summary": "Deletes the snapshot represented by the `snapshot-uuid`.",
+        "description": "Deletes the snapshot represented by the `snapshot-uuid`.",
         "operationId": "deleteSystemSecurityPlanSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of SystemSecurityPlan",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -10019,7 +10019,7 @@
           "Plan of Action and Milestones"
         ],
         "summary": "Adds a new plan of action and milestones.",
-        "description": "Adds a new plan of action and milestones.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
+        "description": "Adds a new plan of action and milestones.\n\n **The client _must_** include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.  \n\n **The implementation _must_** accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n\n **The implementation _must_** check for the presence of an `identifer` with a `scheme` value of `http://oscal.io/oscal/identifier/content-uuid` in the document ID array (`//metaschema/document-ids`). If present, the implementaiton must use this value as the `content-uuid`. If not present, the implementation must generate a v4 or v5 UUID for use as the `content-uuid` and insert it into document ID array using `http://oscal.io/oscal/identifier/content-uuid` as the `scheme` value. \n",
         "operationId": "postPlanOfActionAndMilestones",
         "responses": {
           "201": {
@@ -10144,22 +10144,22 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{ContentUUID}": {
+    "/plan-of-action-and-milestones/{content-uuid}": {
       "get": {
         "tags": [
           "Plan of Action and Milestones"
         ],
-        "summary": "Returns the plan of action and milestones represented by the plan of action and milestones ID.",
-        "description": "Returns the plan of action and milestones represented by the plan of action and milestones ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the plan of action and milestones represented by the `content-uuid`.",
+        "description": "Returns the plan of action and milestones represented by the `content-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getPlanOfActionAndMilestonesById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -10247,17 +10247,17 @@
         "tags": [
           "Plan of Action and Milestones"
         ],
-        "summary": "Replaces the plan of action and milestones represented by the plan of action and milestones ID.",
-        "description": "Replaces the plan of action and milestones represented by the plan of action and milestones ID.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
+        "summary": "Replaces the plan of action and milestones represented by the `content-uuid`.",
+        "description": "Replaces the plan of action and milestones represented by the `content-uuid`.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
         "operationId": "putPlanOfActionAndMilestones",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -10380,17 +10380,17 @@
         "tags": [
           "Plan of Action and Milestones"
         ],
-        "summary": "Deletes the plan of action and milestones represented by the plan of action and milestones ID.",
-        "description": "Deletes the plan of action and milestones represented by the plan of action and milestones ID.",
+        "summary": "Deletes the plan of action and milestones represented by the `content-uuid`.",
+        "description": "Deletes the plan of action and milestones represented by the `content-uuid`.",
         "operationId": "deletePlanOfActionAndMilestones",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -10459,7 +10459,7 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{ContentUUID}/attachment": {
+    "/plan-of-action-and-milestones/{content-uuid}/attachment": {
       "get": {
         "tags": [
           "Plan of Action and Milestones"
@@ -10469,12 +10469,12 @@
         "operationId": "getPlanOfActionAndMilestonesAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -10557,12 +10557,12 @@
         "operationId": "postPlanOfActionAndMilestonesAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -10668,7 +10668,7 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{ContentUUID}/attachment/{resourceUUID}": {
+    "/plan-of-action-and-milestones/{content-uuid}/attachment/{resource-uuid}": {
       "get": {
         "tags": [
           "Plan of Action and Milestones"
@@ -10678,12 +10678,12 @@
         "operationId": "getPlanOfActionAndMilestonesAttachmentByUuid",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -10796,12 +10796,12 @@
         "operationId": "putPlanOfActionAndMilestonesAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -10917,12 +10917,12 @@
         "operationId": "deletePlanOfActionAndMilestonesAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -11000,7 +11000,7 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{ContentUUID}/attachment/{resourceUUID}/resource": {
+    "/plan-of-action-and-milestones/{content-uuid}/attachment/{resource-uuid}/resource": {
       "get": {
         "tags": [
           "Plan of Action and Milestones"
@@ -11010,12 +11010,12 @@
         "operationId": "getPlanOfActionAndMilestonesAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -11107,12 +11107,12 @@
         "operationId": "putPlanOfActionAndMilestonesAttachmentResource",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -11229,7 +11229,7 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{ContentUUID}/snapshot": {
+    "/plan-of-action-and-milestones/{content-uuid}/snapshot": {
       "get": {
         "tags": [
           "Plan of Action and Milestones"
@@ -11239,12 +11239,12 @@
         "operationId": "getPlanOfActionAndMilestonesSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -11327,12 +11327,12 @@
         "operationId": "postPlanOfActionAndMilestonesSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -11447,22 +11447,22 @@
         ]
       }
     },
-    "/plan-of-action-and-milestones/{ContentUUID}/snapshot/{snapshotID}": {
+    "/plan-of-action-and-milestones/{content-uuid}/snapshot/{snapshot-uuid}": {
       "get": {
         "tags": [
           "Plan of Action and Milestones"
         ],
-        "summary": "Returns the snapshot represented by the snapshot ID.",
-        "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the snapshot represented by the `snapshot-uuid`.",
+        "description": "Returns the snapshot represented by the `snapshot-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getPlanOfActionAndMilestonesSnapshotById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -11564,12 +11564,12 @@
         "operationId": "putPlanOfActionAndMilestonesSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -11689,17 +11689,17 @@
         "tags": [
           "Plan of Action and Milestones"
         ],
-        "summary": "Deletes the snapshot represented by the snapshot ID.",
-        "description": "Deletes the snapshot represented by the snapshot ID.",
+        "summary": "Deletes the snapshot represented by the `snapshot-uuid`.",
+        "description": "Deletes the snapshot represented by the `snapshot-uuid`.",
         "operationId": "deletePlanOfActionAndMilestonesSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of PlanOfActionAndMilestones",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -11860,7 +11860,7 @@
           "Component Definition"
         ],
         "summary": "Adds a new component definition.",
-        "description": "Adds a new component definition.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
+        "description": "Adds a new component definition.\n\n **The client _must_** include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.  \n\n **The implementation _must_** accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n\n **The implementation _must_** check for the presence of an `identifer` with a `scheme` value of `http://oscal.io/oscal/identifier/content-uuid` in the document ID array (`//metaschema/document-ids`). If present, the implementaiton must use this value as the `content-uuid`. If not present, the implementation must generate a v4 or v5 UUID for use as the `content-uuid` and insert it into document ID array using `http://oscal.io/oscal/identifier/content-uuid` as the `scheme` value. \n",
         "operationId": "postComponentDefinition",
         "responses": {
           "201": {
@@ -11985,22 +11985,22 @@
         ]
       }
     },
-    "/component-definition/{ContentUUID}": {
+    "/component-definition/{content-uuid}": {
       "get": {
         "tags": [
           "Component Definition"
         ],
-        "summary": "Returns the component definition represented by the component definition ID.",
-        "description": "Returns the component definition represented by the component definition ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the component definition represented by the `content-uuid`.",
+        "description": "Returns the component definition represented by the `content-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getComponentDefinitionById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -12088,17 +12088,17 @@
         "tags": [
           "Component Definition"
         ],
-        "summary": "Replaces the component definition represented by the component definition ID.",
-        "description": "Replaces the component definition represented by the component definition ID.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
+        "summary": "Replaces the component definition represented by the `content-uuid`.",
+        "description": "Replaces the component definition represented by the `content-uuid`.\n\n The client must include the `Content-type` HTML header and set it to one of the following:\n - `application/json` when sending an OSCAL file in JSON format;\n - `application/xml` when sending an OSCAL file in XML format; or\n - `application/yaml` when sending an OSCAL file in YAML format.\n\n The implementation _must_ accept all three OSCAL formats. OSCAL content sent to the server in any one of the three formats _must_ be made available in all three formats for the relevant GET method/endpoint combinations.\n",
         "operationId": "putComponentDefinition",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -12221,17 +12221,17 @@
         "tags": [
           "Component Definition"
         ],
-        "summary": "Deletes the component definition represented by the component definition ID.",
-        "description": "Deletes the component definition represented by the component definition ID.",
+        "summary": "Deletes the component definition represented by the `content-uuid`.",
+        "description": "Deletes the component definition represented by the `content-uuid`.",
         "operationId": "deleteComponentDefinition",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -12300,7 +12300,7 @@
         ]
       }
     },
-    "/component-definition/{ContentUUID}/attachment": {
+    "/component-definition/{content-uuid}/attachment": {
       "get": {
         "tags": [
           "Component Definition"
@@ -12310,12 +12310,12 @@
         "operationId": "getComponentDefinitionAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -12398,12 +12398,12 @@
         "operationId": "postComponentDefinitionAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -12509,7 +12509,7 @@
         ]
       }
     },
-    "/component-definition/{ContentUUID}/attachment/{resourceUUID}": {
+    "/component-definition/{content-uuid}/attachment/{resource-uuid}": {
       "get": {
         "tags": [
           "Component Definition"
@@ -12519,12 +12519,12 @@
         "operationId": "getComponentDefinitionAttachmentByUuid",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -12637,12 +12637,12 @@
         "operationId": "putComponentDefinitionAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -12758,12 +12758,12 @@
         "operationId": "deleteComponentDefinitionAttachment",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -12841,7 +12841,7 @@
         ]
       }
     },
-    "/component-definition/{ContentUUID}/attachment/{resourceUUID}/resource": {
+    "/component-definition/{content-uuid}/attachment/{resource-uuid}/resource": {
       "get": {
         "tags": [
           "Component Definition"
@@ -12851,12 +12851,12 @@
         "operationId": "getComponentDefinitionAttachmentResourceBy",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -12948,12 +12948,12 @@
         "operationId": "putComponentDefinitionAttachmentResource",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -13070,7 +13070,7 @@
         ]
       }
     },
-    "/component-definition/{ContentUUID}/snapshot": {
+    "/component-definition/{content-uuid}/snapshot": {
       "get": {
         "tags": [
           "Component Definition"
@@ -13080,12 +13080,12 @@
         "operationId": "getComponentDefinitionSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -13168,12 +13168,12 @@
         "operationId": "postComponentDefinitionSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           }
         ],
@@ -13288,22 +13288,22 @@
         ]
       }
     },
-    "/component-definition/{ContentUUID}/snapshot/{snapshotID}": {
+    "/component-definition/{content-uuid}/snapshot/{snapshot-uuid}": {
       "get": {
         "tags": [
           "Component Definition"
         ],
-        "summary": "Returns the snapshot represented by the snapshot ID.",
-        "description": "Returns the snapshot represented by the snapshot ID.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
+        "summary": "Returns the snapshot represented by the `snapshot-uuid`.",
+        "description": "Returns the snapshot represented by the `snapshot-uuid`.\n\n When processing this request, the implementation _must_ honor the `Accept` HTTP header for JSON, XML, and YAML. When `Accept` is set to:\n- `application/json` or `application/oscal+json` return the OSCAL content in JSON format;\n- `application/xml` (preferred by RFC 7303) or `text/xml` (deprecated by RFC 7303) or `application/oscal+xml` return the OSCAL content in XML format; or\n- `application/yaml` or `text/yaml` return the OSCAL content in YAML format.\n\n When returning the OSCAL content, the implementation _must_ set the `Content-type` header to:\n - `application/json` when returning the OSCAL content in JSON format;\n - `application/xml` when returning the OSCAL content in XML format; or\n - `application/yaml` when return the OSCAL content in YAML format.\n",
         "operationId": "getComponentDefinitionSnapshotById",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -13405,12 +13405,12 @@
         "operationId": "putComponentDefinitionSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -13530,17 +13530,17 @@
         "tags": [
           "Component Definition"
         ],
-        "summary": "Deletes the snapshot represented by the snapshot ID.",
-        "description": "Deletes the snapshot represented by the snapshot ID.",
+        "summary": "Deletes the snapshot represented by the `snapshot-uuid`.",
+        "description": "Deletes the snapshot represented by the `snapshot-uuid`.",
         "operationId": "deleteComponentDefinitionSnapshot",
         "parameters": [
           {
-            "name": "ContentUUID",
+            "name": "content-uuid",
             "in": "path",
             "description": "ID of ComponentDefinition",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/ContentUUID"
+              "$ref": "#/components/schemas/content-uuid"
             }
           },
           {
@@ -14177,9 +14177,8 @@
       "OSCALModelSnapshotEntry": {
         "type": "object",
         "properties": {
-          "file-id": {
-            "type": "string",
-            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+          "content-uuid": {
+            "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog_catalog/properties/uuid"
           },
           "title": {
             "type": "string"
@@ -14248,9 +14247,8 @@
       "OSCALModelEntry": {
         "type": "object",
         "properties": {
-          "file-id": {
-            "type": "string",
-            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+          "content-uuid": {
+            "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog_catalog/properties/uuid"
           },
           "title": {
             "type": "string"
@@ -14334,11 +14332,8 @@
         "maxLength": 72,
         "pattern": "^(\\p{Ll}|_)(\\p{L}|\\p{N}|[.\\-_])*$"
       },
-      "ContentUUID": {
-        "type": "string",
-        "minLength": 36,
-        "maxLength": 36,
-        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[45][0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+      "content-uuid": {
+        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog_catalog/properties/uuid"
       }
     },
     "securitySchemes": {

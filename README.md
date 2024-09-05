@@ -59,7 +59,7 @@ The issue is JSON elements only have _children_, while XML elements have both _a
 ## Viewing / Editing
 
 The proposed OSCAL REST OpenAPI specification is expressed using the OpenAPI 3.1 standard:
-[RAW](OSCALRestOpenAPI.json) | [VIEWER](https://raw.githack.com/EasyDynamics/oscal-rest/develop/viewer/index.html?url=https://raw.githubusercontent.com/EasyDynamics/oscal-rest/develop/OSCALRestOpenAPI.json)
+[RAW](OSCALRestOpenAPI.json) | [VIEWER](https://editor.swagger.io?url=https://raw.githubusercontent.com/EasyDynamics/oscal-rest/develop/OSCALRestOpenAPI.json)
 
 
 ## Contributing and Feedback

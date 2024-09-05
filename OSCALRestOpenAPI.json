@@ -20,7 +20,8 @@
   },
   "servers": [
     {
-      "url": "http://localhost:8080/oscal/v1"
+      "url": "http://localhost:8080/oscal/v1.0.0",
+      "description": "A sample target host that assumes the implementation is running locally. Replace this with the URL to your implementaiton. Consider including `/oscal/v1.0.0` as part of the implementaiton's root URL."
     }
   ],
   "tags": [

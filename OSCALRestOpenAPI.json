@@ -834,7 +834,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -952,7 +952,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -1073,7 +1073,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -1166,7 +1166,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -1263,7 +1263,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -2775,7 +2775,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -2893,7 +2893,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -3014,7 +3014,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -3107,7 +3107,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -3204,7 +3204,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -5164,7 +5164,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -5282,7 +5282,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -5403,7 +5403,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -5496,7 +5496,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -5593,7 +5593,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -7005,7 +7005,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -7123,7 +7123,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -7244,7 +7244,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -7337,7 +7337,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -7434,7 +7434,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -8846,7 +8846,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -8964,7 +8964,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -9085,7 +9085,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -9178,7 +9178,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -9275,7 +9275,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -10687,7 +10687,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -10805,7 +10805,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -10926,7 +10926,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -11019,7 +11019,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -11116,7 +11116,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -12528,7 +12528,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -12646,7 +12646,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -12767,7 +12767,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -12860,7 +12860,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,
@@ -12957,7 +12957,7 @@
             }
           },
           {
-            "name": "resourceUUID",
+            "name": "resource-uuid",
             "in": "path",
             "description": "UUID of Back Matter Resource",
             "required": true,

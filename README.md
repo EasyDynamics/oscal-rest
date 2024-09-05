@@ -12,8 +12,17 @@ For more information, vist and bookmark [https://docs.oscal.io/docs/oscal-rest-o
 
 All endpoint syntax is provided as:
 
-|`METHOD /{model-name}`<br />`METHOD /{model-name}/{identifier}`<br />`METHOD /{model-name}/{identifier}/snapshot`<br />`METHOD /{model-name}/{identifier}/snapshot/{identifier}`<br />`METHOD /{model-name}/{identifier}/attachment`<br />`METHOD /{model-name}/{identifier}/attachment/{resource-uuid}`<br />`METHOD /{model-name}/{identifier}/attachment/{resource-uuid}/resource`|
-|:--- |
+| METHODS | ENDPOINTS |
+|:--- |:--- |
+| `GET`, `POST` | `/{model-name}`  |
+| `GET`, `PUT`, `DELETE` | `/{model-name}/{content-uuid}` |
+| `GET`, `POST` | `/{model-name}/{content-uuid}/attachment` |
+| `GET`, `PUT`, `DELETE` | `/{model-name}/{content-uuid}/attachment/{resource-uuid}` |
+| `GET`, `POST` | `/{model-name}/{content-uuid}/snapshot` |
+| `GET`, `PUT`, `DELETE` | `{model-name}/{content-uuid}/snapshot/{snapshot-uuid}` |
+
+
+
 
 The `{model-name}` is always one of the seven root-level OSCAL model names exactly as they are defined in the OSCAL syntax. Simply replace `{model-name}` with one of the following:
 
@@ -27,18 +36,25 @@ The `{model-name}` is always one of the seven root-level OSCAL model names exact
 
 Profiles have additional endpoints related to profile resolution:
 
-|`METHOD /profile/{identifier}/resolved-catalog`<br />`METHOD /profile/{identifier}/resolved-snapshot`<br />`METHOD /profile/{identifier}/resolved-snapshot/{identifier}`|
-|:--- |
+| METHODS | ENDPOINTS |
+|:--- |:--- |
+| `GET` | `/profile/{content-uuid}/resolved-catalog`  |
+| `GET`, `POST` | `/profile/{content-uuid}/resolved-snapshot` |
+| `GET`, `PUT`, `DELETE` | `/{model-name}/{content-uuid}/resolved-snapshot-uuid` |
+
 
 ## Known Issue: XML Expression
 
-When the specification calls for OSCAL content to be accepted or returned, the content must be fully OSCAL valid. Even if the specification shows a non-compliant schema or example.
+There is a known OpenAPI issue that prevents proper definition of OSCAL XML schemas.
 
-There is a known-issue that prevents proper expression of OSCAL XML content in OpenAPI.
+**When the specification calls for OSCAL content to be accepted or returned, the content must be fully valid OSCAL per the NIST standard, even if the specification shows a non-compliant schema or example.**
 
-XML elements have both _attributes_ and _children_. JSON elements only have _children_. There is no way to specify an element _attribute_ using a JSON schema.
+### Additional Information
 
-All versions of the OpenAPI specification, up to and including 3.1, only accept JSON schema definitions. As a result all OpenAPI viewers and code generators incorrectly represent OSCAL XML element _attributes_ as element _children_.
+All versions of the OpenAPI specification only accept JSON schema definitions, and attempts to derive any XML schema from the JSON schema.
+
+The issue is JSON elements only have _children_, while XML elements have both _attributes_ and _children_. There is no way to specify an OSCAL XML element _attributes_ using a JSON schema. As a result all OpenAPI viewers and code generators incorrectly represent OSCAL XML element _attributes_ as element _children_.
+
 
 ## Viewing / Editing
 

@@ -13631,10 +13631,7 @@
       },
       "OSCALCatalogXML": {
         "type": "object",
-        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog_catalog",
-        "xml": {
-          "name": "catalog"
-        }
+        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/assembly_oscal-catalog_catalog"
       },
       "OSCALProfile": {
         "type": "object",
@@ -13646,10 +13643,7 @@
       },
       "OSCALProfileXML": {
         "type": "object",
-        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_profile",
-        "xml": {
-          "name": "profile"
-        }
+        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_profile_schema.json#/definitions/assembly_oscal-profile_profile"
       },
       "OSCALComponentDefinition": {
         "type": "object",
@@ -13661,10 +13655,7 @@
       },
       "OSCALComponentDefinitionXML": {
         "type": "object",
-        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_component-definition",
-        "xml": {
-          "name": "component-definition"
-        }
+        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_component_schema.json#/definitions/assembly_oscal-component-definition_component-definition"
       },
       "OSCALSystemSecurityPlan": {
         "type": "object",
@@ -13676,10 +13667,7 @@
       },
       "OSCALSystemSecurityPlanXML": {
         "type": "object",
-        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_system-security-plan",
-        "xml": {
-          "name": "system-security-plan"
-        }
+        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_ssp_schema.json#/definitions/assembly_oscal-ssp_system-security-plan"
       },
       "OSCALPlanOfActionAndMilestones": {
         "type": "object",
@@ -13691,10 +13679,7 @@
       },
       "OSCALPlanOfActionAndMilestonesXML": {
         "type": "object",
-        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_poam_schema.json#/definitions/assembly_oscal-poam_plan-of-action-and-milestones",
-        "xml": {
-          "name": "plan-of-action-and-milestones"
-        }
+        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_poam_schema.json#/definitions/assembly_oscal-poam_plan-of-action-and-milestones"
       },
       "OSCALAssessmentPlan": {
         "type": "object",
@@ -13706,10 +13691,7 @@
       },
       "OSCALAssessmentPlanXML": {
         "type": "object",
-        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-ap_assessment-plan",
-        "xml": {
-          "name": "assessment-plan"
-        }
+        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-plan_schema.json#/definitions/assembly_oscal-ap_assessment-plan"
       },
       "OSCALErrorMessage": {
         "type": "object",
@@ -13732,10 +13714,7 @@
       },
       "OSCALAssessmentResultsXML": {
         "type": "object",
-        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-ar_assessment-results",
-        "xml": {
-          "name": "assessment-results"
-        }
+        "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-ar_assessment-results"
       },
       "OSCALAttachmentEntry": {
         "$ref": "#/components/schemas/OSCALResource"

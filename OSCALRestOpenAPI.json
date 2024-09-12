@@ -13719,16 +13719,13 @@
       "OSCALAttachmentEntry": {
         "$ref": "#/components/schemas/OSCALResource"
       },
-      "OSCALAttachmentEntryXML": {
-        "$ref": "#/components/schemas/OSCALResourceXML"
-      },
       "OSCALAttachments": {
         "type": "object",
         "properties": {
           "attachment-list": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/OSCALAttachmentNoBase64"
+              "$ref": "#/components/schemas/OSCALResourceNoBase64"
             }
           }
         }
@@ -13931,7 +13928,7 @@
           }
         }
       },
-      "OSCALAttachmentNoBase64": {
+      "OSCALResourceNoBase64": {
         "type": "object",
         "properties": {
           "content-uuid": {
@@ -13942,21 +13939,28 @@
             "type": "string",
             "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
           },
-          "file-name": {
-            "type": "string"
-          },
-          "media-type": {
-            "type": "string"
-          },
           "title": {
             "type": "string"
           },
-          "published": {
-            "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_published"
+          "description": {
+            "type": "string"
+          },
+          "document-ids": {
+            "type": "array",
+            "items": {
+              "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_document-id"
+            }
+          },
+          "citation": {
+            "$ref": "#/components/schemas/OSCALCitation"
+          },
+          "rlinks": {
+            "$ref": "#/components/schemas/OSCALRLinks"
           },
           "remarks": {
-            "type": "string"
-          }
+            "$ref": "#/components/schemas/OSCALRemarks"
+          }          
+
         }
       },
       "OSCALResource": {
@@ -13964,7 +13968,11 @@
         "properties": {
           "resource": {
             "properties": {
-              "uuid": {
+              "content-uuid": {
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+              },
+              "resource-uuid": {
                 "type": "string",
                 "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
               },
@@ -13994,42 +14002,6 @@
               }
             }
           }
-        }
-      },
-      "OSCALResourceXML": {
-        "type": "object",
-        "properties": {
-          "uuid": {
-            "type": "string",
-            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-          },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "document-ids": {
-            "type": "array",
-            "items": {
-              "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_document-id"
-            }
-          },
-          "citation": {
-            "$ref": "#/components/schemas/OSCALCitation"
-          },
-          "rlinks": {
-            "$ref": "#/components/schemas/OSCALRLinks"
-          },
-          "base64": {
-            "$ref": "#/components/schemas/OSCALBase64"
-          },
-          "remarks": {
-            "$ref": "#/components/schemas/OSCALRemarks"
-          }
-        },
-        "xml": {
-          "name": "resource"
         }
       },
       "OSCALCitation": {

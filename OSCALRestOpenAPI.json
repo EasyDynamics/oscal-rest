@@ -13717,7 +13717,45 @@
         "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_assessment-results_schema.json#/definitions/assembly_oscal-ar_assessment-results"
       },
       "OSCALAttachmentEntry": {
-        "$ref": "#/components/schemas/OSCALResource"
+        "type": "object",
+        "properties": {
+          "resource": {
+            "properties": {
+              "content-uuid": {
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+              },
+              "resource-uuid": {
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "document-ids": {
+                "type": "array",
+                "items": {
+                  "$ref": "https://raw.githubusercontent.com/EasyDynamics/OSCAL/json-schema-ref-by-path/json/schema/oscal_catalog_schema.json#/definitions/field_oscal-metadata_document-id"
+                }
+              },
+              "citation": {
+                "$ref": "#/components/schemas/OSCALCitation"
+              },
+              "rlinks": {
+                "$ref": "#/components/schemas/OSCALRLinks"
+              },
+              "base64": {
+                "$ref": "#/components/schemas/OSCALBase64"
+              },
+              "remarks": {
+                "$ref": "#/components/schemas/OSCALRemarks"
+              }
+            }
+          }
+        }
       },
       "OSCALAttachments": {
         "type": "object",
@@ -13968,11 +14006,7 @@
         "properties": {
           "resource": {
             "properties": {
-              "content-uuid": {
-                "type": "string",
-                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-              },
-              "resource-uuid": {
+              "uuid": {
                 "type": "string",
                 "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
               },
